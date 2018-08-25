@@ -36,6 +36,15 @@ Com dockhub você não precisar clonar o repositório, basta apenas baixar a ima
  
  Se você está desenvolvendo, é preferível que use o *dock-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
  
+ #### Sem docker
+ ```
+ virtualenv env
+. env/bin/activate
+pip install -r requirements.txt
+cd agorapi
+./manage.py runserver
+ ```
+ 
  ## Endpoints
  
  Veja em http://0.0.0.0:8000/
