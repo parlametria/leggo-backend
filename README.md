@@ -1,4 +1,4 @@
-# Àgora digital backend
+# Ágora Digital backend
 API para consulta de propostas de leis no senado e na câmara
 
 ## Uso
