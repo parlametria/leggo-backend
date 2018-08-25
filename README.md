@@ -8,8 +8,8 @@ O código atual assume que este repositório está em uma pasta lado a lado com 
 ### Docker
 Rodando com docker, o serviço estará disponível em http://0.0.0.0:8000/
 
-#### Dock-compose
-Para rodar com dock-compose, é preciso clonar o repositório:
+#### Docker-compose
+Para rodar com docker-compose, é preciso clonar o repositório:
 
 ```
 git clone https://github.com/analytics-ufcg/agora-digital-backend/
