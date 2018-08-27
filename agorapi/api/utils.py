@@ -1,7 +1,7 @@
 from glob import glob
 import pandas as pd
 
-prop_data_files = '../../agora-digital/data/*/*prop*.csv'
+prop_data_files = 'data/*/*prop*.csv'
 
 
 def get_props(nonans=True):
