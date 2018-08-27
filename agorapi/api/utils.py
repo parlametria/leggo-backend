@@ -15,7 +15,17 @@ def nan_to_none(df):
 
 
 def simplify_visu(df):
-    return df[df.group == 'Global'].label.unique()
+    fases = []
+    for fase in df[df.group == 'Global'].label.unique():
+        if 'Câmara' in fase:
+            casa = 'camara'
+        elif 'Senado' in fase:
+            casa = 'senado'
+        fases.append({
+            'casa': casa,
+            'nome': fase.split('-')[0].strip()
+        })
+    return fases
 
 
 # def simplify_tram(id):
@@ -50,7 +60,7 @@ props = nan_to_none(
     # TODO: junta as colunas de IDs do Senado e da Câmara, isso deveria estar
     # sendo feito pelo R...
     .assign(id=lambda x: (x.codigo_materia.fillna(0) + x.id.fillna(0)).apply(int))
-    .set_index('id')
+    .set_index('id', drop=False)
     .assign(fases=visu)
     # .assign(tramitacao=lambda x: x.id.apply(simplify_tram))
 )
