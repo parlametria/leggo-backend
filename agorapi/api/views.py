@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-from api.utils import get_props
+from api.utils import props
 
 
 class Info(APIView):
@@ -20,4 +20,4 @@ class ProposicaoList(APIView):
         # snippets = Snippet.objects.all()
         # serializer = SnippetSerializer(snippets, many=True)
         # return Response(serializer.data)
-        return Response(get_props().to_dict(orient='records'))
+        return Response(props.to_dict(orient='records'))
