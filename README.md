@@ -25,7 +25,7 @@ docker-compose up
 Com dockhub você não precisar clonar o repositório, basta apenas baixar a imagem docker:
 
  ```
- docker push agoradigital/agorapi
+ docker pull agoradigital/agorapi
  ```
  
  E depois rodar um container expondo a porta 8000:
@@ -34,7 +34,7 @@ Com dockhub você não precisar clonar o repositório, basta apenas baixar a ima
  docker run -p 8000:8000 agoradigital/agorapi
  ```
  
- Se você está desenvolvendo, é preferível que use o *dock-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
+ Se você está desenvolvendo, é preferível que use o *docker-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
  
  #### Sem docker
  ```
