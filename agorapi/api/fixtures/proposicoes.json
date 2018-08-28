@@ -1,0 +1,12 @@
+[
+  {
+    "model": "api.proposicao",
+    "pk": 1,
+    "fields": {
+      "sigla_tipo": "PL",
+      "numero": 938,
+      "id_ext": 917389,
+      "ementa": "blahalch ochdjoc hdjoc hdjo "
+    }
+  }
+]
