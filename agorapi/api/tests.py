@@ -19,3 +19,11 @@ class ProposicaoTests(APITestCase):
         url = '/proposicoes/'
         response = self.client.get(url)
         self.assertGreater(len(response.data), 0)
+
+    def test_detail(self):
+        '''
+        Check proposicao detail
+        '''
+        url = '/proposicoes/2120775'
+        response = self.client.get(url)
+        self.assertEqual(response.data['data_apresentacao'], '2016-12-13T14:59')
