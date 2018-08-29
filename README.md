@@ -24,27 +24,31 @@ docker-compose up
 #### Dockhub
 Com dockhub você não precisar clonar o repositório, basta apenas baixar a imagem docker:
 
- ```
- docker pull agoradigital/agorapi
- ```
- 
- E depois rodar um container expondo a porta 8000:
- 
- ```
- docker run -p 8000:8000 agoradigital/agorapi
- ```
- 
- Se você está desenvolvendo, é preferível que use o *docker-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
- 
- #### Sem docker
- ```
- virtualenv env
+```
+docker pull agoradigital/agorapi
+```
+
+E depois rodar um container expondo a porta 8000:
+
+```
+docker run -p 8000:8000 agoradigital/agorapi
+```
+
+Se você está desenvolvendo, é preferível que use o *docker-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
+
+#### Sem docker
+```
+virtualenv env
 . env/bin/activate
 pip install -r requirements.txt
-cd agorapi
-./manage.py runserver
- ```
- 
- ## Endpoints
- 
- Veja em http://0.0.0.0:8000/
+./agorapi/manage.py runserver
+```
+
+## Endpoints
+
+Veja em http://0.0.0.0:8000/
+
+./agorapi/manage.py flush --no-input
+./agorapi/manage.py makemigrations
+./agorapi/manage.py migrate
+./agorapi/manage.py import_data

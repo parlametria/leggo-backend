@@ -1,5 +1,10 @@
+pandas
 Django
 djangorestframework
-django-rest-swagger
+drf-yasg
 django-cors-headers
-pandas
+drf-yasg[validation]
+flex
+swagger_spec_validator
+munch
+

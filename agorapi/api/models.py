@@ -1,4 +1,4 @@
-from enum import Enum
+from munch import Munch
 from django.db import models
 
 urls = {
@@ -7,34 +7,54 @@ urls = {
 }
 
 
-# class ChoiceEnum(Enum):
-#     @classmethod
-#     def choices(cls):
-#         return tuple((i.value, i.name) for i in cls)
+class Choices(Munch):
+    def __init__(self, choices):
+        super().__init__({i: i for i in choices.split(' ')})
 
 
 class Proposicao(models.Model):
 
-    id_ext = models.IntegerField()
+    id_ext = models.IntegerField(
+        'ID Externo',
+        help_text='Id externo do sistema da casa.')
 
-    # casas = ChoiceEnum('Casas', 'camara senado')
-    # casa = models.IntegerField(choices=casas.choices())
+    numero = models.IntegerField(
+        'Número',
+        help_text='Número da proposição naquele ano e casa.')
 
-    # regimes = ChoiceEnum('Regimes', 'ordinario prioridade')
-    # regime_tramitacao = models.IntegerField(choices=regimes.choices(), null=True)
+    sigla_tipo = models.CharField(
+        'Sigla do Tipo', max_length=3,
+        help_text='Sigla do tipo da proposição (PL, PLS etc)')
 
-    # formas_tramitacao = ChoiceEnum('FormasTramitacao', 'conclusivo plenario')
-    # forma_apreciacao = models.IntegerField(
-    #     choices=formas_tramitacao.choices(), null=True)
+    data_apresentacao = models.DateField('Data de apresentação')
 
-    numero = models.IntegerField()
-    sigla_tipo = models.CharField(max_length=3)
+    casas = Choices('camara senado')
+    casa = models.CharField(
+        max_length=6, choices=casas.items(),
+        help_text='Casa desta proposição.')
+
+    regimes = Choices('ordinario prioridade urgencia')
+    regime_tramitacao = models.CharField(
+        'Regime de tramitação',
+        max_length=10, choices=regimes.items(), null=True)
+
+    formas_apreciacao = Choices('conclusiva plenario')
+    forma_apreciacao = models.CharField(
+        'Forma de Apreciação',
+        max_length=10, choices=formas_apreciacao.items(), null=True)
+
     ementa = models.TextField(blank=True)
+
     justificativa = models.TextField(blank=True)
-    data_apresentacao = models.DateField(null=True)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['casa', 'id_ext']),
+        ]
 
     @property
     def sigla(self):
+        '''Sigla da proposição (ex.: PL 400/2010)'''
         return f'{self.sigla_tipo} {self.numero}/{self.ano}'
 
     @property
@@ -43,4 +63,5 @@ class Proposicao(models.Model):
 
     @property
     def url(self):
-        return urls[self.casa] + self.id_ext
+        '''URL para a página da proposição em sua respectiva casa.'''
+        return urls[self.casa] + str(self.id_ext)

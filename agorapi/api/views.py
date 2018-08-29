@@ -1,8 +1,18 @@
-from django.http import Http404
+from django.shortcuts import get_object_or_404
+from rest_framework import serializers, generics  # , viewsets
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
+from api.models import Proposicao
 
-# from api.utils import props
+
+class ProposicaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Proposicao
+        fields = (
+            'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
+            'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url')
 
 
 class Info(APIView):
@@ -13,23 +23,40 @@ class Info(APIView):
         return Response({'status': 'ok'})
 
 
-class ProposicaoList(APIView):
-    '''
-    Lista proposições.
-    '''
-    def get(self, request, format=None):
-        # snippets = Snippet.objects.all()
-        # serializer = SnippetSerializer(snippets, many=True)
-        # return Response(serializer.data)
-        return Response(props.to_dict(orient='records'))
+class ProposicaoList(generics.ListAPIView):
+    queryset = Proposicao.objects.all()
+    serializer_class = ProposicaoSerializer
 
 
 class ProposicaoDetail(APIView):
     '''
     Detalha proposição.
     '''
-    def get(self, request, pk, format=None):
-        try:
-            return Response(props.loc[int(pk)].to_dict())
-        except KeyError:
-            raise Http404
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+        ]
+    )
+    def get(self, request, casa, id_ext, format=None):
+        prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
+        return Response(ProposicaoSerializer(prop).data)
+
+
+# Talvez valha a pena usar ViewSets ao invés de APIView, mas não consegui
+# achar um jeito bom de tratar as nested-routes (/proposicoes/{casa}/{id})
+# Por outro lado, segundo o padrão REST, talvez fosse bom não fazer isso.
+# Deixo referências para avaliarmos melhor abaixo.
+# https://stackoverflow.com/questions/21365906/rest-calls-with-multiple-lookup-fields-for-reverse-lookup
+# https://stackoverflow.com/questions/27463055/django-rest-framework-add-a-viewset-as-detail-on-another-viewset
+# https://chibisov.github.io/drf-extensions/docs/#nested-routes
+# class ProposicaoViewSet(viewsets.ReadOnlyModelViewSet):
+#     '''
+#     This viewset automatically provides `list` and `detail` actions.
+#     '''
+#     queryset = Proposicao.objects.all()
+#     serializer_class = ProposicaoSerializer
