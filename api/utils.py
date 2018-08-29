@@ -1,6 +1,15 @@
 import os
 from glob import glob
 import pandas as pd
+from api.models import Proposicao
+
+
+def import_all_data():
+    df = pd.read_csv('data/proposicoes.csv')
+    df.casa = df.casa.apply(lambda r: Proposicao.casas[r])
+    Proposicao.objects.bulk_create([
+        Proposicao(**r[1].to_dict()) for r in df.iterrows()])
+
 
 # prop_data_files = '../../agora-digital/data/*/*proposicao*.csv'
 # tram_data_files = '../../agora-digital/data/*/*tramitacao*.csv'

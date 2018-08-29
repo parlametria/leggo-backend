@@ -1,4 +1,5 @@
 from rest_framework.test import APITestCase
+from api.utils import import_all_data
 
 
 class InfoTests(APITestCase):
@@ -12,6 +13,10 @@ class InfoTests(APITestCase):
 
 
 class ProposicaoTests(APITestCase):
+
+    def setUp(self):
+        import_all_data()
+
     def test_list(self):
         '''
         Check proposicao list
@@ -24,6 +29,6 @@ class ProposicaoTests(APITestCase):
         '''
         Check proposicao detail
         '''
-        url = '/proposicoes/2120775'
+        url = '/proposicoes/camara/2120775'
         response = self.client.get(url)
-        self.assertEqual(response.data['data_apresentacao'], '2016-12-13T14:59')
+        self.assertEqual(response.data['data_apresentacao'], '2016-12-13')
