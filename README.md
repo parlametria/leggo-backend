@@ -41,14 +41,21 @@ Se você está desenvolvendo, é preferível que use o *docker-compose* pois gar
 virtualenv env
 . env/bin/activate
 pip install -r requirements.txt
-./agorapi/manage.py runserver
+./manage.py runserver
 ```
 
 ## Endpoints
 
 Veja em http://0.0.0.0:8000/
 
-./agorapi/manage.py flush --no-input
-./agorapi/manage.py makemigrations
-./agorapi/manage.py migrate
-./agorapi/manage.py import_data
+## Comandos úteis
+
+Limpar base de dados:
+```
+./manage.py flush --no-input
+```
+
+Importar dados do CSV para o BD:
+```
+./manage.py import_data
+```
