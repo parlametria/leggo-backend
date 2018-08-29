@@ -1,7 +1,7 @@
 # Ágora Digital backend
 API para consulta de propostas de leis no senado e na câmara
 
-## Uso
+## Setup
 
 O código atual assume que este repositório está em uma pasta lado a lado com o repositório R. Isso é importante para que este código consiga acessar os CSVs gerados pelo R.
 
@@ -35,6 +35,30 @@ Com dockhub você não precisar clonar o repositório, basta apenas baixar a ima
  ```
  
  Se você está desenvolvendo, é preferível que use o *docker-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
+ 
+ ## Uso
+ 
+ Alguns comando básicos para manipulação de seus containers dockers.
+ 
+ ### Reconstruir a imagem do zero com docker-compose up
+ Caso você esteja querendo reegerar a imagem para forçando-a a pegar as atualizações novas, use:
+ 
+ ```
+ docker-compose up --build
+ ```
+ 
+ ### Visualizar containers rodando
+ 
+ ```
+ docker ps
+ ```
+ 
+ ### Matar um container
+ Rode docker ps, copie o *container-id* e use:
+ 
+ ```
+ docker kill <id>
+ ```
  
  #### Sem docker
  ```
