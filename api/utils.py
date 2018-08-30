@@ -1,6 +1,15 @@
 import os
 from glob import glob
 import pandas as pd
+from api.models import Proposicao
+
+
+def import_all_data():
+    df = pd.read_csv('data/proposicoes.csv')
+    df.casa = df.casa.apply(lambda r: Proposicao.casas[r])
+    Proposicao.objects.bulk_create([
+        Proposicao(**r[1].to_dict()) for r in df.iterrows()])
+
 
 # prop_data_files = '../../agora-digital/data/*/*proposicao*.csv'
 # tram_data_files = '../../agora-digital/data/*/*tramitacao*.csv'
@@ -60,6 +69,14 @@ props = nan_to_none(
     # TODO: junta as colunas de IDs do Senado e da Câmara, isso deveria estar
     # sendo feito pelo R...
     .assign(id=lambda x: (x.codigo_materia.fillna(0) + x.id.fillna(0)).apply(int))
+    .assign(sigla_tipo=lambda x:
+            x.sigla_subtipo_materia.fillna('') + x.sigla_tipo.fillna(''))
+    .assign(numero=lambda x: x.numero.fillna(0) + x.numero_materia.fillna(0))
+    .assign(data_apresentacao=lambda x: x.data_apresentacao.apply(
+        lambda s: s.split('T')[0]))
+    .assign(casa=lambda x:
+            x.nome_casa_identificacao_materia.fillna('camara').apply(
+                lambda s: s.split()[0].lower()))
     .set_index('id', drop=False)
     .assign(fases=visu)
     # .assign(tramitacao=lambda x: x.id.apply(simplify_tram))
