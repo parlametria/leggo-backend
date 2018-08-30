@@ -1,12 +1,24 @@
 version: '3'
 
-services:
+services:    
+  db:
+    image: postgres:10.5-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
   api:
     build: .
     image: agoradigital/agorapi
-    command: bash -c "pip install -r requirements.txt && ./manage.py migrate && ./manage.py runserver 0.0.0.0:8000"
+    command: bash -c "pip install -r requirements.txt && ./manage.py flush --no-input && ./manage.py migrate && ./manage.py import_data && ./manage.py runserver 0.0.0.0:8000"
     container_name: agorapi
     volumes:
       - .:/agora-digital-backend
     ports:
       - "8000:8000"
+    links:
+      - db
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
