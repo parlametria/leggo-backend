@@ -65,3 +65,21 @@ class Proposicao(models.Model):
     def url(self):
         '''URL para a página da proposição em sua respectiva casa.'''
         return urls[self.casa] + str(self.id_ext)
+
+
+class TramitacaoEvent(models.Model):
+
+    data = models.DateField('Data')
+
+    sequencia = models.IntegerField(
+        'Sequência',
+        help_text='Sequência desse evento na lista de tramitações.')
+
+    texto = models.TextField()
+
+    sigla_local = models.TextField()
+
+    situacao = models.TextField()
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE)
