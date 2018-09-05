@@ -1,4 +1,6 @@
 # Ágora Digital backend
+[![Build Status](https://travis-ci.com/analytics-ufcg/agora-digital-backend.svg?branch=master)](https://travis-ci.com/analytics-ufcg/agora-digital-backend)
+
 API para consulta de propostas de leis no senado e na câmara
 
 ## Setup
