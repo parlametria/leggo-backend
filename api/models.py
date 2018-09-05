@@ -51,6 +51,7 @@ class Proposicao(models.Model):
         indexes = [
             models.Index(fields=['casa', 'id_ext']),
         ]
+        ordering = ('-data_apresentacao',)
 
     @property
     def sigla(self):
@@ -65,3 +66,44 @@ class Proposicao(models.Model):
     def url(self):
         '''URL para a página da proposição em sua respectiva casa.'''
         return urls[self.casa] + str(self.id_ext)
+
+    @property
+    def resumo_tramitacao(self):
+        locais = []
+        events = []
+        for event in self.tramitacao.all():
+            if event.sigla_local not in locais:
+                locais.append(event.sigla_local)
+                events.append({
+                    'data': event.data,
+                    'casa': event.proposicao.casa,
+                    'nome': event.sigla_local
+                })
+        return events
+
+        # return [{
+        #     'data': i.data,
+        #     'nome': i.sigla_local
+        # } for i in self.tramitacao.all()]
+        # return [i[0] for i in self.tramitacao.values_list('sigla_local').distinct()]
+
+
+class TramitacaoEvent(models.Model):
+
+    data = models.DateField('Data')
+
+    sequencia = models.IntegerField(
+        'Sequência',
+        help_text='Sequência desse evento na lista de tramitações.')
+
+    texto = models.TextField()
+
+    sigla_local = models.TextField()
+
+    situacao = models.TextField()
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name='tramitacao')
+
+    class Meta:
+        ordering = ('sequencia',)
