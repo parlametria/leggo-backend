@@ -2,4 +2,4 @@ language: python
 python:
 - "3.7-dev"
 script:
-- manage.py test
+- ./manage.py test
