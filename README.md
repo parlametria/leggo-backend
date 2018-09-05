@@ -85,3 +85,9 @@ Importar dados do CSV para o BD:
 ```
 ./manage.py import_data
 ```
+
+Testes com cobertura de código:
+```
+coverage run --source=agorapi,api --omit='*/migrations/*' ./manage.py test
+coverage report
+```
