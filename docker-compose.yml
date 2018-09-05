@@ -3,14 +3,24 @@ version: '3'
 services:    
   db:
     image: postgres:10.5-alpine
+    environment:
+      - POSTGRES_DB=${DB_NAME:-postgres}
+      - POSTGRES_USER=${DB_USER:-postgres}
+      - POSTGRES_PASSWORD=${DB_PASS:-agoradigital}
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-
+    
   api:
     build: .
     image: agoradigital/agorapi
     command: bash -c "pip install -r requirements.txt && pip install -r requirements_dev.txt && ./manage.py flush --no-input && ./manage.py runserver 0.0.0.0:8000"
     container_name: agorapi
+    environment:
+      - DB_NAME=${DB_NAME:-postgres}
+      - DB_USER=${DB_USER:-postgres}
+      - DB_PASS=${DB_PASS:-agoradigital}
+      - DB_HOST=${DB_HOST:-db}
+      - DB_PORT=${DB_PORT:-5432}
     volumes:
       - .:/agora-digital-backend
     ports:
