@@ -1,7 +1,19 @@
 language: python
+
 python:
 - "3.7-dev"
+
+env:
+- POSTGRES_HOST=localhost
+
 services:
 - postgresql
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+
 script:
 - ./manage.py test
