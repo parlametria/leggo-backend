@@ -9,7 +9,7 @@ services:
   api:
     build: .
     image: agoradigital/agorapi
-    command: bash -c "pip install -r requirements.txt && pip install -r requirements_dev.txt && ./manage.py flush --no-input && ./manage.py runserver 0.0.0.0:8000"
+    command: bash -c "pip install -r requirements.txt && pip install -r requirements_dev.txt && ./manage.py runserver 0.0.0.0:8000"
     container_name: agorapi
     volumes:
       - .:/agora-digital-backend
