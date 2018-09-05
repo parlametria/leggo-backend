@@ -8,6 +8,8 @@ env:
 
 services:
 - postgresql
+addons:
+  postgresql: "9.4"
 
 script:
 - ./manage.py test
