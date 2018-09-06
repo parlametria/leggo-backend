@@ -82,10 +82,11 @@ WSGI_APPLICATION = 'agorapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': os.environ.get('POSTGRES_HOST', 'db'), # set in docker-compose.yml
-        'PORT': 5432 # default postgres port
+        'NAME': os.getenv('DB_NAME', 'postgres'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASS', ''),
+        'HOST': os.getenv('DB_HOST', 'localhost'),  # set in docker-compose.yml
+        'PORT': os.getenv('DB_PORT',  5432)  # default postgres port
     }
 }
 
