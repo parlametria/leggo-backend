@@ -1,4 +1,6 @@
 # Ágora Digital backend
+[![Build Status](https://travis-ci.com/analytics-ufcg/agora-digital-backend.svg?branch=master)](https://travis-ci.com/analytics-ufcg/agora-digital-backend)
+
 API para consulta de propostas de leis no senado e na câmara
 
 ## Setup
@@ -82,4 +84,10 @@ Limpar base de dados:
 Importar dados do CSV para o BD:
 ```
 ./manage.py import_data
+```
+
+Testes com cobertura de código:
+```
+coverage run --source=agorapi,api --omit='*/migrations/*' ./manage.py test
+coverage report
 ```
