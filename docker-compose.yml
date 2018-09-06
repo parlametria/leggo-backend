@@ -11,9 +11,7 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     
   api:
-    build: .
     image: agoradigital/agorapi
-    command: bash -c "pip install -r requirements.txt && pip install -r requirements_dev.txt && ./manage.py runserver 0.0.0.0:8000"
     container_name: agorapi
     environment:
       - DB_NAME=${DB_NAME:-postgres}
@@ -29,6 +27,16 @@ services:
       - db
     depends_on:
       - db
+  
+  web:
+    image: agoradigital/web
+    container_name: agoraweb
+    environment:
+      - API_URL=${API_URL:-https://localhost:8000}
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
 
 volumes:
   postgres_data:
