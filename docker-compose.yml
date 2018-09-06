@@ -11,7 +11,8 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     
   api:
-    image: agoradigital/agorapi
+    image: agoradigital/agorapi:1.1-alpine
+    # image: agoradigital/agorapi
     container_name: agorapi
     environment:
       - DB_NAME=${DB_NAME:-postgres}
@@ -22,22 +23,21 @@ services:
     volumes:
       - .:/agora-digital-backend
     ports:
-      - "8000:8000"
+      - "9002:8000"
     links:
       - db
     depends_on:
       - db
   
   web:
-    image: agoradigital/web
+    image: agoradigital/web:1.0
     container_name: agoraweb
     environment:
-      - API_URL=${API_URL:-https://localhost:8000}
+      - VUE_APP_API_URL=${API_URL:-http://localhost:8000}
     ports:
-      - "8080:80"
+      - "9001:80"
     depends_on:
       - api
 
 volumes:
   postgres_data:
-    
