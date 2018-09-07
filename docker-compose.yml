@@ -3,18 +3,36 @@ version: '3'
 services:    
   db:
     image: postgres:10.5-alpine
+    container_name: dbapi
     environment:
       - POSTGRES_DB=${DB_NAME:-postgres}
       - POSTGRES_USER=${DB_USER:-postgres}
       - POSTGRES_PASSWORD=${DB_PASS:-agoradigital}
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+
+  httpapi:
+    image: nginx:1.15-alpine
+    container_name: httpapi
+    restart: always
+    volumes:
+      - app_static:/app_static
+      - app_sockets:/sockets
+      - ./deploy:/project/deploy
+      - ./deploy/nginx/${NGINX_CONF:-app.conf.prod}:/etc/nginx/conf.d/app.conf
+    ports:
+      - "9002:80"
+    depends_on:
+      - api
     
   api:
     image: agoradigital/agorapi:1.1-alpine
-    # image: agoradigital/agorapi
     container_name: agorapi
     environment:
+      - DEBUG=${DEBUG:-True}  # Default to True
+      - IS_PRODUCTION=${IS_PRODUCTION}  # Default to empty
+      - CONSOLE_LOG_LEVEL=${CONSOLE_LOG_LEVEL:-DEBUG}  # Default to DEBUG
+      - SECRET_KEY=${SECRET_KEY}
       - DB_NAME=${DB_NAME:-postgres}
       - DB_USER=${DB_USER:-postgres}
       - DB_PASS=${DB_PASS:-agoradigital}
@@ -22,10 +40,7 @@ services:
       - DB_PORT=${DB_PORT:-5432}
     volumes:
       - .:/agora-digital-backend
-    ports:
-      - "9002:8000"
-    links:
-      - db
+      - app_sockets:/sockets
     depends_on:
       - db
   
@@ -36,8 +51,8 @@ services:
       - VUE_APP_API_URL=${API_URL:-http://localhost:8000}
     ports:
       - "9001:80"
-    depends_on:
-      - api
 
 volumes:
   postgres_data:
+  app_sockets:
+  app_static:

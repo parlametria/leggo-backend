@@ -1,0 +1,29 @@
+upstream django_server {
+    server unix:/sockets/app.sock;
+}
+
+server {
+    server_name httpapi;
+    listen      80 default_server;
+    access_log  off;
+    error_log off;
+
+
+    location /static {
+        alias /app_static;
+        expires 30d;
+        add_header Pragma public;
+        add_header Cache-Control "public, must-revalidate, proxy-revalidate";
+    }
+
+    location / {
+      uwsgi_pass  django_server;
+      include     /project/deploy/uwsgi_params;
+
+      proxy_redirect     off;
+      proxy_set_header   Host $host;
+      proxy_set_header   X-Real-IP $remote_addr;
+      proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header   X-Forwarded-Host $server_name;
+    }
+}
