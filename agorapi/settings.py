@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,7 +26,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'segredo secreto')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') not in ['False', 'false', 'FALSE']
 
-ALLOWED_HOSTS = ['web', '0.0.0.0', 'localhost', '127.0.0.1', '150.165.85.25', 'api', 'agorapi', 'httpapi', '*']
+ALLOWED_HOSTS = [
+    'web', '0.0.0.0', 'localhost', '127.0.0.1', '150.165.85.25', 'api',
+    'agorapi', 'httpapi', '*'
+]
 
 
 # Application definition
@@ -124,10 +128,17 @@ USE_L10N = True
 USE_TZ = True
 
 
+# Paths
+PROJECT_APP_PATH = Path(__file__).resolve().parent
+PROJECT_APP = str(PROJECT_APP_PATH.stem)
+PROJECT_ROOT = BASE_DIR = PROJECT_APP_PATH.parent
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = PROJECT_ROOT / STATIC_URL.strip("/")
+
 
 REST_FRAMEWORK = {
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'

@@ -11,20 +11,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
-  httpapi:
-    image: nginx:1.15-alpine
-    container_name: httpapi
-    restart: always
-    volumes:
-      - app_static:/app_static
-      - app_sockets:/sockets
-      - ./deploy:/project/deploy
-      - ./deploy/nginx/${NGINX_CONF:-app.conf.prod}:/etc/nginx/conf.d/app.conf
-    ports:
-      - "9002:80"
-    depends_on:
-      - api
-    
   api:
     image: agoradigital/agorapi:1.1-alpine
     container_name: agorapi
@@ -40,10 +26,10 @@ services:
       - DB_PORT=${DB_PORT:-5432}
     volumes:
       - .:/agora-digital-backend
-      - app_sockets:/sockets
-      - app_static:/agora-digital-backend/static
     depends_on:
       - db
+    ports:
+      - "8000:8000"
   
   web:
     image: agoradigital/web:1.0
@@ -55,5 +41,3 @@ services:
 
 volumes:
   postgres_data:
-  app_sockets:
-  app_static:
