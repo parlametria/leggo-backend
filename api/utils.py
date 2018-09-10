@@ -6,7 +6,11 @@ from api.models import Proposicao, TramitacaoEvent
 
 def import_all_data():
     # Carrega proposições
-    props_df = pd.read_csv('data/proposicoes.csv')
+    props_df = (
+        pd.read_csv('data/proposicoes.csv', decimal=',')
+        .assign(data_apresentacao=lambda x: x.data_apresentacao.apply(
+            lambda s: s.split('T')[0]))
+    )
     props_df.casa = props_df.casa.apply(lambda r: Proposicao.casas[r])
     Proposicao.objects.bulk_create(
         Proposicao(**r[1].to_dict()) for r in props_df.iterrows())

@@ -47,6 +47,14 @@ class Proposicao(models.Model):
 
     justificativa = models.TextField(blank=True)
 
+    palavras_chave = models.TextField(blank=True)
+
+    casa_origem = models.TextField(blank=True)
+
+    autor_nome = models.TextField(blank=True)
+
+    energia = models.FloatField(null=True)
+
     class Meta:
         indexes = [
             models.Index(fields=['casa', 'id_ext']),

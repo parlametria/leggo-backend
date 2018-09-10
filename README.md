@@ -76,6 +76,11 @@ Veja em http://0.0.0.0:8000/
 
 ## Comandos úteis
 
+Gerar migrações e migrar base:
+```
+./manage.py makemigrations && ./manage.py migrate
+```
+
 Limpar base de dados:
 ```
 ./manage.py flush --no-input
