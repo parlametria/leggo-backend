@@ -23,6 +23,7 @@ class Migration(migrations.Migration):
                 ('regime_tramitacao', models.CharField(choices=[('ordinario', 'ordinario'), ('prioridade', 'prioridade'), ('urgencia', 'urgencia')], max_length=10, null=True, verbose_name='Regime de tramitação')),
                 ('forma_apreciacao', models.CharField(choices=[('conclusiva', 'conclusiva'), ('plenario', 'plenario')], max_length=10, null=True, verbose_name='Forma de Apreciação')),
                 ('ementa', models.TextField(blank=True)),
+                ('em_pauta', models.BooleanField(help_text='TRUE se a proposicao estara em pauta na semana ou FALSE caso contrario')),
                 ('justificativa', models.TextField(blank=True)),
             ],
         ),
