@@ -1,0 +1,8 @@
+**
+!requirements*
+!agorapi/*
+!api/*
+!data/*
+!manage.py
+!deploy/uwsg*
+!deploy/nginx

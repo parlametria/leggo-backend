@@ -14,7 +14,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'resumo_tramitacao', 'energia')
+            'resumo_tramitacao', 'energia', 'autor_nome')
 
 
 class Info(APIView):

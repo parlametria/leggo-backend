@@ -12,18 +12,19 @@ Rodando com docker, o serviço estará disponível em http://0.0.0.0:8000/
 
 #### Docker-compose
 Para rodar com docker-compose, é preciso clonar o repositório:
-
 ```
 git clone https://github.com/analytics-ufcg/agora-digital-backend/
 ```
 
 Após isso basta:
-
 ```
 docker-compose up 
 ```
 
 #### Dockhub
+
+**Essa seção precisa ser atualizada ou removida, uma vez que não dá para rodar mais sem o BD que o docker-compose fornece.**
+
 Com dockhub você não precisar clonar o repositório, basta apenas baixar a imagem docker:
 
 ```
@@ -43,7 +44,7 @@ Se você está desenvolvendo, é preferível que use o *docker-compose* pois gar
 Alguns comando básicos para manipulação de seus containers dockers.
 
 ### Reconstruir a imagem do zero com docker-compose up
-Caso você esteja querendo reegerar a imagem para forçando-a a pegar as atualizações novas, use:
+Caso você esteja querendo reegerar a imagem, forçando-a a pegar as atualizações novas, use:
 
 ```
 docker-compose up --build
@@ -70,9 +71,24 @@ pip install -r requirements.txt
 ./manage.py runserver
 ```
 
-## Endpoints
+### Docker Produção
 
-Veja em http://0.0.0.0:8000/
+> Atenção:
+> Estamos usando um `.dockerignore` bastante rígido (que ignora tudo menos alguns arquivos). Isso evita copiar para a imagem docker de produção arquivos desnecessários ou secretos.
+> Porém, é preciso lembrar disso e possivelmente adicionar uma nova regra nesse arquivo caso precise adicionar novos arquivos na imagem.
+
+Criar um arquivo `deploy/env` com:
+```
+SECRET_KEY=umasenhasecreta
+DEBUG=False
+```
+E rodar:
+```
+docker-compose -f docker-compose.yml -f deploy/prod.yml up
+```
+(substituir `up` por `build` caso seja necessário gerar a imagem)
+
+Acessar em http://localhost:9002/
 
 ## Comandos úteis
 

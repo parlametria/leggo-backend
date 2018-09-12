@@ -1,59 +1,15 @@
+# Compose used as base for dev and prod
+
 version: '3'
 
 services:    
+
   db:
     image: postgres:10.5-alpine
     container_name: dbapi
-    environment:
-      - POSTGRES_DB=${DB_NAME:-postgres}
-      - POSTGRES_USER=${DB_USER:-postgres}
-      - POSTGRES_PASSWORD=${DB_PASS:-agoradigital}
+    env_file: .env.development
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 
-  httpapi:
-    image: nginx:1.15-alpine
-    container_name: httpapi
-    restart: always
-    volumes:
-      - app_static:/app_static
-      - app_sockets:/sockets
-      - ./deploy:/project/deploy
-      - ./deploy/nginx/${NGINX_CONF:-app.conf.prod}:/etc/nginx/conf.d/app.conf
-    ports:
-      - "9002:80"
-    depends_on:
-      - api
-    
-  api:
-    image: agoradigital/agorapi:1.1-alpine
-    container_name: agorapi
-    environment:
-      - DEBUG=${DEBUG:-True}  # Default to True
-      - IS_PRODUCTION=${IS_PRODUCTION}  # Default to empty
-      - CONSOLE_LOG_LEVEL=${CONSOLE_LOG_LEVEL:-DEBUG}  # Default to DEBUG
-      - SECRET_KEY=${SECRET_KEY}
-      - DB_NAME=${DB_NAME:-postgres}
-      - DB_USER=${DB_USER:-postgres}
-      - DB_PASS=${DB_PASS:-agoradigital}
-      - DB_HOST=${DB_HOST:-db}
-      - DB_PORT=${DB_PORT:-5432}
-    volumes:
-      - .:/agora-digital-backend
-      - app_sockets:/sockets
-      - app_static:/agora-digital-backend/static
-    depends_on:
-      - db
-  
-  web:
-    image: agoradigital/web:1.0
-    container_name: agoraweb
-    environment:
-      - VUE_APP_API_URL=${API_URL:-http://localhost:8000}
-    ports:
-      - "9001:80"
-
 volumes:
   postgres_data:
-  app_sockets:
-  app_static:

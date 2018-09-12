@@ -1,0 +1,22 @@
+# Compose used for development
+# This file is needed because volumes are appended on override.
+# So prod would also have dev's volumes, what should not happen.
+
+version: '3'
+
+services:
+
+  api:
+    build:
+      context: .
+    image: agoradigital/agorapi-dev
+    container_name: agorapi
+    env_file: .env.development
+    environment:
+      - DEBUG=True
+    volumes:
+      - .:/agora-digital-backend
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
