@@ -21,6 +21,11 @@ Após isso basta:
 docker-compose up 
 ```
 
+E depois para carregar os dados:
+```
+docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data'
+```
+
 #### Dockhub
 
 **Essa seção precisa ser atualizada ou removida, uma vez que não dá para rodar mais sem o BD que o docker-compose fornece.**
