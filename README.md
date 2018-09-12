@@ -23,7 +23,7 @@ docker-compose up
 
 E depois para carregar os dados:
 ```
-docker exec -it "agorapi" bash -c './manage.py flush --no-input; ./manage.py import_data'
+docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data'
 ```
 
 #### Dockhub
