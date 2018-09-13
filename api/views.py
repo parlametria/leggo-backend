@@ -12,7 +12,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Proposicao
         fields = (
-            'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
+            'id', 'id_ext', 'casa', 'apelido', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta')
 

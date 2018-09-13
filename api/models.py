@@ -22,6 +22,9 @@ class Proposicao(models.Model):
         'Número',
         help_text='Número da proposição naquele ano e casa.')
 
+    apelido = models.CharField('Apelido da proposição.', max_length=60,
+                                help_text='Apelido dado para proposição.', null=True)
+
     sigla_tipo = models.CharField(
         'Sigla do Tipo', max_length=3,
         help_text='Sigla do tipo da proposição (PL, PLS etc)')
