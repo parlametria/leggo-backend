@@ -55,7 +55,7 @@ class Proposicao(models.Model):
 
     energia = models.FloatField(null=True)
 
-    em_pauta = models.BooleanField(help_text='TRUE se a proposicao estara em pauta na semana ou FALSE caso contrario')
+    em_pauta = models.NullBooleanField(help_text='TRUE se a proposicao estara em pauta na semana ou FALSE caso contrario')
 
     class Meta:
         indexes = [
