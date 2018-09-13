@@ -16,11 +16,10 @@ pls_ids_filepath = args[1]
 tmp_csvs_folderpath = args[2]
 
 devtools::install_github('analytics-ufcg/agora-digital', force=TRUE)
-#devtools::install_github('analytics-ufcg/agora-digital@384-adequa-codigo-para-normalizadas')
 
 all_pls <- readr::read_csv(pls_ids_filepath)
 
-process_pl <- function(id,casa, apelido) {
+process_pl <- function(id, casa, apelido) {
   print(paste("Processando id",id,"da casa",casa))
   prop <- agoradigital::fetch_proposicao(id,casa, apelido,TRUE)
   tram <- agoradigital::fetch_tramitacao(id,casa,TRUE)
@@ -36,10 +35,9 @@ process_pl <- function(id,casa, apelido) {
                   fases_eventos = proc_tram)
 }
 
-res <- purrr::map2(all_pls$id, all_pls$casa, all_pls$apelido, ~ process_pl(.x, .y))
+res <- purrr::pmap(list(all_pls$id, all_pls$casa, all_pls$apelido), function(x, y, z) process_pl(x, y, z))
 proposicoes <- purrr::map_df(res, ~ .$proposicao)
 tramitacoes <- purrr::map_df(res, ~ .$fases_eventos)
-
 readr::write_csv(proposicoes,paste0(tmp_csvs_folderpath,'/proposicoes.csv'))
 readr::write_csv(tramitacoes,paste0(tmp_csvs_folderpath,'/trams.csv'))
 
