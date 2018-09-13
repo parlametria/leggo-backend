@@ -57,6 +57,12 @@ class Proposicao(models.Model):
 
     em_pauta = models.NullBooleanField(help_text='TRUE se a proposicao estara em pauta na semana ou FALSE caso contrario')
 
+    apelido = models.CharField('Apelido da proposição.', max_length=60,
+                                help_text='Apelido dado para proposição.', null=True)
+    
+    tema = models.TextField('Tema da proposição.', max_length=40,
+                            help_text='Podendo ser entre Meio Ambiente e agenda nacional.', null=True)
+
     class Meta:
         indexes = [
             models.Index(fields=['casa', 'id_ext']),
