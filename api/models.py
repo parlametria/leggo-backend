@@ -57,6 +57,8 @@ class Proposicao(models.Model):
 
     em_pauta = models.NullBooleanField(help_text='TRUE se a proposicao estara em pauta na semana ou FALSE caso contrario')
 
+    tema = models.TextField(blank=True)
+
     class Meta:
         indexes = [
             models.Index(fields=['casa', 'id_ext']),
