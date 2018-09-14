@@ -15,14 +15,13 @@ if (length(args) < MIN_NUM_ARGS) {
 pls_ids_filepath = args[1]
 tmp_csvs_folderpath = args[2]
 
-devtools::install_github('analytics-ufcg/agora-digital@384-adequa-codigo-para-normalizadas', force=TRUE)
-#devtools::install_github('analytics-ufcg/agora-digital@384-adequa-codigo-para-normalizadas')
+devtools::install_github('analytics-ufcg/agora-digital', force=TRUE)
 
 all_pls <- readr::read_csv(pls_ids_filepath)
 
-process_pl <- function(id,casa) {
+process_pl <- function(id, casa, tema, apelido) {
   print(paste("Processando id",id,"da casa",casa))
-  prop <- agoradigital::fetch_proposicao(id,casa,TRUE)
+  prop <- agoradigital::fetch_proposicao(id, casa, apelido, tema, TRUE)
   tram <- agoradigital::fetch_tramitacao(id,casa,TRUE)
   proc_tram <- agoradigital::process_proposicao(prop,tram,casa)%>%
     mutate(data_hora = as.POSIXct(data_hora))
@@ -36,9 +35,18 @@ process_pl <- function(id,casa) {
                   fases_eventos = proc_tram)
 }
 
-res <- purrr::map2(all_pls$id, all_pls$casa, ~ process_pl(.x, .y))
+res <- purrr::pmap(list(all_pls$id, all_pls$casa, all_pls$apelido, all_pls$tema), function(x, y, z, w) process_pl(x, y, z, w))
 proposicoes <- purrr::map_df(res, ~ .$proposicao)
 tramitacoes <- purrr::map_df(res, ~ .$fases_eventos)
+proposicoes$ano <- NULL
+
+names(proposicoes) <- c("id_ext", "casa", "sigla_tipo", "numero", "data_apresentacao", "ementa", "palavras_chave",
+            "casa_origem", "autor_nome", "tema", "apelido", "regime_tramitacao", "forma_apreciacao", 
+            "em_pauta", "energia")
+
+names(tramitacoes) <- c("id_ext","casa","data","sequencia","texto_tramitacao","sigla_local",
+  "id_situacao","descricao_situacao","fase","situacao_descricao_situacao",
+  "evento","data_audiencia","local","global")
 
 readr::write_csv(proposicoes,paste0(tmp_csvs_folderpath,'/proposicoes.csv'))
 readr::write_csv(tramitacoes,paste0(tmp_csvs_folderpath,'/trams.csv'))
