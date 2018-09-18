@@ -1,0 +1,64 @@
+image: docker:stable
+services:
+  - docker:dind
+
+stages:
+  - build
+  - test
+  - release
+  - deploy
+
+variables:
+  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: overlay2
+  # CONTAINER_TEST_IMAGE: registry.example.com/my-group/my-project/my-image:$CI_COMMIT_REF_SLUG
+  CONTAINER_TEST_IMAGE: $CI_PROJECT_NAME:dev
+  # CONTAINER_RELEASE_IMAGE: registry.example.com/my-group/my-project/my-image:latest
+  CONTAINER_RELEASE_IMAGE: $CI_PROJECT_NAME
+  # IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+build:
+  stage: build
+  script:
+    - docker build --pull -t $CONTAINER_TEST_IMAGE .
+    - docker push $CONTAINER_TEST_IMAGE
+
+staticcheck:
+  stage: test
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker run $CONTAINER_TEST_IMAGE 'pip install -U flake8 && flake8 .'
+
+tests:
+  stage: test
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker run $CONTAINER_TEST_IMAGE '/manage.py test'
+
+# test2:
+#   stage: test
+#   before_script:
+#     - pip install -Ur requirements.txt
+#     - python manage.py migrate
+#     - python manage.py collectstatic --noinput
+#   script:
+#     - python manage.py test
+
+release-image:
+  stage: release
+  script:
+    - docker pull $CONTAINER_TEST_IMAGE
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
+  # only:
+  #   - master
+
+# deploy:
+#   stage: deploy
+#   script:
+#     - ./deploy.sh
+#   only:
+#     - master
