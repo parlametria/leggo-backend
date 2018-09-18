@@ -12,14 +12,16 @@ variables:
   DOCKER_HOST: tcp://docker:2375
   DOCKER_DRIVER: overlay2
   # CONTAINER_TEST_IMAGE: registry.example.com/my-group/my-project/my-image:$CI_COMMIT_REF_SLUG
-  # CONTAINER_TEST_IMAGE: $CI_PROJECT_NAME:dev
-  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+  CONTAINER_TEST_IMAGE: $CI_PROJECT_NAME:dev
+  # CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   # CONTAINER_RELEASE_IMAGE: registry.example.com/my-group/my-project/my-image:latest
-  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG:dev
+  CONTAINER_RELEASE_IMAGE: $CI_PROJECT_NAME:dev
+  # CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG:dev
   # IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
 
 before_script:
-  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  # - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - docker login -u agorabot -p $DOCKER_HUB_PASSWORD
 
 build:
   stage: build
