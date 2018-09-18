@@ -8,14 +8,14 @@ services:
 
   api:
     build:
-      context: .
+      context: ${BACKEND_PATH:-.}
     image: agoradigital/agorapi-dev
     container_name: agorapi
-    env_file: .env.development
+    env_file: ${BACKEND_PATH:-.}/.env.development
     environment:
       - DEBUG=True
     volumes:
-      - .:/agora-digital-backend
+      - ${BACKEND_PATH:-.}:/agora-digital-backend
     depends_on:
       - db
     ports:

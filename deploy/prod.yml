@@ -19,25 +19,19 @@ services:
 
   api:
     build:
-      context: .
-      dockerfile: deploy/Dockerfile
+      context: ${BACKEND_PATH:-.}
+      dockerfile: ${BACKEND_PATH:-.}/deploy/Dockerfile
     image: agoradigital/agorapi
     container_name: agorapi
     env_file:
-      - .env.development
-      - deploy/env
+      - ${BACKEND_PATH:-.}/.env.development
+      - ${BACKEND_PATH:-.}/deploy/env
     volumes:
       - app_sockets:/sockets
       - app_static:/agora-digital-backend/static
       - app_deploy_config:/agora-digital-backend/deploy/nginx:ro
     depends_on:
       - db
-
-  # web:
-  #   image: agoradigital/web:1.0
-  #   container_name: agoraweb
-  #   ports:
-  #     - "9001:80"
 
 volumes:
   postgres_data:
