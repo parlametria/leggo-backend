@@ -15,7 +15,6 @@ variables:
   # CONTAINER_RELEASE_IMAGE: $CI_PROJECT_NAME
   CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:gitlab-ci-dev
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:gitlab-ci
-  # API_IMAGE_TAG: $CONTAINER_TEST_IMAGE
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
@@ -26,6 +25,7 @@ build:
   stage: build
   script:
     # - docker build --pull -t $CONTAINER_TEST_IMAGE .
+    - export API_IMAGE_TAG=$CONTAINER_TEST_IMAGE
     - docker-compose -f docker-compose.yml -f deploy/prod.yml build
     - docker images
     - docker push $CONTAINER_TEST_IMAGE
