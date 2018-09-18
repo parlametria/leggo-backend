@@ -24,6 +24,7 @@ build:
   stage: build
   script:
     # - docker build --pull -t $CONTAINER_TEST_IMAGE .
+    - docker-compose --version
     - docker-compose -f docker-compose.yml -f deploy/prod.yml build --build-arg BUILT_IMAGE_TAG=$CONTAINER_TEST_IMAGE
     - docker push $CONTAINER_TEST_IMAGE
 
