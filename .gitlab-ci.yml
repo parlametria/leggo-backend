@@ -36,7 +36,7 @@ tests:
   stage: test
   script:
     - docker pull $CONTAINER_TEST_IMAGE
-    - docker run $CONTAINER_TEST_IMAGE sh -c './manage.py test'
+    - docker run $CONTAINER_TEST_IMAGE sh -c 'ls && ./manage.py test'
 
 # test2:
 #   stage: test
