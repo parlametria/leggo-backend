@@ -21,7 +21,7 @@ services:
     build:
       context: ${BACKEND_PATH:-.}
       dockerfile: ${BACKEND_PATH:-.}/deploy/Dockerfile
-    image: agoradigital/agorapi
+    image: ${BUILT_IMAGE_TAG:-agoradigital/agorapi}
     container_name: agorapi
     env_file:
       - ${BACKEND_PATH:-.}/.env.development

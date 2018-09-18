@@ -13,8 +13,8 @@ variables:
   # DOCKER_DRIVER: overlay2
   # CONTAINER_TEST_IMAGE: $CI_PROJECT_NAME:dev
   # CONTAINER_RELEASE_IMAGE: $CI_PROJECT_NAME
-  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:dev
-  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE
+  CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:gitlab-ci-dev
+  CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:gitlab-ci
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
@@ -23,7 +23,8 @@ before_script:
 build:
   stage: build
   script:
-    - docker build --pull -t $CONTAINER_TEST_IMAGE .
+    # - docker build --pull -t $CONTAINER_TEST_IMAGE .
+    - docker-compose -f docker-compose.yml -f deploy/prod.yml build --build-arg BUILT_IMAGE_TAG=$CONTAINER_TEST_IMAGE
     - docker push $CONTAINER_TEST_IMAGE
 
 staticcheck:
