@@ -26,6 +26,7 @@ build:
   script:
     # - docker build --pull -t $CONTAINER_TEST_IMAGE .
     - docker-compose -f docker-compose.yml -f deploy/prod.yml build --build-arg BUILT_IMAGE_TAG=$CONTAINER_TEST_IMAGE
+    - docker images
     - docker push $CONTAINER_TEST_IMAGE
 
 staticcheck:
