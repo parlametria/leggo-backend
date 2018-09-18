@@ -18,13 +18,13 @@ variables:
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - echo "SECRET_KEY=visivel\nDEBUG=False" > deploy/env
   # - docker login -u agorabot -p $DOCKER_HUB_PASSWORD
 
 build:
   stage: build
   script:
     # - docker build --pull -t $CONTAINER_TEST_IMAGE .
-    - docker-compose --version
     - docker-compose -f docker-compose.yml -f deploy/prod.yml build --build-arg BUILT_IMAGE_TAG=$CONTAINER_TEST_IMAGE
     - docker push $CONTAINER_TEST_IMAGE
 
