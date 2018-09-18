@@ -1,6 +1,6 @@
 image: docker:stable
-services:
-  - docker:dind
+# services:
+#   - docker:dind
 
 stages:
   - build
