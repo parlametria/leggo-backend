@@ -31,13 +31,13 @@ staticcheck:
   stage: test
   script:
     - docker pull $CONTAINER_TEST_IMAGE
-    - docker run $CONTAINER_TEST_IMAGE 'pip install -U flake8 && flake8 .'
+    - docker run $CONTAINER_TEST_IMAGE sh -c 'pip install -U flake8 && flake8 .'
 
 tests:
   stage: test
   script:
     - docker pull $CONTAINER_TEST_IMAGE
-    - docker run $CONTAINER_TEST_IMAGE '/manage.py test'
+    - docker run $CONTAINER_TEST_IMAGE sh -c '/manage.py test'
 
 # test2:
 #   stage: test
