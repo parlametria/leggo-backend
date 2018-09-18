@@ -18,16 +18,14 @@ variables:
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - export API_IMAGE_TAG=$CONTAINER_TEST_IMAGE
   - echo "SECRET_KEY=visivel\nDEBUG=False" > deploy/env
   # - docker login -u agorabot -p $DOCKER_HUB_PASSWORD
 
 build:
   stage: build
   script:
-    # - docker build --pull -t $CONTAINER_TEST_IMAGE .
-    - export API_IMAGE_TAG=$CONTAINER_TEST_IMAGE
     - docker-compose -f docker-compose.yml -f deploy/prod.yml build
-    - docker images
     - docker push $CONTAINER_TEST_IMAGE
 
 staticcheck:
@@ -40,7 +38,8 @@ tests:
   stage: test
   script:
     - docker pull $CONTAINER_TEST_IMAGE
-    - docker run $CONTAINER_TEST_IMAGE sh -c 'ls && ./manage.py test'
+    # - docker run $CONTAINER_TEST_IMAGE sh -c 'ls && ./manage.py test'
+    - docker-compose -f docker-compose.yml -f deploy/prod.yml run sh -c 'ls && ./manage.py test'
 
 # test2:
 #   stage: test
