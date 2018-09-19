@@ -40,6 +40,7 @@ tests:
     - docker pull $CONTAINER_TEST_IMAGE
     # - docker run $CONTAINER_TEST_IMAGE sh -c 'ls && ./manage.py test'
     - docker-compose -f docker-compose.yml -f deploy/prod.yml run api sh -c './manage.py test_all'
+  coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
 
 # test2:
 #   stage: test
