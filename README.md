@@ -1,5 +1,10 @@
+[![pipeline status](https://gitlab.com/analytics-ufcg/back-test/badges/master/pipeline.svg)](https://gitlab.com/analytics-ufcg/back-test/commits/master)
+[![coverage report](https://gitlab.com/analytics-ufcg/back-test/badges/master/coverage.svg)](https://gitlab.com/analytics-ufcg/back-test/commits/master)
+
+[![pipeline status](/badges/master/pipeline.svg)](/commits/master)
+[![pipeline status](badges/master/pipeline.svg)](commits/master)
+
 # Ágora Digital backend
-[![Build Status](https://travis-ci.com/analytics-ufcg/agora-digital-backend.svg?branch=master)](https://travis-ci.com/analytics-ufcg/agora-digital-backend)
 
 API para consulta de propostas de leis no senado e na câmara
 
