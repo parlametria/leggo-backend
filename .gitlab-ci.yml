@@ -28,18 +28,18 @@ build:
     - docker-compose -f docker-compose.yml -f deploy/prod.yml build
     - docker push $CONTAINER_TEST_IMAGE
 
-staticcheck:
-  stage: test
-  script:
-    - docker pull $CONTAINER_TEST_IMAGE
-    - docker run $CONTAINER_TEST_IMAGE sh -c 'pip install -U flake8 && flake8 .'
+# staticcheck:
+#   stage: test
+#   script:
+#     - docker pull $CONTAINER_TEST_IMAGE
+#     - docker run $CONTAINER_TEST_IMAGE sh -c 'pip install -U flake8 && flake8 .'
 
 tests:
   stage: test
   script:
     - docker pull $CONTAINER_TEST_IMAGE
     # - docker run $CONTAINER_TEST_IMAGE sh -c 'ls && ./manage.py test'
-    - docker-compose -f docker-compose.yml -f deploy/prod.yml run api sh -c './manage.py test'
+    - docker-compose -f docker-compose.yml -f deploy/prod.yml run api sh -c './manage.py test_all'
 
 # test2:
 #   stage: test
