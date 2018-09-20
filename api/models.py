@@ -126,3 +126,25 @@ class TramitacaoEvent(models.Model):
 
     class Meta:
         ordering = ('sequencia',)
+
+
+class TramitacaoEvent(models.Model):
+
+    id_ext = models.IntegerField(
+        'ID Externo',
+        help_text='Id externo do sistema da casa.')
+
+    casas = Choices('camara senado')
+    casa = models.CharField(
+        max_length=6, choices=casas.items(),
+        help_text='Casa desta proposição.')
+
+    fase_global = models.TextField(blank=True)
+
+    data_inicio = models.DateField('Data de início')
+
+    data_fim = models.DateField('Data final')
+
+    class Meta:
+        ordering = ('-data_inicio',)
+
