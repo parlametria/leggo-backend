@@ -60,9 +60,9 @@ release-image:
   # only:
   #   - master
 
-# deploy:
-#   stage: deploy
-#   script:
-#     - ./deploy.sh
-#   only:
-#     - master
+deploy:
+  stage: deploy
+  script:
+    - curl --fail -XPOST "$DEPLOY_WEBHOOK"
+  # only:
+  #   - master
