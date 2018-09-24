@@ -126,3 +126,16 @@ class TramitacaoEvent(models.Model):
 
     class Meta:
         ordering = ('sequencia',)
+
+class EnergiaRecentePeriodo(models.Model):
+    periodo = models.DateField('Data')
+
+    energia_periodo = models.IntegerField()
+
+    energia_recente = models.FloatField()
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name='energia_recente_periodo')
+
+    class Meta:
+        ordering = ('periodo',)

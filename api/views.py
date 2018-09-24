@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import Proposicao  # , TramitacaoEvent
+from api.models import Proposicao, EnergiaRecentePeriodo   # , TramitacaoEvent
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -15,6 +15,11 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema')
+
+class EnergiaRecentePeriodoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EnergiaRecentePeriodo
+        fields = ('id_ext', 'casa', 'periodo', 'energia_periodo', 'energia_recente')
 
 
 class Info(APIView):
@@ -35,6 +40,17 @@ class ProposicaoList(generics.ListAPIView):
     # )
     serializer_class = ProposicaoSerializer
 
+class EnergiaRecentePeriodoList(generics.ListAPIView):
+    queryset = Proposicao.objects.prefetch_related('energia_recente_periodo')
+    # queryset = Proposicao.objects.prefetch_related(
+    #     Prefetch(
+    #         'tramitacao',
+    #         TramitacaoEvent.objects.order_by().distinct('proposicao', 'sigla_local')
+    #     )
+    # )
+    serializer_class = EnergiaRecentePeriodoSerializer
+
+
 
 class ProposicaoDetail(APIView):
     '''
@@ -53,6 +69,24 @@ class ProposicaoDetail(APIView):
     def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
         return Response(ProposicaoSerializer(prop).data)
+
+# class EnergiaRecentePeriodoDetail(APIView):
+#     '''
+#     Detalha energia recente de um período.
+#     '''
+
+#     @swagger_auto_schema(
+#         manual_parameters=[
+#             openapi.Parameter(
+#                 'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+#             openapi.Parameter(
+#                 'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+#                 type=openapi.TYPE_INTEGER),
+#         ]
+#     )
+#     def get(self, request, casa, id_ext, format=None):
+#         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
+#         return Response(ProposicaoSerializer(prop).data)
 
 
 # Talvez valha a pena usar ViewSets ao invés de APIView, mas não consegui

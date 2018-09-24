@@ -1,7 +1,7 @@
 # import os
 # from glob import glob
 import pandas as pd
-from api.models import Proposicao, TramitacaoEvent
+from api.models import Proposicao, TramitacaoEvent, EnergiaRecentePeriodo
 
 
 def import_all_data():
@@ -33,6 +33,22 @@ def import_all_data():
         )
         TramitacaoEvent.objects.bulk_create(
             TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
+
+    # Carrega históricos de energia
+    grouped = pd.read_csv('data/hists_energia.csv').groupby(['casa', 'id_ext'])
+    for group_index in grouped.groups:
+        prop_id = {
+            'casa': group_index[0],
+            'id_ext': group_index[1],
+        }
+        group_df = (
+            grouped
+            .get_group(group_index)
+            [['periodo', 'energia_periodo', 'energia_recente']]
+            .assign(proposicao=Proposicao.objects.get(**prop_id))
+        )
+        EnergiaRecentePeriodo.objects.bulk_create(
+            EnergiaRecentePeriodo(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 # # prop_data_files = '../../agora-digital/data/*/*proposicao*.csv'
