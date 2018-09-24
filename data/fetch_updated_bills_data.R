@@ -27,8 +27,9 @@ process_pl <- function(id, casa, tema, apelido) {
     dplyr::mutate(data_hora = as.POSIXct(data_hora))
   status <- agoradigital::extract_status_tramitacao(tram)
   historico_energia <- agoradigital::get_historico_energia_recente(proc_tram) %>%
-    dplyr::mutate(prop_id = prop$prop_id) %>%
-    dplyr::select(prop_id, periodo, energia_periodo, energia_recente)
+    dplyr::mutate(id_ext = prop$prop_id,
+                  casa = prop$casa) %>%
+    dplyr::select(id_ext, casa, periodo, energia_periodo, energia_recente)
   energia_value <- historico_energia[1,]$energia_recente
   
   extended_prop <- merge(prop,status,by="prop_id") %>%
