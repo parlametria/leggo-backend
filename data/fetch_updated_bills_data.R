@@ -24,21 +24,28 @@ process_pl <- function(id, casa, tema, apelido) {
   prop <- agoradigital::fetch_proposicao(id, casa, apelido, tema, TRUE)
   tram <- agoradigital::fetch_tramitacao(id,casa,TRUE)
   proc_tram <- agoradigital::process_proposicao(prop,tram,casa)%>%
-    mutate(data_hora = as.POSIXct(data_hora))
+    dplyr::mutate(data_hora = as.POSIXct(data_hora))
   status <- agoradigital::extract_status_tramitacao(tram)
-  energia_value <- agoradigital::get_energia(proc_tram)
+  historico_energia <- agoradigital::get_historico_energia_recente(proc_tram) %>%
+    dplyr::mutate(id_ext = prop$prop_id,
+                  casa = prop$casa) %>%
+    dplyr::select(id_ext, casa, periodo, energia_periodo, energia_recente)
+  energia_value <- historico_energia[1,]$energia_recente
   
   extended_prop <- merge(prop,status,by="prop_id") %>%
     dplyr::mutate(energia = energia_value)
   
   pl_data <- list(proposicao = extended_prop, 
-                  fases_eventos = proc_tram)
+                  fases_eventos = proc_tram,
+                  hist_energia = historico_energia)
 }
 
 res <- purrr::pmap(list(all_pls$id, all_pls$casa, all_pls$apelido, all_pls$tema), function(x, y, z, w) process_pl(x, y, z, w))
 proposicoes <- purrr::map_df(res, ~ .$proposicao)
 tramitacoes <- purrr::map_df(res, ~ .$fases_eventos)
-proposicoes$ano <- NULL
+hists_energia <- purrr::map_df(res, ~ .$hist_energia)
+proposicoes <- proposicoes %>%
+  select(-ano)
 
 names(proposicoes) <- c("id_ext", "casa", "sigla_tipo", "numero", "data_apresentacao", "ementa", "palavras_chave",
             "casa_origem", "autor_nome", "tema", "apelido", "regime_tramitacao", "forma_apreciacao", 
@@ -50,4 +57,5 @@ names(tramitacoes) <- c("id_ext","casa","data","sequencia","texto_tramitacao","s
 
 readr::write_csv(proposicoes,paste0(tmp_csvs_folderpath,'/proposicoes.csv'))
 readr::write_csv(tramitacoes,paste0(tmp_csvs_folderpath,'/trams.csv'))
+readr::write_csv(hists_energia,paste0(tmp_csvs_folderpath,'/hists_energia.csv'))
 
