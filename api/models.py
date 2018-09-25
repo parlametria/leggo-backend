@@ -1,5 +1,7 @@
 from munch import Munch
 from django.db import models
+from django.forms.models import model_to_dict
+import datetime
 
 urls = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -13,7 +15,6 @@ class Choices(Munch):
 
 
 class Proposicao(models.Model):
-
     id_ext = models.IntegerField(
         'ID Externo',
         help_text='Id externo do sistema da casa.')
@@ -100,15 +101,17 @@ class Proposicao(models.Model):
                 })
         return events
         
-    @property
-    def energias(self):
+    def energia_recente(self, num_dias=90):
         energias = []
+        now = datetime.datetime.now()
         for energia in self.energia_recente_periodo.all():
-            energias.append({
-                'periodo': energia.periodo,
-                'energia_periodo': energia.energia_periodo,
-                'energia_recente': energia.energia_recente
-            })
+            if((not num_dias) or (now.date() - energia.periodo).days <= num_dias):
+                energias.append({
+                    'periodo': energia.periodo,
+                    'energia_periodo': energia.energia_periodo,
+                    'energia_recente': energia.energia_recente
+                })
+                       
         return energias
 
 class TramitacaoEvent(models.Model):

@@ -15,7 +15,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 'energias')
+            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 
+            'energia_recente')
 
 
 class Info(APIView):
@@ -37,23 +38,6 @@ class ProposicaoList(generics.ListAPIView):
     # )
     serializer_class = ProposicaoSerializer
 
-class EnergiaProposicao(APIView):
-    '''
-    Dados de energia da proposição.
-    '''
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-            openapi.Parameter(
-                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
-                type=openapi.TYPE_INTEGER),
-        ]
-    )
-    def get(self, request, casa, id_ext, format=None):
-        prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
-        return Response(prop.energias)
-
 class EnergiaProposicaoPorPeriodo(APIView):
     '''
     Dados de energia da proposição por periodo.
@@ -72,34 +56,7 @@ class EnergiaProposicaoPorPeriodo(APIView):
     )
     def get(self, request, casa, id_ext, periodo, format=None):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
-        energias = []
-        now = datetime.datetime.now()
-        for energia in prop.energias:
-            if((now.date() - energia['periodo']).days <= int(periodo)):
-                energias.append({
-                    'periodo': energia['periodo'],
-                    'energia_periodo': energia['energia_periodo'],
-                    'energia_recente': energia['energia_recente']
-                })
-
-        return Response(energias)
-
-class EnergiaRecenteProposicao(APIView):
-    '''
-    Dados de energia da proposição.
-    '''
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-            openapi.Parameter(
-                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
-                type=openapi.TYPE_INTEGER),
-        ]
-    )
-    def get(self, request, casa, id_ext, format=None):
-        prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
-        return Response(prop.energias)
+        return Response(prop.energia_recente(int(periodo)))
 
 class ProposicaoDetail(APIView):
     '''
@@ -118,24 +75,6 @@ class ProposicaoDetail(APIView):
     def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
         return Response(ProposicaoSerializer(prop).data)
-
-# class EnergiaRecentePeriodoDetail(APIView):
-#     '''
-#     Detalha energia recente de um período.
-#     '''
-
-#     @swagger_auto_schema(
-#         manual_parameters=[
-#             openapi.Parameter(
-#                 'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-#             openapi.Parameter(
-#                 'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
-#                 type=openapi.TYPE_INTEGER),
-#         ]
-#     )
-#     def get(self, request, casa, id_ext, format=None):
-#         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
-#         return Response(ProposicaoSerializer(prop).data)
 
 
 # Talvez valha a pena usar ViewSets ao invés de APIView, mas não consegui
