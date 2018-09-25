@@ -12,5 +12,5 @@ urlpatterns = [
         views.ProposicaoDetail.as_view()),
     url(r'^proposicoes/?$', views.ProposicaoList.as_view()),
     url(r'^energia_recente/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.ProposicaoDetail.as_view()),
+        views.EnergiaProposicao.as_view()),
 ]

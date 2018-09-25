@@ -36,7 +36,22 @@ class ProposicaoList(generics.ListAPIView):
     # )
     serializer_class = ProposicaoSerializer
 
-
+class EnergiaProposicao(APIView):
+    '''
+    Detalha proposição.
+    '''
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+        ]
+    )
+    def get(self, request, casa, id_ext, format=None):
+        prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
+        return Response(prop.energias)
 
 class ProposicaoDetail(APIView):
     '''
