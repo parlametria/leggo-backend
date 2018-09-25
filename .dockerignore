@@ -6,4 +6,5 @@
 !manage.py
 !deploy/uwsg*
 !deploy/nginx
+!deploy/run.sh
 !setup.cfg
