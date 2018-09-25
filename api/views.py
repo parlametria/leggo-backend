@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import Proposicao, EnergiaRecentePeriodo   # , TramitacaoEvent
+import datetime
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -38,7 +39,54 @@ class ProposicaoList(generics.ListAPIView):
 
 class EnergiaProposicao(APIView):
     '''
-    Detalha proposição.
+    Dados de energia da proposição.
+    '''
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+        ]
+    )
+    def get(self, request, casa, id_ext, format=None):
+        prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
+        return Response(prop.energias)
+
+class EnergiaProposicaoPorPeriodo(APIView):
+    '''
+    Dados de energia da proposição por periodo.
+    '''
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+            openapi.Parameter(
+                'periodo', openapi.IN_PATH, 'periodo de dias pra recuperar energia',
+                type=openapi.TYPE_INTEGER),
+        ]
+    )
+    def get(self, request, casa, id_ext, periodo, format=None):
+        prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
+        energias = []
+        now = datetime.datetime.now()
+        for energia in prop.energias:
+            if((now.date() - energia['periodo']).days <= int(periodo)):
+                energias.append({
+                    'periodo': energia['periodo'],
+                    'energia_periodo': energia['energia_periodo'],
+                    'energia_recente': energia['energia_recente']
+                })
+
+        return Response(energias)
+
+class EnergiaRecenteProposicao(APIView):
+    '''
+    Dados de energia da proposição.
     '''
     @swagger_auto_schema(
         manual_parameters=[

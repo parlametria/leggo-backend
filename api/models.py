@@ -110,12 +110,6 @@ class Proposicao(models.Model):
                 'energia_recente': energia.energia_recente
             })
         return energias
-        # return [{
-        #     'data': i.data,
-        #     'nome': i.sigla_local
-        # } for i in self.tramitacao.all()]
-        # return [i[0] for i in self.tramitacao.values_list('sigla_local').distinct()]
-
 
 class TramitacaoEvent(models.Model):
 
