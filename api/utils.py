@@ -44,9 +44,11 @@ def import_all_data():
         group_df = (
             grouped
             .get_group(group_index)
+            .assign(periodo=lambda x: x.periodo.apply(lambda s: s.split('T')[0]))
             [['periodo', 'energia_periodo', 'energia_recente']]
             .assign(proposicao=Proposicao.objects.get(**prop_id))
         )
+
         EnergiaRecentePeriodo.objects.bulk_create(
             EnergiaRecentePeriodo(**r[1].to_dict()) for r in group_df.iterrows())
 

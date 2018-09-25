@@ -14,12 +14,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema')
-
-class EnergiaRecentePeriodoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = EnergiaRecentePeriodo
-        fields = ('id_ext', 'casa', 'periodo', 'energia_periodo', 'energia_recente')
+            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 'energias')
 
 
 class Info(APIView):
@@ -31,6 +26,7 @@ class Info(APIView):
 
 
 class ProposicaoList(generics.ListAPIView):
+    queryEnergia = Proposicao.objects.prefetch_related('energia_recente_periodo')
     queryset = Proposicao.objects.prefetch_related('tramitacao')
     # queryset = Proposicao.objects.prefetch_related(
     #     Prefetch(
@@ -39,16 +35,6 @@ class ProposicaoList(generics.ListAPIView):
     #     )
     # )
     serializer_class = ProposicaoSerializer
-
-class EnergiaRecentePeriodoList(generics.ListAPIView):
-    queryset = Proposicao.objects.prefetch_related('energia_recente_periodo')
-    # queryset = Proposicao.objects.prefetch_related(
-    #     Prefetch(
-    #         'tramitacao',
-    #         TramitacaoEvent.objects.order_by().distinct('proposicao', 'sigla_local')
-    #     )
-    # )
-    serializer_class = EnergiaRecentePeriodoSerializer
 
 
 

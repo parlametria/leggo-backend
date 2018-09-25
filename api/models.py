@@ -99,7 +99,17 @@ class Proposicao(models.Model):
                     'nome': event.sigla_local
                 })
         return events
-
+        
+    @property
+    def energias(self):
+        energias = []
+        for energia in self.energia_recente_periodo.all():
+            energias.append({
+                'periodo': energia.periodo,
+                'energia_periodo': energia.energia_periodo,
+                'energia_recente': energia.energia_recente
+            })
+        return energias
         # return [{
         #     'data': i.data,
         #     'nome': i.sigla_local
@@ -128,7 +138,7 @@ class TramitacaoEvent(models.Model):
         ordering = ('sequencia',)
 
 class EnergiaRecentePeriodo(models.Model):
-    periodo = models.DateField('Data')
+    periodo = models.DateField('periodo')
 
     energia_periodo = models.IntegerField()
 
