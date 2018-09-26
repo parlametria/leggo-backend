@@ -100,20 +100,6 @@ class Proposicao(models.Model):
                     'nome': event.sigla_local
                 })
         return events
-    
-    # Retorna energia recente dos últimos 'num_dias'
-    def energia_recente(self, num_dias=90):
-        energias = []
-        now = datetime.datetime.now()
-        for energia in self.energia_recente_periodo.all():
-            if((not num_dias) or (now.date() - energia.periodo).days <= num_dias):
-                energias.append({
-                    'periodo': energia.periodo,
-                    'energia_periodo': energia.energia_periodo,
-                    'energia_recente': energia.energia_recente
-                })
-                       
-        return energias
 
 class TramitacaoEvent(models.Model):
 
@@ -135,15 +121,20 @@ class TramitacaoEvent(models.Model):
     class Meta:
         ordering = ('sequencia',)
 
-class EnergiaRecentePeriodo(models.Model):
+
+class EnergiaHistorico(models.Model):
+    '''
+    Histórico de energia de uma proposição
+    '''
     periodo = models.DateField('periodo')
 
-    energia_periodo = models.IntegerField(help_text='Quantidade de eventos no período (semana)')
+    energia_periodo = models.IntegerField(help_text='Quantidade de eventos no período (semana).')
 
-    energia_recente = models.FloatField(help_text='Energia acumulada com decaimento exponencial')
+    energia_recente = models.FloatField(help_text='Energia acumulada com decaimento exponencial.')
 
     proposicao = models.ForeignKey(
-        Proposicao, on_delete=models.CASCADE, related_name='energia_recente_periodo')
+        Proposicao, on_delete=models.CASCADE, related_name='energia_historico')
 
     class Meta:
-        ordering = ('periodo',)
+        ordering = ('-periodo',)
+        get_latest_by = '-periodo'
