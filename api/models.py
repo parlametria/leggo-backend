@@ -101,8 +101,8 @@ class Proposicao(models.Model):
                 })
         return events
     
-    # Retorna energia recente dos últimos 'num_dias'
     def energia_recente(self, num_dias=90):
+        '''Retorna energia recente dos últimos 'num_dias'''
         energias = []
         now = datetime.datetime.now()
         for energia in self.energia_recente_periodo.all():
