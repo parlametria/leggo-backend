@@ -12,5 +12,5 @@ urlpatterns = [
         views.ProposicaoDetail.as_view()),
     url(r'^proposicoes/?$', views.ProposicaoList.as_view()),
     url(r'^proposicoes/(?P<id_ext>[0-9]+)/fases/?$', views.Info.as_view()),
-    url(r'^progresso/?$', views.ProgressoList.as_view())
+    url(r'^progresso/?$', views.ProposicaoList.as_view())
 ]

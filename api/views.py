@@ -14,15 +14,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema')
-
-class ProgressoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Progresso
-        fields = (
-            'id_ext', 'casa', 'fase_global', 'local', 'data_inicio', 'data_fim')
-
-
+            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema',
+            'resumo_progresso')
 
 class Info(APIView):
     '''
@@ -33,7 +26,7 @@ class Info(APIView):
 
 
 class ProposicaoList(generics.ListAPIView):
-    queryset = Proposicao.objects.prefetch_related('tramitacao')
+    queryset = Proposicao.objects.prefetch_related('tramitacao', 'progresso')
     # queryset = Proposicao.objects.prefetch_related(
     #     Prefetch(
     #         'tramitacao',
@@ -60,16 +53,6 @@ class ProposicaoDetail(APIView):
     def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
         return Response(ProposicaoSerializer(prop).data)
-
-class ProgressoList(generics.ListAPIView):
-    '''
-    Informações do progresso
-    '''
-    queryset = Progresso.objects
-    # def get(self, request, format=None):
-    #     progresso = get_object_or_404(Progresso)
-    #     return Response(ProgressoSerializer(proprogresso).data)
-    serializer_class = ProgressoSerializer
 
 
 # Talvez valha a pena usar ViewSets ao invés de APIView, mas não consegui

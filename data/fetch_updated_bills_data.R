@@ -61,15 +61,8 @@ names(tramitacoes) <- c("id_ext","casa","data","sequencia","texto_tramitacao","s
   "evento","data_audiencia","local","global")
 
 progressos <-
-  progressos %>% dplyr::select(prop_id, casa, fase_global, local, data_inicio, data_fim)
-names(progressos) <- c("id_ext", "casa", "fase_global", "local", "data_inicio", "data_fim")
-
-#progressos$data_inicio <- as.Date(progressos$data_inicio)
-#progressos$data_fim <- as.Date(progressos$data_fim)
-#progressos$data_inicio[is.na(progressos$data_inicio)] <- as.Date("0001jan1T00:00", "%Y%b%d")
-#progressos$data_fim[is.na(progressos$data_fim)] <- as.Date("0001jan1T00:00", "%Y%b%d")
-progressos$id_ext[is.na(progressos$id_ext)] <- 0
-progressos$casa[is.na(progressos$casa)] <- 'None'
+  progressos %>% dplyr::select(prop_id, casa, local_casa, fase_global, local, data_inicio, data_fim)
+names(progressos) <- c("id_ext", "casa", "local_casa", "fase_global", "local", "data_inicio", "data_fim")
 
 readr::write_csv(proposicoes,paste0(tmp_csvs_folderpath,'/proposicoes.csv'))
 readr::write_csv(tramitacoes,paste0(tmp_csvs_folderpath,'/trams.csv'))
