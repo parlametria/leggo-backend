@@ -26,24 +26,31 @@ process_pl <- function(id, casa, tema, apelido, mapeamento_df) {
   prop <- agoradigital::fetch_proposicao(id, casa, apelido, tema, TRUE)
   tram <- agoradigital::fetch_tramitacao(id,casa,TRUE)
   proc_tram <- agoradigital::process_proposicao(prop,tram,casa)%>%
-    mutate(data_hora = as.POSIXct(data_hora))
+    dplyr::mutate(data_hora = as.POSIXct(data_hora))
   status <- agoradigital::extract_status_tramitacao(tram)
-  energia_value <- agoradigital::get_energia(proc_tram)
+  historico_energia <- agoradigital::get_historico_energia_recente(proc_tram) %>%
+    dplyr::mutate(id_ext = prop$prop_id,
+                  casa = prop$casa) %>%
+    dplyr::select(id_ext, casa, periodo, energia_periodo, energia_recente)
+  energia_value <- historico_energia[1,]$energia_recente
+  
   progresso_pl <- agoradigital::get_progresso(mapeamento_df, tram, prop, casa)
   extended_prop <- merge(prop,status,by="prop_id") %>%
     dplyr::mutate(energia = energia_value)
   
   pl_data <- list(proposicao = extended_prop, 
+                  progresso = progresso_pl,
                   fases_eventos = proc_tram,
-                  progresso = progresso_pl)
+                  hist_energia = historico_energia)
 }
 
 res <- purrr::pmap(list(all_pls$id, all_pls$casa, all_pls$apelido, all_pls$tema), function(x, y, z, w, df) process_pl(x, y, z, w, mapeamento_pls_id))
 proposicoes <- purrr::map_df(res, ~ .$proposicao)
 tramitacoes <- purrr::map_df(res, ~ .$fases_eventos)
+hists_energia <- purrr::map_df(res, ~ .$hist_energia)
+proposicoes <- proposicoes %>%
+  select(-ano)
 progressos <- purrr::map_df(res, ~ .$progresso)
-
-proposicoes$ano <- NULL
 
 names(proposicoes) <- c("id_ext", "casa", "sigla_tipo", "numero", "data_apresentacao", "ementa", "palavras_chave",
             "casa_origem", "autor_nome", "tema", "apelido", "regime_tramitacao", "forma_apreciacao", 
@@ -66,6 +73,7 @@ progressos$casa[is.na(progressos$casa)] <- 'None'
 
 readr::write_csv(proposicoes,paste0(tmp_csvs_folderpath,'/proposicoes.csv'))
 readr::write_csv(tramitacoes,paste0(tmp_csvs_folderpath,'/trams.csv'))
+readr::write_csv(hists_energia,paste0(tmp_csvs_folderpath,'/hists_energia.csv'))
 readr::write_csv(progressos,paste0(tmp_csvs_folderpath,'/progressos.csv'))
 
 
