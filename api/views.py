@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import Proposicao  # , TramitacaoEvent
+from api.models import Proposicao, Progresso  # , TramitacaoEvent
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -15,6 +15,13 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema')
+
+class ProgressoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Progresso
+        fields = (
+            'id_ext', 'casa', 'fase_global', 'local', 'data_inicio', 'data_fim')
+
 
 
 class Info(APIView):
@@ -53,6 +60,16 @@ class ProposicaoDetail(APIView):
     def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
         return Response(ProposicaoSerializer(prop).data)
+
+class ProgressoList(generics.ListAPIView):
+    '''
+    Informações do progresso
+    '''
+    queryset = Progresso.objects
+    # def get(self, request, format=None):
+    #     progresso = get_object_or_404(Progresso)
+    #     return Response(ProgressoSerializer(proprogresso).data)
+    serializer_class = ProgressoSerializer
 
 
 # Talvez valha a pena usar ViewSets ao invés de APIView, mas não consegui
