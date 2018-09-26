@@ -100,7 +100,8 @@ class Proposicao(models.Model):
                     'nome': event.sigla_local
                 })
         return events
-        
+    
+    # Retorna energia recente dos últimos 'num_dias'
     def energia_recente(self, num_dias=90):
         energias = []
         now = datetime.datetime.now()
@@ -137,9 +138,9 @@ class TramitacaoEvent(models.Model):
 class EnergiaRecentePeriodo(models.Model):
     periodo = models.DateField('periodo')
 
-    energia_periodo = models.IntegerField()
+    energia_periodo = models.IntegerField(help_text='Quantidade de eventos no período (semana)')
 
-    energia_recente = models.FloatField()
+    energia_recente = models.FloatField(help_text='Energia acumulada com decaimento exponencial')
 
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='energia_recente_periodo')
