@@ -28,8 +28,8 @@ class Info(APIView):
 
 
 class ProposicaoList(generics.ListAPIView):
-    queryEnergia = Proposicao.objects.prefetch_related('energia_recente_periodo')
-    queryset = Proposicao.objects.prefetch_related('tramitacao')
+    #queryEnergia = Proposicao.objects.prefetch_related('energia_recente_periodo')
+    queryset = Proposicao.objects.prefetch_related('tramitacao', 'energia_recente_periodo')
     # queryset = Proposicao.objects.prefetch_related(
     #     Prefetch(
     #         'tramitacao',
@@ -54,9 +54,12 @@ class EnergiaProposicaoPorPeriodo(APIView):
                 type=openapi.TYPE_INTEGER),
         ]
     )
-    def get(self, request, casa, id_ext, periodo, format=None):
+    def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
-        return Response(prop.energia_recente(int(periodo)))
+        if 'periodo' in request.GET.keys():
+            return Response(prop.energia_recente(int(request.GET['periodo'])))
+        else:
+            return Response(prop.energia_recente())
 
 class ProposicaoDetail(APIView):
     '''
