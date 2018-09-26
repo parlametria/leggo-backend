@@ -28,24 +28,6 @@ E depois para carregar os dados:
 docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data'
 ```
 
-#### Dockhub
-
-**Essa seção precisa ser atualizada ou removida, uma vez que não dá para rodar mais sem o BD que o docker-compose fornece.**
-
-Com dockhub você não precisar clonar o repositório, basta apenas baixar a imagem docker:
-
-```
-docker pull agoradigital/agorapi
-```
-
-E depois rodar um container expondo a porta 8000:
-
-```
-docker run -p 8000:8000 agoradigital/agorapi
-```
-
-Se você está desenvolvendo, é preferível que use o *docker-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
-
 ## Uso
 
 Alguns comando básicos para manipulação de seus containers dockers.
