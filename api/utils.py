@@ -1,7 +1,7 @@
 # import os
 # from glob import glob
 import pandas as pd
-from api.models import Proposicao, TramitacaoEvent
+from api.models import Proposicao, TramitacaoEvent, Progresso
 
 
 def import_all_data():
@@ -33,6 +33,31 @@ def import_all_data():
         )
         TramitacaoEvent.objects.bulk_create(
             TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
+
+    # Carrega progresso
+    grouped = pd.read_csv('data/progressos.csv').dropna()
+    grouped = grouped.groupby(['casa', 'id_ext'])
+    for group_index in grouped.groups: 
+        prop_id = {
+            'casa': group_index[0],
+            'id_ext': group_index[1],
+        }
+        group_df = (
+            grouped
+            .get_group(group_index)
+            .assign(
+            data_inicio=lambda x: x.data_inicio.apply(
+            lambda s: s.split('T')[0]))
+            .assign(
+                data_fim=lambda x: x.data_fim.apply(
+                lambda s: s.split('T')[0]))
+            [['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa']]
+            .assign(proposicao=Proposicao.objects.get(**prop_id))
+        )
+        Progresso.objects.bulk_create(
+            Progresso(**r[1].to_dict()) for r in group_df.iterrows())
+
+
 
 
 # # prop_data_files = '../../agora-digital/data/*/*proposicao*.csv'
