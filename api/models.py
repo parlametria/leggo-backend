@@ -55,7 +55,6 @@ class Proposicao(models.Model):
 
     energia = models.FloatField(null=True)
 
-
     em_pauta = models.NullBooleanField(
         help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario')
 
@@ -111,14 +110,12 @@ class Proposicao(models.Model):
     def resumo_progresso(self):    
         progressos = []
         for progresso in self.progresso.all():
-            progresso = {
-                    'fase_global': progresso.fase_global,
-                    'local': progresso.local,
-                    'data_inicio': progresso.data_inicio,
-                    'data_fim': progresso.data_fim,
-                    'local_casa': progresso.local_casa}
-            if progresso not in progressos:
-                progressos.append(progresso)
+            progressos.append({
+                'fase_global': progresso.fase_global,
+                'local': progresso.local,
+                'data_inicio': progresso.data_inicio,
+                'data_fim': progresso.data_fim,
+                'local_casa': progresso.local_casa})
         return progressos
 
 
@@ -144,9 +141,9 @@ class TramitacaoEvent(models.Model):
 
 
 class Progresso(models.Model):
-    casas = Choices('camara senado')
+
     local_casa = models.CharField(
-        max_length=6, choices=casas.items(),
+        max_length=6, 
         help_text='Casa desta proposição.',
         null=True)
 
@@ -154,13 +151,12 @@ class Progresso(models.Model):
 
     local = models.TextField(blank=True)
 
-    data_inicio = models.DateField('Data de início', blank=True)
+    data_inicio = models.DateField('Data de início', null=True)
 
-    data_fim = models.DateField('Data final', blank=True)
+    data_fim = models.DateField('Data final', null=True)
 
     proposicao = models.ForeignKey(
        Proposicao, on_delete=models.CASCADE, related_name='progresso')
 
     class Meta:
         ordering = ('data_inicio',)
-
