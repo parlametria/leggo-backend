@@ -65,7 +65,7 @@ class EnergiaHistoricoList(generics.ListAPIView):
         try:
             hoje = datetime.today() if data_referencia is None else datetime.strptime(data_referencia, '%Y-%m-%d')
         except:
-            print("Formato de data inválido.")
+            print("Data de referência (" + data_referencia + ") inválida. Utilizando data atual como data de referência.")
             hoje = datetime.today()
 
         queryset = queryset.filter(periodo__lte=hoje)
