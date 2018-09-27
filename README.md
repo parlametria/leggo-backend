@@ -11,6 +11,7 @@ O código atual assume que este repositório está em uma pasta lado a lado com 
 
 ## Make	
 Usando o make ele já ajuda a rodar os comandos do docker-compose de maneira simples:	
+
  Comando | Descrição	
 ------- | -----------	
 **make run** | Build e create dos containers.	
