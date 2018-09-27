@@ -32,7 +32,7 @@ process_pl <- function(id, casa, tema, apelido, mapeamento_df) {
     dplyr::mutate(id_ext = prop$prop_id,
                   casa = prop$casa) %>%
     dplyr::select(id_ext, casa, periodo, energia_periodo, energia_recente)
-  energia_value <- historico_energia[1,]$energia_recente
+  energia_value <- historico_energia[nrow(historico_energia),]$energia_recente
   
   progresso_pl <- agoradigital::get_progresso(mapeamento_df, tram, prop, casa)
   extended_prop <- merge(prop,status,by="prop_id") %>%

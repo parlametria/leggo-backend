@@ -1,5 +1,7 @@
 from munch import Munch
 from django.db import models
+from django.forms.models import model_to_dict
+import datetime
 
 urls = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -13,7 +15,6 @@ class Choices(Munch):
 
 
 class Proposicao(models.Model):
-
     id_ext = models.IntegerField(
         'ID Externo',
         help_text='Id externo do sistema da casa.')
@@ -100,12 +101,6 @@ class Proposicao(models.Model):
                 })
         return events
 
-        # return [{
-        #     'data': i.data,
-        #     'nome': i.sigla_local
-        # } for i in self.tramitacao.all()]
-        # return [i[0] for i in self.tramitacao.values_list('sigla_local').distinct()]
-
     @property
     def resumo_progresso(self):    
         progressos = []
@@ -140,6 +135,24 @@ class TramitacaoEvent(models.Model):
         ordering = ('sequencia',)
 
 
+class EnergiaHistorico(models.Model):
+    '''
+    Histórico de energia de uma proposição
+    '''
+    periodo = models.DateField('periodo')
+
+    energia_periodo = models.IntegerField(help_text='Quantidade de eventos no período (semana).')
+
+    energia_recente = models.FloatField(help_text='Energia acumulada com decaimento exponencial.')
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name='energia_historico')
+
+    class Meta:
+        ordering = ('-periodo',)
+        get_latest_by = '-periodo'
+
+        
 class Progresso(models.Model):
 
     local_casa = models.CharField(
