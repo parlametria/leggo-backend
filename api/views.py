@@ -5,7 +5,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import Proposicao  # , TramitacaoEvent
+from api.models import Proposicao, Progresso  # , TramitacaoEvent
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -14,8 +14,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema')
-
+            'resumo_tramitacao', 'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema',
+            'resumo_progresso')
 
 class Info(APIView):
     '''
@@ -26,7 +26,7 @@ class Info(APIView):
 
 
 class ProposicaoList(generics.ListAPIView):
-    queryset = Proposicao.objects.prefetch_related('tramitacao')
+    queryset = Proposicao.objects.prefetch_related('tramitacao', 'progresso')
     # queryset = Proposicao.objects.prefetch_related(
     #     Prefetch(
     #         'tramitacao',
