@@ -49,8 +49,8 @@ def import_all_data():
             [['periodo', 'energia_periodo', 'energia_recente']]
             .assign(proposicao=Proposicao.objects.get(**prop_id))
         )
-    EnergiaHistorico.objects.bulk_create(
-    EnergiaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
+        EnergiaHistorico.objects.bulk_create(
+        EnergiaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
 
     
     # Carrega progresso
