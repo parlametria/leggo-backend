@@ -85,23 +85,3 @@ class ProposicaoDetail(APIView):
     def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
         return Response(ProposicaoSerializer(prop).data)
-
-class EnergiaRecente(APIView):
-    '''
-    Última energia da proposição.
-    '''
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-            openapi.Parameter(
-                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
-                type=openapi.TYPE_INTEGER),
-        ]
-    )
-    def get(self, request, casa, id_ext, format=None):
-        energia = EnergiaHistorico.objects.filter(proposicao__casa=casa, 
-                            proposicao__id_ext=id_ext).earliest()
-        return Response({
-            "energia": energia.energia_recente
-        })

@@ -1,9 +1,6 @@
 **
-!requirements*
-!agorapi/*
-!api/*
-!data/*
-!manage.py
-!deploy/uwsg*
-!deploy/nginx
-!setup.cfg
+!src/*
+!public/*
+!tests/*
+!*.json
+!*.js
