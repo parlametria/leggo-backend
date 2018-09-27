@@ -30,7 +30,7 @@ process_pl <- function(id, casa, tema, apelido) {
     dplyr::mutate(id_ext = prop$prop_id,
                   casa = prop$casa) %>%
     dplyr::select(id_ext, casa, periodo, energia_periodo, energia_recente)
-  energia_value <- historico_energia[1,]$energia_recente
+  energia_value <- historico_energia[nrow(historico_energia),]$energia_recente
   
   extended_prop <- merge(prop,status,by="prop_id") %>%
     dplyr::mutate(energia = energia_value)
