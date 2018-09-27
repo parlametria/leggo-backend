@@ -60,7 +60,7 @@ class EnergiaHistoricoList(generics.ListAPIView):
                 type=openapi.TYPE_INTEGER),
             openapi.Parameter(
                 'data_referencia', openapi.IN_PATH, 'data de referência a ser considerada',
-                type=openapi.TYPE_INTEGER),
+                type=openapi.TYPE_STRING),
         ]
     )
     def get_queryset(self):
@@ -102,7 +102,7 @@ class ProgressoList(generics.ListAPIView):
                 type=openapi.TYPE_INTEGER),
             openapi.Parameter(
                 'data_referencia', openapi.IN_PATH, 'data de referência a ser considerada',
-                type=openapi.TYPE_INTEGER),
+                type=openapi.TYPE_STRING),
         ]
     )
     def get_queryset(self):
