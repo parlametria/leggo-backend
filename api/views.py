@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import Proposicao, EnergiaHistorico
+from api.models import Proposicao, EnergiaHistorico, Progresso
 from datetime import datetime, timedelta
 
 
@@ -14,7 +14,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 'resumo_tramitacao')
+            'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 'resumo_tramitacao',
+            'resumo_progresso')
 
 class EnergiaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -34,8 +35,7 @@ class ProposicaoList(generics.ListAPIView):
     '''
     Dados gerais da proposição.
     '''
-    queryset = Proposicao.objects.prefetch_related('tramitacao', 'energia_historico')
-    
+    queryset = Proposicao.objects.prefetch_related('tramitacao', 'energia_historico', 'progresso')
     serializer_class = ProposicaoSerializer
 
 class EnergiaHistoricoList(generics.ListAPIView):

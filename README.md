@@ -9,6 +9,18 @@ API para consulta de propostas de leis no senado e na câmara
 
 O código atual assume que este repositório está em uma pasta lado a lado com o repositório R. Isso é importante para que este código consiga acessar os CSVs gerados pelo R.
 
+## Make	
+Usando o make ele já ajuda a rodar os comandos do docker-compose de maneira simples:	
+
+ Comando | Descrição	
+------- | -----------	
+**make run** | Build e create dos containers.	
+**make start** |Começa containers já existentes.	
+**make import** | Importa dados da pasta `data/` e escreve no banco de dados.	
+**make update** | Realiza as migrações e importa os dados	
+**make update-agorapi** | Realiza as migrações do banco.	
+**make help** | Para visualizar os demais comandos.
+
 ### Docker
 Rodando com docker, o serviço estará disponível em http://0.0.0.0:8000/
 
@@ -27,24 +39,6 @@ E depois para carregar os dados:
 ```
 docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data'
 ```
-
-#### Dockhub
-
-**Essa seção precisa ser atualizada ou removida, uma vez que não dá para rodar mais sem o BD que o docker-compose fornece.**
-
-Com dockhub você não precisar clonar o repositório, basta apenas baixar a imagem docker:
-
-```
-docker pull agoradigital/agorapi
-```
-
-E depois rodar um container expondo a porta 8000:
-
-```
-docker run -p 8000:8000 agoradigital/agorapi
-```
-
-Se você está desenvolvendo, é preferível que use o *docker-compose* pois garante que você está pegando a versão de desenvolvimento mais atualizada da api.
 
 ## Uso
 
