@@ -9,6 +9,18 @@ API para consulta de propostas de leis no senado e na câmara
 
 O código atual assume que este repositório está em uma pasta lado a lado com o repositório R. Isso é importante para que este código consiga acessar os CSVs gerados pelo R.
 
+## Make
+Usando o make ele já ajuda a rodar os comandos do docker-compose de maneira simples:
+
+Comando | Descrição
+------- | -----------
+**make run** | Build e create dos containers.
+**make start** |Começa containers já existentes.
+**make import** | Importa dados da pasta `data/` e escreve no banco de dados.
+**make update** | Realiza as migrações e importa os dados
+**make update-agorapi** | Realiza as migrações do banco.
+**make help** | Para visualizar os demais comandos.
+
 ### Docker
 Rodando com docker, o serviço estará disponível em http://0.0.0.0:8000/
 
