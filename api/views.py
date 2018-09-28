@@ -21,6 +21,11 @@ class EnergiaHistoricoSerializer(serializers.ModelSerializer):
         model = EnergiaHistorico
         fields = ('periodo', 'energia_recente', 'energia_periodo')
 
+class ProgressoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Progresso
+        fields = ('fase_global', 'local', 'data_inicio', 'data_fim', 'local_casa')
+
 
 class Info(APIView):
     '''
@@ -39,7 +44,7 @@ class ProposicaoList(generics.ListAPIView):
 
 class EnergiaHistoricoList(generics.ListAPIView):
     '''
-    Dados de energia da proposição por periodo.
+    Dados de energia da proposição por periodo de acordo com uma data de referência.
     '''
     serializer_class = EnergiaHistoricoSerializer
     
@@ -50,21 +55,73 @@ class EnergiaHistoricoList(generics.ListAPIView):
             openapi.Parameter(
                 'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
                 type=openapi.TYPE_INTEGER),
+            openapi.Parameter(
+                'semanas_anteriores', openapi.IN_PATH, 'número de semanas anteriores a retornar',
+                type=openapi.TYPE_INTEGER),
+            openapi.Parameter(
+                'data_referencia', openapi.IN_PATH, 'data de referência a ser considerada',
+                type=openapi.TYPE_STRING),
         ]
     )
     def get_queryset(self):
         '''
-        Retorna o histórico de energias de uma proposição, aceitando intervalo de dias.
+        Retorna o histórico de energias de uma proposição, retornando a quantidade especificada de semanas anteriores à data de referência.
         '''
         casa = self.kwargs['casa']
         id_ext = self.kwargs['id_ext']
-        periodo = self.request.query_params.get('periodo', None)
+        semanas_anteriores = self.request.query_params.get('semanas_anteriores', None)
+        data_referencia = self.request.query_params.get('data_referencia', None)
         queryset = EnergiaHistorico.objects.filter(proposicao__casa=casa, proposicao__id_ext=id_ext)
+
+        try:
+            hoje = datetime.today() if data_referencia is None else datetime.strptime(data_referencia, '%Y-%m-%d')
+        except:
+            print("Data de referência (" + data_referencia + ") inválida. Utilizando data atual como data de referência.")
+            hoje = datetime.today()
+
+        queryset = queryset.filter(periodo__lte=hoje)
         
-        if periodo is not None:
-            now = datetime.today()
-            start_date = now - timedelta(days=int(periodo))
-            queryset = queryset.filter(periodo__gte=start_date, periodo__lte=now)
+        if semanas_anteriores is not None:
+            start_date = hoje - timedelta(weeks=int(semanas_anteriores))
+            queryset = queryset.filter(periodo__gte=start_date)
+        return queryset
+
+
+class ProgressoList(generics.ListAPIView):
+    '''
+    Dados do progresso da proposição por periodo de acordo com uma data de referência.
+    '''
+    serializer_class = ProgressoSerializer
+    
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+            openapi.Parameter(
+                'data_referencia', openapi.IN_PATH, 'data de referência a ser considerada',
+                type=openapi.TYPE_STRING),
+        ]
+    )
+    def get_queryset(self):
+        '''
+        Retorna o progresso de uma proposição, passando uma data de referência.
+        '''
+        casa = self.kwargs['casa']
+        id_ext = self.kwargs['id_ext']
+        data_referencia = self.request.query_params.get('data_referencia', None)
+        queryset = Progresso.objects.filter(proposicao__casa=casa, proposicao__id_ext=id_ext)
+
+        try:
+            hoje = datetime.today() if data_referencia is None else datetime.strptime(data_referencia, '%Y-%m-%d')
+        except:
+            print("Data de referência (" + data_referencia + ") inválida. Utilizando data atual como data de referência.")
+            hoje = datetime.today()
+
+        queryset = queryset.filter(data_inicio__lte=hoje)
+               
         return queryset
 
 class ProposicaoDetail(APIView):
