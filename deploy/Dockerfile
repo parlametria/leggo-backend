@@ -12,4 +12,4 @@ RUN pip install -r requirements_prod.txt
 
 COPY . /agora-digital-backend/
 
-CMD ./manage.py collectstatic --noinput && uwsgi --ini /agora-digital-backend/deploy/uwsgi.ini
+CMD deploy/run.sh

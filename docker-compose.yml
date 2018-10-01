@@ -1,13 +1,12 @@
 # Compose used as base for dev and prod
 
-version: '3'
+version: '3.5'
 
 services:    
 
   db:
     image: postgres:10.5-alpine
     container_name: dbapi
-    env_file: ${BACKEND_PATH:-.}/.env.development
     volumes:
       - postgres_data:/var/lib/postgresql/data/
 

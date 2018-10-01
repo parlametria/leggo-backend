@@ -1,6 +1,6 @@
 # Compose used for production
 
-version: '3'
+version: '3.5'
 
 services:
 
@@ -11,7 +11,11 @@ services:
     volumes:
       - app_static:/app_static
       - app_sockets:/sockets
-      - app_deploy_config:/etc/nginx/conf.d:ro
+      - type: volume
+        source: app_deploy_config
+        target: /etc/nginx/conf.d
+        volume:
+          nocopy: true
     ports:
       - "9002:80"
     depends_on:
@@ -23,13 +27,14 @@ services:
       dockerfile: ${BACKEND_PATH:-.}/deploy/Dockerfile
     image: ${API_IMAGE_TAG:-agoradigital/agorapi}
     container_name: agorapi
-    env_file:
-      - ${BACKEND_PATH:-.}/.env.development
-      - ${BACKEND_PATH:-.}/deploy/env
+    environment:
+      - DEBUG=True
+      - SECRET_KEY=${SECRET_KEY:-segredo}
+    restart: always
     volumes:
       - app_sockets:/sockets
       - app_static:/agora-digital-backend/static
-      - app_deploy_config:/agora-digital-backend/deploy/nginx:ro
+      - app_deploy_config:/nginx_config
     depends_on:
       - db
 
