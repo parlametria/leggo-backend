@@ -121,7 +121,12 @@ class ProgressoList(generics.ListAPIView):
             hoje = datetime.today()
 
         queryset = queryset.filter(data_inicio__lte=hoje)
-               
+        lastest = queryset.last()
+
+        if (lastest != None):
+            lastest.data_fim = hoje
+            lastest.save()     
+                      
         return queryset
 
 class ProposicaoDetail(APIView):
