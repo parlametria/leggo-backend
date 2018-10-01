@@ -1,6 +1,6 @@
 # Compose used as base for dev and prod
 
-version: '3.2'
+version: '3.5'
 
 services:    
 

@@ -2,7 +2,7 @@
 # This file is needed because volumes are appended on override.
 # So prod would also have dev's volumes, that shouldn't happen.
 
-version: '3.2'
+version: '3.5'
 
 services:
 

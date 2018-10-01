@@ -1,5 +1,7 @@
 from munch import Munch
 from django.db import models
+from django.forms.models import model_to_dict
+import datetime
 
 urls = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -13,7 +15,6 @@ class Choices(Munch):
 
 
 class Proposicao(models.Model):
-
     id_ext = models.IntegerField(
         'ID Externo',
         help_text='Id externo do sistema da casa.')
@@ -100,11 +101,17 @@ class Proposicao(models.Model):
                 })
         return events
 
-        # return [{
-        #     'data': i.data,
-        #     'nome': i.sigla_local
-        # } for i in self.tramitacao.all()]
-        # return [i[0] for i in self.tramitacao.values_list('sigla_local').distinct()]
+    @property
+    def resumo_progresso(self):    
+        progressos = []
+        for progresso in self.progresso.all():
+            progressos.append({
+                'fase_global': progresso.fase_global,
+                'local': progresso.local,
+                'data_inicio': progresso.data_inicio,
+                'data_fim': progresso.data_fim,
+                'local_casa': progresso.local_casa})
+        return progressos
 
 
 class TramitacaoEvent(models.Model):
@@ -126,3 +133,43 @@ class TramitacaoEvent(models.Model):
 
     class Meta:
         ordering = ('sequencia',)
+
+
+class EnergiaHistorico(models.Model):
+    '''
+    Histórico de energia de uma proposição
+    '''
+    periodo = models.DateField('periodo')
+
+    energia_periodo = models.IntegerField(help_text='Quantidade de eventos no período (semana).')
+
+    energia_recente = models.FloatField(help_text='Energia acumulada com decaimento exponencial.')
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name='energia_historico')
+
+    class Meta:
+        ordering = ('-periodo',)
+        get_latest_by = '-periodo'
+
+        
+class Progresso(models.Model):
+
+    local_casa = models.CharField(
+        max_length=6, 
+        help_text='Casa desta proposição.',
+        null=True)
+
+    fase_global = models.TextField(blank=True)
+
+    local = models.TextField(blank=True)
+
+    data_inicio = models.DateField('Data de início', null=True)
+
+    data_fim = models.DateField('Data final', null=True)
+
+    proposicao = models.ForeignKey(
+       Proposicao, on_delete=models.CASCADE, related_name='progresso')
+
+    class Meta:
+        ordering = ('data_inicio',)
