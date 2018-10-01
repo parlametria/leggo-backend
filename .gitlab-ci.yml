@@ -1,4 +1,4 @@
-image: docker/compose
+image: docker/compose:1.23.0-rc1
 
 services:
   - docker:dind
