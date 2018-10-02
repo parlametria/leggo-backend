@@ -1,7 +1,5 @@
 from munch import Munch
 from django.db import models
-from django.forms.models import model_to_dict
-import datetime
 
 urls = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -102,7 +100,7 @@ class Proposicao(models.Model):
         return events
 
     @property
-    def resumo_progresso(self):    
+    def resumo_progresso(self):
         progressos = []
         for progresso in self.progresso.all():
             progressos.append({
@@ -141,9 +139,11 @@ class EnergiaHistorico(models.Model):
     '''
     periodo = models.DateField('periodo')
 
-    energia_periodo = models.IntegerField(help_text='Quantidade de eventos no período (semana).')
+    energia_periodo = models.IntegerField(
+        help_text='Quantidade de eventos no período (semana).')
 
-    energia_recente = models.FloatField(help_text='Energia acumulada com decaimento exponencial.')
+    energia_recente = models.FloatField(
+        help_text='Energia acumulada com decaimento exponencial.')
 
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='energia_historico')
@@ -152,11 +152,11 @@ class EnergiaHistorico(models.Model):
         ordering = ('-periodo',)
         get_latest_by = '-periodo'
 
-        
+
 class Progresso(models.Model):
 
     local_casa = models.CharField(
-        max_length=6, 
+        max_length=6,
         help_text='Casa desta proposição.',
         null=True)
 

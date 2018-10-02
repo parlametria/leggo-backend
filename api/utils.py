@@ -3,7 +3,7 @@ from api.models import Proposicao, TramitacaoEvent, EnergiaHistorico, Progresso
 
 
 def import_all_data():
-    ''' 
+    '''
     Importa dados dos csv e salva no banco.
     '''
     # Carrega proposições
@@ -50,13 +50,12 @@ def import_all_data():
             .assign(proposicao=Proposicao.objects.get(**prop_id))
         )
         EnergiaHistorico.objects.bulk_create(
-        EnergiaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
+            EnergiaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
 
-    
     # Carrega progresso
     grouped = pd.read_csv('data/progressos.csv').dropna()
     grouped = grouped.groupby(['casa', 'id_ext'])
-    for group_index in grouped.groups: 
+    for group_index in grouped.groups:
         prop_id = {
             'casa': group_index[0],
             'id_ext': group_index[1],
@@ -64,15 +63,10 @@ def import_all_data():
         group_df = (
             grouped
             .get_group(group_index)
-            .assign(
-            data_inicio=lambda x: x.data_inicio.apply(
-            lambda s: s.split('T')[0]))
-            .assign(
-                data_fim=lambda x: x.data_fim.apply(
-                lambda s: s.split('T')[0]))
+            .assign(data_inicio=lambda x: x.data_inicio.apply(lambda s: s.split('T')[0]))
+            .assign(data_fim=lambda x: x.data_fim.apply(lambda s: s.split('T')[0]))
             [['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa']]
             .assign(proposicao=Proposicao.objects.get(**prop_id))
         )
         Progresso.objects.bulk_create(
             Progresso(**r[1].to_dict()) for r in group_df.iterrows())
-

@@ -25,7 +25,7 @@ before_script:
 build:
   stage: build
   script:
-    - $COMPOSE_CMD pull
+    - $COMPOSE_CMD pull || true
     - $COMPOSE_CMD build
     - $COMPOSE_CMD push
 

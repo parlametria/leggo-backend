@@ -29,3 +29,4 @@ class Command(BaseCommand):
             subprocess.run('coverage report'.split(), check=True)
         except subprocess.CalledProcessError:
             pprint('red', 'Error')
+            exit(1)
