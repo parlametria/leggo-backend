@@ -86,7 +86,7 @@ class EnergiaHistoricoList(generics.ListAPIView):
             hoje = (
                 datetime.today() if data_referencia is None else datetime.strptime(
                     data_referencia, '%Y-%m-%d'))
-        except:
+        except ValueError:
             print(
                 f'Data de referência ({data_referencia}) inválida. '
                 'Utilizando data atual como data de referência.')
@@ -132,7 +132,7 @@ class ProgressoList(generics.ListAPIView):
         try:
             hoje = datetime.today() if data_referencia is None else datetime.strptime(
                 data_referencia, '%Y-%m-%d')
-        except:
+        except ValueError:
             print(
                 f'Data de referência ({data_referencia}) inválida. '
                 'Utilizando data atual como data de referência.')
