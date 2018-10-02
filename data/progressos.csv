@@ -1,5 +1,5 @@
 id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
-132865,senado,senado,Construção,Comissões,2018-04-10T00:00:00Z,2018-09-28T17:42:51Z
+132865,senado,senado,Construção,Comissões,2018-04-10T00:00:00Z,2018-10-02T19:18:09Z
 132865,senado,NA,Construção,Plenário,NA,NA
 132865,senado,NA,Revisão I,Comissões,NA,NA
 132865,senado,NA,Revisão I,Plenário,NA,NA
@@ -9,7 +9,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 132865,senado,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 91341,senado,senado,Construção,Comissões,2009-05-29T00:00:00Z,2016-06-07T00:00:00Z
 91341,senado,senado,Construção,Plenário,2016-06-07T00:00:00Z,2016-06-28T09:52:00Z
-91341,senado,camara,Revisão I,Comissões,2016-06-28T09:52:00Z,2018-09-28T17:42:56Z
+91341,senado,camara,Revisão I,Comissões,2016-06-28T09:52:00Z,2018-10-02T19:18:13Z
 91341,senado,NA,Revisão I,Plenário,NA,NA
 91341,senado,NA,Revisão II,Comissões,NA,NA
 91341,senado,NA,Revisão II,Plenário,NA,NA
@@ -17,7 +17,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 91341,senado,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 41703,senado,senado,Construção,Comissões,1999-09-10T00:00:00Z,2002-04-15T14:18:00Z
 41703,senado,NA,Construção,Plenário,NA,NA
-41703,senado,camara,Revisão I,Comissões,2002-04-15T14:18:00Z,2018-09-28T17:42:59Z
+41703,senado,camara,Revisão I,Comissões,2002-04-15T14:18:00Z,2018-10-02T19:18:15Z
 41703,senado,NA,Revisão I,Plenário,NA,NA
 41703,senado,NA,Revisão II,Comissões,NA,NA
 41703,senado,NA,Revisão II,Plenário,NA,NA
@@ -25,7 +25,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 41703,senado,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 127753,senado,NA,Construção,Comissões,NA,NA
 127753,senado,senado,Construção,Plenário,2016-12-09T00:00:00Z,2016-12-15T15:33:00Z
-127753,senado,camara,Revisão I,Comissões,2016-12-15T15:33:00Z,2018-09-28T17:43:01Z
+127753,senado,camara,Revisão I,Comissões,2016-12-15T15:33:00Z,2018-10-02T19:18:17Z
 127753,senado,NA,Revisão I,Plenário,NA,NA
 127753,senado,NA,Revisão II,Comissões,NA,NA
 127753,senado,NA,Revisão II,Plenário,NA,NA
@@ -34,12 +34,12 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 129808,senado,senado,Construção,Comissões,2017-06-28T00:00:00Z,2017-10-02T00:00:00Z
 129808,senado,senado,Construção,Plenário,2017-10-02T00:00:00Z,2018-04-04T00:00:00Z
 129808,senado,NA,Revisão I,Comissões,NA,NA
-129808,senado,camara,Revisão I,Plenário,2018-04-04T00:00:00Z,2018-09-28T17:43:03Z
+129808,senado,camara,Revisão I,Plenário,2018-04-04T00:00:00Z,2018-10-02T19:18:20Z
 129808,senado,NA,Revisão II,Comissões,NA,NA
 129808,senado,NA,Revisão II,Plenário,NA,NA
 129808,senado,NA,Sansão/Veto,Presidência da República,NA,NA
 129808,senado,NA,Avaliação dos Vetos,Presidência da República,NA,NA
-257161,camara,camara,Construção,Comissões,2004-06-22T14:57:00Z,2018-09-28T17:43:08Z
+257161,camara,camara,Construção,Comissões,2004-06-22T14:57:00Z,2018-10-02T19:18:24Z
 257161,camara,NA,Construção,Plenário,NA,NA
 257161,camara,NA,Revisão I,Comissões,NA,NA
 257161,camara,NA,Revisão I,Plenário,NA,NA
@@ -47,7 +47,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 257161,camara,NA,Revisão II,Plenário,NA,NA
 257161,camara,NA,Sansão/Veto,Presidência da República,NA,NA
 257161,camara,NA,Avaliação dos Vetos,Presidência da República,NA,NA
-345311,camara,camara,Construção,Comissões,2007-03-29T00:00:00Z,2018-09-28T17:43:12Z
+345311,camara,camara,Construção,Comissões,2007-03-29T00:00:00Z,2018-10-02T19:18:28Z
 345311,camara,NA,Construção,Plenário,NA,NA
 345311,camara,NA,Revisão I,Comissões,NA,NA
 345311,camara,NA,Revisão I,Plenário,NA,NA
@@ -55,7 +55,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 345311,camara,NA,Revisão II,Plenário,NA,NA
 345311,camara,NA,Sansão/Veto,Presidência da República,NA,NA
 345311,camara,NA,Avaliação dos Vetos,Presidência da República,NA,NA
-2056568,camara,camara,Construção,Comissões,2015-12-08T17:27:00Z,2018-09-28T17:43:16Z
+2056568,camara,camara,Construção,Comissões,2015-12-08T17:27:00Z,2018-10-02T19:18:32Z
 2056568,camara,NA,Construção,Plenário,NA,NA
 2056568,camara,NA,Revisão I,Comissões,NA,NA
 2056568,camara,NA,Revisão I,Plenário,NA,NA
@@ -65,7 +65,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 2056568,camara,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 46249,camara,senado,Construção,Comissões,1999-09-10T00:00:00Z,2002-04-15T14:18:00Z
 46249,camara,NA,Construção,Plenário,NA,NA
-46249,camara,camara,Revisão I,Comissões,2002-04-15T14:18:00Z,2018-09-28T17:43:21Z
+46249,camara,camara,Revisão I,Comissões,2002-04-15T14:18:00Z,2018-10-02T19:18:37Z
 46249,camara,NA,Revisão I,Plenário,NA,NA
 46249,camara,NA,Revisão II,Comissões,NA,NA
 46249,camara,NA,Revisão II,Plenário,NA,NA
@@ -73,7 +73,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 46249,camara,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 2121442,camara,NA,Construção,Comissões,NA,NA
 2121442,camara,senado,Construção,Plenário,2016-12-09T00:00:00Z,2016-12-15T15:33:00Z
-2121442,camara,camara,Revisão I,Comissões,2016-12-15T15:33:00Z,2018-09-28T17:43:26Z
+2121442,camara,camara,Revisão I,Comissões,2016-12-15T15:33:00Z,2018-10-02T19:18:41Z
 2121442,camara,NA,Revisão I,Plenário,NA,NA
 2121442,camara,NA,Revisão II,Comissões,NA,NA
 2121442,camara,NA,Revisão II,Plenário,NA,NA
@@ -82,12 +82,12 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 2160860,camara,senado,Construção,Comissões,2017-06-28T00:00:00Z,2017-10-02T00:00:00Z
 2160860,camara,senado,Construção,Plenário,2017-10-02T00:00:00Z,2018-04-04T00:00:00Z
 2160860,camara,NA,Revisão I,Comissões,NA,NA
-2160860,camara,camara,Revisão I,Plenário,2018-04-04T00:00:00Z,2018-09-28T17:43:31Z
+2160860,camara,camara,Revisão I,Plenário,2018-04-04T00:00:00Z,2018-10-02T19:18:46Z
 2160860,camara,NA,Revisão II,Comissões,NA,NA
 2160860,camara,NA,Revisão II,Plenário,NA,NA
 2160860,camara,NA,Sansão/Veto,Presidência da República,NA,NA
 2160860,camara,NA,Avaliação dos Vetos,Presidência da República,NA,NA
-2120775,camara,camara,Construção,Comissões,2018-05-16T00:00:00Z,2018-09-28T17:43:34Z
+2120775,camara,camara,Construção,Comissões,2018-05-16T00:00:00Z,2018-10-02T19:18:49Z
 2120775,camara,NA,Construção,Plenário,NA,NA
 2120775,camara,NA,Revisão I,Comissões,NA,NA
 2120775,camara,NA,Revisão I,Plenário,NA,NA
@@ -97,7 +97,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 2120775,camara,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 2088990,camara,senado,Construção,Comissões,2009-05-29T00:00:00Z,2016-06-07T00:00:00Z
 2088990,camara,senado,Construção,Plenário,2016-06-07T00:00:00Z,2016-06-28T09:52:00Z
-2088990,camara,camara,Revisão I,Comissões,2016-06-28T09:52:00Z,2018-09-28T17:43:38Z
+2088990,camara,camara,Revisão I,Comissões,2016-06-28T09:52:00Z,2018-10-02T19:18:53Z
 2088990,camara,NA,Revisão I,Plenário,NA,NA
 2088990,camara,NA,Revisão II,Comissões,NA,NA
 2088990,camara,NA,Revisão II,Plenário,NA,NA
@@ -105,7 +105,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 2088990,camara,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 115926,senado,senado,Construção,Comissões,2014-02-11T00:00:00Z,2016-12-13T00:00:00Z
 115926,senado,senado,Construção,Plenário,2016-12-13T00:00:00Z,2018-02-27T00:00:00Z
-115926,senado,camara,Revisão I,Comissões,2018-02-27T00:00:00Z,2018-09-28T17:43:41Z
+115926,senado,camara,Revisão I,Comissões,2018-02-27T00:00:00Z,2018-10-02T19:19:02Z
 115926,senado,NA,Revisão I,Plenário,NA,NA
 115926,senado,NA,Revisão II,Comissões,NA,NA
 115926,senado,NA,Revisão II,Plenário,NA,NA
@@ -113,7 +113,7 @@ id_ext,casa,local_casa,fase_global,local,data_inicio,data_fim
 115926,senado,NA,Avaliação dos Vetos,Presidência da República,NA,NA
 2122766,camara,senado,Construção,Comissões,2014-02-11T00:00:00Z,2016-12-13T00:00:00Z
 2122766,camara,senado,Construção,Plenário,2016-12-13T00:00:00Z,2018-02-27T00:00:00Z
-2122766,camara,camara,Revisão I,Comissões,2018-02-27T00:00:00Z,2018-09-28T17:43:46Z
+2122766,camara,camara,Revisão I,Comissões,2018-02-27T00:00:00Z,2018-10-02T19:19:06Z
 2122766,camara,NA,Revisão I,Plenário,NA,NA
 2122766,camara,NA,Revisão II,Comissões,NA,NA
 2122766,camara,NA,Revisão II,Plenário,NA,NA
