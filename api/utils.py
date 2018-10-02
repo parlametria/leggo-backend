@@ -60,8 +60,8 @@ def import_all_data():
     print(progresso_df.dtypes)
 
     
-    progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(lambda x: np.nan if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
-    progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(lambda x: np.nan if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+    progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(lambda x: np.nat if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+    progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(lambda x: np.nat if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
 
     print(progresso_df.head())
 
@@ -75,14 +75,6 @@ def import_all_data():
         group_df = (
             grouped
             .get_group(group_index)
-            # .assign(
-            #     data_inicio=lambda x: np.where(x.data_inicio == "NA",
-            #                             None,
-            #                             x.data_inicio.apply(lambda s: pd.to_datetime(s.split('T')[0], format='%Y-%m-%d'))))
-            # .assign(
-            #     data_fim=lambda x: np.where(x.data_fim == "NA",
-            #                             None,
-            #                             x.data_inicio.apply(lambda s: pd.to_datetime(s.split('T')[0], format='%Y-%m-%d'))))
             .filter(['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa'])
             .assign(proposicao=Proposicao.objects.get(**prop_id))
         )
