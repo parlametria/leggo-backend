@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from api.models import Proposicao, TramitacaoEvent, EnergiaHistorico, Progresso
 
 
@@ -54,8 +55,18 @@ def import_all_data():
 
     
     # Carrega progresso
-    grouped = pd.read_csv('data/progressos.csv').dropna()
-    grouped = grouped.groupby(['casa', 'id_ext'])
+    progresso_df = pd.read_csv('data/progressos.csv')
+
+    print(progresso_df.dtypes)
+
+    
+    progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(lambda x: np.nan if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+    progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(lambda x: np.nan if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+
+    print(progresso_df.head())
+
+    grouped = progresso_df.groupby(['casa', 'id_ext'])
+
     for group_index in grouped.groups: 
         prop_id = {
             'casa': group_index[0],
@@ -64,13 +75,15 @@ def import_all_data():
         group_df = (
             grouped
             .get_group(group_index)
-            .assign(
-            data_inicio=lambda x: x.data_inicio.apply(
-            lambda s: s.split('T')[0]))
-            .assign(
-                data_fim=lambda x: x.data_fim.apply(
-                lambda s: s.split('T')[0]))
-            [['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa']]
+            # .assign(
+            #     data_inicio=lambda x: np.where(x.data_inicio == "NA",
+            #                             None,
+            #                             x.data_inicio.apply(lambda s: pd.to_datetime(s.split('T')[0], format='%Y-%m-%d'))))
+            # .assign(
+            #     data_fim=lambda x: np.where(x.data_fim == "NA",
+            #                             None,
+            #                             x.data_inicio.apply(lambda s: pd.to_datetime(s.split('T')[0], format='%Y-%m-%d'))))
+            .filter(['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa'])
             .assign(proposicao=Proposicao.objects.get(**prop_id))
         )
         Progresso.objects.bulk_create(
