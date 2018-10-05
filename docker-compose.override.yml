@@ -11,6 +11,7 @@ services:
       context: ${BACKEND_PATH:-.}
     image: agoradigital/agorapi-dev
     container_name: agorapi
+    tty: true
     environment:
       - DEBUG=True
     volumes:
