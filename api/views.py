@@ -190,10 +190,6 @@ class EnergiaHistoricoNotification(APIView):
         queryset = EnergiaHistorico.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)   
 
-        lastest = queryset.first()
-        penultimate = queryset[1]
-        change = queryset.first().energia_recente - penultimate.energia_recente
-        if(change == 0):
-            return Response({"mudou": False, "valor": change})
+        change = queryset.first().energia_recente - queryset[1].energia_recente
        
-        return Response({"mudou": True, "valor": change})
+        return Response({"valor": change})
