@@ -13,9 +13,19 @@ class Choices(Munch):
 
 
 class Proposicao(models.Model):
+
+    apelido = models.TextField(blank=True)
+    tema = models.TextField(blank=True)
+    # casa_origem = models.TextField(blank=True)
+
+
+class EtapaProposicao(models.Model):
     id_ext = models.IntegerField(
         'ID Externo',
         help_text='Id externo do sistema da casa.')
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name='etapas', null=True)
 
     numero = models.IntegerField(
         'Número',
@@ -47,8 +57,6 @@ class Proposicao(models.Model):
     justificativa = models.TextField(blank=True)
 
     palavras_chave = models.TextField(blank=True)
-
-    casa_origem = models.TextField(blank=True)
 
     autor_nome = models.TextField(blank=True)
 
@@ -127,7 +135,7 @@ class TramitacaoEvent(models.Model):
     situacao = models.TextField()
 
     proposicao = models.ForeignKey(
-        Proposicao, on_delete=models.CASCADE, related_name='tramitacao')
+        EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
 
     class Meta:
         ordering = ('sequencia',)
@@ -146,7 +154,7 @@ class EnergiaHistorico(models.Model):
         help_text='Energia acumulada com decaimento exponencial.')
 
     proposicao = models.ForeignKey(
-        Proposicao, on_delete=models.CASCADE, related_name='energia_historico')
+        EtapaProposicao, on_delete=models.CASCADE, related_name='energia_historico')
 
     class Meta:
         ordering = ('-periodo',)
@@ -169,7 +177,7 @@ class Progresso(models.Model):
     data_fim = models.DateField('Data final', null=True)
 
     proposicao = models.ForeignKey(
-       Proposicao, on_delete=models.CASCADE, related_name='progresso')
+       EtapaProposicao, on_delete=models.CASCADE, related_name='progresso')
 
     class Meta:
         ordering = ('data_inicio',)

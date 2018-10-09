@@ -4,18 +4,26 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import Proposicao, EnergiaHistorico, Progresso
+from api.models import EtapaProposicao, EnergiaHistorico, Progresso, Proposicao
 from datetime import datetime, timedelta
 
 
-class ProposicaoSerializer(serializers.ModelSerializer):
+class EtapasSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Proposicao
+        model = EtapaProposicao
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 'resumo_tramitacao',
             'resumo_progresso')
+
+
+class ProposicaoSerializer(serializers.ModelSerializer):
+    etapas = EtapasSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Proposicao
+        fields = ('tema', 'apelido', 'etapas')
 
 
 class EnergiaHistoricoSerializer(serializers.ModelSerializer):
@@ -38,12 +46,20 @@ class Info(APIView):
         return Response({'status': 'ok'})
 
 
+class EtapasList(generics.ListAPIView):
+    '''
+    Dados gerais da proposição.
+    '''
+    queryset = EtapaProposicao.objects.prefetch_related(
+        'tramitacao', 'energia_historico', 'progresso')
+    serializer_class = EtapasSerializer
+
+
 class ProposicaoList(generics.ListAPIView):
     '''
     Dados gerais da proposição.
     '''
-    queryset = Proposicao.objects.prefetch_related(
-        'tramitacao', 'energia_historico', 'progresso')
+    queryset = Proposicao.objects.all()
     serializer_class = ProposicaoSerializer
 
 
@@ -163,5 +179,5 @@ class ProposicaoDetail(APIView):
         ]
     )
     def get(self, request, casa, id_ext, format=None):
-        prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
-        return Response(ProposicaoSerializer(prop).data)
+        prop = get_object_or_404(EtapaProposicao, casa=casa, id_ext=id_ext)
+        return Response(EtapasSerializer(prop).data)
