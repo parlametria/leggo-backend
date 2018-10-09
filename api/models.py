@@ -16,7 +16,6 @@ class Proposicao(models.Model):
 
     apelido = models.TextField(blank=True)
     tema = models.TextField(blank=True)
-    # casa_origem = models.TextField(blank=True)
 
 
 class EtapaProposicao(models.Model):
