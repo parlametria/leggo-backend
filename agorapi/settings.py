@@ -47,11 +47,6 @@ INSTALLED_APPS = [
     'api',
 ]
 
-# These will be added to ``INSTALLED_APPS``, only if available.
-OPTIONAL_APPS = (
-    'debug_toolbar',
-)
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -157,6 +152,7 @@ INTERNAL_IPS = ['127.0.0.1']
 if DEBUG:
     # tricks to have debug toolbar when developing with docker
     MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+    INSTALLED_APPS.insert(0, 'debug_toolbar')
     import socket
     ip = socket.gethostbyname(socket.gethostname())
     INTERNAL_IPS += [ip[:-1] + '1']
