@@ -59,7 +59,8 @@ class ProposicaoList(generics.ListAPIView):
     '''
     Dados gerais da proposição.
     '''
-    queryset = Proposicao.objects.all()
+    queryset = Proposicao.objects.prefetch_related(
+        'etapas', 'etapas__tramitacao', 'etapas__progresso')
     serializer_class = ProposicaoSerializer
 
 
