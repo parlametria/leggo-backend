@@ -76,7 +76,7 @@ class EtapaProposicao(models.Model):
         indexes = [
             models.Index(fields=['casa', 'id_ext']),
         ]
-        ordering = ('-data_apresentacao',)
+        ordering = ('data_apresentacao',)
 
     @property
     def sigla(self):
