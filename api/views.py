@@ -166,6 +166,7 @@ class ProposicaoDetail(APIView):
         prop = get_object_or_404(Proposicao, casa=casa, id_ext=id_ext)
         return Response(ProposicaoSerializer(prop).data)
 
+
 class EnergiaHistoricoNotification(APIView):
     '''
     Dados de energia da proposição por periodo de acordo com uma data de referência.
@@ -181,14 +182,13 @@ class EnergiaHistoricoNotification(APIView):
                 type=openapi.TYPE_INTEGER),
         ]
     )
-
     def get(self, request, casa, id_ext):
         '''
         Informa se houve mudança de energia em relação a última semana e a penúltima. 
         '''
    
         queryset = EnergiaHistorico.objects.filter(
-            proposicao__casa=casa, proposicao__id_ext=id_ext)   
+            proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         change = queryset.first().energia_recente - queryset[1].energia_recente
        

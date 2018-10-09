@@ -17,5 +17,5 @@ urlpatterns = [
     url(r'^progresso/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.ProgressoList.as_view()),
     url(r'^notificacoes/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-    views.EnergiaHistoricoNotification.as_view()),
+        views.EnergiaHistoricoNotification.as_view()),
 ]
