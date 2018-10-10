@@ -175,7 +175,7 @@ class Progresso(models.Model):
 
     data_fim = models.DateField('Data final', null=True)
 
-    proposicao = models.ForeignKey(
+    etapa = models.ForeignKey(
        EtapaProposicao, on_delete=models.CASCADE, related_name='progresso')
 
     class Meta:

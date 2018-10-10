@@ -90,8 +90,8 @@ def import_progresso():
             .get_group(group_index)
             .assign(data_inicio=lambda x: x.data_inicio.apply(lambda s: s.split('T')[0]))
             .assign(data_fim=lambda x: x.data_fim.apply(lambda s: s.split('T')[0]))
-            [['data_inicio', 'data_fim', 'local', 'fase_global']]
-            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+            [['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa']]
+            .assign(etapa=EtapaProposicao.objects.get(**prop_id))
         )
         Progresso.objects.bulk_create(
             Progresso(**r[1].to_dict()) for r in group_df.iterrows())
