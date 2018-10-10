@@ -30,7 +30,7 @@ services:
     image: ${API_IMAGE_TAG:-agoradigital/agorapi}
     container_name: agorapi
     environment:
-      - DEBUG=True
+      - DEBUG=False
       - SECRET_KEY=${SECRET_KEY:-segredo}
     restart: always
     volumes:
