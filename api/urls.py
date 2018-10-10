@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^proposicoes/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.ProposicaoDetail.as_view()),
     url(r'^proposicoes/?$', views.ProposicaoList.as_view()),
+    url(r'^etapas/?$', views.EtapasList.as_view()),
     url(r'^energia/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.EnergiaHistoricoList.as_view()),
     url(r'^proposicoes/(?P<id_ext>[0-9]+)/fases/?$', views.Info.as_view()),
