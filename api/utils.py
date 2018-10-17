@@ -81,9 +81,13 @@ def import_progresso():
     progresso_df = pd.read_csv('data/progressos.csv')
 
     progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(
-        lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+        lambda x: 
+        None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d')
+        )
     progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(
-        lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+        lambda x: 
+        None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d')
+        )
 
     grouped = progresso_df.groupby(['casa', 'id_ext'])
 
