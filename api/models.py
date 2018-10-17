@@ -169,11 +169,11 @@ class Progresso(models.Model):
 
     fase_global = models.TextField(blank=True)
 
-    local = models.TextField(blank=True)
+    local = models.TextField(blank=True, null=True)
 
-    data_inicio = models.DateField('Data de início', null=True)
+    data_inicio = models.DateField('Data de início', null=True, blank=True)
 
-    data_fim = models.DateField('Data final', null=True)
+    data_fim = models.DateField('Data final', null=True, blank=True)
 
     etapa = models.ForeignKey(
        EtapaProposicao, on_delete=models.CASCADE, related_name='progresso')
