@@ -144,7 +144,7 @@ class ProgressoList(generics.ListAPIView):
         id_ext = self.kwargs['id_ext']
         data_referencia = self.request.query_params.get('data_referencia', None)
         queryset = Progresso.objects.filter(
-            proposicao__casa=casa, proposicao__id_ext=id_ext)
+            etapa__casa=casa, etapa__id_ext=id_ext)
 
         try:
             hoje = datetime.today() if data_referencia is None else datetime.strptime(
@@ -155,7 +155,7 @@ class ProgressoList(generics.ListAPIView):
                 'Utilizando data atual como data de referência.')
             hoje = datetime.today()
 
-        queryset = queryset.filter(data_inicio__lte=hoje)
+        queryset = queryset.filter()
         lastest = queryset.last()
 
         if (lastest is not None):
