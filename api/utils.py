@@ -82,12 +82,12 @@ def import_progresso():
 
     progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(
         lambda x:
-                None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d')
-        )
+        None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d')
+    )
     progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(
         lambda x:
-                None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d')
-        )
+        None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d')
+    )
 
     grouped = progresso_df.groupby(['casa', 'id_ext'])
 
@@ -106,7 +106,7 @@ def import_progresso():
         )
         Progresso.objects.bulk_create(
             Progresso(**r[1].to_dict())
-                        for r in group_df.where(pd.notnull(group_df), None).iterrows())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows())
 
 
 def import_all_data():
