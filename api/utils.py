@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from api.models import (
     EtapaProposicao, TramitacaoEvent, EnergiaHistorico, Progresso, Proposicao)
 
@@ -78,9 +79,14 @@ def import_energias():
 
 def import_progresso():
     '''Carrega progresso'''
-    grouped = pd.read_csv('data/progressos.csv').dropna()
-    grouped = grouped.groupby(['casa', 'id_ext'])
-    for group_index in grouped.groups:
+    progresso_df = pd.read_csv('data/progressos.csv')
+    
+    progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+    progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+
+    grouped = progresso_df.groupby(['casa', 'id_ext'])
+
+    for group_index in grouped.groups: 
         prop_id = {
             'casa': group_index[0],
             'id_ext': group_index[1],
@@ -88,13 +94,13 @@ def import_progresso():
         group_df = (
             grouped
             .get_group(group_index)
-            .assign(data_inicio=lambda x: x.data_inicio.apply(lambda s: s.split('T')[0]))
-            .assign(data_fim=lambda x: x.data_fim.apply(lambda s: s.split('T')[0]))
-            [['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa']]
+            .filter(['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa'])
             .assign(etapa=EtapaProposicao.objects.get(**prop_id))
+            .assign(data_inicio=lambda x: x.data_inicio.astype('object'))
+            .assign(data_fim=lambda x: x.data_fim.astype('object'))
         )
         Progresso.objects.bulk_create(
-            Progresso(**r[1].to_dict()) for r in group_df.iterrows())
+            Progresso(**r[1].to_dict()) for r in group_df.where(pd.notnull(group_df), None).iterrows())
 
 
 def import_all_data():
