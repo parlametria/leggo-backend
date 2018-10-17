@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from api.models import (
     EtapaProposicao, TramitacaoEvent, EnergiaHistorico, Progresso, Proposicao)
 
@@ -80,13 +79,15 @@ def import_energias():
 def import_progresso():
     '''Carrega progresso'''
     progresso_df = pd.read_csv('data/progressos.csv')
-    
-    progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
-    progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+
+    progresso_df['data_inicio'] = progresso_df['data_inicio'].astype('str').apply(
+        lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
+    progresso_df['data_fim'] = progresso_df['data_fim'].astype('str').apply(
+        lambda x: None if x == "NA" else pd.to_datetime(x.split('T')[0], format='%Y-%m-%d'))
 
     grouped = progresso_df.groupby(['casa', 'id_ext'])
 
-    for group_index in grouped.groups: 
+    for group_index in grouped.groups:
         prop_id = {
             'casa': group_index[0],
             'id_ext': group_index[1],
