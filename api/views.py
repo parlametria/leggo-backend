@@ -158,9 +158,6 @@ class ProgressoList(generics.ListAPIView):
         queryset = queryset.filter()
         lastest = queryset.last()
 
-        if (lastest is not None):
-            lastest.data_fim = hoje
-            lastest.save()
 
         return queryset
 
