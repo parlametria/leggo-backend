@@ -164,7 +164,6 @@ class ProgressoList(generics.ListAPIView):
 
         return queryset
 
-
 class ProposicaoDetail(APIView):
     '''
     Detalha proposição.
