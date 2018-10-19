@@ -99,7 +99,7 @@ def import_progresso():
         group_df = (
             grouped
             .get_group(group_index)
-            .filter(['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa'])
+            .filter(['data_inicio', 'data_fim', 'local', 'fase_global', 'local_casa', 'pulou'])
             .assign(etapa=EtapaProposicao.objects.get(**prop_id))
             .assign(data_inicio=lambda x: x.data_inicio.astype('object'))
             .assign(data_fim=lambda x: x.data_fim.astype('object'))
