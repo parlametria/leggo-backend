@@ -147,14 +147,6 @@ class ProgressoList(generics.ListAPIView):
         queryset = Progresso.objects.filter(
             etapa__casa=casa, etapa__id_ext=id_ext)
 
-        try:
-            hoje = datetime.today() if data_referencia is None else datetime.strptime(
-                data_referencia, '%Y-%m-%d')
-        except ValueError:
-            print(
-                f'Data de referência ({data_referencia}) inválida. '
-                'Utilizando data atual como data de referência.')
-
         queryset = queryset.filter()
 
         return queryset
