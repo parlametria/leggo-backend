@@ -42,6 +42,7 @@ class Info(APIView):
     '''
     Informações gerais sobre a plataforma.
     '''
+
     def get(self, request, format=None):
         return Response({'status': 'ok'})
 
@@ -153,11 +154,8 @@ class ProgressoList(generics.ListAPIView):
             print(
                 f'Data de referência ({data_referencia}) inválida. '
                 'Utilizando data atual como data de referência.')
-            hoje = datetime.today()
 
         queryset = queryset.filter()
-        lastest = queryset.last()
-
 
         return queryset
 
