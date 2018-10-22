@@ -42,6 +42,7 @@ class Info(APIView):
     '''
     Informações gerais sobre a plataforma.
     '''
+
     def get(self, request, format=None):
         return Response({'status': 'ok'})
 
@@ -144,7 +145,7 @@ class ProgressoList(generics.ListAPIView):
         id_ext = self.kwargs['id_ext']
         data_referencia = self.request.query_params.get('data_referencia', None)
         queryset = Progresso.objects.filter(
-            proposicao__casa=casa, proposicao__id_ext=id_ext)
+            etapa__casa=casa, etapa__id_ext=id_ext)
 
         try:
             hoje = datetime.today() if data_referencia is None else datetime.strptime(
@@ -155,12 +156,10 @@ class ProgressoList(generics.ListAPIView):
                 'Utilizando data atual como data de referência.')
             hoje = datetime.today()
 
-        queryset = queryset.filter(data_inicio__lte=hoje)
-        lastest = queryset.last()
-
-        if (lastest is not None):
-            lastest.data_fim = hoje
-            lastest.save()
+        if(data_referencia is None):
+            queryset = queryset.filter()
+        else:
+            queryset = queryset.filter(data_inicio__lte=hoje)
 
         return queryset
 
