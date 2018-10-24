@@ -177,7 +177,7 @@ class Progresso(models.Model):
 
     etapa = models.ForeignKey(
        EtapaProposicao, on_delete=models.CASCADE, related_name='progresso')
-       
+
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
 
