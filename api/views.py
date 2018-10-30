@@ -15,8 +15,7 @@ class EtapasSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 'resumo_tramitacao',
-            'resumo_progresso')
+            'energia', 'autor_nome', 'em_pauta', 'apelido', 'tema', 'resumo_tramitacao')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -24,7 +23,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Proposicao
-        fields = ('tema', 'apelido', 'etapas')
+        fields = ('id', 'tema', 'apelido', 'etapas', 'resumo_progresso')
 
 
 class EnergiaHistoricoSerializer(serializers.ModelSerializer):
@@ -54,7 +53,7 @@ class EtapasList(generics.ListAPIView):
     Dados gerais da proposição.
     '''
     queryset = EtapaProposicao.objects.prefetch_related(
-        'tramitacao', 'energia_historico', 'progresso')
+        'tramitacao', 'energia_historico')
     serializer_class = EtapasSerializer
 
 
@@ -63,7 +62,7 @@ class ProposicaoList(generics.ListAPIView):
     Dados gerais da proposição.
     '''
     queryset = Proposicao.objects.prefetch_related(
-        'etapas', 'etapas__tramitacao', 'etapas__progresso')
+        'etapas', 'etapas__tramitacao', 'progresso')
     serializer_class = ProposicaoSerializer
 
 
