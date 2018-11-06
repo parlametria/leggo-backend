@@ -1,7 +1,7 @@
 import pandas as pd
 from api.models import (
     EtapaProposicao, TramitacaoEvent, EnergiaHistorico, Progresso, Proposicao)
-
+from scipy import stats
 
 def import_etapas_proposicoes():
     '''Carrega etapas das proposições'''
@@ -117,3 +117,7 @@ def import_all_data():
     import_tramitacoes()
     import_energias()
     import_progresso()
+
+def get_coefficient(x, y):
+    slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+    return slope

@@ -6,6 +6,7 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import EtapaProposicao, EnergiaHistorico, Progresso, Proposicao
 from datetime import datetime, timedelta
+from api.utils import get_coefficient
 
 
 class EtapasSerializer(serializers.ModelSerializer):
