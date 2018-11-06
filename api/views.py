@@ -6,7 +6,10 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import EtapaProposicao, EnergiaHistorico, Progresso, Proposicao
 from datetime import datetime, timedelta
-from api.utils import get_coefficient
+from api.utils import get_coefficient, datetime_to_timestamp
+from django.http import JsonResponse, HttpResponse
+import time
+
 
 
 class EtapasSerializer(serializers.ModelSerializer):
@@ -67,11 +70,60 @@ class ProposicaoList(generics.ListAPIView):
     serializer_class = ProposicaoSerializer
 
 
-class EnergiaHistoricoList(generics.ListAPIView):
-    '''
-    Dados de energia da proposição por periodo de acordo com uma data de referência.
-    '''
-    serializer_class = EnergiaHistoricoSerializer
+# class EnergiaHistoricoList(generics.ListAPIView):
+#     '''
+#     Dados de energia da proposição por periodo de acordo com uma data de referência.
+#     '''
+#     serializer_class = EnergiaHistoricoSerializer
+
+#     @swagger_auto_schema(
+#         manual_parameters=[
+#             openapi.Parameter(
+#                 'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+#             openapi.Parameter(
+#                 'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+#                 type=openapi.TYPE_INTEGER),
+#             openapi.Parameter(
+#                 'semanas_anteriores', openapi.IN_PATH,
+#                 'número de semanas anteriores a retornar',
+#                 type=openapi.TYPE_INTEGER),
+#             openapi.Parameter(
+#                 'data_referencia', openapi.IN_PATH,
+#                 'data de referência a ser considerada',
+#                 type=openapi.TYPE_STRING),
+#         ]
+#     )
+#     def get_queryset(self):
+#         '''
+#         Retorna o histórico de energias de uma proposição, retornando a quantidade
+#         especificada de semanas anteriores à data de referência.
+#         '''
+#         casa = self.kwargs['casa']
+#         id_ext = self.kwargs['id_ext']
+#         semanas_anteriores = self.request.query_params.get('semanas_anteriores', None)
+#         data_referencia = self.request.query_params.get('data_referencia', None)
+#         queryset = EnergiaHistorico.objects.filter(
+#             proposicao__casa=casa, proposicao__id_ext=id_ext)
+
+#         try:
+#             hoje = (
+#                 datetime.today() if data_referencia is None else datetime.strptime(
+#                     data_referencia, '%Y-%m-%d'))
+#         except ValueError:
+#             print(
+#                 f'Data de referência ({data_referencia}) inválida. '
+#                 'Utilizando data atual como data de referência.')
+#             hoje = datetime.today()
+
+#         queryset = queryset.filter(periodo__lte=hoje)
+
+#         if semanas_anteriores is not None:
+#             start_date = hoje - timedelta(weeks=int(semanas_anteriores))
+#             queryset = queryset.filter(periodo__gte=start_date)
+#         return queryset
+
+
+class EnergiaHistoricoList(APIView):
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -90,15 +142,15 @@ class EnergiaHistoricoList(generics.ListAPIView):
                 type=openapi.TYPE_STRING),
         ]
     )
-    def get_queryset(self):
+
+    def get(self, request, casa, id_ext):
         '''
         Retorna o histórico de energias de uma proposição, retornando a quantidade
         especificada de semanas anteriores à data de referência.
         '''
-        casa = self.kwargs['casa']
-        id_ext = self.kwargs['id_ext']
-        semanas_anteriores = self.request.query_params.get('semanas_anteriores', None)
-        data_referencia = self.request.query_params.get('data_referencia', None)
+        semanas_anteriores = request.query_params.get('semanas_anteriores')
+        data_referencia = request.query_params.get('data_referencia')
+
         queryset = EnergiaHistorico.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
@@ -117,7 +169,18 @@ class EnergiaHistoricoList(generics.ListAPIView):
         if semanas_anteriores is not None:
             start_date = hoje - timedelta(weeks=int(semanas_anteriores))
             queryset = queryset.filter(periodo__gte=start_date)
-        return queryset
+
+        energias = []
+        dates_x = [datetime_to_timestamp(energia.periodo) for energia in queryset[:6]] # pega as ultimas 6 energias
+        energias_y = [energia.energia_recente for energia in queryset[:6]]
+        
+        for energia in queryset:
+            energias.append(EnergiaHistoricoSerializer(energia).data)
+        
+        return Response({
+            'coefficient': get_coefficient(dates_x, energias_y),
+            'energias': energias
+        })
 
 
 class ProgressoList(generics.ListAPIView):

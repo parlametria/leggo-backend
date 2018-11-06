@@ -9,7 +9,7 @@ services:
   api:
     build:
       context: ${BACKEND_PATH:-.}
-    image: agoradigital/agorapi-dev
+    image: agoradigital/python3.7-pandas-psycopg2-alpine
     container_name: agorapi
     tty: true
     environment:
@@ -20,3 +20,4 @@ services:
       - db
     ports:
       - "8000:8000"
+      
