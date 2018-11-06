@@ -178,8 +178,8 @@ class EnergiaHistoricoList(APIView):
             energias.append(EnergiaHistoricoSerializer(energia).data)
         
         return Response({
-            'coefficient': get_coefficient(dates_x, energias_y),
-            'energias': energias
+            'coeficiente': get_coefficient(dates_x, energias_y),
+            'pressoes': energias
         })
 
 
