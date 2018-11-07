@@ -1,7 +1,7 @@
 casa,id_ext,fase_global,local,data_inicio,data_fim,local_casa,pulou
 camara,257161,Construção,Comissões,2004-06-22T14:57:00Z,2018-04-12T12:00:00Z,camara,FALSE
 camara,257161,Construção,Plenário,NA,NA,NA,FALSE
-senado,132865,Revisão I,Comissões,2018-04-12T12:00:00Z,2019-05-20T00:00:00Z,senado,FALSE
+senado,132865,Revisão I,Comissões,2018-04-12T12:00:00Z,2019-05-25T00:00:00Z,senado,FALSE
 senado,132865,Revisão I,Plenário,NA,NA,NA,FALSE
 senado,132865,Revisão II,Comissões,NA,NA,NA,FALSE
 senado,132865,Revisão II,Plenário,NA,NA,NA,FALSE
@@ -55,7 +55,7 @@ camara,2056568,Revisão II,Comissões,NA,NA,NA,FALSE
 camara,2056568,Revisão II,Plenário,NA,NA,NA,FALSE
 camara,2056568,Sansão/Veto,Presidência da República,NA,NA,NA,FALSE
 camara,2056568,Avaliação dos Vetos,Congresso,NA,NA,NA,FALSE
-camara,2120775,Construção,Comissões,2018-05-16T00:00:00Z,2018-07-11T14:30:00Z,camara,FALSE
+camara,2120775,Construção,Comissões,2018-05-16T00:00:00Z,2018-10-31T17:07:00Z,camara,FALSE
 camara,2120775,Construção,Plenário,NA,NA,NA,FALSE
 camara,2120775,Revisão I,Comissões,NA,NA,NA,FALSE
 camara,2120775,Revisão I,Plenário,NA,NA,NA,FALSE

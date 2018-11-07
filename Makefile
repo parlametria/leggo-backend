@@ -120,7 +120,7 @@ endif
 .PHONY: migrate
  update-agorapi: makemigrations migrate
 .PHONY: update-agorapi
- import: 
+ import:
 	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data'
 .PHONY: update-agorapi
  update: update-agorapi import
