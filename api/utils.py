@@ -4,6 +4,7 @@ from api.models import (
 from scipy import stats
 import time
 
+
 def import_etapas_proposicoes():
     '''Carrega etapas das proposições'''
     props_df = (
@@ -119,9 +120,11 @@ def import_all_data():
     import_energias()
     import_progresso()
 
+
 def get_coefficient(x, y):
     slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
     return slope
+
 
 def datetime_to_timestamp(date):
     return time.mktime(date.timetuple())
