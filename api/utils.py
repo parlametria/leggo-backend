@@ -122,8 +122,7 @@ def import_all_data():
 
 
 def get_coefficient(x, y):
-    slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
-    return slope
+    return stats.linregress(x, y)[0]
 
 
 def datetime_to_timestamp(date):
