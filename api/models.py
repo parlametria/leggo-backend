@@ -17,6 +17,18 @@ class Proposicao(models.Model):
     apelido = models.TextField(blank=True)
     tema = models.TextField(blank=True)
 
+    @property
+    def resumo_progresso(self):
+        progressos = []
+        for progresso in self.progresso.all():
+            progressos.append({
+                'fase_global': progresso.fase_global,
+                'local': progresso.local,
+                'data_inicio': progresso.data_inicio,
+                'data_fim': progresso.data_fim,
+                'local_casa': progresso.local_casa})
+        return progressos
+
 
 class EtapaProposicao(models.Model):
     id_ext = models.IntegerField(
@@ -106,18 +118,6 @@ class EtapaProposicao(models.Model):
                 })
         return events
 
-    @property
-    def resumo_progresso(self):
-        progressos = []
-        for progresso in self.progresso.all():
-            progressos.append({
-                'fase_global': progresso.fase_global,
-                'local': progresso.local,
-                'data_inicio': progresso.data_inicio,
-                'data_fim': progresso.data_fim,
-                'local_casa': progresso.local_casa})
-        return progressos
-
 
 class TramitacaoEvent(models.Model):
 
@@ -175,8 +175,8 @@ class Progresso(models.Model):
 
     data_fim = models.DateField('Data final', null=True, blank=True)
 
-    etapa = models.ForeignKey(
-       EtapaProposicao, on_delete=models.CASCADE, related_name='progresso')
+    proposicao = models.ForeignKey(
+       Proposicao, on_delete=models.CASCADE, related_name='progresso')
 
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
