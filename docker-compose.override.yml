@@ -9,7 +9,7 @@ services:
   api:
     build:
       context: ${BACKEND_PATH:-.}
-    image: agoradigital/python3.7-pandas-psycopg2-alpine
+    image: agoradigital/agorapi-dev
     container_name: agorapi
     tty: true
     environment:
