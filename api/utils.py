@@ -1,6 +1,8 @@
 import pandas as pd
 from api.models import (
     EtapaProposicao, TramitacaoEvent, EnergiaHistorico, Progresso, Proposicao)
+from scipy import stats
+import time
 
 
 def import_etapas_proposicoes():
@@ -117,3 +119,11 @@ def import_all_data():
     import_tramitacoes()
     import_energias()
     import_progresso()
+
+
+def get_coefficient(x, y):
+    return stats.linregress(x, y)[0]
+
+
+def datetime_to_timestamp(date):
+    return time.mktime(date.timetuple())
