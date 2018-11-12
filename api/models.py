@@ -71,6 +71,8 @@ class EtapaProposicao(models.Model):
 
     autor_nome = models.TextField(blank=True)
 
+    relator_nome = models.TextField(blank=True)
+
     energia = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
