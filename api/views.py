@@ -15,7 +15,7 @@ class EtapasSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'energia', 'autor_nome', 'relator_nome', 'em_pauta', 'apelido', 'tema', 
+            'energia', 'autor_nome', 'relator_nome', 'em_pauta', 'apelido', 'tema',
             'resumo_tramitacao')
 
 
