@@ -165,7 +165,7 @@ class EnergiaHistorico(models.Model):
 class Progresso(models.Model):
 
     local_casa = models.CharField(
-        max_length=6,
+        max_length=30,
         help_text='Casa desta proposição.',
         null=True)
 
