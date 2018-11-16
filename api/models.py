@@ -71,6 +71,8 @@ class EtapaProposicao(models.Model):
 
     autor_nome = models.TextField(blank=True)
 
+    relator_nome = models.TextField(blank=True)
+
     energia = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
@@ -163,7 +165,7 @@ class EnergiaHistorico(models.Model):
 class Progresso(models.Model):
 
     local_casa = models.CharField(
-        max_length=6,
+        max_length=30,
         help_text='Casa desta proposição.',
         null=True)
 
