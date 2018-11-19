@@ -183,5 +183,5 @@ class Progresso(models.Model):
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
 
-    class Meta:
-        ordering = ('data_inicio',)
+    # class Meta:
+    #     ordering = ('data_inicio',)
