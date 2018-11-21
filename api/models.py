@@ -36,7 +36,8 @@ class Proposicao(models.Model):
                 'local': progresso.local,
                 'data_inicio': progresso.data_inicio,
                 'data_fim': progresso.data_fim,
-                'local_casa': progresso.local_casa
+                'local_casa': progresso.local_casa,
+                'pulou': progresso.pulou
             } for progresso in self.progresso.all()],
             key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
 

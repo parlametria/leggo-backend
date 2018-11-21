@@ -122,7 +122,10 @@ def import_all_data():
 
 
 def get_coefficient(x, y):
-    return stats.linregress(x, y)[0]
+    if(x and y):
+        return stats.linregress(x, y)[0]
+    else:
+        return 0
 
 
 def datetime_to_timestamp(date):
