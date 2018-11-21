@@ -1,5 +1,6 @@
 id_camara,id_senado,apelido,tema
-257161,132865,Lei do Licenciamento Ambiental,Meio Ambiente
+257161,,Lei do Licenciamento Ambiental,Meio Ambiente
+,132865,Lei Geral de Licenciamento Ambiental,Meio Ambiente
 2088990,91341,Lei da Qualidade Fiscal,Agenda Nacional
 46249,41703,PL do Veneno,Meio Ambiente
 2121442,127753,Lei do Teto Remuneratório,Agenda Nacional
@@ -13,7 +14,7 @@ id_camara,id_senado,apelido,tema
 541857,,Revogação do Estatuto do Desarmamento,Agenda Bolsonaro
 2119881,,Reforma da Previdência,Agenda Bolsonaro
 1214970,,Nova regulação para devolução de imóveis comprados na planta,Agenda Bolsonaro
-,133943,Revisão do contrato da cessão onerosa da Petrobras,Agenda Bolsonaro
+2158425,133943,Revisão do contrato da cessão onerosa da Petrobras,Agenda Bolsonaro
 2056568,,Indenização Propriedades Privadas em Unidades de Conservação,Meio Ambiente
 1738598,,Criação da Área de Proteção Ambiental de Canavieiras,Meio Ambiente
 14562,,Demarcações passam a ser competência exclusiva do Congresso,Meio Ambiente
@@ -21,4 +22,3 @@ id_camara,id_senado,apelido,tema
 944279,,Lei do Cerrado,Meio Ambiente
 ,102721,Cana na Amazônia,Meio Ambiente
 ,103831,Lei do Pantanal - Maggi,Meio Ambiente
-
