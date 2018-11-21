@@ -1,6 +1,6 @@
 import pandas as pd
 from api.models import (
-    EtapaProposicao, TramitacaoEvent, EnergiaHistorico, Progresso, Proposicao)
+    EtapaProposicao, TramitacaoEvent, EnergiaHistorico, Progresso, Proposicao, PautaHistorico)
 from scipy import stats
 import time
 
@@ -77,6 +77,22 @@ def import_energias():
         EnergiaHistorico.objects.bulk_create(
             EnergiaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
 
+def import_pautas():
+    '''Carrega históricos de pautas'''
+    grouped = pd.read_csv('data/pautas.csv').groupby(['casa', 'id_ext'])
+    for group_index in grouped.groups:
+        prop_id = {
+            'casa': group_index[0],
+            'id_ext': group_index[1],
+        }
+        group_df = (
+            grouped
+            .get_group(group_index)
+            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+        )
+        PautaHistorico.objects.bulk_create(
+            PautaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
+
 
 def import_progresso():
     '''Carrega o progresso das proposições'''
@@ -119,6 +135,7 @@ def import_all_data():
     import_tramitacoes()
     import_energias()
     import_progresso()
+    import_pautas()
 
 
 def get_coefficient(x, y):

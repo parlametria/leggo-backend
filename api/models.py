@@ -172,6 +172,40 @@ class EnergiaHistorico(models.Model):
         ordering = ('-periodo',)
         get_latest_by = '-periodo'
 
+class PautaHistorico(models.Model):
+    '''
+    Histórico das pautas de uma proposição
+    '''
+
+    data = models.DateField('data')
+
+    sigla = models.TextField(blank=True)
+
+    id_ext = models.IntegerField(
+        'ID Externo',
+        help_text='Id externo do sistema da casa.',
+        blank=False)
+    
+    local = models.TextField(blank=True)
+
+    casa = models.TextField(blank=True)
+
+    em_pauta = models.NullBooleanField(
+        help_text='TRUE se a proposicao estiver em pauta naquela semana, FALSE caso contrario')
+
+    semana = models.IntegerField(
+        help_text='Qual a semana do ano que está')
+
+    ano = models.IntegerField(
+        help_text='Qual o ano da agenda')
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='pauta_historico')
+
+    class Meta:
+        ordering = ('-data',)
+        get_latest_by = '-data'
+
 
 class Progresso(models.Model):
 
