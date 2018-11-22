@@ -194,7 +194,7 @@ class PautaHistorico(models.Model):
 
     em_pauta = models.NullBooleanField(
         help_text=
-        'TRUE se a proposicao estiver em pauta naquela semana, FALSE caso contrario')
+                'TRUE se a proposicao estiver em pauta naquela semana, FALSE caso contrario')
 
     semana = models.IntegerField(
         help_text='Qual a semana do ano que está')

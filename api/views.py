@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import (
-    EtapaProposicao, EnergiaHistorico, 
+    EtapaProposicao, EnergiaHistorico,
     Progresso, Proposicao, PautaHistorico)
 from datetime import datetime, timedelta
 from api.utils import get_coefficient, datetime_to_timestamp
