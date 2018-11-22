@@ -137,8 +137,7 @@ class EtapaProposicao(models.Model):
                         'casa': event.proposicao.casa,
                         'nome': event.local
                     })
-            
-        return sorted(events, key=lambda k: k['data']) 
+        return sorted(events, key=lambda k: k['data'])
 
 
 class TramitacaoEvent(models.Model):

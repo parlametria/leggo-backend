@@ -1,6 +1,6 @@
 import pandas as pd
 from api.models import (
-    EtapaProposicao, TramitacaoEvent, EnergiaHistorico, 
+    EtapaProposicao, TramitacaoEvent, EnergiaHistorico,
     Progresso, Proposicao, PautaHistorico)
 from scipy import stats
 import time
