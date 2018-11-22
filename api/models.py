@@ -193,8 +193,7 @@ class PautaHistorico(models.Model):
     casa = models.TextField(blank=True)
 
     em_pauta = models.NullBooleanField(
-        help_text=
-                'TRUE se a proposicao estiver em pauta naquela semana, FALSE caso contrario')
+        help_text='TRUE se a proposicao estiver em pauta, FALSE caso contrario')
 
     semana = models.IntegerField(
         help_text='Qual a semana do ano que está')
