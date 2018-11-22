@@ -4,7 +4,9 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import EtapaProposicao, EnergiaHistorico, Progresso, Proposicao, PautaHistorico
+from api.models import (
+    EtapaProposicao, EnergiaHistorico, 
+    Progresso, Proposicao, PautaHistorico)
 from datetime import datetime, timedelta
 from api.utils import get_coefficient, datetime_to_timestamp
 
@@ -32,10 +34,12 @@ class EnergiaHistoricoSerializer(serializers.ModelSerializer):
         model = EnergiaHistorico
         fields = ('periodo', 'energia_recente', 'energia_periodo')
 
+
 class PautaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PautaHistorico
-        fields = ('data', 'sigla', 'local', 'em_pauta', 'semana', 'ano') 
+        fields = ('data', 'sigla', 'local', 'em_pauta', 'semana', 'ano')
+
 
 class ProgressoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -175,11 +179,12 @@ class ProgressoList(generics.ListAPIView):
 
         return queryset
 
+
 class PautaList(generics.ListAPIView):
     '''
     Dados do progresso da proposição por periodo de acordo com uma data de referência.
     '''
-   
+
     serializer_class = PautaHistoricoSerializer
 
     @swagger_auto_schema(
@@ -219,7 +224,7 @@ class PautaList(generics.ListAPIView):
         else:
             queryset = queryset.filter(data_inicio__lte=hoje)
 
-        return queryset 
+        return queryset
 
 
 class ProposicaoDetail(APIView):

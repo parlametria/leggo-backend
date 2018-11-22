@@ -173,6 +173,7 @@ class EnergiaHistorico(models.Model):
         ordering = ('-periodo',)
         get_latest_by = '-periodo'
 
+
 class PautaHistorico(models.Model):
     '''
     Histórico das pautas de uma proposição
@@ -186,13 +187,14 @@ class PautaHistorico(models.Model):
         'ID Externo',
         help_text='Id externo do sistema da casa.',
         blank=False)
-    
+
     local = models.TextField(blank=True)
 
     casa = models.TextField(blank=True)
 
     em_pauta = models.NullBooleanField(
-        help_text='TRUE se a proposicao estiver em pauta naquela semana, FALSE caso contrario')
+        help_text=
+        'TRUE se a proposicao estiver em pauta naquela semana, FALSE caso contrario')
 
     semana = models.IntegerField(
         help_text='Qual a semana do ano que está')
@@ -224,7 +226,7 @@ class Progresso(models.Model):
     data_fim = models.DateField('Data final', null=True, blank=True)
 
     proposicao = models.ForeignKey(
-       Proposicao, on_delete=models.CASCADE, related_name='progresso')
+        Proposicao, on_delete=models.CASCADE, related_name='progresso')
 
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')

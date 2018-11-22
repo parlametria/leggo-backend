@@ -1,6 +1,7 @@
 import pandas as pd
 from api.models import (
-    EtapaProposicao, TramitacaoEvent, EnergiaHistorico, Progresso, Proposicao, PautaHistorico)
+    EtapaProposicao, TramitacaoEvent, EnergiaHistorico, 
+    Progresso, Proposicao, PautaHistorico)
 from scipy import stats
 import time
 
@@ -76,6 +77,7 @@ def import_energias():
         )
         EnergiaHistorico.objects.bulk_create(
             EnergiaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
+
 
 def import_pautas():
     '''Carrega históricos de pautas'''
