@@ -1,6 +1,6 @@
 import pandas as pd
 from api.models import (
-    EtapaProposicao, TramitacaoEvent, EnergiaHistorico,
+    EtapaProposicao, TramitacaoEvent, EnergiaHistorico, 
     Progresso, Proposicao, PautaHistorico)
 from scipy import stats
 import time
@@ -53,7 +53,7 @@ def import_tramitacoes():
             .assign(descricao=lambda x: x.descricao_situacao)
             .assign(data=lambda x: x.data.apply(lambda s: s.split('T')[0]))
             .assign(situacao=lambda x: x.descricao_situacao)
-            [['data', 'sequencia', 'sigla_local', 'situacao']]
+            [['data', 'sequencia', 'sigla_local', 'local', 'situacao']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         TramitacaoEvent.objects.bulk_create(
