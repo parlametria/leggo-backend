@@ -174,6 +174,26 @@ class EnergiaHistorico(models.Model):
         get_latest_by = '-periodo'
 
 
+class PautaHistorico(models.Model):
+    '''
+    Histórico das pautas de uma proposição
+    '''
+
+    data = models.DateField('data')
+
+    local = models.TextField(blank=True)
+
+    em_pauta = models.NullBooleanField(
+        help_text='TRUE se a proposicao estiver em pauta, FALSE caso contrario')
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='pauta_historico')
+
+    class Meta:
+        ordering = ('-data',)
+        get_latest_by = '-data'
+
+
 class Progresso(models.Model):
 
     local_casa = models.CharField(
@@ -190,7 +210,7 @@ class Progresso(models.Model):
     data_fim = models.DateField('Data final', null=True, blank=True)
 
     proposicao = models.ForeignKey(
-       Proposicao, on_delete=models.CASCADE, related_name='progresso')
+        Proposicao, on_delete=models.CASCADE, related_name='progresso')
 
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
