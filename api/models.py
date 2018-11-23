@@ -1,10 +1,21 @@
 from munch import Munch
 from django.db import models
 
-urls = {
+URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
     'senado': 'https://www25.senado.leg.br/web/atividade/materias/-/materia/'
 }
+
+ORDER_PROGRESSO = [
+    ('Construção', 'Comissões'),
+    ('Construção', 'Plenário'),
+    ('Revisão I', 'Comissões'),
+    ('Revisão I', 'Plenário'),
+    ('Revisão II', 'Comissões'),
+    ('Revisão II', 'Plenário'),
+    ('Sansão/Veto', 'Presidência da República'),
+    ('Avaliação dos Vetos', 'Congresso'),
+]
 
 
 class Choices(Munch):
@@ -19,15 +30,16 @@ class Proposicao(models.Model):
 
     @property
     def resumo_progresso(self):
-        progressos = []
-        for progresso in self.progresso.all():
-            progressos.append({
+        return sorted(
+            [{
                 'fase_global': progresso.fase_global,
                 'local': progresso.local,
                 'data_inicio': progresso.data_inicio,
                 'data_fim': progresso.data_fim,
-                'local_casa': progresso.local_casa})
-        return progressos
+                'local_casa': progresso.local_casa,
+                'pulou': progresso.pulou
+            } for progresso in self.progresso.all()],
+            key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
 
 
 class EtapaProposicao(models.Model):
@@ -71,6 +83,8 @@ class EtapaProposicao(models.Model):
 
     autor_nome = models.TextField(blank=True)
 
+    relator_nome = models.TextField(blank=True)
+
     energia = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
@@ -102,7 +116,7 @@ class EtapaProposicao(models.Model):
     @property
     def url(self):
         '''URL para a página da proposição em sua respectiva casa.'''
-        return urls[self.casa] + str(self.id_ext)
+        return URLS[self.casa] + str(self.id_ext)
 
     @property
     def resumo_tramitacao(self):
@@ -163,7 +177,7 @@ class EnergiaHistorico(models.Model):
 class Progresso(models.Model):
 
     local_casa = models.CharField(
-        max_length=6,
+        max_length=30,
         help_text='Casa desta proposição.',
         null=True)
 
@@ -180,6 +194,3 @@ class Progresso(models.Model):
 
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
-
-    class Meta:
-        ordering = ('data_inicio',)

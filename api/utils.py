@@ -91,6 +91,9 @@ def import_progresso():
     grouped = progresso_df.groupby(['casa', 'id_ext'])
 
     for group_index in grouped.groups:
+        if any(map(pd.isna, group_index)):
+            print('Aviso: dados de progresso possuem NAN nos identificadores!')
+            continue
         prop_id = {
             'casa': group_index[0],
             'id_ext': group_index[1],
@@ -119,7 +122,10 @@ def import_all_data():
 
 
 def get_coefficient(x, y):
-    return stats.linregress(x, y)[0]
+    if(x and y):
+        return stats.linregress(x, y)[0]
+    else:
+        return 0
 
 
 def datetime_to_timestamp(date):
