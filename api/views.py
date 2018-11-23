@@ -38,7 +38,7 @@ class EnergiaHistoricoSerializer(serializers.ModelSerializer):
 class PautaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PautaHistorico
-        fields = ('data', 'sigla', 'local', 'em_pauta', 'semana', 'ano')
+        fields = ('data', 'local', 'em_pauta')
 
 
 class ProgressoSerializer(serializers.ModelSerializer):

@@ -72,7 +72,7 @@ def import_energias():
             grouped
             .get_group(group_index)
             .assign(periodo=lambda x: x.periodo.apply(lambda s: s.split('T')[0]))
-            [['periodo', 'energia_periodo', 'energia_recente']]
+            .filter(['periodo', 'energia_periodo', 'energia_recente'])
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         EnergiaHistorico.objects.bulk_create(
@@ -91,6 +91,7 @@ def import_pautas():
             grouped
             .get_group(group_index)
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+            .filter(['data', 'local', 'em_pauta', 'proposicao'])
         )
         PautaHistorico.objects.bulk_create(
             PautaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
