@@ -37,6 +37,7 @@ services:
       - app_sockets:/sockets
       - app_static:/agora-digital-backend/static
       - app_deploy_config:/nginx_config
+      - proposicoes_data:/agora-digital-backend/data
     depends_on:
       - db
 
@@ -45,3 +46,4 @@ volumes:
   app_sockets:
   app_static:
   app_deploy_config:
+  proposicoes_data:
