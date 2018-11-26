@@ -1,5 +1,6 @@
 from munch import Munch
 from django.db import models
+from datetime import datetime
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -180,6 +181,8 @@ class PautaHistorico(models.Model):
     '''
 
     data = models.DateField('data')
+
+    semana = models.IntegerField('semana')
 
     local = models.TextField(blank=True)
 
