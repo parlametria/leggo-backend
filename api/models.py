@@ -1,6 +1,5 @@
 from munch import Munch
 from django.db import models
-from datetime import datetime
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',

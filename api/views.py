@@ -223,7 +223,7 @@ class PautaList(generics.ListAPIView):
         if(data_referencia is None):
             queryset = queryset.filter()
         else:
-            queryset = queryset.filter(semana = semana_atual)
+            queryset = queryset.filter(semana=semana_atual)
 
         return queryset
 
