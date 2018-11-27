@@ -181,6 +181,8 @@ class PautaHistorico(models.Model):
 
     data = models.DateField('data')
 
+    semana = models.IntegerField('semana')
+
     local = models.TextField(blank=True)
 
     em_pauta = models.NullBooleanField(

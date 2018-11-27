@@ -91,7 +91,7 @@ def import_pautas():
             grouped
             .get_group(group_index)
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
-            .filter(['data', 'local', 'em_pauta', 'proposicao'])
+            .filter(['data', 'semana', 'local', 'em_pauta', 'proposicao'])
         )
         PautaHistorico.objects.bulk_create(
             PautaHistorico(**r[1].to_dict()) for r in group_df.iterrows())

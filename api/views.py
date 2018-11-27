@@ -38,7 +38,7 @@ class EnergiaHistoricoSerializer(serializers.ModelSerializer):
 class PautaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PautaHistorico
-        fields = ('data', 'local', 'em_pauta')
+        fields = ('data', 'semana', 'local', 'em_pauta')
 
 
 class ProgressoSerializer(serializers.ModelSerializer):
@@ -213,16 +213,17 @@ class PautaList(generics.ListAPIView):
         try:
             hoje = datetime.today() if data_referencia is None else datetime.strptime(
                 data_referencia, '%Y-%m-%d')
+            semana_atual = hoje.isocalendar()[1]
         except ValueError:
             print(
                 f'Data de referência ({data_referencia}) inválida. '
                 'Utilizando data atual como data de referência.')
-            hoje = datetime.today()
+            semana_atual = datetime.today().isocalendar()[1]
 
         if(data_referencia is None):
             queryset = queryset.filter()
         else:
-            queryset = queryset.filter(data_inicio__lte=hoje)
+            queryset = queryset.filter(semana=semana_atual)
 
         return queryset
 
