@@ -90,8 +90,8 @@ class EtapaProposicao(models.Model):
     em_pauta = models.NullBooleanField(
         help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario')
 
-    apelido = models.CharField(
-        'Apelido da proposição.', max_length=60,
+    apelido = models.TextField(
+        'Apelido da proposição.',
         help_text='Apelido dado para proposição.', null=True)
 
     tema = models.TextField(
