@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import (
-    EtapaProposicao, TemperaturaHistorico,
+    EtapaProposicao, EnergiaHistorico,
     Progresso, Proposicao, PautaHistorico)
 from datetime import datetime, timedelta
 from api.utils import get_coefficient, datetime_to_timestamp
@@ -17,7 +17,7 @@ class EtapasSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'temperatura', 'autor_nome', 'relator_nome', 'em_pauta', 'apelido', 'tema',
+            'energia', 'autor_nome', 'relator_nome', 'em_pauta', 'apelido', 'tema',
             'resumo_tramitacao')
 
 
@@ -29,10 +29,10 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = ('id', 'tema', 'apelido', 'etapas', 'resumo_progresso')
 
 
-class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
+class EnergiaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = TemperaturaHistorico
-        fields = ('periodo', 'temperatura_recente', 'temperatura_periodo')
+        model = EnergiaHistorico
+        fields = ('periodo', 'energia_recente', 'energia_periodo')
 
 
 class PautaHistoricoSerializer(serializers.ModelSerializer):
@@ -62,7 +62,7 @@ class EtapasList(generics.ListAPIView):
     Dados gerais da proposição.
     '''
     queryset = EtapaProposicao.objects.prefetch_related(
-        'tramitacao', 'temperatura_historico')
+        'tramitacao', 'energia_historico')
     serializer_class = EtapasSerializer
 
 
@@ -75,7 +75,7 @@ class ProposicaoList(generics.ListAPIView):
     serializer_class = ProposicaoSerializer
 
 
-class TemperaturaHistoricoList(APIView):
+class EnergiaHistoricoList(APIView):
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -96,13 +96,13 @@ class TemperaturaHistoricoList(APIView):
     )
     def get(self, request, casa, id_ext):
         '''
-        Retorna o histórico de temperaturas de uma proposição, retornando a quantidade
+        Retorna o histórico de energias de uma proposição, retornando a quantidade
         especificada de semanas anteriores à data de referência.
         '''
         semanas_anteriores = request.query_params.get('semanas_anteriores')
         data_referencia = request.query_params.get('data_referencia')
 
-        queryset = TemperaturaHistorico.objects.filter(
+        queryset = EnergiaHistorico.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         try:
@@ -120,17 +120,17 @@ class TemperaturaHistoricoList(APIView):
         if semanas_anteriores is not None:
             start_date = hoje - timedelta(weeks=int(semanas_anteriores))
             queryset = queryset.filter(periodo__gte=start_date)
-        temperaturas = []
-        dates_x = [datetime_to_timestamp(temperatura.periodo)
-                   for temperatura in queryset[:6]]  # pega as ultimas 6 temperaturas
-        temperaturas_y = [temperatura.temperatura_recente for temperatura in queryset[:6]]
+        energias = []
+        dates_x = [datetime_to_timestamp(energia.periodo)
+                   for energia in queryset[:6]]  # pega as ultimas 6 energias
+        energias_y = [energia.energia_recente for energia in queryset[:6]]
 
-        for temperatura in queryset:
-            temperaturas.append(TemperaturaHistoricoSerializer(temperatura).data)
+        for energia in queryset:
+            energias.append(EnergiaHistoricoSerializer(energia).data)
 
         return Response({
-            'coeficiente': get_coefficient(dates_x, temperaturas_y),
-            'temperaturas': temperaturas
+            'coeficiente': get_coefficient(dates_x, energias_y),
+            'pressoes': energias
         })
 
 
