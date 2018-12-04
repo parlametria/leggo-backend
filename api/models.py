@@ -85,7 +85,7 @@ class EtapaProposicao(models.Model):
 
     relator_nome = models.TextField(blank=True)
 
-    temperatura = models.FloatField(null=True)
+    energia = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
         help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario')
@@ -154,20 +154,20 @@ class TramitacaoEvent(models.Model):
         ordering = ('sequencia', )
 
 
-class TemperaturaHistorico(models.Model):
+class EnergiaHistorico(models.Model):
     '''
-    Histórico de temperatura de uma proposição
+    Histórico de energia de uma proposição
     '''
     periodo = models.DateField('periodo')
 
-    temperatura_periodo = models.IntegerField(
+    energia_periodo = models.IntegerField(
         help_text='Quantidade de eventos no período (semana).')
 
-    temperatura_recente = models.FloatField(
-        help_text='Temperatura acumulada com decaimento exponencial.')
+    energia_recente = models.FloatField(
+        help_text='Energia acumulada com decaimento exponencial.')
 
     proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='temperatura_historico')
+        EtapaProposicao, on_delete=models.CASCADE, related_name='energia_historico')
 
     class Meta:
         ordering = ('-periodo',)
