@@ -195,6 +195,21 @@ class PautaHistorico(models.Model):
         ordering = ('-data',)
         get_latest_by = '-data'
 
+class Emendas(models.Model):
+    '''
+    Emendas de uma proposição
+    '''
+
+    local = models.TextField(blank=True)
+
+    autor = models.TextField(blank=True)
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
+
+    class Meta:
+        ordering = ('-data',)
+        get_latest_by = '-data'
 
 class Progresso(models.Model):
 

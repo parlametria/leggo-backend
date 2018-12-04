@@ -228,6 +228,33 @@ class PautaList(generics.ListAPIView):
         return queryset
 
 
+class Emendas(APIView):
+    '''
+    Dados da emenda de uma proposição
+    '''
+
+    serializer_class = PautaHistoricoSerializer
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER)
+        ]
+    )
+    def get_queryset(self):
+        '''
+        Retorna a emenda
+        '''
+        casa = self.kwargs['casa']
+        id_ext = self.kwargs['id_ext']
+        queryset = PautaHistorico.objects.filter(
+            proposicao__casa=casa, proposicao__id_ext=id_ext)
+
+        return queryset
+
 class ProposicaoDetail(APIView):
     '''
     Detalha proposição.

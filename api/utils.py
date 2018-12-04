@@ -38,6 +38,12 @@ def import_proposicoes():
         prop.etapas.set(etapas)
         prop.save()
 
+def import_emendas():
+    '''Carrega emendas'''
+    emendas_df = pd.read_csv('data/emendas.csv')
+
+    for r in props_df.iterrows():
+        data = r[1].to_dict()
 
 def import_tramitacoes():
     '''Carrega tramitações'''
