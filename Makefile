@@ -102,7 +102,7 @@ endif
 	docker-compose down
 .PHONY: clean-containers
  clean-volumes:
-	docker-compose down --rmi -v
+	docker-compose down --rmi local -v
 .PHONY: clean-containers
  clean-repo:
 	git reset --hard HEAD

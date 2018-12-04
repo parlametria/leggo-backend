@@ -1,6 +1,6 @@
 import pandas as pd
 from api.models import (
-    EtapaProposicao, TramitacaoEvent, EnergiaHistorico,
+    EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
     Progresso, Proposicao, PautaHistorico)
 from scipy import stats
 import time
@@ -60,9 +60,9 @@ def import_tramitacoes():
             TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
 
 
-def import_energias():
-    '''Carrega históricos de energia'''
-    grouped = pd.read_csv('data/hists_energia.csv').groupby(['casa', 'id_ext'])
+def import_temperaturas():
+    '''Carrega históricos de temperatura'''
+    grouped = pd.read_csv('data/hists_temperatura.csv').groupby(['casa', 'id_ext'])
     for group_index in grouped.groups:
         prop_id = {
             'casa': group_index[0],
@@ -72,11 +72,11 @@ def import_energias():
             grouped
             .get_group(group_index)
             .assign(periodo=lambda x: x.periodo.apply(lambda s: s.split('T')[0]))
-            .filter(['periodo', 'energia_periodo', 'energia_recente'])
+            .filter(['periodo', 'temperatura_periodo', 'temperatura_recente'])
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
-        EnergiaHistorico.objects.bulk_create(
-            EnergiaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
+        TemperaturaHistorico.objects.bulk_create(
+            TemperaturaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def import_pautas():
@@ -136,7 +136,7 @@ def import_all_data():
     import_etapas_proposicoes()
     import_proposicoes()
     import_tramitacoes()
-    import_energias()
+    import_temperaturas()
     import_progresso()
     import_pautas()
 
