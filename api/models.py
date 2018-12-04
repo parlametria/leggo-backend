@@ -151,7 +151,7 @@ class TramitacaoEvent(models.Model):
         EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
 
     class Meta:
-        ordering = ('sequencia',)
+        ordering = ('sequencia', )
 
 
 class TemperaturaHistorico(models.Model):
