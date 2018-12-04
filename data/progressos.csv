@@ -111,10 +111,10 @@ camara,2119881,Revisão II,Comissões,NA,NA,camara,FALSE
 camara,2119881,Revisão II,Plenário,NA,NA,camara,FALSE
 camara,2119881,Sansão/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 camara,2119881,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
-camara,1214970,Construção,Comissões,2015-04-30T17:11:00Z,2018-06-25T12:00:00Z,camara,FALSE
+camara,1214970,Construção,Comissões,2015-04-30T17:11:00Z,2018-12-03T17:22:00Z,camara,FALSE
 camara,1214970,Construção,Plenário,NA,NA,camara,TRUE
-senado,133613,Revisão I,Comissões,2018-06-25T12:00:00Z,NA,senado,FALSE
-senado,133613,Revisão I,Plenário,NA,NA,senado,FALSE
+senado,133613,Revisão I,Comissões,2018-06-25T12:00:00Z,2018-11-20T12:00:00Z,senado,FALSE
+senado,133613,Revisão I,Plenário,2018-11-20T12:00:00Z,NA,senado,FALSE
 senado,133613,Revisão II,Comissões,NA,NA,camara,FALSE
 senado,133613,Revisão II,Plenário,NA,NA,camara,FALSE
 senado,133613,Sansão/Veto,Presidência da República,NA,NA,presidência da república,FALSE
