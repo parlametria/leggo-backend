@@ -6,7 +6,7 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import (
     EtapaProposicao, EnergiaHistorico,
-    Progresso, Proposicao, PautaHistorico)
+    Progresso, Proposicao, PautaHistorico, Emendas)
 from datetime import datetime, timedelta
 from api.utils import get_coefficient, datetime_to_timestamp
 
@@ -40,6 +40,10 @@ class PautaHistoricoSerializer(serializers.ModelSerializer):
         model = PautaHistorico
         fields = ('data', 'semana', 'local', 'em_pauta')
 
+class EmendasSerialzer(serializers.ModelSerializer):
+    class Meta:
+        model = Emendas
+        fields = ('data_apresentacao', 'local', 'autor')
 
 class ProgressoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -228,12 +232,12 @@ class PautaList(generics.ListAPIView):
         return queryset
 
 
-class Emendas(APIView):
+class EmendasList(APIView):
     '''
     Dados da emenda de uma proposição
     '''
 
-    serializer_class = PautaHistoricoSerializer
+    serializer_class = EmendasSerialzer
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -250,7 +254,7 @@ class Emendas(APIView):
         '''
         casa = self.kwargs['casa']
         id_ext = self.kwargs['id_ext']
-        queryset = PautaHistorico.objects.filter(
+        queryset = Emendas.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         return queryset

@@ -200,6 +200,8 @@ class Emendas(models.Model):
     Emendas de uma proposição
     '''
 
+    data_apresentacao = models.DateField('data')
+
     local = models.TextField(blank=True)
 
     autor = models.TextField(blank=True)
@@ -208,8 +210,8 @@ class Emendas(models.Model):
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
 
     class Meta:
-        ordering = ('-data',)
-        get_latest_by = '-data'
+        ordering = ('-data_apresentacao',)
+        get_latest_by = '-data_apresentacao'
 
 class Progresso(models.Model):
 

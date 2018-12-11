@@ -1,7 +1,7 @@
 import pandas as pd
 from api.models import (
     EtapaProposicao, TramitacaoEvent, EnergiaHistorico,
-    Progresso, Proposicao, PautaHistorico)
+    Progresso, Proposicao, PautaHistorico, Emendas)
 from scipy import stats
 import time
 
@@ -40,10 +40,20 @@ def import_proposicoes():
 
 def import_emendas():
     '''Carrega emendas'''
-    emendas_df = pd.read_csv('data/emendas.csv')
-
-    for r in props_df.iterrows():
-        data = r[1].to_dict()
+    emendas_df = pd.read_csv('data/emendas.csv').groupby(['casa', 'id_ext'])
+    for group_index in emendas_df.groups:
+        prop_id = {
+            'casa': group_index[0],
+            'id_ext': group_index[1],
+        }
+        group_df = (
+            grouped
+            .get_group(group_index)
+            [['data_apresentacao', 'local', 'autor']]
+            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+        )
+        TramitacaoEvent.objects.bulk_create(
+            TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
 
 def import_tramitacoes():
     '''Carrega tramitações'''
@@ -145,6 +155,7 @@ def import_all_data():
     import_energias()
     import_progresso()
     import_pautas()
+    import_emendas()
 
 
 def get_coefficient(x, y):

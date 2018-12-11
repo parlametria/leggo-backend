@@ -19,4 +19,6 @@ urlpatterns = [
         views.ProgressoList.as_view()),
     url(r'^pauta/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.PautaList.as_view()),
+    url(r'^emenda/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
+        views.EmendasList.as_view()),
 ]
