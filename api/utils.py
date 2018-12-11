@@ -1,7 +1,7 @@
 import pandas as pd
 from api.models import (
     EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
-    Progresso, Proposicao, PautaHistorico)
+    Progresso, Proposicao, PautaHistorico, Emendas)
 from scipy import stats
 import time
 
@@ -130,6 +130,23 @@ def import_progresso():
             Progresso(**r[1].to_dict())
             for r in group_df.where(pd.notnull(group_df), None).iterrows())
 
+def import_emendas():
+    '''Carrega emendas'''
+    emendas_df = pd.read_csv('data/emendas.csv').groupby(['casa', 'id_ext'])
+    for group_index in emendas_df.groups:
+        prop_id = {
+            'casa': group_index[0],
+            'id_ext': group_index[1],
+        }
+        group_df = (
+            emendas_df
+            .get_group(group_index)
+            [['data_apresentacao', 'local', 'autor']]
+            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+        )
+        Emendas.objects.bulk_create(
+            Emendas(**r[1].to_dict()) for r in group_df.iterrows())
+
 
 def import_all_data():
     '''Importa dados dos csv e salva no banco.'''
@@ -139,6 +156,7 @@ def import_all_data():
     import_temperaturas()
     import_progresso()
     import_pautas()
+    import_emendas()
 
 
 def get_coefficient(x, y):
