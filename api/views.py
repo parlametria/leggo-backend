@@ -232,7 +232,7 @@ class PautaList(generics.ListAPIView):
         return queryset
 
 
-class EmendasList(APIView):
+class EmendasList(generics.ListAPIView):
     '''
     Dados da emenda de uma proposição
     '''
