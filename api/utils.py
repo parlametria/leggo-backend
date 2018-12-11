@@ -47,13 +47,13 @@ def import_emendas():
             'id_ext': group_index[1],
         }
         group_df = (
-            grouped
+            emendas_df
             .get_group(group_index)
             [['data_apresentacao', 'local', 'autor']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
-        TramitacaoEvent.objects.bulk_create(
-            TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
+        Emendas.objects.bulk_create(
+            Emendas(**r[1].to_dict()) for r in group_df.iterrows())
 
 def import_tramitacoes():
     '''Carrega tramitações'''
