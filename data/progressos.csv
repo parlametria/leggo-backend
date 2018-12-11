@@ -113,12 +113,12 @@ camara,2119881,Sansão/Veto,Presidência da República,NA,NA,presidência da rep
 camara,2119881,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 camara,1214970,Construção,Comissões,2015-04-30T17:11:00Z,2018-06-25T12:00:00Z,camara,FALSE
 camara,1214970,Construção,Plenário,NA,NA,camara,TRUE
-senado,133613,Revisão I,Comissões,2018-06-25T12:00:00Z,NA,senado,FALSE
-senado,133613,Revisão I,Plenário,NA,NA,senado,FALSE
-senado,133613,Revisão II,Comissões,NA,NA,camara,FALSE
-senado,133613,Revisão II,Plenário,NA,NA,camara,FALSE
-senado,133613,Sansão/Veto,Presidência da República,NA,NA,presidência da república,FALSE
-senado,133613,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+senado,133613,Revisão I,Comissões,2018-06-25T12:00:00Z,2018-11-20T12:00:00Z,senado,FALSE
+senado,133613,Revisão I,Plenário,2018-11-20T12:00:00Z,2018-12-03T17:06:00Z,senado,FALSE
+camara,1214970,Revisão II,Comissões,2018-12-03T17:06:00Z,NA,camara,FALSE
+camara,1214970,Revisão II,Plenário,NA,NA,camara,FALSE
+camara,1214970,Sansão/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+camara,1214970,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 camara,2158425,Construção,Comissões,2017-11-06T16:31:00Z,2018-06-25T16:00:00Z,camara,FALSE
 camara,2158425,Construção,Plenário,2018-06-19T13:30:00Z,2018-11-06T12:00:00Z,camara,FALSE
 camara,2158425,Revisão I,Comissões,NA,NA,senado,TRUE
@@ -263,11 +263,11 @@ senado,120768,Revisão II,Comissões,NA,NA,senado,FALSE
 senado,120768,Revisão II,Plenário,NA,NA,senado,FALSE
 senado,120768,Sansão/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 senado,120768,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
-senado,121572,Construção,Comissões,2015-06-10T12:00:00Z,NA,senado,FALSE
-senado,121572,Construção,Plenário,NA,NA,senado,FALSE
-senado,121572,Revisão I,Comissões,NA,NA,camara,FALSE
-senado,121572,Revisão I,Plenário,NA,NA,camara,FALSE
-senado,121572,Revisão II,Comissões,NA,NA,senado,FALSE
-senado,121572,Revisão II,Plenário,NA,NA,senado,FALSE
-senado,121572,Sansão/Veto,Presidência da República,NA,NA,presidência da república,FALSE
-senado,121572,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+senado,121572,Construção,Comissões,2015-06-10T12:00:00Z,2016-11-10T17:58:00Z,senado,FALSE
+senado,121572,Construção,Plenário,NA,NA,senado,TRUE
+camara,1594911,Revisão I,Comissões,2016-11-10T17:58:00Z,NA,camara,FALSE
+camara,1594911,Revisão I,Plenário,NA,NA,camara,FALSE
+camara,1594911,Revisão II,Comissões,NA,NA,senado,FALSE
+camara,1594911,Revisão II,Plenário,NA,NA,senado,FALSE
+camara,1594911,Sansão/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+camara,1594911,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
