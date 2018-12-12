@@ -47,6 +47,7 @@ class ProgressoSerializer(serializers.ModelSerializer):
         fields = ('fase_global', 'local', 'data_inicio',
                   'data_fim', 'local_casa', 'pulou')
 
+
 class EmendasSerialzer(serializers.ModelSerializer):
     class Meta:
         model = Emendas
@@ -250,10 +251,12 @@ class ProposicaoDetail(APIView):
         prop = get_object_or_404(EtapaProposicao, casa=casa, id_ext=id_ext)
         return Response(EtapasSerializer(prop).data)
 
+
 class EmendasList(generics.ListAPIView):
     '''
     Dados da emenda de uma proposição
     '''
+
     serializer_class = EmendasSerialzer
     @swagger_auto_schema(
         manual_parameters=[
@@ -261,8 +264,8 @@ class EmendasList(generics.ListAPIView):
                 'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
             openapi.Parameter(
                 'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
-                 type=openapi.TYPE_INTEGER)
-     ]
+                type=openapi.TYPE_INTEGER),
+        ]
     )
     def get_queryset(self):
         '''
@@ -272,5 +275,5 @@ class EmendasList(generics.ListAPIView):
         id_ext = self.kwargs['id_ext']
         queryset = Emendas.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
-            
+
         return queryset

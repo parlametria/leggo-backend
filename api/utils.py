@@ -130,6 +130,7 @@ def import_progresso():
             Progresso(**r[1].to_dict())
             for r in group_df.where(pd.notnull(group_df), None).iterrows())
 
+
 def import_emendas():
     '''Carrega emendas'''
     emendas_df = pd.read_csv('data/emendas.csv').groupby(['casa', 'id_ext'])

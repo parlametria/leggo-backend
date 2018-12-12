@@ -217,6 +217,7 @@ class Progresso(models.Model):
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
 
+
 class Emendas(models.Model):
     '''
     Emendas de uma proposição
@@ -229,7 +230,7 @@ class Emendas(models.Model):
     autor = models.TextField(blank=True)
 
     proposicao = models.ForeignKey(
-    EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
+         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
 
     class Meta:
         ordering = ('-data_apresentacao',)
