@@ -6,7 +6,7 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import (
     EtapaProposicao, TemperaturaHistorico,
-    Progresso, Proposicao, PautaHistorico)
+    Progresso, Proposicao, PautaHistorico, Emendas)
 from datetime import datetime, timedelta
 from api.utils import get_coefficient, datetime_to_timestamp
 
@@ -46,6 +46,12 @@ class ProgressoSerializer(serializers.ModelSerializer):
         model = Progresso
         fields = ('fase_global', 'local', 'data_inicio',
                   'data_fim', 'local_casa', 'pulou')
+
+
+class EmendasSerialzer(serializers.ModelSerializer):
+    class Meta:
+        model = Emendas
+        fields = ('data_apresentacao', 'local', 'autor')
 
 
 class Info(APIView):
@@ -244,3 +250,31 @@ class ProposicaoDetail(APIView):
     def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(EtapaProposicao, casa=casa, id_ext=id_ext)
         return Response(EtapasSerializer(prop).data)
+
+
+class EmendasList(generics.ListAPIView):
+    '''
+    Dados da emenda de uma proposição
+    '''
+
+    serializer_class = EmendasSerialzer
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+        ]
+    )
+    def get_queryset(self):
+        '''
+        Retorna a emenda
+        '''
+        casa = self.kwargs['casa']
+        id_ext = self.kwargs['id_ext']
+        queryset = Emendas.objects.filter(
+            proposicao__casa=casa, proposicao__id_ext=id_ext)
+
+        return queryset
