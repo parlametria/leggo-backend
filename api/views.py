@@ -258,6 +258,7 @@ class EmendasList(generics.ListAPIView):
     '''
 
     serializer_class = EmendasSerialzer
+    
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
