@@ -144,7 +144,7 @@ class TramitacaoEvent(models.Model):
         help_text='Sequência desse evento na lista de tramitações.')
 
     evento = models.TextField()
-    
+
     sigla_local = models.TextField()
 
     situacao = models.TextField()

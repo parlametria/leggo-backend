@@ -187,7 +187,7 @@ class TramitacaoEventList(generics.ListAPIView):
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         data_inicio_dt = None
-        data_fim_dt = None        
+        data_fim_dt = None
 
         try:
             if data_inicio is not None:
@@ -208,12 +208,12 @@ class TramitacaoEventList(generics.ListAPIView):
 
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
-            
+    
         queryset = queryset.filter(data__lte=data_fim_dt)
-        
+
         if ultimos_n is not None:
             queryset = queryset.order_by('-data')[:int(ultimos_n)]
-        
+
         return queryset
 
 
