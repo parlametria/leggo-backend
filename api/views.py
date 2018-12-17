@@ -5,8 +5,8 @@ from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import (
-    EtapaProposicao, EnergiaHistorico,
-    Progresso, Proposicao, PautaHistorico)
+    EtapaProposicao, TemperaturaHistorico,
+    Progresso, Proposicao, PautaHistorico, Emendas)
 from datetime import datetime, timedelta
 from api.utils import get_coefficient, datetime_to_timestamp
 
@@ -17,7 +17,7 @@ class EtapasSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'energia', 'autor_nome', 'relator_nome', 'em_pauta', 'apelido', 'tema',
+            'temperatura', 'autor_nome', 'relator_nome', 'em_pauta', 'apelido', 'tema',
             'resumo_tramitacao')
 
 
@@ -29,10 +29,10 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = ('id', 'tema', 'apelido', 'etapas', 'resumo_progresso')
 
 
-class EnergiaHistoricoSerializer(serializers.ModelSerializer):
+class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = EnergiaHistorico
-        fields = ('periodo', 'energia_recente', 'energia_periodo')
+        model = TemperaturaHistorico
+        fields = ('periodo', 'temperatura_recente', 'temperatura_periodo')
 
 
 class PautaHistoricoSerializer(serializers.ModelSerializer):
@@ -46,6 +46,12 @@ class ProgressoSerializer(serializers.ModelSerializer):
         model = Progresso
         fields = ('fase_global', 'local', 'data_inicio',
                   'data_fim', 'local_casa', 'pulou')
+
+
+class EmendasSerialzer(serializers.ModelSerializer):
+    class Meta:
+        model = Emendas
+        fields = ('data_apresentacao', 'local', 'autor')
 
 
 class Info(APIView):
@@ -62,7 +68,7 @@ class EtapasList(generics.ListAPIView):
     Dados gerais da proposição.
     '''
     queryset = EtapaProposicao.objects.prefetch_related(
-        'tramitacao', 'energia_historico')
+        'tramitacao', 'temperatura_historico')
     serializer_class = EtapasSerializer
 
 
@@ -75,7 +81,7 @@ class ProposicaoList(generics.ListAPIView):
     serializer_class = ProposicaoSerializer
 
 
-class EnergiaHistoricoList(APIView):
+class TemperaturaHistoricoList(APIView):
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -96,13 +102,13 @@ class EnergiaHistoricoList(APIView):
     )
     def get(self, request, casa, id_ext):
         '''
-        Retorna o histórico de energias de uma proposição, retornando a quantidade
+        Retorna o histórico de temperaturas de uma proposição, retornando a quantidade
         especificada de semanas anteriores à data de referência.
         '''
         semanas_anteriores = request.query_params.get('semanas_anteriores')
         data_referencia = request.query_params.get('data_referencia')
 
-        queryset = EnergiaHistorico.objects.filter(
+        queryset = TemperaturaHistorico.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         try:
@@ -120,17 +126,17 @@ class EnergiaHistoricoList(APIView):
         if semanas_anteriores is not None:
             start_date = hoje - timedelta(weeks=int(semanas_anteriores))
             queryset = queryset.filter(periodo__gte=start_date)
-        energias = []
-        dates_x = [datetime_to_timestamp(energia.periodo)
-                   for energia in queryset[:6]]  # pega as ultimas 6 energias
-        energias_y = [energia.energia_recente for energia in queryset[:6]]
+        temperaturas = []
+        dates_x = [datetime_to_timestamp(temperatura.periodo)
+                   for temperatura in queryset[:6]]  # pega as ultimas 6 temperaturas
+        temperaturas_y = [temperatura.temperatura_recente for temperatura in queryset[:6]]
 
-        for energia in queryset:
-            energias.append(EnergiaHistoricoSerializer(energia).data)
+        for temperatura in queryset:
+            temperaturas.append(TemperaturaHistoricoSerializer(temperatura).data)
 
         return Response({
-            'coeficiente': get_coefficient(dates_x, energias_y),
-            'pressoes': energias
+            'coeficiente': get_coefficient(dates_x, temperaturas_y),
+            'temperaturas': temperaturas
         })
 
 
@@ -244,3 +250,31 @@ class ProposicaoDetail(APIView):
     def get(self, request, casa, id_ext, format=None):
         prop = get_object_or_404(EtapaProposicao, casa=casa, id_ext=id_ext)
         return Response(EtapasSerializer(prop).data)
+
+
+class EmendasList(generics.ListAPIView):
+    '''
+    Dados da emenda de uma proposição
+    '''
+
+    serializer_class = EmendasSerialzer
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+        ]
+    )
+    def get_queryset(self):
+        '''
+        Retorna a emenda
+        '''
+        casa = self.kwargs['casa']
+        id_ext = self.kwargs['id_ext']
+        queryset = Emendas.objects.filter(
+            proposicao__casa=casa, proposicao__id_ext=id_ext)
+
+        return queryset
