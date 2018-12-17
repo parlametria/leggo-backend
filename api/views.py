@@ -34,6 +34,7 @@ class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
         model = TemperaturaHistorico
         fields = ('periodo', 'temperatura_recente', 'temperatura_periodo')
 
+
 class TramitacaoEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = TramitacaoEvent
@@ -144,6 +145,7 @@ class TemperaturaHistoricoList(APIView):
             'temperaturas': temperaturas
         })
 
+
 class TramitacaoEventList(generics.ListAPIView):
 
     serializer_class = TramitacaoEventSerializer
@@ -204,15 +206,16 @@ class TramitacaoEventList(generics.ListAPIView):
                 'Utilizando data atual como data de fim.')
             data_fim_dt = datetime.today()
 
-        if data_inicio_dt != None:
+        if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
             
         queryset = queryset.filter(data__lte=data_fim_dt)
-
+        
         if ultimos_n is not None:
             queryset = queryset.order_by('-data')[:int(ultimos_n)]
         
         return queryset
+
 
 class ProgressoList(generics.ListAPIView):
     '''
