@@ -159,9 +159,13 @@ def import_all_data():
     import_pautas()
     import_emendas()
 
+
 def get_coefficient_temperature(temperatures):
+    '''
+    Calcula coeficiente linear das temperaturas nas últims 6 semanas
+    '''
     dates_x = [datetime_to_timestamp(temperatura.periodo)
-                   for temperatura in temperatures[:6]]  # pega as ultimas 6 temperaturas
+               for temperatura in temperatures[:6]]
     temperaturas_y = [temperatura.temperatura_recente for temperatura in temperatures[:6]]
 
     if(dates_x and temperaturas_y and len(dates_x) > 1 and len(temperaturas_y) > 1):

@@ -8,7 +8,7 @@ from api.models import (
     EtapaProposicao, TemperaturaHistorico,
     Progresso, Proposicao, PautaHistorico, Emendas)
 from datetime import datetime, timedelta
-from api.utils import datetime_to_timestamp, get_coefficient_temperature
+from api.utils import get_coefficient_temperature
 
 
 class EtapasSerializer(serializers.ModelSerializer):
@@ -128,8 +128,9 @@ class TemperaturaHistoricoList(APIView):
         if semanas_anteriores is not None:
             start_date = date - timedelta(weeks=int(semanas_anteriores))
             queryset = queryset.filter(periodo__gte=start_date)
-        
-        temperaturas = [TemperaturaHistoricoSerializer(temperatura).data for temperatura in queryset]
+
+        temperaturas = [TemperaturaHistoricoSerializer(temperatura).data
+                        for temperatura in queryset]
 
         return Response({
             'coeficiente': get_coefficient_temperature(queryset),
