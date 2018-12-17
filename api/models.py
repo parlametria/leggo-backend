@@ -128,7 +128,8 @@ class EtapaProposicao(models.Model):
                 events.append({
                     'data': event.data,
                     'casa': event.proposicao.casa,
-                    'nome': event.sigla_local
+                    'nome': event.sigla_local,
+                    'evento': event.evento
                 })
         return events
 
@@ -144,6 +145,8 @@ class TramitacaoEvent(models.Model):
     texto = models.TextField()
 
     sigla_local = models.TextField()
+
+    evento = models.TextField()
 
     situacao = models.TextField()
 
