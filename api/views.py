@@ -8,7 +8,7 @@ from api.models import (
     EtapaProposicao, TemperaturaHistorico,
     Progresso, Proposicao, PautaHistorico, Emendas)
 from datetime import datetime, timedelta
-from api.utils import get_coefficient, datetime_to_timestamp
+from api.utils import datetime_to_timestamp, get_coefficient_temperature
 
 
 class EtapasSerializer(serializers.ModelSerializer):
@@ -82,7 +82,9 @@ class ProposicaoList(generics.ListAPIView):
 
 
 class TemperaturaHistoricoList(APIView):
-
+    '''
+    Historico de temperaturas de uma proposicao
+    '''
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
@@ -112,30 +114,25 @@ class TemperaturaHistoricoList(APIView):
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         try:
-            hoje = (
+            date = (
                 datetime.today() if data_referencia is None else datetime.strptime(
                     data_referencia, '%Y-%m-%d'))
         except ValueError:
             print(
                 f'Data de referência ({data_referencia}) inválida. '
                 'Utilizando data atual como data de referência.')
-            hoje = datetime.today()
+            date = datetime.today()
 
-        queryset = queryset.filter(periodo__lte=hoje)
+        queryset = queryset.filter(periodo__lte=date)
 
         if semanas_anteriores is not None:
-            start_date = hoje - timedelta(weeks=int(semanas_anteriores))
+            start_date = date - timedelta(weeks=int(semanas_anteriores))
             queryset = queryset.filter(periodo__gte=start_date)
-        temperaturas = []
-        dates_x = [datetime_to_timestamp(temperatura.periodo)
-                   for temperatura in queryset[:6]]  # pega as ultimas 6 temperaturas
-        temperaturas_y = [temperatura.temperatura_recente for temperatura in queryset[:6]]
-
-        for temperatura in queryset:
-            temperaturas.append(TemperaturaHistoricoSerializer(temperatura).data)
+        
+        temperaturas = [TemperaturaHistoricoSerializer(temperatura).data for temperatura in queryset]
 
         return Response({
-            'coeficiente': get_coefficient(dates_x, temperaturas_y),
+            'coeficiente': get_coefficient_temperature(queryset),
             'temperaturas': temperaturas
         })
 

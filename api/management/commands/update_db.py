@@ -29,6 +29,7 @@ class Command(BaseCommand):
 
             print(bcolors.OKBLUE, 'Importando dados novos...' + bcolors.ENDC)
             subprocess.run('./manage.py import_data'.split(), check=True)
+            
 
         except subprocess.CalledProcessError:
             print(bcolors.FAIL, 'OCORREU UM ERRO')
