@@ -208,7 +208,7 @@ class TramitacaoEventList(generics.ListAPIView):
 
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
-    
+
         queryset = queryset.filter(data__lte=data_fim_dt)
 
         if ultimos_n is not None:
@@ -255,7 +255,7 @@ class ProgressoList(generics.ListAPIView):
                 'Utilizando data atual como data de referência.')
             hoje = datetime.today()
 
-        if(data_referencia is None):
+        if data_referencia is None:
             queryset = queryset.filter()
         else:
             queryset = queryset.filter(data_inicio__lte=hoje)
@@ -303,7 +303,7 @@ class PautaList(generics.ListAPIView):
                 'Utilizando data atual como data de referência.')
             semana_atual = datetime.today().isocalendar()[1]
 
-        if(data_referencia is None):
+        if data_referencia is None:
             queryset = queryset.filter()
         else:
             queryset = queryset.filter(semana=semana_atual)

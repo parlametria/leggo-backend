@@ -239,7 +239,7 @@ class Emendas(models.Model):
     autor = models.TextField(blank=True)
 
     proposicao = models.ForeignKey(
-         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
+        EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
 
     class Meta:
         ordering = ('-data_apresentacao',)
