@@ -128,7 +128,9 @@ class EtapaProposicao(models.Model):
                 events.append({
                     'data': event.data,
                     'casa': event.proposicao.casa,
-                    'nome': event.sigla_local
+                    'local': event.sigla_local,
+                    'evento': event.evento,
+                    'texto_tramitacao': event.texto_tramitacao
                 })
         return events
 
@@ -141,14 +143,21 @@ class TramitacaoEvent(models.Model):
         'Sequência',
         help_text='Sequência desse evento na lista de tramitações.')
 
-    texto = models.TextField()
+    evento = models.TextField()
 
     sigla_local = models.TextField()
 
     situacao = models.TextField()
 
+    texto_tramitacao = models.TextField()
+
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
+
+    @property
+    def casa(self):
+        '''Casa onde o evento ocorreu.'''
+        return self.proposicao.casa
 
     class Meta:
         ordering = ('sequencia',)
@@ -230,7 +239,7 @@ class Emendas(models.Model):
     autor = models.TextField(blank=True)
 
     proposicao = models.ForeignKey(
-         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
+        EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
 
     class Meta:
         ordering = ('-data_apresentacao',)
