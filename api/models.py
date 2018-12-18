@@ -143,7 +143,7 @@ class EtapaProposicao(models.Model):
                         'local': event.sigla_local,
                         'evento': event.evento,
                         'texto_tramitacao': event.texto_tramitacao
-                })
+                    })
         return sorted(events, key=lambda k: k['data'])
 
 
