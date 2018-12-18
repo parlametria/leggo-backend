@@ -120,10 +120,12 @@ class EtapaProposicao(models.Model):
 
     @property
     def resumo_tramitacao(self):
+
         locais = []
         events = []
+        local = ""
         for event in self.tramitacao.all():
-            if event.sigla_local not in locais:
+            if event.local == "Comissões":
                 locais.append(event.sigla_local)
                 events.append({
                     'data': event.data,
@@ -132,7 +134,17 @@ class EtapaProposicao(models.Model):
                     'evento': event.evento,
                     'texto_tramitacao': event.texto_tramitacao
                 })
-        return events
+            else:
+                if event.local != local:
+                    local = event.local
+                    events.append({
+                        'data': event.data,
+                        'casa': event.proposicao.casa,
+                        'local': event.sigla_local,
+                        'evento': event.evento,
+                        'texto_tramitacao': event.texto_tramitacao
+                    })
+        return sorted(events, key=lambda k: k['data'])
 
 
 class TramitacaoEvent(models.Model):
@@ -145,7 +157,9 @@ class TramitacaoEvent(models.Model):
 
     evento = models.TextField()
 
-    sigla_local = models.TextField()
+    sigla_local = models.TextField(blank=True)
+
+    local = models.TextField()
 
     situacao = models.TextField()
 
