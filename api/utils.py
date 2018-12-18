@@ -161,9 +161,16 @@ def import_all_data():
     import_emendas()
 
 
-def get_coefficient(x, y):
-    if(x and y):
-        return stats.linregress(x, y)[0]
+def get_coefficient_temperature(temperatures):
+    '''
+    Calcula coeficiente linear das temperaturas nas últims 6 semanas
+    '''
+    dates_x = [datetime_to_timestamp(temperatura.periodo)
+               for temperatura in temperatures[:6]]
+    temperaturas_y = [temperatura.temperatura_recente for temperatura in temperatures[:6]]
+
+    if(dates_x and temperaturas_y and len(dates_x) > 1 and len(temperaturas_y) > 1):
+        return stats.linregress(dates_x, temperaturas_y)[0]
     else:
         return 0
 

@@ -110,7 +110,7 @@ Importar dados do CSV para o BD:
 
 Gera migrações, migra, limpa dados e importa de novo ao mesmo tempo:
 ```
-./manage.py update-db
+./manage.py update_db
 ```
 
 Testes com cobertura de código:
