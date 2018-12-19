@@ -9,7 +9,7 @@ class InfoTests(APITestCase):
         '''
         url = '/info/'
         response = self.client.get(url)
-        self.assertEqual(response.data['status'], 'ok')
+        self.assertTrue(response.data['last_update_trams'])
 
 
 class ProposicaoTests(APITestCase):
