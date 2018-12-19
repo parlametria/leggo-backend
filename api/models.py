@@ -1,5 +1,6 @@
 from munch import Munch
 from django.db import models
+from django.contrib.postgres.fields import JSONField
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -21,6 +22,12 @@ ORDER_PROGRESSO = [
 class Choices(Munch):
     def __init__(self, choices):
         super().__init__({i: i for i in choices.split(' ')})
+
+
+class InfoGerais(models.Model):
+
+    name = models.TextField()
+    value = JSONField()
 
 
 class Proposicao(models.Model):

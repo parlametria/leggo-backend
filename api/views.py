@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import (
-    EtapaProposicao, TemperaturaHistorico,
+    EtapaProposicao, TemperaturaHistorico, InfoGerais,
     Progresso, Proposicao, PautaHistorico, Emendas, TramitacaoEvent)
 from datetime import datetime, timedelta
 from api.utils import get_coefficient_temperature
@@ -66,7 +66,7 @@ class Info(APIView):
     '''
 
     def get(self, request, format=None):
-        return Response({'status': 'ok'})
+        return Response({i.name: i.value for i in InfoGerais.objects.all()})
 
 
 class EtapasList(generics.ListAPIView):
