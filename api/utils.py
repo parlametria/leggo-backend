@@ -15,9 +15,7 @@ def import_etapas_proposicoes():
         .assign(data_apresentacao=lambda x: x.data_apresentacao.apply(
             lambda s: s.split('T')[0]))
     )
-    
-    props_df.drop(['casa_origem'], axis = 1, inplace= True)
-
+    props_df.drop(['casa_origem'], axis=1, inplace=True)
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
     EtapaProposicao.objects.bulk_create(
         EtapaProposicao(**r[1].to_dict()) for r in props_df.iterrows())
