@@ -1,9 +1,11 @@
+import os
+import time
+from datetime import datetime
 import pandas as pd
+from scipy import stats
 from api.models import (
     EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
-    Progresso, Proposicao, PautaHistorico, Emendas)
-from scipy import stats
-import time
+    Progresso, Proposicao, PautaHistorico, Emendas, InfoGerais)
 
 
 def import_etapas_proposicoes():
@@ -41,7 +43,8 @@ def import_proposicoes():
 
 def import_tramitacoes():
     '''Carrega tramitações'''
-    grouped = pd.read_csv('data/trams.csv').groupby(['casa', 'id_ext'])
+    filepath = 'data/trams.csv'
+    grouped = pd.read_csv(filepath).groupby(['casa', 'id_ext'])
     for group_index in grouped.groups:
         prop_id = {
             'casa': group_index[0],
@@ -59,6 +62,9 @@ def import_tramitacoes():
         )
         TramitacaoEvent.objects.bulk_create(
             TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
+
+    last_update = datetime.utcfromtimestamp(os.path.getmtime(filepath))
+    InfoGerais.objects.create(name='last_update_trams', value=last_update.isoformat())
 
 
 def import_temperaturas():

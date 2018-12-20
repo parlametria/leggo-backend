@@ -3,13 +3,17 @@ from api.utils import import_all_data
 
 
 class InfoTests(APITestCase):
+
+    def setUp(self):
+        import_all_data()
+
     def test_info(self):
         '''
         Check info
         '''
         url = '/info/'
         response = self.client.get(url)
-        self.assertEqual(response.data['status'], 'ok')
+        self.assertTrue(response.data['last_update_trams'])
 
 
 class ProposicaoTests(APITestCase):
