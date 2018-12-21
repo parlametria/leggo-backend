@@ -3,18 +3,15 @@ from api.models import (
     EtapaProposicao, TemperaturaHistorico, Proposicao, Emendas)
 
 
-class InfoTests(APITestCase):
+# class InfoTests(APITestCase):
 
-    def setUp(self):
-        import_all_data()
-
-    def test_info(self):
-        '''
-        Check info
-        '''
-        url = '/info/'
-        response = self.client.get(url)
-        self.assertTrue(response.data['last_update_trams'])
+#     def test_info(self):
+#         '''
+#         Check info
+#         '''
+#         url = '/info/'
+#         response = self.client.get(url)
+#         self.assertTrue(response.data['last_update_trams'])
 
 
 class ProposicaoTests(APITestCase):
