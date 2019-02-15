@@ -1,6 +1,7 @@
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+from api.utils_temperatura import get_coefficient_temperature
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -124,6 +125,10 @@ class EtapaProposicao(models.Model):
     def url(self):
         '''URL para a página da proposição em sua respectiva casa.'''
         return URLS[self.casa] + str(self.id_ext)
+
+    @property
+    def temperatura_coeficiente(self):
+        return get_coefficient_temperature(self.temperatura_historico.all()),
 
     @property
     def resumo_tramitacao(self):
