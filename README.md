@@ -1,7 +1,7 @@
-[![pipeline status](https://gitlab.com/analytics-ufcg/agora-digital-backend/badges/master/pipeline.svg)](https://gitlab.com/analytics-ufcg/agora-digital-backend/commits/master)
-[![coverage report](https://gitlab.com/analytics-ufcg/agora-digital-backend/badges/master/coverage.svg)](https://gitlab.com/analytics-ufcg/agora-digital-backend/commits/master)
+[![pipeline status](https://gitlab.com/analytics-ufcg/leggo-backend/badges/master/pipeline.svg)](https://gitlab.com/analytics-ufcg/leggo-backend/commits/master)
+[![coverage report](https://gitlab.com/analytics-ufcg/leggo-backend/badges/master/coverage.svg)](https://gitlab.com/analytics-ufcg/leggo-backend/commits/master)
 
-# Ágora Digital backend
+# Leggo backend
 
 API para consulta de propostas de leis no senado e na câmara
 
@@ -27,7 +27,7 @@ Rodando com docker, o serviço estará disponível em http://0.0.0.0:8000/
 #### Docker-compose
 Para rodar com docker-compose, é preciso clonar o repositório:
 ```
-git clone https://github.com/analytics-ufcg/agora-digital-backend/
+git clone https://github.com/analytics-ufcg/leggo-backend/
 ```
 
 Após isso basta:
