@@ -1,5 +1,5 @@
-[![pipeline status](https://gitlab.com/analytics-ufcg/leggo-backend/badges/master/pipeline.svg)](https://gitlab.com/analytics-ufcg/leggo-backend/commits/master)
-[![coverage report](https://gitlab.com/analytics-ufcg/leggo-backend/badges/master/coverage.svg)](https://gitlab.com/analytics-ufcg/leggo-backend/commits/master)
+[![pipeline status](https://gitlab.com/analytics-ufcg/agora-digital-backend/badges/master/pipeline.svg)](https://gitlab.com/analytics-ufcg/agora-digital-backend/commits/master)
+[![coverage report](https://gitlab.com/analytics-ufcg/agora-digital-backend/badges/master/coverage.svg)](https://gitlab.com/analytics-ufcg/agora-digital-backend/commits/master)
 
 # Leggo backend
 
