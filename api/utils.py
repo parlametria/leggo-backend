@@ -57,7 +57,7 @@ def import_tramitacoes():
             .assign(data=lambda x: x.data.apply(lambda s: s.split('T')[0]))
             .assign(situacao=lambda x: x.descricao_situacao)
             [['data', 'sequencia', 'evento', 'sigla_local', 'local', 'situacao',
-                'texto_tramitacao']]
+                'texto_tramitacao', 'status']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         TramitacaoEvent.objects.bulk_create(
