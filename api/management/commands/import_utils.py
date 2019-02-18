@@ -61,7 +61,7 @@ def import_tramitacoes():
         TramitacaoEvent.objects.bulk_create(
             TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
 
-    last_update = datetime.utcfromtimestamp(os.path.getmtime(filepath))
+    last_update = datetime.datetime.utcfromtimestamp(os.path.getmtime(filepath))
     InfoGerais.objects.create(name='last_update_trams', value=last_update.isoformat())
 
 
