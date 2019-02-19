@@ -9,8 +9,8 @@ from api.models import (
     EtapaProposicao, TemperaturaHistorico, InfoGerais,
     Progresso, Proposicao, PautaHistorico, Emendas, TramitacaoEvent)
 from datetime import datetime
-from api.utils import get_time_filtered_temperatura, get_time_filtered_pauta
-from api.utils_temperatura import get_coefficient_temperature
+from api.utils.filters import get_time_filtered_temperatura, get_time_filtered_pauta
+# from api.utils.temperatura import get_coefficient_temperature
 
 
 class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
@@ -100,42 +100,42 @@ class ProposicaoList(generics.ListAPIView):
         )
 
 
-class TemperaturaHistoricoAPI(APIView):
-    '''
-    Historico de temperaturas de uma proposicao
-    '''
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-            openapi.Parameter(
-                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
-                type=openapi.TYPE_INTEGER),
-            openapi.Parameter(
-                'semanas_anteriores', openapi.IN_PATH,
-                'número de semanas anteriores a retornar',
-                type=openapi.TYPE_INTEGER),
-            openapi.Parameter(
-                'data_referencia', openapi.IN_PATH,
-                'data de referência a ser considerada',
-                type=openapi.TYPE_STRING),
-        ]
-    )
-    def get(self, request, casa=None, id_ext=None):
-        '''
-        Retorna o histórico de temperaturas de uma proposição, retornando a quantidade
-        especificada de semanas anteriores à data de referência.
-        '''
-        queryset = get_time_filtered_temperatura(request).filter(
-            proposicao__casa=casa, proposicao__id_ext=id_ext)
+# class TemperaturaHistoricoAPI(APIView):
+#     '''
+#     Historico de temperaturas de uma proposicao
+#     '''
+#     @swagger_auto_schema(
+#         manual_parameters=[
+#             openapi.Parameter(
+#                 'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+#             openapi.Parameter(
+#                 'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+#                 type=openapi.TYPE_INTEGER),
+#             openapi.Parameter(
+#                 'semanas_anteriores', openapi.IN_PATH,
+#                 'número de semanas anteriores a retornar',
+#                 type=openapi.TYPE_INTEGER),
+#             openapi.Parameter(
+#                 'data_referencia', openapi.IN_PATH,
+#                 'data de referência a ser considerada',
+#                 type=openapi.TYPE_STRING),
+#         ]
+#     )
+#     def get(self, request, casa=None, id_ext=None):
+#         '''
+#         Retorna o histórico de temperaturas de uma proposição, retornando a quantidade
+#         especificada de semanas anteriores à data de referência.
+#         '''
+#         queryset = get_time_filtered_temperatura(request).filter(
+#             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
-        temperaturas = [TemperaturaHistoricoSerializer(temperatura).data
-                        for temperatura in queryset]
+#         temperaturas = [TemperaturaHistoricoSerializer(temperatura).data
+#                         for temperatura in queryset]
 
-        return Response({
-            'coeficiente': get_coefficient_temperature(queryset),
-            'temperaturas': temperaturas
-        })
+#         return Response({
+#             'coeficiente': get_coefficient_temperature(queryset),
+#             'temperaturas': temperaturas
+#         })
 
 
 class TramitacaoEventList(generics.ListAPIView):

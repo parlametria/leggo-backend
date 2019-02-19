@@ -1,7 +1,9 @@
+import time
+from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
-from api.utils_temperatura import get_coefficient_temperature
+# from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -128,7 +130,21 @@ class EtapaProposicao(models.Model):
 
     @property
     def temperatura_coeficiente(self):
-        return get_coefficient_temperature(self.temperatura_historico.all()),
+        '''
+        Calcula coeficiente linear das temperaturas nas últimas 6 semanas.
+        '''
+        temperatures = self.temperatura_historico.all()[:6]
+        dates_x = [
+            time.mktime(temperatura.periodo.timetuple())
+            for temperatura in temperatures]
+        temperaturas_y = [
+            temperatura.temperatura_recente
+            for temperatura in temperatures]
+
+        if (dates_x and temperaturas_y and len(dates_x) > 1 and len(temperaturas_y) > 1):
+            return stats.linregress(dates_x, temperaturas_y)[0]
+        else:
+            return 0
 
     @property
     def resumo_tramitacao(self):
