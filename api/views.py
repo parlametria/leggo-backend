@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404
+from django.db.models import Prefetch
 from rest_framework import serializers, generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -7,18 +8,35 @@ from drf_yasg.utils import swagger_auto_schema
 from api.models import (
     EtapaProposicao, TemperaturaHistorico, InfoGerais,
     Progresso, Proposicao, PautaHistorico, Emendas, TramitacaoEvent)
-from datetime import datetime, timedelta
-from api.utils import get_coefficient_temperature
+from datetime import datetime
+from api.utils.filters import get_time_filtered_temperatura, get_time_filtered_pauta
+# from api.utils.temperatura import get_coefficient_temperature
+
+
+class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = TemperaturaHistorico
+        fields = ('periodo', 'temperatura_recente', 'temperatura_periodo')
+
+
+class PautaHistoricoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PautaHistorico
+        fields = ('data', 'semana', 'local', 'em_pauta')
 
 
 class EtapasSerializer(serializers.ModelSerializer):
+    temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
+    pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
+
     class Meta:
         model = EtapaProposicao
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'temperatura', 'autor_nome', 'relator_nome', 'em_pauta', 'apelido', 'tema',
-            'resumo_tramitacao')
+            'temperatura_historico', 'autor_nome', 'relator_nome', 'em_pauta',
+            'apelido', 'tema', 'resumo_tramitacao', 'temperatura_coeficiente',
+            'pauta_historico')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -29,22 +47,10 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         fields = ('id', 'tema', 'apelido', 'etapas', 'resumo_progresso')
 
 
-class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = TemperaturaHistorico
-        fields = ('periodo', 'temperatura_recente', 'temperatura_periodo')
-
-
 class TramitacaoEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = TramitacaoEvent
         fields = ('data', 'casa', 'sigla_local', 'evento', 'texto_tramitacao', 'status')
-
-
-class PautaHistoricoSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = PautaHistorico
-        fields = ('data', 'semana', 'local', 'em_pauta')
 
 
 class ProgressoSerializer(serializers.ModelSerializer):
@@ -80,68 +86,57 @@ class EtapasList(generics.ListAPIView):
 
 class ProposicaoList(generics.ListAPIView):
     '''
-    Dados gerais da proposição.
+    Lista de proposições e seus dados gerais.
     '''
-    queryset = Proposicao.objects.prefetch_related(
-        'etapas', 'etapas__tramitacao', 'progresso')
     serializer_class = ProposicaoSerializer
 
+    def get_queryset(self):
+        temperaturaQs = get_time_filtered_temperatura(self.request)
+        pautaQs = get_time_filtered_pauta(self.request)
+        return Proposicao.objects.prefetch_related(
+            'etapas', 'etapas__tramitacao', 'progresso',
+            Prefetch('etapas__temperatura_historico', queryset=temperaturaQs),
+            Prefetch('etapas__pauta_historico', queryset=pautaQs),
+        )
 
-class TemperaturaHistoricoList(APIView):
-    '''
-    Historico de temperaturas de uma proposicao
-    '''
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-            openapi.Parameter(
-                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
-                type=openapi.TYPE_INTEGER),
-            openapi.Parameter(
-                'semanas_anteriores', openapi.IN_PATH,
-                'número de semanas anteriores a retornar',
-                type=openapi.TYPE_INTEGER),
-            openapi.Parameter(
-                'data_referencia', openapi.IN_PATH,
-                'data de referência a ser considerada',
-                type=openapi.TYPE_STRING),
-        ]
-    )
-    def get(self, request, casa, id_ext):
-        '''
-        Retorna o histórico de temperaturas de uma proposição, retornando a quantidade
-        especificada de semanas anteriores à data de referência.
-        '''
-        semanas_anteriores = request.query_params.get('semanas_anteriores')
-        data_referencia = request.query_params.get('data_referencia')
 
-        queryset = TemperaturaHistorico.objects.filter(
-            proposicao__casa=casa, proposicao__id_ext=id_ext)
+# class TemperaturaHistoricoAPI(APIView):
+#     '''
+#     Historico de temperaturas de uma proposicao
+#     '''
+#     @swagger_auto_schema(
+#         manual_parameters=[
+#             openapi.Parameter(
+#                 'casa', openapi.IN_PATH,
+#                 'casa da proposição', type=openapi.TYPE_STRING),
+#             openapi.Parameter(
+#                 'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+#                 type=openapi.TYPE_INTEGER),
+#             openapi.Parameter(
+#                 'semanas_anteriores', openapi.IN_PATH,
+#                 'número de semanas anteriores a retornar',
+#                 type=openapi.TYPE_INTEGER),
+#             openapi.Parameter(
+#                 'data_referencia', openapi.IN_PATH,
+#                 'data de referência a ser considerada',
+#                 type=openapi.TYPE_STRING),
+#         ]
+#     )
+#     def get(self, request, casa=None, id_ext=None):
+#         '''
+#         Retorna o histórico de temperaturas de uma proposição, retornando a quantidade
+#         especificada de semanas anteriores à data de referência.
+#         '''
+#         queryset = get_time_filtered_temperatura(request).filter(
+#             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
-        try:
-            date = (
-                datetime.today() if data_referencia is None else datetime.strptime(
-                    data_referencia, '%Y-%m-%d'))
-        except ValueError:
-            print(
-                f'Data de referência ({data_referencia}) inválida. '
-                'Utilizando data atual como data de referência.')
-            date = datetime.today()
+#         temperaturas = [TemperaturaHistoricoSerializer(temperatura).data
+#                         for temperatura in queryset]
 
-        queryset = queryset.filter(periodo__lte=date)
-
-        if semanas_anteriores is not None:
-            start_date = date - timedelta(weeks=int(semanas_anteriores))
-            queryset = queryset.filter(periodo__gte=start_date)
-
-        temperaturas = [TemperaturaHistoricoSerializer(temperatura).data
-                        for temperatura in queryset]
-
-        return Response({
-            'coeficiente': get_coefficient_temperature(queryset),
-            'temperaturas': temperaturas
-        })
+#         return Response({
+#             'coeficiente': get_coefficient_temperature(queryset),
+#             'temperaturas': temperaturas
+#         })
 
 
 class TramitacaoEventList(generics.ListAPIView):
@@ -217,7 +212,7 @@ class TramitacaoEventList(generics.ListAPIView):
 
 class ProgressoList(generics.ListAPIView):
     '''
-    Dados do progresso da proposição por periodo de acordo com uma data de referência.
+    Dados do progresso da proposição por período, de acordo com uma data de referência.
     '''
     serializer_class = ProgressoSerializer
 
@@ -287,26 +282,8 @@ class PautaList(generics.ListAPIView):
         '''
         casa = self.kwargs['casa']
         id_ext = self.kwargs['id_ext']
-        data_referencia = self.request.query_params.get('data_referencia', None)
-        queryset = PautaHistorico.objects.filter(
+        return get_time_filtered_pauta.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
-
-        try:
-            hoje = datetime.today() if data_referencia is None else datetime.strptime(
-                data_referencia, '%Y-%m-%d')
-            semana_atual = hoje.isocalendar()[1]
-        except ValueError:
-            print(
-                f'Data de referência ({data_referencia}) inválida. '
-                'Utilizando data atual como data de referência.')
-            semana_atual = datetime.today().isocalendar()[1]
-
-        if data_referencia is None:
-            queryset = queryset.filter()
-        else:
-            queryset = queryset.filter(semana=semana_atual)
-
-        return queryset
 
 
 class ProposicaoDetail(APIView):

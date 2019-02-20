@@ -41,37 +41,37 @@ class ProposicaoTests(APITestCase):
         self.assertEqual(response.data['casa'], self.etapa_proposicao.casa)
 
 
-class TemperaturaHistoricoTest(APITestCase):
+# class TemperaturaHistoricoTest(APITestCase):
 
-    def setUp(self):
-        create_proposicao(self)
-        create_temperatura(self, self.etapa_proposicao)
-        self.url = ('/temperatura/' + self.etapa_proposicao.casa + '/' +
-                    self.etapa_proposicao.id_ext)
+#     def setUp(self):
+#         create_proposicao(self)
+#         create_temperatura(self, self.etapa_proposicao)
+#         self.url = ('/temperatura/' + self.etapa_proposicao.casa + '/' +
+#                     self.etapa_proposicao.id_ext)
 
-    def test_get_temperatura(self):
-        '''
-        Check temperature list from a proposicao
-        '''
+#     def test_get_temperatura(self):
+#         '''
+#         Check temperature list from a proposicao
+#         '''
 
-        response = self.client.get(self.url)
+#         response = self.client.get(self.url)
 
-        self.assertTrue('coeficiente' in response.data)
-        self.assertTrue('temperaturas' in response.data)
+#         self.assertTrue('coeficiente' in response.data)
+#         self.assertTrue('temperaturas' in response.data)
 
-    def test_get_temperatura_detail(self):
-        '''
-        Check if can get temperature with query params of referenced date
-        '''
+#     def test_get_temperatura_detail(self):
+#         '''
+#         Check if can get temperature with query params of referenced date
+#         '''
 
-        url_detail = (self.url +
-                      '?semanas_anteriores=12&data_referencia=2018-11-07')
-        response = self.client.get(url_detail)
+#         url_detail = (self.url +
+#                       '?semanas_anteriores=12&data_referencia=2018-11-07')
+#         response = self.client.get(url_detail)
 
-        self.assertEquals(response.data['coeficiente'], 0)
-        self.assertTrue('temperaturas' in response.data)
-        self.assertEqual(response.status_code, 200)
-        self.assertGreater(len(response.data), 0)
+#         self.assertEquals(response.data['coeficiente'], 0)
+#         self.assertTrue('temperaturas' in response.data)
+#         self.assertEqual(response.status_code, 200)
+#         self.assertGreater(len(response.data), 0)
 
 
 class EmendasTest(APITestCase):

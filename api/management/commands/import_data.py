@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from api.utils import import_all_data
+from .import_utils import import_all_data
 
 
 class Command(BaseCommand):
