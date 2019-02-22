@@ -193,6 +193,8 @@ class TramitacaoEvent(models.Model):
 
     texto_tramitacao = models.TextField()
 
+    status = models.TextField()
+
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
 
