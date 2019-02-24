@@ -147,6 +147,10 @@ class EtapaProposicao(models.Model):
             return 0
 
     @property
+    def status(self):
+        return self.tramitacao.last().status
+
+    @property
     def resumo_tramitacao(self):
 
         locais = []
