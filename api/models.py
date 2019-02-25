@@ -148,7 +148,13 @@ class EtapaProposicao(models.Model):
 
     @property
     def status(self):
-        return self.tramitacao.last().status
+        if (hasattr(self, '_prefetched_objects_cache')
+           and 'tramitacao' in self._prefetched_objects_cache):
+            # It's pefetched, avoid query
+            return list(self.tramitacao.all())[-1].status
+        else:
+            # Not prefetched, query
+            return self.tramitacao.last().status
 
     @property
     def resumo_tramitacao(self):
