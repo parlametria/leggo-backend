@@ -147,6 +147,20 @@ class EtapaProposicao(models.Model):
             return 0
 
     @property
+    def status(self):
+        if (hasattr(self, '_prefetched_objects_cache')
+           and 'tramitacao' in self._prefetched_objects_cache):
+            # It's pefetched, avoid query
+            trams = list(self.tramitacao.all())
+            if trams:
+                return trams[-1].status
+            else:
+                return None
+        else:
+            # Not prefetched, query
+            return self.tramitacao.last().status
+
+    @property
     def resumo_tramitacao(self):
 
         locais = []
