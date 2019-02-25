@@ -210,7 +210,6 @@ class TramitacaoEventList(generics.ListAPIView):
         queryset = queryset.filter(data__lte=data_fim_dt)
 
         if apenas_importantes:
-            print("Selecionando apenas eventos importantes...")
             queryset = queryset.exclude(evento__exact="nan")
 
         if ultimos_n is not None:
