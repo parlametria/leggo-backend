@@ -159,6 +159,10 @@ class TramitacaoEventList(generics.ListAPIView):
                 'data de fim do período de tempo ao qual os eventos devem pertencer',
                 type=openapi.TYPE_STRING),
             openapi.Parameter(
+                'apenas_importantes', openapi.IN_PATH,
+                'se deve retornar apenas os eventos importantes',
+                type=openapi.TYPE_BOOLEAN),
+            openapi.Parameter(
                 'ultimos_n', openapi.IN_PATH,
                 'últimos n eventos a serem retornados',
                 type=openapi.TYPE_INTEGER),
@@ -174,6 +178,7 @@ class TramitacaoEventList(generics.ListAPIView):
         casa = self.kwargs['casa']
         data_inicio = self.request.query_params.get('data_inicio', None)
         data_fim = self.request.query_params.get('data_fim', None)
+        apenas_importantes = self.request.query_params.get('apenas_importantes', False)
         ultimos_n = self.request.query_params.get('ultimos_n', None)
 
         queryset = TramitacaoEvent.objects.filter(
@@ -203,6 +208,10 @@ class TramitacaoEventList(generics.ListAPIView):
             queryset = queryset.filter(data__gte=data_inicio_dt)
 
         queryset = queryset.filter(data__lte=data_fim_dt)
+
+        if apenas_importantes:
+            print("Selecionando apenas eventos importantes...")
+            queryset = queryset.exclude(evento__exact="nan")
 
         if ultimos_n is not None:
             queryset = queryset.order_by('-data')[:int(ultimos_n)]
