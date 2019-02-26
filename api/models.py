@@ -95,6 +95,8 @@ class EtapaProposicao(models.Model):
 
     relator_nome = models.TextField(blank=True)
 
+    casa_origem = models.TextField(blank=True)
+
     temperatura = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
