@@ -33,8 +33,9 @@ def get_time_filtered_temperatura(request):
 
 def get_time_filtered_pauta(request):
     '''
-    Filtra as pautas que ocorreram depois ou no dia da data_referencia. Se a data_referencia é uma sexta-feira, retornará
-    todas as pautas com um período de 6 dias após, se não, retorna as pautas da mesma semana da data_referencia.
+    Filtra as pautas que ocorreram depois ou no dia da data_referencia. Se a
+    data_referencia é uma sexta-feira, retornará todas as pautas com um
+    período de 6 dias após, se não,retorna as pautas da mesma semana da data_referencia.
     '''
     data_referencia = request.query_params.get('data_referencia')
 
@@ -49,10 +50,11 @@ def get_time_filtered_pauta(request):
         else:
             queryset = queryset.filter(data__gte=date)
 
-    if(date.weekday() == 4): # friday
+    if(date.weekday() == 4):  # friday
         end_date = date + timedelta(days=6)
         queryset = queryset.filter(data__lte=end_date)
     else:
-        queryset = queryset.filter(data__week=date.isocalendar()[1], data__year=date.isocalendar()[0])
+        queryset = queryset.filter(data__week=date.isocalendar()[1],
+                                   data__year=date.isocalendar()[0])
 
     return queryset
