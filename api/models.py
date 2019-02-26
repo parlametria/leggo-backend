@@ -153,7 +153,7 @@ class EtapaProposicao(models.Model):
         if (hasattr(self, '_prefetched_objects_cache')
            and 'tramitacao' in self._prefetched_objects_cache):
             # It's pefetched, avoid query
-            trams = list(self.tramitacao.all())
+            trams = list(self.tramitacao.all().order_by('data'))
             if trams:
                 return trams[-1].status
             else:

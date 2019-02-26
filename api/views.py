@@ -207,7 +207,7 @@ class TramitacaoEventList(generics.ListAPIView):
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
 
-        queryset = queryset.filter(data__lte=data_fim_dt)
+        queryset = queryset.order_by('-data').filter(data__lte=data_fim_dt)
 
         if apenas_importantes:
             queryset = queryset.exclude(evento__exact="nan")
