@@ -40,6 +40,7 @@ def get_time_filtered_pauta(request):
     data_referencia = request.query_params.get('data_referencia')
 
     queryset = PautaHistorico.objects
+    date = None
 
     if data_referencia:
         try:
@@ -47,14 +48,17 @@ def get_time_filtered_pauta(request):
         except ValueError:
             print(
                 f'Data de referência ({data_referencia}) inválida. ')
+            date = datetime.datetime.now().strptime('%Y-%m-%d')
         else:
             queryset = queryset.filter(data__gte=date)
 
-    if(date.weekday() == 4):  # friday
-        end_date = date + timedelta(days=6)
-        queryset = queryset.filter(data__lte=end_date)
+        if(date.weekday() == 4):  # friday
+            end_date = date + timedelta(days=6)
+            queryset = queryset.filter(data__lte=end_date)
+        else:
+            queryset = queryset.filter(data__week=date.isocalendar()[1],
+                                       data__year=date.isocalendar()[0])
+    if not data_referencia:
+        return queryset.filter()
     else:
-        queryset = queryset.filter(data__week=date.isocalendar()[1],
-                                   data__year=date.isocalendar()[0])
-
-    return queryset
+        return queryset
