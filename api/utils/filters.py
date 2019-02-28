@@ -42,8 +42,8 @@ def get_time_filtered_pauta(request):
     queryset = PautaHistorico.objects
 
     if not data_referencia:
-        return queryset.fitler()
-  
+        return queryset.filter()
+
     date = datetime.strptime(data_referencia, '%Y-%m-%d')
     queryset = queryset.filter(data__gte=date)
 
@@ -53,5 +53,5 @@ def get_time_filtered_pauta(request):
     else:
         queryset = queryset.filter(data__week=date.isocalendar()[1],
                                    data__year=date.isocalendar()[0])
-    
+
     return queryset
