@@ -34,9 +34,9 @@ class EtapasSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'temperatura_historico', 'autor_nome', 'relator_nome', 'em_pauta',
-            'apelido', 'tema', 'status', 'resumo_tramitacao', 'temperatura_coeficiente',
-            'pauta_historico')
+            'temperatura_historico', 'autor_nome', 'relator_nome', 'casa_origem',
+            'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao',
+            'temperatura_coeficiente', 'pauta_historico')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -207,7 +207,7 @@ class TramitacaoEventList(generics.ListAPIView):
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
 
-        queryset = queryset.filter(data__lte=data_fim_dt)
+        queryset = queryset.order_by('-data').filter(data__lte=data_fim_dt)
 
         if apenas_importantes:
             queryset = queryset.exclude(evento__exact="nan")
