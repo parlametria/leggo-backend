@@ -153,7 +153,7 @@ class EtapaProposicao(models.Model):
         if (hasattr(self, '_prefetched_objects_cache')
            and 'tramitacao' in self._prefetched_objects_cache):
             # It's pefetched, avoid query
-            trams = list(self.tramitacao.all().order_by('data'))
+            trams = list(self.tramitacao.all())
             if trams:
                 return trams[-1].status
             else:
@@ -220,7 +220,7 @@ class TramitacaoEvent(models.Model):
         return self.proposicao.casa
 
     class Meta:
-        ordering = ('sequencia',)
+        ordering = ('data', 'sequencia')
 
 
 class TemperaturaHistorico(models.Model):
