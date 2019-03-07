@@ -1,2 +1,2 @@
-from .views import *
-from .tramitacao import *
+from .views import *  # noqa
+from .tramitacao import *  # noqa
