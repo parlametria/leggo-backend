@@ -3,6 +3,7 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+import re
 # from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
@@ -191,6 +192,16 @@ class EtapaProposicao(models.Model):
                         'link_inteiro_teor': event.link_inteiro_teor
                     })
         return sorted(events, key=lambda k: k['data'])
+
+    @property
+    def comissoes_passadas(self):
+
+        comissoes = set()
+        local_com_c_que_nao_e_comissao = "CD-MESA-PLEN"
+        for row in self.tramitacao.all():
+            if row.local != local_com_c_que_nao_e_comissao and re.search("^C", row.local):
+                comissoes.add(row.local)
+        return comissoes
 
 
 class TramitacaoEvent(models.Model):
