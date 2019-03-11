@@ -176,7 +176,8 @@ class EtapaProposicao(models.Model):
                     'casa': event.proposicao.casa,
                     'local': event.sigla_local,
                     'evento': event.evento,
-                    'texto_tramitacao': event.texto_tramitacao
+                    'texto_tramitacao': event.texto_tramitacao,
+                    'link_inteiro_teor': event.link_inteiro_teor
                 })
             else:
                 if event.local != local:
@@ -186,7 +187,8 @@ class EtapaProposicao(models.Model):
                         'casa': event.proposicao.casa,
                         'local': event.sigla_local,
                         'evento': event.evento,
-                        'texto_tramitacao': event.texto_tramitacao
+                        'texto_tramitacao': event.texto_tramitacao,
+                        'link_inteiro_teor': event.link_inteiro_teor
                     })
         return sorted(events, key=lambda k: k['data'])
 
@@ -210,6 +212,8 @@ class TramitacaoEvent(models.Model):
     texto_tramitacao = models.TextField()
 
     status = models.TextField()
+
+    link_inteiro_teor = models.TextField(blank=True, null=True)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')

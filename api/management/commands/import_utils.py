@@ -43,6 +43,11 @@ def import_tramitacoes():
     '''Carrega tramitações'''
     filepath = 'data/trams.csv'
     grouped = pd.read_csv(filepath).groupby(['casa', 'id_ext'])
+
+    col_names = [
+        'data', 'sequencia', 'evento', 'sigla_local', 'local',
+        'situacao', 'texto_tramitacao', 'status', 'link_inteiro_teor']
+
     for group_index in grouped.groups:
         prop_id = {
             'casa': group_index[0],
@@ -54,8 +59,7 @@ def import_tramitacoes():
             .assign(descricao=lambda x: x.descricao_situacao)
             .assign(data=lambda x: x.data.apply(lambda s: s.split('T')[0]))
             .assign(situacao=lambda x: x.descricao_situacao)
-            [['data', 'sequencia', 'evento', 'sigla_local', 'local', 'situacao',
-                'texto_tramitacao', 'status']]
+            .pipe(lambda x: x.loc[:, x.columns.isin(col_names)])
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         TramitacaoEvent.objects.bulk_create(

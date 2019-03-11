@@ -50,7 +50,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
 class TramitacaoEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = TramitacaoEvent
-        fields = ('data', 'casa', 'sigla_local', 'evento', 'texto_tramitacao', 'status')
+        fields = ('data', 'casa', 'sigla_local', 'evento', 'texto_tramitacao', 'status',
+                  'link_inteiro_teor')
 
 
 class ProgressoSerializer(serializers.ModelSerializer):
