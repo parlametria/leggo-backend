@@ -195,7 +195,7 @@ class EtapaProposicao(models.Model):
     @property
     def comissoes_passadas(self):
         '''
-        Pega todas as comissões nas quais a proposição já 
+        Pega todas as comissões nas quais a proposição já
         tramitou
         '''
         comissoes = set()
