@@ -3,7 +3,6 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
-import re
 # from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
@@ -202,7 +201,7 @@ class EtapaProposicao(models.Model):
         comissoes = set()
         local_com_c_que_nao_e_comissao = "CD-MESA-PLEN"
         for row in self.tramitacao.all():
-            if row.local != local_com_c_que_nao_e_comissao and re.search("^C", row.local):
+            if row.local != local_com_c_que_nao_e_comissao and row.local[0] == "C":
                 comissoes.add(row.local)
         return comissoes
 
