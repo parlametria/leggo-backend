@@ -66,29 +66,29 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 132865,7723733,2018-04-24,65,CCJ,Randolfe Rodrigues REDE/AP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7723733
 132865,7723739,2018-04-24,66,CCJ,Randolfe Rodrigues REDE/AP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7723739
 91341,3931858,2016-05-17,1,CAE,Ricardo Ferraço PSDB/ES,senado,PARECER,http://legis.senado.leg.br/sdleg-getter/documento?dm=3931858
-46249,577691,2013-05-21,3,CCJC,Moreira Mendes PSD/SP,camara,EMR,"Emenda Supressiva nº 1 ao Substitutivo aprovado  pela  Comissão  de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural. NA"
-2121442,2178460,2018-11-26,1,PL672616,Rubens Bueno PPS/PR,camara,EMR,Emenda NA
+46249,577691,2013-05-21,3,CCJC,Moreira Mendes PSD/SP,camara,EMR,"Emenda Supressiva nº 1 ao Substitutivo aprovado  pela  Comissão  de Agricultura, Pecuária, Abastecimento e Desenvolvimento Rural."
+2121442,2178460,2018-11-26,1,PL672616,Rubens Bueno PPS/PR,camara,EMR,Emenda
 127753,4594401,2016-12-13,1,PLEN,José Aníbal PSDB/SP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=4594401
 127753,4594417,2016-12-13,2,PLEN,José Aníbal PSDB/SP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=4594417
 127753,4594433,2016-12-13,3,PLEN,Cidinho Santos PR/MT,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=4594433
 127753,4594449,2016-12-13,4,PLEN,Hélio José MDB/DF,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=4594449
-2160860,2171558,2018-04-11,1,PLEN,Paulo Teixeira PT/SP,camara,EMP, NA
-2160860,2171559,2018-04-11,2,PLEN,Paulo Teixeira PT/SP,camara,EMP, NA
-2160860,2171560,2018-04-11,3,PLEN,Paulo Teixeira PT/SP,camara,EMP, NA
-2160860,2171561,2018-04-11,4,PLEN,Lucas Vergilio SOLIDARIEDADE/GO,camara,EMP, NA
-2160860,2171562,2018-04-11,5,PLEN,Lucas Vergilio SOLIDARIEDADE/GO,camara,EMP, NA
-2160860,2171564,2018-04-11,6,PLEN,André Figueiredo PDT/CE,camara,EMP, NA
-2160860,2171565,2018-04-11,7,PLEN,Felipe Bornier PROS/RJ,camara,EMP, NA
-2160860,2171566,2018-04-11,8,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP, NA
-2160860,2171567,2018-04-11,9,PLEN,Aureo SOLIDARIEDADE/RJ,camara,EMP, NA
-2160860,2171568,2018-04-11,10,PLEN,Laercio Oliveira PP/PE,camara,EMP, NA
+2160860,2171558,2018-04-11,1,PLEN,Paulo Teixeira PT/SP,camara,EMP,
+2160860,2171559,2018-04-11,2,PLEN,Paulo Teixeira PT/SP,camara,EMP,
+2160860,2171560,2018-04-11,3,PLEN,Paulo Teixeira PT/SP,camara,EMP,
+2160860,2171561,2018-04-11,4,PLEN,Lucas Vergilio SOLIDARIEDADE/GO,camara,EMP,
+2160860,2171562,2018-04-11,5,PLEN,Lucas Vergilio SOLIDARIEDADE/GO,camara,EMP,
+2160860,2171564,2018-04-11,6,PLEN,André Figueiredo PDT/CE,camara,EMP,
+2160860,2171565,2018-04-11,7,PLEN,Felipe Bornier PROS/RJ,camara,EMP,
+2160860,2171566,2018-04-11,8,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP,
+2160860,2171567,2018-04-11,9,PLEN,Aureo SOLIDARIEDADE/RJ,camara,EMP,
+2160860,2171568,2018-04-11,10,PLEN,Laercio Oliveira PP/PE,camara,EMP,
 129808,7207279,2017-09-27,1,CCJ,Armando Monteiro PTB/PE,senado,PARECER,http://legis.senado.leg.br/sdleg-getter/documento?dm=7207279
 129808,7222435,2017-10-05,2,PLEN,Randolfe Rodrigues REDE/AP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7222435
 129808,7225765,2017-10-10,3,PLEN,Lídice da Mata PSB/BA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7225765
 129808,7225783,2017-10-10,4,PLEN,Lídice da Mata PSB/BA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7225783
 129808,7225801,2017-10-10,5,PLEN,Lídice da Mata PSB/BA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7225801
-2085536,2121251,2016-12-14,1,CMADS,Roberto Balestra PP/GO,camara,EMR,"Dispõe sobre a zona de amortecimento das unidades de conservação; altera a Lei nº 9.985, de 18 de julho de 2000. NA"
-2085536,2121254,2016-12-14,2,CMADS,Roberto Balestra PP/GO,camara,EMR,"Dispõe sobre a zona de amortecimento das unidades de conservação; altera a Lei nº 9.985, de 18 de julho de 2000. NA"
+2085536,2121251,2016-12-14,1,CMADS,Roberto Balestra PP/GO,camara,EMR,"Dispõe sobre a zona de amortecimento das unidades de conservação; altera a Lei nº 9.985, de 18 de julho de 2000."
+2085536,2121254,2016-12-14,2,CMADS,Roberto Balestra PP/GO,camara,EMR,"Dispõe sobre a zona de amortecimento das unidades de conservação; altera a Lei nº 9.985, de 18 de julho de 2000."
 115926,3801031,2014-07-15,57,CCJ,Gleisi Hoffmann PT/PR,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3801031
 115926,3801056,2014-07-15,58,CCJ,Gleisi Hoffmann PT/PR,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3801056
 115926,3801072,2014-07-15,59,CCJ,Gleisi Hoffmann PT/PR,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3801072
@@ -189,14 +189,14 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 115926,3802997,2016-12-13,154,PLEN,Kátia Abreu MDB/TO,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3802997
 115926,3803013,2016-12-13,155,PLEN,Antonio Anastasia PSDB/MG,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3803013
 115926,3803029,2016-12-13,156,PLEN,Antonio Anastasia PSDB/MG,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3803029
-2119881,2123939,2017-02-16,1,PEC28716,Eduardo Barbosa PSDB/SP,camara,EMC,"Altera o art. 203 da Constituição, contido no art. 1º da Proposta de Emenda à Constituição nº 287, de 2016. NA"
-2119881,2124318,2017-02-21,2,PEC28216,Rosinha da Adefal PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
-2119881,2124336,2017-02-22,3,PEC28716,Paulo Pereira da Silva PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2124344,2017-02-22,4,PEC28716,Pedro Uczai PT/BA,camara,EMC,Emenda Modificativa a PEC 287/16 para garantir a manutenção do atual regime especial de previdência para os (as) professores (as). NA
-2119881,2124345,2017-02-22,5,PEC28716,Pedro Uczai PT/BA,camara,EMC,Emenda Modificativa à PEC 287/16 para garantir a manutenção da forma de contribuição do atual regime especial de previdência dos (das) trabalhadores (as) rurais. NA
-2119881,2124346,2017-02-22,6,PEC28716,Pedro Uczai PT/BA,camara,EMC,Emenda Aditiva à PEC 287/16 para garantir a manutenção da idade de aposentadoria do atual regime especial de previdência dos (as) trabalhadores (as) rurais. NA
-2119881,2124414,2017-02-22,7,PEC28716,Ronaldo Benedet PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
-2119881,2124448,2017-02-23,8,PEC28716,Mara Gabrilli PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+2119881,2123939,2017-02-16,1,PEC28716,Eduardo Barbosa PSDB/SP,camara,EMC,"Altera o art. 203 da Constituição, contido no art. 1º da Proposta de Emenda à Constituição nº 287, de 2016."
+2119881,2124318,2017-02-21,2,PEC28216,Rosinha da Adefal PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
+2119881,2124336,2017-02-22,3,PEC28716,Paulo Pereira da Silva PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2124344,2017-02-22,4,PEC28716,Pedro Uczai PT/BA,camara,EMC,Emenda Modificativa a PEC 287/16 para garantir a manutenção do atual regime especial de previdência para os (as) professores (as).
+2119881,2124345,2017-02-22,5,PEC28716,Pedro Uczai PT/BA,camara,EMC,Emenda Modificativa à PEC 287/16 para garantir a manutenção da forma de contribuição do atual regime especial de previdência dos (das) trabalhadores (as) rurais.
+2119881,2124346,2017-02-22,6,PEC28716,Pedro Uczai PT/BA,camara,EMC,Emenda Aditiva à PEC 287/16 para garantir a manutenção da idade de aposentadoria do atual regime especial de previdência dos (as) trabalhadores (as) rurais.
+2119881,2124414,2017-02-22,7,PEC28716,Ronaldo Benedet PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
+2119881,2124448,2017-02-23,8,PEC28716,Mara Gabrilli PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2124558,2017-03-07,9,PEC28716,Betinho Gomes PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 
 
@@ -205,7 +205,7 @@ Art. 1º Suprimam-se as alterações ao inciso V do art. 201 da Constituição F
 Art. 2º Dê-se ao § 7º do art. 40 e ao § 16 do art. 201 da Constituição, contidos no art. 1º, e ao art. 4º da Proposta de Emenda à Constituição nº 287, de 2016, a seguinte redação:
 ""Art. 40.................................................................................
 § 7º Na concessão do benefício de pensão por morte, cujo valor será equivalente a uma cota familiar de 50%, (cinquenta por cento), acrescida de cotas individuais de 10 (dez) pontos percentuais por dependente, até o limite de 100% (cem por cento), observados o disposto no § 2º do art. 201 e, ainda, o seguinte:
- NA"
+"
 2119881,2124559,2017-03-07,10,PEC28716,Betinho Gomes PSDB/PE,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 
 
@@ -214,7 +214,7 @@ Dê-se ao § 7º do art. 201 da Constituição, contido no art. 1º da Proposta 
 ""§ 7º É assegurada aposentadoria no regime geral de previdência social, nos termos da lei, obedecidas as seguintes condições:     
 I - sessenta anos de idade, se homem, e cinquenta e cinco anos de idade, se mulher, e vinte e cinco anos de contribuição para os trabalhadores rurais e para os que exerçam suas atividades em regime de economia familiar, nestes incluídos o produtor, o parceiro, o meeiro e o arrendatário rurais, o garimpeiro, o extrativista e o pescador artesanal e seus respectivos cônjuges ou companheiros e filhos que exerçam essas atividades sem empregados permanentes;
 II - sessenta e cinco anos de idade e vinte e cinco anos de contribuição, para ambos os sexos, nos demais casos."" 
- NA"
+"
 2119881,2124605,2017-03-07,11,PEC28716,Betinho Gomes PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 
 
@@ -223,9 +223,9 @@ Dê-se ao inciso I do § 3º do art. 40 e ao § 7ºB do art. 201 da Constituiç�
 ""Art.40...............................................................................................................................................................................
 § 3º......................................................................................
 I - para a aposentadoria por incapacidade permanente para o trabalho e a aposentadoria voluntária, a 60% (sessenta por cento) da média das remunerações e dos salários de contribuição utilizados como base para as contribuições, apurada na forma da lei, acrescidos de 1 (um) ponto percentual desta para cada ano de contribuição considerado na concessão da aposentadoria aos regimes de previdência de que tratam este artigo e os arts. 42 e 201, até o limite de 100% (cem por cento) da média;
- NA"
-2119881,2124614,2017-03-07,12,PEC28716,Weverton Rocha PCdoB/RS,camara,EMC,"Suprima-se o §8º do Art. 195 proposto no Art. 1º, os Arts. 9º e 10 e dê-se ao  art. 8º da PEC 287, de 2016, a redação proposta. NA"
-2119881,2124616,2017-03-07,13,PEC28716,Weverton Rocha PTB/AM,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+"
+2119881,2124614,2017-03-07,12,PEC28716,Weverton Rocha PCdoB/RS,camara,EMC,"Suprima-se o §8º do Art. 195 proposto no Art. 1º, os Arts. 9º e 10 e dê-se ao  art. 8º da PEC 287, de 2016, a redação proposta."
+2119881,2124616,2017-03-07,13,PEC28716,Weverton Rocha PTB/AM,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2124634,2017-03-07,14,PEC28716,Arnaldo Faria de Sá PTB/AM,camara,EMC,"PROPOSTA DE EMENDA À CONSTITUIÇÃO N° 287, DE 2016
 
 Altera os Arts. 37, 40, 109, 149, 167,195. 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
@@ -242,7 +242,7 @@ I - por invalidez permanente;
 II - ……….............................................................................
 III - ……..............................................................................
 IV - - O servidor da União, dos Estados, do Distrito Federal e dos Municípios, incluídas suas autarquias e fundações, que tenha ingressado no serviço público até 31 de dezembro de 2003, que se aposentou ou venha se aposentar por invalidez permanente, com fundamento no inciso I do § 1° do Art. 40 da Constituição Federal, ressalvada a hipótese do § 16 do Art. 40 da Constituição Federal, tem direito a:
-a)	- proventos de aposentadoria calculada com b NA"
+a)	- proventos de aposentadoria calculada com b"
 2119881,2124635,2017-03-07,15,PEC28716,Arnaldo Faria de Sá PTB/AM,camara,EMC,"PROPOSTA DE EMENDA À CONSTITUIÇÃO N° 287, DE 2016
 
 Altera os Arts. 37, 40, 109, 149, 167,195. 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
@@ -258,61 +258,61 @@ I - não será cobrada na hipótese de invalidez permanente do titular respectiv
 II - terá o seu valor extinto, a partir do sexagésimo quinto aniversário do titular do benefício do titular ou do dependente, no caso de pensão por morte, combinado com a contribuição para o regime de previdência de caráter contributivo e solidário dos servidores ativos e inativos e dos pensionistas, com o limite de trinta e cinco anos de contribuição;
 
 JUSTIFICAÇÃO
-A contribuição de servidores públicos aposentados e seus pensionistas para o custeio do Regime Próprio de Previdência Social é uma aberração, sob o prisma jurídico e tributário, que somente foi aprovada pelo  NA"
-2119881,2124688,2017-03-08,16,PEC28716,Arnaldo Faria de Sá PTB/AM,camara,EMC,"Inclua-se o seguinte §4-B ao artigo 40 constante do artigo 1º desta Proposta de Emenda à Constituição, com a consequente supressão do inciso II do § 2º do artigo 2º do texto da mesma Proposta. NA"
-2119881,2124697,2017-03-08,17,PEC28716,Valdir Colatto PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2124881,2017-03-08,18,PEC28716,Bacelar PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
-2119881,2124883,2017-03-08,19,PEC28716,Bacelar PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências NA"
-2119881,2124897,2017-03-08,20,PEC28716,Bacelar PCdoB/RS,camara,EMC,Modifica o inciso I do § 2 do art. 2 e o art. 11 da Proposta de Emenda à constituição n 287-A de 2016 NA
-2119881,2124945,2017-03-09,21,PEC28716,Weverton Rocha PCdoB/RS,camara,EMC,"Dê-se ao Art. 1º da PEC 287, de 2016, a seguinte redação:  NA"
-2119881,2124951,2017-03-09,22,PEC28716,Cristiane Brasil PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2124964,2017-03-09,23,PEC28716,Rosinha da Adefal PSDB/SP,camara,EMC,"Proposta de Emenda à Constituição n.º 287, de 2016 (Reforma da Previdência), que ""Altera os arts. 37, 40, 42, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências"". NA"
+A contribuição de servidores públicos aposentados e seus pensionistas para o custeio do Regime Próprio de Previdência Social é uma aberração, sob o prisma jurídico e tributário, que somente foi aprovada pelo "
+2119881,2124688,2017-03-08,16,PEC28716,Arnaldo Faria de Sá PTB/AM,camara,EMC,"Inclua-se o seguinte §4-B ao artigo 40 constante do artigo 1º desta Proposta de Emenda à Constituição, com a consequente supressão do inciso II do § 2º do artigo 2º do texto da mesma Proposta."
+2119881,2124697,2017-03-08,17,PEC28716,Valdir Colatto PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2124881,2017-03-08,18,PEC28716,Bacelar PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
+2119881,2124883,2017-03-08,19,PEC28716,Bacelar PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências"
+2119881,2124897,2017-03-08,20,PEC28716,Bacelar PCdoB/RS,camara,EMC,Modifica o inciso I do § 2 do art. 2 e o art. 11 da Proposta de Emenda à constituição n 287-A de 2016
+2119881,2124945,2017-03-09,21,PEC28716,Weverton Rocha PCdoB/RS,camara,EMC,"Dê-se ao Art. 1º da PEC 287, de 2016, a seguinte redação: "
+2119881,2124951,2017-03-09,22,PEC28716,Cristiane Brasil PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2124964,2017-03-09,23,PEC28716,Rosinha da Adefal PSDB/SP,camara,EMC,"Proposta de Emenda à Constituição n.º 287, de 2016 (Reforma da Previdência), que ""Altera os arts. 37, 40, 42, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências""."
 2119881,2124988,2017-03-09,24,PEC28716,Carlos Eduardo Cadoca PP/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
- NA"
-2119881,2124999,2017-03-09,25,PEC28716,Alice Portugal PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+"
+2119881,2124999,2017-03-09,25,PEC28716,Alice Portugal PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2125001,2017-03-09,26,PEC28716,Pompeo de Mattos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
- NA"
+"
 2119881,2125002,2017-03-09,27,PEC28716,Pompeo de Mattos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
- NA"
-2119881,2125015,2017-03-09,28,PEC28716,Jandira Feghali PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125018,2017-03-09,29,PEC28716,Jandira Feghali PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125023,2017-03-09,30,PEC28716,Bohn Gass PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
-2119881,2125025,2017-03-09,31,PEC28716,Heitor Schuch PT/BA,camara,EMC,"Altera os arts. 37, 40, 42, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125026,2017-03-09,32,PEC28716,Davidson Magalhães PT/BA,camara,EMC,"Suprima-se o inciso V, parágrafos 1º., 2º. e 3º. do art. 203 da proposta de emenda à Constituição. NA"
-2119881,2125027,2017-03-09,33,PEC28716,Geovania de Sá PT/BA,camara,EMC,"Altera os arts. 37,40,109,149,167,195,201 e 203 da Constituição, para dispor sobre a seguridade social, estabelecer regras de transição e dá outras providencias. NA"
+"
+2119881,2125015,2017-03-09,28,PEC28716,Jandira Feghali PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125018,2017-03-09,29,PEC28716,Jandira Feghali PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125023,2017-03-09,30,PEC28716,Bohn Gass PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
+2119881,2125025,2017-03-09,31,PEC28716,Heitor Schuch PT/BA,camara,EMC,"Altera os arts. 37, 40, 42, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125026,2017-03-09,32,PEC28716,Davidson Magalhães PT/BA,camara,EMC,"Suprima-se o inciso V, parágrafos 1º., 2º. e 3º. do art. 203 da proposta de emenda à Constituição."
+2119881,2125027,2017-03-09,33,PEC28716,Geovania de Sá PT/BA,camara,EMC,"Altera os arts. 37,40,109,149,167,195,201 e 203 da Constituição, para dispor sobre a seguridade social, estabelecer regras de transição e dá outras providencias."
 2119881,2125029,2017-03-09,34,PEC28716,Mara Gabrilli PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
- NA"
-2119881,2125033,2017-03-09,35,PEC28716,Assis do Couto PT/BA,camara,EMC,"Suprima-se o inciso V, parágrafos 16 e 17 do art. 201 da PEC 287, de 2016. NA"
+"
+2119881,2125033,2017-03-09,35,PEC28716,Assis do Couto PT/BA,camara,EMC,"Suprima-se o inciso V, parágrafos 16 e 17 do art. 201 da PEC 287, de 2016."
 2119881,2125034,2017-03-09,36,PEC28716,Subtenente Gonzaga PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. (Reintroduz a parte final do § 20 do art. 40, original, da CF ""ressalvado o disposto no art.142, § 3º, X. neste dispositivo alterado pela PEC)
 
- NA"
+"
 2119881,2125035,2017-03-09,37,PEC28716,Subtenente Gonzaga PR/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências 
 
 Suprima-se do art. 1º da PEC 287, de 2016 a referência ao art. 42 da Constituição nos seguintes dispositivos: inciso I do § 3º, § 3º-A do art. 40 e §§ 7º-A, 7º-B e 7º-C do art. 201 da CF.
- NA"
-2119881,2125043,2017-03-09,38,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 a dispositivos constitucionais, relativos aos profissionais da educação. NA"
-2119881,2125044,2017-03-09,39,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 os artigos 18, 19, 20 e 22, relativos ao valor e ao requisito de idade para a concessão de benefícios assistenciais. NA"
-2119881,2125045,2017-03-09,40,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 ao inciso V e ao §1º do artigo 203 da Constituição Federal, relativos ao valor e ao requisito de idade para a concessão de benefícios assistenciais. NA"
-2119881,2125049,2017-03-09,41,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprime da Proposta de Emenda à Constituição nº 287/2016 os artigos 2º, 8º, 10, 11, 21, 22 e 23. NA"
-2119881,2125051,2017-03-09,42,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Acrescenta dispositivos à PEC 287/216  NA
-2119881,2125052,2017-03-09,43,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Acrescenta à Proposta da Emenda Constitucional 287/2016 modificações ao §5º do art. 40 e o §8º do art. 201 da Constituição Federal. NA
-2119881,2125054,2017-03-09,44,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 o artigo 22, relativo aos requisitos de 65 anos de idade e de 25 anos de contribuição, para fins de aposentadoria. NA"
-2119881,2125055,2017-03-09,45,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 aos dispositivos constitucionais mencionados, relativos aos requisitos de 65 anos de idade e de 25 anos de contribuição, para fins de aposentadoria: NA"
-2119881,2125057,2017-03-09,46,PEC28716,Carlos Zarattini PCdoB/RS,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 aos dispositivos constitucionais mencionados, relativos à igualação dos requisitos de idade e de tempo de contribuição entre homens e mulheres: NA"
-2119881,2125058,2017-03-09,47,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 os artigos 2º, 7º, 8º, 11, 19 e 23, relativos à igualação dos requisitos de idade e de tempo de contribuição entre homens e mulheres. NA"
-2119881,2125060,2017-03-09,48,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 os dispositivos mencionados, relativos aos profissionais da educação que atuam em efetivo exercício de funções de magistério na educação infantil e no ensino fundamental e médio. NA"
-2119881,2125061,2017-03-09,49,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Acrescente-se inciso V ao artigo 23 da PEC Nº 287/2016. NA
-2119881,2125062,2017-03-09,50,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Emenda modificativa à redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 ao §13 do artigo 37 e ao inciso I do §1º do artigo 40 da Constituição Federal. NA
-2119881,2125063,2017-03-09,51,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016. NA
-2119881,2125064,2017-03-09,52,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Emenda aditiva à PEC 287/2016. NA
-2119881,2125066,2017-03-09,53,PEC28716,Major Olimpio PP/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125067,2017-03-09,54,PEC28716,Major Olimpio AVANTE/AL,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125069,2017-03-09,55,PEC28716,Major Olimpio PP/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125075,2017-03-10,56,PEC28716,Hugo Leal PCdoB/RS,camara,EMC,"Art. 1º Dê-se aos §§ 4º, 4º-A e 7º do art. 40 da Constituição Federal, modificado pelo art. 1º da Proposta de Emenda à Constituição nº 287, de 2016, a seguinte redação NA"
+"
+2119881,2125043,2017-03-09,38,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 a dispositivos constitucionais, relativos aos profissionais da educação."
+2119881,2125044,2017-03-09,39,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 os artigos 18, 19, 20 e 22, relativos ao valor e ao requisito de idade para a concessão de benefícios assistenciais."
+2119881,2125045,2017-03-09,40,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 ao inciso V e ao §1º do artigo 203 da Constituição Federal, relativos ao valor e ao requisito de idade para a concessão de benefícios assistenciais."
+2119881,2125049,2017-03-09,41,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprime da Proposta de Emenda à Constituição nº 287/2016 os artigos 2º, 8º, 10, 11, 21, 22 e 23."
+2119881,2125051,2017-03-09,42,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Acrescenta dispositivos à PEC 287/216 
+2119881,2125052,2017-03-09,43,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Acrescenta à Proposta da Emenda Constitucional 287/2016 modificações ao §5º do art. 40 e o §8º do art. 201 da Constituição Federal.
+2119881,2125054,2017-03-09,44,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 o artigo 22, relativo aos requisitos de 65 anos de idade e de 25 anos de contribuição, para fins de aposentadoria."
+2119881,2125055,2017-03-09,45,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 aos dispositivos constitucionais mencionados, relativos aos requisitos de 65 anos de idade e de 25 anos de contribuição, para fins de aposentadoria:"
+2119881,2125057,2017-03-09,46,PEC28716,Carlos Zarattini PCdoB/RS,camara,EMC,"Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 aos dispositivos constitucionais mencionados, relativos à igualação dos requisitos de idade e de tempo de contribuição entre homens e mulheres:"
+2119881,2125058,2017-03-09,47,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 os artigos 2º, 7º, 8º, 11, 19 e 23, relativos à igualação dos requisitos de idade e de tempo de contribuição entre homens e mulheres."
+2119881,2125060,2017-03-09,48,PEC28716,Carlos Zarattini PT/BA,camara,EMC,"Suprima-se da Proposta de Emenda à Constituição nº 287/2016 os dispositivos mencionados, relativos aos profissionais da educação que atuam em efetivo exercício de funções de magistério na educação infantil e no ensino fundamental e médio."
+2119881,2125061,2017-03-09,49,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Acrescente-se inciso V ao artigo 23 da PEC Nº 287/2016.
+2119881,2125062,2017-03-09,50,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Emenda modificativa à redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016 ao §13 do artigo 37 e ao inciso I do §1º do artigo 40 da Constituição Federal.
+2119881,2125063,2017-03-09,51,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Suprima-se a redação dada pelo artigo 1º da Proposta de Emenda à Constituição nº 287/2016.
+2119881,2125064,2017-03-09,52,PEC28716,Carlos Zarattini PT/BA,camara,EMC,Emenda aditiva à PEC 287/2016.
+2119881,2125066,2017-03-09,53,PEC28716,Major Olimpio PP/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125067,2017-03-09,54,PEC28716,Major Olimpio AVANTE/AL,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125069,2017-03-09,55,PEC28716,Major Olimpio PP/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125075,2017-03-10,56,PEC28716,Hugo Leal PCdoB/RS,camara,EMC,"Art. 1º Dê-se aos §§ 4º, 4º-A e 7º do art. 40 da Constituição Federal, modificado pelo art. 1º da Proposta de Emenda à Constituição nº 287, de 2016, a seguinte redação"
 2119881,2125077,2017-03-10,57,PEC28716,Jerônimo Goergen PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201. 203 e revoga os parágrafos do art. 239 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 
 Acrescente-se o art. 23ao Projeto, renumerando-se os demais, alterando a com a seguinte redação: Os incisos I e III do art. 7º e 239 da Constituição Federal passam a ter a seguinte redação? renumerando o parágrafo único do art. 7º para §1º? adiciona-se o seguinte §2º ao art. 7º? o seguinte §2º-A ao art. 195? os seguintes §§ 14, 15 e 16 ao art. 201; o seguinte parágrafo único e inciso VI ao art. 203 e revoga-se os parágrafos do art. 239
- NA"
+"
 2119881,2125149,2017-03-13,58,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,"PROPOSTA DE EMENDA À CONSTITUIÇÃO
 
 EMENDA SUBSTITUTIVA GLOBAL À PEC 287/2016.
@@ -325,32 +325,32 @@ EMENDA SUBSTITUTIVA GLOBAL À PEC 287/2016.
 Altera os arts. 5°, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os Regimes Próprios de Previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências.
 
 
- NA"
-2119881,2125155,2017-03-13,59,PEC28716,Silas Câmara PR/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências  NA"
-2119881,2125214,2017-03-13,60,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Dê-se o § 19 do artigo 40 da Constituição Federal, alterado pelo artigo 1º da Proposta de Emenda à Constituição 287 de 2016, nova redação. NA"
-2119881,2125215,2017-03-13,61,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,Adiciona artigos à PEC 287/2016 NA
+"
+2119881,2125155,2017-03-13,59,PEC28716,Silas Câmara PR/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências "
+2119881,2125214,2017-03-13,60,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Dê-se o § 19 do artigo 40 da Constituição Federal, alterado pelo artigo 1º da Proposta de Emenda à Constituição 287 de 2016, nova redação."
+2119881,2125215,2017-03-13,61,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,Adiciona artigos à PEC 287/2016
 2119881,2125216,2017-03-13,62,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,"Art. 1º Altera-se o caput e os §§ 1º e 2º do artigo 2º da Proposta de Emenda à Constituição 287 de 2016, que passam a vigorar com a seguinte redação: 
 ""Art. 2º Ressalvado o direito de opção à aposentadoria pelas normas estabelecidas no art. 40 da Constituição, o servidor da União, dos Estados, do Distrito Federal e dos Municípios, incluídas suas autarquias e fundações, que tenha ingressado no serviço público em cargo efetivo até a data da promulgação desta Emenda, poderá aposentar-se quando preencher, cumulativamente, as seguintes condições:
 I - trinta e cinco anos de contribuição, se homem, e trinta anos de contribuição, se mulher; 
 II - vinte anos de efetivo exercício no serviço público;   
 III - cinco anos de efetivo exercício no cargo em que se der a aposentadoria; e
-IV - período adicional de contribuição equivalente a 50% (cinquenta por cento) do tempo que, na data de promulgação desta Emenda, faltaria para atingir os li NA"
-2119881,2125217,2017-03-13,63,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Acrescenta o art. 23-A na Proposta de Emenda à Constituição n.º 287, de 2016, nos seguintes termos NA"
-2119881,2125218,2017-03-13,64,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,Altera-se o artigo 4º da Proposta de Emenda à Constituição 287 de 2016 NA
+IV - período adicional de contribuição equivalente a 50% (cinquenta por cento) do tempo que, na data de promulgação desta Emenda, faltaria para atingir os li"
+2119881,2125217,2017-03-13,63,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Acrescenta o art. 23-A na Proposta de Emenda à Constituição n.º 287, de 2016, nos seguintes termos"
+2119881,2125218,2017-03-13,64,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,Altera-se o artigo 4º da Proposta de Emenda à Constituição 287 de 2016
 2119881,2125219,2017-03-13,65,PEC28716,Eduardo da Fonte PCdoB/RS,camara,EMC,"Dê-se ao §15º do art. 40 da PEC 287/2016 a seguinte redação:
 
 ""Art. 40. ........................................................................................
 § 15. O regime de previdência complementar de que trata o §14 será instituído por lei de iniciativa do respectivo Poder Executivo e oferecerá aos participantes planos de benefícios somente na modalidade de contribuição definida, observado o disposto no art. 202 e seus parágrafos, no que couber, por intermédio de entidades fechadas de previdência complementar, que oferecerão aos respectivos participantes planos de benefícios somente na modalidade de contribuição definida."" (AC)
- NA"
-2119881,2125238,2017-03-14,66,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125239,2017-03-14,67,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125240,2017-03-14,68,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição Federal, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
-2119881,2125241,2017-03-14,69,PEC28716,Domingos Neto AVANTE/AL,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição Federal, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125286,2017-03-14,70,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências. NA"
-2119881,2125291,2017-03-14,71,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências. NA"
-2119881,2125292,2017-03-14,72,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências. NA"
-2119881,2125293,2017-03-14,73,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências. NA"
-2119881,2125304,2017-03-14,74,PEC28716,Subtenente Gonzaga PROS/CE,camara,EMC,"Insere-se o parágrafo § 7º ao art. 2º da PEC 287, de 2016, e, por via de consequência, altere-se o caput do artigo 3º, da forma a seguir: NA"
+"
+2119881,2125238,2017-03-14,66,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125239,2017-03-14,67,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125240,2017-03-14,68,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição Federal, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
+2119881,2125241,2017-03-14,69,PEC28716,Domingos Neto AVANTE/AL,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição Federal, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125286,2017-03-14,70,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências."
+2119881,2125291,2017-03-14,71,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências."
+2119881,2125292,2017-03-14,72,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências."
+2119881,2125293,2017-03-14,73,PEC28716,Danilo Cabral PCdoB/RS,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências."
+2119881,2125304,2017-03-14,74,PEC28716,Subtenente Gonzaga PROS/CE,camara,EMC,"Insere-se o parágrafo § 7º ao art. 2º da PEC 287, de 2016, e, por via de consequência, altere-se o caput do artigo 3º, da forma a seguir:"
 2119881,2125305,2017-03-14,75,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,"COMISSÃO ESPECIAL DESTINADA AO EXAME DA PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
@@ -371,18 +371,18 @@ Altere-se o art. 1º da Proposta de Emenda à Constituição n.º 287, de 2016, 
 § 7° D. O valor da aposentadoria para os aeronautas que cumprirem os requisitos do artigo 201, §7°, corresponderá a 100% (cem por cento) da média dos salários de contribuição e das remunerações utilizadas como base para as contribuições do segurado ao regime geral de previdência, respeitado o limite máximo do salário de contribuição, apurada na forma da lei."" (NR)
 
 
-JUSTIFIC NA"
-2119881,2125316,2017-03-14,76,PEC28716,Gorete Pereira PCdoB/RS,camara,EMC,"Emenda restabelecendo as regras de aposentadoria para deficientes físicos, professores e policiais. Mantém a regra para  os trabalhadores rurais. Altera em 5 anos a idade para homens e mulheres nas regras de transição.  NA"
-2119881,2125317,2017-03-14,77,PEC28716,Eduardo da Fonte PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125318,2017-03-14,78,PEC28716,Pepe Vargas PT/BA,camara,EMC,"Substitua-se o texto da Proposta de Emenda à Constituição nº 287 de 2016, pela seguinte redação. NA"
-2119881,2125320,2017-03-14,79,PEC28716,Efraim Filho PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências  NA"
-2119881,2125321,2017-03-14,80,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Altere-se o § 7º do artigo 40 da Constituição Federal, constante do art. 1º e o art. 3º da PEC 287/2016, como segue NA"
-2119881,2125322,2017-03-14,81,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Dê-se nova redação ao inciso I do § 3º, e ao § 3º-A do artigo 40 da Constituição Federal, constante do art. 1º da PEC 287/2016, e suprima-se os §§6º e 22 do artigo 40 da Constituição Federal, como segue NA"
-2119881,2125323,2017-03-14,82,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Dê-se ao § 13º do artigo 37 da Constituição Federal, constante do art. 1º da PEC 287/2016 a seguinte redação NA"
-2119881,2125324,2017-03-14,83,PEC28716,Pepe Vargas PT/BA,camara,EMC,Emenda Modificativa NA
-2119881,2125325,2017-03-14,84,PEC28716,Pepe Vargas PT/BA,camara,EMC,Emenda Adiitiva NA
-2119881,2125326,2017-03-14,85,PEC28716,Pepe Vargas PT/BA,camara,EMC,EMENDA SUPRESSIVA NA
-2119881,2125327,2017-03-14,86,PEC28716,Adelmo Carneiro Leão PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 149-B, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+JUSTIFIC"
+2119881,2125316,2017-03-14,76,PEC28716,Gorete Pereira PCdoB/RS,camara,EMC,"Emenda restabelecendo as regras de aposentadoria para deficientes físicos, professores e policiais. Mantém a regra para  os trabalhadores rurais. Altera em 5 anos a idade para homens e mulheres nas regras de transição. "
+2119881,2125317,2017-03-14,77,PEC28716,Eduardo da Fonte PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125318,2017-03-14,78,PEC28716,Pepe Vargas PT/BA,camara,EMC,"Substitua-se o texto da Proposta de Emenda à Constituição nº 287 de 2016, pela seguinte redação."
+2119881,2125320,2017-03-14,79,PEC28716,Efraim Filho PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências "
+2119881,2125321,2017-03-14,80,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Altere-se o § 7º do artigo 40 da Constituição Federal, constante do art. 1º e o art. 3º da PEC 287/2016, como segue"
+2119881,2125322,2017-03-14,81,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Dê-se nova redação ao inciso I do § 3º, e ao § 3º-A do artigo 40 da Constituição Federal, constante do art. 1º da PEC 287/2016, e suprima-se os §§6º e 22 do artigo 40 da Constituição Federal, como segue"
+2119881,2125323,2017-03-14,82,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Dê-se ao § 13º do artigo 37 da Constituição Federal, constante do art. 1º da PEC 287/2016 a seguinte redação"
+2119881,2125324,2017-03-14,83,PEC28716,Pepe Vargas PT/BA,camara,EMC,Emenda Modificativa
+2119881,2125325,2017-03-14,84,PEC28716,Pepe Vargas PT/BA,camara,EMC,Emenda Adiitiva
+2119881,2125326,2017-03-14,85,PEC28716,Pepe Vargas PT/BA,camara,EMC,EMENDA SUPRESSIVA
+2119881,2125327,2017-03-14,86,PEC28716,Adelmo Carneiro Leão PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 149-B, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2125328,2017-03-14,87,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,"
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
@@ -406,7 +406,7 @@ IV -SUPRESSÃO
 V - SUPRESSÃO.
 [...]
 § 8º SUPRESSÃO""
- NA"
+"
 2119881,2125329,2017-03-14,88,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,"PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
 Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
@@ -420,8 +420,8 @@ CF, Art. 40
 [...]
 § 7º  Na concessão do benefício de pensão por morte, cujo valor será equivalente a uma cota familiar de 60% (sessenta por cento), acrescida de cotas individuais de 10 (dez) pontos percentuais por dependente, até o limite de 100% (cem por cento), e será observado o seguinte:
 
- NA"
-2119881,2125330,2017-03-14,89,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Alteram-se os arts. 2º e 3º da PEC 287, de 2016, como segue. NA"
+"
+2119881,2125330,2017-03-14,89,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Alteram-se os arts. 2º e 3º da PEC 287, de 2016, como segue."
 2119881,2125331,2017-03-14,90,PEC28716,Arnaldo Faria de Sá PCdoB/RS,camara,EMC,"
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
@@ -440,27 +440,27 @@ CF, Art. 40
 I - SUPRESSÃO
 II - SUPRESSÃO
 III - SUPRESSÃO
- NA"
-2119881,2125333,2017-03-14,91,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Altera-se o art. 1º e suprima-se o art. 22 da PEC 287, de 2016, como segue NA"
-2119881,2125334,2017-03-14,92,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"""Art. 4º O valor da pensão por morte concedida aos dependentes do servidor que ingressou em cargo efetivo da União, dos Estados, do Distrito Federal ou dos Municípios anteriormente à instituição do regime de previdência complementar de que trata o § 14 do art. 40 da Constituição e que não realizou a opção de que trata o § 16 do mesmo artigo, será igual: NA"
-2119881,2125335,2017-03-14,93,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Para a aposentadoria por incapacidade permanente para o trabalho e a aposentadoria voluntária, a 65% (sessenta e cinco por cento) da média aritmética simples das maiores remunerações e dos salários de contribuição utilizados como base para as contribuições do servidor aos regimes de previdência aos quais esteve vinculado, correspondentes a 80% (oitenta por cento) de todo o período contributivo desde a competência julho de 1994 ou desde a do início da contribuição. NA"
+"
+2119881,2125333,2017-03-14,91,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Altera-se o art. 1º e suprima-se o art. 22 da PEC 287, de 2016, como segue"
+2119881,2125334,2017-03-14,92,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"""Art. 4º O valor da pensão por morte concedida aos dependentes do servidor que ingressou em cargo efetivo da União, dos Estados, do Distrito Federal ou dos Municípios anteriormente à instituição do regime de previdência complementar de que trata o § 14 do art. 40 da Constituição e que não realizou a opção de que trata o § 16 do mesmo artigo, será igual:"
+2119881,2125335,2017-03-14,93,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Para a aposentadoria por incapacidade permanente para o trabalho e a aposentadoria voluntária, a 65% (sessenta e cinco por cento) da média aritmética simples das maiores remunerações e dos salários de contribuição utilizados como base para as contribuições do servidor aos regimes de previdência aos quais esteve vinculado, correspondentes a 80% (oitenta por cento) de todo o período contributivo desde a competência julho de 1994 ou desde a do início da contribuição."
 2119881,2125336,2017-03-14,94,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Dê-se ao art. 5º da PEC 287/2016, a seguinte redação.
 ""Art. 5º
 Parágrafo único. Os proventos de aposentadoria a serem concedidos ao servidor público referido no caput, em termos integrais ou proporcionais ao tempo de contribuição já exercido até a data de promulgação desta Emenda, e as pensões de seus dependentes, serão calculados e reajustados de acordo com a legislação em vigor à época em que foram atendidos os requisitos nela estabelecidos para a concessão desses benefícios"".
- NA"
-2119881,2125338,2017-03-14,95,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"§ X. Caso o servidor que, até a data de publicação desta Emenda Constitucional, tenha se aposentado nos termos descritos no inciso I do § 1º deste artigo e retorne à ativa, após a promulgação desta Emenda Constitucional, por ter superado as condições previstas no inciso I do §1º deste artigo, será assegurado a opção para requerer a aposentadoria com os mesmos requisitos exigidos e garantias ao tempo da primeira aposentadoria, ou àquela que lhe for mais vantajosa. (NR)."" NA"
+"
+2119881,2125338,2017-03-14,95,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"§ X. Caso o servidor que, até a data de publicação desta Emenda Constitucional, tenha se aposentado nos termos descritos no inciso I do § 1º deste artigo e retorne à ativa, após a promulgação desta Emenda Constitucional, por ter superado as condições previstas no inciso I do §1º deste artigo, será assegurado a opção para requerer a aposentadoria com os mesmos requisitos exigidos e garantias ao tempo da primeira aposentadoria, ou àquela que lhe for mais vantajosa. (NR)."""
 2119881,2125339,2017-03-14,96,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Suprima-se do art. 23 da PEC 287/2016 a alínea ""a"" do inciso I.
 
 a) o inciso II do § 4º, o § 5º e o § 21 do art. 40. Que trata das Aposentadorias que envolvam risco e o exercício do magistério.
 
- NA"
+"
 2119881,2125344,2017-03-14,97,PEC28716,Arnaldo Jordy PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição Federal, para dispor sobre a seguridade social, estabelece regras de transição, e dá outras providências.
 
 EMENDA Nº
-Possibilita regra de transição a todos os trabalhadores, desde que cumpram requisitos de contribuição e idade mínima, conforme tabelas. NA"
-2119881,2125345,2017-03-14,98,PEC28716,Arnaldo Jordy PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125346,2017-03-14,99,PEC28716,Silas Câmara PRB/AC,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências  NA"
-2119881,2125347,2017-03-14,100,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição Federal, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
+Possibilita regra de transição a todos os trabalhadores, desde que cumpram requisitos de contribuição e idade mínima, conforme tabelas."
+2119881,2125345,2017-03-14,98,PEC28716,Arnaldo Jordy PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125346,2017-03-14,99,PEC28716,Silas Câmara PRB/AC,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências "
+2119881,2125347,2017-03-14,100,PEC28716,João Campos PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição Federal, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
 2119881,2125349,2017-03-14,101,PEC28716,Zé Silva PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 
 EMENDA ADITIVA N.º
@@ -469,16 +469,16 @@ Art. 1º. Inclua-se o § 18 ao art. 201 alterado pelo art. 1º da Proposta de Em
 ""§ 18. O produtor, o parceiro, o meeiro e o arrendatário rurais, o extrativista, o pescador artesanal e seus respectivos cônjuges ou companheiros e filhos que exerçam suas atividades em regime de economia familiar, sem empregados permanentes, que tenham exercido atividade exclusivamente na qualidade de trabalhador rural, farão jus à aposentadoria, nos termos da lei e obedecidas as seguintes condições:
 I -  60 (sessenta) anos de idade, se homem, e 55 (cinquenta e cinco) anos de idade, se mulher; e
 II - 180 (cento e oitenta) meses de tempo de atividade rural. ""
- NA"
-2119881,2125351,2017-03-14,102,PEC28716,Alberto Fraga PCdoB/RS,camara,EMC,"   Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+"
+2119881,2125351,2017-03-14,102,PEC28716,Alberto Fraga PCdoB/RS,camara,EMC,"   Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2125354,2017-03-14,103,PEC28716,Mário Negromonte Jr. PP/BA,camara,EMC,"EMENDA A PROPOSTA DE EMENDA À CONSTITUIÇÃO N.º 287, DE 2016 (Do Poder Executivo) que ""Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.""
- NA"
-2119881,2125357,2017-03-14,104,PEC28716,Valdir Colatto PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125359,2017-03-14,105,PEC28716,Marcos Rogério PCdoB/RS,camara,EMC,"Art. 1º - O § 4ºA do artigo 40, alterado pelo Art. 1º da Proposta de Emenda à Constituição nº 287, de 2016, que passa a vigorar com a seguinte redação: NA"
+"
+2119881,2125357,2017-03-14,104,PEC28716,Valdir Colatto PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125359,2017-03-14,105,PEC28716,Marcos Rogério PCdoB/RS,camara,EMC,"Art. 1º - O § 4ºA do artigo 40, alterado pelo Art. 1º da Proposta de Emenda à Constituição nº 287, de 2016, que passa a vigorar com a seguinte redação:"
 2119881,2125360,2017-03-14,106,PEC28716,Pauderney Avelino PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. 
- NA"
-2119881,2125362,2017-03-14,107,PEC28716,Walter Ihoshi PSD/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125363,2017-03-14,108,PEC28716,Eros Biondini PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+"
+2119881,2125362,2017-03-14,107,PEC28716,Walter Ihoshi PSD/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125363,2017-03-14,108,PEC28716,Eros Biondini PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2125364,2017-03-14,109,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº  287,     DE 2017
 Altera os arts. 5°, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os Regimes Próprios de Previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências.
 
@@ -490,7 +490,7 @@ O artigo 1º caput e § único da Emenda Constitucional nº 70 de 029/03/2012 pa
 
 Art. 6º-A. O servidor a União, dos Estados, do Distrito Federal e dos Municípios, incluídas suas autarquias e fundações, com fundamento no inciso  I do § 1º do art. 40 da Constituição Federal, tem direito a proventos de aposentadoria calculados com base na remuneração do cargo efetivo em que se der a aposentadoria, na forma da lei, não sendo aplicáveis as disposições constantes dos §§ 3º, 8º e 17 do art. 40 da Constituição Federal.
 
- NA"
+"
 2119881,2125365,2017-03-14,110,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº  287, DE 2017
 Altera os arts. 5°, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os Regimes Próprios de Previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências.
 
@@ -501,7 +501,7 @@ EMENDA SUPRESSIVA N.º     de 2017
 Suprima-se, da Proposta de Emenda Constitucional n.º 287 de 2016, o seguinte:
 Artigo 40, § 1º, inciso III da PEC 287/2016 :
 III - voluntariamente, aos sessenta e cinco anos de idade e vinte e cinco anos de contribuição, desde que cumprido o tempo mínimo de dez anos de efetivo exercício no serviço público e cinco anos no cargo efetivo em que se dará a aposentadoria. 
- NA"
+"
 2119881,2125366,2017-03-14,111,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA A PROFERIR PARECER À PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016, DO PODER EXECUTIVO
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016
@@ -518,7 +518,7 @@ Art. 40.   .....................................................................
 
 III - cujas atividades sejam exercidas sob condições especiais que prejudiquem a saúde ou a integridade física.
 
- NA"
+"
 2119881,2125367,2017-03-14,112,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA A PROFERIR PARECER À PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016, DO PODER EXECUTIVO
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016
@@ -537,7 +537,7 @@ JUSTIFICATIVA
 
 
 A presente emenda pretende assegurar aos servidores que exerçam atividades de risco, o direito à aposentadoria, segundo requisitos e critérios diferenciados.
- NA"
+"
 2119881,2125368,2017-03-14,113,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA A PROFERIR PARECER À PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016, DO PODER EXECUTIVO
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016
  ""Altera os artigos 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências""
@@ -548,7 +548,7 @@ Suprima-se o parágrafo 22 do artigo 40, tratado no artigo 1º da PEC nº 287, d
 Art. 40.   ......................................................................................................................
 
 § 22. Sempre que verificado o incremento mínimo de 1 (um) ano inteiro na média nacional única correspondente à expectativa de sobrevida da população brasileira aos sessenta e cinco anos, para ambos os sexos, em comparação à média apurada no ano de promulgação desta Emenda, as idades previstas nos incisos II e III do § 1º serão majoradas em números inteiros, nos termos fixados para o regime geral de previdência social.
- NA"
+"
 2119881,2125369,2017-03-14,114,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA A PROFERIR PARECER À PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016, DO PODER EXECUTIVO
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287 DE 2016
@@ -563,18 +563,18 @@ O artigo 13 da PEC nº 287, de 2016, passa a vigorar com a seguinte redação:
 
 Art. 13. É assegurada, na forma da lei, a conversão de tempo ao segurado do regime geral ou próprio de previdência social que comprovar tempo de contribuição na condição de pessoa com deficiência ou decorrente do exercício de atividade sujeita a condições especiais que prejudiquem a saúde ou a integridade física, cumprido até a data de promulgação desta Emenda.
 
- NA"
-2119881,2125370,2017-03-14,115,PEC28716,Laerte Bessa PROS/CE,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125371,2017-03-14,116,PEC28716,Giuseppe Vecci PSDB/GO,camara,EMC,"Dá nova redação ao caput e ao inc. V do art. 2º, ao caput e ao inc. I do art. 7º, ao caput e ao inc. II do art. 8º, e ao caput e ao inc. II do art. 11 da Proposta de Emenda à Constituição nº 287, de 2016. NA"
+"
+2119881,2125370,2017-03-14,115,PEC28716,Laerte Bessa PROS/CE,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125371,2017-03-14,116,PEC28716,Giuseppe Vecci PSDB/GO,camara,EMC,"Dá nova redação ao caput e ao inc. V do art. 2º, ao caput e ao inc. I do art. 7º, ao caput e ao inc. II do art. 8º, e ao caput e ao inc. II do art. 11 da Proposta de Emenda à Constituição nº 287, de 2016."
 2119881,2125372,2017-03-14,117,PEC28716,Giuseppe Vecci PSDB/GO,camara,EMC,"Art. 1º Acrescente-se ao art. 1º da Proposta de Emenda à Constituição nº 287, de 2016, entre as alterações referentes ao art. 195 da Constituição, o seguinte parágrafo: 
 ""§ 14. A lei garantirá a aplicação de alíquotas favorecidas de contribuição ao trabalhador e demais segurados da previdência social que forem beneficiários de aposentadoria."" 
 Art. 2º Acrescente-se ao art. 1º da Proposta de Emenda à Constituição nº 287, de 2016, entre as alterações referentes ao art. 201 da Constituição, o seguinte parágrafo:
 ""§ 18. A lei garantirá a revisão da renda do benefício de aposentadoria, de modo a considerar as contribuições vertidas após a sua concessão, o respectivo tempo adicional de contribuição e o aumento na idade do beneficiário.""
- NA"
-2119881,2125373,2017-03-14,118,PEC28716,Alan Rick PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125374,2017-03-14,119,PEC28716,Luciano Ducci PSB/PR,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125375,2017-03-14,120,PEC28716,Luciano Ducci PSB/PR,camara,EMC,"Altera os arts. 37, 40, 42, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125379,2017-03-14,121,PEC28716,Gonzaga Patriota PSB/PE,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências. NA"
+"
+2119881,2125373,2017-03-14,118,PEC28716,Alan Rick PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125374,2017-03-14,119,PEC28716,Luciano Ducci PSB/PR,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125375,2017-03-14,120,PEC28716,Luciano Ducci PSB/PR,camara,EMC,"Altera os arts. 37, 40, 42, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125379,2017-03-14,121,PEC28716,Gonzaga Patriota PSB/PE,camara,EMC,"Altera os arts. 5º, 37, 40, 109, 114, 149, 167, 195, 201, 203 e 250 da Constituição para dispor sobre os regimes próprios de previdência e Seguridade Social, estabelecendo regras de transição e dá outras providências."
 2119881,2125380,2017-03-14,122,PEC28716,Arnaldo Faria de Sá PT/BA,camara,EMC,"COMISSÃO ESPECIAL DESTINADA AO EXAME DA PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
@@ -591,7 +591,7 @@ Art. 1º. Dê-se ao art. 40 da Constituição Federal alterado pelo art. 1º da 
 ""Art. 40. ................................................................................................................
 ...............................................................................................................................
 ...............................................................................................................................
-§ 3º-A. Os proventos de aposentadoria por incapacidade permanente para o trabalho, quando decorrentes exclusivamente de doença grave, definida em Lei, e de acidente do trabalho, corresponderão a 100% (cem por cento) da média das remunerações utilizadas como base para as contribuições aos regimes de pr NA"
+§ 3º-A. Os proventos de aposentadoria por incapacidade permanente para o trabalho, quando decorrentes exclusivamente de doença grave, definida em Lei, e de acidente do trabalho, corresponderão a 100% (cem por cento) da média das remunerações utilizadas como base para as contribuições aos regimes de pr"
 2119881,2125383,2017-03-14,123,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA AO EXAME DA PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
@@ -619,15 +619,15 @@ Art. 2º Acrescente-se à PEC 287/2016 o art. 23-A com a seguinte redação:
 JUSTIFICAÇÃO
 
 
-São decepcionantes os argumentos do Executivo Federal para justificar as NA"
-2119881,2125384,2017-03-14,124,PEC28716,Jerônimo Goergen PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+São decepcionantes os argumentos do Executivo Federal para justificar as"
+2119881,2125384,2017-03-14,124,PEC28716,Jerônimo Goergen PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2125385,2017-03-14,125,PEC28716,Lincoln Portela PR/MG,camara,EMC,"Art. 1º Altere-se da PEC 287, de 2016:
- NA"
-2119881,2125386,2017-03-14,126,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Acrescente-se e altere-se à PEC 287, de 2016, os seguintes artigos. NA"
-2119881,2125387,2017-03-14,127,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Dê-se, aos art 2º, 3º e 4º da PEC 287, a seguinte redação, suprimindo-se, em consequência, o inciso  III do art. 23 NA"
-2119881,2125389,2017-03-14,128,PEC28716,Cleber Verde PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125391,2017-03-14,129,PEC28716,Cleber Verde PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125392,2017-03-14,130,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Dê-se ao art. 40 da CF, constante do art. 1º da PEC 287/2016 a seguinte redação, suprimindo-se o § 22 do art. 40 e renumerando-se os demais, e suprimindo-se, ainda, o art. 22 e o inciso I, ""a"" do art. 23 da PEC 287/2016 NA"
+"
+2119881,2125386,2017-03-14,126,PEC28716,Lincoln Portela PCdoB/RS,camara,EMC,"Acrescente-se e altere-se à PEC 287, de 2016, os seguintes artigos."
+2119881,2125387,2017-03-14,127,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Dê-se, aos art 2º, 3º e 4º da PEC 287, a seguinte redação, suprimindo-se, em consequência, o inciso  III do art. 23"
+2119881,2125389,2017-03-14,128,PEC28716,Cleber Verde PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125391,2017-03-14,129,PEC28716,Cleber Verde PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125392,2017-03-14,130,PEC28716,Roberto de Lucena PCdoB/RS,camara,EMC,"Dê-se ao art. 40 da CF, constante do art. 1º da PEC 287/2016 a seguinte redação, suprimindo-se o § 22 do art. 40 e renumerando-se os demais, e suprimindo-se, ainda, o art. 22 e o inciso I, ""a"" do art. 23 da PEC 287/2016"
 2119881,2125393,2017-03-14,131,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA AO EXAME DA PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
@@ -645,7 +645,7 @@ Art. 1º. Dê-se ao §13 do art. 37 da Constituição Federal, alterado pelo art
 ..................................................................................................................................................
 § 13. O servidor titular de cargo efetivo poderá ser readaptado para exercer apenas as atribuições e responsabilidades de seu cargo que sejam compatíveis com a limitação que tenha sofrido em sua capacidade física ou mental, mediante perícia em saúde, enquanto permanecer nesta condição, assegurados todos os direitos inerentes ao cargo."" (NR)
 
-Art. 2º. Dê-se aos incisos II e III NA"
+Art. 2º. Dê-se aos incisos II e III"
 2119881,2125394,2017-03-14,132,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA AO EXAME DA PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
 
@@ -671,7 +671,7 @@ Art. 1º. Dê-se ao § 23 do art. 40 da Constituição Federal, alterado pelo ar
 ..................................................................................................................................................
 § 23. Lei disporá sobre as regras gerais de organização e funcionamento do regime de previdência de que trata este artigo e estabelecerá normas gerais de responsabilidade na gestão previdenciária, modelo de financiamento, arrecadação, gestão de recursos, benefícios, fiscalização pela União e controle externo e social."" (NR)
 
-Art. 2º. Acrescente-se ao artigo 1º NA"
+Art. 2º. Acrescente-se ao artigo 1º"
 2119881,2125395,2017-03-14,133,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA A PROFERIR PARECER À PROPOSTA DE EMENDA À CONSTITUIÇÃO N.º 287/2016
 
 
@@ -702,15 +702,15 @@ Dê-se ao art. 40, § 1º, inciso II, da PEC 287/2016 a seguinte redação
 .......................................................................................................................................
 II - compulsoriamente, aos setenta e cinco anos de idade, na forma da lei complementar; ou
 ........................................................................................................................................ (NR)""
- NA"
-2119881,2125396,2017-03-14,134,PEC28716,André Figueiredo PDT/CE,camara,EMC,Excetua-se da desvinculação de que trata o art. 76 a receita destinada à seguridade social. NA
+"
+2119881,2125396,2017-03-14,134,PEC28716,André Figueiredo PDT/CE,camara,EMC,Excetua-se da desvinculação de que trata o art. 76 a receita destinada à seguridade social.
 2119881,2125397,2017-03-14,135,PEC28716,Arnaldo Faria de Sá DEM/ES,camara,EMC,"PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 EMENDA MODIFICATIVA
- NA"
-2119881,2125398,2017-03-14,136,PEC28716,Ademir Camilo PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125399,2017-03-14,137,PEC28716,Alceu Moreira MDB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
-2119881,2125408,2017-03-14,138,PEC28716,Odorico Monteiro PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+"
+2119881,2125398,2017-03-14,136,PEC28716,Ademir Camilo PSDB/SP,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125399,2017-03-14,137,PEC28716,Alceu Moreira MDB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
+2119881,2125408,2017-03-14,138,PEC28716,Odorico Monteiro PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2125409,2017-03-14,139,PEC28716,Jerônimo Goergen PP/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 
 Dê-se aos arts. 195, § 8º e 201, §§ 7º e 17º, III da Constituição, a seguinte redação:
@@ -718,7 +718,7 @@ Dê-se aos arts. 195, § 8º e 201, §§ 7º e 17º, III da Constituição, a se
 ""Art. 195..........................................................................
 ......................................................................................................
 § 8º. O produtor, o parceiro, o meeiro e o arrendatário rurais, o extrativista, o pescador artesanal e seus respectivos cônjuges ou companheiros  e filhos que exerçam suas atividades em regime de economia familiar, sem empregados permanentes, enquadrados como segurados especiais, contribuirão para a seguridade social mediante a aplicação de uma alíquota sobre o resultado da comercialização da produção, com obrigatória identificação do segurado ou do grupo familiar que está contribuindo, com base na consolidação do cadastro de segurado especial e farão jus aos benefícios nos termos da lei.
- NA"
+"
 2119881,2125410,2017-03-14,140,PEC28716,Evandro Roman PCdoB/RS,camara,EMC,"EMENDA Nº             À PEC Nº 287/2016
 (Do Sr. Deputado EVANDRO ROMAN)
 
@@ -732,38 +732,38 @@ Art. 1º  ......................................................................
 ...........................................................................................
  ""Art. 40. ...........................................
 ..........................
- NA"
-2119881,2125413,2017-03-14,141,PEC28716,Rosangela Gomes PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125415,2017-03-14,142,PEC28716,André de Paula PCdoB/RS,camara,EMC,"Emenda à PEC 287, de 2016, para permitir a acumulação de benefícios previdenciários desde que sua soma não ultrapasse o limite máximo do regime geral de previdência social; para garantir ainda a percepção da totalidade do benefício de pensão por morte enquanto o número de dependentes for igual ou superior a cinco; e assegurar a percepção de benefícios previdenciários, nunca inferior ao salário mínimo. NA"
+"
+2119881,2125413,2017-03-14,141,PEC28716,Rosangela Gomes PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125415,2017-03-14,142,PEC28716,André de Paula PCdoB/RS,camara,EMC,"Emenda à PEC 287, de 2016, para permitir a acumulação de benefícios previdenciários desde que sua soma não ultrapasse o limite máximo do regime geral de previdência social; para garantir ainda a percepção da totalidade do benefício de pensão por morte enquanto o número de dependentes for igual ou superior a cinco; e assegurar a percepção de benefícios previdenciários, nunca inferior ao salário mínimo."
 2119881,2125416,2017-03-14,143,PEC28716,Carmen Zanotto PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
- NA"
-2119881,2125417,2017-03-14,144,PEC28716,Flávia Morais PDT/MG,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125418,2017-03-14,145,PEC28716,Onyx Lorenzoni PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências  NA"
-2119881,2125419,2017-03-14,146,PEC28716,Onyx Lorenzoni PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências  NA"
-2119881,2125897,2017-03-16,147,PEC28716,Laura Carneiro PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências NA"
-2119881,2125917,2017-03-16,148,PEC28716,João Fernando Coutinho PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125944,2017-03-16,149,PEC28716,Pedro Chaves MDB/GO,camara,EMC,"Inclua-se, onde couber, o seguinte artigo no Ato das Disposições Constitucionais transitórias da Constituição Federal: NA"
-2119881,2125975,2017-03-16,150,PEC28716,Alfredo Kaefer PT/MS,camara,EMC, NA
+"
+2119881,2125417,2017-03-14,144,PEC28716,Flávia Morais PDT/MG,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125418,2017-03-14,145,PEC28716,Onyx Lorenzoni PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências "
+2119881,2125419,2017-03-14,146,PEC28716,Onyx Lorenzoni PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências "
+2119881,2125897,2017-03-16,147,PEC28716,Laura Carneiro PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências"
+2119881,2125917,2017-03-16,148,PEC28716,João Fernando Coutinho PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125944,2017-03-16,149,PEC28716,Pedro Chaves MDB/GO,camara,EMC,"Inclua-se, onde couber, o seguinte artigo no Ato das Disposições Constitucionais transitórias da Constituição Federal:"
+2119881,2125975,2017-03-16,150,PEC28716,Alfredo Kaefer PT/MS,camara,EMC,
 2119881,2125980,2017-03-16,151,PEC28716,Raquel Muniz PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.
 
- NA"
+"
 2119881,2125982,2017-03-17,152,PEC28716,Roberto de Lucena PODE/SP,camara,EMC,"Amplia o § 1º do artigo 62 da Constituição Federal com a introdução da letra ""c"": Art. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar medidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso Nacional. (Redação dada pela Emenda Constitucional nº 32, de 2001)
 § 1º. É vedada a edição de medidas provisórias sobre matéria: (Incluído pela Emenda Constitucional nº 32, de 2001)
 I) relativa a: (Incluído pela Emenda Constitucional nº 32, de 2001)
 a) nacionalidade, cidadania, direitos políticos, partidos políticos e direito eleitoral;(Incluído pela Emenda Constitucional nº 32, de 2001)
 b) direito penal, processual penal e processual civil; (Incluído pela Emenda Constitucional nº 32, de 2001)
 c) direito previdenciário, salvo para ampliação, reconhecimento ou aplicação imediata de direitos favoráveis aos segurados e seus dependentes.
- NA"
-2119881,2125983,2017-03-17,153,PEC28716,Bilac Pinto DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125985,2017-03-17,154,PEC28716,Bilac Pinto DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências.  NA"
-2119881,2125987,2017-03-17,155,PEC28716,Roberto Sales DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125988,2017-03-17,156,PEC28716,Roberto Sales DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
-2119881,2125991,2017-03-17,157,PEC28716,Paulo Magalhães PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+"
+2119881,2125983,2017-03-17,153,PEC28716,Bilac Pinto DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125985,2017-03-17,154,PEC28716,Bilac Pinto DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. "
+2119881,2125987,2017-03-17,155,PEC28716,Roberto Sales DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125988,2017-03-17,156,PEC28716,Roberto Sales DEM/RJ,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
+2119881,2125991,2017-03-17,157,PEC28716,Paulo Magalhães PCdoB/RS,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2126013,2017-03-17,158,PEC28716,Félix Mendonça Júnior PDT/BA,camara,EMC,"
 Dê-se a seguinte redação ao art. 1º da PEC 287, de 2016. 
- NA"
-2119881,2126029,2017-03-17,159,PEC28716,Professora Dorinha Seabra Rezende DEM/GO,camara,EMC,"Emenda modificativa à PEC 287/16 que ""Mantém a redução nos requisitos de idade e contribuição para a concessão de aposentadoria a professor que comprove exclusivamente tempo de efetivo exercício das funções de magistério na educação infantil e no ensino fundamental e médio."" NA"
-2119881,2126030,2017-03-17,160,PEC28716,Glauber Braga PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. NA"
+"
+2119881,2126029,2017-03-17,159,PEC28716,Professora Dorinha Seabra Rezende DEM/GO,camara,EMC,"Emenda modificativa à PEC 287/16 que ""Mantém a redução nos requisitos de idade e contribuição para a concessão de aposentadoria a professor que comprove exclusivamente tempo de efetivo exercício das funções de magistério na educação infantil e no ensino fundamental e médio."""
+2119881,2126030,2017-03-17,160,PEC28716,Glauber Braga PT/BA,camara,EMC,"Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências."
 2119881,2126031,2017-03-17,161,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"COMISSÃO ESPECIAL DESTINADA AO EXAME DA PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
 
 PROPOSTA DE EMENDA À CONSTITUIÇÃO Nº 287, DE 2016
@@ -778,7 +778,7 @@ Acrescente-se, ao art. 2º da PEC nº 287, de 2016, o seguinte §3º, renumerand
 ...
 §3º - O período adicional de contribuição de que trata o inciso V do caput somente será devido até o servidor completar sessenta e cinco anos de idade.
 ..."" (NR)
- NA"
+"
 2119881,2126032,2017-03-17,162,PEC28716,Arnaldo Faria de Sá PP/SP,camara,EMC,"
 
 COMISSÃO PROFESSOR(A) DESTINADA A PROFERIR PARECER À PROPOSTA DE EMENDA À CONSTITUIÇÃO N.º 287/2016
@@ -796,25 +796,25 @@ Altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para di
 Emenda Supressiva
 
 Suprime-se o artigo 11º da Proposta de Emenda à Constituição 287/2016, que altera os arts. 37, 40, 109, 149, 167, 195, 201 e 203 da Constituição, para dispor sobre a seguridade social, estabelece regras de transição e dá outras providências. 
- NA"
-2119881,2126033,2017-03-17,163,PEC28716,Luizianne Lins PR/RJ,camara,EMC,Emenda aditiva à PEC 287/2016 para garantir pelo menos o benefício da aposentadoria integral àqueles que recebem os salários mais baixos dentre os trabalhadores. NA
-2119881,2126034,2017-03-17,164,PEC28716,Luizianne Lins PCdoB/RS,camara,EMC,"Emenda modificativa à PEC 287/2016, do art 40º e art. 201º para garantir um mecanismo de reajuste de benefícios seguindo o Índice Nacional dos Preços ao Consumidor. NA"
-2158425,2179379,2018-06-19,1,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP, NA
-2158425,2179380,2018-06-19,2,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP, NA
-2158425,2179381,2018-06-19,3,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP, NA
-2158425,2179382,2018-06-19,4,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP, NA
-2158425,2179383,2018-06-19,5,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP, NA
-2158425,2179384,2018-06-19,6,PLEN,Erika Kokay PT/CE,camara,EMP, NA
-2158425,2179385,2018-06-19,7,PLEN,Tadeu Alencar PSB/CE,camara,EMP, NA
-2158425,2179386,2018-06-19,8,PLEN,Tadeu Alencar PSB/CE,camara,EMP, NA
-2158425,2179391,2018-06-19,9,PLEN,Afonso Motta PDT/RS,camara,EMP, NA
-2158425,2179407,2018-06-19,10,PLEN,José Carlos Aleluia DEM/BA,camara,EMP, NA
-2158425,2179537,2018-06-19,11,PLEN,Darcísio Perondi MDB/RS,camara,EMP, NA
-2158425,2179538,2018-06-19,12,PLEN,Orlando Silva PCdoB/BA,camara,EMP, NA
-2158425,2179576,2018-06-19,13,PLEN,Carlos Zarattini PT/SP,camara,EMP, NA
-2158425,2179577,2018-06-19,14,PLEN,Carlos Zarattini PT/SP,camara,EMP, NA
-2158425,2179578,2018-06-19,15,PLEN,Alex Manente PPS/SP,camara,EMP, NA
-2158425,2179579,2018-06-19,1,PLEN,Fernando Coelho Filho DEM/PE,camara,SSP, NA
+"
+2119881,2126033,2017-03-17,163,PEC28716,Luizianne Lins PR/RJ,camara,EMC,Emenda aditiva à PEC 287/2016 para garantir pelo menos o benefício da aposentadoria integral àqueles que recebem os salários mais baixos dentre os trabalhadores.
+2119881,2126034,2017-03-17,164,PEC28716,Luizianne Lins PCdoB/RS,camara,EMC,"Emenda modificativa à PEC 287/2016, do art 40º e art. 201º para garantir um mecanismo de reajuste de benefícios seguindo o Índice Nacional dos Preços ao Consumidor."
+2158425,2179379,2018-06-19,1,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP,
+2158425,2179380,2018-06-19,2,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP,
+2158425,2179381,2018-06-19,3,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP,
+2158425,2179382,2018-06-19,4,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP,
+2158425,2179383,2018-06-19,5,PLEN,Dagoberto Nogueira PDT/SP,camara,EMP,
+2158425,2179384,2018-06-19,6,PLEN,Erika Kokay PT/CE,camara,EMP,
+2158425,2179385,2018-06-19,7,PLEN,Tadeu Alencar PSB/CE,camara,EMP,
+2158425,2179386,2018-06-19,8,PLEN,Tadeu Alencar PSB/CE,camara,EMP,
+2158425,2179391,2018-06-19,9,PLEN,Afonso Motta PDT/RS,camara,EMP,
+2158425,2179407,2018-06-19,10,PLEN,José Carlos Aleluia DEM/BA,camara,EMP,
+2158425,2179537,2018-06-19,11,PLEN,Darcísio Perondi MDB/RS,camara,EMP,
+2158425,2179538,2018-06-19,12,PLEN,Orlando Silva PCdoB/BA,camara,EMP,
+2158425,2179576,2018-06-19,13,PLEN,Carlos Zarattini PT/SP,camara,EMP,
+2158425,2179577,2018-06-19,14,PLEN,Carlos Zarattini PT/SP,camara,EMP,
+2158425,2179578,2018-06-19,15,PLEN,Alex Manente PPS/SP,camara,EMP,
+2158425,2179579,2018-06-19,1,PLEN,Fernando Coelho Filho DEM/PE,camara,SSP,
 133943,7886912,2018-11-20,1,PLEN,Aécio Neves PSDB/MG,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7886912
 133943,7886918,2018-11-20,2,PLEN,Lindbergh Farias PT/RJ,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7886918
 133943,7886929,2018-11-20,3,PLEN,Lindbergh Farias PT/RJ,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7886929
@@ -830,104 +830,104 @@ Suprime-se o artigo 11º da Proposta de Emenda à Constituição 287/2016, que a
 133943,7887424,2018-11-20,13,PLEN,Aécio Neves PSDB/MG,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7887424
 133943,7887481,2018-11-20,14,PLEN,Ricardo Ferraço PSDB/ES,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7887481
 133943,7887499,2018-11-20,15,PLEN,Lídice da Mata PSB/BA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7887499
-133943,7890122,2018-11-27,16,PLEN,Guaracy Batista da Silveira DC/TO,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7890122
+133943,7890122,2018-11-27,16,PLEN,Guaracy Silveira DC/TO,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7890122
 133943,7890799,2018-11-28,17,PLEN,Randolfe Rodrigues REDE/AP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7890799
 133943,7891071,2018-11-28,18,PLEN,José Serra PSDB/SP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7891071
 133943,7891074,2018-11-28,19,PLEN,José Serra PSDB/SP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7891074
 133943,7891871,2018-12-04,20,PLEN,José Serra PSDB/SP,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7891871
-1738598,2058575,2015-12-09,1,CAPADR,Evandro Roman PSD/RS,camara,EMR,"Dispõe sobre a criação da Área de Proteção Ambiental de Canavieiras, localizada nos Municípios de Canavieiras, Belmonte e Una, no Estado da Bahia. NA"
-14562,509099,2011-06-15,1,CCJC,Osmar Serraglio PP/RS,camara,EMR,"Suprimam-se as expressões ""e ratificar as demarcações já homologadas"" do art. 49, XVIII, e ""ou ratificada"" do art. 231, § 4º, da Constituição Federal, na redação dada pela proposta. NA"
-2170839,2184925,2018-10-30,1,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184936,2018-10-30,2,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184937,2018-10-30,3,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184938,2018-10-30,4,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184939,2018-10-30,5,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184940,2018-10-30,6,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184941,2018-10-30,7,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184942,2018-10-30,8,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184943,2018-10-30,9,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2184944,2018-10-30,10,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185843,2018-11-07,11,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185844,2018-11-07,12,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185845,2018-11-07,13,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185846,2018-11-07,14,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185847,2018-11-07,15,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185848,2018-11-07,16,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185849,2018-11-07,17,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185850,2018-11-07,18,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2185852,2018-11-07,19,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187650,2018-11-28,20,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187651,2018-11-28,21,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187652,2018-11-28,22,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187653,2018-11-28,23,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187654,2018-11-28,24,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187655,2018-11-28,25,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187656,2018-11-28,26,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187657,2018-11-28,27,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187658,2018-11-28,28,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187659,2018-11-28,29,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187660,2018-11-28,30,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187892,2018-11-29,31,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187893,2018-11-29,32,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187894,2018-11-29,33,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187895,2018-11-29,34,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187896,2018-11-29,35,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187897,2018-11-29,36,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187898,2018-11-29,37,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187899,2018-11-29,38,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187900,2018-11-29,39,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-2170839,2187901,2018-11-29,40,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências. NA
-944279,2055561,2015-11-17,1,CAPADR,Carlos Henrique Gaguim DEM/GO,camara,EMR,Dispõe sobre a conservação e a utilização sustentável da vegetação nativa do Bioma Cerrado. NA
-944279,2055562,2015-11-17,2,CAPADR,Carlos Henrique Gaguim DEM/GO,camara,EMR,Dispõe sobre a conservação e a utilização sustentável da vegetação nativa do Bioma Cerrado. NA
-944279,2055563,2015-11-17,3,CAPADR,Carlos Henrique Gaguim DEM/GO,camara,EMR,Dispõe sobre a conservação e a utilização sustentável da vegetação nativa do Bioma Cerrado. NA
+1738598,2058575,2015-12-09,1,CAPADR,Evandro Roman PSD/RS,camara,EMR,"Dispõe sobre a criação da Área de Proteção Ambiental de Canavieiras, localizada nos Municípios de Canavieiras, Belmonte e Una, no Estado da Bahia."
+14562,509099,2011-06-15,1,CCJC,Osmar Serraglio PP/RS,camara,EMR,"Suprimam-se as expressões ""e ratificar as demarcações já homologadas"" do art. 49, XVIII, e ""ou ratificada"" do art. 231, § 4º, da Constituição Federal, na redação dada pela proposta."
+2170839,2184925,2018-10-30,1,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184936,2018-10-30,2,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184937,2018-10-30,3,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184938,2018-10-30,4,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184939,2018-10-30,5,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184940,2018-10-30,6,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184941,2018-10-30,7,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184942,2018-10-30,8,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184943,2018-10-30,9,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2184944,2018-10-30,10,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185843,2018-11-07,11,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185844,2018-11-07,12,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185845,2018-11-07,13,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185846,2018-11-07,14,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185847,2018-11-07,15,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185848,2018-11-07,16,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185849,2018-11-07,17,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185850,2018-11-07,18,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2185852,2018-11-07,19,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187650,2018-11-28,20,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187651,2018-11-28,21,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187652,2018-11-28,22,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187653,2018-11-28,23,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187654,2018-11-28,24,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187655,2018-11-28,25,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187656,2018-11-28,26,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187657,2018-11-28,27,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187658,2018-11-28,28,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187659,2018-11-28,29,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187660,2018-11-28,30,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187892,2018-11-29,31,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187893,2018-11-29,32,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187894,2018-11-29,33,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187895,2018-11-29,34,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187896,2018-11-29,35,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187897,2018-11-29,36,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187898,2018-11-29,37,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187899,2018-11-29,38,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187900,2018-11-29,39,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+2170839,2187901,2018-11-29,40,CMADS,Nilto Tatto PT/RS,camara,EMR,Dispõe sobre a conservação e o uso sustentável do Bioma Pantanal e dá outras providências.
+944279,2055561,2015-11-17,1,CAPADR,Carlos Henrique Gaguim DEM/GO,camara,EMR,Dispõe sobre a conservação e a utilização sustentável da vegetação nativa do Bioma Cerrado.
+944279,2055562,2015-11-17,2,CAPADR,Carlos Henrique Gaguim DEM/GO,camara,EMR,Dispõe sobre a conservação e a utilização sustentável da vegetação nativa do Bioma Cerrado.
+944279,2055563,2015-11-17,3,CAPADR,Carlos Henrique Gaguim DEM/GO,camara,EMR,Dispõe sobre a conservação e a utilização sustentável da vegetação nativa do Bioma Cerrado.
 102721,5390282,2017-07-11,2,CAE,Valdir Raupp MDB/RO,senado,PARECER,http://legis.senado.leg.br/sdleg-getter/documento?dm=5390282
 102721,5390418,2017-07-11,1,PLEN,Cristovam Buarque PPS/DF,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=5390418
 103831,5313363,2017-05-31,1,CCJ,Cidinho Santos PR/MT,senado,PARECER,http://legis.senado.leg.br/sdleg-getter/documento?dm=5313363
-2120019,2171808,2018-04-11,1,PL662116,Juscelino Filho DEM/MA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências NA"
-2120019,2171951,2018-04-12,2,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona Parágrafo Único ao Art. 53. NA
-2120019,2171953,2018-04-12,3,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Dê-se ao Art. 1º a seguinte redação: NA
-2120019,2171954,2018-04-12,4,PL662116,Leonardo Quintão MDB/DF,camara,EMC,"Adicione-se o inciso XI ao art. 2º, o Art. 3-A e o Parágrafo Único ao Art. 53: NA"
-2120019,2171957,2018-04-12,5,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona Parágrafo Único ao Art. 53. NA
-2120019,2171958,2018-04-12,6,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona Parágrafo Único ao Art. 53. NA
-2120019,2171959,2018-04-12,7,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona o parágrafo 2º ao art. 2º e adiciona Parágrafo Único ao Art. 53. NA
-2120019,2171977,2018-04-12,8,PL662116,Eduardo Cury PSDB/SP,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"". NA"
-2120019,2171980,2018-04-12,9,PL662116,Eduardo Cury PSDB/SP,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"". NA"
-2120019,2172026,2018-04-12,10,PL662116,Altineu Côrtes PR/RJ,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências. NA"
-2120019,2172052,2018-04-12,11,PL662116,José Carlos Aleluia DEM/BA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências. NA"
-2120019,2172053,2018-04-12,12,PL662116,José Carlos Aleluia DEM/BA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências. NA"
+2120019,2171808,2018-04-11,1,PL662116,Juscelino Filho DEM/MA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"
+2120019,2171951,2018-04-12,2,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona Parágrafo Único ao Art. 53.
+2120019,2171953,2018-04-12,3,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Dê-se ao Art. 1º a seguinte redação:
+2120019,2171954,2018-04-12,4,PL662116,Leonardo Quintão MDB/DF,camara,EMC,"Adicione-se o inciso XI ao art. 2º, o Art. 3-A e o Parágrafo Único ao Art. 53:"
+2120019,2171957,2018-04-12,5,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona Parágrafo Único ao Art. 53.
+2120019,2171958,2018-04-12,6,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona Parágrafo Único ao Art. 53.
+2120019,2171959,2018-04-12,7,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona o parágrafo 2º ao art. 2º e adiciona Parágrafo Único ao Art. 53.
+2120019,2171977,2018-04-12,8,PL662116,Eduardo Cury PSDB/SP,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências""."
+2120019,2171980,2018-04-12,9,PL662116,Eduardo Cury PSDB/SP,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências""."
+2120019,2172026,2018-04-12,10,PL662116,Altineu Côrtes PR/RJ,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências."
+2120019,2172052,2018-04-12,11,PL662116,José Carlos Aleluia DEM/BA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências."
+2120019,2172053,2018-04-12,12,PL662116,José Carlos Aleluia DEM/BA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências."
 2120019,2172092,2018-04-16,13,PL662116,Ronaldo Benedet MDB/SC,camara,EMC,"Dê-se ao Art. 1º a seguinte redação:
-Art. 1º Esta Lei dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, a Lei nº 10.180, de 6 de fevereiro de 2001 e a Lei nº 13.575, de 26 de dezembro de 2017, e dá outras providências. NA"
+Art. 1º Esta Lei dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, a Lei nº 10.180, de 6 de fevereiro de 2001 e a Lei nº 13.575, de 26 de dezembro de 2017, e dá outras providências."
 2120019,2172093,2018-04-16,14,PL662116,Ronaldo Benedet MDB/SC,camara,EMC,"Adicione-se o inciso XI ao art. 2º, o Art. 3-A e o Parágrafo Único ao Art. 53:
 Art. 2º  ........................................................................................ (...)
 XI - a Agência Nacional de Mineração.
- NA"
-2120019,2172095,2018-04-13,15,PL662116,Julio Lopes PP/RJ,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências. NA"
-2120019,2172104,2018-04-16,16,PL662116,Luiz Carlos Hauly PSDB/PR,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782,  de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências. NA"
-2120019,2172185,2018-04-17,17,PL662116,Eduardo Cury PSDB/SP,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"". NA"
-2120019,2172328,2018-04-17,18,PL662116,Marcus Pestana PSDB/MG,camara,EMC,"Emenda ao Projeto de Lei 6.621, de 2016 NA"
+"
+2120019,2172095,2018-04-13,15,PL662116,Julio Lopes PP/RJ,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências."
+2120019,2172104,2018-04-16,16,PL662116,Luiz Carlos Hauly PSDB/PR,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782,  de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências."
+2120019,2172185,2018-04-17,17,PL662116,Eduardo Cury PSDB/SP,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências""."
+2120019,2172328,2018-04-17,18,PL662116,Marcus Pestana PSDB/MG,camara,EMC,"Emenda ao Projeto de Lei 6.621, de 2016"
 2120019,2172414,2018-04-18,19,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"
 ""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências""
- NA"
-2120019,2172415,2018-04-18,20,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"" NA"
-2120019,2172416,2018-04-18,21,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"" NA"
-2120019,2172417,2018-04-18,22,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"" NA"
-2120019,2172418,2018-04-18,23,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"" NA"
-2120019,2172437,2018-04-18,24,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Modificativa para dar nova redação aos artigos 38 a 47 e 52 do PL 6621/2016. NA
-2120019,2172438,2018-04-18,25,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Aditiva para acrescentar artigo às Disposições Finais e Transitórias do PL 6621/2016. NA
-2120019,2172439,2018-04-18,26,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Aditiva para acrescentar parágrado ao art. 9º do PL 6621/2016. NA
-2120019,2172440,2018-04-18,27,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Aditiva ao PL 6621/2016 para acrescentar o § 6º ao art. 6º do Projeto de Lei. NA
-2120019,2172450,2018-04-18,28,PL662116,Sóstenes Cavalcante DEM/AL,camara,EMC,Adiciona artigos às Disposições Finais e Transitórias do PL 6621/2016. NA
-2120019,2172452,2018-04-18,29,PL662116,Sóstenes Cavalcante DEM/AL,camara,EMC,Adiciona artigos às Disposições Finais e Transitórias do PL 6621/2016. NA
-2120019,2172454,2018-04-18,30,PL662116,Sóstenes Cavalcante DEM/AL,camara,EMC,Adiciona artigo às Disposições Finais e Transitórias do PL 6621/2016. NA
+"
+2120019,2172415,2018-04-18,20,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"""
+2120019,2172416,2018-04-18,21,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"""
+2120019,2172417,2018-04-18,22,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"""
+2120019,2172418,2018-04-18,23,PL662116,Sergio Vidigal PDT/ES,camara,EMC,"""Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a lei nº 9.427, de 26 de dezembro de 1996, a lei nº 9.472, de 16 de julho de 1997, a lei nº 9.478, de 6 de agosto de 1997, a lei nº 9.782, de 26 de janeiro de 1999, a lei nº 9.961, de 28 de janeiro de 2000, a lei nº 9.984, de 17 de julho de 2000, a lei nº 9.986, de 18 de julho de 2000, a lei nº 10.233, de 5 de junho de 2001, a medida provisória nº 2.228-1, de 6 de setembro de 2001, a lei nº 11.182, de 27 de setembro de 2005, e a lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"""
+2120019,2172437,2018-04-18,24,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Modificativa para dar nova redação aos artigos 38 a 47 e 52 do PL 6621/2016.
+2120019,2172438,2018-04-18,25,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Aditiva para acrescentar artigo às Disposições Finais e Transitórias do PL 6621/2016.
+2120019,2172439,2018-04-18,26,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Aditiva para acrescentar parágrado ao art. 9º do PL 6621/2016.
+2120019,2172440,2018-04-18,27,PL662116,Augusto Carvalho SOLIDARIEDADE/MG,camara,EMC,Emenda Aditiva ao PL 6621/2016 para acrescentar o § 6º ao art. 6º do Projeto de Lei.
+2120019,2172450,2018-04-18,28,PL662116,Sóstenes Cavalcante DEM/AL,camara,EMC,Adiciona artigos às Disposições Finais e Transitórias do PL 6621/2016.
+2120019,2172452,2018-04-18,29,PL662116,Sóstenes Cavalcante DEM/AL,camara,EMC,Adiciona artigos às Disposições Finais e Transitórias do PL 6621/2016.
+2120019,2172454,2018-04-18,30,PL662116,Sóstenes Cavalcante DEM/AL,camara,EMC,Adiciona artigo às Disposições Finais e Transitórias do PL 6621/2016.
 2120019,2172455,2018-04-18,31,PL662116,Sóstenes Cavalcante DEM/AL,camara,EMC,"Dá nova redação ao art. 44 do PL 6621/2016, suprimindo os dispositivos abaixo.
 
- NA"
+"
 2120019,2172479,2018-04-18,32,PL662116,Julio Lopes PP/RJ,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências.
- NA"
-2120019,2172554,2018-04-18,33,PL662116,Glauber Braga PSOL/RJ,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências. NA"
-2120019,2172649,2018-04-18,34,PL662116,Arthur Lira PP/AL,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências. NA"
-2120019,2172651,2018-04-18,35,PL662116,José Carlos Aleluia DEM/BA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências NA"
-2120019,2172654,2018-04-18,36,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona artigo às Disposições Finais e Transitórias do PL 6621/2016. NA
+"
+2120019,2172554,2018-04-18,33,PL662116,Glauber Braga PSOL/RJ,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências."
+2120019,2172649,2018-04-18,34,PL662116,Arthur Lira PP/AL,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências."
+2120019,2172651,2018-04-18,35,PL662116,José Carlos Aleluia DEM/BA,camara,EMC,"Dispõe sobre a gestão, a organização, o processo decisório e o controle social das agências reguladoras, altera a Lei nº 9.427, de 26 de dezembro de 1996, a Lei nº 9.472, de 16 de julho de 1997, a Lei nº 9.478, de 6 de agosto de 1997, a Lei nº 9.782, de 26 de janeiro de 1999, a Lei nº 9.961, de 28 de janeiro de 2000, a Lei nº 9.984, de 17 de julho de 2000, a Lei nº 9.986, de 18 de julho de 2000, a Lei nº 10.233, de 5 de junho de 2001, a Medida Provisória nº 2.228-1, de 6 de setembro de 2001, a Lei nº 11.182, de 27 de setembro de 2005, e a Lei nº 10.180, de 6 de fevereiro de 2001, e dá outras providências"
+2120019,2172654,2018-04-18,36,PL662116,Leonardo Quintão MDB/DF,camara,EMC,Adiciona artigo às Disposições Finais e Transitórias do PL 6621/2016.
 111048,3429488,2015-09-30,1,CCJ,Walter Pinheiro PT/BA,senado,PARECER,http://legis.senado.leg.br/sdleg-getter/documento?dm=3429488
 111048,3429531,2016-07-13,3,CEDN,Roberto Muniz PP/BA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3429531
 111048,3429547,2016-07-13,4,CEDN,Roberto Muniz PP/BA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3429547
@@ -944,12 +944,12 @@ XI - a Agência Nacional de Mineração.
 111048,3429804,2016-10-05,14,CEDN,Lindbergh Farias PT/RJ,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3429804
 111048,3429820,2016-10-05,13,CEDN,Lindbergh Farias PT/RJ,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3429820
 111048,3429845,2016-11-09,16,CEDN,Lindbergh Farias PT/RJ,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=3429845
-532814,604924,2013-12-18,1,CFT,Manoel Junior MDB/PB,camara,EMC,"Altera o art. 4º da Lei nº 11.738, de 16 de julho de 2008, que regulamenta a alínea ""e"" do inciso III do caput do art. 60 do Ato das Disposições Constitucionais Transitórias, para instituir o piso salarial profissional nacional para os profissionais do magistério público da educação básica.   NA"
+532814,604924,2013-12-18,1,CFT,Manoel Junior MDB/PB,camara,EMC,"Altera o art. 4º da Lei nº 11.738, de 16 de julho de 2008, que regulamenta a alínea ""e"" do inciso III do caput do art. 60 do Ato das Disposições Constitucionais Transitórias, para instituir o piso salarial profissional nacional para os profissionais do magistério público da educação básica.  "
 532814,2053263,2015-11-06,1,CCJC,Pedro Cunha Lima PSDB/PB,camara,EMR,"EMENDA
-Acrescentem-se, ao final do art. 4º, alterado pelo art. 1º do Projeto de Lei, as letras ""NR"", maiúsculas, entre parênteses. NA"
+Acrescentem-se, ao final do art. 4º, alterado pelo art. 1º do Projeto de Lei, as letras ""NR"", maiúsculas, entre parênteses."
 532814,2117663,2016-11-22,2,CCJC,Paulo Abi-Ackel PSDB/MG,camara,EMR,"EMENDA Nº 1
 Acrescentem-se, ao final da alteração do caput do art. 4º, na redação dada pelo art. 1º do projeto de lei em epígrafe, linha pontilhada e as letras ""NR"", maiúsculas, entre parênteses.
- NA"
+"
 120768,4521980,2015-10-06,1,CE,Ana Amélia PP/RS,senado,PARECER,http://legis.senado.leg.br/sdleg-getter/documento?dm=4521980
 121572,4522707,2015-06-29,1,PLEN,Simone Tebet MDB/MS,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=4522707
 121572,4522723,2015-06-30,2,PLEN,Simone Tebet MDB/MS,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=4522723
@@ -969,3 +969,9 @@ Acrescentem-se, ao final da alteração do caput do art. 4º, na redação dada 
 121572,4523020,2015-07-14,16,PLEN,Lídice da Mata PSB/BA,senado,NA,NA
 121572,4523034,2015-07-14,17,PLEN,Vanessa Grazziotin PCdoB/AM,senado,NA,NA
 121572,4523048,2015-07-14,18,PLEN,Lídice da Mata PSB/BA,senado,NA,NA
+604888,2193058,2019-02-26,1,PLEN,Flávia Morais PDT/MG,camara,EMP,
+604888,2193059,2019-02-26,2,PLEN,Rodrigo Garcia DEM/SP,camara,EMP,
+604888,2193060,2019-02-26,3,PLEN,Aluisio Mendes PODE/MG,camara,EMP,
+604888,2193061,2019-02-26,4,PLEN,Betinho Gomes PSDB/PE,camara,EMP,
+604888,2193062,2019-02-26,5,PLEN,Betinho Gomes PSDB/PE,camara,EMP,
+604888,2193064,2019-02-26,6,PLEN,Rodrigo Garcia DEM/SP,camara,EMP,
