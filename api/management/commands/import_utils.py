@@ -157,14 +157,11 @@ def import_emendas():
         Emendas.objects.bulk_create(
             Emendas(**r[1].to_dict()) for r in group_df.iterrows())
 
+
 def import_comissoes():
     '''Carrega Comissoes'''
     comissoes_df = pd.read_csv('data/comissoes.csv').groupby(['casa', 'sigla'])
     for group_index in comissoes_df.groups:
-        comissao_id = {
-            'casa': group_index[0],
-            'sigla': group_index[1],
-        }
         group_df = (
             comissoes_df
             .get_group(group_index)

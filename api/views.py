@@ -18,10 +18,12 @@ class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
         model = TemperaturaHistorico
         fields = ('periodo', 'temperatura_recente', 'temperatura_periodo')
 
+
 class ComissaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comissao
         fields = ('cargo', 'partido', 'uf', 'situacao', 'nome', 'sigla', 'casa')
+
 
 class PautaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -268,6 +270,7 @@ class ProgressoList(generics.ListAPIView):
 
         return queryset
 
+
 class ComissaoList(generics.ListAPIView):
     '''
     Dados da composição de uma comissão
@@ -282,7 +285,8 @@ class ComissaoList(generics.ListAPIView):
         sigla_parametro = self.kwargs['sigla']
         print(casa_parametro)
         print(str.upper(sigla_parametro))
-        return Comissao.objects.filter(casa=casa_parametro, sigla=str.upper(sigla_parametro))
+        return Comissao.objects.filter(casa=casa_parametro, 
+        sigla=str.upper(sigla_parametro))
                                    
 
 class PautaList(generics.ListAPIView):

@@ -192,6 +192,7 @@ class EtapaProposicao(models.Model):
                     })
         return sorted(events, key=lambda k: k['data'])
 
+
 class TramitacaoEvent(models.Model):
 
     data = models.DateField('Data')
@@ -245,33 +246,33 @@ class TemperaturaHistorico(models.Model):
         ordering = ('-periodo',)
         get_latest_by = '-periodo'
 
+
 class Comissao(models.Model):
     '''
     Composição das comissões
     '''
-    cargo = models.TextField(blank=True, null=True, 
-        help_text='Cargo ocupado pelo parlamentar na comissão')   
+    cargo = models.TextField(blank=True, null=True,
+    help_text='Cargo ocupado pelo parlamentar na comissão')  
 
     partido = models.TextField(blank=True, null=True,
-        help_text='Partido do parlamentar')
+    help_text='Partido do parlamentar')
 
     uf = models.TextField(blank=True, null=True,
-        help_text='Estado do parlamentar')
+    help_text='Estado do parlamentar')
 
     situacao = models.TextField(blank=True, null=True,
-        help_text='Titular ou suplente')
+    help_text='Titular ou suplente')
 
     nome = models.TextField(blank=True, null=True,
-        help_text='Nome do parlamentar')
+    help_text='Nome do parlamentar')
 
     sigla = models.TextField(
-        help_text='Sigla da comissão'
+    help_text='Sigla da comissão'
     )
 
     casa = models.TextField(
-        help_text='Camara ou Senado'
-    )
-    
+    help_text='Camara ou Senado'
+    )   
 
 
 class PautaHistorico(models.Model):
