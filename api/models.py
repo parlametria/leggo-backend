@@ -192,6 +192,19 @@ class EtapaProposicao(models.Model):
                     })
         return sorted(events, key=lambda k: k['data'])
 
+    @property
+    def comissoes_passadas(self):
+        '''
+        Pega todas as comissões nas quais a proposição já
+        tramitou
+        '''
+        comissoes = set()
+        local_com_c_que_nao_e_comissao = "CD-MESA-PLEN"
+        for row in self.tramitacao.all():
+            if row.local != local_com_c_que_nao_e_comissao and row.local[0] == "C":
+                comissoes.add(row.local)
+        return comissoes
+
 
 class TramitacaoEvent(models.Model):
 
