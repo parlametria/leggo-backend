@@ -20,20 +20,14 @@ def import_etapas_proposicoes():
 
 def import_proposicoes():
     '''Carrega proposições'''
-    props_df = pd.read_csv('data/tabela_geral_ids_casa.csv')
+    props_df = pd.read_csv('data/proposicoes.csv')
 
-    for r in props_df.iterrows():
-        data = r[1].to_dict()
+    for _, etapas_df in props_df.groupby('apelido'):
         etapas = []
-        for casa in ['camara', 'senado']:
-            id_ext = data.pop(f'id_{casa}')
-            if pd.notna(id_ext):
-                etapa_id = {
-                    'casa': casa,
-                    'id_ext': id_ext
-                }
-                etapas.append(EtapaProposicao.objects.get(**etapa_id))
-        prop = Proposicao(**data)
+        for _, etapa in etapas_df.iterrows():
+            etapas.append(
+                EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
+        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
