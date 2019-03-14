@@ -275,7 +275,7 @@ class Comissao(models.Model):
         help_text='Sigla da comissão')
 
     casa = models.TextField(
-        help_text='Camara ou Senado')   
+        help_text='Camara ou Senado')
 
 
 class PautaHistorico(models.Model):
