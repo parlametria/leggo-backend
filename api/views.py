@@ -283,8 +283,6 @@ class ComissaoList(generics.ListAPIView):
         '''
         casa_parametro = self.kwargs['casa']
         sigla_parametro = self.kwargs['sigla']
-        print(casa_parametro)
-        print(str.upper(sigla_parametro))
         return Comissao.objects.filter(
             casa=casa_parametro, sigla=str.upper(sigla_parametro))
 
