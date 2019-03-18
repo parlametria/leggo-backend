@@ -10,7 +10,7 @@ class TramitacaoEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = TramitacaoEvent
         fields = ('data', 'casa', 'sigla_local', 'evento', 'texto_tramitacao', 'status',
-                  'proposicao')
+                  'proposicao', 'nivel')
 
 
 class TramitacaoEventList(generics.ListAPIView):
@@ -33,8 +33,8 @@ class TramitacaoEventList(generics.ListAPIView):
                 'data de fim do período de tempo ao qual os eventos devem pertencer',
                 type=openapi.TYPE_STRING),
             openapi.Parameter(
-                'apenas_importantes', openapi.IN_PATH,
-                'se deve retornar apenas os eventos importantes',
+                'nivel', openapi.IN_PATH,
+                'se deve retornar apenas os eventos tão ou mais importantes',
                 type=openapi.TYPE_BOOLEAN),
             openapi.Parameter(
                 'ultimos_n', openapi.IN_PATH,
@@ -60,7 +60,7 @@ class TramitacaoEventList(generics.ListAPIView):
 
         data_inicio = self.request.query_params.get('data_inicio', None)
         data_fim = self.request.query_params.get('data_fim', None)
-        apenas_importantes = self.request.query_params.get('apenas_importantes', False)
+        nivel = self.request.query_params.get('nivel', 100)
         ultimos_n = self.request.query_params.get('ultimos_n', 100)
 
         data_inicio_dt = None
@@ -88,8 +88,8 @@ class TramitacaoEventList(generics.ListAPIView):
 
         queryset = queryset.order_by('-data').filter(data__lte=data_fim_dt)
 
-        if apenas_importantes:
-            queryset = queryset.exclude(evento__exact="nan")
+        if nivel:
+            queryset = queryset.filter(nivel__lte=nivel)
 
         if ultimos_n is not None:
             queryset = queryset[:int(ultimos_n)]
