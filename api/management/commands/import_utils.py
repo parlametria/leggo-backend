@@ -3,7 +3,7 @@ import datetime
 import pandas as pd
 from api.models import (
     EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
-    Progresso, Proposicao, PautaHistorico, Emendas, InfoGerais)
+    Progresso, Proposicao, Comissao, PautaHistorico, Emendas, InfoGerais)
 
 
 def import_etapas_proposicoes():
@@ -152,6 +152,19 @@ def import_emendas():
             Emendas(**r[1].to_dict()) for r in group_df.iterrows())
 
 
+def import_comissoes():
+    '''Carrega Comissoes'''
+    comissoes_df = pd.read_csv('data/comissoes.csv').groupby(['casa', 'sigla'])
+    for group_index in comissoes_df.groups:
+        group_df = (
+            comissoes_df
+            .get_group(group_index)
+            .filter(['cargo', 'partido', 'uf', 'situacao', 'nome', 'sigla', 'casa'])
+        )
+        Comissao.objects.bulk_create(
+            Comissao(**r[1].to_dict()) for r in group_df.iterrows())
+
+
 def import_all_data():
     '''Importa dados dos csv e salva no banco.'''
     import_etapas_proposicoes()
@@ -161,3 +174,4 @@ def import_all_data():
     import_progresso()
     import_pautas()
     import_emendas()
+    import_comissoes()

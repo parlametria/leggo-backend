@@ -7,7 +7,7 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from api.models import (
     EtapaProposicao, TemperaturaHistorico, InfoGerais,
-    Progresso, Proposicao, PautaHistorico, Emendas, TramitacaoEvent)
+    Progresso, Proposicao, Comissao, PautaHistorico, Emendas, TramitacaoEvent)
 from datetime import datetime
 from api.utils.filters import get_time_filtered_temperatura, get_time_filtered_pauta
 # from api.utils.temperatura import get_coefficient_temperature
@@ -17,6 +17,12 @@ class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = TemperaturaHistorico
         fields = ('periodo', 'temperatura_recente', 'temperatura_periodo')
+
+
+class ComissaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comissao
+        fields = ('cargo', 'partido', 'uf', 'situacao', 'nome', 'sigla', 'casa')
 
 
 class PautaHistoricoSerializer(serializers.ModelSerializer):
@@ -36,7 +42,7 @@ class EtapasSerializer(serializers.ModelSerializer):
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autor_nome', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao',
-            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico')
+            'temperatura_coeficiente', 'pauta_historico')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -263,6 +269,22 @@ class ProgressoList(generics.ListAPIView):
             queryset = queryset.filter(data_inicio__lte=hoje)
 
         return queryset
+
+
+class ComissaoList(generics.ListAPIView):
+    '''
+    Dados da composição de uma comissão
+    '''
+    serializer_class = ComissaoSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna a comissao filtrada
+        '''
+        casa_parametro = self.kwargs['casa']
+        sigla_parametro = self.kwargs['sigla']
+        return Comissao.objects.filter(
+            casa=casa_parametro, sigla=str.upper(sigla_parametro))
 
 
 class PautaList(generics.ListAPIView):
