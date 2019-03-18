@@ -231,6 +231,10 @@ class TramitacaoEvent(models.Model):
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
 
+    nivel = models.IntegerField(
+        blank=True, null=True,
+        help_text='Nível de importância deste evento para notificações.')
+
     @property
     def casa(self):
         '''Casa onde o evento ocorreu.'''
