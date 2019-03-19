@@ -60,7 +60,7 @@ def import_tramitacoes():
             # filtra deixando apenas as colunas desejadas
             .pipe(lambda x: x.loc[:, x.columns.isin(col_names)])
             # adiciona referência para a correspondente etapa da proposição
-            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+            .assign(etapa_proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         TramitacaoEvent.objects.bulk_create(
             TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
