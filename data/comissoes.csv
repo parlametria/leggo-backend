@@ -1,4 +1,4 @@
-cargo,id,nome,partido,uf,situacao,sigla,casa
+cargo,id_parlamentar,nome,partido,uf,situacao,sigla,casa
 Titular,136811,Afonso Hamm,PP,RS,Titular,CAPADR,camara
 Suplente,178835,Afonso Motta,PDT,RS,Suplente,CAPADR,camara
 Suplente.1,160527,Aguinaldo Ribeiro,PP,PB,Suplente,CAPADR,camara

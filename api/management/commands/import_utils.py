@@ -165,7 +165,6 @@ def import_comissoes():
         group_df = (
             comissoes_df
             .get_group(group_index)
-            .filter(['cargo', 'partido', 'uf', 'situacao', 'nome', 'sigla', 'casa'])
         )
         Comissao.objects.bulk_create(
             Comissao(**r[1].to_dict()) for r in group_df.iterrows())
