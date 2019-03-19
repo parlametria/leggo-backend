@@ -1,4 +1,1308 @@
 cargo,id,nome,partido,uf,situacao,sigla,casa
+Titular,136811,Afonso Hamm,PP,RS,Titular,CAPADR,camara
+Suplente,178835,Afonso Motta,PDT,RS,Suplente,CAPADR,camara
+Suplente.1,160527,Aguinaldo Ribeiro,PP,PB,Suplente,CAPADR,camara
+Suplente.2,204495,Airton Faleiro,PT,PA,Suplente,CAPADR,camara
+Suplente.3,204549,Aj Albuquerque,PP,CE,Suplente,CAPADR,camara
+Suplente.4,160559,Alceu Moreira,MDB,RS,Suplente,CAPADR,camara
+Suplente.5,204413,Alcides Rodrigues ,PRP,GO,Suplente,CAPADR,camara
+Suplente.6,178833,Alexandre Serfiotis,PSD,RJ,Suplente,CAPADR,camara
+Titular.1,204400,Aline Sleutjes,PSL,PR,Titular,CAPADR,camara
+Suplente.7,178831,André Abdon,PP,AP,Suplente,CAPADR,camara
+Suplente.8,141391,Arnaldo Jardim,PPS,SP,Suplente,CAPADR,camara
+Titular.2,204414,Aroldo Martins,PRB,PR,Titular,CAPADR,camara
+Suplente.9,109429,Benes Leocádio,PRB,RN,Suplente,CAPADR,camara
+Titular.3,141335,Beto Faro,PT,PA,Titular,CAPADR,camara
+Suplente.10,178948,Beto Rosado,PP,RN,Suplente,CAPADR,camara
+Suplente.11,204561,Bira do Pindaré,PSB,MA,Suplente,CAPADR,camara
+Suplente.12,160538,Bohn Gass,PT,RS,Suplente,CAPADR,camara
+Titular.4,74052,Bosco Costa,PR,SE,Titular,CAPADR,camara
+Suplente.13,178993,Carlos Henrique Gaguim,DEM,TO,Suplente,CAPADR,camara
+Suplente.14,204426,Carlos Veras,PT,PE,Suplente,CAPADR,camara
+Suplente.15,204369,Caroline de Toni,PSL,SC,Suplente,CAPADR,camara
+Suplente.16,204370,Célio Moura,PT,TO,Suplente,CAPADR,camara
+Suplente.17,141405,Celso Maldaner,MDB,SC,Suplente,CAPADR,camara
+Suplente.18,205476,Charles Fernandes,PSD,BA,Suplente,CAPADR,camara
+Suplente.19,204440,Christino Aureo,PP,RJ,Suplente,CAPADR,camara
+Titular.5,135054,Cristiano Vale,PR,PA,Titular,CAPADR,camara
+Titular.6,141411,Dagoberto Nogueira,PDT,MS,Titular,CAPADR,camara
+Suplente.20,204367,Daniel Freitas,PSL,SC,Suplente,CAPADR,camara
+Suplente.21,116379,Darci de Matos,PSD,SC,Suplente,CAPADR,camara
+Suplente.22,160588,Diego Andrade,PSD,MG,Suplente,CAPADR,camara
+Suplente.23,178929,Diego Garcia,PODE,PR,Suplente,CAPADR,camara
+Titular.7,160599,Dimas Fabiano,PP,MG,Titular,CAPADR,camara
+Titular.8,143632,Domingos Neto,PSD,CE,Titular,CAPADR,camara
+Titular.9,160758,Domingos Sávio,PSDB,MG,Titular,CAPADR,camara
+Titular.10,204434,Dra. Vanda Milani,SOLIDARI,AC,Titular,CAPADR,camara
+Suplente.24,204351,Dr. Luiz Ovando,PSL,MS,Suplente,CAPADR,camara
+Titular.11,161550,Emidinho Madeira,PSB,MG,Titular,CAPADR,camara
+Suplente.25,207309,Enéias Reis,PSL,MG,Suplente,CAPADR,camara
+Titular.12,204482,Euclydes Pettersen,PSC,MG,Titular,CAPADR,camara
+Titular.13,178871,Evair Vieira de Melo,PP,ES,Titular,CAPADR,camara
+Titular.14,178930,Evandro Roman,PSD,PR,Titular,CAPADR,camara
+Suplente.26,178953,Expedito Netto,PSD,RO,Suplente,CAPADR,camara
+Presidente,66828,Fausto Pinato,PP,SP,Titular,CAPADR,camara
+Titular.15,66828,Fausto Pinato,PP,SP,Titular,CAPADR,camara
+Titular.16,204510,Franco Cartafina,PP,MG,Titular,CAPADR,camara
+Titular.17,204393,Frei Anastacio Ribeiro,PT,PB,Titular,CAPADR,camara
+Suplente.27,204473,General Girão,PSL,RN,Suplente,CAPADR,camara
+Suplente.28,204527,Geninho Zuliani,DEM,SP,Suplente,CAPADR,camara
+Suplente.29,74383,Giacobo,PR,PR,Suplente,CAPADR,camara
+Suplente.30,198197,Greyce Elias,AVANTE,MG,Suplente,CAPADR,camara
+Titular.18,178964,Heitor Schuch,PSB,RS,Titular,CAPADR,camara
+Titular.19,204436,Isnaldo Bulhões Jr.,MDB,AL,Titular,CAPADR,camara
+Titular.20,160570,Jerônimo Goergen,PP,RS,Titular,CAPADR,camara
+Suplente.31,204435,Jesus Sérgio,PDT,AC,Suplente,CAPADR,camara
+Titular.21,178970,João Daniel,PT,SE,Titular,CAPADR,camara
+TerceiroVice-Presidente,204386,Jose Mario Schreiner,DEM,GO,Titular,CAPADR,camara
+Titular.22,204386,Jose Mario Schreiner,DEM,GO,Titular,CAPADR,camara
+Titular.23,204474,Juarez Costa,MDB,MT,Titular,CAPADR,camara
+Suplente.32,74317,Júlio Cesar,PSD,PI,Suplente,CAPADR,camara
+Titular.24,204574,Junior Lourenço,PR,MA,Titular,CAPADR,camara
+Suplente.33,204550,Júnior Mano,PR,CE,Suplente,CAPADR,camara
+Suplente.34,204404,Lucas Redecker,PSDB,RS,Suplente,CAPADR,camara
+Suplente.35,178931,Luciano Ducci,PSB,PR,Suplente,CAPADR,camara
+Titular.25,178954,Lucio Mosquini,MDB,RO,Titular,CAPADR,camara
+Titular.26,160645,Luiz Carlos,PSDB,AP,Titular,CAPADR,camara
+SegundoVice-Presidente,162332,Luiz Nishimori,PR,PR,Titular,CAPADR,camara
+Titular.27,162332,Luiz Nishimori,PR,PR,Titular,CAPADR,camara
+Suplente.36,166402,Magda Mofatto,PR,GO,Suplente,CAPADR,camara
+Suplente.37,204469,Manuel Marcos,PRB,AC,Suplente,CAPADR,camara
+Titular.28,204471,Mara Rocha,PSDB,AC,Titular,CAPADR,camara
+Titular.29,205863,Marcelo Brum,PSL,RS,Titular,CAPADR,camara
+Titular.30,133810,Marcelo Moraes,PTB,RS,Titular,CAPADR,camara
+Titular.31,160535,Marcon,PT,RS,Titular,CAPADR,camara
+Titular.32,204403,Marlon Santos,PDT,RS,Titular,CAPADR,camara
+Suplente.38,204566,Marreca Filho,PATRI,MA,Suplente,CAPADR,camara
+Titular.33,204449,Nelson Barbudo,PSL,MT,Titular,CAPADR,camara
+PrimeiroVice-Presidente,146307,Neri Geller,PP,MT,Titular,CAPADR,camara
+Titular.34,146307,Neri Geller,PP,MT,Titular,CAPADR,camara
+Suplente.39,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CAPADR,camara
+Suplente.40,204475,Otaci Nascimento,SOLIDARI,RR,Suplente,CAPADR,camara
+Titular.35,204570,Pastor Gildenemyr,PMN,MA,Titular,CAPADR,camara
+Suplente.41,204538,Paulo Bengtson,PTB,PA,Suplente,CAPADR,camara
+Titular.36,204395,Pedro Lupion,DEM,PR,Titular,CAPADR,camara
+Suplente.42,204406,Pedro Westphalen,PP,RS,Suplente,CAPADR,camara
+Titular.37,204567,Raimundo Costa,PR,BA,Titular,CAPADR,camara
+Titular.38,204489,Robério Monteiro,PDT,CE,Titular,CAPADR,camara
+Titular.39,74305,Roberto Pessoa,PSDB,CE,Titular,CAPADR,camara
+Suplente.43,204530,Rodrigo Agostinho,PSB,SP,Suplente,CAPADR,camara
+Titular.40,160651,Rogério Peninha Mendonça,MDB,SC,Titular,CAPADR,camara
+Suplente.44,204357,Rose Modesto,PSDB,MS,Suplente,CAPADR,camara
+Titular.41,204399,Schiavinato,PP,PR,Titular,CAPADR,camara
+Suplente.45,178933,Sergio Souza,MDB,PR,Suplente,CAPADR,camara
+Suplente.46,204438,Sergio Toledo,PR,AL,Suplente,CAPADR,camara
+Suplente.47,204437,Severino Pessoa,PRB,AL,Suplente,CAPADR,camara
+Suplente.48,204360,Silvia Cristina,PDT,RO,Suplente,CAPADR,camara
+Titular.42,197438,Tito,AVANTE,BA,Titular,CAPADR,camara
+Suplente.49,178934,Toninho Wandscheer,PROS,PR,Suplente,CAPADR,camara
+Titular.43,160610,Valmir Assunção,PT,BA,Titular,CAPADR,camara
+Titular.44,141552,Valtenir Pereira,MDB,MT,Titular,CAPADR,camara
+Titular.45,204396,Vermelho,PSD,PR,Titular,CAPADR,camara
+Titular.46,204483,Vilson da Fetaemg,PSB,MG,Titular,CAPADR,camara
+Suplente.50,204532,Vinicius Poit,NOVO,SP,Suplente,CAPADR,camara
+Suplente.51,178952,Walter Alves,MDB,RN,Suplente,CAPADR,camara
+Titular.47,178889,Zé Carlos,PT,MA,Titular,CAPADR,camara
+Titular.48,160632,Zé Silva,SOLIDARI,MG,Titular,CAPADR,camara
+Suplente,178835,Afonso Motta,PDT,RS,Suplente,CCTCI,camara
+Suplente.1,204501,Alencar Santana Braga,PT,SP,Suplente,CCTCI,camara
+Titular,204571,Alex Santana,PDT,BA,Titular,CCTCI,camara
+Titular.1,74471,André de Paula,PSD,PE,Titular,CCTCI,camara
+Titular.2,133439,André Figueiredo,PDT,CE,Titular,CCTCI,camara
+Titular.3,73696,Angela Amin,PP,SC,Titular,CCTCI,camara
+Suplente.2,141391,Arnaldo Jardim,PPS,SP,Suplente,CCTCI,camara
+Suplente.3,141335,Beto Faro,PT,PA,Suplente,CCTCI,camara
+Titular.4,204388,Bibo Nunes,PSL,RS,Titular,CCTCI,camara
+Titular.5,204487,Capitão Wagner,PROS,CE,Titular,CCTCI,camara
+Titular.6,204361,Carlos Chiodini,MDB,SC,Titular,CCTCI,camara
+Suplente.4,204380,Celina Leão,PP,DF,Suplente,CCTCI,camara
+Titular.7,204504,Cezinha de Madureira ,PSD,SP,Titular,CCTCI,camara
+Titular.8,141408,Cleber Verde,PRB,MA,Titular,CCTCI,camara
+Suplente.5,204367,Daniel Freitas,PSL,SC,Suplente,CCTCI,camara
+Titular.9,204409,Daniel Trzeciak,PSDB,RS,Titular,CCTCI,camara
+Titular.10,204511,David Soares,DEM,SP,Titular,CCTCI,camara
+Suplente.6,164359,Delegado Waldir,PSL,GO,Suplente,CCTCI,camara
+Suplente.7,143632,Domingos Neto,PSD,CE,Suplente,CCTCI,camara
+Suplente.8,204518,Dr. Frederico,PATRI,MG,Suplente,CCTCI,camara
+Suplente.9,178977,Eduardo Cury,PSDB,SP,Suplente,CCTCI,camara
+Titular.11,171623,Fabio Reis,MDB,SE,Titular,CCTCI,camara
+Suplente.10,204477,Felício Laterça,PSL,RJ,Suplente,CCTCI,camara
+Suplente.11,204371,Felipe Rigoni,PSB,ES,Suplente,CCTCI,camara
+Presidente,160666,Félix Mendonça Júnior,PDT,BA,Titular,CCTCI,camara
+Titular.12,160666,Félix Mendonça Júnior,PDT,BA,Titular,CCTCI,camara
+Titular.13,204484,General Peternelli,PSL,SP,Titular,CCTCI,camara
+Titular.14,204394,Gervásio Maia,PSB,PB,Titular,CCTCI,camara
+Suplente.12,204491,Gilberto Abramo,PRB,MG,Suplente,CCTCI,camara
+Titular.15,73460,Gustavo Fruet,PDT,PR,Titular,CCTCI,camara
+Suplente.13,178909,Hélio Leite,DEM,PA,Suplente,CCTCI,camara
+Suplente.14,74848,Jandira Feghali,PCdoB,RJ,Suplente,CCTCI,camara
+Titular.16,74273,Jefferson Campos,PSB,SP,Titular,CCTCI,camara
+Suplente.15,178842,Jhc,PSB,AL,Suplente,CCTCI,camara
+Suplente.16,204429,João H. Campos,PSB,PE,Suplente,CCTCI,camara
+Suplente.17,205550,Jorge Braz,PRB,RJ,Suplente,CCTCI,camara
+Titular.17,204372,Julio Cesar Ribeiro,PRB,DF,Titular,CCTCI,camara
+Suplente.18,151208,Laercio Oliveira,PP,SE,Suplente,CCTCI,camara
+Suplente.19,160534,Lauriete,PR,ES,Suplente,CCTCI,camara
+Suplente.20,139285,Lídice da Mata,PSB,BA,Suplente,CCTCI,camara
+Suplente.21,204405,Liziane Bayer,PSB,RS,Suplente,CCTCI,camara
+Titular.18,204382,Loester Trutis,PSL,MS,Titular,CCTCI,camara
+Suplente.23,204410,Luisa Canziani,PTB,PR,Suplente,CCTCI,camara
+Suplente.22,204381,Luis Miranda,DEM,DF,Suplente,CCTCI,camara
+Titular.19,74784,Luiza Erundina,PSOL,SP,Titular,CCTCI,camara
+PrimeiroVice-Presidente,81055,Márcio Jerry,PCdoB,MA,Titular,CCTCI,camara
+Titular.20,81055,Márcio Jerry,PCdoB,MA,Titular,CCTCI,camara
+Suplente.24,204522,Marco Bertaiolli,PSD,SP,Suplente,CCTCI,camara
+Suplente.25,204431,Marcos Aurélio Sampaio,MDB,PI,Suplente,CCTCI,camara
+Suplente.26,204430,Margarete Coelho,PP,PI,Suplente,CCTCI,camara
+Titular.21,171619,Margarida Salomão,PT,MG,Titular,CCTCI,camara
+Suplente.27,204453,Natália Bonavides,PT,RN,Suplente,CCTCI,camara
+Suplente.28,141516,Paulo Abi-Ackel,PSDB,MG,Suplente,CCTCI,camara
+Suplente.29,193726,Paulo Eduardo Martins,PSC,PR,Suplente,CCTCI,camara
+Suplente.30,160558,Paulo Freire Costa,PR,SP,Suplente,CCTCI,camara
+Suplente.31,204461,Paulo Ganime,NOVO,RJ,Suplente,CCTCI,camara
+Titular.22,74574,Paulo Magalhães,PSD,BA,Titular,CCTCI,camara
+Suplente.32,204383,Professor Israel Batista,PV,DF,Suplente,CCTCI,camara
+Suplente.33,178989,Renata Abreu,PODE,SP,Suplente,CCTCI,camara
+Titular.23,152610,Roberto Alves,PRB,SP,Titular,CCTCI,camara
+Titular.24,204530,Rodrigo Agostinho,PSB,SP,Titular,CCTCI,camara
+Suplente.34,141531,Rodrigo de Castro,PSDB,MG,Suplente,CCTCI,camara
+Suplente.35,73604,Rui Falcão,PT,SP,Suplente,CCTCI,camara
+Suplente.36,160635,Ruy Carneiro,PSDB,PB,Suplente,CCTCI,camara
+Titular.25,204535,Sâmia Bomfim,PSOL,SP,Titular,CCTCI,camara
+Suplente.37,74356,Silas Câmara,PRB,AM,Suplente,CCTCI,camara
+Suplente.38,204534,Tabata Amaral ,PDT,SP,Suplente,CCTCI,camara
+Titular.26,206231,Ted Conti,PSB,ES,Titular,CCTCI,camara
+Suplente.39,143084,Tiago Dimas,SOLIDARI,TO,Suplente,CCTCI,camara
+Titular.27,204532,Vinicius Poit,NOVO,SP,Titular,CCTCI,camara
+Titular.28,178992,Vitor Lippi,PSDB,SP,Titular,CCTCI,camara
+Titular.29,204517,Zé Vitor,PMN,MG,Titular,CCTCI,camara
+Suplente,204528,Adriana Ventura,NOVO,SP,Suplente,CCJC,camara
+Suplente.1,74646,Aécio Neves,PSDB,MG,Suplente,CCJC,camara
+Titular,178835,Afonso Motta,PDT,RS,Titular,CCJC,camara
+Titular.1,160527,Aguinaldo Ribeiro,PP,PB,Titular,CCJC,camara
+Titular.2,160559,Alceu Moreira,MDB,RS,Titular,CCJC,camara
+Titular.3,204501,Alencar Santana Braga,PT,SP,Titular,CCJC,camara
+Suplente.3,160545,Alexandre Leite,DEM,SP,Suplente,CCJC,camara
+Suplente.2,178972,Alex Manente,PPS,SP,Suplente,CCJC,camara
+Suplente.4,178927,Aliel Machado,PSB,PR,Suplente,CCJC,camara
+Suplente.5,73696,Angela Amin,PP,SC,Suplente,CCJC,camara
+Titular.4,160600,Arthur Oliveira Maia,DEM,BA,Titular,CCJC,camara
+Suplente.6,160665,Augusto Coutinho,SOLIDARI,PE,Suplente,CCJC,camara
+Suplente.7,160512,Aureo Ribeiro,SOLIDARI,RJ,Suplente,CCJC,camara
+Titular.5,178948,Beto Rosado,PP,RN,Titular,CCJC,camara
+PrimeiroVice-Presidente,204374,Bia Kicis,PSL,DF,Titular,CCJC,camara
+Titular.6,204374,Bia Kicis,PSL,DF,Titular,CCJC,camara
+Titular.7,141513,Bilac Pinto,DEM,MG,Titular,CCJC,camara
+Suplente.8,204520,Cabo Junio Amaral,PSL,MG,Suplente,CCJC,camara
+Suplente.9,178924,Capitão Fábio Abreu,PR,PI,Suplente,CCJC,camara
+Suplente.10,204487,Capitão Wagner,PROS,CE,Suplente,CCJC,camara
+Titular.8,204369,Caroline de Toni,PSL,SC,Titular,CCJC,camara
+Suplente.11,204499,Cássio Andrade,PSB,PA,Suplente,CCJC,camara
+Titular.9,141405,Celso Maldaner,MDB,SC,Titular,CCJC,camara
+Suplente.12,204476,Chiquinho Brazão,AVANTE,RJ,Suplente,CCJC,camara
+Suplente.13,204462,Chris Tonietto,PSL,RJ,Suplente,CCJC,camara
+Titular.10,178939,Clarissa Garotinho,PROS,RJ,Titular,CCJC,camara
+Suplente.14,141408,Cleber Verde,PRB,MA,Suplente,CCJC,camara
+Suplente.15,204514,Coronel Tadeu,PSL,SP,Suplente,CCJC,camara
+Suplente.16,141411,Dagoberto Nogueira,PDT,MS,Suplente,CCJC,camara
+Titular.11,204367,Daniel Freitas,PSL,SC,Titular,CCJC,camara
+Titular.12,160528,Danilo Cabral,PSB,PE,Titular,CCJC,camara
+Titular.13,116379,Darci de Matos,PSD,SC,Titular,CCJC,camara
+Suplente.17,73891,Darcísio Perondi,MDB,RS,Suplente,CCJC,camara
+Suplente.18,204511,David Soares,DEM,SP,Suplente,CCJC,camara
+Titular.14,178908,Delegado Éder Mauro,PSD,PA,Titular,CCJC,camara
+Titular.15,204512,Delegado Marcelo Freitas,PSL,MG,Titular,CCJC,camara
+Suplente.19,204569,Delegado Pablo,PSL,AM,Suplente,CCJC,camara
+Titular.16,164359,Delegado Waldir,PSL,GO,Titular,CCJC,camara
+Titular.17,178929,Diego Garcia,PODE,PR,Titular,CCJC,camara
+Suplente.20,204518,Dr. Frederico,PATRI,MG,Suplente,CCJC,camara
+Titular.18,204562,Edilázio Júnior,PSD,MA,Titular,CCJC,camara
+Suplente.21,141417,Edio Lopes,PR,RR,Suplente,CCJC,camara
+Titular.19,204541,Eduardo Bismarck,PDT,CE,Titular,CCJC,camara
+Titular.20,178977,Eduardo Cury,PSDB,SP,Titular,CCJC,camara
+Titular.21,204537,Enrico Misasi,PV,SP,Titular,CCJC,camara
+Suplente.22,160575,Erika Kokay,PT,DF,Suplente,CCJC,camara
+Suplente.23,178930,Evandro Roman,PSD,PR,Suplente,CCJC,camara
+Titular.22,178953,Expedito Netto,PSD,RO,Titular,CCJC,camara
+Suplente.24,204368,Fabio Schiochet,PSL,SC,Suplente,CCJC,camara
+Titular.23,160587,Fábio Trad,PSD,MS,Titular,CCJC,camara
+Presidente,204398,Felipe Francischini,PSL,PR,Titular,CCJC,camara
+Titular.24,204398,Felipe Francischini,PSL,PR,Titular,CCJC,camara
+Suplente.25,204354,Flávia Arruda,PR,DF,Suplente,CCJC,camara
+Suplente.26,204392,Francisco Jr.,PSD,GO,Suplente,CCJC,camara
+Titular.25,160669,Genecias Noronha,SOLIDARI,CE,Titular,CCJC,camara
+Titular.26,204527,Geninho Zuliani,DEM,SP,Titular,CCJC,camara
+Suplente.27,204394,Gervásio Maia,PSB,PB,Suplente,CCJC,camara
+Titular.27,204575,Gil Cutrim,PDT,MA,Titular,CCJC,camara
+Titular.28,204365,Gilson Marques ,NOVO,SC,Titular,CCJC,camara
+Suplente.28,204531,Guilherme Derrite,PP,SP,Suplente,CCJC,camara
+Suplente.29,204442,Gurgel,PSL,RJ,Suplente,CCJC,camara
+Titular.29,178981,Herculano Passos,MDB,SP,Titular,CCJC,camara
+Titular.30,178959,Hiran Gonçalves,PP,RR,Titular,CCJC,camara
+Suplente.30,204436,Isnaldo Bulhões Jr.,MDB,AL,Suplente,CCJC,camara
+Titular.31,74366,João Campos,PRB,GO,Titular,CCJC,camara
+Titular.32,204429,João H. Campos,PSB,PE,Titular,CCJC,camara
+Titular.33,204576,João Roma,PRB,BA,Titular,CCJC,camara
+Titular.34,204468,Joenia Wapichana,REDE,RR,Titular,CCJC,camara
+Titular.35,141470,José Guimarães,PT,CE,Titular,CCJC,camara
+Titular.36,204563,Josimar Maranhãozinho,PR,MA,Titular,CCJC,camara
+Titular.37,73586,Júlio Delgado,PSB,MG,Titular,CCJC,camara
+Suplente.31,204502,Júnior Bozzella,PSL,SP,Suplente,CCJC,camara
+Titular.38,204550,Júnior Mano,PR,CE,Titular,CCJC,camara
+Suplente.32,204536,Kim Kataguiri,DEM,SP,Suplente,CCJC,camara
+Titular.39,98057,Lafayette de Andrada,PRB,MG,Titular,CCJC,camara
+Titular.40,204359,Léo Moraes,PODE,RO,Titular,CCJC,camara
+Suplente.33,204404,Lucas Redecker,PSDB,RS,Suplente,CCJC,camara
+Titular.41,160510,Luis Tibé,AVANTE,MG,Titular,CCJC,camara
+Suplente.34,160645,Luiz Carlos,PSDB,AP,Suplente,CCJC,camara
+Titular.42,204543,Luiz Flávio Gomes,PSB,SP,Titular,CCJC,camara
+Titular.43,146788,Marcelo Aro,PHS,MG,Titular,CCJC,camara
+Suplente.35,76874,Marcelo Freixo,PSOL,RJ,Suplente,CCJC,camara
+Titular.44,204556,Marcelo Ramos ,PR,AM,Titular,CCJC,camara
+Titular.45,179001,Márcio Biolchi,MDB,RS,Titular,CCJC,camara
+Titular.46,204430,Margarete Coelho,PP,PI,Titular,CCJC,camara
+Titular.47,74398,Maria do Rosário,PT,RS,Titular,CCJC,camara
+Suplente.36,75431,Maurício Dziedricki,PTB,RS,Suplente,CCJC,camara
+Suplente.37,74749,Mauro Lopes,MDB,MG,Suplente,CCJC,camara
+Titular.48,74571,Nelson Pellegrino,PT,BA,Titular,CCJC,camara
+Suplente.38,146307,Neri Geller,PP,MT,Suplente,CCJC,camara
+Titular.49,204479,Nicoletti,PSL,RR,Titular,CCJC,camara
+Suplente.39,74159,Odair Cunha,PT,MG,Suplente,CCJC,camara
+Suplente.40,204498,Olival Marques,DEM,PA,Suplente,CCJC,camara
+Suplente.41,178987,Orlando Silva,PCdoB,SP,Suplente,CCJC,camara
+Suplente.42,204363,Osires Damaso,PSC,TO,Suplente,CCJC,camara
+Titular.50,160642,Pastor Eurico,PATRI,PE,Titular,CCJC,camara
+Titular.51,74160,Patrus Ananias,PT,MG,Titular,CCJC,camara
+Titular.52,141516,Paulo Abi-Ackel,PSDB,MG,Titular,CCJC,camara
+Titular.53,178860,Paulo Azi,DEM,BA,Titular,CCJC,camara
+Titular.54,193726,Paulo Eduardo Martins,PSC,PR,Titular,CCJC,camara
+Suplente.43,74574,Paulo Magalhães,PSD,BA,Suplente,CCJC,camara
+Titular.55,141518,Paulo Pereira da Silva,SOLIDARI,SP,Titular,CCJC,camara
+Titular.56,141488,Paulo Teixeira,PT,SP,Titular,CCJC,camara
+Suplente.44,178912,Pedro Cunha Lima,PSDB,PB,Suplente,CCJC,camara
+Suplente.45,160604,Pedro Uczai,PT,SC,Suplente,CCJC,camara
+Suplente.46,204406,Pedro Westphalen,PP,RS,Suplente,CCJC,camara
+Suplente.47,73486,Pompeo de Mattos,PDT,RS,Suplente,CCJC,camara
+Suplente.48,160601,Pr. Marco Feliciano,PODE,SP,Suplente,CCJC,camara
+Titular.57,204418,Professor Luizão Goulart,PRB,PR,Titular,CCJC,camara
+Suplente.49,74161,Reginaldo Lopes,PT,MG,Suplente,CCJC,camara
+Suplente.50,205865,Reinhold Stephanes Junior,PSD,PR,Suplente,CCJC,camara
+Suplente.51,178989,Renata Abreu,PODE,SP,Suplente,CCJC,camara
+Titular.58,73801,Renildo Calheiros,PCdoB,PE,Titular,CCJC,camara
+Suplente.52,204362,Ricardo Guidi,PSD,SC,Suplente,CCJC,camara
+Suplente.53,160651,Rogério Peninha Mendonça,MDB,SC,Suplente,CCJC,camara
+Titular.59,73466,Rubens Bueno,PPS,PR,Titular,CCJC,camara
+Suplente.54,74371,Rubens Otoni,PT,GO,Suplente,CCJC,camara
+Suplente.55,73604,Rui Falcão,PT,SP,Suplente,CCJC,camara
+Titular.60,178990,Samuel Moreira,PSDB,SP,Titular,CCJC,camara
+Titular.61,204438,Sergio Toledo,PR,AL,Titular,CCJC,camara
+Suplente.56,178874,Sergio Vidigal,PDT,ES,Suplente,CCJC,camara
+Titular.62,178961,Shéridan,PSDB,RR,Titular,CCJC,camara
+Suplente.57,204425,Silvio Costa Filho,PRB,PE,Suplente,CCJC,camara
+Suplente.58,178947,Sóstenes Cavalcante,DEM,RJ,Suplente,CCJC,camara
+Titular.63,177282,Subtenente Gonzaga,PDT,MG,Titular,CCJC,camara
+Suplente.59,178922,Tadeu Alencar,PSB,PE,Suplente,CCJC,camara
+Titular.64,204464,Talíria Petrone,PSOL,RJ,Titular,CCJC,camara
+Suplente.60,157130,Túlio Gadêlha ,PDT,PE,Suplente,CCJC,camara
+Suplente.61,204416,Ubiratan Sanderson,PSL,RS,Suplente,CCJC,camara
+Suplente.62,141552,Valtenir Pereira,MDB,MT,Suplente,CCJC,camara
+Suplente.63,137070,Vicentinho Júnior,PR,TO,Suplente,CCJC,camara
+Titular.65,74044,Wilson Santiago,PTB,PB,Titular,CCJC,camara
+Suplente.64,160592,Zeca Dirceu,PT,PR,Suplente,CCJC,camara
+Titular,204379,Acácio Favacho,PROS,AP,Titular,CDC,camara
+Suplente,204571,Alex Santana,PDT,BA,Suplente,CDC,camara
+Suplente.1,204423,André Ferreira,PSC,PE,Suplente,CDC,camara
+Suplente.2,204515,André Janones,AVANTE,MG,Suplente,CDC,camara
+Suplente.3,160512,Aureo Ribeiro,SOLIDARI,RJ,Suplente,CDC,camara
+Titular.1,204358,Beto Pereira,PSDB,MS,Titular,CDC,camara
+Titular.2,204370,Célio Moura,PT,TO,Titular,CDC,camara
+Titular.3,73441,Celso Russomanno,PRB,SP,Titular,CDC,camara
+Titular.4,204476,Chiquinho Brazão,AVANTE,RJ,Titular,CDC,camara
+Titular.5,204514,Coronel Tadeu,PSL,SP,Titular,CDC,camara
+Suplente.4,116379,Darci de Matos,PSD,SC,Suplente,CDC,camara
+Suplente.5,204518,Dr. Frederico,PATRI,MG,Suplente,CDC,camara
+Titular.6,141422,Efraim Filho,DEM,PB,Titular,CDC,camara
+Titular.7,204364,Eli Borges,SOLIDARI,TO,Titular,CDC,camara
+Suplente.6,160532,Eli Corrêa Filho,DEM,SP,Suplente,CDC,camara
+Titular.8,160640,Eros Biondini,PROS,MG,Titular,CDC,camara
+Suplente.7,204510,Franco Cartafina,PP,MG,Suplente,CDC,camara
+Titular.9,204494,Fred Costa,PATRI,MG,Titular,CDC,camara
+Titular.10,204442,Gurgel,PSL,RJ,Titular,CDC,camara
+Suplente.8,141458,João Carlos Bacelar,PR,BA,Suplente,CDC,camara
+Presidente,141459,João Maia,PR,RN,Titular,CDC,camara
+Titular.11,141459,João Maia,PR,RN,Titular,CDC,camara
+Titular.12,205550,Jorge Braz,PRB,RJ,Titular,CDC,camara
+Suplente.9,204391,José Nelto,PODE,GO,Suplente,CDC,camara
+Suplente.10,73586,Júlio Delgado,PSB,MG,Suplente,CDC,camara
+Suplente.11,150418,Márcio Marinho,PRB,BA,Suplente,CDC,camara
+Titular.13,90201,Pedro Augusto Bezerra,PTB,CE,Titular,CDC,camara
+Titular.14,73943,Perpétua Almeida,PCdoB,AC,Titular,CDC,camara
+Suplente.12,160655,Ricardo Izar,PP,SP,Suplente,CDC,camara
+Titular.15,178920,Ricardo Teobaldo,PODE,PE,Titular,CDC,camara
+Suplente.13,74305,Roberto Pessoa,PSDB,CE,Suplente,CDC,camara
+Suplente.14,178922,Tadeu Alencar,PSB,PE,Suplente,CDC,camara
+Titular.16,178863,Uldurico Junior,PPL,BA,Titular,CDC,camara
+Suplente.15,195866,Vaidon Oliveira,PROS,CE,Suplente,CDC,camara
+Suplente.16,141552,Valtenir Pereira,MDB,MT,Suplente,CDC,camara
+Titular.17,141555,Vinicius Carvalho,PRB,SP,Titular,CDC,camara
+Titular.18,160518,Weliton Prado,PROS,MG,Titular,CDC,camara
+Suplente.17,74439,Wolney Queiroz,PDT,PE,Suplente,CDC,camara
+Titular,121948,Adriano do Baldy,PP,GO,Titular,CDU,camara
+Titular.1,160508,Afonso Florence,PT,BA,Titular,CDU,camara
+Titular.2,160589,Bruna Furlan,PSDB,SP,Titular,CDU,camara
+Suplente,204552,Eduardo Braide,PMN,MA,Suplente,CDU,camara
+Titular.3,141434,Flaviano Melo,MDB,AC,Titular,CDU,camara
+Titular.4,204392,Francisco Jr.,PSD,GO,Titular,CDU,camara
+Suplente.1,73460,Gustavo Fruet,PDT,PR,Suplente,CDU,camara
+Suplente.2,204429,João H. Campos,PSB,PE,Suplente,CDU,camara
+PrimeiroVice-Presidente,204472,José Medeiros,PODE,MT,Titular,CDU,camara
+Titular.5,204472,José Medeiros,PODE,MT,Titular,CDU,camara
+SegundoVice-Presidente,204391,José Nelto,PODE,GO,Titular,CDU,camara
+Titular.6,204391,José Nelto,PODE,GO,Titular,CDU,camara
+Suplente.3,160619,José Nunes,PSD,BA,Suplente,CDU,camara
+Titular.7,204555,José Ricardo,PT,AM,Titular,CDU,camara
+Suplente.4,204547,Léo Motta,PSL,MG,Suplente,CDU,camara
+Suplente.5,204485,Luiz Carlos Motta,PR,SP,Suplente,CDU,camara
+Suplente.6,178866,Luizianne Lins,PT,CE,Suplente,CDU,camara
+Titular.8,204458,Major Fabiana,PSL,RJ,Titular,CDU,camara
+Suplente.7,204471,Mara Rocha,PSDB,AC,Suplente,CDU,camara
+Titular.9,204558,Marcelo Nilo,PSB,BA,Titular,CDU,camara
+Suplente.8,204428,Marília Arraes,PT,PE,Suplente,CDU,camara
+Titular.10,66179,Norma Ayub,DEM,ES,Titular,CDU,camara
+Suplente.9,204529,Policial Katia Sastre,PR,SP,Suplente,CDU,camara
+Presidente,160601,Pr. Marco Feliciano,PODE,SP,Titular,CDU,camara
+Titular.11,160601,Pr. Marco Feliciano,PODE,SP,Titular,CDU,camara
+Suplente.10,204418,Professor Luizão Goulart,PRB,PR,Suplente,CDU,camara
+Suplente.11,178990,Samuel Moreira,PSDB,SP,Suplente,CDU,camara
+Titular.12,178934,Toninho Wandscheer,PROS,PR,Titular,CDU,camara
+Suplente.12,204385,Valdevan Noventa,PSC,SE,Suplente,CDU,camara
+Suplente.13,160569,Waldenor Pereira,PT,BA,Suplente,CDU,camara
+Suplente.14,178889,Zé Carlos,PT,MA,Suplente,CDU,camara
+Titular,204554,Abílio Santana,PR,BA,Titular,CDHM,camara
+Suplente,204544,Alexandre Frota ,PSL,SP,Suplente,CDHM,camara
+Titular.1,207176,Bia Cavassa,PSDB,MS,Titular,CDHM,camara
+Suplente.1,204561,Bira do Pindaré,PSB,MA,Suplente,CDHM,camara
+Titular.2,204352,Camilo Capiberibe,PSB,AP,Titular,CDHM,camara
+Titular.3,204426,Carlos Veras,PT,PE,Titular,CDHM,camara
+Suplente.2,204451,Delegado Antônio Furtado,PSL,RJ,Suplente,CDHM,camara
+Titular.4,178908,Delegado Éder Mauro,PSD,PA,Titular,CDHM,camara
+Titular.5,204364,Eli Borges,SOLIDARI,TO,Titular,CDHM,camara
+Titular.6,160575,Erika Kokay,PT,DF,Titular,CDHM,camara
+Titular.7,204411,Filipe Barros,PSL,PR,Titular,CDHM,camara
+Suplente.3,204447,Flordelis,PSD,RJ,Suplente,CDHM,camara
+Suplente.4,204393,Frei Anastacio Ribeiro,PT,PB,Suplente,CDHM,camara
+Suplente.5,204531,Guilherme Derrite,PP,SP,Suplente,CDHM,camara
+Presidente,178873,Helder Salomão,PT,ES,Titular,CDHM,camara
+Titular.8,178873,Helder Salomão,PT,ES,Titular,CDHM,camara
+Suplente.6,204533,Idilvan Alencar,PDT,CE,Suplente,CDHM,camara
+Titular.9,67138,Iracema Portella,PP,PI,Titular,CDHM,camara
+Suplente.7,112437,João Marcelo Souza,MDB,MA,Suplente,CDHM,camara
+Suplente.8,204468,Joenia Wapichana,REDE,RR,Suplente,CDHM,camara
+Titular.10,204472,José Medeiros,PODE,MT,Titular,CDHM,camara
+Titular.11,204420,Julian Lemos ,PSL,PB,Titular,CDHM,camara
+Titular.12,160534,Lauriete,PR,ES,Titular,CDHM,camara
+Titular.13,81055,Márcio Jerry,PCdoB,MA,Titular,CDHM,camara
+Suplente.9,204430,Margarete Coelho,PP,PI,Suplente,CDHM,camara
+Suplente.10,154178,Milton Vieira,PRB,SP,Suplente,CDHM,camara
+Titular.14,160556,Padre João,PT,MG,Titular,CDHM,camara
+Suplente.11,74160,Patrus Ananias,PT,MG,Suplente,CDHM,camara
+Suplente.12,204529,Policial Katia Sastre,PR,SP,Suplente,CDHM,camara
+Suplente.13,160601,Pr. Marco Feliciano,PODE,SP,Suplente,CDHM,camara
+Suplente.14,160653,Roberto de Lucena,PODE,SP,Suplente,CDHM,camara
+Suplente.15,204480,Rogério Correia ,PT,MG,Suplente,CDHM,camara
+Suplente.16,178961,Shéridan,PSDB,RR,Suplente,CDHM,camara
+Titular.15,178947,Sóstenes Cavalcante,DEM,RJ,Titular,CDHM,camara
+Titular.16,157130,Túlio Gadêlha ,PDT,PE,Titular,CDHM,camara
+Titular,204516,Alexis Fonteyne,NOVO,SP,Titular,CDEICS,camara
+Titular.1,204356,Amaro Neto,PRB,ES,Titular,CDEICS,camara
+Suplente,160665,Augusto Coutinho,SOLIDARI,PE,Suplente,CDEICS,camara
+Presidente,204551,Bosco Saraiva,SOLIDARI,AM,Titular,CDEICS,camara
+Titular.2,204551,Bosco Saraiva,SOLIDARI,AM,Titular,CDEICS,camara
+Suplente.1,204380,Celina Leão,PP,DF,Suplente,CDEICS,camara
+Titular.3,204490,Charlles Evangelista,PSL,MG,Titular,CDEICS,camara
+Suplente.2,74060,Daniel Almeida,PCdoB,BA,Suplente,CDEICS,camara
+Suplente.3,141422,Efraim Filho,DEM,PB,Suplente,CDEICS,camara
+Titular.4,198783,Emanuel Pinheiro Neto,PTB,MT,Titular,CDEICS,camara
+Suplente.4,132504,Enio Verri,PT,PR,Suplente,CDEICS,camara
+Titular.5,204411,Filipe Barros,PSL,PR,Titular,CDEICS,camara
+Suplente.5,204419,Glaustin Fokus,PSC,GO,Suplente,CDEICS,camara
+Suplente.6,204513,Guiga Peixoto,PSL,SP,Suplente,CDEICS,camara
+Suplente.7,204465,Haroldo Cathedral,PSD,RR,Suplente,CDEICS,camara
+Titular.6,178873,Helder Salomão,PT,ES,Titular,CDEICS,camara
+Titular.7,204435,Jesus Sérgio,PDT,AC,Titular,CDEICS,camara
+Suplente.8,178910,Joaquim Passarinho,PSD,PA,Suplente,CDEICS,camara
+Suplente.9,204555,José Ricardo,PT,AM,Suplente,CDEICS,camara
+Suplente.10,151208,Laercio Oliveira,PP,SE,Suplente,CDEICS,camara
+Titular.8,196358,Lourival Gomes,PSL,RJ,Titular,CDEICS,camara
+Suplente.11,162332,Luiz Nishimori,PR,PR,Suplente,CDEICS,camara
+Suplente.12,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Suplente,CDEICS,camara
+PrimeiroVice-Presidente,204475,Otaci Nascimento,SOLIDARI,RR,Titular,CDEICS,camara
+Titular.9,204475,Otaci Nascimento,SOLIDARI,RR,Titular,CDEICS,camara
+Suplente.13,204489,Robério Monteiro,PDT,CE,Suplente,CDEICS,camara
+Suplente.14,204366,Rodrigo Coelho,PSB,SC,Suplente,CDEICS,camara
+Titular.10,143084,Tiago Dimas,SOLIDARI,TO,Titular,CDEICS,camara
+Titular.11,74376,Vander Loubet,PT,MS,Titular,CDEICS,camara
+Suplente.15,141555,Vinicius Carvalho,PRB,SP,Suplente,CDEICS,camara
+Suplente.16,178992,Vitor Lippi,PSDB,SP,Suplente,CDEICS,camara
+Titular.12,204559,Zé Neto,PT,BA,Titular,CDEICS,camara
+Suplente,74646,Aécio Neves,PSDB,MG,Suplente,CFT,camara
+Suplente.1,160508,Afonso Florence,PT,BA,Suplente,CFT,camara
+Titular,204545,Alê Silva,PSL,MG,Titular,CFT,camara
+Suplente.2,204516,Alexis Fonteyne,NOVO,SP,Suplente,CFT,camara
+Suplente.3,178927,Aliel Machado,PSB,PR,Suplente,CFT,camara
+Suplente.4,160600,Arthur Oliveira Maia,DEM,BA,Suplente,CFT,camara
+Suplente.5,159237,Assis Carvalho,PT,PI,Suplente,CFT,camara
+Suplente.6,204551,Bosco Saraiva,SOLIDARI,AM,Suplente,CFT,camara
+Suplente.7,160589,Bruna Furlan,PSDB,SP,Suplente,CFT,camara
+Suplente.8,141405,Celso Maldaner,MDB,SC,Suplente,CFT,camara
+Titular.1,204496,Celso Sabino,PSDB,PA,Titular,CFT,camara
+Suplente.9,204440,Christino Aureo,PP,RJ,Suplente,CFT,camara
+Suplente.10,204454,Daniel Silveira,PSL,RJ,Suplente,CFT,camara
+Suplente.11,73891,Darcísio Perondi,MDB,RS,Suplente,CFT,camara
+Titular.2,204542,Denis Bezerra,PSB,CE,Titular,CFT,camara
+Suplente.12,204518,Dr. Frederico,PATRI,MG,Suplente,CFT,camara
+Suplente.13,204562,Edilázio Júnior,PSD,MA,Suplente,CFT,camara
+Suplente.14,178977,Eduardo Cury,PSDB,SP,Suplente,CFT,camara
+Titular.3,204389,Elias Vaz,PSB,GO,Titular,CFT,camara
+Titular.4,132504,Enio Verri,PT,PR,Titular,CFT,camara
+Suplente.15,178871,Evair Vieira de Melo,PP,ES,Suplente,CFT,camara
+Suplente.16,178969,Fábio Mitidieri,PSD,SE,Suplente,CFT,camara
+Suplente.17,204477,Felício Laterça,PSL,RJ,Suplente,CFT,camara
+Titular.5,204371,Felipe Rigoni,PSB,ES,Titular,CFT,camara
+Titular.6,92699,Fernando Monteiro,PP,PE,Titular,CFT,camara
+Titular.7,191923,Flavio Nogueira,PDT,PI,Titular,CFT,camara
+Suplente.18,74270,Gilberto Nascimento,PSC,SP,Suplente,CFT,camara
+PrimeiroVice-Presidente,178996,Giovani Feltes,MDB,RS,Titular,CFT,camara
+Titular.8,178996,Giovani Feltes,MDB,RS,Titular,CFT,camara
+Titular.9,204419,Glaustin Fokus,PSC,GO,Titular,CFT,camara
+Titular.10,107283,Gleisi Hoffmann,PT,PR,Titular,CFT,camara
+Titular.11,204513,Guiga Peixoto,PSL,SP,Titular,CFT,camara
+Titular.12,204548,Heitor Freire,PSL,CE,Titular,CFT,camara
+Titular.13,204539,Hercílio Coelho Diniz,MDB,MG,Titular,CFT,camara
+Titular.14,178884,Hildo Rocha,MDB,MA,Titular,CFT,camara
+Suplente.19,204533,Idilvan Alencar,PDT,CE,Suplente,CFT,camara
+Suplente.20,160570,Jerônimo Goergen,PP,RS,Suplente,CFT,camara
+Titular.15,204546,Joice Hasselmann,PSL,SP,Titular,CFT,camara
+SegundoVice-Presidente,74317,Júlio Cesar,PSD,PI,Titular,CFT,camara
+Titular.16,74317,Júlio Cesar,PSD,PI,Titular,CFT,camara
+Suplente.21,204536,Kim Kataguiri,DEM,SP,Suplente,CFT,camara
+Suplente.22,151208,Laercio Oliveira,PP,SE,Suplente,CFT,camara
+Suplente.23,98057,Lafayette de Andrada,PRB,MG,Suplente,CFT,camara
+Suplente.24,204375,Leda Sadala,AVANTE,AP,Suplente,CFT,camara
+Titular.17,204404,Lucas Redecker,PSDB,RS,Titular,CFT,camara
+Suplente.25,178879,Lucas Vergilio,SOLIDARI,GO,Suplente,CFT,camara
+Titular.18,204381,Luis Miranda,DEM,DF,Titular,CFT,camara
+Suplente.26,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Suplente,CFT,camara
+Titular.19,179587,Major Vitor Hugo,PSL,GO,Titular,CFT,camara
+Suplente.27,133810,Marcelo Moraes,PTB,RS,Suplente,CFT,camara
+Suplente.28,204556,Marcelo Ramos ,PR,AM,Suplente,CFT,camara
+Suplente.29,204452,Márcio Labre,PSL,RJ,Suplente,CFT,camara
+Titular.20,204431,Marcos Aurélio Sampaio,MDB,PI,Titular,CFT,camara
+Titular.21,178858,Mário Negromonte Jr.,PP,BA,Titular,CFT,camara
+Suplente.30,204403,Marlon Santos,PDT,RS,Suplente,CFT,camara
+Titular.22,204566,Marreca Filho,PATRI,MA,Titular,CFT,camara
+Titular.23,204486,Mauro Benevides Filho,PDT,CE,Titular,CFT,camara
+Suplente.31,178997,Moses Rodrigues,MDB,CE,Suplente,CFT,camara
+Titular.24,204363,Osires Damaso,PSC,TO,Titular,CFT,camara
+Titular.25,204573,Otto Alencar Filho,PSD,BA,Titular,CFT,camara
+Titular.26,204553,Pastor Sargento Isidório,AVANTE,BA,Titular,CFT,camara
+Suplente.32,204377,Paula Belmonte,PPS,DF,Suplente,CFT,camara
+Suplente.33,178860,Paulo Azi,DEM,BA,Suplente,CFT,camara
+Titular.27,204461,Paulo Ganime,NOVO,RJ,Titular,CFT,camara
+Titular.28,122158,Pedro Paulo,DEM,RJ,Titular,CFT,camara
+Suplente.34,204529,Policial Katia Sastre,PR,SP,Suplente,CFT,camara
+Suplente.35,204366,Rodrigo Coelho,PSB,SC,Suplente,CFT,camara
+Titular.29,73604,Rui Falcão,PT,SP,Titular,CFT,camara
+Titular.30,160635,Ruy Carneiro,PSDB,PB,Titular,CFT,camara
+Presidente,178933,Sergio Souza,MDB,PR,Titular,CFT,camara
+Titular.31,178933,Sergio Souza,MDB,PR,Titular,CFT,camara
+Titular.32,204557,Sidney Leite,PSD,AM,Titular,CFT,camara
+Suplente.36,74356,Silas Câmara,PRB,AM,Suplente,CFT,camara
+TerceiroVice-Presidente,204478,Vinicius Farah,MDB,RJ,Titular,CFT,camara
+Titular.33,204478,Vinicius Farah,MDB,RJ,Titular,CFT,camara
+Titular.34,178952,Walter Alves,MDB,RN,Titular,CFT,camara
+Suplente.37,74043,Wellington Roberto,PR,PB,Suplente,CFT,camara
+Suplente,121948,Adriano do Baldy,PP,GO,Suplente,CFFC,camara
+Titular,178881,Aluisio Mendes,PODE,MA,Titular,CFFC,camara
+Suplente.1,74090,Átila Lins,PP,AM,Suplente,CFFC,camara
+Titular.1,204507,Carla Zambelli,PSL,SP,Titular,CFFC,camara
+Suplente.2,178962,Carlos Gomes,PRB,RS,Suplente,CFFC,camara
+Titular.2,204460,Carlos Jordy,PSL,RJ,Titular,CFFC,camara
+Titular.3,204459,Daniela do Waguinho,MDB,RJ,Titular,CFFC,camara
+Suplente.3,204552,Eduardo Braide,PMN,MA,Suplente,CFFC,camara
+Suplente.4,204389,Elias Vaz,PSB,GO,Suplente,CFFC,camara
+Titular.4,204427,Fernando Rodolfo,PR,PE,Titular,CFFC,camara
+Titular.5,204491,Gilberto Abramo,PRB,MG,Titular,CFFC,camara
+Titular.6,204408,Gustinho Ribeiro,SOLIDARI,SE,Titular,CFFC,camara
+Suplente.5,178884,Hildo Rocha,MDB,MA,Suplente,CFFC,camara
+Titular.7,160674,Hugo Motta,PRB,PB,Titular,CFFC,camara
+Suplente.6,141458,João Carlos Bacelar,PR,BA,Suplente,CFFC,camara
+Suplente.7,178857,Jorge Solla,PT,BA,Suplente,CFFC,camara
+Suplente.8,204391,José Nelto,PODE,GO,Suplente,CFFC,camara
+Titular.8,204457,Juninho do Pneu,DEM,RJ,Titular,CFFC,camara
+Suplente.9,204502,Júnior Bozzella,PSL,SP,Suplente,CFFC,camara
+Suplente.10,204550,Júnior Mano,PR,CE,Suplente,CFFC,camara
+Presidente,204547,Léo Motta,PSL,MG,Titular,CFFC,camara
+Titular.9,204547,Léo Motta,PSL,MG,Titular,CFFC,camara
+Titular.10,156190,Marcel Van Hattem,NOVO,RS,Titular,CFFC,camara
+Suplente.11,81055,Márcio Jerry,PCdoB,MA,Suplente,CFFC,camara
+PrimeiroVice-Presidente,204452,Márcio Labre,PSL,RJ,Titular,CFFC,camara
+Titular.11,204452,Márcio Labre,PSL,RJ,Titular,CFFC,camara
+Suplente.12,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CFFC,camara
+Suplente.13,160556,Padre João,PT,MG,Suplente,CFFC,camara
+Suplente.14,122158,Pedro Paulo,DEM,RJ,Suplente,CFFC,camara
+Titular.12,73788,Ricardo Barros,PP,PR,Titular,CFFC,camara
+Suplente.15,204360,Silvia Cristina,PDT,RO,Suplente,CFFC,camara
+Suplente.16,160591,Vinicius Gurgel,PR,AP,Suplente,CFFC,camara
+Titular.13,74043,Wellington Roberto,PR,PB,Titular,CFFC,camara
+Suplente.17,74044,Wilson Santiago,PTB,PB,Suplente,CFFC,camara
+Suplente,204379,Acácio Favacho,PROS,AP,Suplente,CME,camara
+Titular,204560,Adolfo Viana,PSDB,BA,Titular,CME,camara
+Titular.1,204495,Airton Faleiro,PT,PA,Titular,CME,camara
+Titular.2,204353,Aline Gurgel,PRB,AP,Titular,CME,camara
+Titular.3,178937,Altineu Côrtes,PR,RJ,Titular,CME,camara
+Titular.4,141391,Arnaldo Jardim,PPS,SP,Titular,CME,camara
+Suplente.1,160600,Arthur Oliveira Maia,DEM,BA,Suplente,CME,camara
+Titular.5,109429,Benes Leocádio,PRB,RN,Titular,CME,camara
+Suplente.2,141513,Bilac Pinto,DEM,MG,Suplente,CME,camara
+Suplente.3,204361,Carlos Chiodini,MDB,SC,Suplente,CME,camara
+Titular.6,178993,Carlos Henrique Gaguim,DEM,TO,Titular,CME,camara
+Suplente.4,141398,Carlos Zarattini,PT,SP,Suplente,CME,camara
+Titular.7,204499,Cássio Andrade,PSB,PA,Titular,CME,camara
+Suplente.5,204496,Celso Sabino,PSDB,PA,Suplente,CME,camara
+Titular.8,205476,Charles Fernandes,PSD,BA,Titular,CME,camara
+Titular.9,204440,Christino Aureo,PP,RJ,Titular,CME,camara
+Titular.10,204376,Coronel Armando,PSL,SC,Titular,CME,camara
+Titular.11,204378,Coronel Chrisóstomo,PSL,RO,Titular,CME,camara
+Suplente.7,204367,Daniel Freitas,PSL,SC,Suplente,CME,camara
+Titular.12,204454,Daniel Silveira,PSL,RJ,Titular,CME,camara
+Titular.13,160552,Danrlei de Deus Hinterholz,PSD,RS,Titular,CME,camara
+Suplente.6,204355,Da Vitoria,PPS,ES,Suplente,CME,camara
+Suplente.8,178908,Delegado Éder Mauro,PSD,PA,Suplente,CME,camara
+Suplente.9,204512,Delegado Marcelo Freitas,PSL,MG,Suplente,CME,camara
+Suplente.10,204569,Delegado Pablo,PSL,AM,Suplente,CME,camara
+Suplente.11,204518,Dr. Frederico,PATRI,MG,Suplente,CME,camara
+Titular.14,141417,Edio Lopes,PR,RR,Titular,CME,camara
+Titular.15,204421,Edna Henrique,PSDB,PB,Titular,CME,camara
+Suplente.12,204541,Eduardo Bismarck,PDT,CE,Suplente,CME,camara
+Titular.16,74075,Elcione Barbalho,MDB,PA,Titular,CME,camara
+Suplente.13,204389,Elias Vaz,PSB,GO,Suplente,CME,camara
+Suplente.14,160640,Eros Biondini,PROS,MG,Suplente,CME,camara
+Suplente.15,178930,Evandro Roman,PSD,PR,Suplente,CME,camara
+Titular.17,141427,Fábio Ramalho,MDB,MG,Titular,CME,camara
+Suplente.16,204368,Fabio Schiochet,PSL,SC,Suplente,CME,camara
+Suplente.17,66828,Fausto Pinato,PP,SP,Suplente,CME,camara
+Titular.18,204477,Felício Laterça,PSL,RJ,Titular,CME,camara
+Titular.19,141431,Fernando Coelho Filho,DEM,PE,Titular,CME,camara
+Suplente.18,204392,Francisco Jr.,PSD,GO,Suplente,CME,camara
+Suplente.19,204510,Franco Cartafina,PP,MG,Suplente,CME,camara
+Suplente.20,115746,Gelson Azevedo,PR,RJ,Suplente,CME,camara
+Titular.20,198197,Greyce Elias,AVANTE,MG,Titular,CME,camara
+Suplente.21,204539,Hercílio Coelho Diniz,MDB,MG,Suplente,CME,camara
+Titular.21,73772,Hermes Parcianello,MDB,PR,Titular,CME,camara
+Titular.22,204508,Igor Timo,PODE,MG,Titular,CME,camara
+Titular.23,160531,Jhonatan de Jesus,PRB,RR,Titular,CME,camara
+Titular.24,141458,João Carlos Bacelar,PR,BA,Titular,CME,camara
+Suplente.22,141459,João Maia,PR,RN,Suplente,CME,camara
+Suplente.23,204576,João Roma,PRB,BA,Suplente,CME,camara
+Titular.25,178910,Joaquim Passarinho,PSD,PA,Titular,CME,camara
+Suplente.24,204468,Joenia Wapichana,REDE,RR,Suplente,CME,camara
+Titular.26,204497,Júnior Ferrari,PSD,PA,Titular,CME,camara
+Titular.27,151208,Laercio Oliveira,PP,SE,Titular,CME,camara
+Suplente.25,204359,Léo Moraes,PODE,RO,Suplente,CME,camara
+Suplente.26,74299,Leônidas Cristino,PDT,CE,Suplente,CME,camara
+Suplente.27,92102,Leur Lomanto Júnior,DEM,BA,Suplente,CME,camara
+Suplente.28,204523,Lucas Gonzalez,NOVO,MG,Suplente,CME,camara
+Suplente.29,204404,Lucas Redecker,PSDB,RS,Suplente,CME,camara
+Suplente.30,178954,Lucio Mosquini,MDB,RO,Suplente,CME,camara
+Suplente.31,160510,Luis Tibé,AVANTE,MG,Suplente,CME,camara
+Suplente.32,178858,Mário Negromonte Jr.,PP,BA,Suplente,CME,camara
+Suplente.33,204403,Marlon Santos,PDT,RS,Suplente,CME,camara
+Titular.28,204415,Nereu Crispim,PSL,RS,Titular,CME,camara
+Suplente.34,204479,Nicoletti,PSL,RR,Suplente,CME,camara
+Titular.29,194260,Nivaldo Albuquerque,PTB,AL,Titular,CME,camara
+Suplente.35,204475,Otaci Nascimento,SOLIDARI,RR,Suplente,CME,camara
+Titular.30,160556,Padre João,PT,MG,Titular,CME,camara
+Titular.31,178951,Rafael Motta,PSB,RN,Titular,CME,camara
+Titular.32,160655,Ricardo Izar,PP,SP,Titular,CME,camara
+Titular.33,141531,Rodrigo de Castro,PSDB,MG,Titular,CME,camara
+Suplente.36,178861,Ronaldo Carletto,PP,BA,Suplente,CME,camara
+Titular.34,74371,Rubens Otoni,PT,GO,Titular,CME,camara
+Suplente.37,178990,Samuel Moreira,PSDB,SP,Suplente,CME,camara
+Suplente.38,204399,Schiavinato,PP,PR,Suplente,CME,camara
+Titular.35,178921,Sebastião Oliveira,PR,PE,Titular,CME,camara
+Suplente.39,204438,Sergio Toledo,PR,AL,Suplente,CME,camara
+Presidente,74356,Silas Câmara,PRB,AM,Titular,CME,camara
+Titular.36,74356,Silas Câmara,PRB,AM,Titular,CME,camara
+Titular.37,195866,Vaidon Oliveira,PROS,CE,Titular,CME,camara
+Suplente.40,74376,Vander Loubet,PT,MS,Suplente,CME,camara
+Suplente.41,204483,Vilson da Fetaemg,PSB,MG,Suplente,CME,camara
+Suplente.42,74043,Wellington Roberto,PR,PB,Suplente,CME,camara
+Suplente.43,204463,Wladimir Garotinho,PSD,RJ,Suplente,CME,camara
+Titular,204528,Adriana Ventura,NOVO,SP,Titular,CSSF,camara
+Suplente,136811,Afonso Hamm,PP,RS,Suplente,CSSF,camara
+Suplente.1,178836,Alan Rick,DEM,AC,Suplente,CSSF,camara
+Suplente.2,204413,Alcides Rodrigues ,PRP,GO,Suplente,CSSF,camara
+Titular.1,204503,Alexandre Padilha,PT,SP,Titular,CSSF,camara
+PrimeiroVice-Presidente,178833,Alexandre Serfiotis,PSD,RJ,Titular,CSSF,camara
+Titular.2,178833,Alexandre Serfiotis,PSD,RJ,Titular,CSSF,camara
+Suplente.3,204571,Alex Santana,PDT,BA,Suplente,CSSF,camara
+Suplente.4,74057,Alice Portugal,PCdoB,BA,Suplente,CSSF,camara
+Titular.3,204515,André Janones,AVANTE,MG,Titular,CSSF,camara
+Presidente,160553,Antonio Brito,PSD,BA,Titular,CSSF,camara
+Titular.4,160553,Antonio Brito,PSD,BA,Titular,CSSF,camara
+Suplente.5,73433,Arlindo Chinaglia,PT,SP,Suplente,CSSF,camara
+Titular.5,159237,Assis Carvalho,PT,PI,Titular,CSSF,camara
+Titular.6,73701,Benedita da Silva,PT,RJ,Titular,CSSF,camara
+Titular.7,204397,Boca Aberta,PROS,PR,Titular,CSSF,camara
+Titular.8,164360,Carmen Zanotto,PPS,SC,Titular,CSSF,camara
+Titular.9,204380,Celina Leão,PP,DF,Titular,CSSF,camara
+Titular.10,178876,Célio Silveira,PSDB,GO,Titular,CSSF,camara
+Suplente.6,141439,Chico D'Angelo,PDT,RJ,Suplente,CSSF,camara
+Titular.11,204462,Chris Tonietto,PSL,RJ,Titular,CSSF,camara
+Suplente.8,204459,Daniela do Waguinho,MDB,RJ,Suplente,CSSF,camara
+Suplente.7,204409,Daniel Trzeciak,PSDB,RS,Suplente,CSSF,camara
+Titular.12,73891,Darcísio Perondi,MDB,RS,Titular,CSSF,camara
+Suplente.9,204542,Denis Bezerra,PSB,CE,Suplente,CSSF,camara
+Suplente.10,178929,Diego Garcia,PODE,PR,Suplente,CSSF,camara
+Titular.18,81297,Dra. Soraya Manato,PSL,ES,Titular,CSSF,camara
+Titular.13,204518,Dr. Frederico,PATRI,MG,Titular,CSSF,camara
+Titular.14,204481,Dr. Jaziel,PR,CE,Titular,CSSF,camara
+Suplente.11,204439,Dr. Leonardo,SOLIDARI,MT,Suplente,CSSF,camara
+Titular.15,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Titular,CSSF,camara
+Titular.16,204351,Dr. Luiz Ovando,PSL,MS,Titular,CSSF,camara
+Titular.17,204412,Dr. Zacharias Calil,DEM,GO,Titular,CSSF,camara
+Titular.19,178994,Dulce Miranda,MDB,TO,Titular,CSSF,camara
+Titular.20,74655,Eduardo Barbosa,PSDB,MG,Titular,CSSF,camara
+Titular.21,204552,Eduardo Braide,PMN,MA,Titular,CSSF,camara
+Titular.22,204500,Eduardo Costa,PTB,PA,Titular,CSSF,camara
+Titular.23,207309,Enéias Reis,PSL,MG,Titular,CSSF,camara
+Suplente.12,160575,Erika Kokay,PT,DF,Suplente,CSSF,camara
+Titular.24,204407,Fernanda Melchionna ,PSOL,RS,Titular,CSSF,camara
+Titular.25,204354,Flávia Arruda,PR,DF,Titular,CSSF,camara
+Suplente.13,160598,Flávia Morais,PDT,GO,Suplente,CSSF,camara
+Suplente.14,141434,Flaviano Melo,MDB,AC,Suplente,CSSF,camara
+Titular.26,204447,Flordelis,PSD,RJ,Titular,CSSF,camara
+Titular.27,178966,Geovania de Sá,PSDB,SC,Titular,CSSF,camara
+Suplente.15,204575,Gil Cutrim,PDT,MA,Suplente,CSSF,camara
+Suplente.16,178964,Heitor Schuch,PSB,RS,Suplente,CSSF,camara
+Suplente.17,73482,Henrique Fontana,PT,RS,Suplente,CSSF,camara
+Suplente.18,178959,Hiran Gonçalves,PP,RR,Suplente,CSSF,camara
+Suplente.19,67138,Iracema Portella,PP,PI,Suplente,CSSF,camara
+Titular.28,74848,Jandira Feghali,PCdoB,RJ,Titular,CSSF,camara
+Suplente.20,178839,Jéssica Sales,MDB,AC,Suplente,CSSF,camara
+Suplente.21,74366,João Campos,PRB,GO,Suplente,CSSF,camara
+Titular.29,178857,Jorge Solla,PT,BA,Titular,CSSF,camara
+Suplente.22,204497,Júnior Ferrari,PSD,PA,Suplente,CSSF,camara
+Titular.30,178886,Juscelino Filho,DEM,MA,Titular,CSSF,camara
+Suplente.23,160534,Lauriete,PR,ES,Suplente,CSSF,camara
+Titular.31,178832,Leandre,PV,PR,Titular,CSSF,camara
+Suplente.24,204547,Léo Motta,PSL,MG,Suplente,CSSF,camara
+Titular.32,204405,Liziane Bayer,PSB,RS,Titular,CSSF,camara
+Titular.33,178931,Luciano Ducci,PSB,PR,Titular,CSSF,camara
+Suplente.25,204448,Luiz Antônio Corrêa,S.PART.,RJ,Suplente,CSSF,camara
+Suplente.26,178983,Marcio Alvino,PR,SP,Suplente,CSSF,camara
+Titular.34,204522,Marco Bertaiolli,PSD,SP,Titular,CSSF,camara
+Suplente.27,178956,Mariana Carvalho,PSDB,RO,Suplente,CSSF,camara
+Titular.35,204428,Marília Arraes,PT,PE,Titular,CSSF,camara
+Titular.36,204432,Marina Santos ,SOLIDARI,PI,Titular,CSSF,camara
+SegundoVice-Presidente,178843,Marx Beltrão,PSD,AL,Titular,CSSF,camara
+Titular.37,178843,Marx Beltrão,PSD,AL,Titular,CSSF,camara
+Suplente.28,141508,Mauro Nazif,PSB,RO,Suplente,CSSF,camara
+Titular.38,178985,Miguel Lombardi,PR,SP,Titular,CSSF,camara
+Titular.39,154178,Milton Vieira,PRB,SP,Titular,CSSF,camara
+TerceiroVice-Presidente,178895,Misael Varella,PSD,MG,Titular,CSSF,camara
+Titular.40,178895,Misael Varella,PSD,MG,Titular,CSSF,camara
+Titular.41,204498,Olival Marques,DEM,PA,Titular,CSSF,camara
+Titular.42,204422,Ossesio Silva,PRB,PE,Titular,CSSF,camara
+Suplente.29,204441,Otoni de Paula,PSC,RJ,Suplente,CSSF,camara
+Suplente.30,204573,Otto Alencar Filho,PSD,BA,Suplente,CSSF,camara
+Suplente.31,204570,Pastor Gildenemyr,PMN,MA,Suplente,CSSF,camara
+Suplente.32,204553,Pastor Sargento Isidório,AVANTE,BA,Suplente,CSSF,camara
+Suplente.33,204377,Paula Belmonte,PPS,DF,Suplente,CSSF,camara
+Titular.43,204406,Pedro Westphalen,PP,RS,Titular,CSSF,camara
+Titular.44,204524,Pinheirinho,PP,MG,Titular,CSSF,camara
+Suplente.34,204529,Policial Katia Sastre,PR,SP,Suplente,CSSF,camara
+Titular.45,73486,Pompeo de Mattos,PDT,RS,Titular,CSSF,camara
+Suplente.35,160601,Pr. Marco Feliciano,PODE,SP,Suplente,CSSF,camara
+Suplente.37,204565,Professora Dayane Pimentel,PSL,BA,Suplente,CSSF,camara
+Suplente.38,160639,Professora Dorinha Seabra Rezende,DEM,TO,Suplente,CSSF,camara
+Suplente.36,204390,Professor Alcides,PP,GO,Suplente,CSSF,camara
+Suplente.39,178925,Rejane Dias,PT,PI,Suplente,CSSF,camara
+Suplente.40,178989,Renata Abreu,PODE,SP,Suplente,CSSF,camara
+Suplente.41,73788,Ricardo Barros,PP,PR,Suplente,CSSF,camara
+Titular.46,160653,Roberto de Lucena,PODE,SP,Titular,CSSF,camara
+Titular.47,204366,Rodrigo Coelho,PSB,SC,Titular,CSSF,camara
+Titular.48,178945,Rosangela Gomes,PRB,RJ,Titular,CSSF,camara
+Suplente.42,204357,Rose Modesto,PSDB,MS,Suplente,CSSF,camara
+Suplente.43,90842,Santini,PTB,RS,Suplente,CSSF,camara
+Titular.49,178874,Sergio Vidigal,PDT,ES,Titular,CSSF,camara
+Titular.50,204360,Silvia Cristina,PDT,RO,Titular,CSSF,camara
+Suplente.44,204464,Talíria Petrone,PSOL,RJ,Suplente,CSSF,camara
+Titular.51,204466,Tereza Nelma,PSDB,AL,Titular,CSSF,camara
+Suplente.45,204519,Tiago Mitraud,NOVO,MG,Suplente,CSSF,camara
+Suplente.46,204517,Zé Vitor,PMN,MG,Suplente,CSSF,camara
+Suplente,121948,Adriano do Baldy,PP,GO,Suplente,CTASP,camara
+Suplente.1,74057,Alice Portugal,PCdoB,BA,Suplente,CTASP,camara
+Suplente.2,133439,André Figueiredo,PDT,CE,Suplente,CTASP,camara
+Suplente.3,74459,Átila Lira,PSB,PI,Suplente,CTASP,camara
+Suplente.4,160665,Augusto Coutinho,SOLIDARI,PE,Suplente,CTASP,camara
+Titular,160538,Bohn Gass,PT,RS,Titular,CTASP,camara
+Suplente.5,178829,Capitão Augusto,PR,SP,Suplente,CTASP,camara
+Suplente.6,204426,Carlos Veras,PT,PE,Suplente,CTASP,camara
+Titular.1,74060,Daniel Almeida,PCdoB,BA,Titular,CTASP,camara
+Suplente.7,204518,Dr. Frederico,PATRI,MG,Suplente,CTASP,camara
+Titular.2,160575,Erika Kokay,PT,DF,Titular,CTASP,camara
+Suplente.8,178871,Evair Vieira de Melo,PP,ES,Suplente,CTASP,camara
+Titular.3,178969,Fábio Mitidieri,PSD,SE,Titular,CTASP,camara
+PrimeiroVice-Presidente,160598,Flávia Morais,PDT,GO,Titular,CTASP,camara
+Titular.4,160598,Flávia Morais,PDT,GO,Titular,CTASP,camara
+Titular.5,204531,Guilherme Derrite,PP,SP,Titular,CTASP,camara
+Suplente.9,204548,Heitor Freire,PSL,CE,Suplente,CTASP,camara
+Suplente.10,178964,Heitor Schuch,PSB,RS,Suplente,CTASP,camara
+Suplente.11,204436,Isnaldo Bulhões Jr.,MDB,AL,Suplente,CTASP,camara
+Titular.6,204536,Kim Kataguiri,DEM,SP,Titular,CTASP,camara
+Suplente.12,74156,Leonardo Monteiro,PT,MG,Suplente,CTASP,camara
+Suplente.13,204523,Lucas Gonzalez,NOVO,MG,Suplente,CTASP,camara
+Titular.7,178879,Lucas Vergilio,SOLIDARI,GO,Titular,CTASP,camara
+Titular.8,204485,Luiz Carlos Motta,PR,SP,Titular,CTASP,camara
+SegundoVice-Presidente,75431,Maurício Dziedricki,PTB,RS,Titular,CTASP,camara
+Titular.9,75431,Maurício Dziedricki,PTB,RS,Titular,CTASP,camara
+Titular.10,141508,Mauro Nazif,PSB,RO,Titular,CTASP,camara
+Suplente.14,74571,Nelson Pellegrino,PT,BA,Suplente,CTASP,camara
+Titular.11,178987,Orlando Silva,PCdoB,SP,Titular,CTASP,camara
+Suplente.15,178860,Paulo Azi,DEM,BA,Suplente,CTASP,camara
+Titular.12,133968,Paulo Ramos,PDT,RJ,Titular,CTASP,camara
+Suplente.16,122974,Pedro Lucas Fernandes ,PTB,MA,Suplente,CTASP,camara
+Presidente,160641,Professora Marcivania,PCdoB,AP,Titular,CTASP,camara
+Titular.13,160641,Professora Marcivania,PCdoB,AP,Titular,CTASP,camara
+Titular.14,204480,Rogério Correia ,PT,MG,Titular,CTASP,camara
+Suplente.17,178921,Sebastião Oliveira,PR,PE,Suplente,CTASP,camara
+Titular.15,204425,Silvio Costa Filho,PRB,PE,Titular,CTASP,camara
+Suplente.18,204519,Tiago Mitraud,NOVO,MG,Suplente,CTASP,camara
+Titular.16,157130,Túlio Gadêlha ,PDT,PE,Titular,CTASP,camara
+Titular.17,74283,Vicentinho,PT,SP,Titular,CTASP,camara
+Titular.18,74439,Wolney Queiroz,PDT,PE,Titular,CTASP,camara
+Titular,204521,Abou Anni,PSL,SP,Titular,CVT,camara
+Suplente,136811,Afonso Hamm,PP,RS,Suplente,CVT,camara
+Titular.1,204413,Alcides Rodrigues ,PRP,GO,Titular,CVT,camara
+Titular.2,160545,Alexandre Leite,DEM,SP,Titular,CVT,camara
+Suplente.1,178833,Alexandre Serfiotis,PSD,RJ,Suplente,CVT,camara
+Suplente.2,178927,Aliel Machado,PSB,PR,Suplente,CVT,camara
+Suplente.3,178937,Altineu Côrtes,PR,RJ,Suplente,CVT,camara
+Suplente.4,204358,Beto Pereira,PSDB,MS,Suplente,CVT,camara
+Suplente.5,74052,Bosco Costa,PR,SE,Suplente,CVT,camara
+Titular.3,204352,Camilo Capiberibe,PSB,AP,Titular,CVT,camara
+Suplente.6,204507,Carla Zambelli,PSL,SP,Suplente,CVT,camara
+Suplente.7,204504,Cezinha de Madureira ,PSD,SP,Suplente,CVT,camara
+Titular.4,178928,Christiane de Souza Yared,PR,PR,Titular,CVT,camara
+Suplente.8,178939,Clarissa Garotinho,PROS,RJ,Suplente,CVT,camara
+Suplente.9,204376,Coronel Armando,PSL,SC,Suplente,CVT,camara
+Suplente.10,204378,Coronel Chrisóstomo,PSL,RO,Suplente,CVT,camara
+Suplente.11,204355,Da Vitoria,PPS,ES,Suplente,CVT,camara
+Titular.5,160588,Diego Andrade,PSD,MG,Titular,CVT,camara
+Suplente.12,160758,Domingos Sávio,PSDB,MG,Suplente,CVT,camara
+Suplente.13,141422,Efraim Filho,DEM,PB,Suplente,CVT,camara
+Presidente,160532,Eli Corrêa Filho,DEM,SP,Titular,CVT,camara
+Titular.6,160532,Eli Corrêa Filho,DEM,SP,Titular,CVT,camara
+Suplente.14,178871,Evair Vieira de Melo,PP,ES,Suplente,CVT,camara
+Titular.7,204368,Fabio Schiochet,PSL,SC,Titular,CVT,camara
+Suplente.15,72442,Felipe Carreras,PSB,PE,Suplente,CVT,camara
+Titular.8,115746,Gelson Azevedo,PR,RJ,Titular,CVT,camara
+Suplente.16,204527,Geninho Zuliani,DEM,SP,Suplente,CVT,camara
+Titular.9,74419,Gonzaga Patriota,PSB,PE,Titular,CVT,camara
+Titular.10,204456,Gutemberg Reis,MDB,RJ,Titular,CVT,camara
+Suplente.17,204373,Hélio Costa,PRB,SC,Suplente,CVT,camara
+Suplente.18,204539,Hercílio Coelho Diniz,MDB,MG,Suplente,CVT,camara
+Titular.11,141450,Hugo Leal,PSD,RJ,Titular,CVT,camara
+Suplente.19,160674,Hugo Motta,PRB,PB,Suplente,CVT,camara
+Titular.12,108338,Jaqueline Cassol,PP,RO,Titular,CVT,camara
+Suplente.20,141464,José Airton Félix Cirilo,PT,CE,Suplente,CVT,camara
+Suplente.21,204391,José Nelto,PODE,GO,Suplente,CVT,camara
+Suplente.22,204474,Juarez Costa,MDB,MT,Suplente,CVT,camara
+Suplente.23,204457,Juninho do Pneu,DEM,RJ,Suplente,CVT,camara
+Titular.13,204502,Júnior Bozzella,PSL,SP,Titular,CVT,camara
+Suplente.24,204550,Júnior Mano,PR,CE,Suplente,CVT,camara
+Suplente.25,178886,Juscelino Filho,DEM,MA,Suplente,CVT,camara
+Titular.14,204375,Leda Sadala,AVANTE,AP,Titular,CVT,camara
+Titular.15,74299,Leônidas Cristino,PDT,CE,Titular,CVT,camara
+Titular.16,92102,Leur Lomanto Júnior,DEM,BA,Titular,CVT,camara
+Titular.17,204523,Lucas Gonzalez,NOVO,MG,Titular,CVT,camara
+Titular.18,204448,Luiz Antônio Corrêa,S.PART.,RJ,Titular,CVT,camara
+Titular.19,204469,Manuel Marcos,PRB,AC,Titular,CVT,camara
+Titular.20,178983,Marcio Alvino,PR,SP,Titular,CVT,camara
+Suplente.26,204522,Marco Bertaiolli,PSD,SP,Suplente,CVT,camara
+Titular.21,74749,Mauro Lopes,MDB,MG,Titular,CVT,camara
+Suplente.27,178985,Miguel Lombardi,PR,SP,Suplente,CVT,camara
+Suplente.28,204449,Nelson Barbudo,PSL,MT,Suplente,CVT,camara
+Suplente.29,160642,Pastor Eurico,PATRI,PE,Suplente,CVT,camara
+Suplente.30,178860,Paulo Azi,DEM,BA,Suplente,CVT,camara
+Titular.22,204492,Paulo Guedes,PT,MG,Titular,CVT,camara
+Suplente.31,204446,Professor Joziel,PSL,RJ,Suplente,CVT,camara
+Suplente.32,204366,Rodrigo Coelho,PSB,SC,Suplente,CVT,camara
+Titular.23,178861,Ronaldo Carletto,PP,BA,Titular,CVT,camara
+Titular.24,204525,Rosana Valle,PSB,SP,Titular,CVT,camara
+Suplente.33,178874,Sergio Vidigal,PDT,ES,Suplente,CVT,camara
+Titular.25,204437,Severino Pessoa,PRB,AL,Titular,CVT,camara
+Suplente.34,197438,Tito,AVANTE,BA,Suplente,CVT,camara
+Titular.26,204385,Valdevan Noventa,PSC,SE,Titular,CVT,camara
+Titular.27,141553,Vanderlei Macris,PSDB,SP,Titular,CVT,camara
+Suplente.35,204396,Vermelho,PSD,PR,Suplente,CVT,camara
+Suplente.36,137070,Vicentinho Júnior,PR,TO,Suplente,CVT,camara
+Titular.28,160591,Vinicius Gurgel,PR,AP,Titular,CVT,camara
+Titular.29,204463,Wladimir Garotinho,PSD,RJ,Titular,CVT,camara
+Suplente.37,204559,Zé Neto,PT,BA,Suplente,CVT,camara
+Titular,204495,Airton Faleiro,PT,PA,Titular,CINDRA,camara
+Suplente,204549,Aj Albuquerque,PP,CE,Suplente,CINDRA,camara
+Titular.1,178836,Alan Rick,DEM,AC,Titular,CINDRA,camara
+Suplente.1,204353,Aline Gurgel,PRB,AP,Suplente,CINDRA,camara
+Presidente,74090,Átila Lins,PP,AM,Titular,CINDRA,camara
+Titular.2,74090,Átila Lins,PP,AM,Titular,CINDRA,camara
+Suplente.2,204551,Bosco Saraiva,SOLIDARI,AM,Suplente,CINDRA,camara
+Titular.3,204572,Capitão Alberto Neto,PRB,AM,Titular,CINDRA,camara
+Suplente.3,204499,Cássio Andrade,PSB,PA,Suplente,CINDRA,camara
+Suplente.4,204370,Célio Moura,PT,TO,Suplente,CINDRA,camara
+Titular.4,205476,Charles Fernandes,PSD,BA,Titular,CINDRA,camara
+Titular.5,204378,Coronel Chrisóstomo,PSL,RO,Titular,CINDRA,camara
+Suplente.5,135054,Cristiano Vale,PR,PA,Suplente,CINDRA,camara
+Titular.6,160528,Danilo Cabral,PSB,PE,Titular,CINDRA,camara
+Titular.7,204569,Delegado Pablo,PSL,AM,Titular,CINDRA,camara
+Titular.8,204434,Dra. Vanda Milani,SOLIDARI,AC,Titular,CINDRA,camara
+Titular.9,134812,Edmilson Rodrigues,PSOL,PA,Titular,CINDRA,camara
+Titular.10,204500,Eduardo Costa,PTB,PA,Titular,CINDRA,camara
+Titular.11,74075,Elcione Barbalho,MDB,PA,Titular,CINDRA,camara
+Suplente.6,92699,Fernando Monteiro,PP,PE,Suplente,CINDRA,camara
+Suplente.7,204393,Frei Anastacio Ribeiro,PT,PB,Suplente,CINDRA,camara
+Suplente.8,204465,Haroldo Cathedral,PSD,RR,Suplente,CINDRA,camara
+Titular.12,178839,Jéssica Sales,MDB,AC,Titular,CINDRA,camara
+Titular.13,204435,Jesus Sérgio,PDT,AC,Titular,CINDRA,camara
+Suplente.9,178970,João Daniel,PT,SE,Suplente,CINDRA,camara
+Titular.14,204555,José Ricardo,PT,AM,Titular,CINDRA,camara
+Suplente.10,204497,Júnior Ferrari,PSD,PA,Suplente,CINDRA,camara
+Titular.15,204556,Marcelo Ramos ,PR,AM,Titular,CINDRA,camara
+Suplente.11,204475,Otaci Nascimento,SOLIDARI,RR,Suplente,CINDRA,camara
+Titular.16,204492,Paulo Guedes,PT,MG,Titular,CINDRA,camara
+TerceiroVice-Presidente,204557,Sidney Leite,PSD,AM,Titular,CINDRA,camara
+Titular.17,204557,Sidney Leite,PSD,AM,Titular,CINDRA,camara
+Titular.18,74356,Silas Câmara,PRB,AM,Titular,CINDRA,camara
+Suplente.12,204360,Silvia Cristina,PDT,RO,Suplente,CINDRA,camara
+Suplente.13,178863,Uldurico Junior,PPL,BA,Suplente,CINDRA,camara
+Suplente.14,74044,Wilson Santiago,PTB,PB,Suplente,CINDRA,camara
+Titular,74646,Aécio Neves,PSDB,MG,Titular,CREDN,camara
+Titular.1,178836,Alan Rick,DEM,AC,Titular,CREDN,camara
+Suplente,204503,Alexandre Padilha,PT,SP,Suplente,CREDN,camara
+Titular.2,204423,André Ferreira,PSC,PE,Titular,CREDN,camara
+Titular.3,73433,Arlindo Chinaglia,PT,SP,Titular,CREDN,camara
+Titular.4,204414,Aroldo Martins,PRB,PR,Titular,CREDN,camara
+Suplente.1,74090,Átila Lins,PP,AM,Suplente,CREDN,camara
+Titular.5,160665,Augusto Coutinho,SOLIDARI,PE,Titular,CREDN,camara
+Suplente.2,73701,Benedita da Silva,PT,RJ,Suplente,CREDN,camara
+Titular.6,160589,Bruna Furlan,PSDB,SP,Titular,CREDN,camara
+Suplente.3,204352,Camilo Capiberibe,PSB,AP,Suplente,CREDN,camara
+Titular.7,141398,Carlos Zarattini,PT,SP,Titular,CREDN,camara
+Titular.8,73441,Celso Russomanno,PRB,SP,Titular,CREDN,camara
+Suplente.4,204504,Cezinha de Madureira ,PSD,SP,Suplente,CREDN,camara
+Titular.9,74537,Claudio Cajado,PP,BA,Titular,CREDN,camara
+Suplente.5,204376,Coronel Armando,PSL,SC,Suplente,CREDN,camara
+Suplente.6,204378,Coronel Chrisóstomo,PSL,RO,Suplente,CREDN,camara
+Titular.10,205548,David Miranda,PSOL,RJ,Titular,CREDN,camara
+Suplente.7,160599,Dimas Fabiano,PP,MG,Suplente,CREDN,camara
+Suplente.8,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Suplente,CREDN,camara
+Suplente.9,141417,Edio Lopes,PR,RR,Suplente,CREDN,camara
+Titular.11,74655,Eduardo Barbosa,PSDB,MG,Titular,CREDN,camara
+Presidente,92346,Eduardo Bolsonaro,PSL,SP,Titular,CREDN,camara
+Titular.12,92346,Eduardo Bolsonaro,PSL,SP,Titular,CREDN,camara
+Suplente.10,178977,Eduardo Cury,PSDB,SP,Suplente,CREDN,camara
+Titular.13,141421,Eduardo da Fonte,PP,PE,Titular,CREDN,camara
+Suplente.11,204482,Euclydes Pettersen,PSC,MG,Suplente,CREDN,camara
+Suplente.12,68720,Fábio Henrique,PDT,SE,Suplente,CREDN,camara
+Titular.14,141427,Fábio Ramalho,MDB,MG,Titular,CREDN,camara
+Suplente.13,141431,Fernando Coelho Filho,DEM,PE,Suplente,CREDN,camara
+Suplente.14,191923,Flavio Nogueira,PDT,PI,Suplente,CREDN,camara
+Suplente.15,204473,General Girão,PSL,RN,Suplente,CREDN,camara
+Suplente.16,204484,General Peternelli,PSL,SP,Suplente,CREDN,camara
+Titular.15,74383,Giacobo,PR,PR,Titular,CREDN,camara
+Suplente.17,178996,Giovani Feltes,MDB,RS,Suplente,CREDN,camara
+Suplente.18,152605,Glauber Braga,PSOL,RJ,Suplente,CREDN,camara
+Titular.16,160667,Guilherme Mussi,PP,SP,Titular,CREDN,camara
+Titular.17,204465,Haroldo Cathedral,PSD,RR,Titular,CREDN,camara
+Titular.18,204548,Heitor Freire,PSL,CE,Titular,CREDN,camara
+Titular.19,204444,Helio Lopes,PSL,RJ,Titular,CREDN,camara
+Titular.20,73482,Henrique Fontana,PT,RS,Titular,CREDN,camara
+Titular.21,178884,Hildo Rocha,MDB,MA,Titular,CREDN,camara
+Suplente.19,141450,Hugo Leal,PSD,RJ,Suplente,CREDN,camara
+Titular.22,74273,Jefferson Campos,PSB,SP,Titular,CREDN,camara
+Titular.23,74554,José Rocha,PR,BA,Titular,CREDN,camara
+Titular.24,204359,Léo Moraes,PODE,RO,Titular,CREDN,camara
+Titular.25,92102,Leur Lomanto Júnior,DEM,BA,Titular,CREDN,camara
+Suplente.20,204382,Loester Trutis,PSL,MS,Suplente,CREDN,camara
+Suplente.21,178931,Luciano Ducci,PSB,PR,Suplente,CREDN,camara
+PrimeiroVice-Presidente,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Titular,CREDN,camara
+Titular.26,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Titular,CREDN,camara
+Titular.27,156190,Marcel Van Hattem,NOVO,RS,Titular,CREDN,camara
+Titular.28,150418,Márcio Marinho,PRB,BA,Titular,CREDN,camara
+Titular.29,74352,Nilson Pinto,PSDB,PA,Titular,CREDN,camara
+Titular.30,74159,Odair Cunha,PT,MG,Titular,CREDN,camara
+Titular.31,160642,Pastor Eurico,PATRI,PE,Titular,CREDN,camara
+Titular.32,171617,Paulão,PT,AL,Titular,CREDN,camara
+Suplente.22,141516,Paulo Abi-Ackel,PSDB,MG,Suplente,CREDN,camara
+Titular.33,133968,Paulo Ramos,PDT,RJ,Titular,CREDN,camara
+Suplente.23,90201,Pedro Augusto Bezerra,PTB,CE,Suplente,CREDN,camara
+Titular.34,122974,Pedro Lucas Fernandes ,PTB,MA,Titular,CREDN,camara
+Suplente.24,204395,Pedro Lupion,DEM,PR,Suplente,CREDN,camara
+Titular.35,73943,Perpétua Almeida,PCdoB,AC,Titular,CREDN,camara
+Titular.36,160601,Pr. Marco Feliciano,PODE,SP,Titular,CREDN,camara
+Suplente.25,160641,Professora Marcivania,PCdoB,AP,Suplente,CREDN,camara
+Suplente.26,141523,Raul Henry,MDB,PE,Suplente,CREDN,camara
+Suplente.27,160655,Ricardo Izar,PP,SP,Suplente,CREDN,camara
+Suplente.28,178920,Ricardo Teobaldo,PODE,PE,Suplente,CREDN,camara
+Suplente.29,73466,Rubens Bueno,PPS,PR,Suplente,CREDN,camara
+Suplente.30,73604,Rui Falcão,PT,SP,Suplente,CREDN,camara
+Suplente.31,178961,Shéridan,PSDB,RR,Suplente,CREDN,camara
+Titular.37,178922,Tadeu Alencar,PSB,PE,Titular,CREDN,camara
+Suplente.32,141553,Vanderlei Macris,PSDB,SP,Suplente,CREDN,camara
+Suplente.33,141555,Vinicius Carvalho,PRB,SP,Suplente,CREDN,camara
+Suplente.35,160592,Zeca Dirceu,PT,PR,Suplente,CREDN,camara
+Suplente.34,178889,Zé Carlos,PT,MA,Suplente,CREDN,camara
+Suplente,204501,Alencar Santana Braga,PT,SP,Suplente,CLP,camara
+Titular,160553,Antonio Brito,PSD,BA,Titular,CLP,camara
+Titular.1,93083,Cacá Leão,PP,BA,Titular,CLP,camara
+Titular.2,160575,Erika Kokay,PT,DF,Titular,CLP,camara
+Titular.3,152605,Glauber Braga,PSOL,RJ,Titular,CLP,camara
+Titular.4,74156,Leonardo Monteiro,PT,MG,Titular,CLP,camara
+Titular.5,74585,Lincoln Portela,PR,MG,Titular,CLP,camara
+Titular.6,74784,Luiza Erundina,PSOL,SP,Titular,CLP,camara
+Suplente.1,178866,Luizianne Lins,PT,CE,Suplente,CLP,camara
+Suplente.2,74398,Maria do Rosário,PT,RS,Suplente,CLP,camara
+Suplente.3,74160,Patrus Ananias,PT,MG,Suplente,CLP,camara
+Titular.7,178860,Paulo Azi,DEM,BA,Titular,CLP,camara
+Suplente.4,160604,Pedro Uczai,PT,SC,Suplente,CLP,camara
+Titular.8,204567,Raimundo Costa,PR,BA,Titular,CLP,camara
+Titular.9,74161,Reginaldo Lopes,PT,MG,Titular,CLP,camara
+Suplente.5,141552,Valtenir Pereira,MDB,MT,Suplente,CLP,camara
+Suplente,204560,Adolfo Viana,PSDB,BA,Suplente,CSPCCO,camara
+Suplente.1,204495,Airton Faleiro,PT,PA,Suplente,CSPCCO,camara
+Titular,160545,Alexandre Leite,DEM,SP,Titular,CSPCCO,camara
+Titular.1,178881,Aluisio Mendes,PODE,MA,Titular,CSPCCO,camara
+Suplente.2,204509,Áurea Carolina,PSOL,MG,Suplente,CSPCCO,camara
+Titular.2,204520,Cabo Junio Amaral,PSL,MG,Titular,CSPCCO,camara
+Titular.3,204572,Capitão Alberto Neto,PRB,AM,Titular,CSPCCO,camara
+Presidente,178829,Capitão Augusto,PR,SP,Titular,CSPCCO,camara
+Titular.4,178829,Capitão Augusto,PR,SP,Titular,CSPCCO,camara
+TerceiroVice-Presidente,178924,Capitão Fábio Abreu,PR,PI,Titular,CSPCCO,camara
+Titular.5,178924,Capitão Fábio Abreu,PR,PI,Titular,CSPCCO,camara
+Titular.6,204487,Capitão Wagner,PROS,CE,Titular,CSPCCO,camara
+Suplente.3,178876,Célio Silveira,PSDB,GO,Suplente,CSPCCO,camara
+Suplente.4,204514,Coronel Tadeu,PSL,SP,Suplente,CSPCCO,camara
+Titular.8,204454,Daniel Silveira,PSL,RJ,Titular,CSPCCO,camara
+Titular.7,204355,Da Vitoria,PPS,ES,Titular,CSPCCO,camara
+Titular.9,204451,Delegado Antônio Furtado,PSL,RJ,Titular,CSPCCO,camara
+Titular.10,178908,Delegado Éder Mauro,PSD,PA,Titular,CSPCCO,camara
+Suplente.5,204512,Delegado Marcelo Freitas,PSL,MG,Suplente,CSPCCO,camara
+Titular.11,204569,Delegado Pablo,PSL,AM,Titular,CSPCCO,camara
+Suplente.6,204518,Dr. Frederico,PATRI,MG,Suplente,CSPCCO,camara
+Suplente.7,204481,Dr. Jaziel,PR,CE,Suplente,CSPCCO,camara
+Titular.12,204439,Dr. Leonardo,SOLIDARI,MT,Titular,CSPCCO,camara
+Titular.13,141421,Eduardo da Fonte,PP,PE,Titular,CSPCCO,camara
+Suplente.8,141422,Efraim Filho,DEM,PB,Suplente,CSPCCO,camara
+Titular.14,68720,Fábio Henrique,PDT,SE,Titular,CSPCCO,camara
+Suplente.9,160587,Fábio Trad,PSD,MS,Suplente,CSPCCO,camara
+PrimeiroVice-Presidente,204427,Fernando Rodolfo,PR,PE,Titular,CSPCCO,camara
+Titular.15,204427,Fernando Rodolfo,PR,PE,Titular,CSPCCO,camara
+Titular.16,204473,General Girão,PSL,RN,Titular,CSPCCO,camara
+Titular.17,74419,Gonzaga Patriota,PSB,PE,Titular,CSPCCO,camara
+SegundoVice-Presidente,204531,Guilherme Derrite,PP,SP,Titular,CSPCCO,camara
+Titular.18,204531,Guilherme Derrite,PP,SP,Titular,CSPCCO,camara
+Titular.19,160667,Guilherme Mussi,PP,SP,Titular,CSPCCO,camara
+Suplente.10,204442,Gurgel,PSL,RJ,Suplente,CSPCCO,camara
+Titular.20,204373,Hélio Costa,PRB,SC,Titular,CSPCCO,camara
+Suplente.11,141450,Hugo Leal,PSD,RJ,Suplente,CSPCCO,camara
+Suplente.12,204508,Igor Timo,PODE,MG,Suplente,CSPCCO,camara
+Suplente.13,74366,João Campos,PRB,GO,Suplente,CSPCCO,camara
+Titular.21,204420,Julian Lemos ,PSL,PB,Titular,CSPCCO,camara
+Titular.22,74585,Lincoln Portela,PR,MG,Titular,CSPCCO,camara
+Suplente.14,204543,Luiz Flávio Gomes,PSB,SP,Suplente,CSPCCO,camara
+Titular.23,204458,Major Fabiana,PSL,RJ,Titular,CSPCCO,camara
+Titular.24,204471,Mara Rocha,PSDB,AC,Titular,CSPCCO,camara
+Titular.25,76874,Marcelo Freixo,PSOL,RJ,Titular,CSPCCO,camara
+Suplente.15,133810,Marcelo Moraes,PTB,RS,Suplente,CSPCCO,camara
+Titular.26,204431,Marcos Aurélio Sampaio,MDB,PI,Titular,CSPCCO,camara
+Suplente.16,204430,Margarete Coelho,PP,PI,Suplente,CSPCCO,camara
+Titular.27,74571,Nelson Pellegrino,PT,BA,Titular,CSPCCO,camara
+Suplente.17,204479,Nicoletti,PSL,RR,Suplente,CSPCCO,camara
+Suplente.18,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CSPCCO,camara
+Titular.28,160642,Pastor Eurico,PATRI,PE,Titular,CSPCCO,camara
+Suplente.19,178860,Paulo Azi,DEM,BA,Suplente,CSPCCO,camara
+Suplente.20,193726,Paulo Eduardo Martins,PSC,PR,Suplente,CSPCCO,camara
+Suplente.21,160558,Paulo Freire Costa,PR,SP,Suplente,CSPCCO,camara
+Titular.29,204461,Paulo Ganime,NOVO,RJ,Titular,CSPCCO,camara
+Suplente.22,133968,Paulo Ramos,PDT,RJ,Suplente,CSPCCO,camara
+Titular.30,141488,Paulo Teixeira,PT,SP,Titular,CSPCCO,camara
+Titular.31,73943,Perpétua Almeida,PCdoB,AC,Titular,CSPCCO,camara
+Titular.32,204529,Policial Katia Sastre,PR,SP,Titular,CSPCCO,camara
+Suplente.23,74161,Reginaldo Lopes,PT,MG,Suplente,CSPCCO,camara
+Suplente.24,160651,Rogério Peninha Mendonça,MDB,SC,Suplente,CSPCCO,camara
+Titular.33,73604,Rui Falcão,PT,SP,Titular,CSPCCO,camara
+Titular.34,90842,Santini,PTB,RS,Titular,CSPCCO,camara
+Titular.35,204387,Sargento Fahur,PSD,PR,Titular,CSPCCO,camara
+Titular.36,177282,Subtenente Gonzaga,PDT,MG,Titular,CSPCCO,camara
+Suplente.25,143084,Tiago Dimas,SOLIDARI,TO,Suplente,CSPCCO,camara
+Titular.37,204416,Ubiratan Sanderson,PSL,RS,Titular,CSPCCO,camara
+Suplente.26,195866,Vaidon Oliveira,PROS,CE,Suplente,CSPCCO,camara
+Suplente.27,141555,Vinicius Carvalho,PRB,SP,Suplente,CSPCCO,camara
+Suplente.28,204532,Vinicius Poit,NOVO,SP,Suplente,CSPCCO,camara
+Suplente.29,160518,Weliton Prado,PROS,MG,Suplente,CSPCCO,camara
+Suplente.30,204559,Zé Neto,PT,BA,Suplente,CSPCCO,camara
+Suplente,204549,Aj Albuquerque,PP,CE,Suplente,CTUR,camara
+Titular,204356,Amaro Neto,PRB,ES,Titular,CTUR,camara
+Titular.1,178831,André Abdon,PP,AP,Titular,CTUR,camara
+Titular.2,204388,Bibo Nunes,PSL,RS,Titular,CTUR,camara
+Suplente.1,178928,Christiane de Souza Yared,PR,PR,Suplente,CTUR,camara
+Suplente.2,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Suplente,CTUR,camara
+Titular.3,204541,Eduardo Bismarck,PDT,CE,Titular,CTUR,camara
+Suplente.3,178871,Evair Vieira de Melo,PP,ES,Suplente,CTUR,camara
+Titular.4,68720,Fábio Henrique,PDT,SE,Titular,CTUR,camara
+Suplente.4,171623,Fabio Reis,MDB,SE,Suplente,CTUR,camara
+Titular.5,72442,Felipe Carreras,PSB,PE,Titular,CTUR,camara
+Suplente.5,191923,Flavio Nogueira,PDT,PI,Suplente,CTUR,camara
+Suplente.6,204444,Helio Lopes,PSL,RJ,Suplente,CTUR,camara
+SegundoVice-Presidente,178981,Herculano Passos,MDB,SP,Titular,CTUR,camara
+Titular.6,178981,Herculano Passos,MDB,SP,Titular,CTUR,camara
+Suplente.7,204564,Igor Kannário,PHS,BA,Suplente,CTUR,camara
+TerceiroVice-Presidente,112437,João Marcelo Souza,MDB,MA,Titular,CTUR,camara
+Titular.7,112437,João Marcelo Souza,MDB,MA,Titular,CTUR,camara
+Titular.8,141464,José Airton Félix Cirilo,PT,CE,Titular,CTUR,camara
+Titular.9,160619,José Nunes,PSD,BA,Titular,CTUR,camara
+Titular.10,151208,Laercio Oliveira,PP,SE,Titular,CTUR,camara
+PrimeiroVice-Presidente,92102,Leur Lomanto Júnior,DEM,BA,Titular,CTUR,camara
+Titular.11,92102,Leur Lomanto Júnior,DEM,BA,Titular,CTUR,camara
+Suplente.8,139285,Lídice da Mata,PSB,BA,Suplente,CTUR,camara
+Suplente.9,196358,Lourival Gomes,PSL,RJ,Suplente,CTUR,camara
+Titular.12,166402,Magda Mofatto,PR,GO,Titular,CTUR,camara
+Presidente,178896,Newton Cardoso Jr,MDB,MG,Titular,CTUR,camara
+Titular.13,178896,Newton Cardoso Jr,MDB,MG,Titular,CTUR,camara
+Suplente.10,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CTUR,camara
+Suplente.11,178860,Paulo Azi,DEM,BA,Suplente,CTUR,camara
+Titular.14,204492,Paulo Guedes,PT,MG,Titular,CTUR,camara
+Titular.15,90201,Pedro Augusto Bezerra,PTB,CE,Titular,CTUR,camara
+Suplente.12,204565,Professora Dayane Pimentel,PSL,BA,Suplente,CTUR,camara
+Titular.16,204567,Raimundo Costa,PR,BA,Titular,CTUR,camara
+Suplente.13,204362,Ricardo Guidi,PSD,SC,Suplente,CTUR,camara
+Suplente.14,204489,Robério Monteiro,PDT,CE,Suplente,CTUR,camara
+Suplente.15,92776,Stefano Aguiar,PSD,MG,Suplente,CTUR,camara
+Titular.17,195866,Vaidon Oliveira,PROS,CE,Titular,CTUR,camara
+Suplente.16,74376,Vander Loubet,PT,MS,Suplente,CTUR,camara
+Titular.18,204396,Vermelho,PSD,PR,Titular,CTUR,camara
+Suplente.17,178952,Walter Alves,MDB,RN,Suplente,CTUR,camara
+Suplente,204495,Airton Faleiro,PT,PA,Suplente,CMADS,camara
+Suplente.1,204400,Aline Sleutjes,PSL,PR,Suplente,CMADS,camara
+Suplente.2,204358,Beto Pereira,PSDB,MS,Suplente,CMADS,camara
+Titular,207176,Bia Cavassa,PSDB,MS,Titular,CMADS,camara
+Titular.1,204352,Camilo Capiberibe,PSB,AP,Titular,CMADS,camara
+Titular.2,178962,Carlos Gomes,PRB,RS,Titular,CMADS,camara
+Titular.3,204488,Célio Studart,PV,CE,Titular,CMADS,camara
+Suplente.3,141405,Celso Maldaner,MDB,SC,Suplente,CMADS,camara
+Suplente.4,141439,Chico D'Angelo,PDT,RJ,Suplente,CMADS,camara
+Titular.4,178916,Daniel Coelho,PPS,PE,Titular,CMADS,camara
+Titular.5,204434,Dra. Vanda Milani,SOLIDARI,AC,Titular,CMADS,camara
+Suplente.5,198783,Emanuel Pinheiro Neto,PTB,MT,Suplente,CMADS,camara
+Titular.6,204368,Fabio Schiochet,PSL,SC,Titular,CMADS,camara
+Titular.7,204494,Fred Costa,PATRI,MG,Titular,CMADS,camara
+Suplente.6,204393,Frei Anastacio Ribeiro,PT,PB,Suplente,CMADS,camara
+Suplente.7,160673,Giovani Cherini,PR,RS,Suplente,CMADS,camara
+Suplente.8,204386,Jose Mario Schreiner,DEM,GO,Suplente,CMADS,camara
+Titular.8,74299,Leônidas Cristino,PDT,CE,Titular,CMADS,camara
+Suplente.9,204415,Nereu Crispim,PSL,RS,Suplente,CMADS,camara
+Suplente.10,146307,Neri Geller,PP,MT,Suplente,CMADS,camara
+Titular.9,178986,Nilto Tatto,PT,SP,Titular,CMADS,camara
+Titular.10,204538,Paulo Bengtson,PTB,PA,Titular,CMADS,camara
+Suplente.11,204524,Pinheirinho,PP,MG,Suplente,CMADS,camara
+Titular.11,204446,Professor Joziel,PSL,RJ,Titular,CMADS,camara
+Suplente.12,205865,Reinhold Stephanes Junior,PSD,PR,Suplente,CMADS,camara
+Titular.12,160655,Ricardo Izar,PP,SP,Titular,CMADS,camara
+Presidente,204530,Rodrigo Agostinho,PSB,SP,Titular,CMADS,camara
+Titular.13,204530,Rodrigo Agostinho,PSB,SP,Titular,CMADS,camara
+Titular.14,92776,Stefano Aguiar,PSD,MG,Titular,CMADS,camara
+Titular.15,204505,Vavá Martins,PRB,PA,Titular,CMADS,camara
+Suplente.13,160632,Zé Silva,SOLIDARI,MG,Suplente,CMADS,camara
+Titular.16,204517,Zé Vitor,PMN,MG,Titular,CMADS,camara
+Titular,204495,Airton Faleiro,PT,PA,Titular,CCULT,camara
+Titular.1,204544,Alexandre Frota ,PSL,SP,Titular,CCULT,camara
+Suplente,74057,Alice Portugal,PCdoB,BA,Suplente,CCULT,camara
+SegundoVice-Presidente,204509,Áurea Carolina,PSOL,MG,Titular,CCULT,camara
+Titular.2,204509,Áurea Carolina,PSOL,MG,Titular,CCULT,camara
+Presidente,73701,Benedita da Silva,PT,RJ,Titular,CCULT,camara
+Titular.3,73701,Benedita da Silva,PT,RJ,Titular,CCULT,camara
+Suplente.1,204388,Bibo Nunes,PSL,RS,Suplente,CCULT,camara
+Titular.4,141439,Chico D'Angelo,PDT,RJ,Titular,CCULT,camara
+Titular.5,204409,Daniel Trzeciak,PSDB,RS,Titular,CCULT,camara
+Suplente.2,205548,David Miranda,PSOL,RJ,Suplente,CCULT,camara
+Suplente.3,178929,Diego Garcia,PODE,PR,Suplente,CCULT,camara
+Suplente.4,160575,Erika Kokay,PT,DF,Suplente,CCULT,camara
+Titular.6,204564,Igor Kannário,PHS,BA,Titular,CCULT,camara
+Titular.7,74848,Jandira Feghali,PCdoB,RJ,Titular,CCULT,camara
+Titular.8,204472,José Medeiros,PODE,MT,Titular,CCULT,camara
+Suplente.5,139285,Lídice da Mata,PSB,BA,Suplente,CCULT,camara
+Suplente.6,74585,Lincoln Portela,PR,MG,Suplente,CCULT,camara
+Suplente.7,204382,Loester Trutis,PSL,MS,Suplente,CCULT,camara
+Titular.9,178931,Luciano Ducci,PSB,PR,Titular,CCULT,camara
+Titular.11,178866,Luizianne Lins,PT,CE,Titular,CCULT,camara
+Titular.10,204455,Luiz Lima,PSL,RJ,Titular,CCULT,camara
+Titular.12,204433,Marcelo Calero,PPS,RJ,Titular,CCULT,camara
+Suplente.8,171619,Margarida Salomão,PT,MG,Suplente,CCULT,camara
+PrimeiroVice-Presidente,74398,Maria do Rosário,PT,RS,Titular,CCULT,camara
+Titular.13,74398,Maria do Rosário,PT,RS,Titular,CCULT,camara
+Suplente.9,141488,Paulo Teixeira,PT,SP,Suplente,CCULT,camara
+Suplente.10,204525,Rosana Valle,PSB,SP,Suplente,CCULT,camara
+Titular.14,74371,Rubens Otoni,PT,GO,Titular,CCULT,camara
+Suplente.11,178947,Sóstenes Cavalcante,DEM,RJ,Suplente,CCULT,camara
+Titular.15,178922,Tadeu Alencar,PSB,PE,Titular,CCULT,camara
+Titular.16,160976,Tiririca,PR,SP,Titular,CCULT,camara
+Titular.17,157130,Túlio Gadêlha ,PDT,PE,Titular,CCULT,camara
+Titular.18,160569,Waldenor Pereira,PT,BA,Titular,CCULT,camara
+TerceiroVice-Presidente,136811,Afonso Hamm,PP,RS,Titular,CESPO,camara
+Titular,136811,Afonso Hamm,PP,RS,Titular,CESPO,camara
+Suplente,204495,Airton Faleiro,PT,PA,Suplente,CESPO,camara
+Suplente.2,204516,Alexis Fonteyne,NOVO,SP,Suplente,CESPO,camara
+Suplente.1,178972,Alex Manente,PPS,SP,Suplente,CESPO,camara
+Suplente.3,178927,Aliel Machado,PSB,PR,Suplente,CESPO,camara
+Titular.1,133439,André Figueiredo,PDT,CE,Titular,CESPO,camara
+Suplente.4,204397,Boca Aberta,PROS,PR,Suplente,CESPO,camara
+Suplente.5,204361,Carlos Chiodini,MDB,SC,Suplente,CESPO,camara
+Titular.2,178876,Célio Silveira,PSDB,GO,Titular,CESPO,camara
+PrimeiroVice-Presidente,160552,Danrlei de Deus Hinterholz,PSD,RS,Titular,CESPO,camara
+Titular.3,160552,Danrlei de Deus Hinterholz,PSD,RS,Titular,CESPO,camara
+Suplente.6,204351,Dr. Luiz Ovando,PSL,MS,Suplente,CESPO,camara
+Suplente.7,204412,Dr. Zacharias Calil,DEM,GO,Suplente,CESPO,camara
+Titular.4,178930,Evandro Roman,PSD,PR,Titular,CESPO,camara
+Suplente.8,68720,Fábio Henrique,PDT,SE,Suplente,CESPO,camara
+Presidente,178969,Fábio Mitidieri,PSD,SE,Titular,CESPO,camara
+Titular.5,178969,Fábio Mitidieri,PSD,SE,Titular,CESPO,camara
+SegundoVice-Presidente,171623,Fabio Reis,MDB,SE,Titular,CESPO,camara
+Titular.6,171623,Fabio Reis,MDB,SE,Titular,CESPO,camara
+Titular.7,72442,Felipe Carreras,PSB,PE,Titular,CESPO,camara
+Titular.8,92699,Fernando Monteiro,PP,PE,Titular,CESPO,camara
+Suplente.9,160598,Flávia Morais,PDT,GO,Suplente,CESPO,camara
+Titular.9,178909,Hélio Leite,DEM,PA,Titular,CESPO,camara
+Titular.10,204444,Helio Lopes,PSL,RJ,Titular,CESPO,camara
+Titular.11,204436,Isnaldo Bulhões Jr.,MDB,AL,Titular,CESPO,camara
+Titular.12,74554,José Rocha,PR,BA,Titular,CESPO,camara
+Titular.13,204372,Julio Cesar Ribeiro,PRB,DF,Titular,CESPO,camara
+Titular.14,204455,Luiz Lima,PSL,RJ,Titular,CESPO,camara
+Suplente.10,146788,Marcelo Aro,PHS,MG,Suplente,CESPO,camara
+Titular.15,133810,Marcelo Moraes,PTB,RS,Titular,CESPO,camara
+Suplente.11,204415,Nereu Crispim,PSL,RS,Suplente,CESPO,camara
+Suplente.12,204390,Professor Alcides,PP,GO,Suplente,CESPO,camara
+Titular.16,204567,Raimundo Costa,PR,BA,Titular,CESPO,camara
+Suplente.13,73801,Renildo Calheiros,PCdoB,PE,Suplente,CESPO,camara
+Titular.17,152610,Roberto Alves,PRB,SP,Titular,CESPO,camara
+Titular.18,160635,Ruy Carneiro,PSDB,PB,Titular,CESPO,camara
+Suplente.14,204505,Vavá Martins,PRB,PA,Suplente,CESPO,camara
+Titular.19,204559,Zé Neto,PT,BA,Titular,CESPO,camara
+Titular,204503,Alexandre Padilha,PT,SP,Titular,CPD,camara
+Suplente,178833,Alexandre Serfiotis,PSD,RJ,Suplente,CPD,camara
+Suplente.1,204400,Aline Sleutjes,PSL,PR,Suplente,CPD,camara
+Suplente.2,204507,Carla Zambelli,PSL,SP,Suplente,CPD,camara
+Titular.1,178962,Carlos Gomes,PRB,RS,Titular,CPD,camara
+Titular.2,204451,Delegado Antônio Furtado,PSL,RJ,Titular,CPD,camara
+Titular.3,178929,Diego Garcia,PODE,PR,Titular,CPD,camara
+Titular.5,81297,Dra. Soraya Manato,PSL,ES,Titular,CPD,camara
+Titular.4,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Titular,CPD,camara
+Suplente.3,204412,Dr. Zacharias Calil,DEM,GO,Suplente,CPD,camara
+Titular.6,74655,Eduardo Barbosa,PSDB,MG,Titular,CPD,camara
+Suplente.4,160575,Erika Kokay,PT,DF,Suplente,CPD,camara
+Suplente.5,160587,Fábio Trad,PSD,MS,Suplente,CPD,camara
+Titular.7,204447,Flordelis,PSD,RJ,Titular,CPD,camara
+Titular.8,204494,Fred Costa,PATRI,MG,Titular,CPD,camara
+Titular.9,178966,Geovania de Sá,PSDB,SC,Titular,CPD,camara
+Presidente,74270,Gilberto Nascimento,PSC,SP,Titular,CPD,camara
+Titular.10,74270,Gilberto Nascimento,PSC,SP,Titular,CPD,camara
+Suplente.6,204429,João H. Campos,PSB,PE,Suplente,CPD,camara
+Suplente.7,146788,Marcelo Aro,PHS,MG,Suplente,CPD,camara
+Suplente.8,204433,Marcelo Calero,PPS,RJ,Suplente,CPD,camara
+Suplente.9,204540,Maria Rosas ,PRB,SP,Suplente,CPD,camara
+Titular.11,204432,Marina Santos ,SOLIDARI,PI,Titular,CPD,camara
+Titular.12,75431,Maurício Dziedricki,PTB,RS,Titular,CPD,camara
+Titular.13,160558,Paulo Freire Costa,PR,SP,Titular,CPD,camara
+Titular.14,204567,Raimundo Costa,PR,BA,Titular,CPD,camara
+Titular.15,178925,Rejane Dias,PT,PI,Titular,CPD,camara
+Titular.16,204362,Ricardo Guidi,PSD,SC,Titular,CPD,camara
+Suplente.10,74371,Rubens Otoni,PT,GO,Suplente,CPD,camara
+Suplente.11,177282,Subtenente Gonzaga,PDT,MG,Suplente,CPD,camara
+Titular.17,206231,Ted Conti,PSB,ES,Titular,CPD,camara
+Suplente.12,204466,Tereza Nelma,PSDB,AL,Suplente,CPD,camara
+Suplente.13,204478,Vinicius Farah,MDB,RJ,Suplente,CPD,camara
+SegundoVice-Presidente,74057,Alice Portugal,PCdoB,BA,Titular,CMULHER,camara
+Titular,74057,Alice Portugal,PCdoB,BA,Titular,CMULHER,camara
+Titular.1,204353,Aline Gurgel,PRB,AP,Titular,CMULHER,camara
+Suplente,73701,Benedita da Silva,PT,RJ,Suplente,CMULHER,camara
+Suplente.1,207176,Bia Cavassa,PSDB,MS,Suplente,CMULHER,camara
+Suplente.2,204369,Caroline de Toni,PSL,SC,Suplente,CMULHER,camara
+Suplente.3,204462,Chris Tonietto,PSL,RJ,Suplente,CMULHER,camara
+Titular.2,204459,Daniela do Waguinho,MDB,RJ,Titular,CMULHER,camara
+Suplente.4,204451,Delegado Antônio Furtado,PSL,RJ,Suplente,CMULHER,camara
+Titular.3,178929,Diego Garcia,PODE,PR,Titular,CMULHER,camara
+Titular.4,74075,Elcione Barbalho,MDB,PA,Titular,CMULHER,camara
+PrimeiroVice-Presidente,198783,Emanuel Pinheiro Neto,PTB,MT,Titular,CMULHER,camara
+Titular.5,198783,Emanuel Pinheiro Neto,PTB,MT,Titular,CMULHER,camara
+Suplente.5,160575,Erika Kokay,PT,DF,Suplente,CMULHER,camara
+Titular.6,204354,Flávia Arruda,PR,DF,Titular,CMULHER,camara
+Titular.7,160598,Flávia Morais,PDT,GO,Titular,CMULHER,camara
+Titular.8,204447,Flordelis,PSD,RJ,Titular,CMULHER,camara
+Titular.9,107283,Gleisi Hoffmann,PT,PR,Titular,CMULHER,camara
+Titular.10,160534,Lauriete,PR,ES,Titular,CMULHER,camara
+Presidente,204410,Luisa Canziani,PTB,PR,Titular,CMULHER,camara
+Titular.11,204410,Luisa Canziani,PTB,PR,Titular,CMULHER,camara
+Titular.12,178866,Luizianne Lins,PT,CE,Titular,CMULHER,camara
+Titular.13,204458,Major Fabiana,PSL,RJ,Titular,CMULHER,camara
+Suplente.6,204430,Margarete Coelho,PP,PI,Suplente,CMULHER,camara
+Suplente.7,204428,Marília Arraes,PT,PE,Suplente,CMULHER,camara
+Titular.14,204566,Marreca Filho,PATRI,MA,Titular,CMULHER,camara
+Titular.15,66179,Norma Ayub,DEM,ES,Titular,CMULHER,camara
+Suplente.8,160642,Pastor Eurico,PATRI,PE,Suplente,CMULHER,camara
+Suplente.9,204377,Paula Belmonte,PPS,DF,Suplente,CMULHER,camara
+Suplente.10,178860,Paulo Azi,DEM,BA,Suplente,CMULHER,camara
+Titular.16,204565,Professora Dayane Pimentel,PSL,BA,Titular,CMULHER,camara
+Suplente.11,178989,Renata Abreu,PODE,SP,Suplente,CMULHER,camara
+Titular.17,204525,Rosana Valle,PSB,SP,Titular,CMULHER,camara
+Titular.18,204357,Rose Modesto,PSDB,MS,Titular,CMULHER,camara
+Titular.19,204535,Sâmia Bomfim,PSOL,SP,Titular,CMULHER,camara
+Suplente.12,204360,Silvia Cristina,PDT,RO,Suplente,CMULHER,camara
+Titular.20,204534,Tabata Amaral ,PDT,SP,Titular,CMULHER,camara
+Suplente.13,204466,Tereza Nelma,PSDB,AL,Suplente,CMULHER,camara
+Titular.21,74283,Vicentinho,PT,SP,Titular,CMULHER,camara
+Suplente.14,204483,Vilson da Fetaemg,PSB,MG,Suplente,CMULHER,camara
+Titular,204503,Alexandre Padilha,PT,SP,Titular,CIDOSO,camara
+Titular.1,160553,Antonio Brito,PSD,BA,Titular,CIDOSO,camara
+Suplente,204490,Charlles Evangelista,PSL,MG,Suplente,CIDOSO,camara
+PrimeiroVice-Presidente,204542,Denis Bezerra,PSB,CE,Titular,CIDOSO,camara
+Titular.2,204542,Denis Bezerra,PSB,CE,Titular,CIDOSO,camara
+Suplente.1,204518,Dr. Frederico,PATRI,MG,Suplente,CIDOSO,camara
+Suplente.2,178994,Dulce Miranda,MDB,TO,Suplente,CIDOSO,camara
+Suplente.3,204421,Edna Henrique,PSDB,PB,Suplente,CIDOSO,camara
+Titular.3,74655,Eduardo Barbosa,PSDB,MG,Titular,CIDOSO,camara
+Titular.4,160640,Eros Biondini,PROS,MG,Titular,CIDOSO,camara
+Suplente.4,160587,Fábio Trad,PSD,MS,Suplente,CIDOSO,camara
+Titular.5,204477,Felício Laterça,PSL,RJ,Titular,CIDOSO,camara
+Suplente.5,204427,Fernando Rodolfo,PR,PE,Suplente,CIDOSO,camara
+Suplente.6,160598,Flávia Morais,PDT,GO,Suplente,CIDOSO,camara
+Titular.6,204494,Fred Costa,PATRI,MG,Titular,CIDOSO,camara
+Titular.7,178966,Geovania de Sá,PSDB,SC,Titular,CIDOSO,camara
+Titular.8,74270,Gilberto Nascimento,PSC,SP,Titular,CIDOSO,camara
+Titular.9,204513,Guiga Peixoto,PSL,SP,Titular,CIDOSO,camara
+Suplente.7,204373,Hélio Costa,PRB,SC,Suplente,CIDOSO,camara
+Titular.10,178832,Leandre,PV,PR,Titular,CIDOSO,camara
+Presidente,139285,Lídice da Mata,PSB,BA,Titular,CIDOSO,camara
+Titular.11,139285,Lídice da Mata,PSB,BA,Titular,CIDOSO,camara
+Suplente.8,196358,Lourival Gomes,PSL,RJ,Suplente,CIDOSO,camara
+Titular.12,75431,Maurício Dziedricki,PTB,RS,Titular,CIDOSO,camara
+Titular.13,66179,Norma Ayub,DEM,ES,Titular,CIDOSO,camara
+Titular.14,204422,Ossesio Silva,PRB,PE,Titular,CIDOSO,camara
+Suplente.9,178860,Paulo Azi,DEM,BA,Suplente,CIDOSO,camara
+Titular.15,74161,Reginaldo Lopes,PT,MG,Titular,CIDOSO,camara
+Suplente.10,74371,Rubens Otoni,PT,GO,Suplente,CIDOSO,camara
+Suplente.11,204466,Tereza Nelma,PSDB,AL,Suplente,CIDOSO,camara
+Titular.16,204478,Vinicius Farah,MDB,RJ,Titular,CIDOSO,camara
 NA,1,Eduardo Braga,MDB,AM,Titular,CAE,senado
 NA,1,Renan Calheiros,MDB,AL,Suplente,CAE,senado
 NA,1,Mecias de Jesus,PRB,RR,Titular,CAE,senado
