@@ -164,7 +164,6 @@ class EtapaProposicao(models.Model):
 
     @property
     def resumo_tramitacao(self):
-
         locais = []
         events = []
         local = ""
@@ -173,7 +172,7 @@ class EtapaProposicao(models.Model):
                 locais.append(event.sigla_local)
                 events.append({
                     'data': event.data,
-                    'casa': event.proposicao.casa,
+                    'casa': event.etapa_proposicao.casa,
                     'local': event.sigla_local,
                     'evento': event.evento,
                     'texto_tramitacao': event.texto_tramitacao,
@@ -184,7 +183,7 @@ class EtapaProposicao(models.Model):
                     local = event.local
                     events.append({
                         'data': event.data,
-                        'casa': event.proposicao.casa,
+                        'casa': event.etapa_proposicao.casa,
                         'local': event.sigla_local,
                         'evento': event.evento,
                         'texto_tramitacao': event.texto_tramitacao,
@@ -228,7 +227,7 @@ class TramitacaoEvent(models.Model):
 
     link_inteiro_teor = models.TextField(blank=True, null=True)
 
-    proposicao = models.ForeignKey(
+    etapa_proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
 
     nivel = models.IntegerField(
@@ -239,6 +238,16 @@ class TramitacaoEvent(models.Model):
     def casa(self):
         '''Casa onde o evento ocorreu.'''
         return self.proposicao.casa
+
+    @property
+    def proposicao_id(self):
+        '''ID da proposição a qual esse evento se refere.'''
+        return self.etapa_proposicao.proposicao_id
+
+    @property
+    def proposicao(self):
+        '''Proposição a qual esse evento se refere.'''
+        return self.etapa_proposicao.proposicao
 
     class Meta:
         ordering = ('data', 'sequencia')
