@@ -1,8 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import (
-    TramitacaoEvent)
+from api.models import TramitacaoEvent
 from datetime import datetime
 
 
@@ -10,7 +9,7 @@ class TramitacaoEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = TramitacaoEvent
         fields = ('data', 'casa', 'sigla_local', 'evento', 'texto_tramitacao', 'status',
-                  'proposicao', 'nivel')
+                  'proposicao_id', 'nivel')
 
 
 class TramitacaoEventList(generics.ListAPIView):
@@ -48,15 +47,16 @@ class TramitacaoEventList(generics.ListAPIView):
         delimitado por uma data de início e de fim.
         '''
 
-        queryset = TramitacaoEvent.objects.prefetch_related('proposicao')
+        queryset = TramitacaoEvent.objects.prefetch_related(
+            'etapa_proposicao', 'etapa_proposicao__proposicao')
 
         id_ext = self.kwargs.get('id_ext')
         if id_ext:
-            queryset = queryset.filter(proposicao__id_ext=id_ext)
+            queryset = queryset.filter(etapa_proposicao__id_ext=id_ext)
 
         casa = self.kwargs.get('casa')
         if casa:
-            queryset = queryset.filter(proposicao__casa=casa)
+            queryset = queryset.filter(etapa_proposicao__casa=casa)
 
         data_inicio = self.request.query_params.get('data_inicio', None)
         data_fim = self.request.query_params.get('data_fim', None)
