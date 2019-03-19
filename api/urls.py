@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^proposicoes/(?P<id_ext>[0-9]+)/fases/?$', views.Info.as_view()),
     url(r'^progresso/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.ProgressoList.as_view()),
-    url(r'^comissao/(?P<casa>[a-z]+)/(?P<sigla>[a-z]+[0-9]+)/?$',
+    url(r'^comissao/(?P<casa>[a-z]+)/(?P<sigla>([a-z]+|[A-Z]+)[0-9]*)/?$',
         views.ComissaoList.as_view()),
     url(r'^pauta/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.PautaList.as_view()),
