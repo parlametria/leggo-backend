@@ -39,7 +39,7 @@ def import_tramitacoes():
     grouped = pd.read_csv(filepath).groupby(['casa', 'id_ext'])
 
     col_names = [
-        'data', 'sequencia', 'evento', 'sigla_local', 'local',
+        'data', 'sequencia', 'evento', 'sigla_local', 'local', 'nivel',
         'situacao', 'texto_tramitacao', 'status', 'link_inteiro_teor']
 
     for group_index in grouped.groups:
@@ -50,10 +50,16 @@ def import_tramitacoes():
         group_df = (
             grouped
             .get_group(group_index)
+            # renomeios
             .assign(descricao=lambda x: x.descricao_situacao)
-            .assign(data=lambda x: x.data.apply(lambda s: s.split('T')[0]))
             .assign(situacao=lambda x: x.descricao_situacao)
+            # pega apenas a data e não a hora
+            .assign(data=lambda x: x.data.apply(lambda s: s.split('T')[0]))
+            # eventos sem nível recebem o maior valor (ou seja, são menos importantes)
+            .assign(nivel=lambda x: x.nivel.fillna(x.nivel.max()))
+            # filtra deixando apenas as colunas desejadas
             .pipe(lambda x: x.loc[:, x.columns.isin(col_names)])
+            # adiciona referência para a correspondente etapa da proposição
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         TramitacaoEvent.objects.bulk_create(
@@ -151,14 +157,11 @@ def import_emendas():
         Emendas.objects.bulk_create(
             Emendas(**r[1].to_dict()) for r in group_df.iterrows())
 
+
 def import_comissoes():
     '''Carrega Comissoes'''
     comissoes_df = pd.read_csv('data/comissoes.csv').groupby(['casa', 'sigla'])
     for group_index in comissoes_df.groups:
-        comissao_id = {
-            'casa': group_index[0],
-            'sigla': group_index[1],
-        }
         group_df = (
             comissoes_df
             .get_group(group_index)
