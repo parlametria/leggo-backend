@@ -21,7 +21,9 @@ class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
 class ComissaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comissao
-        fields = ('cargo', 'partido', 'uf', 'situacao', 'nome', 'sigla', 'casa')
+        fields = (
+            'cargo', 'id_parlamentar', 'partido', 'uf', 'situacao',
+            'nome', 'foto', 'sigla', 'casa')
 
 
 class PautaHistoricoSerializer(serializers.ModelSerializer):

@@ -281,6 +281,11 @@ class Comissao(models.Model):
         blank=True, null=True,
         help_text='Cargo ocupado pelo parlamentar na comissão')
 
+    id_parlamentar = models.TextField(
+        blank=True, null=True,
+        help_text='Id do parlamentar'
+    )
+
     partido = models.TextField(
         blank=True, null=True,
         help_text='Partido do parlamentar')
@@ -296,6 +301,11 @@ class Comissao(models.Model):
     nome = models.TextField(
         blank=True, null=True,
         help_text='Nome do parlamentar')
+
+    foto = models.TextField(
+        blank=True, null=True,
+        help_text='Foto do parlamentar'
+    )
 
     sigla = models.TextField(
         help_text='Sigla da comissão')
