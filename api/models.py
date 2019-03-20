@@ -302,6 +302,11 @@ class Comissao(models.Model):
         blank=True, null=True,
         help_text='Nome do parlamentar')
 
+    foto = models.TextField(
+        blank=True, null=True,
+        help_text='Foto do parlamentar'
+    )
+
     sigla = models.TextField(
         help_text='Sigla da comissão')
 
