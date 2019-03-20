@@ -22,7 +22,7 @@ class ComissaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comissao
         fields = (
-            'cargo', 'id_parlamentar', 'partido', 'uf', 'situacao', 
+            'cargo', 'id_parlamentar', 'partido', 'uf', 'situacao',
             'nome', 'foto', 'sigla', 'casa')
 
 
