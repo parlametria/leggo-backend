@@ -1,4 +1,4 @@
-cargo,id,nome,partido,uf,situacao,sigla,casa,foto
+cargo,id_parlamentar,nome,partido,uf,situacao,sigla,casa,foto
 Titular,136811,Afonso Hamm,PP,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/136811.jpg
 Suplente,178835,Afonso Motta,PDT,RS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178835.jpg
 Suplente.1,160527,Aguinaldo Ribeiro,PP,PB,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160527.jpg
