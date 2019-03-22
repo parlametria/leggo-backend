@@ -117,3 +117,24 @@ Testes com cobertura de código:
 ```
 ./manage.py test_all
 ```
+
+### Gerar diagrama do BD
+
+É possivel gerar um diagrama que mostre as classes/tabelas do banco, atributos/colunas de dados e as relações entre elas.
+
+Primeiro é necessário rodar isso dentro do container do código, para instalar as dependências:
+
+```
+pip install pydot django_extensions
+apk add ttf-dejavu
+apk add graphviz
+```
+
+Depois o diagrama pode ser gerado dessa forma:
+
+```
+docker exec -it "agorapi" sh -c './manage.py graph_models --pydot -g -o diagram.pdf api'
+```
+
+Mais informações na [doc](https://django-extensions.readthedocs.io/en/latest/graph_models.html) e aqui um [exemplo de diagrama](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16) gerado.
+
