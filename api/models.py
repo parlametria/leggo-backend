@@ -48,7 +48,7 @@ class Proposicao(models.Model):
                 'data_fim': progresso.data_fim,
                 'local_casa': progresso.local_casa,
                 'pulou': progresso.pulou
-            } for progresso in self.progresso.all()],
+            } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
             key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
 
 
