@@ -3,6 +3,7 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+import requests
 # from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
@@ -371,6 +372,13 @@ class Emendas(models.Model):
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
+    
+    inteiro_teor = models.TextField(black=True, null=True)
+
+    @property
+    def tamanho_pdf(self):
+        response = requests.get('http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1090497')
+        return len(response.content)
 
     class Meta:
         ordering = ('-data_apresentacao',)
