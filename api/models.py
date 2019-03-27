@@ -373,11 +373,11 @@ class Emendas(models.Model):
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
     
-    inteiro_teor = models.TextField(black=True, null=True)
+    inteiro_teor = models.TextField(blank=True, null=True)
 
     @property
     def tamanho_pdf(self):
-        response = requests.get('http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1090497')
+        response = requests.get(self.inteiro_teor)
         return len(response.content)
 
     class Meta:
