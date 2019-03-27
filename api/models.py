@@ -372,7 +372,7 @@ class Emendas(models.Model):
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
-    
+
     inteiro_teor = models.TextField(blank=True, null=True)
 
     @property
