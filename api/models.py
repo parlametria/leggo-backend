@@ -49,7 +49,7 @@ class Proposicao(models.Model):
                 'data_fim': progresso.data_fim,
                 'local_casa': progresso.local_casa,
                 'pulou': progresso.pulou
-            } for progresso in self.progresso.all()],
+            } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
             key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
 
 
@@ -377,8 +377,10 @@ class Emendas(models.Model):
 
     @property
     def tamanho_pdf(self):
-        response = requests.get(self.inteiro_teor)
-        return len(response.content)
+        if self.inteiro_teor is not None:
+            response = requests.get(self.inteiro_teor)
+            return len(response.content)
+        return 0
 
     class Meta:
         ordering = ('-data_apresentacao',)
