@@ -52,6 +52,11 @@ class Proposicao(models.Model):
             } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
             key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
 
+    @property
+    def temas(self):
+        '''
+        '''
+        return self.tema.split(';')
 
 class EtapaProposicao(models.Model):
     id_ext = models.IntegerField(
@@ -116,6 +121,12 @@ class EtapaProposicao(models.Model):
             models.Index(fields=['casa', 'id_ext']),
         ]
         ordering = ('data_apresentacao',)
+    
+    @property
+    def temas(self):
+        '''
+        '''
+        return self.tema.split(';')
 
     @property
     def sigla(self):

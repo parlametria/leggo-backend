@@ -1,4 +1,1386 @@
 cargo,id_parlamentar,nome,partido,uf,situacao,sigla,casa,foto
+Titular,136811,Afonso Hamm,PP,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/136811.jpg
+Suplente,178835,Afonso Motta,PDT,RS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178835.jpg
+Suplente.1,160527,Aguinaldo Ribeiro,PP,PB,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160527.jpg
+Suplente.2,204495,Airton Faleiro,PT,PA,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204495.jpg
+Suplente.3,204549,Aj Albuquerque,PP,CE,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204549.jpg
+Suplente.4,160559,Alceu Moreira,MDB,RS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160559.jpg
+Suplente.5,204413,Alcides Rodrigues ,PRP,GO,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204413.jpg
+Suplente.6,178833,Alexandre Serfiotis,PSD,RJ,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178833.jpg
+Titular.1,204400,Aline Sleutjes,PSL,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204400.jpg
+Suplente.7,178831,André Abdon,PP,AP,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178831.jpg
+Suplente.8,204515,André Janones,AVANTE,MG,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204515.jpg
+Suplente.9,141391,Arnaldo Jardim,PPS,SP,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141391.jpg
+Titular.2,204414,Aroldo Martins,PRB,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204414.jpg
+Suplente.10,109429,Benes Leocádio,PRB,RN,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/109429.jpg
+Titular.3,141335,Beto Faro,PT,PA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141335.jpg
+Suplente.11,178948,Beto Rosado,PP,RN,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178948.jpg
+Suplente.12,204561,Bira do Pindaré,PSB,MA,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204561.jpg
+Suplente.13,160538,Bohn Gass,PT,RS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160538.jpg
+Titular.4,74052,Bosco Costa,PR,SE,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/74052.jpg
+Suplente.14,178993,Carlos Henrique Gaguim,DEM,TO,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178993.jpg
+Suplente.15,204426,Carlos Veras,PT,PE,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204426.jpg
+Suplente.16,204369,Caroline de Toni,PSL,SC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204369.jpg
+Suplente.17,204370,Célio Moura,PT,TO,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204370.jpg
+Suplente.18,141405,Celso Maldaner,MDB,SC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141405.jpg
+Suplente.19,205476,Charles Fernandes,PSD,BA,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/205476.jpg
+Suplente.20,204440,Christino Aureo,PP,RJ,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204440.jpg
+Titular.5,135054,Cristiano Vale,PR,PA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/135054.jpg
+Titular.6,141411,Dagoberto Nogueira,PDT,MS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141411.jpg
+Suplente.21,204367,Daniel Freitas,PSL,SC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204367.jpg
+Suplente.22,116379,Darci de Matos,PSD,SC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/116379.jpg
+Suplente.23,160588,Diego Andrade,PSD,MG,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160588.jpg
+Suplente.24,178929,Diego Garcia,PODE,PR,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
+Titular.7,160599,Dimas Fabiano,PP,MG,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160599.jpg
+Titular.8,143632,Domingos Neto,PSD,CE,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/143632.jpg
+Titular.9,160758,Domingos Sávio,PSDB,MG,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160758.jpg
+Titular.10,204434,Dra. Vanda Milani,SOLIDARI,AC,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204434.jpg
+Suplente.25,204351,Dr. Luiz Ovando,PSL,MS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204351.jpg
+Titular.11,161550,Emidinho Madeira,PSB,MG,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/161550.jpg
+Suplente.26,207309,Enéias Reis,PSL,MG,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/207309.jpg
+Titular.12,204482,Euclydes Pettersen,PSC,MG,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204482.jpg
+Titular.13,178871,Evair Vieira de Melo,PP,ES,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178871.jpg
+Titular.14,178930,Evandro Roman,PSD,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178930.jpg
+Suplente.27,178953,Expedito Netto,PSD,RO,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178953.jpg
+Presidente,66828,Fausto Pinato,PP,SP,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/66828.jpg
+Titular.15,66828,Fausto Pinato,PP,SP,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/66828.jpg
+Titular.16,204510,Franco Cartafina,PP,MG,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204510.jpg
+Titular.17,204393,Frei Anastacio Ribeiro,PT,PB,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204393.jpg
+Suplente.28,204473,General Girão,PSL,RN,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204473.jpg
+Suplente.29,204527,Geninho Zuliani,DEM,SP,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204527.jpg
+Suplente.30,74383,Giacobo,PR,PR,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/74383.jpg
+Titular.18,178964,Heitor Schuch,PSB,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178964.jpg
+Titular.19,204436,Isnaldo Bulhões Jr.,MDB,AL,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204436.jpg
+Titular.20,160570,Jerônimo Goergen,PP,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160570.jpg
+Suplente.31,204435,Jesus Sérgio,PDT,AC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204435.jpg
+Titular.21,178970,João Daniel,PT,SE,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178970.jpg
+TerceiroVice-Presidente,204386,Jose Mario Schreiner,DEM,GO,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204386.jpg
+Titular.22,204386,Jose Mario Schreiner,DEM,GO,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204386.jpg
+Titular.23,204474,Juarez Costa,MDB,MT,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204474.jpg
+Suplente.32,74317,Júlio Cesar,PSD,PI,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/74317.jpg
+Titular.24,204574,Junior Lourenço,PR,MA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204574.jpg
+Suplente.33,204550,Júnior Mano,PR,CE,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204550.jpg
+Suplente.34,204404,Lucas Redecker,PSDB,RS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204404.jpg
+Suplente.35,178931,Luciano Ducci,PSB,PR,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178931.jpg
+Titular.25,178954,Lucio Mosquini,MDB,RO,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178954.jpg
+Titular.26,160645,Luiz Carlos,PSDB,AP,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160645.jpg
+SegundoVice-Presidente,162332,Luiz Nishimori,PR,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/162332.jpg
+Titular.27,162332,Luiz Nishimori,PR,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/162332.jpg
+Suplente.36,166402,Magda Mofatto,PR,GO,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/166402.jpg
+Suplente.37,204469,Manuel Marcos,PRB,AC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204469.jpg
+Titular.28,204471,Mara Rocha,PSDB,AC,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204471.jpg
+Titular.29,205863,Marcelo Brum,PSL,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/205863.jpg
+Titular.30,133810,Marcelo Moraes,PTB,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/133810.jpg
+Titular.31,160535,Marcon,PT,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160535.jpg
+Titular.32,204403,Marlon Santos,PDT,RS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204403.jpg
+Suplente.38,204566,Marreca Filho,PATRI,MA,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204566.jpg
+Titular.33,204449,Nelson Barbudo,PSL,MT,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204449.jpg
+PrimeiroVice-Presidente,146307,Neri Geller,PP,MT,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/146307.jpg
+Titular.34,146307,Neri Geller,PP,MT,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/146307.jpg
+Suplente.39,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/194260.jpg
+Suplente.40,204475,Otaci Nascimento,SOLIDARI,RR,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204475.jpg
+Titular.35,204570,Pastor Gildenemyr,PMN,MA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204570.jpg
+Suplente.41,204538,Paulo Bengtson,PTB,PA,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204538.jpg
+Titular.36,204395,Pedro Lupion,DEM,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204395.jpg
+Suplente.42,204406,Pedro Westphalen,PP,RS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204406.jpg
+Titular.37,204567,Raimundo Costa,PR,BA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204567.jpg
+Titular.38,204489,Robério Monteiro,PDT,CE,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204489.jpg
+Titular.39,74305,Roberto Pessoa,PSDB,CE,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/74305.jpg
+Suplente.43,204530,Rodrigo Agostinho,PSB,SP,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204530.jpg
+Titular.40,160651,Rogério Peninha Mendonça,MDB,SC,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160651.jpg
+Suplente.44,204357,Rose Modesto,PSDB,MS,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204357.jpg
+Titular.41,204399,Schiavinato,PP,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204399.jpg
+Suplente.45,178933,Sergio Souza,MDB,PR,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178933.jpg
+Suplente.46,204438,Sergio Toledo,PR,AL,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204438.jpg
+Suplente.47,204437,Severino Pessoa,PRB,AL,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204437.jpg
+Suplente.48,204360,Silvia Cristina,PDT,RO,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204360.jpg
+Titular.42,197438,Tito,AVANTE,BA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/197438.jpg
+Suplente.49,178934,Toninho Wandscheer,PROS,PR,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178934.jpg
+Titular.43,160610,Valmir Assunção,PT,BA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160610.jpg
+Titular.44,141552,Valtenir Pereira,MDB,MT,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141552.jpg
+Titular.45,204396,Vermelho,PSD,PR,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204396.jpg
+Titular.46,204483,Vilson da Fetaemg,PSB,MG,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204483.jpg
+Suplente.50,204532,Vinicius Poit,NOVO,SP,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204532.jpg
+Suplente.51,178952,Walter Alves,MDB,RN,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178952.jpg
+Titular.47,178889,Zé Carlos,PT,MA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/178889.jpg
+Titular.48,160632,Zé Silva,SOLIDARI,MG,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/160632.jpg
+Suplente,178835,Afonso Motta,PDT,RS,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/178835.jpg
+Suplente.1,204501,Alencar Santana Braga,PT,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204501.jpg
+Titular,204571,Alex Santana,PDT,BA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204571.jpg
+Titular.1,74471,André de Paula,PSD,PE,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/74471.jpg
+Titular.2,133439,André Figueiredo,PDT,CE,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/133439.jpg
+SegundoVice-Presidente,73696,Angela Amin,PP,SC,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/73696.jpg
+Titular.3,73696,Angela Amin,PP,SC,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/73696.jpg
+Suplente.2,141391,Arnaldo Jardim,PPS,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141391.jpg
+Suplente.3,141335,Beto Faro,PT,PA,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141335.jpg
+Titular.4,204388,Bibo Nunes,PSL,RS,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204388.jpg
+Suplente.4,141513,Bilac Pinto,DEM,MG,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141513.jpg
+Suplente.5,204487,Capitão Wagner,PROS,CE,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204487.jpg
+Titular.5,204361,Carlos Chiodini,MDB,SC,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204361.jpg
+Suplente.6,204380,Celina Leão,PP,DF,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204380.jpg
+Titular.6,204504,Cezinha de Madureira ,PSD,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204504.jpg
+Titular.7,141408,Cleber Verde,PRB,MA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
+Suplente.7,204367,Daniel Freitas,PSL,SC,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204367.jpg
+Titular.8,204409,Daniel Trzeciak,PSDB,RS,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204409.jpg
+Titular.9,204511,David Soares,DEM,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204511.jpg
+Suplente.8,164359,Delegado Waldir,PSL,GO,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/164359.jpg
+Suplente.9,143632,Domingos Neto,PSD,CE,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/143632.jpg
+Suplente.10,204518,Dr. Frederico,PATRI,MG,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Suplente.11,178977,Eduardo Cury,PSDB,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/178977.jpg
+Titular.10,171623,Fabio Reis,MDB,SE,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/171623.jpg
+Suplente.12,204477,Felício Laterça,PSL,RJ,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204477.jpg
+Suplente.13,204371,Felipe Rigoni,PSB,ES,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204371.jpg
+Presidente,160666,Félix Mendonça Júnior,PDT,BA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/160666.jpg
+Titular.11,160666,Félix Mendonça Júnior,PDT,BA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/160666.jpg
+Suplente.14,204407,Fernanda Melchionna ,PSOL,RS,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204407.jpg
+Titular.12,204484,General Peternelli,PSL,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204484.jpg
+Titular.13,204394,Gervásio Maia,PSB,PB,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204394.jpg
+Suplente.15,204491,Gilberto Abramo,PRB,MG,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204491.jpg
+Titular.14,73460,Gustavo Fruet,PDT,PR,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/73460.jpg
+Titular.15,178909,Hélio Leite,DEM,PA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/178909.jpg
+Suplente.16,74848,Jandira Feghali,PCdoB,RJ,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/74848.jpg
+Titular.16,74273,Jefferson Campos,PSB,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/74273.jpg
+Suplente.17,178842,Jhc,PSB,AL,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/178842.jpg
+Suplente.18,204429,João H. Campos,PSB,PE,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204429.jpg
+Suplente.19,205550,Jorge Braz,PRB,RJ,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/205550.jpg
+Titular.17,204372,Julio Cesar Ribeiro,PRB,DF,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204372.jpg
+Suplente.20,151208,Laercio Oliveira,PP,SE,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/151208.jpg
+Suplente.21,160534,Lauriete,PR,ES,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/160534.jpg
+Suplente.22,139285,Lídice da Mata,PSB,BA,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/139285.jpg
+Suplente.23,204405,Liziane Bayer,PSB,RS,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204405.jpg
+Titular.18,204382,Loester Trutis,PSL,MS,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204382.jpg
+Suplente.25,204410,Luisa Canziani,PTB,PR,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204410.jpg
+Suplente.24,204381,Luis Miranda,DEM,DF,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204381.jpg
+Titular.19,74784,Luiza Erundina,PSOL,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/74784.jpg
+PrimeiroVice-Presidente,81055,Márcio Jerry,PCdoB,MA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/81055.jpg
+Titular.20,81055,Márcio Jerry,PCdoB,MA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/81055.jpg
+Suplente.26,204522,Marco Bertaiolli,PSD,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204522.jpg
+Suplente.27,204431,Marcos Aurélio Sampaio,MDB,PI,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204431.jpg
+Suplente.28,204430,Margarete Coelho,PP,PI,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204430.jpg
+Titular.21,171619,Margarida Salomão,PT,MG,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/171619.jpg
+Suplente.29,204453,Natália Bonavides,PT,RN,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204453.jpg
+Suplente.30,141516,Paulo Abi-Ackel,PSDB,MG,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141516.jpg
+Suplente.31,193726,Paulo Eduardo Martins,PSC,PR,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/193726.jpg
+Suplente.32,160558,Paulo Freire Costa,PR,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/160558.jpg
+Suplente.33,204461,Paulo Ganime,NOVO,RJ,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204461.jpg
+Titular.22,74574,Paulo Magalhães,PSD,BA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/74574.jpg
+Suplente.34,204383,Professor Israel Batista,PV,DF,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204383.jpg
+Suplente.35,178989,Renata Abreu,PODE,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/178989.jpg
+Titular.23,152610,Roberto Alves,PRB,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/152610.jpg
+Titular.24,204530,Rodrigo Agostinho,PSB,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204530.jpg
+Suplente.36,141531,Rodrigo de Castro,PSDB,MG,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141531.jpg
+Suplente.37,73604,Rui Falcão,PT,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/73604.jpg
+Suplente.38,160635,Ruy Carneiro,PSDB,PB,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/160635.jpg
+Titular.25,204535,Sâmia Bomfim,PSOL,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204535.jpg
+Suplente.39,74356,Silas Câmara,PRB,AM,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/74356.jpg
+Suplente.40,204534,Tabata Amaral ,PDT,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204534.jpg
+Titular.26,206231,Ted Conti,PSB,ES,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/206231.jpg
+Suplente.41,143084,Tiago Dimas,SOLIDARI,TO,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/143084.jpg
+Titular.27,204532,Vinicius Poit,NOVO,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204532.jpg
+Titular.28,178992,Vitor Lippi,PSDB,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/178992.jpg
+Titular.29,204517,Zé Vitor,PR,MG,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204517.jpg
+Suplente,204528,Adriana Ventura,NOVO,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204528.jpg
+Suplente.1,74646,Aécio Neves,PSDB,MG,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74646.jpg
+Titular,178835,Afonso Motta,PDT,RS,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178835.jpg
+Titular.1,160527,Aguinaldo Ribeiro,PP,PB,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160527.jpg
+Titular.2,160559,Alceu Moreira,MDB,RS,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160559.jpg
+Titular.3,204501,Alencar Santana Braga,PT,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204501.jpg
+Suplente.3,160545,Alexandre Leite,DEM,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160545.jpg
+Suplente.2,178972,Alex Manente,PPS,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178972.jpg
+Suplente.4,178927,Aliel Machado,PSB,PR,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178927.jpg
+Suplente.5,73696,Angela Amin,PP,SC,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73696.jpg
+Titular.4,160600,Arthur Oliveira Maia,DEM,BA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160600.jpg
+Suplente.6,160665,Augusto Coutinho,SOLIDARI,PE,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160665.jpg
+Suplente.7,160512,Aureo Ribeiro,SOLIDARI,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160512.jpg
+Titular.5,178948,Beto Rosado,PP,RN,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178948.jpg
+PrimeiroVice-Presidente,204374,Bia Kicis,PSL,DF,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204374.jpg
+Titular.6,204374,Bia Kicis,PSL,DF,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204374.jpg
+Titular.7,141513,Bilac Pinto,DEM,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141513.jpg
+Suplente.8,204520,Cabo Junio Amaral,PSL,MG,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204520.jpg
+Suplente.9,178924,Capitão Fábio Abreu,,,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178924.jpg
+Suplente.10,204487,Capitão Wagner,PROS,CE,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204487.jpg
+Titular.8,204369,Caroline de Toni,PSL,SC,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204369.jpg
+Suplente.11,204499,Cássio Andrade,PSB,PA,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204499.jpg
+Titular.9,141405,Celso Maldaner,MDB,SC,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141405.jpg
+Suplente.12,204476,Chiquinho Brazão,AVANTE,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204476.jpg
+Suplente.13,204462,Chris Tonietto,PSL,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204462.jpg
+Titular.10,178939,Clarissa Garotinho,PROS,RJ,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178939.jpg
+Suplente.14,204514,Coronel Tadeu,PSL,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204514.jpg
+Suplente.15,141411,Dagoberto Nogueira,PDT,MS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141411.jpg
+Titular.11,204367,Daniel Freitas,PSL,SC,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204367.jpg
+Titular.12,160528,Danilo Cabral,PSB,PE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160528.jpg
+Titular.13,116379,Darci de Matos,PSD,SC,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/116379.jpg
+Suplente.16,73891,Darcísio Perondi,MDB,RS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73891.jpg
+Suplente.17,204511,David Soares,DEM,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204511.jpg
+Titular.14,178908,Delegado Éder Mauro,PSD,PA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178908.jpg
+Titular.15,204512,Delegado Marcelo Freitas,PSL,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204512.jpg
+Suplente.18,204569,Delegado Pablo,PSL,AM,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204569.jpg
+Titular.16,164359,Delegado Waldir,PSL,GO,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/164359.jpg
+Titular.17,178929,Diego Garcia,PODE,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
+Suplente.19,204518,Dr. Frederico,PATRI,MG,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Titular.18,204562,Edilázio Júnior,PSD,MA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204562.jpg
+Suplente.20,141417,Edio Lopes,PR,RR,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141417.jpg
+Titular.19,204541,Eduardo Bismarck,PDT,CE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204541.jpg
+Titular.20,178977,Eduardo Cury,PSDB,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178977.jpg
+Titular.21,204537,Enrico Misasi,PV,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204537.jpg
+Suplente.21,160575,Erika Kokay,PT,DF,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Suplente.22,178930,Evandro Roman,PSD,PR,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178930.jpg
+Titular.22,178953,Expedito Netto,PSD,RO,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178953.jpg
+Suplente.23,204368,Fabio Schiochet,PSL,SC,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204368.jpg
+Titular.23,160587,Fábio Trad,PSD,MS,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160587.jpg
+Presidente,204398,Felipe Francischini,PSL,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204398.jpg
+Titular.24,204398,Felipe Francischini,PSL,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204398.jpg
+Suplente.24,204354,Flávia Arruda,PR,DF,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204354.jpg
+Suplente.25,204392,Francisco Jr.,PSD,GO,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204392.jpg
+Titular.25,160669,Genecias Noronha,SOLIDARI,CE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160669.jpg
+Titular.26,204527,Geninho Zuliani,DEM,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204527.jpg
+Suplente.26,204394,Gervásio Maia,PSB,PB,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204394.jpg
+Titular.27,204575,Gil Cutrim,PDT,MA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204575.jpg
+Titular.28,204365,Gilson Marques ,NOVO,SC,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204365.jpg
+Suplente.27,204531,Guilherme Derrite,PP,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204531.jpg
+Suplente.28,204442,Gurgel,PSL,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204442.jpg
+Titular.29,178981,Herculano Passos,MDB,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178981.jpg
+Titular.30,178959,Hiran Gonçalves,PP,RR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178959.jpg
+Suplente.29,160674,Hugo Motta,PRB,PB,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160674.jpg
+Suplente.30,204436,Isnaldo Bulhões Jr.,MDB,AL,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204436.jpg
+Titular.31,74366,João Campos,PRB,GO,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74366.jpg
+Titular.32,204429,João H. Campos,PSB,PE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204429.jpg
+Titular.33,204576,João Roma,PRB,BA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204576.jpg
+Titular.34,204468,Joenia Wapichana,REDE,RR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204468.jpg
+Titular.35,141470,José Guimarães,PT,CE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141470.jpg
+Titular.36,204563,Josimar Maranhãozinho,PR,MA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204563.jpg
+Titular.37,73586,Júlio Delgado,PSB,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73586.jpg
+Suplente.31,204502,Júnior Bozzella,PSL,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204502.jpg
+Titular.38,204550,Júnior Mano,PR,CE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204550.jpg
+Suplente.32,204536,Kim Kataguiri,DEM,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204536.jpg
+Titular.39,98057,Lafayette de Andrada,PRB,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/98057.jpg
+Titular.40,204359,Léo Moraes,PODE,RO,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204359.jpg
+Suplente.33,204404,Lucas Redecker,PSDB,RS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204404.jpg
+Titular.41,160510,Luis Tibé,AVANTE,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160510.jpg
+Suplente.34,160645,Luiz Carlos,PSDB,AP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160645.jpg
+Titular.42,204543,Luiz Flávio Gomes,PSB,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204543.jpg
+Titular.43,146788,Marcelo Aro,PHS,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/146788.jpg
+Suplente.35,76874,Marcelo Freixo,PSOL,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/76874.jpg
+Titular.44,204556,Marcelo Ramos ,PR,AM,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204556.jpg
+Titular.45,179001,Márcio Biolchi,MDB,RS,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/179001.jpg
+Titular.46,204430,Margarete Coelho,PP,PI,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204430.jpg
+Titular.47,74398,Maria do Rosário,PT,RS,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74398.jpg
+Suplente.36,75431,Maurício Dziedricki,PTB,RS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/75431.jpg
+Suplente.37,74749,Mauro Lopes,MDB,MG,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74749.jpg
+Titular.48,74571,Nelson Pellegrino,PT,BA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74571.jpg
+Suplente.38,146307,Neri Geller,PP,MT,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/146307.jpg
+Titular.49,204479,Nicoletti,PSL,RR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204479.jpg
+Suplente.39,74159,Odair Cunha,PT,MG,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74159.jpg
+Suplente.40,204498,Olival Marques,DEM,PA,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204498.jpg
+Suplente.41,178987,Orlando Silva,PCdoB,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178987.jpg
+Suplente.42,204363,Osires Damaso,PSC,TO,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204363.jpg
+Titular.50,160642,Pastor Eurico,PATRI,PE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160642.jpg
+Titular.51,74160,Patrus Ananias,PT,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74160.jpg
+Titular.52,141516,Paulo Abi-Ackel,PSDB,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141516.jpg
+Titular.53,178860,Paulo Azi,DEM,BA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Titular.54,193726,Paulo Eduardo Martins,PSC,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/193726.jpg
+Suplente.43,74574,Paulo Magalhães,PSD,BA,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74574.jpg
+Titular.55,141518,Paulo Pereira da Silva,SOLIDARI,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141518.jpg
+Titular.56,141488,Paulo Teixeira,PT,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141488.jpg
+Suplente.44,178912,Pedro Cunha Lima,PSDB,PB,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178912.jpg
+Suplente.45,160604,Pedro Uczai,PT,SC,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160604.jpg
+Suplente.46,204406,Pedro Westphalen,PP,RS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204406.jpg
+Suplente.47,73486,Pompeo de Mattos,PDT,RS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73486.jpg
+Suplente.48,160601,Pr. Marco Feliciano,PODE,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160601.jpg
+Titular.57,204418,Professor Luizão Goulart,PRB,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204418.jpg
+Suplente.49,74161,Reginaldo Lopes,PT,MG,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74161.jpg
+Suplente.50,205865,Reinhold Stephanes Junior,PSD,PR,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/205865.jpg
+Suplente.51,178989,Renata Abreu,PODE,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178989.jpg
+Titular.58,73801,Renildo Calheiros,PCdoB,PE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73801.jpg
+Suplente.52,204362,Ricardo Guidi,PSD,SC,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204362.jpg
+Suplente.53,160651,Rogério Peninha Mendonça,MDB,SC,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160651.jpg
+Titular.59,73466,Rubens Bueno,PPS,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73466.jpg
+Suplente.54,74371,Rubens Otoni,PT,GO,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74371.jpg
+Suplente.55,73604,Rui Falcão,PT,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73604.jpg
+Titular.60,178990,Samuel Moreira,PSDB,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178990.jpg
+Suplente.56,204416,Sanderson,PSL,RS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204416.jpg
+Titular.61,204438,Sergio Toledo,PR,AL,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204438.jpg
+Suplente.57,178874,Sergio Vidigal,PDT,ES,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178874.jpg
+Titular.62,178961,Shéridan,PSDB,RR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178961.jpg
+Suplente.58,204425,Silvio Costa Filho,PRB,PE,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204425.jpg
+Suplente.59,178947,Sóstenes Cavalcante,DEM,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178947.jpg
+Titular.63,177282,Subtenente Gonzaga,PDT,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/177282.jpg
+Suplente.60,178922,Tadeu Alencar,PSB,PE,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178922.jpg
+Titular.64,204464,Talíria Petrone,PSOL,RJ,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204464.jpg
+Suplente.61,157130,Túlio Gadêlha ,PDT,PE,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/157130.jpg
+Suplente.62,141552,Valtenir Pereira,MDB,MT,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141552.jpg
+Suplente.63,137070,Vicentinho Júnior,PR,TO,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/137070.jpg
+Titular.65,74044,Wilson Santiago,PTB,PB,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/74044.jpg
+Suplente.64,160592,Zeca Dirceu,PT,PR,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160592.jpg
+PrimeiroVice-Presidente,204379,Acácio Favacho,PROS,AP,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204379.jpg
+Titular,204379,Acácio Favacho,PROS,AP,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204379.jpg
+Suplente,204571,Alex Santana,PDT,BA,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204571.jpg
+Suplente.1,204423,André Ferreira,PSC,PE,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204423.jpg
+Suplente.2,160512,Aureo Ribeiro,SOLIDARI,RJ,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/160512.jpg
+Titular.1,204358,Beto Pereira,PSDB,MS,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204358.jpg
+Titular.2,204487,Capitão Wagner,PROS,CE,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204487.jpg
+Titular.3,204370,Célio Moura,PT,TO,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204370.jpg
+Titular.4,73441,Celso Russomanno,PRB,SP,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/73441.jpg
+Titular.5,204476,Chiquinho Brazão,AVANTE,RJ,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204476.jpg
+Titular.6,204514,Coronel Tadeu,PSL,SP,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204514.jpg
+Suplente.3,116379,Darci de Matos,PSD,SC,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/116379.jpg
+Suplente.4,204518,Dr. Frederico,PATRI,MG,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Titular.7,141422,Efraim Filho,DEM,PB,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/141422.jpg
+Titular.8,204364,Eli Borges,SOLIDARI,TO,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204364.jpg
+Suplente.5,160532,Eli Corrêa Filho,DEM,SP,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/160532.jpg
+Titular.9,160640,Eros Biondini,PROS,MG,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/160640.jpg
+Suplente.6,204477,Felício Laterça,PSL,RJ,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204477.jpg
+TerceiroVice-Presidente,72442,Felipe Carreras,PSB,PE,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/72442.jpg
+Titular.10,72442,Felipe Carreras,PSB,PE,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/72442.jpg
+Suplente.7,204510,Franco Cartafina,PP,MG,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204510.jpg
+Titular.11,204494,Fred Costa,PATRI,MG,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204494.jpg
+Suplente.8,198197,Greyce Elias,AVANTE,MG,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/198197.jpg
+Titular.12,204442,Gurgel,PSL,RJ,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204442.jpg
+Titular.13,73531,Ivan Valente,PSOL,SP,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/73531.jpg
+Suplente.9,141458,João Carlos Bacelar,PR,BA,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/141458.jpg
+Presidente,141459,João Maia,PR,RN,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/141459.jpg
+Titular.14,141459,João Maia,PR,RN,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/141459.jpg
+SegundoVice-Presidente,205550,Jorge Braz,PRB,RJ,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/205550.jpg
+Titular.15,205550,Jorge Braz,PRB,RJ,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/205550.jpg
+Suplente.10,204391,José Nelto,PODE,GO,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/204391.jpg
+Suplente.11,73586,Júlio Delgado,PSB,MG,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/73586.jpg
+Suplente.12,150418,Márcio Marinho,PRB,BA,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/150418.jpg
+Titular.16,90201,Pedro Augusto Bezerra,PTB,CE,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/90201.jpg
+Titular.17,73943,Perpétua Almeida,PCdoB,AC,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/73943.jpg
+Suplente.13,160655,Ricardo Izar,PP,SP,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/160655.jpg
+Titular.18,178920,Ricardo Teobaldo,PODE,PE,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/178920.jpg
+Suplente.14,74305,Roberto Pessoa,PSDB,CE,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/74305.jpg
+Suplente.15,178922,Tadeu Alencar,PSB,PE,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/178922.jpg
+Titular.19,178863,Uldurico Junior,PPL,BA,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/178863.jpg
+Suplente.16,195866,Vaidon Oliveira,PROS,CE,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/195866.jpg
+Suplente.17,141552,Valtenir Pereira,MDB,MT,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/141552.jpg
+Titular.20,141555,Vinicius Carvalho,PRB,SP,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/141555.jpg
+Titular.21,160518,Weliton Prado,PROS,MG,Titular,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/160518.jpg
+Suplente.18,74439,Wolney Queiroz,PDT,PE,Suplente,CDC,camara,https://www.camara.leg.br/internet/deputado/bandep/74439.jpg
+Titular,121948,Adriano do Baldy,PP,GO,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/121948.jpg
+Suplente,160508,Afonso Florence,PT,BA,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/160508.jpg
+Titular.1,178972,Alex Manente,PPS,SP,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/178972.jpg
+Suplente.1,134812,Edmilson Rodrigues,PSOL,PA,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/134812.jpg
+Suplente.2,204552,Eduardo Braide,PMN,MA,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204552.jpg
+Titular.2,141434,Flaviano Melo,MDB,AC,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/141434.jpg
+Titular.3,204392,Francisco Jr.,PSD,GO,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204392.jpg
+Suplente.3,73460,Gustavo Fruet,PDT,PR,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/73460.jpg
+Suplente.4,204429,João H. Campos,PSB,PE,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204429.jpg
+Titular.7,209189,Joseildo Ramos,PT,BA,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/209189.jpg
+PrimeiroVice-Presidente,204472,José Medeiros,PODE,MT,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204472.jpg
+Titular.4,204472,José Medeiros,PODE,MT,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204472.jpg
+SegundoVice-Presidente,204391,José Nelto,PODE,GO,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204391.jpg
+Titular.5,204391,José Nelto,PODE,GO,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204391.jpg
+Suplente.5,160619,José Nunes,PSD,BA,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/160619.jpg
+Titular.6,204555,José Ricardo,PT,AM,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204555.jpg
+Suplente.6,204547,Léo Motta,PSL,MG,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204547.jpg
+Suplente.7,204485,Luiz Carlos Motta,PR,SP,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204485.jpg
+Suplente.8,178866,Luizianne Lins,PT,CE,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/178866.jpg
+Titular.8,204458,Major Fabiana,PSL,RJ,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204458.jpg
+Suplente.9,204471,Mara Rocha,PSDB,AC,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204471.jpg
+Titular.9,204558,Marcelo Nilo,PSB,BA,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204558.jpg
+Suplente.10,204428,Marília Arraes,PT,PE,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204428.jpg
+Titular.10,66179,Norma Ayub,DEM,ES,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/66179.jpg
+Suplente.11,204529,Policial Katia Sastre,PR,SP,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204529.jpg
+Presidente,160601,Pr. Marco Feliciano,PODE,SP,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/160601.jpg
+Titular.11,160601,Pr. Marco Feliciano,PODE,SP,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/160601.jpg
+Suplente.12,204418,Professor Luizão Goulart,PRB,PR,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204418.jpg
+Suplente.13,178990,Samuel Moreira,PSDB,SP,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/178990.jpg
+Titular.12,178934,Toninho Wandscheer,PROS,PR,Titular,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/178934.jpg
+Suplente.14,204385,Valdevan Noventa,PSC,SE,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204385.jpg
+Suplente.15,204463,Wladimir Garotinho,PSD,RJ,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/204463.jpg
+Suplente.16,178889,Zé Carlos,PT,MA,Suplente,CDU,camara,https://www.camara.leg.br/internet/deputado/bandep/178889.jpg
+Titular,204554,Abílio Santana,PR,BA,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204554.jpg
+Suplente,204544,Alexandre Frota ,PSL,SP,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204544.jpg
+Titular.1,204414,Aroldo Martins,PRB,PR,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204414.jpg
+Titular.2,207176,Bia Cavassa,PSDB,MS,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/207176.jpg
+Suplente.1,204561,Bira do Pindaré,PSB,MA,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204561.jpg
+TerceiroVice-Presidente,204352,Camilo Capiberibe,PSB,AP,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204352.jpg
+Titular.3,204352,Camilo Capiberibe,PSB,AP,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204352.jpg
+Titular.4,204426,Carlos Veras,PT,PE,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204426.jpg
+Suplente.2,204451,Delegado Antônio Furtado,PSL,RJ,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204451.jpg
+Titular.5,178908,Delegado Éder Mauro,PSD,PA,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/178908.jpg
+Titular.6,204364,Eli Borges,SOLIDARI,TO,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204364.jpg
+Titular.7,160575,Erika Kokay,PT,DF,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Titular.8,204411,Filipe Barros,PSL,PR,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204411.jpg
+Suplente.3,204447,Flordelis,PSD,RJ,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204447.jpg
+Suplente.4,204393,Frei Anastacio Ribeiro,PT,PB,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204393.jpg
+Suplente.5,204531,Guilherme Derrite,PP,SP,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204531.jpg
+Presidente,178873,Helder Salomão,PT,ES,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/178873.jpg
+Titular.9,178873,Helder Salomão,PT,ES,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/178873.jpg
+Suplente.6,204533,Idilvan Alencar,PDT,CE,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204533.jpg
+Titular.10,67138,Iracema Portella,PP,PI,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/67138.jpg
+Suplente.7,112437,João Marcelo Souza,MDB,MA,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/112437.jpg
+Suplente.8,204468,Joenia Wapichana,REDE,RR,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204468.jpg
+Titular.11,204472,José Medeiros,PODE,MT,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204472.jpg
+Titular.12,204420,Julian Lemos ,PSL,PB,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204420.jpg
+Suplente.9,204372,Julio Cesar Ribeiro,PRB,DF,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204372.jpg
+Titular.13,160534,Lauriete,PR,ES,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/160534.jpg
+Titular.14,81055,Márcio Jerry,PCdoB,MA,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/81055.jpg
+Suplente.10,204430,Margarete Coelho,PP,PI,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204430.jpg
+Suplente.11,154178,Milton Vieira,PRB,SP,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/154178.jpg
+PrimeiroVice-Presidente,160556,Padre João,PT,MG,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/160556.jpg
+Titular.15,160556,Padre João,PT,MG,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/160556.jpg
+Suplente.12,74160,Patrus Ananias,PT,MG,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/74160.jpg
+Suplente.13,204529,Policial Katia Sastre,PR,SP,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204529.jpg
+Suplente.14,160601,Pr. Marco Feliciano,PODE,SP,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/160601.jpg
+Suplente.15,160653,Roberto de Lucena,PODE,SP,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/160653.jpg
+Suplente.16,204480,Rogério Correia ,PT,MG,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/204480.jpg
+Suplente.17,178961,Shéridan,PSDB,RR,Suplente,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/178961.jpg
+Titular.16,178947,Sóstenes Cavalcante,DEM,RJ,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/178947.jpg
+SegundoVice-Presidente,157130,Túlio Gadêlha ,PDT,PE,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/157130.jpg
+Titular.17,157130,Túlio Gadêlha ,PDT,PE,Titular,CDHM,camara,https://www.camara.leg.br/internet/deputado/bandep/157130.jpg
+Titular,204516,Alexis Fonteyne,NOVO,SP,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204516.jpg
+Titular.1,204356,Amaro Neto,PRB,ES,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204356.jpg
+Suplente,160665,Augusto Coutinho,SOLIDARI,PE,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/160665.jpg
+Suplente.1,160512,Aureo Ribeiro,SOLIDARI,RJ,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/160512.jpg
+Presidente,204551,Bosco Saraiva,SOLIDARI,AM,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204551.jpg
+Titular.2,204551,Bosco Saraiva,SOLIDARI,AM,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204551.jpg
+Suplente.2,204380,Celina Leão,PP,DF,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204380.jpg
+Titular.3,204490,Charlles Evangelista,PSL,MG,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204490.jpg
+Suplente.3,74060,Daniel Almeida,PCdoB,BA,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/74060.jpg
+Suplente.4,141422,Efraim Filho,DEM,PB,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/141422.jpg
+Titular.4,198783,Emanuel Pinheiro Neto,PTB,MT,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/198783.jpg
+Suplente.5,132504,Enio Verri,PT,PR,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/132504.jpg
+Titular.5,204411,Filipe Barros,PSL,PR,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204411.jpg
+Suplente.6,204419,Glaustin Fokus,PSC,GO,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204419.jpg
+Suplente.7,204513,Guiga Peixoto,PSL,SP,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204513.jpg
+Suplente.8,204465,Haroldo Cathedral,PSD,RR,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204465.jpg
+Titular.6,178873,Helder Salomão,PT,ES,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/178873.jpg
+Titular.7,204435,Jesus Sérgio,PDT,AC,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204435.jpg
+Suplente.9,178910,Joaquim Passarinho,PSD,PA,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/178910.jpg
+Suplente.10,204555,José Ricardo,PT,AM,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204555.jpg
+Suplente.11,151208,Laercio Oliveira,PP,SE,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/151208.jpg
+Titular.8,196358,Lourival Gomes,PSL,RJ,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/196358.jpg
+Suplente.12,162332,Luiz Nishimori,PR,PR,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/162332.jpg
+Suplente.13,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204526.jpg
+PrimeiroVice-Presidente,204475,Otaci Nascimento,SOLIDARI,RR,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204475.jpg
+Titular.9,204475,Otaci Nascimento,SOLIDARI,RR,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204475.jpg
+Suplente.14,204489,Robério Monteiro,PDT,CE,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204489.jpg
+Suplente.15,204366,Rodrigo Coelho,PSB,SC,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204366.jpg
+Titular.10,143084,Tiago Dimas,SOLIDARI,TO,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/143084.jpg
+Titular.11,74376,Vander Loubet,PT,MS,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/74376.jpg
+Suplente.16,141555,Vinicius Carvalho,PRB,SP,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/141555.jpg
+Suplente.17,178992,Vitor Lippi,PSDB,SP,Suplente,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/178992.jpg
+Titular.12,204559,Zé Neto,PT,BA,Titular,CDEICS,camara,https://www.camara.leg.br/internet/deputado/bandep/204559.jpg
+Suplente,74646,Aécio Neves,PSDB,MG,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/74646.jpg
+Titular,160508,Afonso Florence,PT,BA,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/160508.jpg
+Titular.1,204545,Alê Silva,PSL,MG,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204545.jpg
+Suplente.1,204516,Alexis Fonteyne,NOVO,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204516.jpg
+Suplente.2,178927,Aliel Machado,PSB,PR,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178927.jpg
+Suplente.3,160600,Arthur Oliveira Maia,DEM,BA,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/160600.jpg
+Suplente.4,159237,Assis Carvalho,PT,PI,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/159237.jpg
+Suplente.5,204551,Bosco Saraiva,SOLIDARI,AM,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204551.jpg
+Suplente.6,160589,Bruna Furlan,PSDB,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/160589.jpg
+Suplente.7,141405,Celso Maldaner,MDB,SC,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/141405.jpg
+Titular.2,204496,Celso Sabino,PSDB,PA,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204496.jpg
+Suplente.8,178928,Christiane de Souza Yared,PR,PR,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178928.jpg
+Suplente.9,204440,Christino Aureo,PP,RJ,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204440.jpg
+Suplente.10,204454,Daniel Silveira,PSL,RJ,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204454.jpg
+Suplente.11,73891,Darcísio Perondi,MDB,RS,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/73891.jpg
+Titular.3,204542,Denis Bezerra,PSB,CE,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204542.jpg
+Suplente.12,204518,Dr. Frederico,PATRI,MG,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Suplente.13,204562,Edilázio Júnior,PSD,MA,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204562.jpg
+Suplente.14,178977,Eduardo Cury,PSDB,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178977.jpg
+Titular.4,204389,Elias Vaz,PSB,GO,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204389.jpg
+Titular.5,132504,Enio Verri,PT,PR,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/132504.jpg
+Suplente.15,178871,Evair Vieira de Melo,PP,ES,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178871.jpg
+Suplente.16,178969,Fábio Mitidieri,PSD,SE,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178969.jpg
+Suplente.17,204477,Felício Laterça,PSL,RJ,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204477.jpg
+Titular.6,204371,Felipe Rigoni,PSB,ES,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204371.jpg
+Titular.7,92699,Fernando Monteiro,PP,PE,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/92699.jpg
+Titular.8,191923,Flavio Nogueira,PDT,PI,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/191923.jpg
+Suplente.18,74270,Gilberto Nascimento,PSC,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/74270.jpg
+PrimeiroVice-Presidente,178996,Giovani Feltes,MDB,RS,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178996.jpg
+Titular.9,178996,Giovani Feltes,MDB,RS,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178996.jpg
+Titular.10,204419,Glaustin Fokus,PSC,GO,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204419.jpg
+Titular.11,107283,Gleisi Hoffmann,PT,PR,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/107283.jpg
+Titular.12,204513,Guiga Peixoto,PSL,SP,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204513.jpg
+Titular.13,204548,Heitor Freire,PSL,CE,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204548.jpg
+Titular.14,204539,Hercílio Coelho Diniz,MDB,MG,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204539.jpg
+Titular.15,178884,Hildo Rocha,MDB,MA,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178884.jpg
+Suplente.19,204533,Idilvan Alencar,PDT,CE,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204533.jpg
+Suplente.20,160570,Jerônimo Goergen,PP,RS,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/160570.jpg
+Titular.16,204546,Joice Hasselmann,PSL,SP,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204546.jpg
+SegundoVice-Presidente,74317,Júlio Cesar,PSD,PI,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/74317.jpg
+Titular.17,74317,Júlio Cesar,PSD,PI,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/74317.jpg
+Suplente.21,204536,Kim Kataguiri,DEM,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204536.jpg
+Suplente.22,151208,Laercio Oliveira,PP,SE,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/151208.jpg
+Suplente.23,98057,Lafayette de Andrada,PRB,MG,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/98057.jpg
+Suplente.24,204375,Leda Sadala,AVANTE,AP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204375.jpg
+Titular.18,204404,Lucas Redecker,PSDB,RS,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204404.jpg
+Suplente.25,178879,Lucas Vergilio,SOLIDARI,GO,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178879.jpg
+Titular.19,204381,Luis Miranda,DEM,DF,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204381.jpg
+Suplente.26,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204526.jpg
+Titular.20,179587,Major Vitor Hugo,PSL,GO,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/179587.jpg
+Suplente.27,133810,Marcelo Moraes,PTB,RS,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/133810.jpg
+Suplente.28,204556,Marcelo Ramos ,PR,AM,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204556.jpg
+Suplente.29,204452,Márcio Labre,PSL,RJ,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204452.jpg
+Titular.21,204431,Marcos Aurélio Sampaio,MDB,PI,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204431.jpg
+Titular.22,178858,Mário Negromonte Jr.,PP,BA,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178858.jpg
+Suplente.30,204403,Marlon Santos,PDT,RS,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204403.jpg
+Titular.23,204566,Marreca Filho,PATRI,MA,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204566.jpg
+Titular.24,204486,Mauro Benevides Filho,PDT,CE,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204486.jpg
+Suplente.31,178997,Moses Rodrigues,MDB,CE,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178997.jpg
+Suplente.32,178896,Newton Cardoso Jr,MDB,MG,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178896.jpg
+Titular.25,204363,Osires Damaso,PSC,TO,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204363.jpg
+Titular.26,204573,Otto Alencar Filho,PSD,BA,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204573.jpg
+Suplente.33,204377,Paula Belmonte,PPS,DF,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204377.jpg
+Suplente.34,178860,Paulo Azi,DEM,BA,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Titular.27,204461,Paulo Ganime,NOVO,RJ,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204461.jpg
+Suplente.35,141488,Paulo Teixeira,PT,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/141488.jpg
+Titular.28,122158,Pedro Paulo,DEM,RJ,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/122158.jpg
+Suplente.36,204529,Policial Katia Sastre,PR,SP,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204529.jpg
+Suplente.37,204366,Rodrigo Coelho,PSB,SC,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204366.jpg
+Titular.29,73604,Rui Falcão,PT,SP,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/73604.jpg
+Titular.30,160635,Ruy Carneiro,PSDB,PB,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/160635.jpg
+Presidente,178933,Sergio Souza,MDB,PR,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178933.jpg
+Titular.31,178933,Sergio Souza,MDB,PR,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178933.jpg
+Titular.32,204557,Sidney Leite,PSD,AM,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204557.jpg
+Suplente.38,74356,Silas Câmara,PRB,AM,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/74356.jpg
+TerceiroVice-Presidente,204478,Vinicius Farah,MDB,RJ,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204478.jpg
+Titular.33,204478,Vinicius Farah,MDB,RJ,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/204478.jpg
+Titular.34,178952,Walter Alves,MDB,RN,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/178952.jpg
+Suplente.39,74043,Wellington Roberto,PR,PB,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/74043.jpg
+Suplente,121948,Adriano do Baldy,PP,GO,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/121948.jpg
+Titular,178881,Aluisio Mendes,PODE,MA,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/178881.jpg
+Suplente.1,74090,Átila Lins,PP,AM,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/74090.jpg
+Titular.1,204507,Carla Zambelli,PSL,SP,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204507.jpg
+Titular.2,204460,Carlos Jordy,PSL,RJ,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204460.jpg
+Titular.3,204459,Daniela do Waguinho,MDB,RJ,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204459.jpg
+Suplente.2,204562,Edilázio Júnior,PSD,MA,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204562.jpg
+Suplente.3,204552,Eduardo Braide,PMN,MA,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204552.jpg
+Suplente.4,204389,Elias Vaz,PSB,GO,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204389.jpg
+Titular.4,204427,Fernando Rodolfo,PR,PE,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204427.jpg
+Titular.5,204491,Gilberto Abramo,PRB,MG,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204491.jpg
+Titular.6,204408,Gustinho Ribeiro,SOLIDARI,SE,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204408.jpg
+Suplente.5,178884,Hildo Rocha,MDB,MA,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/178884.jpg
+Titular.7,160674,Hugo Motta,PRB,PB,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/160674.jpg
+Suplente.6,141458,João Carlos Bacelar,PR,BA,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/141458.jpg
+Suplente.7,178857,Jorge Solla,PT,BA,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/178857.jpg
+Suplente.8,204391,José Nelto,PODE,GO,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204391.jpg
+Titular.8,204457,Juninho do Pneu,DEM,RJ,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204457.jpg
+Suplente.9,204502,Júnior Bozzella,PSL,SP,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204502.jpg
+Suplente.10,204550,Júnior Mano,PR,CE,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204550.jpg
+Presidente,204547,Léo Motta,PSL,MG,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204547.jpg
+Titular.9,204547,Léo Motta,PSL,MG,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204547.jpg
+Titular.10,156190,Marcel Van Hattem,NOVO,RS,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/156190.jpg
+Suplente.11,81055,Márcio Jerry,PCdoB,MA,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/81055.jpg
+PrimeiroVice-Presidente,204452,Márcio Labre,PSL,RJ,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204452.jpg
+Titular.11,204452,Márcio Labre,PSL,RJ,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204452.jpg
+Suplente.12,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/194260.jpg
+Suplente.13,160556,Padre João,PT,MG,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/160556.jpg
+Suplente.14,122158,Pedro Paulo,DEM,RJ,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/122158.jpg
+Titular.12,73788,Ricardo Barros,PP,PR,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/73788.jpg
+Suplente.15,204360,Silvia Cristina,PDT,RO,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204360.jpg
+Suplente.16,204425,Silvio Costa Filho,PRB,PE,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204425.jpg
+Suplente.17,160591,Vinicius Gurgel,PR,AP,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/160591.jpg
+Titular.13,74043,Wellington Roberto,PR,PB,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/74043.jpg
+Suplente.18,74044,Wilson Santiago,PTB,PB,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/74044.jpg
+Suplente,204379,Acácio Favacho,PROS,AP,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204379.jpg
+Titular,204560,Adolfo Viana,PSDB,BA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204560.jpg
+Titular.1,204495,Airton Faleiro,PT,PA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204495.jpg
+Titular.2,204353,Aline Gurgel,PRB,AP,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204353.jpg
+Titular.3,178937,Altineu Côrtes,PR,RJ,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178937.jpg
+Titular.4,73433,Arlindo Chinaglia,PT,SP,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/73433.jpg
+Titular.5,141391,Arnaldo Jardim,PPS,SP,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141391.jpg
+Suplente.1,160600,Arthur Oliveira Maia,DEM,BA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/160600.jpg
+PrimeiroVice-Presidente,109429,Benes Leocádio,PRB,RN,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/109429.jpg
+Titular.6,109429,Benes Leocádio,PRB,RN,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/109429.jpg
+Suplente.2,178948,Beto Rosado,PP,RN,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178948.jpg
+Suplente.3,141513,Bilac Pinto,DEM,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141513.jpg
+Suplente.4,204361,Carlos Chiodini,MDB,SC,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204361.jpg
+Titular.7,178993,Carlos Henrique Gaguim,DEM,TO,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178993.jpg
+Suplente.5,141398,Carlos Zarattini,PT,SP,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141398.jpg
+SegundoVice-Presidente,204499,Cássio Andrade,PSB,PA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204499.jpg
+Titular.8,204499,Cássio Andrade,PSB,PA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204499.jpg
+Suplente.6,204496,Celso Sabino,PSDB,PA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204496.jpg
+Titular.9,205476,Charles Fernandes,PSD,BA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/205476.jpg
+Titular.10,204440,Christino Aureo,PP,RJ,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204440.jpg
+Suplente.7,141408,Cleber Verde,PRB,MA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
+Titular.11,204376,Coronel Armando,PSL,SC,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204376.jpg
+Titular.12,204378,Coronel Chrisóstomo,PSL,RO,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204378.jpg
+Suplente.9,204367,Daniel Freitas,PSL,SC,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204367.jpg
+Titular.13,204454,Daniel Silveira,PSL,RJ,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204454.jpg
+Titular.14,160552,Danrlei de Deus Hinterholz,PSD,RS,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/160552.jpg
+Suplente.8,204355,Da Vitoria,PPS,ES,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204355.jpg
+Suplente.10,178908,Delegado Éder Mauro,PSD,PA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178908.jpg
+Suplente.11,204512,Delegado Marcelo Freitas,PSL,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204512.jpg
+Suplente.12,204569,Delegado Pablo,PSL,AM,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204569.jpg
+Suplente.13,204518,Dr. Frederico,PATRI,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+TerceiroVice-Presidente,141417,Edio Lopes,PR,RR,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141417.jpg
+Titular.15,141417,Edio Lopes,PR,RR,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141417.jpg
+Titular.16,204421,Edna Henrique,PSDB,PB,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204421.jpg
+Suplente.14,204541,Eduardo Bismarck,PDT,CE,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204541.jpg
+Titular.17,74075,Elcione Barbalho,MDB,PA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/74075.jpg
+Suplente.15,204389,Elias Vaz,PSB,GO,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204389.jpg
+Suplente.16,160640,Eros Biondini,PROS,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/160640.jpg
+Suplente.17,178930,Evandro Roman,PSD,PR,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178930.jpg
+Titular.18,141427,Fábio Ramalho,MDB,MG,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141427.jpg
+Suplente.18,204368,Fabio Schiochet,PSL,SC,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204368.jpg
+Suplente.19,66828,Fausto Pinato,PP,SP,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/66828.jpg
+Titular.19,204477,Felício Laterça,PSL,RJ,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204477.jpg
+Titular.20,141431,Fernando Coelho Filho,DEM,PE,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141431.jpg
+Suplente.20,204392,Francisco Jr.,PSD,GO,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204392.jpg
+Suplente.21,204510,Franco Cartafina,PP,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204510.jpg
+Suplente.22,115746,Gelson Azevedo,PR,RJ,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/115746.jpg
+Titular.21,198197,Greyce Elias,AVANTE,MG,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/198197.jpg
+Suplente.23,204539,Hercílio Coelho Diniz,MDB,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204539.jpg
+Titular.22,73772,Hermes Parcianello,MDB,PR,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/73772.jpg
+Titular.23,204508,Igor Timo,PODE,MG,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204508.jpg
+Titular.24,160531,Jhonatan de Jesus,PRB,RR,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/160531.jpg
+Titular.25,141458,João Carlos Bacelar,PR,BA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141458.jpg
+Suplente.24,141459,João Maia,PR,RN,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141459.jpg
+Suplente.25,204576,João Roma,PRB,BA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204576.jpg
+Titular.26,178910,Joaquim Passarinho,PSD,PA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178910.jpg
+Suplente.26,204468,Joenia Wapichana,REDE,RR,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204468.jpg
+Suplente.27,204391,José Nelto,PODE,GO,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204391.jpg
+Titular.27,204497,Júnior Ferrari,PSD,PA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204497.jpg
+Titular.28,151208,Laercio Oliveira,PP,SE,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/151208.jpg
+Suplente.28,204359,Léo Moraes,PODE,RO,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204359.jpg
+Suplente.29,74299,Leônidas Cristino,PDT,CE,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/74299.jpg
+Titular.29,92102,Leur Lomanto Júnior,DEM,BA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/92102.jpg
+Suplente.30,204523,Lucas Gonzalez,NOVO,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204523.jpg
+Suplente.31,204404,Lucas Redecker,PSDB,RS,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204404.jpg
+Suplente.32,178954,Lucio Mosquini,MDB,RO,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178954.jpg
+Suplente.33,160510,Luis Tibé,AVANTE,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/160510.jpg
+Suplente.34,178858,Mário Negromonte Jr.,PP,BA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178858.jpg
+Suplente.35,204403,Marlon Santos,PDT,RS,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204403.jpg
+Titular.30,204415,Nereu Crispim,PSL,RS,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204415.jpg
+Suplente.36,204479,Nicoletti,PSL,RR,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204479.jpg
+Titular.31,194260,Nivaldo Albuquerque,PTB,AL,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/194260.jpg
+Titular.32,178987,Orlando Silva,PCdoB,SP,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178987.jpg
+Suplente.37,204475,Otaci Nascimento,SOLIDARI,RR,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204475.jpg
+Titular.33,160556,Padre João,PT,MG,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/160556.jpg
+Suplente.38,73943,Perpétua Almeida,PCdoB,AC,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/73943.jpg
+Titular.34,178951,Rafael Motta,PSB,RN,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178951.jpg
+Titular.35,160655,Ricardo Izar,PP,SP,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/160655.jpg
+Titular.36,141531,Rodrigo de Castro,PSDB,MG,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141531.jpg
+Suplente.39,178861,Ronaldo Carletto,PP,BA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178861.jpg
+Titular.37,74371,Rubens Otoni,PT,GO,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/74371.jpg
+Suplente.40,178990,Samuel Moreira,PSDB,SP,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178990.jpg
+Suplente.41,204399,Schiavinato,PP,PR,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204399.jpg
+Titular.38,178921,Sebastião Oliveira,PR,PE,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178921.jpg
+Suplente.42,178933,Sergio Souza,MDB,PR,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/178933.jpg
+Suplente.43,204438,Sergio Toledo,PR,AL,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204438.jpg
+Presidente,74356,Silas Câmara,PRB,AM,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/74356.jpg
+Titular.39,74356,Silas Câmara,PRB,AM,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/74356.jpg
+Titular.40,195866,Vaidon Oliveira,PROS,CE,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/195866.jpg
+Suplente.44,74376,Vander Loubet,PT,MS,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/74376.jpg
+Suplente.45,204483,Vilson da Fetaemg,PSB,MG,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204483.jpg
+Suplente.46,74043,Wellington Roberto,PR,PB,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/74043.jpg
+Suplente.47,204463,Wladimir Garotinho,PSD,RJ,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204463.jpg
+Titular,204528,Adriana Ventura,NOVO,SP,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204528.jpg
+Suplente,136811,Afonso Hamm,PP,RS,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/136811.jpg
+Suplente.1,178836,Alan Rick,DEM,AC,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178836.jpg
+Suplente.2,204413,Alcides Rodrigues ,PRP,GO,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204413.jpg
+Titular.1,204503,Alexandre Padilha,PT,SP,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204503.jpg
+PrimeiroVice-Presidente,178833,Alexandre Serfiotis,PSD,RJ,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178833.jpg
+Titular.2,178833,Alexandre Serfiotis,PSD,RJ,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178833.jpg
+Suplente.3,204571,Alex Santana,PDT,BA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204571.jpg
+Suplente.4,74057,Alice Portugal,PCdoB,BA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/74057.jpg
+Titular.3,204515,André Janones,AVANTE,MG,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204515.jpg
+Presidente,160553,Antonio Brito,PSD,BA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160553.jpg
+Titular.4,160553,Antonio Brito,PSD,BA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160553.jpg
+Suplente.5,73433,Arlindo Chinaglia,PT,SP,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/73433.jpg
+Titular.5,159237,Assis Carvalho,PT,PI,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/159237.jpg
+Titular.6,73701,Benedita da Silva,PT,RJ,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/73701.jpg
+Titular.7,204397,Boca Aberta,PROS,PR,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204397.jpg
+Titular.8,164360,Carmen Zanotto,PPS,SC,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/164360.jpg
+Titular.9,204380,Celina Leão,PP,DF,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204380.jpg
+Titular.10,178876,Célio Silveira,PSDB,GO,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178876.jpg
+Suplente.6,141439,Chico D'Angelo,PDT,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/141439.jpg
+Suplente.7,204462,Chris Tonietto,PSL,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204462.jpg
+Suplente.9,204459,Daniela do Waguinho,MDB,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204459.jpg
+Suplente.8,204409,Daniel Trzeciak,PSDB,RS,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204409.jpg
+Titular.11,73891,Darcísio Perondi,MDB,RS,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/73891.jpg
+Suplente.10,204542,Denis Bezerra,PSB,CE,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204542.jpg
+Suplente.11,178929,Diego Garcia,PODE,PR,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
+Titular.17,81297,Dra. Soraya Manato,PSL,ES,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/81297.jpg
+Titular.12,204518,Dr. Frederico,PATRI,MG,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Titular.13,204481,Dr. Jaziel,PR,CE,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204481.jpg
+Suplente.12,204439,Dr. Leonardo,SOLIDARI,MT,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204439.jpg
+Titular.14,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204450.jpg
+Titular.15,204351,Dr. Luiz Ovando,PSL,MS,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204351.jpg
+Titular.16,204412,Dr. Zacharias Calil,DEM,GO,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204412.jpg
+Titular.18,178994,Dulce Miranda,MDB,TO,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178994.jpg
+Titular.19,74655,Eduardo Barbosa,PSDB,MG,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/74655.jpg
+Titular.20,204552,Eduardo Braide,PMN,MA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204552.jpg
+Titular.21,204500,Eduardo Costa,PTB,PA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204500.jpg
+Titular.22,207309,Enéias Reis,PSL,MG,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/207309.jpg
+Suplente.13,160575,Erika Kokay,PT,DF,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Titular.23,204407,Fernanda Melchionna ,PSOL,RS,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204407.jpg
+Titular.24,204354,Flávia Arruda,PR,DF,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204354.jpg
+Suplente.14,160598,Flávia Morais,PDT,GO,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160598.jpg
+Suplente.15,141434,Flaviano Melo,MDB,AC,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/141434.jpg
+Titular.25,204447,Flordelis,PSD,RJ,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204447.jpg
+Titular.26,178966,Geovania de Sá,PSDB,SC,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178966.jpg
+Suplente.16,204575,Gil Cutrim,PDT,MA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204575.jpg
+Suplente.17,178964,Heitor Schuch,PSB,RS,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178964.jpg
+Suplente.18,73482,Henrique Fontana,PT,RS,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/73482.jpg
+Suplente.19,178959,Hiran Gonçalves,PP,RR,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178959.jpg
+Suplente.20,67138,Iracema Portella,PP,PI,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/67138.jpg
+Titular.27,74848,Jandira Feghali,PCdoB,RJ,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/74848.jpg
+Suplente.21,178839,Jéssica Sales,MDB,AC,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178839.jpg
+Suplente.22,74366,João Campos,PRB,GO,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/74366.jpg
+Suplente.23,204576,João Roma,PRB,BA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204576.jpg
+Titular.28,178857,Jorge Solla,PT,BA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178857.jpg
+Suplente.24,204497,Júnior Ferrari,PSD,PA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204497.jpg
+Titular.29,178886,Juscelino Filho,DEM,MA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178886.jpg
+Suplente.25,160534,Lauriete,PR,ES,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160534.jpg
+Titular.30,178832,Leandre,PV,PR,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178832.jpg
+Suplente.26,204547,Léo Motta,PSL,MG,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204547.jpg
+Titular.31,204405,Liziane Bayer,PSB,RS,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204405.jpg
+Titular.32,178931,Luciano Ducci,PSB,PR,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178931.jpg
+Suplente.27,204448,Luiz Antônio Corrêa,S.PART.,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204448.jpg
+Suplente.28,204455,Luiz Lima,PSL,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204455.jpg
+Suplente.29,178983,Marcio Alvino,PR,SP,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178983.jpg
+Titular.33,204522,Marco Bertaiolli,PSD,SP,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204522.jpg
+Suplente.30,178956,Mariana Carvalho,PSDB,RO,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178956.jpg
+Titular.34,204428,Marília Arraes,PT,PE,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204428.jpg
+Titular.35,204432,Marina Santos ,SOLIDARI,PI,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204432.jpg
+SegundoVice-Presidente,178843,Marx Beltrão,PSD,AL,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178843.jpg
+Titular.36,178843,Marx Beltrão,PSD,AL,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178843.jpg
+Suplente.31,141508,Mauro Nazif,PSB,RO,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/141508.jpg
+Titular.37,178985,Miguel Lombardi,PR,SP,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178985.jpg
+Titular.38,154178,Milton Vieira,PRB,SP,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/154178.jpg
+TerceiroVice-Presidente,178895,Misael Varella,PSD,MG,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178895.jpg
+Titular.39,178895,Misael Varella,PSD,MG,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178895.jpg
+Titular.40,204498,Olival Marques,DEM,PA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204498.jpg
+Titular.41,204422,Ossesio Silva,PRB,PE,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204422.jpg
+Suplente.32,204441,Otoni de Paula,PSC,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204441.jpg
+Suplente.33,204573,Otto Alencar Filho,PSD,BA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204573.jpg
+Suplente.34,204570,Pastor Gildenemyr,PMN,MA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204570.jpg
+Titular.42,204553,Pastor Sargento Isidório,AVANTE,BA,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204553.jpg
+Suplente.35,204377,Paula Belmonte,PPS,DF,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204377.jpg
+Titular.43,204406,Pedro Westphalen,PP,RS,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204406.jpg
+Titular.44,204524,Pinheirinho,PP,MG,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204524.jpg
+Suplente.36,204529,Policial Katia Sastre,PR,SP,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204529.jpg
+Titular.45,73486,Pompeo de Mattos,PDT,RS,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/73486.jpg
+Suplente.37,160601,Pr. Marco Feliciano,PODE,SP,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160601.jpg
+Suplente.39,204565,Professora Dayane Pimentel,PSL,BA,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204565.jpg
+Suplente.40,160639,Professora Dorinha Seabra Rezende,DEM,TO,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160639.jpg
+Suplente.38,204390,Professor Alcides,PP,GO,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204390.jpg
+Suplente.41,178925,Rejane Dias,PT,PI,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178925.jpg
+Suplente.42,178989,Renata Abreu,PODE,SP,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178989.jpg
+Suplente.43,73788,Ricardo Barros,PP,PR,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/73788.jpg
+Titular.46,160653,Roberto de Lucena,PODE,SP,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/160653.jpg
+Titular.47,204366,Rodrigo Coelho,PSB,SC,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204366.jpg
+Titular.48,178945,Rosangela Gomes,PRB,RJ,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178945.jpg
+Suplente.44,204357,Rose Modesto,PSDB,MS,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204357.jpg
+Suplente.45,90842,Santini,PTB,RS,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/90842.jpg
+Titular.49,178874,Sergio Vidigal,PDT,ES,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178874.jpg
+Titular.50,204360,Silvia Cristina,PDT,RO,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204360.jpg
+Suplente.46,178947,Sóstenes Cavalcante,DEM,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/178947.jpg
+Suplente.47,204464,Talíria Petrone,PSOL,RJ,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204464.jpg
+Titular.51,204466,Tereza Nelma,PSDB,AL,Titular,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204466.jpg
+Suplente.48,204519,Tiago Mitraud,NOVO,MG,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204519.jpg
+Suplente.49,204517,Zé Vitor,PR,MG,Suplente,CSSF,camara,https://www.camara.leg.br/internet/deputado/bandep/204517.jpg
+Suplente,121948,Adriano do Baldy,PP,GO,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/121948.jpg
+Suplente.1,74057,Alice Portugal,PCdoB,BA,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/74057.jpg
+Suplente.2,133439,André Figueiredo,PDT,CE,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/133439.jpg
+Suplente.3,74459,Átila Lira,PSB,PI,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/74459.jpg
+Suplente.4,160665,Augusto Coutinho,SOLIDARI,PE,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160665.jpg
+Titular,160538,Bohn Gass,PT,RS,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160538.jpg
+Suplente.5,178829,Capitão Augusto,PR,SP,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178829.jpg
+Suplente.6,204426,Carlos Veras,PT,PE,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204426.jpg
+Titular.1,74060,Daniel Almeida,PCdoB,BA,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/74060.jpg
+Suplente.7,204518,Dr. Frederico,PATRI,MG,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Titular.2,160575,Erika Kokay,PT,DF,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Suplente.8,178871,Evair Vieira de Melo,PP,ES,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178871.jpg
+Titular.3,178969,Fábio Mitidieri,PSD,SE,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178969.jpg
+PrimeiroVice-Presidente,160598,Flávia Morais,PDT,GO,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160598.jpg
+Titular.4,160598,Flávia Morais,PDT,GO,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160598.jpg
+Titular.5,204531,Guilherme Derrite,PP,SP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204531.jpg
+Suplente.9,204548,Heitor Freire,PSL,CE,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204548.jpg
+Suplente.10,178964,Heitor Schuch,PSB,RS,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178964.jpg
+Suplente.11,204436,Isnaldo Bulhões Jr.,MDB,AL,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204436.jpg
+Titular.6,204536,Kim Kataguiri,DEM,SP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204536.jpg
+Suplente.12,204523,Lucas Gonzalez,NOVO,MG,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204523.jpg
+Titular.7,178879,Lucas Vergilio,SOLIDARI,GO,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178879.jpg
+Titular.8,204485,Luiz Carlos Motta,PR,SP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204485.jpg
+SegundoVice-Presidente,75431,Maurício Dziedricki,PTB,RS,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/75431.jpg
+Titular.9,75431,Maurício Dziedricki,PTB,RS,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/75431.jpg
+Titular.10,141508,Mauro Nazif,PSB,RO,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/141508.jpg
+Suplente.13,74571,Nelson Pellegrino,PT,BA,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/74571.jpg
+Titular.11,178986,Nilto Tatto,PT,SP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178986.jpg
+Suplente.14,178987,Orlando Silva,PCdoB,SP,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178987.jpg
+Suplente.15,178860,Paulo Azi,DEM,BA,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Titular.12,133968,Paulo Ramos,PDT,RJ,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/133968.jpg
+Suplente.16,122974,Pedro Lucas Fernandes ,PTB,MA,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/122974.jpg
+Presidente,160641,Professora Marcivania,PCdoB,AP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160641.jpg
+Titular.13,160641,Professora Marcivania,PCdoB,AP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160641.jpg
+Titular.14,204480,Rogério Correia ,PT,MG,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204480.jpg
+Suplente.17,178921,Sebastião Oliveira,PR,PE,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178921.jpg
+Titular.15,204425,Silvio Costa Filho,PRB,PE,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204425.jpg
+Suplente.18,204519,Tiago Mitraud,NOVO,MG,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/204519.jpg
+Titular.16,157130,Túlio Gadêlha ,PDT,PE,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/157130.jpg
+Titular.17,74283,Vicentinho,PT,SP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/74283.jpg
+Titular.18,74439,Wolney Queiroz,PDT,PE,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/74439.jpg
+Titular,204521,Abou Anni,PSL,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204521.jpg
+Suplente,136811,Afonso Hamm,PP,RS,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/136811.jpg
+Titular.1,204413,Alcides Rodrigues ,PRP,GO,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204413.jpg
+Titular.2,160545,Alexandre Leite,DEM,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160545.jpg
+Suplente.1,178833,Alexandre Serfiotis,PSD,RJ,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178833.jpg
+Suplente.2,178927,Aliel Machado,PSB,PR,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178927.jpg
+Suplente.3,178937,Altineu Côrtes,PR,RJ,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178937.jpg
+Suplente.4,204356,Amaro Neto,PRB,ES,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204356.jpg
+Suplente.5,204358,Beto Pereira,PSDB,MS,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204358.jpg
+Suplente.6,74052,Bosco Costa,PR,SE,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/74052.jpg
+Titular.3,204352,Camilo Capiberibe,PSB,AP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204352.jpg
+Suplente.7,204507,Carla Zambelli,PSL,SP,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204507.jpg
+Titular.4,178962,Carlos Gomes,PRB,RS,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178962.jpg
+Suplente.8,204504,Cezinha de Madureira ,PSD,SP,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204504.jpg
+Titular.5,178928,Christiane de Souza Yared,PR,PR,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178928.jpg
+Suplente.9,178939,Clarissa Garotinho,PROS,RJ,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178939.jpg
+Suplente.10,204376,Coronel Armando,PSL,SC,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204376.jpg
+Suplente.11,204378,Coronel Chrisóstomo,PSL,RO,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204378.jpg
+Suplente.12,204355,Da Vitoria,PPS,ES,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204355.jpg
+Titular.6,160588,Diego Andrade,PSD,MG,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160588.jpg
+Suplente.13,160758,Domingos Sávio,PSDB,MG,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160758.jpg
+Suplente.14,141422,Efraim Filho,DEM,PB,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/141422.jpg
+Presidente,160532,Eli Corrêa Filho,DEM,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160532.jpg
+Titular.7,160532,Eli Corrêa Filho,DEM,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160532.jpg
+Suplente.15,178871,Evair Vieira de Melo,PP,ES,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178871.jpg
+Titular.8,204368,Fabio Schiochet,PSL,SC,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204368.jpg
+Suplente.16,72442,Felipe Carreras,PSB,PE,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/72442.jpg
+Titular.9,115746,Gelson Azevedo,PR,RJ,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/115746.jpg
+Suplente.17,204527,Geninho Zuliani,DEM,SP,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204527.jpg
+Titular.10,74419,Gonzaga Patriota,PSB,PE,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/74419.jpg
+Titular.11,204456,Gutemberg Reis,MDB,RJ,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204456.jpg
+Suplente.18,204373,Hélio Costa,PRB,SC,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204373.jpg
+Suplente.19,204539,Hercílio Coelho Diniz,MDB,MG,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204539.jpg
+Titular.12,141450,Hugo Leal,PSD,RJ,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/141450.jpg
+Suplente.20,160674,Hugo Motta,PRB,PB,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160674.jpg
+SegundoVice-Presidente,108338,Jaqueline Cassol,PP,RO,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/108338.jpg
+Titular.13,108338,Jaqueline Cassol,PP,RO,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/108338.jpg
+Titular.14,112437,João Marcelo Souza,MDB,MA,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/112437.jpg
+Suplente.21,141464,José Airton Félix Cirilo,PT,CE,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/141464.jpg
+Suplente.22,204391,José Nelto,PODE,GO,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204391.jpg
+Suplente.23,204474,Juarez Costa,MDB,MT,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204474.jpg
+Suplente.24,204457,Juninho do Pneu,DEM,RJ,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204457.jpg
+Titular.15,204502,Júnior Bozzella,PSL,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204502.jpg
+Suplente.25,204550,Júnior Mano,PR,CE,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204550.jpg
+Suplente.26,178886,Juscelino Filho,DEM,MA,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178886.jpg
+Titular.16,204375,Leda Sadala,AVANTE,AP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204375.jpg
+Titular.17,74299,Leônidas Cristino,PDT,CE,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/74299.jpg
+Titular.18,204523,Lucas Gonzalez,NOVO,MG,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204523.jpg
+Titular.19,204448,Luiz Antônio Corrêa,S.PART.,RJ,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204448.jpg
+Titular.20,204469,Manuel Marcos,PRB,AC,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204469.jpg
+Titular.21,178983,Marcio Alvino,PR,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178983.jpg
+Suplente.27,204522,Marco Bertaiolli,PSD,SP,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204522.jpg
+PrimeiroVice-Presidente,74749,Mauro Lopes,MDB,MG,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/74749.jpg
+Titular.22,74749,Mauro Lopes,MDB,MG,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/74749.jpg
+Suplente.28,178985,Miguel Lombardi,PR,SP,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178985.jpg
+Suplente.29,204449,Nelson Barbudo,PSL,MT,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204449.jpg
+Suplente.30,204479,Nicoletti,PSL,RR,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204479.jpg
+Suplente.31,160642,Pastor Eurico,PATRI,PE,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160642.jpg
+Suplente.32,178860,Paulo Azi,DEM,BA,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Titular.23,204492,Paulo Guedes,PT,MG,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204492.jpg
+Titular.24,204446,Professor Joziel,PSL,RJ,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204446.jpg
+Suplente.33,204366,Rodrigo Coelho,PSB,SC,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204366.jpg
+Titular.25,178861,Ronaldo Carletto,PP,BA,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178861.jpg
+Titular.26,204525,Rosana Valle,PSB,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204525.jpg
+Titular.27,204416,Sanderson,PSL,RS,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204416.jpg
+Titular.28,90842,Santini,PTB,RS,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/90842.jpg
+Suplente.34,178874,Sergio Vidigal,PDT,ES,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/178874.jpg
+Titular.29,204437,Severino Pessoa,PRB,AL,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204437.jpg
+Suplente.35,197438,Tito,AVANTE,BA,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/197438.jpg
+Titular.30,204385,Valdevan Noventa,PSC,SE,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204385.jpg
+Titular.31,141553,Vanderlei Macris,PSDB,SP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/141553.jpg
+Suplente.36,204396,Vermelho,PSD,PR,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204396.jpg
+Titular.32,137070,Vicentinho Júnior,PR,TO,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/137070.jpg
+Titular.33,160591,Vinicius Gurgel,PR,AP,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/160591.jpg
+Titular.34,204463,Wladimir Garotinho,PSD,RJ,Titular,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204463.jpg
+Suplente.37,204559,Zé Neto,PT,BA,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204559.jpg
+Titular,204495,Airton Faleiro,PT,PA,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204495.jpg
+Titular.1,204549,Aj Albuquerque,PP,CE,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204549.jpg
+Titular.2,178836,Alan Rick,DEM,AC,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/178836.jpg
+Suplente,204353,Aline Gurgel,PRB,AP,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204353.jpg
+Presidente,74090,Átila Lins,PP,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/74090.jpg
+Titular.3,74090,Átila Lins,PP,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/74090.jpg
+Suplente.1,204551,Bosco Saraiva,SOLIDARI,AM,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204551.jpg
+Titular.4,204572,Capitão Alberto Neto,PRB,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204572.jpg
+Suplente.2,204499,Cássio Andrade,PSB,PA,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204499.jpg
+Suplente.3,204370,Célio Moura,PT,TO,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204370.jpg
+Titular.5,205476,Charles Fernandes,PSD,BA,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/205476.jpg
+Titular.6,204378,Coronel Chrisóstomo,PSL,RO,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204378.jpg
+Suplente.4,135054,Cristiano Vale,PR,PA,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/135054.jpg
+Titular.7,160528,Danilo Cabral,PSB,PE,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/160528.jpg
+Titular.8,204569,Delegado Pablo,PSL,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204569.jpg
+Titular.9,204434,Dra. Vanda Milani,SOLIDARI,AC,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204434.jpg
+Titular.10,134812,Edmilson Rodrigues,PSOL,PA,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/134812.jpg
+Titular.11,204500,Eduardo Costa,PTB,PA,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204500.jpg
+Titular.12,74075,Elcione Barbalho,MDB,PA,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/74075.jpg
+Suplente.5,92699,Fernando Monteiro,PP,PE,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/92699.jpg
+Suplente.6,204393,Frei Anastacio Ribeiro,PT,PB,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204393.jpg
+Suplente.7,204465,Haroldo Cathedral,PSD,RR,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204465.jpg
+Titular.13,178839,Jéssica Sales,MDB,AC,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/178839.jpg
+Titular.14,204435,Jesus Sérgio,PDT,AC,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204435.jpg
+Suplente.8,178970,João Daniel,PT,SE,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/178970.jpg
+Titular.15,204555,José Ricardo,PT,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204555.jpg
+Suplente.9,204497,Júnior Ferrari,PSD,PA,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204497.jpg
+Titular.16,204556,Marcelo Ramos ,PR,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204556.jpg
+Suplente.10,204475,Otaci Nascimento,SOLIDARI,RR,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204475.jpg
+Titular.17,204492,Paulo Guedes,PT,MG,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204492.jpg
+Suplente.11,204416,Sanderson,PSL,RS,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204416.jpg
+TerceiroVice-Presidente,204557,Sidney Leite,PSD,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204557.jpg
+Titular.18,204557,Sidney Leite,PSD,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204557.jpg
+Titular.19,74356,Silas Câmara,PRB,AM,Titular,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/74356.jpg
+Suplente.12,204360,Silvia Cristina,PDT,RO,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/204360.jpg
+Suplente.13,178863,Uldurico Junior,PPL,BA,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/178863.jpg
+Suplente.14,74044,Wilson Santiago,PTB,PB,Suplente,CINDRA,camara,https://www.camara.leg.br/internet/deputado/bandep/74044.jpg
+Titular,74646,Aécio Neves,PSDB,MG,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74646.jpg
+Titular.1,178836,Alan Rick,DEM,AC,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178836.jpg
+Suplente,204503,Alexandre Padilha,PT,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204503.jpg
+Titular.2,178881,Aluisio Mendes,PODE,MA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178881.jpg
+Titular.3,204423,André Ferreira,PSC,PE,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204423.jpg
+Titular.4,73433,Arlindo Chinaglia,PT,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/73433.jpg
+Titular.5,204414,Aroldo Martins,PRB,PR,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204414.jpg
+Suplente.1,160600,Arthur Oliveira Maia,DEM,BA,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160600.jpg
+Suplente.2,74090,Átila Lins,PP,AM,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74090.jpg
+Titular.6,160665,Augusto Coutinho,SOLIDARI,PE,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160665.jpg
+Suplente.3,73701,Benedita da Silva,PT,RJ,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/73701.jpg
+Titular.7,160589,Bruna Furlan,PSDB,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160589.jpg
+Suplente.4,204352,Camilo Capiberibe,PSB,AP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204352.jpg
+Titular.8,141398,Carlos Zarattini,PT,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141398.jpg
+Titular.9,73441,Celso Russomanno,PRB,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/73441.jpg
+Suplente.5,204504,Cezinha de Madureira ,PSD,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204504.jpg
+Titular.10,74537,Claudio Cajado,PP,BA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74537.jpg
+Suplente.6,204376,Coronel Armando,PSL,SC,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204376.jpg
+Suplente.7,204378,Coronel Chrisóstomo,PSL,RO,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204378.jpg
+Titular.11,205548,David Miranda,PSOL,RJ,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/205548.jpg
+Suplente.8,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204450.jpg
+Suplente.9,141417,Edio Lopes,PR,RR,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141417.jpg
+Titular.12,74655,Eduardo Barbosa,PSDB,MG,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74655.jpg
+Presidente,92346,Eduardo Bolsonaro,PSL,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/92346.jpg
+Titular.13,92346,Eduardo Bolsonaro,PSL,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/92346.jpg
+Suplente.10,178977,Eduardo Cury,PSDB,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178977.jpg
+Titular.14,141421,Eduardo da Fonte,PP,PE,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141421.jpg
+Suplente.11,204482,Euclydes Pettersen,PSC,MG,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204482.jpg
+Suplente.12,68720,Fábio Henrique,PDT,SE,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/68720.jpg
+Titular.15,141427,Fábio Ramalho,MDB,MG,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141427.jpg
+Suplente.13,141431,Fernando Coelho Filho,DEM,PE,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141431.jpg
+Suplente.14,191923,Flavio Nogueira,PDT,PI,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/191923.jpg
+Suplente.15,204473,General Girão,PSL,RN,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204473.jpg
+Suplente.16,204484,General Peternelli,PSL,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204484.jpg
+Titular.16,74383,Giacobo,PR,PR,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74383.jpg
+Suplente.17,178996,Giovani Feltes,MDB,RS,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178996.jpg
+Suplente.18,152605,Glauber Braga,PSOL,RJ,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/152605.jpg
+Titular.17,160667,Guilherme Mussi,PP,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160667.jpg
+Titular.18,204465,Haroldo Cathedral,PSD,RR,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204465.jpg
+Titular.19,204548,Heitor Freire,PSL,CE,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204548.jpg
+Titular.20,204444,Helio Lopes,PSL,RJ,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204444.jpg
+Titular.21,73482,Henrique Fontana,PT,RS,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/73482.jpg
+Titular.22,178884,Hildo Rocha,MDB,MA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178884.jpg
+Suplente.19,141450,Hugo Leal,PSD,RJ,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141450.jpg
+Titular.23,74273,Jefferson Campos,PSB,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74273.jpg
+Titular.24,74554,José Rocha,PR,BA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74554.jpg
+Titular.25,204359,Léo Moraes,PODE,RO,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204359.jpg
+Titular.26,92102,Leur Lomanto Júnior,DEM,BA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/92102.jpg
+Suplente.20,204382,Loester Trutis,PSL,MS,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204382.jpg
+Suplente.21,178931,Luciano Ducci,PSB,PR,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178931.jpg
+PrimeiroVice-Presidente,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204526.jpg
+Titular.27,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204526.jpg
+Titular.28,156190,Marcel Van Hattem,NOVO,RS,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/156190.jpg
+Titular.29,150418,Márcio Marinho,PRB,BA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/150418.jpg
+Titular.30,74352,Nilson Pinto,PSDB,PA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74352.jpg
+Titular.31,74159,Odair Cunha,PT,MG,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/74159.jpg
+Titular.32,160642,Pastor Eurico,PATRI,PE,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160642.jpg
+Titular.33,171617,Paulão,PT,AL,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/171617.jpg
+Suplente.22,141516,Paulo Abi-Ackel,PSDB,MG,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141516.jpg
+Titular.34,133968,Paulo Ramos,PDT,RJ,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/133968.jpg
+Suplente.23,90201,Pedro Augusto Bezerra,PTB,CE,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/90201.jpg
+Titular.35,122974,Pedro Lucas Fernandes ,PTB,MA,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/122974.jpg
+Suplente.24,204395,Pedro Lupion,DEM,PR,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/204395.jpg
+Titular.36,73943,Perpétua Almeida,PCdoB,AC,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/73943.jpg
+Suplente.25,160601,Pr. Marco Feliciano,PODE,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160601.jpg
+Suplente.26,160641,Professora Marcivania,PCdoB,AP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160641.jpg
+Suplente.27,141523,Raul Henry,MDB,PE,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141523.jpg
+Suplente.28,160655,Ricardo Izar,PP,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160655.jpg
+Suplente.29,178920,Ricardo Teobaldo,PODE,PE,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178920.jpg
+Suplente.30,178945,Rosangela Gomes,PRB,RJ,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178945.jpg
+Suplente.31,73466,Rubens Bueno,PPS,PR,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/73466.jpg
+Suplente.32,178961,Shéridan,PSDB,RR,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178961.jpg
+Titular.37,178922,Tadeu Alencar,PSB,PE,Titular,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178922.jpg
+Suplente.33,160610,Valmir Assunção,PT,BA,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160610.jpg
+Suplente.34,141553,Vanderlei Macris,PSDB,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141553.jpg
+Suplente.35,141555,Vinicius Carvalho,PRB,SP,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/141555.jpg
+Suplente.37,160592,Zeca Dirceu,PT,PR,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/160592.jpg
+Suplente.36,178889,Zé Carlos,PT,MA,Suplente,CREDN,camara,https://www.camara.leg.br/internet/deputado/bandep/178889.jpg
+Suplente,204501,Alencar Santana Braga,PT,SP,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/204501.jpg
+Titular,160553,Antonio Brito,PSD,BA,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/160553.jpg
+Titular.1,93083,Cacá Leão,PP,BA,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/93083.jpg
+Titular.2,204507,Carla Zambelli,PSL,SP,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/204507.jpg
+Suplente.1,204369,Caroline de Toni,PSL,SC,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/204369.jpg
+Suplente.2,204462,Chris Tonietto,PSL,RJ,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/204462.jpg
+PrimeiroVice-Presidente,160575,Erika Kokay,PT,DF,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Titular.3,160575,Erika Kokay,PT,DF,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Titular.4,152605,Glauber Braga,PSOL,RJ,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/152605.jpg
+Titular.5,73586,Júlio Delgado,PSB,MG,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/73586.jpg
+Presidente,74156,Leonardo Monteiro,PT,MG,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/74156.jpg
+Titular.6,74156,Leonardo Monteiro,PT,MG,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/74156.jpg
+Titular.7,74585,Lincoln Portela,PR,MG,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/74585.jpg
+Titular.8,74784,Luiza Erundina,PSOL,SP,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/74784.jpg
+Suplente.3,178866,Luizianne Lins,PT,CE,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/178866.jpg
+Titular.9,204458,Major Fabiana,PSL,RJ,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/204458.jpg
+Suplente.4,74398,Maria do Rosário,PT,RS,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/74398.jpg
+Titular.10,178986,Nilto Tatto,PT,SP,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/178986.jpg
+Titular.11,160556,Padre João,PT,MG,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/160556.jpg
+Suplente.5,74160,Patrus Ananias,PT,MG,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/74160.jpg
+Titular.12,178860,Paulo Azi,DEM,BA,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Suplente.6,160604,Pedro Uczai,PT,SC,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/160604.jpg
+Titular.13,73486,Pompeo de Mattos,PDT,RS,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/73486.jpg
+Titular.14,204567,Raimundo Costa,PR,BA,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/204567.jpg
+Titular.15,74161,Reginaldo Lopes,PT,MG,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/74161.jpg
+Titular.16,204480,Rogério Correia ,PT,MG,Titular,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/204480.jpg
+Suplente.7,141552,Valtenir Pereira,MDB,MT,Suplente,CLP,camara,https://www.camara.leg.br/internet/deputado/bandep/141552.jpg
+Suplente,204560,Adolfo Viana,PSDB,BA,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204560.jpg
+Suplente.1,204495,Airton Faleiro,PT,PA,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204495.jpg
+Titular,160545,Alexandre Leite,DEM,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/160545.jpg
+Titular.1,178881,Aluisio Mendes,PODE,MA,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178881.jpg
+Suplente.2,204509,Áurea Carolina,PSOL,MG,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204509.jpg
+Titular.2,204520,Cabo Junio Amaral,PSL,MG,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204520.jpg
+Titular.3,204572,Capitão Alberto Neto,PRB,AM,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204572.jpg
+Presidente,178829,Capitão Augusto,PR,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178829.jpg
+Titular.4,178829,Capitão Augusto,PR,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178829.jpg
+TerceiroVice-Presidente,178924,Capitão Fábio Abreu,,,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178924.jpg
+Titular.5,178924,Capitão Fábio Abreu,,,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178924.jpg
+Titular.6,204487,Capitão Wagner,PROS,CE,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204487.jpg
+Suplente.3,178876,Célio Silveira,PSDB,GO,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178876.jpg
+Suplente.4,204514,Coronel Tadeu,PSL,SP,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204514.jpg
+Titular.8,204454,Daniel Silveira,PSL,RJ,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204454.jpg
+Titular.7,204355,Da Vitoria,PPS,ES,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204355.jpg
+Titular.9,204451,Delegado Antônio Furtado,PSL,RJ,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204451.jpg
+Titular.10,178908,Delegado Éder Mauro,PSD,PA,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178908.jpg
+Suplente.5,204512,Delegado Marcelo Freitas,PSL,MG,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204512.jpg
+Titular.11,204569,Delegado Pablo,PSL,AM,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204569.jpg
+Suplente.6,204518,Dr. Frederico,PATRI,MG,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Suplente.7,204481,Dr. Jaziel,PR,CE,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204481.jpg
+Titular.12,204439,Dr. Leonardo,SOLIDARI,MT,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204439.jpg
+Titular.13,141421,Eduardo da Fonte,PP,PE,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/141421.jpg
+Titular.14,68720,Fábio Henrique,PDT,SE,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/68720.jpg
+Suplente.8,178969,Fábio Mitidieri,PSD,SE,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/178969.jpg
+Suplente.9,160587,Fábio Trad,PSD,MS,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/160587.jpg
+PrimeiroVice-Presidente,204427,Fernando Rodolfo,PR,PE,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204427.jpg
+Titular.15,204427,Fernando Rodolfo,PR,PE,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204427.jpg
+Titular.16,204473,General Girão,PSL,RN,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204473.jpg
+Titular.17,74419,Gonzaga Patriota,PSB,PE,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/74419.jpg
+SegundoVice-Presidente,204531,Guilherme Derrite,PP,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204531.jpg
+Titular.18,204531,Guilherme Derrite,PP,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204531.jpg
+Titular.19,160667,Guilherme Mussi,PP,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/160667.jpg
+Suplente.10,204442,Gurgel,PSL,RJ,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204442.jpg
+Suplente.11,204456,Gutemberg Reis,MDB,RJ,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204456.jpg
+Titular.20,204373,Hélio Costa,PRB,SC,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204373.jpg
+Suplente.12,141450,Hugo Leal,PSD,RJ,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/141450.jpg
+Suplente.13,204508,Igor Timo,PODE,MG,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204508.jpg
+Suplente.14,74366,João Campos,PRB,GO,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/74366.jpg
+Titular.21,204420,Julian Lemos ,PSL,PB,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204420.jpg
+Titular.22,74585,Lincoln Portela,PR,MG,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/74585.jpg
+Suplente.15,204381,Luis Miranda,DEM,DF,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204381.jpg
+Suplente.16,204543,Luiz Flávio Gomes,PSB,SP,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204543.jpg
+Suplente.17,166402,Magda Mofatto,PR,GO,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/166402.jpg
+Titular.23,204458,Major Fabiana,PSL,RJ,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204458.jpg
+Titular.24,204471,Mara Rocha,PSDB,AC,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204471.jpg
+Titular.25,76874,Marcelo Freixo,PSOL,RJ,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/76874.jpg
+Suplente.18,133810,Marcelo Moraes,PTB,RS,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/133810.jpg
+Titular.26,204431,Marcos Aurélio Sampaio,MDB,PI,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204431.jpg
+Suplente.19,204430,Margarete Coelho,PP,PI,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204430.jpg
+Titular.27,74571,Nelson Pellegrino,PT,BA,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/74571.jpg
+Suplente.20,204479,Nicoletti,PSL,RR,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204479.jpg
+Suplente.21,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/194260.jpg
+Titular.28,160642,Pastor Eurico,PATRI,PE,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/160642.jpg
+Suplente.22,193726,Paulo Eduardo Martins,PSC,PR,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/193726.jpg
+Suplente.23,160558,Paulo Freire Costa,PR,SP,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/160558.jpg
+Titular.29,204461,Paulo Ganime,NOVO,RJ,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204461.jpg
+Suplente.24,133968,Paulo Ramos,PDT,RJ,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/133968.jpg
+Titular.30,141488,Paulo Teixeira,PT,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/141488.jpg
+Suplente.25,204395,Pedro Lupion,DEM,PR,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204395.jpg
+Titular.31,73943,Perpétua Almeida,PCdoB,AC,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/73943.jpg
+Titular.32,204529,Policial Katia Sastre,PR,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204529.jpg
+Suplente.26,74161,Reginaldo Lopes,PT,MG,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/74161.jpg
+Suplente.27,160651,Rogério Peninha Mendonça,MDB,SC,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/160651.jpg
+Titular.33,73604,Rui Falcão,PT,SP,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/73604.jpg
+Titular.34,204416,Sanderson,PSL,RS,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204416.jpg
+Titular.35,90842,Santini,PTB,RS,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/90842.jpg
+Titular.36,204387,Sargento Fahur,PSD,PR,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204387.jpg
+Titular.37,177282,Subtenente Gonzaga,PDT,MG,Titular,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/177282.jpg
+Suplente.28,206231,Ted Conti,PSB,ES,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/206231.jpg
+Suplente.29,143084,Tiago Dimas,SOLIDARI,TO,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/143084.jpg
+Suplente.30,195866,Vaidon Oliveira,PROS,CE,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/195866.jpg
+Suplente.31,141555,Vinicius Carvalho,PRB,SP,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/141555.jpg
+Suplente.32,204532,Vinicius Poit,NOVO,SP,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204532.jpg
+Suplente.33,160518,Weliton Prado,PROS,MG,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/160518.jpg
+Suplente.34,204559,Zé Neto,PT,BA,Suplente,CSPCCO,camara,https://www.camara.leg.br/internet/deputado/bandep/204559.jpg
+Suplente,204549,Aj Albuquerque,PP,CE,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204549.jpg
+Titular,204356,Amaro Neto,PRB,ES,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204356.jpg
+Titular.1,178831,André Abdon,PP,AP,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178831.jpg
+Titular.2,204388,Bibo Nunes,PSL,RS,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204388.jpg
+Suplente.1,178928,Christiane de Souza Yared,PR,PR,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178928.jpg
+Titular.3,74467,Damião Feliciano,PDT,PB,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/74467.jpg
+Suplente.2,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204450.jpg
+Titular.4,204541,Eduardo Bismarck,PDT,CE,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204541.jpg
+Suplente.3,178871,Evair Vieira de Melo,PP,ES,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178871.jpg
+Titular.5,68720,Fábio Henrique,PDT,SE,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/68720.jpg
+Suplente.4,171623,Fabio Reis,MDB,SE,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/171623.jpg
+Titular.6,72442,Felipe Carreras,PSB,PE,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/72442.jpg
+Suplente.5,191923,Flavio Nogueira,PDT,PI,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/191923.jpg
+Suplente.6,204444,Helio Lopes,PSL,RJ,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204444.jpg
+SegundoVice-Presidente,178981,Herculano Passos,MDB,SP,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178981.jpg
+Titular.7,178981,Herculano Passos,MDB,SP,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178981.jpg
+Suplente.7,204564,Igor Kannário,PHS,BA,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204564.jpg
+TerceiroVice-Presidente,112437,João Marcelo Souza,MDB,MA,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/112437.jpg
+Titular.8,112437,João Marcelo Souza,MDB,MA,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/112437.jpg
+Titular.9,141464,José Airton Félix Cirilo,PT,CE,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/141464.jpg
+Titular.10,160619,José Nunes,PSD,BA,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/160619.jpg
+Titular.11,151208,Laercio Oliveira,PP,SE,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/151208.jpg
+PrimeiroVice-Presidente,92102,Leur Lomanto Júnior,DEM,BA,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/92102.jpg
+Titular.12,92102,Leur Lomanto Júnior,DEM,BA,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/92102.jpg
+Suplente.8,139285,Lídice da Mata,PSB,BA,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/139285.jpg
+Suplente.9,196358,Lourival Gomes,PSL,RJ,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/196358.jpg
+Titular.13,166402,Magda Mofatto,PR,GO,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/166402.jpg
+Suplente.10,178843,Marx Beltrão,PSD,AL,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178843.jpg
+Presidente,178896,Newton Cardoso Jr,MDB,MG,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178896.jpg
+Titular.14,178896,Newton Cardoso Jr,MDB,MG,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178896.jpg
+Suplente.11,194260,Nivaldo Albuquerque,PTB,AL,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/194260.jpg
+Suplente.12,178860,Paulo Azi,DEM,BA,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Titular.15,204492,Paulo Guedes,PT,MG,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204492.jpg
+Titular.16,90201,Pedro Augusto Bezerra,PTB,CE,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/90201.jpg
+Suplente.13,204565,Professora Dayane Pimentel,PSL,BA,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204565.jpg
+Titular.17,204567,Raimundo Costa,PR,BA,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204567.jpg
+Suplente.14,204362,Ricardo Guidi,PSD,SC,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204362.jpg
+Suplente.15,204489,Robério Monteiro,PDT,CE,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204489.jpg
+Titular.18,195866,Vaidon Oliveira,PROS,CE,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/195866.jpg
+Suplente.16,74376,Vander Loubet,PT,MS,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/74376.jpg
+Titular.19,204396,Vermelho,PSD,PR,Titular,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/204396.jpg
+Suplente.17,178952,Walter Alves,MDB,RN,Suplente,CTUR,camara,https://www.camara.leg.br/internet/deputado/bandep/178952.jpg
+Suplente,204495,Airton Faleiro,PT,PA,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204495.jpg
+Suplente.1,204400,Aline Sleutjes,PSL,PR,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204400.jpg
+Suplente.2,204358,Beto Pereira,PSDB,MS,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204358.jpg
+Titular,207176,Bia Cavassa,PSDB,MS,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/207176.jpg
+PrimeiroVice-Presidente,204352,Camilo Capiberibe,PSB,AP,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204352.jpg
+Titular.1,204352,Camilo Capiberibe,PSB,AP,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204352.jpg
+SegundoVice-Presidente,178962,Carlos Gomes,PRB,RS,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/178962.jpg
+Titular.2,178962,Carlos Gomes,PRB,RS,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/178962.jpg
+Titular.3,204488,Célio Studart,PV,CE,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204488.jpg
+Suplente.3,141405,Celso Maldaner,MDB,SC,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/141405.jpg
+Suplente.4,141439,Chico D'Angelo,PDT,RJ,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/141439.jpg
+Titular.4,178916,Daniel Coelho,PPS,PE,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/178916.jpg
+Titular.5,204434,Dra. Vanda Milani,SOLIDARI,AC,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204434.jpg
+Suplente.5,198783,Emanuel Pinheiro Neto,PTB,MT,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/198783.jpg
+Titular.6,204368,Fabio Schiochet,PSL,SC,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204368.jpg
+Titular.7,204494,Fred Costa,PATRI,MG,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204494.jpg
+Suplente.6,204393,Frei Anastacio Ribeiro,PT,PB,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204393.jpg
+Suplente.7,204527,Geninho Zuliani,DEM,SP,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204527.jpg
+Suplente.8,160673,Giovani Cherini,PR,RS,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/160673.jpg
+Suplente.9,204468,Joenia Wapichana,REDE,RR,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204468.jpg
+Titular.8,204386,Jose Mario Schreiner,DEM,GO,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204386.jpg
+Titular.9,74299,Leônidas Cristino,PDT,CE,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/74299.jpg
+Suplente.10,204415,Nereu Crispim,PSL,RS,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204415.jpg
+Suplente.11,146307,Neri Geller,PP,MT,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/146307.jpg
+Titular.10,178986,Nilto Tatto,PT,SP,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/178986.jpg
+Suplente.12,204422,Ossesio Silva,PRB,PE,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204422.jpg
+Titular.11,204538,Paulo Bengtson,PTB,PA,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204538.jpg
+Suplente.13,204524,Pinheirinho,PP,MG,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204524.jpg
+Titular.12,204446,Professor Joziel,PSL,RJ,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204446.jpg
+Suplente.14,205865,Reinhold Stephanes Junior,PSD,PR,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/205865.jpg
+Titular.13,160655,Ricardo Izar,PP,SP,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/160655.jpg
+Presidente,204530,Rodrigo Agostinho,PSB,SP,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204530.jpg
+Titular.14,204530,Rodrigo Agostinho,PSB,SP,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204530.jpg
+Titular.15,92776,Stefano Aguiar,PSD,MG,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/92776.jpg
+Titular.16,204505,Vavá Martins,PRB,PA,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204505.jpg
+Suplente.15,160632,Zé Silva,SOLIDARI,MG,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/160632.jpg
+Titular.17,204517,Zé Vitor,PR,MG,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204517.jpg
+Titular,204495,Airton Faleiro,PT,PA,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204495.jpg
+Titular.1,204544,Alexandre Frota ,PSL,SP,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204544.jpg
+Suplente,204503,Alexandre Padilha,PT,SP,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204503.jpg
+Suplente.1,74057,Alice Portugal,PCdoB,BA,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/74057.jpg
+SegundoVice-Presidente,204509,Áurea Carolina,PSOL,MG,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204509.jpg
+Titular.2,204509,Áurea Carolina,PSOL,MG,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204509.jpg
+Presidente,73701,Benedita da Silva,PT,RJ,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/73701.jpg
+Titular.3,73701,Benedita da Silva,PT,RJ,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/73701.jpg
+Suplente.2,204388,Bibo Nunes,PSL,RS,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204388.jpg
+Titular.4,141439,Chico D'Angelo,PDT,RJ,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/141439.jpg
+Titular.5,204409,Daniel Trzeciak,PSDB,RS,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204409.jpg
+Suplente.3,205548,David Miranda,PSOL,RJ,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/205548.jpg
+Suplente.4,178929,Diego Garcia,PODE,PR,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
+Suplente.5,160575,Erika Kokay,PT,DF,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Titular.6,204564,Igor Kannário,PHS,BA,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204564.jpg
+Titular.7,74848,Jandira Feghali,PCdoB,RJ,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/74848.jpg
+Titular.8,204472,José Medeiros,PODE,MT,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204472.jpg
+Suplente.6,139285,Lídice da Mata,PSB,BA,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/139285.jpg
+Suplente.7,74585,Lincoln Portela,PR,MG,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/74585.jpg
+Suplente.8,204382,Loester Trutis,PSL,MS,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204382.jpg
+Titular.9,178931,Luciano Ducci,PSB,PR,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/178931.jpg
+Titular.11,178866,Luizianne Lins,PT,CE,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/178866.jpg
+Titular.10,204455,Luiz Lima,PSL,RJ,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204455.jpg
+Titular.12,204433,Marcelo Calero,PPS,RJ,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204433.jpg
+Suplente.9,171619,Margarida Salomão,PT,MG,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/171619.jpg
+PrimeiroVice-Presidente,74398,Maria do Rosário,PT,RS,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/74398.jpg
+Titular.13,74398,Maria do Rosário,PT,RS,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/74398.jpg
+Suplente.10,141488,Paulo Teixeira,PT,SP,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/141488.jpg
+Suplente.11,204525,Rosana Valle,PSB,SP,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/204525.jpg
+Titular.14,74371,Rubens Otoni,PT,GO,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/74371.jpg
+Suplente.12,178947,Sóstenes Cavalcante,DEM,RJ,Suplente,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/178947.jpg
+Titular.15,178922,Tadeu Alencar,PSB,PE,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/178922.jpg
+Titular.16,160976,Tiririca,PR,SP,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/160976.jpg
+Titular.17,157130,Túlio Gadêlha ,PDT,PE,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/157130.jpg
+Titular.18,160569,Waldenor Pereira,PT,BA,Titular,CCULT,camara,https://www.camara.leg.br/internet/deputado/bandep/160569.jpg
+TerceiroVice-Presidente,136811,Afonso Hamm,PP,RS,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/136811.jpg
+Titular,136811,Afonso Hamm,PP,RS,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/136811.jpg
+Suplente,204495,Airton Faleiro,PT,PA,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204495.jpg
+Suplente.2,204516,Alexis Fonteyne,NOVO,SP,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204516.jpg
+Suplente.1,178972,Alex Manente,PPS,SP,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/178972.jpg
+Suplente.3,178927,Aliel Machado,PSB,PR,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/178927.jpg
+Titular.1,133439,André Figueiredo,PDT,CE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/133439.jpg
+Suplente.4,204397,Boca Aberta,PROS,PR,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204397.jpg
+Suplente.5,204361,Carlos Chiodini,MDB,SC,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204361.jpg
+Titular.2,178876,Célio Silveira,PSDB,GO,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/178876.jpg
+PrimeiroVice-Presidente,160552,Danrlei de Deus Hinterholz,PSD,RS,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/160552.jpg
+Titular.3,160552,Danrlei de Deus Hinterholz,PSD,RS,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/160552.jpg
+Suplente.6,204351,Dr. Luiz Ovando,PSL,MS,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204351.jpg
+Suplente.7,204412,Dr. Zacharias Calil,DEM,GO,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204412.jpg
+Suplente.8,204562,Edilázio Júnior,PSD,MA,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204562.jpg
+Titular.4,178930,Evandro Roman,PSD,PR,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/178930.jpg
+Suplente.9,68720,Fábio Henrique,PDT,SE,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/68720.jpg
+Presidente,178969,Fábio Mitidieri,PSD,SE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/178969.jpg
+Titular.5,178969,Fábio Mitidieri,PSD,SE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/178969.jpg
+SegundoVice-Presidente,171623,Fabio Reis,MDB,SE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/171623.jpg
+Titular.6,171623,Fabio Reis,MDB,SE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/171623.jpg
+Titular.7,72442,Felipe Carreras,PSB,PE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/72442.jpg
+Titular.8,92699,Fernando Monteiro,PP,PE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/92699.jpg
+Suplente.10,160598,Flávia Morais,PDT,GO,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/160598.jpg
+Titular.9,178909,Hélio Leite,DEM,PA,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/178909.jpg
+Titular.10,204444,Helio Lopes,PSL,RJ,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204444.jpg
+Suplente.11,141450,Hugo Leal,PSD,RJ,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/141450.jpg
+Titular.11,204436,Isnaldo Bulhões Jr.,MDB,AL,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204436.jpg
+Titular.12,74554,José Rocha,PR,BA,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/74554.jpg
+Titular.13,204372,Julio Cesar Ribeiro,PRB,DF,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204372.jpg
+Titular.14,204455,Luiz Lima,PSL,RJ,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204455.jpg
+Suplente.12,146788,Marcelo Aro,PHS,MG,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/146788.jpg
+Titular.15,133810,Marcelo Moraes,PTB,RS,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/133810.jpg
+Suplente.13,204415,Nereu Crispim,PSL,RS,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204415.jpg
+Suplente.14,204390,Professor Alcides,PP,GO,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204390.jpg
+Titular.16,204567,Raimundo Costa,PR,BA,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204567.jpg
+Titular.17,73801,Renildo Calheiros,PCdoB,PE,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/73801.jpg
+Titular.18,152610,Roberto Alves,PRB,SP,Titular,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/152610.jpg
+Suplente.15,204505,Vavá Martins,PRB,PA,Suplente,CESPO,camara,https://www.camara.leg.br/internet/deputado/bandep/204505.jpg
+Titular,204503,Alexandre Padilha,PT,SP,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204503.jpg
+Suplente,178833,Alexandre Serfiotis,PSD,RJ,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/178833.jpg
+Suplente.1,204400,Aline Sleutjes,PSL,PR,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204400.jpg
+Suplente.2,204507,Carla Zambelli,PSL,SP,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204507.jpg
+Suplente.3,178962,Carlos Gomes,PRB,RS,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/178962.jpg
+Titular.1,204451,Delegado Antônio Furtado,PSL,RJ,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204451.jpg
+TerceiroVice-Presidente,178929,Diego Garcia,PODE,PR,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
+Titular.2,178929,Diego Garcia,PODE,PR,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
+Titular.4,81297,Dra. Soraya Manato,PSL,ES,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/81297.jpg
+Titular.3,204450,Dr. Luiz Antonio Teixeira Jr.,PP,RJ,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204450.jpg
+Suplente.4,204412,Dr. Zacharias Calil,DEM,GO,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204412.jpg
+Titular.5,74655,Eduardo Barbosa,PSDB,MG,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/74655.jpg
+Suplente.5,160575,Erika Kokay,PT,DF,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Suplente.6,160587,Fábio Trad,PSD,MS,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/160587.jpg
+Titular.6,204447,Flordelis,PSD,RJ,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204447.jpg
+Titular.7,204494,Fred Costa,PATRI,MG,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204494.jpg
+Titular.8,178966,Geovania de Sá,PSDB,SC,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/178966.jpg
+Presidente,74270,Gilberto Nascimento,PSC,SP,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/74270.jpg
+Titular.9,74270,Gilberto Nascimento,PSC,SP,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/74270.jpg
+PrimeiroVice-Presidente,204419,Glaustin Fokus,PSC,GO,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204419.jpg
+Titular.10,204419,Glaustin Fokus,PSC,GO,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204419.jpg
+Suplente.7,204429,João H. Campos,PSB,PE,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204429.jpg
+Suplente.8,146788,Marcelo Aro,PHS,MG,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/146788.jpg
+Suplente.9,204433,Marcelo Calero,PPS,RJ,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204433.jpg
+SegundoVice-Presidente,204540,Maria Rosas ,PRB,SP,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204540.jpg
+Titular.11,204540,Maria Rosas ,PRB,SP,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204540.jpg
+Titular.12,204432,Marina Santos ,SOLIDARI,PI,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204432.jpg
+Titular.13,75431,Maurício Dziedricki,PTB,RS,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/75431.jpg
+Titular.14,160558,Paulo Freire Costa,PR,SP,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/160558.jpg
+Titular.15,204567,Raimundo Costa,PR,BA,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204567.jpg
+Titular.16,178925,Rejane Dias,PT,PI,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/178925.jpg
+Titular.17,204362,Ricardo Guidi,PSD,SC,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204362.jpg
+Suplente.10,74371,Rubens Otoni,PT,GO,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/74371.jpg
+Suplente.11,177282,Subtenente Gonzaga,PDT,MG,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/177282.jpg
+Titular.18,206231,Ted Conti,PSB,ES,Titular,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/206231.jpg
+Suplente.12,204466,Tereza Nelma,PSDB,AL,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204466.jpg
+Suplente.13,204478,Vinicius Farah,MDB,RJ,Suplente,CPD,camara,https://www.camara.leg.br/internet/deputado/bandep/204478.jpg
+SegundoVice-Presidente,74057,Alice Portugal,PCdoB,BA,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/74057.jpg
+Titular,74057,Alice Portugal,PCdoB,BA,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/74057.jpg
+Titular.1,204353,Aline Gurgel,PRB,AP,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204353.jpg
+Suplente,73701,Benedita da Silva,PT,RJ,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/73701.jpg
+Suplente.1,207176,Bia Cavassa,PSDB,MS,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/207176.jpg
+Suplente.2,204369,Caroline de Toni,PSL,SC,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204369.jpg
+Suplente.3,204462,Chris Tonietto,PSL,RJ,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204462.jpg
+Titular.2,204459,Daniela do Waguinho,MDB,RJ,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204459.jpg
+Suplente.4,204451,Delegado Antônio Furtado,PSL,RJ,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204451.jpg
+Titular.3,178929,Diego Garcia,PODE,PR,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
+Titular.4,74075,Elcione Barbalho,MDB,PA,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/74075.jpg
+PrimeiroVice-Presidente,198783,Emanuel Pinheiro Neto,PTB,MT,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/198783.jpg
+Titular.5,198783,Emanuel Pinheiro Neto,PTB,MT,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/198783.jpg
+Suplente.5,160575,Erika Kokay,PT,DF,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/160575.jpg
+Suplente.6,204407,Fernanda Melchionna ,PSOL,RS,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204407.jpg
+Titular.6,204354,Flávia Arruda,PR,DF,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204354.jpg
+Titular.7,160598,Flávia Morais,PDT,GO,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/160598.jpg
+Titular.8,204447,Flordelis,PSD,RJ,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204447.jpg
+Titular.9,107283,Gleisi Hoffmann,PT,PR,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/107283.jpg
+Titular.10,160534,Lauriete,PR,ES,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/160534.jpg
+Presidente,204410,Luisa Canziani,PTB,PR,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204410.jpg
+Titular.11,204410,Luisa Canziani,PTB,PR,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204410.jpg
+Titular.12,178866,Luizianne Lins,PT,CE,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/178866.jpg
+Titular.13,204458,Major Fabiana,PSL,RJ,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204458.jpg
+Suplente.7,204430,Margarete Coelho,PP,PI,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204430.jpg
+Suplente.8,204428,Marília Arraes,PT,PE,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204428.jpg
+Titular.14,204566,Marreca Filho,PATRI,MA,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204566.jpg
+Titular.15,66179,Norma Ayub,DEM,ES,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/66179.jpg
+Suplente.9,160642,Pastor Eurico,PATRI,PE,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/160642.jpg
+Suplente.10,204377,Paula Belmonte,PPS,DF,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204377.jpg
+Suplente.11,178860,Paulo Azi,DEM,BA,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Titular.16,204565,Professora Dayane Pimentel,PSL,BA,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204565.jpg
+Suplente.12,178989,Renata Abreu,PODE,SP,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/178989.jpg
+Titular.17,204525,Rosana Valle,PSB,SP,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204525.jpg
+Titular.18,204357,Rose Modesto,PSDB,MS,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204357.jpg
+Titular.19,204535,Sâmia Bomfim,PSOL,SP,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204535.jpg
+Suplente.13,204360,Silvia Cristina,PDT,RO,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204360.jpg
+Titular.20,204534,Tabata Amaral ,PDT,SP,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204534.jpg
+Suplente.14,204466,Tereza Nelma,PSDB,AL,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204466.jpg
+Titular.21,74283,Vicentinho,PT,SP,Titular,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/74283.jpg
+Suplente.15,204483,Vilson da Fetaemg,PSB,MG,Suplente,CMULHER,camara,https://www.camara.leg.br/internet/deputado/bandep/204483.jpg
+Titular,204503,Alexandre Padilha,PT,SP,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204503.jpg
+Titular.1,160553,Antonio Brito,PSD,BA,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/160553.jpg
+TerceiroVice-Presidente,164360,Carmen Zanotto,PPS,SC,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/164360.jpg
+Titular.2,164360,Carmen Zanotto,PPS,SC,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/164360.jpg
+Suplente,204490,Charlles Evangelista,PSL,MG,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204490.jpg
+Titular.3,204451,Delegado Antônio Furtado,PSL,RJ,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204451.jpg
+PrimeiroVice-Presidente,204542,Denis Bezerra,PSB,CE,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204542.jpg
+Titular.4,204542,Denis Bezerra,PSB,CE,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204542.jpg
+Suplente.1,204518,Dr. Frederico,PATRI,MG,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
+Titular.5,178994,Dulce Miranda,MDB,TO,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/178994.jpg
+Suplente.2,204421,Edna Henrique,PSDB,PB,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204421.jpg
+Titular.6,74655,Eduardo Barbosa,PSDB,MG,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/74655.jpg
+Titular.7,160640,Eros Biondini,PROS,MG,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/160640.jpg
+Suplente.3,160587,Fábio Trad,PSD,MS,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/160587.jpg
+Titular.8,204477,Felício Laterça,PSL,RJ,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204477.jpg
+Suplente.4,204427,Fernando Rodolfo,PR,PE,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204427.jpg
+Suplente.5,160598,Flávia Morais,PDT,GO,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/160598.jpg
+Titular.9,204494,Fred Costa,PATRI,MG,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204494.jpg
+Titular.10,178966,Geovania de Sá,PSDB,SC,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/178966.jpg
+Titular.11,74270,Gilberto Nascimento,PSC,SP,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/74270.jpg
+Titular.12,204513,Guiga Peixoto,PSL,SP,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204513.jpg
+Suplente.6,204373,Hélio Costa,PRB,SC,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204373.jpg
+Titular.13,178832,Leandre,PV,PR,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/178832.jpg
+Presidente,139285,Lídice da Mata,PSB,BA,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/139285.jpg
+Titular.14,139285,Lídice da Mata,PSB,BA,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/139285.jpg
+Suplente.7,196358,Lourival Gomes,PSL,RJ,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/196358.jpg
+Suplente.8,76874,Marcelo Freixo,PSOL,RJ,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/76874.jpg
+Titular.15,75431,Maurício Dziedricki,PTB,RS,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/75431.jpg
+Suplente.9,178985,Miguel Lombardi,PR,SP,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/178985.jpg
+Titular.16,66179,Norma Ayub,DEM,ES,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/66179.jpg
+Titular.17,204422,Ossesio Silva,PRB,PE,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204422.jpg
+Suplente.10,178860,Paulo Azi,DEM,BA,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
+Titular.18,74161,Reginaldo Lopes,PT,MG,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/74161.jpg
+SegundoVice-Presidente,204525,Rosana Valle,PSB,SP,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204525.jpg
+Titular.19,204525,Rosana Valle,PSB,SP,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204525.jpg
+Suplente.11,74371,Rubens Otoni,PT,GO,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/74371.jpg
+Suplente.12,204466,Tereza Nelma,PSDB,AL,Suplente,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204466.jpg
+Titular.20,204478,Vinicius Farah,MDB,RJ,Titular,CIDOSO,camara,https://www.camara.leg.br/internet/deputado/bandep/204478.jpg
 NA,1,Eduardo Braga,MDB,AM,Titular,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg
 NA,1,Renan Calheiros,MDB,AL,Suplente,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador70.jpg
 NA,1,Mecias de Jesus,PRB,RR,Titular,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6027.jpg
@@ -69,7 +1451,7 @@ VICE-PRESIDENTE,2,Styvenson Valentim,PODE,RN,Titular,CAS,senado,http://www.senad
 NA,2,Eduardo Girão,PODE,CE,Suplente,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5976.jpg
 PRESIDENTE,2,Romário,PODE,RJ,Titular,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5322.jpg
 NA,2,Rose de Freitas,PODE,ES,Suplente,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador2331.jpg
-NA,2,Selma Arruda,PSL,MT,Titular,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+NA,2,Juíza Selma,PSL,MT,Titular,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,2,    ,NA,NA,Suplente,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,3,Leila Barros,PSB,DF,Titular,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg
 NA,3,Jorge Kajuru,PSB,GO,Suplente,CAS,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg
@@ -119,7 +1501,7 @@ NA,2,Oriovisto Guimarães,PODE,PR,Titular,CCJ,senado,http://www.senado.leg.br/se
 NA,2,Lasier Martins,PODE,RS,Suplente,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5533.jpg
 NA,2,Rose de Freitas,PODE,ES,Titular,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador2331.jpg
 NA,2,Major Olimpio,PSL,SP,Suplente,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
-NA,2,Selma Arruda,PSL,MT,Titular,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+NA,2,Juíza Selma,PSL,MT,Titular,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,2,Flávio Bolsonaro,PSL,RJ,Suplente,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg
 NA,3,Veneziano Vital do Rêgo,PSB,PB,Titular,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg
 NA,3,Jorge Kajuru,PSB,GO,Suplente,CCJ,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg
@@ -156,7 +1538,7 @@ NA,1,Eduardo Braga,MDB,AM,Suplente,CE,senado,http://www.senado.leg.br/senadores/
 NA,1,Confúcio Moura,MDB,RO,Titular,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador475.jpg
 NA,1,Daniella Ribeiro,PP,PB,Suplente,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5998.jpg
 NA,1,Marcio Bittar,MDB,AC,Titular,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador285.jpg
-NA,1,    ,NA,NA,Suplente,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
+NA,1,Fernando Bezerra Coelho,MDB,PE,Suplente,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5540.jpg
 NA,1,Luiz do Carmo,MDB,GO,Titular,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5585.jpg
 NA,1,    ,NA,NA,Suplente,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,1,Mailza Gomes,PP,AC,Titular,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5557.jpg
@@ -203,12 +1585,12 @@ NA,6,Maria do Carmo Alves,DEM,SE,Titular,CE,senado,http://www.senado.leg.br/sena
 NA,6,    ,NA,NA,Suplente,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,6,Wellington Fagundes,PR,MT,Titular,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1173.jpg
 NA,6,    ,NA,NA,Suplente,CE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
-NA,1,Jarbas Vasconcelos,MDB,PE,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4545.jpg
+NA,1,Eduardo Braga,MDB,AM,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg
 NA,1,Marcio Bittar,MDB,AC,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador285.jpg
 NA,1,Confúcio Moura,MDB,RO,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador475.jpg
-NA,1,Ciro Nogueira,PP,PI,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador739.jpg
+NA,1,José Maranhão,MDB,PB,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3361.jpg
 NA,1,Marcelo Castro,MDB,PI,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg
-NA,1,    ,NA,NA,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
+NA,1,Jader Barbalho,MDB,PA,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador35.jpg
 NA,1,Luis Carlos Heinze,PP,RS,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1186.jpg
 NA,1,    ,NA,NA,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,2,Plínio Valério,PSDB,AM,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5502.jpg
@@ -224,7 +1606,7 @@ NA,3,Randolfe Rodrigues,REDE,AP,Suplente,CMA,senado,http://www.senado.leg.br/sen
 NA,3,Marcos do Val,PPS,ES,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5942.jpg
 NA,3,Alessandro Vieira,PPS,SE,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5982.jpg
 PRESIDENTE,3,Fabiano Contarato,REDE,ES,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5953.jpg
-NA,3,    ,NA,NA,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
+NA,3,Eliziane Gama,PPS,MA,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg
 VICE-PRESIDENTE,4,Jaques Wagner,PT,BA,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador581.jpg
 NA,4,Jean Paul Prates,PT,RN,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5627.jpg
 NA,4,Telmário Mota,PROS,RR,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5535.jpg
@@ -232,17 +1614,17 @@ NA,4,Paulo Rocha,PT,PA,Suplente,CMA,senado,http://www.senado.leg.br/senadores/im
 NA,5,Carlos Viana,PSD,MG,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5990.jpg
 NA,5,Lucas Barreto,PSD,AP,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5926.jpg
 NA,5,Otto Alencar,PSD,BA,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5523.jpg
-NA,5,Sérgio Petecão,PSD,AC,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4560.jpg
+NA,5,Omar Aziz,PSD,AM,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5525.jpg
 NA,6,Jayme Campos,DEM,MT,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4531.jpg
 NA,6,Maria do Carmo Alves,DEM,SE,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1023.jpg
 NA,6,Wellington Fagundes,PR,MT,Titular,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1173.jpg
 NA,6,Chico Rodrigues,DEM,RR,Suplente,CMA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador470.jpg
 NA,1,Jader Barbalho,MDB,PA,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador35.jpg
-NA,1,Luiz do Carmo,MDB,GO,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5585.jpg
-NA,1,    ,NA,NA,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
+NA,1,Jarbas Vasconcelos,MDB,PE,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4545.jpg
+NA,1,Marcelo Castro,MDB,PI,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg
+NA,1,Mecias de Jesus,PRB,RR,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6027.jpg
+NA,1,José Maranhão,MDB,PB,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3361.jpg
 NA,1,Mailza Gomes,PP,AC,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5557.jpg
-NA,1,    ,NA,NA,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
-NA,1,    ,NA,NA,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,1,    ,NA,NA,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,1,    ,NA,NA,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,1,    ,NA,NA,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
@@ -253,7 +1635,7 @@ NA,2,Styvenson Valentim,PODE,RN,Titular,CDH,senado,http://www.senado.leg.br/sena
 NA,2,Romário,PODE,RJ,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5322.jpg
 NA,2,Lasier Martins,PODE,RS,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5533.jpg
 NA,2,Rose de Freitas,PODE,ES,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador2331.jpg
-NA,2,Selma Arruda,PSL,MT,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+NA,2,Juíza Selma,PSL,MT,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,2,Mara Gabrilli,PSDB,SP,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5376.jpg
 NA,3,Flávio Arns,REDE,PR,Titular,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador345.jpg
 NA,3,Alessandro Vieira,PPS,SE,Suplente,CDH,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5982.jpg
@@ -330,7 +1712,7 @@ NA,2,Oriovisto Guimarães,PODE,PR,Suplente,CI,senado,http://www.senado.leg.br/se
 NA,2,Flávio Bolsonaro,PSL,RJ,Titular,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg
 NA,2,Lasier Martins,PODE,RS,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5533.jpg
 NA,2,    ,NA,NA,Titular,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
-NA,2,Selma Arruda,PSL,MT,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+NA,2,Juíza Selma,PSL,MT,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,3,Jorge Kajuru,PSB,GO,Titular,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg
 NA,3,Weverton,PDT,MA,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5411.jpg
 NA,3,Acir Gurgacz,PDT,RO,Titular,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4981.jpg
@@ -370,7 +1752,7 @@ NA,2,Rodrigo Cunha,PSDB,AL,Suplente,CDR,senado,http://www.senado.leg.br/senadore
 NA,2,Soraya Thronicke,PSL,MS,Titular,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
 NA,2,Styvenson Valentim,PODE,RN,Suplente,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5959.jpg
 NA,2,Elmano Férrer,PODE,PI,Titular,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5531.jpg
-NA,2,Selma Arruda,PSL,MT,Suplente,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+NA,2,Juíza Selma,PSL,MT,Suplente,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,3,Veneziano Vital do Rêgo,PSB,PB,Titular,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg
 NA,3,Leila Barros,PSB,DF,Suplente,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg
 NA,3,Randolfe Rodrigues,REDE,AP,Titular,CDR,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg
@@ -401,7 +1783,7 @@ PRESIDENTE,2,Soraya Thronicke,PSL,MS,Titular,CRA,senado,http://www.senado.leg.br
 NA,2,Mara Gabrilli,PSDB,SP,Suplente,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5376.jpg
 NA,2,Lasier Martins,PODE,RS,Titular,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5533.jpg
 NA,2,Rose de Freitas,PODE,ES,Suplente,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador2331.jpg
-NA,2,Selma Arruda,PSL,MT,Titular,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+NA,2,Juíza Selma,PSL,MT,Titular,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,2,Eduardo Girão,PODE,CE,Suplente,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5976.jpg
 NA,2,Izalci Lucas,PSDB,DF,Titular,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4770.jpg
 NA,2,    ,NA,NA,Suplente,CRA,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
@@ -437,7 +1819,7 @@ NA,2,Rodrigo Cunha,PSDB,AL,Titular,CCT,senado,http://www.senado.leg.br/senadores
 NA,2,Plínio Valério,PSDB,AM,Suplente,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5502.jpg
 NA,2,Oriovisto Guimarães,PODE,PR,Titular,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5924.jpg
 NA,2,Styvenson Valentim,PODE,RN,Suplente,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5959.jpg
-VICE-PRESIDENTE,2,Selma Arruda,PSL,MT,Titular,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+VICE-PRESIDENTE,2,Juíza Selma,PSL,MT,Titular,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,2,Major Olimpio,PSL,SP,Suplente,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
 NA,3,VAGO,NA,NA,Titular,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,3,Flávio Arns,REDE,PR,Suplente,CCT,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador345.jpg
@@ -491,7 +1873,7 @@ NA,2,Mara Gabrilli,PSDB,SP,Titular,CTFC,senado,http://www.senado.leg.br/senadore
 NA,2,Roberto Rocha,PSDB,MA,Suplente,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador677.jpg
 NA,2,Eduardo Girão,PODE,CE,Titular,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5976.jpg
 NA,2,Rose de Freitas,PODE,ES,Suplente,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador2331.jpg
-NA,2,Selma Arruda,PSL,MT,Titular,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
+NA,2,Juíza Selma,PSL,MT,Titular,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
 NA,2,Major Olimpio,PSL,SP,Suplente,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
 NA,3,Jorge Kajuru,PSB,GO,Titular,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg
 NA,3,Fabiano Contarato,REDE,ES,Suplente,CTFC,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5953.jpg
@@ -518,7 +1900,7 @@ NA,4,    ,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos
 NA,5,    ,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,6,    ,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 PRESIDENTE,7,Eduardo Bolsonaro,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5647.jpg
-NA,8,    ,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
+NA,8,Aguinaldo Ribeiro,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5280.jpg
 NA,9,Jandira Feghali,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador769.jpg
 NA,10,    ,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
 NA,11,    ,NA,NA,Titular,CCAI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador.jpg
