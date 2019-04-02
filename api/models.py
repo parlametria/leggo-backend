@@ -55,6 +55,7 @@ class Proposicao(models.Model):
     @property
     def temas(self):
         '''
+        Separa temas
         '''
         return self.tema.split(';')
 
@@ -125,6 +126,7 @@ class EtapaProposicao(models.Model):
     @property
     def temas(self):
         '''
+        Separa temas
         '''
         return self.tema.split(';')
 
