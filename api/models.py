@@ -216,6 +216,8 @@ class TramitacaoEvent(models.Model):
 
     evento = models.TextField()
 
+    titulo_evento = models.TextField()
+
     sigla_local = models.TextField(blank=True)
 
     local = models.TextField()
@@ -225,6 +227,8 @@ class TramitacaoEvent(models.Model):
     texto_tramitacao = models.TextField()
 
     status = models.TextField()
+
+    tipo_documento = models.TextField()
 
     link_inteiro_teor = models.TextField(blank=True, null=True)
 

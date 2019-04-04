@@ -39,8 +39,8 @@ def import_tramitacoes():
     grouped = pd.read_csv(filepath).groupby(['casa', 'id_ext'])
 
     col_names = [
-        'data', 'sequencia', 'evento', 'sigla_local', 'local', 'nivel',
-        'situacao', 'texto_tramitacao', 'status', 'link_inteiro_teor']
+        'data', 'sequencia', 'evento', 'titulo_evento', 'sigla_local', 'local', 'nivel',
+        'situacao', 'texto_tramitacao', 'status', 'tipo_documento', 'link_inteiro_teor']
 
     for group_index in grouped.groups:
         prop_id = {
