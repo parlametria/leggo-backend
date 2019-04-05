@@ -94,6 +94,10 @@ class EtapaProposicao(models.Model):
 
     autor_nome = models.TextField(blank=True)
 
+    autor_uf = models.TextField(blank=True)
+    
+    autor_partido = models.TextField(blank=True)
+    
     relator_nome = models.TextField(blank=True)
 
     casa_origem = models.TextField(blank=True)
@@ -116,6 +120,27 @@ class EtapaProposicao(models.Model):
             models.Index(fields=['casa', 'id_ext']),
         ]
         ordering = ('data_apresentacao',)
+
+    @property
+    def autores(self):
+        '''
+        Separa autores das proposições
+        '''
+        return self.autor_nome.split(";")
+
+    @property
+    def partidos(self):
+        '''
+        Separa partidos dos autores das proposições
+        '''
+        return self.autor_partido.split(";")
+
+    @property
+    def uf(self):
+        '''
+        Separa unidade federativa dos autores das proposições
+        '''
+        return self.autor_uf.split(";")
 
     @property
     def sigla(self):
