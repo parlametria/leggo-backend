@@ -8,8 +8,8 @@ from datetime import datetime
 class TramitacaoEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = TramitacaoEvent
-        fields = ('data', 'casa', 'sigla_local', 'evento', 'texto_tramitacao', 'status',
-                  'proposicao_id', 'nivel')
+        fields = ('data', 'casa', 'sigla_local', 'evento', 'titulo_evento',
+                  'texto_tramitacao', 'status', 'proposicao_id', 'nivel')
 
 
 class TramitacaoEventList(generics.ListAPIView):
