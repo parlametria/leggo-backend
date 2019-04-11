@@ -122,26 +122,26 @@ class EtapaProposicao(models.Model):
         ordering = ('data_apresentacao',)
 
     @property
-    def autores(self):
+    def nome_autores(self):
         '''
         Separa autores das proposições
         '''
-        return self.autor_nome.split(";")
+        return self.autor_nome.split('+')
 
     @property
-    def partidos(self):
+    def partidos_autores(self):
         '''
         Separa partidos dos autores das proposições
         '''
-        return self.autor_partido.split(";")
+        return self.autor_partido.split('+')
 
     @property
-    def uf(self):
+    def uf_autores(self):
         '''
         Separa unidade federativa dos autores das proposições
         '''
-        return self.autor_uf.split(";")
-
+        return self.autor_uf.split('+')
+    
     @property
     def sigla(self):
         '''Sigla da proposição (ex.: PL 400/2010)'''
