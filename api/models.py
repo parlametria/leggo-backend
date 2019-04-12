@@ -59,6 +59,7 @@ class Proposicao(models.Model):
         '''
         return self.tema.split(';')
 
+
 class EtapaProposicao(models.Model):
     id_ext = models.IntegerField(
         'ID Externo',
@@ -122,7 +123,7 @@ class EtapaProposicao(models.Model):
             models.Index(fields=['casa', 'id_ext']),
         ]
         ordering = ('data_apresentacao',)
-    
+
     @property
     def temas(self):
         '''
