@@ -80,6 +80,10 @@ class EmendasTest(APITestCase):
         create_proposicao(self)
         self.emenda = Emendas(
             data_apresentacao='2004-06-08',
+            distancia = 2.5,
+            codigo_emenda = 10,
+            inteiro_teor = "",
+            numero = 1,
             local='CCJ',
             autor="Joao",
             proposicao=self.etapa_proposicao
