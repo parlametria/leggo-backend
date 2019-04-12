@@ -3,7 +3,6 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
-import requests
 # from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
