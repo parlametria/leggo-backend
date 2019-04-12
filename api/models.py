@@ -370,21 +370,20 @@ class Emendas(models.Model):
 
     data_apresentacao = models.DateField('data')
 
+    codigo_emenda = models.TextField(blank=True)
+
+    distancia = models.FloatField(null=True)
+
     local = models.TextField(blank=True)
 
     autor = models.TextField(blank=True)
+
+    numero = models.IntegerField()
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
 
     inteiro_teor = models.TextField(blank=True, null=True)
-
-    @property
-    def tamanho_pdf(self):
-        if self.inteiro_teor is not None:
-            response = requests.get(self.inteiro_teor)
-            return len(response.content)
-        return 0
 
     class Meta:
         ordering = ('-data_apresentacao',)
