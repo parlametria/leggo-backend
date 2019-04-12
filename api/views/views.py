@@ -64,7 +64,8 @@ class ProgressoSerializer(serializers.ModelSerializer):
 class EmendasSerialzer(serializers.ModelSerializer):
     class Meta:
         model = Emendas
-        fields = ('data_apresentacao', 'local', 'autor', 'inteiro_teor', 'tamanho_pdf')
+        fields = ('data_apresentacao', 'codigo_emenda', 'local',
+                  'autor', 'inteiro_teor', 'distancia', 'numero')
 
 
 class Info(APIView):

@@ -151,7 +151,8 @@ def import_emendas():
         group_df = (
             emendas_df
             .get_group(group_index)
-            [['data_apresentacao', 'local', 'autor', 'inteiro_teor']]
+            [['codigo_emenda', 'numero', 'distancia',
+              'data_apresentacao', 'local', 'autor', 'inteiro_teor']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         Emendas.objects.bulk_create(
