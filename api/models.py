@@ -377,7 +377,14 @@ class Emendas(models.Model):
 
     autor = models.TextField(blank=True)
 
+    tipo_documento = models.TextField()
+
     numero = models.IntegerField()
+
+    @property
+    def titulo(self):
+        '''Título da emenda.'''
+        return (self.tipo_documento + ' ' + str(self.numero))
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')

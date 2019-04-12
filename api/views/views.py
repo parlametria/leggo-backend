@@ -65,7 +65,7 @@ class EmendasSerialzer(serializers.ModelSerializer):
     class Meta:
         model = Emendas
         fields = ('data_apresentacao', 'codigo_emenda', 'local',
-                  'autor', 'inteiro_teor', 'distancia', 'numero')
+                  'autor', 'inteiro_teor', 'distancia', 'titulo')
 
 
 class Info(APIView):
