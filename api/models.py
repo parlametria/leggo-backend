@@ -122,25 +122,16 @@ class EtapaProposicao(models.Model):
         ordering = ('data_apresentacao',)
 
     @property
-    def nome_autores(self):
-        '''
-        Separa autores das proposições
-        '''
-        return self.autor_nome.split('+')
+    def autores(self):
+        nomes = self.autor_nome.split("+")
+        partidos = self.autor_partido.split("+")
+        ufs = self.autor_uf.split("+")
 
-    @property
-    def partidos_autores(self):
-        '''
-        Separa partidos dos autores das proposições
-        '''
-        return self.autor_partido.split('+')
+        autores = []
+        for i in range(len(nomes)):
+            autores.append(nomes[i] + " (" + partidos[i] + "-" + ufs[i] + ")")
 
-    @property
-    def uf_autores(self):
-        '''
-        Separa unidade federativa dos autores das proposições
-        '''
-        return self.autor_uf.split('+')
+        return autores 
     
     @property
     def sigla(self):
