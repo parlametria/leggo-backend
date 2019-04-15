@@ -62,6 +62,8 @@ class ProgressoSerializer(serializers.ModelSerializer):
 
 
 class EmendasSerialzer(serializers.ModelSerializer):
+    titulo = serializers.ReadOnlyField()
+
     class Meta:
         model = Emendas
         fields = ('data_apresentacao', 'codigo_emenda', 'local',
