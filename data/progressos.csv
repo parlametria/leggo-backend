@@ -483,3 +483,39 @@ camara,604557,Revisão II,Comissões,NA,NA,camara,FALSE
 camara,604557,Revisão II,Plenário,NA,NA,camara,FALSE
 camara,604557,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 camara,604557,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+<<<<<<< HEAD
+=======
+senado,136033,Pré-Construção,,NA,NA,senado,TRUE
+senado,136033,Construção,Comissões,2019-03-29T12:00:00Z,NA,senado,FALSE
+senado,136033,Construção,Plenário,NA,NA,senado,FALSE
+senado,136033,Pré-Revisão I,,NA,NA,senado,FALSE
+senado,136033,Revisão I,Comissões,NA,NA,camara,FALSE
+senado,136033,Revisão I,Plenário,NA,NA,camara,FALSE
+senado,136033,Pré-Revisão II,,NA,NA,senado,FALSE
+senado,136033,Revisão II,Comissões,NA,NA,senado,FALSE
+senado,136033,Revisão II,Plenário,NA,NA,senado,FALSE
+senado,136033,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+senado,136033,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+camara,2193540,Pré-Construção,,NA,NA,camara,TRUE
+camara,2193540,Construção,Comissões,2019-03-18T16:12:00Z,2019-04-04T12:00:00Z,camara,FALSE
+camara,2193540,Construção,Plenário,NA,NA,camara,TRUE
+camara,2193540,Pré-Revisão I,,NA,NA,camara,TRUE
+senado,136173,Revisão I,Comissões,2019-04-04T12:00:00Z,NA,senado,FALSE
+senado,136173,Revisão I,Plenário,NA,NA,senado,FALSE
+senado,136173,Pré-Revisão II,,NA,NA,senado,FALSE
+senado,136173,Revisão II,Comissões,NA,NA,camara,FALSE
+senado,136173,Revisão II,Plenário,NA,NA,camara,FALSE
+senado,136173,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+senado,136173,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+camara,16526,Pré-Construção,,NA,NA,camara,TRUE
+camara,16526,Construção,Comissões,1996-05-13T00:00:00Z,2019-03-19T14:00:00Z,camara,FALSE
+camara,16526,Construção,Plenário,2019-03-19T14:00:00Z,NA,camara,FALSE
+camara,16526,Pré-Revisão I,,NA,NA,camara,FALSE
+camara,16526,Revisão I,Comissões,NA,NA,senado,FALSE
+camara,16526,Revisão I,Plenário,NA,NA,senado,FALSE
+camara,16526,Pré-Revisão II,,NA,NA,camara,FALSE
+camara,16526,Revisão II,Comissões,NA,NA,camara,FALSE
+camara,16526,Revisão II,Plenário,NA,NA,camara,FALSE
+camara,16526,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+camara,16526,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+>>>>>>> 73a1d139fbbec9971cab9ac37ce372dfafc9ba58
