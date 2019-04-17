@@ -93,6 +93,10 @@ class EtapaProposicao(models.Model):
 
     autor_nome = models.TextField(blank=True)
 
+    autor_uf = models.TextField(blank=True)
+    
+    autor_partido = models.TextField(blank=True)
+    
     relator_nome = models.TextField(blank=True)
 
     casa_origem = models.TextField(blank=True)
@@ -116,6 +120,18 @@ class EtapaProposicao(models.Model):
         ]
         ordering = ('data_apresentacao',)
 
+    @property
+    def autores(self):
+        nomes = self.autor_nome.split("+")
+        partidos = self.autor_partido.split("+")
+        ufs = self.autor_uf.split("+")
+
+        autores = []
+        for i in range(len(nomes)):
+            autores.append(nomes[i] + " (" + partidos[i] + "-" + ufs[i] + ")")
+
+        return autores 
+    
     @property
     def sigla(self):
         '''Sigla da proposição (ex.: PL 400/2010)'''
