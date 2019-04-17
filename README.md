@@ -1,7 +1,7 @@
 [![pipeline status](https://gitlab.com/analytics-ufcg/agora-digital-backend/badges/master/pipeline.svg)](https://gitlab.com/analytics-ufcg/agora-digital-backend/commits/master)
 [![coverage report](https://gitlab.com/analytics-ufcg/agora-digital-backend/badges/master/coverage.svg)](https://gitlab.com/analytics-ufcg/agora-digital-backend/commits/master)
 
-# Ágora Digital backend
+# Leggo backend
 
 API para consulta de propostas de leis no senado e na câmara
 
@@ -27,7 +27,7 @@ Rodando com docker, o serviço estará disponível em http://0.0.0.0:8000/
 #### Docker-compose
 Para rodar com docker-compose, é preciso clonar o repositório:
 ```
-git clone https://github.com/analytics-ufcg/agora-digital-backend/
+git clone https://github.com/analytics-ufcg/leggo-backend/
 ```
 
 Após isso basta:
@@ -108,7 +108,33 @@ Importar dados do CSV para o BD:
 ./manage.py import_data
 ```
 
+Gera migrações, migra, limpa dados e importa de novo ao mesmo tempo:
+```
+./manage.py update_db
+```
+
 Testes com cobertura de código:
 ```
 ./manage.py test_all
 ```
+
+### Gerar diagrama do BD
+
+É possivel gerar um diagrama que mostre as classes/tabelas do banco, atributos/colunas de dados e as relações entre elas.
+
+Primeiro é necessário rodar isso dentro do container do código, para instalar as dependências:
+
+```
+pip install pydot django_extensions
+apk add ttf-dejavu
+apk add graphviz
+```
+
+Depois o diagrama pode ser gerado dessa forma:
+
+```
+docker exec -it "agorapi" sh -c './manage.py graph_models --pydot -g -o diagram.pdf api'
+```
+
+Mais informações na [doc](https://django-extensions.readthedocs.io/en/latest/graph_models.html) e aqui um [exemplo de diagrama](https://medium.com/@yathomasi1/1-using-django-extensions-to-visualize-the-database-diagram-in-django-application-c5fa7e710e16) gerado.
+

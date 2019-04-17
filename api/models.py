@@ -1,5 +1,9 @@
+import time
+from scipy import stats
 from munch import Munch
 from django.db import models
+from django.contrib.postgres.fields import JSONField
+# from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -13,7 +17,7 @@ ORDER_PROGRESSO = [
     ('Revisão I', 'Plenário'),
     ('Revisão II', 'Comissões'),
     ('Revisão II', 'Plenário'),
-    ('Sansão/Veto', 'Presidência da República'),
+    ('Sanção/Veto', 'Presidência da República'),
     ('Avaliação dos Vetos', 'Congresso'),
 ]
 
@@ -21,6 +25,12 @@ ORDER_PROGRESSO = [
 class Choices(Munch):
     def __init__(self, choices):
         super().__init__({i: i for i in choices.split(' ')})
+
+
+class InfoGerais(models.Model):
+
+    name = models.TextField()
+    value = JSONField()
 
 
 class Proposicao(models.Model):
@@ -38,7 +48,7 @@ class Proposicao(models.Model):
                 'data_fim': progresso.data_fim,
                 'local_casa': progresso.local_casa,
                 'pulou': progresso.pulou
-            } for progresso in self.progresso.all()],
+            } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
             key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
 
 
@@ -85,6 +95,8 @@ class EtapaProposicao(models.Model):
 
     relator_nome = models.TextField(blank=True)
 
+    casa_origem = models.TextField(blank=True)
+
     temperatura = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
@@ -119,18 +131,78 @@ class EtapaProposicao(models.Model):
         return URLS[self.casa] + str(self.id_ext)
 
     @property
+    def temperatura_coeficiente(self):
+        '''
+        Calcula coeficiente linear das temperaturas nas últimas 6 semanas.
+        '''
+        temperatures = self.temperatura_historico.all()[:6]
+        dates_x = [
+            time.mktime(temperatura.periodo.timetuple())
+            for temperatura in temperatures]
+        temperaturas_y = [
+            temperatura.temperatura_recente
+            for temperatura in temperatures]
+
+        if (dates_x and temperaturas_y and len(dates_x) > 1 and len(temperaturas_y) > 1):
+            return stats.linregress(dates_x, temperaturas_y)[0]
+        else:
+            return 0
+
+    @property
+    def status(self):
+        if (hasattr(self, '_prefetched_objects_cache')
+           and 'tramitacao' in self._prefetched_objects_cache):
+            # It's pefetched, avoid query
+            trams = list(self.tramitacao.all())
+            if trams:
+                return trams[-1].status
+            else:
+                return None
+        else:
+            # Not prefetched, query
+            return self.tramitacao.last().status
+
+    @property
     def resumo_tramitacao(self):
         locais = []
         events = []
+        local = ""
         for event in self.tramitacao.all():
-            if event.sigla_local not in locais:
+            if event.local == "Comissões":
                 locais.append(event.sigla_local)
                 events.append({
                     'data': event.data,
-                    'casa': event.proposicao.casa,
-                    'nome': event.sigla_local
+                    'casa': event.etapa_proposicao.casa,
+                    'local': event.sigla_local,
+                    'evento': event.evento,
+                    'texto_tramitacao': event.texto_tramitacao,
+                    'link_inteiro_teor': event.link_inteiro_teor
                 })
-        return events
+            else:
+                if event.local != local:
+                    local = event.local
+                    events.append({
+                        'data': event.data,
+                        'casa': event.etapa_proposicao.casa,
+                        'local': event.sigla_local,
+                        'evento': event.evento,
+                        'texto_tramitacao': event.texto_tramitacao,
+                        'link_inteiro_teor': event.link_inteiro_teor
+                    })
+        return sorted(events, key=lambda k: k['data'])
+
+    @property
+    def comissoes_passadas(self):
+        '''
+        Pega todas as comissões nas quais a proposição já
+        tramitou
+        '''
+        comissoes = set()
+        local_com_c_que_nao_e_comissao = "CD-MESA-PLEN"
+        for row in self.tramitacao.all():
+            if row.local != local_com_c_que_nao_e_comissao and row.local[0] == "C":
+                comissoes.add(row.local)
+        return comissoes
 
 
 class TramitacaoEvent(models.Model):
@@ -141,17 +213,48 @@ class TramitacaoEvent(models.Model):
         'Sequência',
         help_text='Sequência desse evento na lista de tramitações.')
 
-    texto = models.TextField()
+    evento = models.TextField()
 
-    sigla_local = models.TextField()
+    titulo_evento = models.TextField()
+
+    sigla_local = models.TextField(blank=True)
+
+    local = models.TextField()
 
     situacao = models.TextField()
 
-    proposicao = models.ForeignKey(
+    texto_tramitacao = models.TextField()
+
+    status = models.TextField()
+
+    tipo_documento = models.TextField()
+
+    link_inteiro_teor = models.TextField(blank=True, null=True)
+
+    etapa_proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
 
+    nivel = models.IntegerField(
+        blank=True, null=True,
+        help_text='Nível de importância deste evento para notificações.')
+
+    @property
+    def casa(self):
+        '''Casa onde o evento ocorreu.'''
+        return self.proposicao.casa
+
+    @property
+    def proposicao_id(self):
+        '''ID da proposição a qual esse evento se refere.'''
+        return self.etapa_proposicao.proposicao_id
+
+    @property
+    def proposicao(self):
+        '''Proposição a qual esse evento se refere.'''
+        return self.etapa_proposicao.proposicao
+
     class Meta:
-        ordering = ('sequencia', )
+        ordering = ('data', 'sequencia')
 
 
 class TemperaturaHistorico(models.Model):
@@ -172,6 +275,47 @@ class TemperaturaHistorico(models.Model):
     class Meta:
         ordering = ('-periodo',)
         get_latest_by = '-periodo'
+
+
+class Comissao(models.Model):
+    '''
+    Composição das comissões
+    '''
+    cargo = models.TextField(
+        blank=True, null=True,
+        help_text='Cargo ocupado pelo parlamentar na comissão')
+
+    id_parlamentar = models.TextField(
+        blank=True, null=True,
+        help_text='Id do parlamentar'
+    )
+
+    partido = models.TextField(
+        blank=True, null=True,
+        help_text='Partido do parlamentar')
+
+    uf = models.TextField(
+        blank=True, null=True,
+        help_text='Estado do parlamentar')
+
+    situacao = models.TextField(
+        blank=True, null=True,
+        help_text='Titular ou suplente')
+
+    nome = models.TextField(
+        blank=True, null=True,
+        help_text='Nome do parlamentar')
+
+    foto = models.TextField(
+        blank=True, null=True,
+        help_text='Foto do parlamentar'
+    )
+
+    sigla = models.TextField(
+        help_text='Sigla da comissão')
+
+    casa = models.TextField(
+        help_text='Camara ou Senado')
 
 
 class PautaHistorico(models.Model):
@@ -216,3 +360,37 @@ class Progresso(models.Model):
 
     pulou = models.NullBooleanField(
         help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
+
+
+class Emendas(models.Model):
+    '''
+    Emendas de uma proposição
+    '''
+
+    data_apresentacao = models.DateField('data')
+
+    codigo_emenda = models.TextField(blank=True)
+
+    distancia = models.FloatField(null=True)
+
+    local = models.TextField(blank=True)
+
+    autor = models.TextField(blank=True)
+
+    tipo_documento = models.TextField()
+
+    numero = models.IntegerField()
+
+    @property
+    def titulo(self):
+        '''Título da emenda.'''
+        return (self.tipo_documento + ' ' + str(self.numero))
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
+
+    inteiro_teor = models.TextField(blank=True, null=True)
+
+    class Meta:
+        ordering = ('-data_apresentacao',)
+        get_latest_by = '-data_apresentacao'
