@@ -128,18 +128,21 @@ class EtapaProposicao(models.Model):
 
         autores = []
         for i in range(len(nomes)):
-            if nomes[i] == "Poder Executivo" or nomes[i] == "Presidência da República":
-                autores.append(nomes[i])
-            elif "Senado Federal" in nomes[i]:
-                senado = nomes[i].split(" - ")
+            autor = nomes[i].strip()
+            if autor == "Poder Executivo":
+                autores.append(autor)
+            if "Presidência" in autor:
+                autores.append(autor)
+            elif "Senado Federal" in autor:
+                senado = autor.split(" - ")
                 if "Comissão" in senado[-1]:
                     autores.append("Sen. " + senado[-1])
                 else:
                     autores.append('Sen. ' + senado[-1] + " (" + partidos[i] + "-" + ufs[i] + ")")
-            elif "Legislação" in nomes[i]:
-                autores.append("Câm. " + nomes[i])
+            elif "Legislação" in autor:
+                autores.append("Câm. " + autor)
             else:
-                autores.append("Dep. " + nomes[i] + " (" + partidos[i] + "-" + ufs[i] + ")")
+                autores.append("Dep. " + autor + " (" + partidos[i] + "-" + ufs[i] + ")")
 
         return autores 
     
