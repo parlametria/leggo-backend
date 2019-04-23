@@ -122,6 +122,9 @@ class EtapaProposicao(models.Model):
 
     @property
     def autores(self):
+        '''
+        Retorna autores das pls de acordo com partido e UF
+        '''
         nomes = self.autor_nome.split("+")
         partidos = self.autor_partido.split("+")
         ufs = self.autor_uf.split("+")
@@ -136,8 +139,7 @@ class EtapaProposicao(models.Model):
                 if "Comissão" in senado[-1]:
                     autores.append("Sen. " + senado[-1])
                 else:
-                    autores.append('Sen. ' + senado[-1] + 
-                    " (" + partidos[i] + "-" + ufs[i] + ")")
+                    autores.append('Sen. '+senado[-1]+" ("+partidos[i]+"-"+ufs[i]+")")
             elif "Legislação" in autor:
                 autores.append("Câm. " + autor)
             else:
