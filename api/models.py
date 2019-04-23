@@ -129,9 +129,7 @@ class EtapaProposicao(models.Model):
         autores = []
         for i in range(len(nomes)):
             autor = nomes[i].strip()
-            if autor == "Poder Executivo":
-                autores.append(autor)
-            if "Presidência" in autor:
+            if "Poder Executivo" in autor or "Presidência" in autor:
                 autores.append(autor)
             elif "Senado Federal" in autor:
                 senado = autor.split(" - ")
