@@ -94,9 +94,9 @@ class EtapaProposicao(models.Model):
     autor_nome = models.TextField(blank=True)
 
     autor_uf = models.TextField(blank=True)
-    
+
     autor_partido = models.TextField(blank=True)
-    
+
     relator_nome = models.TextField(blank=True)
 
     casa_origem = models.TextField(blank=True)
@@ -136,14 +136,14 @@ class EtapaProposicao(models.Model):
                 if "Comissão" in senado[-1]:
                     autores.append("Sen. " + senado[-1])
                 else:
-                    autores.append('Sen. ' + senado[-1] + " (" + partidos[i] + "-" + ufs[i] + ")")
+                    autores.append('Sen. ' + senado[-1] + 
+                    " (" + partidos[i] + "-" + ufs[i] + ")")
             elif "Legislação" in autor:
                 autores.append("Câm. " + autor)
             else:
                 autores.append("Dep. " + autor + " (" + partidos[i] + "-" + ufs[i] + ")")
+        return autores
 
-        return autores 
-    
     @property
     def sigla(self):
         '''Sigla da proposição (ex.: PL 400/2010)'''
