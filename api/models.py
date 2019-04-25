@@ -21,6 +21,15 @@ ORDER_PROGRESSO = [
     ('Avaliação dos Vetos', 'Congresso'),
 ]
 
+ORDER_PROGRESSO_MPV = [
+    ("Comissão Mista"),
+    ("Câmara dos Deputados"),
+    ("Senado Federal"),
+    ("Câmara dos Deputados - Revisão"),
+    ("Transformada em Lei"),
+    ("Transformada em Lei com vetos")
+]
+
 
 class Choices(Munch):
     def __init__(self, choices):
@@ -40,16 +49,32 @@ class Proposicao(models.Model):
 
     @property
     def resumo_progresso(self):
-        return sorted(
-            [{
-                'fase_global': progresso.fase_global,
-                'local': progresso.local,
-                'data_inicio': progresso.data_inicio,
-                'data_fim': progresso.data_fim,
-                'local_casa': progresso.local_casa,
-                'pulou': progresso.pulou
-            } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
-            key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
+        if self.progresso.filter(fase_global='Comissão Mista').exists():
+            return sorted(
+                [{
+                    'fase_global': progresso.fase_global,
+                    'local': progresso.local,
+                    'data_inicio': progresso.data_inicio,
+                    'data_fim': progresso.data_fim,
+                    'local_casa': progresso.local_casa,
+                    'is_mpv': True,
+                    'pulou': progresso.pulou
+                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
+                key=lambda x: ORDER_PROGRESSO_MPV.index((x['fase_global'])))
+        else :
+            return sorted(
+                [{
+                    'fase_global': progresso.fase_global,
+                    'local': progresso.local,
+                    'data_inicio': progresso.data_inicio,
+                    'data_fim': progresso.data_fim,
+                    'local_casa': progresso.local_casa,
+                    'is_mpv': False,
+                    'pulou': progresso.pulou
+                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
+                key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
+        
+
 
 
 class EtapaProposicao(models.Model):
@@ -324,6 +349,8 @@ class PautaHistorico(models.Model):
     '''
 
     data = models.DateField('data')
+
+    hora = models.TextField('hora')
 
     semana = models.IntegerField('semana')
 
