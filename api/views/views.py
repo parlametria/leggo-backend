@@ -29,7 +29,7 @@ class ComissaoSerializer(serializers.ModelSerializer):
 class PautaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PautaHistorico
-        fields = ('data', 'hora', 'semana', 'local', 'em_pauta')
+        fields = ('data', 'semana', 'local', 'em_pauta')
 
 
 class EtapasSerializer(serializers.ModelSerializer):
