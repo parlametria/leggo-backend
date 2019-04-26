@@ -61,7 +61,7 @@ class Proposicao(models.Model):
                     'pulou': progresso.pulou
                 } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
                 key=lambda x: ORDER_PROGRESSO_MPV.index((x['fase_global'])))
-        else :
+        else:
             return sorted(
                 [{
                     'fase_global': progresso.fase_global,
@@ -72,9 +72,7 @@ class Proposicao(models.Model):
                     'is_mpv': False,
                     'pulou': progresso.pulou
                 } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
-                key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
-        
-
+                key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))        
 
 
 class EtapaProposicao(models.Model):
