@@ -348,8 +348,6 @@ class PautaHistorico(models.Model):
 
     data = models.DateField('data')
 
-    hora = models.TextField('hora')
-
     semana = models.IntegerField('semana')
 
     local = models.TextField(blank=True)
