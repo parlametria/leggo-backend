@@ -346,7 +346,7 @@ class PautaHistorico(models.Model):
     Histórico das pautas de uma proposição
     '''
 
-    data = models.DateField('data')
+    data = models.DateTimeField('data')
 
     semana = models.IntegerField('semana')
 
