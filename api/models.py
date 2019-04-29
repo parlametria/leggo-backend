@@ -276,6 +276,11 @@ class TramitacaoEvent(models.Model):
         '''Proposição a qual esse evento se refere.'''
         return self.etapa_proposicao.proposicao
 
+    @property
+    def tema(self):
+        '''Tema a qual esse evento se refere.'''
+        return self.etapa_proposicao.tema
+
     class Meta:
         ordering = ('data', 'sequencia')
 
