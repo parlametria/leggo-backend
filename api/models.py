@@ -3,7 +3,6 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
-import requests
 # from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
@@ -20,6 +19,15 @@ ORDER_PROGRESSO = [
     ('Revisão II', 'Plenário'),
     ('Sanção/Veto', 'Presidência da República'),
     ('Avaliação dos Vetos', 'Congresso'),
+]
+
+ORDER_PROGRESSO_MPV = [
+    ("Comissão Mista"),
+    ("Câmara dos Deputados"),
+    ("Senado Federal"),
+    ("Câmara dos Deputados - Revisão"),
+    ("Transformada em Lei"),
+    ("Transformada em Lei com vetos")
 ]
 
 
@@ -41,16 +49,30 @@ class Proposicao(models.Model):
 
     @property
     def resumo_progresso(self):
-        return sorted(
-            [{
-                'fase_global': progresso.fase_global,
-                'local': progresso.local,
-                'data_inicio': progresso.data_inicio,
-                'data_fim': progresso.data_fim,
-                'local_casa': progresso.local_casa,
-                'pulou': progresso.pulou
-            } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
-            key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
+        if self.progresso.filter(fase_global='Comissão Mista').exists():
+            return sorted(
+                [{
+                    'fase_global': progresso.fase_global,
+                    'local': progresso.local,
+                    'data_inicio': progresso.data_inicio,
+                    'data_fim': progresso.data_fim,
+                    'local_casa': progresso.local_casa,
+                    'is_mpv': True,
+                    'pulou': progresso.pulou
+                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
+                key=lambda x: ORDER_PROGRESSO_MPV.index((x['fase_global'])))
+        else:
+            return sorted(
+                [{
+                    'fase_global': progresso.fase_global,
+                    'local': progresso.local,
+                    'data_inicio': progresso.data_inicio,
+                    'data_fim': progresso.data_fim,
+                    'local_casa': progresso.local_casa,
+                    'is_mpv': False,
+                    'pulou': progresso.pulou
+                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
+                key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
 
 
 class EtapaProposicao(models.Model):
@@ -216,6 +238,8 @@ class TramitacaoEvent(models.Model):
 
     evento = models.TextField()
 
+    titulo_evento = models.TextField()
+
     sigla_local = models.TextField(blank=True)
 
     local = models.TextField()
@@ -225,6 +249,8 @@ class TramitacaoEvent(models.Model):
     texto_tramitacao = models.TextField()
 
     status = models.TextField()
+
+    tipo_documento = models.TextField()
 
     link_inteiro_teor = models.TextField(blank=True, null=True)
 
@@ -325,7 +351,7 @@ class PautaHistorico(models.Model):
     Histórico das pautas de uma proposição
     '''
 
-    data = models.DateField('data')
+    data = models.DateTimeField('data')
 
     semana = models.IntegerField('semana')
 
@@ -371,21 +397,27 @@ class Emendas(models.Model):
 
     data_apresentacao = models.DateField('data')
 
+    codigo_emenda = models.TextField(blank=True)
+
+    distancia = models.FloatField(null=True)
+
     local = models.TextField(blank=True)
 
     autor = models.TextField(blank=True)
+
+    tipo_documento = models.TextField()
+
+    numero = models.IntegerField()
+
+    @property
+    def titulo(self):
+        '''Título da emenda.'''
+        return (self.tipo_documento + ' ' + str(self.numero))
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
 
     inteiro_teor = models.TextField(blank=True, null=True)
-
-    @property
-    def tamanho_pdf(self):
-        if self.inteiro_teor is not None:
-            response = requests.get(self.inteiro_teor)
-            return len(response.content)
-        return 0
 
     class Meta:
         ordering = ('-data_apresentacao',)
