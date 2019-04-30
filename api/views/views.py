@@ -43,7 +43,7 @@ class EtapasSerializer(serializers.ModelSerializer):
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autor_nome', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'status', 'resumo_tramitacao',
-            'temperatura_coeficiente', 'pauta_historico', 'temas')
+            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
