@@ -160,13 +160,18 @@ class EtapaProposicao(models.Model):
             elif "Senado Federal" in autor:
                 senado = autor.split(" - ")
                 if "Comissão" in senado[-1]:
-                    autores.append("Sen. " + senado[-1])
+                    autores.append(senado[-1])
                 else:
-                    autores.append('Sen. '+senado[-1]+" ("+partidos[i]+"-"+ufs[i]+")")
+                    autores.append('Sen. '+senado[-1])
             elif "Legislação" in autor:
                 autores.append("Câm. " + autor)
+            elif self.casa_origem == 'senado':
+                autores.append('Sen. '+ autor)
             else:
-                autores.append("Dep. " + autor + " (" + partidos[i] + "-" + ufs[i] + ")")
+                if self.casa == 'senado':
+                    autores.append("Dep. " + autor)
+                else:
+                    autores.append("Dep. " + autor + " (" + partidos[i] + "-" + ufs[i] + ")")
         return autores
 
     @property
