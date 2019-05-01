@@ -26,8 +26,7 @@ ORDER_PROGRESSO_MPV = [
     ("Câmara dos Deputados"),
     ("Senado Federal"),
     ("Câmara dos Deputados - Revisão"),
-    ("Transformada em Lei"),
-    ("Transformada em Lei com vetos")
+    ("Congresso Nacional")
 ]
 
 
