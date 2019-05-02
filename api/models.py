@@ -172,7 +172,7 @@ class EtapaProposicao(models.Model):
                     autores.append('Dep. ' + autor)
                 else:
                     autores.append('Dep. ' +
-                        autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
+                                   autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
         return autores
 
     @property
