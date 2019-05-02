@@ -115,6 +115,10 @@ class EtapaProposicao(models.Model):
 
     autor_nome = models.TextField(blank=True)
 
+    autor_uf = models.TextField(blank=True)
+
+    autor_partido = models.TextField(blank=True)
+
     relator_nome = models.TextField(blank=True)
 
     casa_origem = models.TextField(blank=True)
@@ -137,6 +141,38 @@ class EtapaProposicao(models.Model):
             models.Index(fields=['casa', 'id_ext']),
         ]
         ordering = ('data_apresentacao',)
+
+    @property
+    def autores(self):
+        '''
+        Retorna autores das pls de acordo com partido e UF
+        '''
+        nomes = self.autor_nome.split('+')
+        partidos = self.autor_partido.split('+')
+        ufs = self.autor_uf.split('+')
+
+        autores = []
+        for i in range(len(nomes)):
+            autor = nomes[i].strip()
+            if 'Poder Executivo' in autor or 'Presidência' in autor:
+                autores.append(autor)
+            elif 'Senado Federal' in autor:
+                senado = autor.split(' - ')
+                if 'Comissão' in senado[-1]:
+                    autores.append(senado[-1])
+                else:
+                    autores.append('Sen. ' + senado[-1])
+            elif 'Legislação' in autor:
+                autores.append('Câm. ' + autor)
+            elif self.casa_origem == 'senado':
+                autores.append('Sen. ' + autor)
+            else:
+                if self.casa == 'senado':
+                    autores.append('Dep. ' + autor)
+                else:
+                    autores.append('Dep. ' +
+                                   autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
+        return autores
 
     @property
     def sigla(self):
