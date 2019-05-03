@@ -26,7 +26,7 @@ ORDER_PROGRESSO_MPV = [
     ("Câmara dos Deputados"),
     ("Senado Federal"),
     ("Câmara dos Deputados - Revisão"),
-    ("Congresso Nacional")
+    ("Sanção Presidencial/Promulgação")
 ]
 
 
