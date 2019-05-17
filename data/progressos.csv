@@ -366,7 +366,7 @@ senado,135064,Comissão Mista,,2019-01-01T12:00:00Z,NA,,FALSE
 senado,135064,Câmara dos Deputados,,NA,NA,,FALSE
 senado,135064,Senado Federal,,NA,NA,,FALSE
 senado,135064,Câmara dos Deputados - Revisão,,NA,NA,,FALSE
-senado,135064,Congresso Nacional,,NA,NA,,FALSE
+senado,135064,Sanção Presidencial/Promulgação,,NA,NA,,FALSE
 camara,2192352,Pré-Construção,,NA,NA,camara,TRUE
 camara,2192352,Construção,Comissões,2019-03-27T16:48:00Z,NA,camara,FALSE
 camara,2192352,Construção,Plenário,NA,NA,camara,FALSE
@@ -426,7 +426,7 @@ senado,135061,Comissão Mista,,2018-12-28T12:00:00Z,NA,,FALSE
 senado,135061,Câmara dos Deputados,,NA,NA,,FALSE
 senado,135061,Senado Federal,,NA,NA,,FALSE
 senado,135061,Câmara dos Deputados - Revisão,,NA,NA,,FALSE
-senado,135061,Congresso Nacional,,NA,NA,,FALSE
+senado,135061,Sanção Presidencial/Promulgação,,NA,NA,,FALSE
 camara,353631,Pré-Construção,,NA,NA,camara,TRUE
 camara,353631,Construção,Comissões,2007-06-15T17:04:00Z,2018-04-17T14:00:00Z,camara,FALSE
 camara,353631,Construção,Plenário,2017-07-04T14:00:00Z,NA,camara,FALSE
@@ -453,7 +453,7 @@ senado,135060,Comissão Mista,,2018-12-27T12:00:00Z,NA,,FALSE
 senado,135060,Câmara dos Deputados,,NA,NA,,FALSE
 senado,135060,Senado Federal,,NA,NA,,FALSE
 senado,135060,Câmara dos Deputados - Revisão,,NA,NA,,FALSE
-senado,135060,Congresso Nacional,,NA,NA,,FALSE
+senado,135060,Sanção Presidencial/Promulgação,,NA,NA,,FALSE
 camara,604557,Pré-Construção,,NA,NA,camara,TRUE
 camara,604557,Construção,Comissões,2014-02-10T15:19:00Z,NA,camara,FALSE
 camara,604557,Construção,Plenário,NA,NA,camara,FALSE
