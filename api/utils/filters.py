@@ -48,7 +48,7 @@ def get_time_filtered_pauta(request):
     queryset = queryset.filter(data__gte=date)
 
     if(date.weekday() == 4):  # friday
-        end_date = date + timedelta(days=6)
+        end_date = date + timedelta(days=8)
         queryset = queryset.filter(data__lte=end_date)
     else:
         queryset = queryset.filter(data__week=date.isocalendar()[1],
