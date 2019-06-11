@@ -86,6 +86,10 @@ class EtapaProposicao(models.Model):
         'Número',
         help_text='Número da proposição naquele ano e casa.')
 
+    ano = models.IntegerField(
+        'Ano',
+        help_text='Ano da proposição.')
+
     sigla_tipo = models.CharField(
         'Sigla do Tipo', max_length=3,
         help_text='Sigla do tipo da proposição (PL, PLS etc)')
@@ -178,10 +182,6 @@ class EtapaProposicao(models.Model):
     def sigla(self):
         '''Sigla da proposição (ex.: PL 400/2010)'''
         return f'{self.sigla_tipo} {self.numero}/{self.ano}'
-
-    @property
-    def ano(self):
-        return self.data_apresentacao.year
 
     @property
     def url(self):
