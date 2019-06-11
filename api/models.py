@@ -223,7 +223,6 @@ class EtapaProposicao(models.Model):
     @property
     def resumo_tramitacao(self):
         events = []
-        local = ""
         for event in self.tramitacao.all():
             events.append({
                 'data': event.data,
