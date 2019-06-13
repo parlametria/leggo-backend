@@ -26,7 +26,8 @@ ORDER_PROGRESSO_MPV = [
     ("Câmara dos Deputados"),
     ("Senado Federal"),
     ("Câmara dos Deputados - Revisão"),
-    ("Sanção Presidencial/Promulgação")
+    ("Sanção Presidencial/Promulgação"),
+    ("Congresso Nacional")
 ]
 
 
@@ -72,6 +73,13 @@ class Proposicao(models.Model):
                     'pulou': progresso.pulou
                 } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
                 key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
+
+    @property
+    def temas(self):
+        '''
+        Separa temas
+        '''
+        return self.tema.split(';')
 
 
 class EtapaProposicao(models.Model):
@@ -173,6 +181,13 @@ class EtapaProposicao(models.Model):
                     autores.append('Dep. ' +
                                    autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
         return autores
+
+    @property
+    def temas(self):
+        '''
+        Separa temas
+        '''
+        return self.tema.split(';')
 
     @property
     def sigla(self):
