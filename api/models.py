@@ -428,7 +428,7 @@ class Emendas(models.Model):
 
     tipo_documento = models.TextField()
 
-    numero = models.IntegerField()
+    numero = models.FloatField()
 
     @property
     def titulo(self):
