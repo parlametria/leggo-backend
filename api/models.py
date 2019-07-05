@@ -433,7 +433,7 @@ class Emendas(models.Model):
     @property
     def titulo(self):
         '''Título da emenda.'''
-        return (self.tipo_documento + ' ' + str(self.numero))
+        return (self.tipo_documento + ' ' + str(int(self.numero)))
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
