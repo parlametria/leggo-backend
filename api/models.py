@@ -443,3 +443,25 @@ class Emendas(models.Model):
     class Meta:
         ordering = ('-data_apresentacao',)
         get_latest_by = '-data_apresentacao'
+
+
+class Atores(models.Model):
+    '''
+    Atores de documentos 
+    '''
+
+    id_autor = models.IntegerField('Id do autor do documento')
+
+    nome_autor = models.TextField('Nome do autor do documento')
+
+    codTipo = models.FloatField('Código do tipo do documento')
+
+    sigla_tipo = models.TextField('Sigla do documento')
+
+    descricao_tipo = models.TextField('Descrição do tipo do documento')
+
+    qtd_de_documentos = models.IntegerField('Quantidade de documentos feitas por um determinado autor')
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
+
