@@ -26,6 +26,13 @@ class ComissaoSerializer(serializers.ModelSerializer):
             'nome', 'foto', 'sigla', 'casa')
 
 
+class AtoresSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Atores
+        fields = ('id_autor', 'nome_autor', 'codTipo',
+                  'sigla_tipo', 'descricao_tipo', 'qtd_de_documentos')
+
+
 class PautaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PautaHistorico
@@ -42,7 +49,7 @@ class EtapasSerializer(serializers.ModelSerializer):
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
-            'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao',
+            'em_pauta', 'apelido', 'tema', 'status', 'top_atores', 'resumo_tramitacao',
             'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico')
 
 
@@ -69,11 +76,6 @@ class EmendasSerialzer(serializers.ModelSerializer):
         fields = ('data_apresentacao', 'codigo_emenda', 'local',
                   'autor', 'inteiro_teor', 'distancia', 'titulo')
 
-class AtoresSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Atores
-        fields = ('id_autor', 'nome_autor', 'codTipo',
-                  'sigla_tipo', 'descricao_tipo', 'qtd_de_documentos')    
 
 class Info(APIView):
     '''

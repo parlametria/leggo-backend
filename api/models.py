@@ -205,6 +205,25 @@ class EtapaProposicao(models.Model):
             return stats.linregress(dates_x, temperaturas_y)[0]
         else:
             return 0
+    
+    @property
+    def top_atores(self):
+        '''
+        Retorna os top 10 atores (caso tenha menos de 10 retorna todos)
+        '''
+        atores = []
+        df_atores = self.atores.all()
+        df_atores = df_atores.fillna(-1)
+        for ator in df_atores:
+            atores.append({
+                'id_autor': ator.id_autor,
+                'nome_autor': ator.nome_autor,
+                'codTipo': ator.codTipo,
+                'sigla_tipo': ator.sigla_tipo,
+                'descricao_tipo': ator.descricao_tipo,
+                'qtd_de_documentos': ator.qtd_de_documentos
+            })
+        return sorted(atores, key=lambda k: k['qtd_de_documentos'])[:10]
 
     @property
     def status(self):

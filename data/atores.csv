@@ -1,4 +1,4 @@
-id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documentos
+id_principal,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documentos
 14562,camara,166401,Nilson Leitão,147,REQ,Requerimento,16
 14562,camara,160556,Padre João,294,REQ,Requerimento de Audiência Pública,14
 14562,camara,-1,"Comissão Especial destinada a apreciar e proferir parecer à Proposta de Emenda à Constituição nº 215-A, de 2000, do Sr. Almir Sá e outros, que ""acrescenta o inciso XVIII ao art. 49; modifica o § 4º e acrescenta o § 8º ambos no art. 231, da Constituição Federal"" (inclui dentre as competências exclusivas do Congresso Nacional a aprovação de demarcação das terras tradicionalmente ocupadas pelos índios e a ratificação das demarcações já homologadas; estabelecendo que os critérios e procedimentos de demarcação serão regulamentados por lei), e apensadas",348,REQ,Requerimento de Prorrogação de prazo de Comissão Temporária,8
@@ -81,7 +81,7 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 14562,camara,74160,Patrus Ananias,145,REM,Reclamação,1
 14562,camara,74197,Domingos Dutra,147,REQ,Requerimento,1
 14562,camara,74210,Sarney Filho,260,VTS,Voto em Separado,1
-14562,camara,74210,Sarney Filho,NA,VTS,260,1
+14562,camara,74210,Sarney Filho,-1,VTS,260,1
 14562,camara,74216,Raimundo Gomes de Matos,147,REQ,Requerimento,1
 14562,camara,74270,Gilberto Nascimento,363,REQ,Requerimento de Desarquivamento de Proposições,1
 14562,camara,74341,Almir Sá,136,PEC,Proposta de Emenda à Constituição,1
@@ -486,11 +486,11 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 46249,camara,141536,Rômulo Gouveia,686,REQ,Requerimento de Participação ou Realização de Eventos fora da Câmara,1
 46249,camara,141537,Moreira Mendes,190,PRL,Parecer do Relator,1
 46249,camara,148134,Professor Victório Galli,139,PL,Projeto de Lei,1
-46249,camara,160538,Bohn Gass,NA,REQ,e de Procurador do Ministério Público do Trabalho.,1
+46249,camara,160538,Bohn Gass,-1,REQ,e de Procurador do Ministério Público do Trabalho.,1
 46249,camara,160542,Márcio Macêdo,190,PRL,Parecer do Relator,1
 46249,camara,160556,Padre João,294,REQ,Requerimento de Audiência Pública,1
 46249,camara,160556,Padre João,686,REQ,Requerimento de Participação ou Realização de Eventos fora da Câmara,1
-46249,camara,160556,Padre João,NA,REQ,e de Procurador do Ministério Público do Trabalho.,1
+46249,camara,160556,Padre João,-1,REQ,e de Procurador do Ministério Público do Trabalho.,1
 46249,camara,160565,Mara Gabrilli,139,PL,Projeto de Lei,1
 46249,camara,160576,César Halum,139,PL,Projeto de Lei,1
 46249,camara,160646,Delegado Francischini,139,PL,Projeto de Lei,1
@@ -513,7 +513,7 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 46249,camara,178970,João Daniel,294,REQ,Requerimento de Audiência Pública,1
 46249,camara,178970,João Daniel,308,REQ,Requerimento de Redistribuição,1
 46249,camara,178970,João Daniel,686,REQ,Requerimento de Participação ou Realização de Eventos fora da Câmara,1
-46249,camara,178970,João Daniel,NA,REQ,e de Procurador do Ministério Público do Trabalho.,1
+46249,camara,178970,João Daniel,-1,REQ,e de Procurador do Ministério Público do Trabalho.,1
 46249,camara,178986,Nilto Tatto,147,REQ,Requerimento,1
 46249,camara,178986,Nilto Tatto,190,PRL,Parecer do Relator,1
 46249,camara,178986,Nilto Tatto,257,EMR,Emenda de Relator,1
@@ -1072,7 +1072,7 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 604888,camara,74041,Luiz Couto,190,PRL,Parecer do Relator,2
 604888,camara,74041,Luiz Couto,255,SBT,Substitutivo,2
 604888,camara,88950,Rodrigo Garcia,131,EMP,Emenda de Plenário,2
-604888,camara,-1,NA,810,ATA,Ata,1
+604888,camara,-1,,810,ATA,Ata,1
 604888,camara,-1,Comissão de Constituição e Justiça e de Cidadania,187,PAR,Parecer de Comissão,1
 604888,camara,-1,Comissão de Constituição e Justiça e de Cidadania,339,REQ,Requerimento de Reconstituição de proposição,1
 604888,camara,-1,Comissão de Constituição e Justiça e de Cidadania,702,EMC-A,Emenda Adotada pela Comissão,1
@@ -1187,12 +1187,12 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 606722,camara,178978,Flavinho,195,CVO,Complementação de Voto,1
 606722,camara,178978,Flavinho,196,PES,Parecer às emendas apresentadas ao Substitutivo do Relator,1
 606722,camara,178978,Flavinho,313,REQ,Requerimento de Retirada de assinatura em proposição que não seja de iniciativa coletiva,1
-606722,camara,178978,Flavinho,NA,REQ,Ana Caroline Campagnolo - professora - SC,1
-606722,camara,178978,Flavinho,NA,REQ,Bráulio Matos - professor da UnB,1
-606722,camara,178978,Flavinho,NA,REQ,Diego Casagrande - jornalista - RS,1
-606722,camara,178978,Flavinho,NA,REQ,Padre José Eduardo,1
-606722,camara,178978,Flavinho,NA,REQ,Pedro Sérgio dos Santos - Diretor da Faculdade de Direito da UFG - GO,1
-606722,camara,178978,Flavinho,NA,REQ,Roberto Geraldo de Paiva Dornas - CONFENEM,1
+606722,camara,178978,Flavinho,-1,REQ,Ana Caroline Campagnolo - professora - SC,1
+606722,camara,178978,Flavinho,-1,REQ,Bráulio Matos - professor da UnB,1
+606722,camara,178978,Flavinho,-1,REQ,Diego Casagrande - jornalista - RS,1
+606722,camara,178978,Flavinho,-1,REQ,Padre José Eduardo,1
+606722,camara,178978,Flavinho,-1,REQ,Pedro Sérgio dos Santos - Diretor da Faculdade de Direito da UFG - GO,1
+606722,camara,178978,Flavinho,-1,REQ,Roberto Geraldo de Paiva Dornas - CONFENEM,1
 606722,camara,193726,Paulo Eduardo Martins,139,PL,Projeto de Lei,1
 606722,camara,194258,Creuza Pereira,147,REQ,Requerimento,1
 606722,camara,204369,Caroline de Toni,139,PL,Projeto de Lei,1
@@ -1279,7 +1279,7 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 1198512,camara,160617,Thiago Peixoto,294,REQ,Requerimento de Audiência Pública,1
 1198512,camara,160630,Ságuas Moraes,147,REQ,Requerimento,1
 1198512,camara,160639,Professora Dorinha Seabra Rezende,363,REQ,Requerimento de Desarquivamento de Proposições,1
-1198512,camara,160639,Professora Dorinha Seabra Rezende,NA,REQ,Confederação Nacional dos Trabalhadores em Educação-CNTE,1
+1198512,camara,160639,Professora Dorinha Seabra Rezende,-1,REQ,Confederação Nacional dos Trabalhadores em Educação-CNTE,1
 1198512,camara,171617,Paulão,130,EMC,Emenda na Comissão,1
 1198512,camara,171619,Margarida Salomão,130,EMC,Emenda na Comissão,1
 1198512,camara,178842,Jhc,130,EMC,Emenda na Comissão,1
@@ -1305,8 +1305,8 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 1198512,camara,204459,Daniela do Waguinho,294,REQ,Requerimento de Audiência Pública,1
 1198512,camara,204467,Professora Rosa Neide,130,EMC,Emenda na Comissão,1
 1198512,camara,204467,Professora Rosa Neide,147,REQ,Requerimento,1
-1198512,camara,204467,Professora Rosa Neide,NA,REQ,Binho Marques - Consultor em Educação e Carlos Abicalil - Professor de Educação Básica.,1
-1198512,camara,204467,Professora Rosa Neide,NA,REQ,Representação da União Nacional dos Dirigentes Municipais de Educação -Undime,1
+1198512,camara,204467,Professora Rosa Neide,-1,REQ,Binho Marques - Consultor em Educação e Carlos Abicalil - Professor de Educação Básica.,1
+1198512,camara,204467,Professora Rosa Neide,-1,REQ,Representação da União Nacional dos Dirigentes Municipais de Educação -Undime,1
 1198512,camara,204480,Rogério Correia,130,EMC,Emenda na Comissão,1
 1198512,camara,204492,Paulo Guedes,130,EMC,Emenda na Comissão,1
 1198512,camara,204495,Airton Faleiro,130,EMC,Emenda na Comissão,1
@@ -2156,7 +2156,7 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 2192459,camara,122158,Pedro Paulo,130,EMC,Emenda na Comissão,1
 2192459,camara,122158,Pedro Paulo,294,REQ,Requerimento de Audiência Pública,1
 2192459,camara,122974,Pedro Lucas Fernandes,130,EMC,Emenda na Comissão,1
-2192459,camara,133439,André Figueiredo,NA,EMC,130,1
+2192459,camara,133439,André Figueiredo,-1,EMC,130,1
 2192459,camara,133810,Marcelo Moraes,130,EMC,Emenda na Comissão,1
 2192459,camara,133968,Paulo Ramos,130,EMC,Emenda na Comissão,1
 2192459,camara,136811,Afonso Hamm,130,EMC,Emenda na Comissão,1
@@ -2262,7 +2262,7 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 2192459,camara,204476,Chiquinho Brazão,148,RIC,Requerimento de Informação,1
 2192459,camara,204482,Euclydes Pettersen,130,EMC,Emenda na Comissão,1
 2192459,camara,204483,Vilson da Fetaemg,130,EMC,Emenda na Comissão,1
-2192459,camara,204486,Mauro Benevides Filho,NA,EMC,130,1
+2192459,camara,204486,Mauro Benevides Filho,-1,EMC,130,1
 2192459,camara,204487,Capitão Wagner,147,REQ,Requerimento,1
 2192459,camara,204488,Célio Studart,130,EMC,Emenda na Comissão,1
 2192459,camara,204490,Charlles Evangelista,130,EMC,Emenda na Comissão,1
@@ -2307,7 +2307,7 @@ id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documen
 2192459,camara,73586,Júlio Delgado,260,VTS,Voto em Separado,1
 2192459,camara,73604,Rui Falcão,260,VTS,Voto em Separado,1
 2192459,camara,73801,Renildo Calheiros,260,VTS,Voto em Separado,1
-2192459,camara,73891,Darcísio Perondi,NA,REQ,147,1
+2192459,camara,73891,Darcísio Perondi,-1,REQ,147,1
 2192459,camara,74044,Wilson Santiago,260,VTS,Voto em Separado,1
 2192459,camara,74060,Daniel Almeida,147,REQ,Requerimento,1
 2192459,camara,74158,Mário Heringer,130,EMC,Emenda na Comissão,1
