@@ -205,7 +205,7 @@ class EtapaProposicao(models.Model):
             return stats.linregress(dates_x, temperaturas_y)[0]
         else:
             return 0
-    
+
     @property
     def top_atores(self):
         '''
@@ -477,8 +477,8 @@ class Atores(models.Model):
 
     descricao_tipo = models.TextField('Descrição do tipo do documento')
 
-    qtd_de_documentos = models.IntegerField('Quantidade de documentos feitas por um determinado autor')
+    qtd_de_documentos = models.IntegerField(
+        'Quantidade de documentos feitas por um determinado autor')
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
-

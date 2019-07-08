@@ -158,6 +158,7 @@ def import_emendas():
         Emendas.objects.bulk_create(
             Emendas(**r[1].to_dict()) for r in group_df.iterrows())
 
+
 def import_atores():
     '''Carrega Atores'''
     atores_df = pd.read_csv('data/atores.csv').groupby(['casa', 'id_ext'])

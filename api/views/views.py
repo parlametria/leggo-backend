@@ -249,6 +249,7 @@ class EmendasList(generics.ListAPIView):
 
         return queryset
 
+
 class AtoresList(generics.ListAPIView):
     '''
     Dados de atores de uma proposição
