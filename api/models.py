@@ -464,7 +464,7 @@ class Emendas(models.Model):
 
 class Atores(models.Model):
     '''
-    Atores de documentos 
+    Atores de documentos
     '''
 
     id_autor = models.IntegerField('Id do autor do documento')
