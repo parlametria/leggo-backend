@@ -221,7 +221,7 @@ class EtapaProposicao(models.Model):
                 'descricao_tipo': ator.descricao_tipo,
                 'qtd_de_documentos': ator.qtd_de_documentos
             })
-        return sorted(atores, key=lambda k: k['qtd_de_documentos'])[:10]
+        return sorted(atores, key=lambda k: k['qtd_de_documentos'])[-10:]
 
     @property
     def status(self):
