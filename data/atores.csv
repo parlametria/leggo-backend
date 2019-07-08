@@ -1,4 +1,4 @@
-id_principal,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documentos
+id_ext,casa,id_autor,nome_autor,codTipo,sigla_tipo,descricao_tipo,qtd_de_documentos
 14562,camara,166401,Nilson Leitão,147,REQ,Requerimento,16
 14562,camara,160556,Padre João,294,REQ,Requerimento de Audiência Pública,14
 14562,camara,-1,"Comissão Especial destinada a apreciar e proferir parecer à Proposta de Emenda à Constituição nº 215-A, de 2000, do Sr. Almir Sá e outros, que ""acrescenta o inciso XVIII ao art. 49; modifica o § 4º e acrescenta o § 8º ambos no art. 231, da Constituição Federal"" (inclui dentre as competências exclusivas do Congresso Nacional a aprovação de demarcação das terras tradicionalmente ocupadas pelos índios e a ratificação das demarcações já homologadas; estabelecendo que os critérios e procedimentos de demarcação serão regulamentados por lei), e apensadas",348,REQ,Requerimento de Prorrogação de prazo de Comissão Temporária,8

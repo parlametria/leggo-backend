@@ -55,3 +55,4 @@ def get_time_filtered_pauta(request):
                                    data__year=date.isocalendar()[0])
 
     return queryset
+

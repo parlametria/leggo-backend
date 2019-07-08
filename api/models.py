@@ -212,9 +212,7 @@ class EtapaProposicao(models.Model):
         Retorna os top 10 atores (caso tenha menos de 10 retorna todos)
         '''
         atores = []
-        df_atores = self.atores.all()
-        df_atores = df_atores.fillna(-1)
-        for ator in df_atores:
+        for ator in self.atores.all():
             atores.append({
                 'id_autor': ator.id_autor,
                 'nome_autor': ator.nome_autor,
@@ -473,7 +471,7 @@ class Atores(models.Model):
 
     nome_autor = models.TextField('Nome do autor do documento')
 
-    codTipo = models.FloatField('Código do tipo do documento')
+    codTipo = models.IntegerField('Código do tipo do documento')
 
     sigla_tipo = models.TextField('Sigla do documento')
 

@@ -42,6 +42,7 @@ class PautaHistoricoSerializer(serializers.ModelSerializer):
 class EtapasSerializer(serializers.ModelSerializer):
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
+    top_atores = AtoresSerializer(many=True, read_only=True)
 
     class Meta:
         model = EtapaProposicao
