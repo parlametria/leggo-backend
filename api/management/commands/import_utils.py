@@ -171,7 +171,8 @@ def import_atores():
             atores_df
             .get_group(group_index)
             [['id_autor', 'nome_autor', 'cod_tipo', 'partido', 'uf',
-              'sigla_tipo', 'descricao_tipo', 'qtd_de_documentos']]
+              'sigla_tipo', 'descricao_tipo', 'qtd_de_documentos',
+              'tipo_generico']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         Atores.objects.bulk_create(

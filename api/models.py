@@ -221,7 +221,8 @@ class EtapaProposicao(models.Model):
                 'descricao_tipo': ator.descricao_tipo,
                 'qtd_de_documentos': ator.qtd_de_documentos,
                 'uf': ator.uf,
-                'partido': ator.partido
+                'partido': ator.partido,
+                'tipo_generico': ator.tipo_generico
             })
         return sorted(atores, key=lambda k: k['qtd_de_documentos'])[-10:]
 
@@ -485,6 +486,9 @@ class Atores(models.Model):
 
     qtd_de_documentos = models.IntegerField(
         'Quantidade de documentos feitas por um determinado autor')
+
+    tipo_generico = models.TextField(
+        'Tipo do documento')
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
