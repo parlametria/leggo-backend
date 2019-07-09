@@ -170,7 +170,7 @@ def import_atores():
         group_df = (
             atores_df
             .get_group(group_index)
-            [['id_autor', 'nome_autor', 'codTipo',
+            [['id_autor', 'nome_autor', 'cod_tipo', 'partido', 'uf',
               'sigla_tipo', 'descricao_tipo', 'qtd_de_documentos']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )

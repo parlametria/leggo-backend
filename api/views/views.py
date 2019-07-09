@@ -29,7 +29,7 @@ class ComissaoSerializer(serializers.ModelSerializer):
 class AtoresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Atores
-        fields = ('id_autor', 'nome_autor', 'codTipo',
+        fields = ('id_autor', 'nome_autor', 'cod_tipo', 'partido', 'uf',
                   'sigla_tipo', 'descricao_tipo', 'qtd_de_documentos')
 
 

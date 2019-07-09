@@ -216,10 +216,12 @@ class EtapaProposicao(models.Model):
             atores.append({
                 'id_autor': ator.id_autor,
                 'nome_autor': ator.nome_autor,
-                'codTipo': ator.codTipo,
+                'cod_tipo': ator.cod_tipo,
                 'sigla_tipo': ator.sigla_tipo,
                 'descricao_tipo': ator.descricao_tipo,
-                'qtd_de_documentos': ator.qtd_de_documentos
+                'qtd_de_documentos': ator.qtd_de_documentos,
+                'uf': ator.uf,
+                'partido': ator.partido
             })
         return sorted(atores, key=lambda k: k['qtd_de_documentos'])[-10:]
 
@@ -471,7 +473,11 @@ class Atores(models.Model):
 
     nome_autor = models.TextField('Nome do autor do documento')
 
-    codTipo = models.IntegerField('Código do tipo do documento')
+    cod_tipo = models.IntegerField('Código do tipo do documento')
+
+    partido = models.TextField('Partido do ator')
+
+    uf = models.TextField('Estado do ator')
 
     sigla_tipo = models.TextField('Sigla do documento')
 
