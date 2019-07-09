@@ -237,31 +237,17 @@ class EtapaProposicao(models.Model):
 
     @property
     def resumo_tramitacao(self):
-        locais = []
         events = []
-        local = ""
         for event in self.tramitacao.all():
-            if event.local == "Comissões":
-                locais.append(event.sigla_local)
-                events.append({
-                    'data': event.data,
-                    'casa': event.etapa_proposicao.casa,
-                    'local': event.sigla_local,
-                    'evento': event.evento,
-                    'texto_tramitacao': event.texto_tramitacao,
-                    'link_inteiro_teor': event.link_inteiro_teor
-                })
-            else:
-                if event.local != local:
-                    local = event.local
-                    events.append({
-                        'data': event.data,
-                        'casa': event.etapa_proposicao.casa,
-                        'local': event.sigla_local,
-                        'evento': event.evento,
-                        'texto_tramitacao': event.texto_tramitacao,
-                        'link_inteiro_teor': event.link_inteiro_teor
-                    })
+            events.append({
+                'data': event.data,
+                'casa': event.etapa_proposicao.casa,
+                'sigla_local': event.sigla_local,
+                'local': event.local,
+                'evento': event.evento,
+                'texto_tramitacao': event.texto_tramitacao,
+                'link_inteiro_teor': event.link_inteiro_teor
+            })
         return sorted(events, key=lambda k: k['data'])
 
     @property
@@ -457,7 +443,7 @@ class Emendas(models.Model):
 
     tipo_documento = models.TextField()
 
-    numero = models.IntegerField()
+    numero = models.FloatField()
 
     @property
     def titulo(self):
