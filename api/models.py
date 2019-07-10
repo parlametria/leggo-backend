@@ -3,6 +3,7 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+from django.db.models import Sum
 # from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
@@ -211,20 +212,28 @@ class EtapaProposicao(models.Model):
         '''
         Retorna os top 10 atores (caso tenha menos de 10 retorna todos)
         '''
-        atores = []
+        atores_filtrados = []
+
+        top_n_atores = self.atores.values('id_autor') \
+                        .annotate(total_docs=Sum('qtd_de_documentos')) \
+                        .order_by('-total_docs')[:15]
         for ator in self.atores.all():
-            atores.append({
-                'id_autor': ator.id_autor,
-                'nome_autor': ator.nome_autor,
-                'cod_tipo': ator.cod_tipo,
-                'sigla_tipo': ator.sigla_tipo,
-                'descricao_tipo': ator.descricao_tipo,
-                'qtd_de_documentos': ator.qtd_de_documentos,
-                'uf': ator.uf,
-                'partido': ator.partido,
-                'tipo_generico': ator.tipo_generico
-            })
-        return sorted(atores, key=lambda k: k['qtd_de_documentos'])[-10:]
+            for top_n_ator in top_n_atores:
+                if ator.id_autor == top_n_ator['id_autor']:
+                    atores_filtrados.append({
+                        'id_autor': ator.id_autor,
+                        'nome_autor': ator.nome_autor,
+                        'cod_tipo': ator.cod_tipo,
+                        'sigla_tipo': ator.sigla_tipo,
+                        'descricao_tipo': ator.descricao_tipo,
+                        'qtd_de_documentos': ator.qtd_de_documentos,
+                        'uf': ator.uf,
+                        'partido': ator.partido,
+                        'tipo_generico': ator.tipo_generico,
+                        'nome_partido_uf': ator.nome_partido_uf
+                    })
+
+        return atores_filtrados
 
     @property
     def status(self):
@@ -489,6 +498,11 @@ class Atores(models.Model):
 
     tipo_generico = models.TextField(
         'Tipo do documento')
+
+    @property
+    def nome_partido_uf(self):
+        '''Nome do parlamentar + partido e UF'''
+        return (self.nome_autor + ' - ' + self.partido + '/' + self.uf)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')

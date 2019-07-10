@@ -31,7 +31,7 @@ class AtoresSerializer(serializers.ModelSerializer):
         model = Atores
         fields = ('id_autor', 'nome_autor', 'cod_tipo', 'partido', 'uf',
                   'sigla_tipo', 'descricao_tipo', 'qtd_de_documentos',
-                  'tipo_generico')
+                  'tipo_generico','nome_partido_uf')
 
 
 class PautaHistoricoSerializer(serializers.ModelSerializer):
