@@ -223,9 +223,6 @@ class EtapaProposicao(models.Model):
                     atores_filtrados.append({
                         'id_autor': ator.id_autor,
                         'nome_autor': ator.nome_autor,
-                        'cod_tipo': ator.cod_tipo,
-                        'sigla_tipo': ator.sigla_tipo,
-                        'descricao_tipo': ator.descricao_tipo,
                         'qtd_de_documentos': ator.qtd_de_documentos,
                         'uf': ator.uf,
                         'partido': ator.partido,
@@ -483,15 +480,9 @@ class Atores(models.Model):
 
     nome_autor = models.TextField('Nome do autor do documento')
 
-    cod_tipo = models.IntegerField('Código do tipo do documento')
-
     partido = models.TextField('Partido do ator')
 
     uf = models.TextField('Estado do ator')
-
-    sigla_tipo = models.TextField('Sigla do documento')
-
-    descricao_tipo = models.TextField('Descrição do tipo do documento')
 
     qtd_de_documentos = models.IntegerField(
         'Quantidade de documentos feitas por um determinado autor')
