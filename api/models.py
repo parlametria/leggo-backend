@@ -215,8 +215,8 @@ class EtapaProposicao(models.Model):
         atores_filtrados = []
 
         top_n_atores = self.atores.values('id_autor') \
-                        .annotate(total_docs=Sum('qtd_de_documentos')) \
-                        .order_by('-total_docs')[:15]
+            .annotate(total_docs=Sum('qtd_de_documentos')) \
+            .order_by('-total_docs')[:15]
         for ator in self.atores.all():
             for top_n_ator in top_n_atores:
                 if ator.id_autor == top_n_ator['id_autor']:
@@ -234,8 +234,8 @@ class EtapaProposicao(models.Model):
 
     @property
     def status(self):
-        if (hasattr(self, '_prefetched_objects_cache')
-           and 'tramitacao' in self._prefetched_objects_cache):
+        if (hasattr(self, '_prefetched_objects_cache') and
+                'tramitacao' in self._prefetched_objects_cache):
             # It's pefetched, avoid query
             trams = list(self.tramitacao.all())
             if trams:
