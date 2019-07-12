@@ -498,7 +498,12 @@ class Atores(models.Model):
     @property
     def nome_partido_uf(self):
         '''Nome do parlamentar + partido e UF'''
-        return (self.nome_autor + ' - ' + self.partido + '/' + self.uf)
+        uf = self.uf
+        if(uf == 'nan'):
+            uf = ''
+        else:
+            uf = '/' + uf
+        return (self.nome_autor + ' - ' + self.partido + uf)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
