@@ -4,7 +4,7 @@ from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 from math import isnan
-# from api.utils.temperatura import get_coefficient_temperature
+from django.db.models import Sum
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -208,9 +208,34 @@ class EtapaProposicao(models.Model):
             return 0
 
     @property
+    def top_atores(self):
+        '''
+        Retorna os top 10 atores (caso tenha menos de 10 retorna todos)
+        '''
+        atores_filtrados = []
+
+        top_n_atores = self.atores.values('id_autor') \
+            .annotate(total_docs=Sum('qtd_de_documentos')) \
+            .order_by('-total_docs')[:15]
+        for ator in self.atores.all():
+            for top_n_ator in top_n_atores:
+                if ator.id_autor == top_n_ator['id_autor']:
+                    atores_filtrados.append({
+                        'id_autor': ator.id_autor,
+                        'nome_autor': ator.nome_autor,
+                        'qtd_de_documentos': ator.qtd_de_documentos,
+                        'uf': ator.uf,
+                        'partido': ator.partido,
+                        'tipo_generico': ator.tipo_generico,
+                        'nome_partido_uf': ator.nome_partido_uf
+                    })
+
+        return atores_filtrados
+
+    @property
     def status(self):
-        if (hasattr(self, '_prefetched_objects_cache')
-           and 'tramitacao' in self._prefetched_objects_cache):
+        if (hasattr(self, '_prefetched_objects_cache') and
+                'tramitacao' in self._prefetched_objects_cache):
             # It's pefetched, avoid query
             trams = list(self.tramitacao.all())
             if trams:
@@ -449,3 +474,31 @@ class Emendas(models.Model):
     class Meta:
         ordering = ('-data_apresentacao',)
         get_latest_by = '-data_apresentacao'
+
+
+class Atores(models.Model):
+    '''
+    Atores de documentos
+    '''
+
+    id_autor = models.IntegerField('Id do autor do documento')
+
+    nome_autor = models.TextField('Nome do autor do documento')
+
+    partido = models.TextField('Partido do ator')
+
+    uf = models.TextField('Estado do ator')
+
+    qtd_de_documentos = models.IntegerField(
+        'Quantidade de documentos feitas por um determinado autor')
+
+    tipo_generico = models.TextField(
+        'Tipo do documento')
+
+    @property
+    def nome_partido_uf(self):
+        '''Nome do parlamentar + partido e UF'''
+        return (self.nome_autor + ' - ' + self.partido + '/' + self.uf)
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
