@@ -3,6 +3,7 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+from math import isnan
 # from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
@@ -433,7 +434,12 @@ class Emendas(models.Model):
     @property
     def titulo(self):
         '''Título da emenda.'''
-        return (self.tipo_documento + ' ' + str(int(self.numero)))
+        numero = self.numero
+        if (isnan(numero)):
+            numero = ''
+        else:
+            numero = str(int(numero))
+        return (self.tipo_documento + ' ' + numero)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
