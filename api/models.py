@@ -79,11 +79,7 @@ class Proposicao(models.Model):
         '''
         Separa temas
         '''
-        if ";" in self.tema:
-            tema = self.tema.split(";")
-            return tema[0] + " e " + tema[1]
-        else:
-            return self.tema 
+        return self.tema.split(";")
 
 
 class EtapaProposicao(models.Model):
@@ -191,11 +187,7 @@ class EtapaProposicao(models.Model):
         '''
         Separa temas
         '''
-        if ";" in self.tema:
-            tema = self.tema.split(";")
-            return tema[0] + " e " + tema[1]
-        else:
-            return self.tema
+        return self.tema.split(";")
 
     @property
     def sigla(self):
