@@ -52,7 +52,7 @@ class EtapasSerializer(serializers.ModelSerializer):
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'tema', 'status', 'top_atores', 'resumo_tramitacao',
-            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico')
+            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -60,7 +60,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Proposicao
-        fields = ('id', 'tema', 'apelido', 'etapas', 'resumo_progresso')
+        fields = ('id', 'temas', 'apelido', 'etapas', 'resumo_progresso')
 
 
 class ProgressoSerializer(serializers.ModelSerializer):
