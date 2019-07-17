@@ -246,7 +246,6 @@ class EtapaProposicao(models.Model):
         else:
             return None
 
-
     @property
     def resumo_tramitacao(self):
         events = []
