@@ -248,17 +248,17 @@ class EtapaProposicao(models.Model):
 
     @property
     def status(self):
-        if (hasattr(self, '_prefetched_objects_cache') and
-                'tramitacao' in self._prefetched_objects_cache):
-            # It's pefetched, avoid query
-            trams = list(self.tramitacao.all())
-            if trams:
-                return trams[-1].status
-            else:
-                return None
+        # It's pefetched, avoid query
+        status_list = ['Caducou', 'Rejeitada', 'Lei', 'Arquivada']
+        trams = list(self.tramitacao.all())
+        if trams:
+            for tram in trams:
+                if (tram.status in status_list):
+                    print(tram.status)
+                    return tram.status
+            return 'Ativa'
         else:
-            # Not prefetched, query
-            return self.tramitacao.last().status
+            return None
 
     @property
     def resumo_tramitacao(self):
