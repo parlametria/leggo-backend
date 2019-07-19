@@ -501,6 +501,19 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 604888,2193061,2019-02-26,4,PLEN,Betinho Gomes,camara,EMP,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1714787,-1
 604888,2193062,2019-02-26,5,PLEN,Betinho Gomes,camara,EMP,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1714788,-1
 604888,2193064,2019-02-26,6,PLEN,Rodrigo Garcia,camara,EMP,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1714792,-1
+2192459,2211588,2019-07-09,1,PLEN,Marcel Van Hattem - NOVO/RS,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1776711,-1
+2192459,2211592,2019-07-09,2,PLEN,Santini - PTB/RS,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1776807,-1
+2192459,2211606,2019-07-09,3,PLEN,Marcel Van Hattem - NOVO/RS,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1776840,-1
+2192459,2211612,2019-07-09,4,PLEN,André Figueiredo - PDT/CE,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1776853,-1
+2192459,2211631,2019-07-10,5,PLEN,Elmar Nascimento - DEM/BA,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777002,-1
+2192459,2211700,2019-07-10,6,PLEN,Baleia Rossi - MDB/SP,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777144,-1
+2192459,2211705,2019-07-10,7,PLEN,Elmar Nascimento - DEM/BA,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777161,-1
+2192459,2211706,2019-07-10,8,PLEN,Aluisio Mendes - PODE/MA,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777162,-1
+2192459,2211707,2019-07-10,9,PLEN,Afonso Motta - PDT/RS,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777163,-1
+2192459,2211822,2019-07-10,10,PLEN,André Figueiredo - PDT/CE,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777422,-1
+2192459,2211874,2019-07-10,11,PLEN,Baleia Rossi - MDB/SP,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777563,-1
+2192459,2211877,2019-07-10,12,PLEN,Erika Kokay - PT/DF,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777592,-1
+2192459,2211881,2019-07-10,13,PLEN,Erika Kokay - PT/DF,camara,EMA,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1777689,-1
 2192459,2199624,2019-04-29,1,PEC00619,Marreca Filho - PATRI/MA,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1738805,11.13056535547232
 2192459,2199625,2019-04-29,2,PEC00619,"Dr. Frederico - PATRI/MG, Marreca Filho - PATRI/MA",camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1738806,12.370355875002128
 2192459,2199779,2019-05-02,3,PEC00619,Roberto de Lucena - PODE/SP,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1740094,13.164154310031906
@@ -862,7 +875,7 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 2190288,2200997,2019-02-07,82,MPV87019,Alice Portugal - PCdoB/BA,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1743996,11.925039073590533
 2190288,2200998,2019-02-07,83,MPV87019,Bohn Gass - PT/RS,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1743997,13.198253424041432
 2190288,2200999,2019-02-07,84,MPV87019,Bohn Gass - PT/RS,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1743998,16.806093038250182
-2190288,2201e3,2019-02-07,85,MPV87019,Bohn Gass - PT/RS,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1743999,15.172130579669957
+2190288,2201000,2019-02-07,85,MPV87019,Bohn Gass - PT/RS,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1743999,15.172130579669957
 2190288,2201001,2019-02-07,86,MPV87019,Bohn Gass - PT/RS,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1744000,10.4097477797301
 2190288,2201002,2019-02-07,87,MPV87019,Bohn Gass - PT/RS,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1744002,13.621578419192176
 2190288,2201003,2019-02-07,88,MPV87019,Gilberto Nascimento - PSC/SP,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1744003,15.04297280419908
@@ -1438,7 +1451,7 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 135064,7910962,2019-02-07,116,CMMPV 870/2019,Subtenente Gonzaga PDT/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7910962,-1
 135064,7910967,2019-02-07,117,CMMPV 870/2019,Eduardo Bolsonaro PSL/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7910967,0.014133348663795519
 135064,7910970,2019-02-07,118,CMMPV 870/2019,Paulo Pereira da Silva SD/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7910970,0.02941138629767378
-135064,7911e3,2019-02-07,119,CMMPV 870/2019,André Figueiredo PDT/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911000,0.023029313244373892
+135064,7911000,2019-02-07,119,CMMPV 870/2019,André Figueiredo PDT/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911000,0.023029313244373892
 135064,7911003,2019-02-07,120,CMMPV 870/2019,André Figueiredo PDT/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911003,0.024178546521257043
 135064,7911054,2019-02-07,121,CMMPV 870/2019,Sergio Vidigal PDT/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911054,0.025827102928448906
 135064,7911079,2019-02-07,122,CMMPV 870/2019,Paulo Pimenta PT/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911079,0.030173698432923335
@@ -1543,7 +1556,7 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 135064,7911991,2019-02-08,221,CMMPV 870/2019,Márcio Jerry PCdoB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911991,0.022396809130703504
 135064,7911994,2019-02-08,222,CMMPV 870/2019,Márcio Jerry PCdoB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911994,0.0254666591787074
 135064,7911997,2019-02-08,223,CMMPV 870/2019,Márcio Jerry PCdoB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7911997,0.026683505323337055
-135064,7912e3,2019-02-08,224,CMMPV 870/2019,Márcio Jerry PCdoB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7912000,0.025110005157688298
+135064,7912000,2019-02-08,224,CMMPV 870/2019,Márcio Jerry PCdoB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7912000,0.025110005157688298
 135064,7912035,2019-02-08,225,CMMPV 870/2019,Felipe Rigoni PSB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7912035,0.028666174983153124
 135064,7912038,2019-02-08,226,CMMPV 870/2019,Felipe Rigoni PSB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7912038,0.016493844394972666
 135064,7912049,2019-02-08,227,CMMPV 870/2019,Gonzaga Patriota PSB/NA,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7912049,-1
@@ -2041,7 +2054,7 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 2190282,2201997,2019-02-11,173,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745384,-1
 2190282,2201998,2019-02-11,174,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745386,-1
 2190282,2201999,2019-02-11,175,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745387,-1
-2190282,2202e3,2019-02-11,176,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745388,-1
+2190282,2202000,2019-02-11,176,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745388,-1
 2190282,2202001,2019-02-11,177,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745389,-1
 2190282,2202002,2019-02-11,178,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745390,-1
 2190282,2202003,2019-02-11,179,MPV86818,Nelson Barbudo - PSL/MT,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1745391,-1
@@ -3318,6 +3331,10 @@ id_ext,codigo_emenda,data_apresentacao,numero,local,autor,casa,tipo_documento,in
 16526,2203336,2019-05-14,117,PLEN,Mário Heringer - PDT/MG,camara,EMP,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1747777,-1
 16526,2206554,2019-06-17,1,PLEN,"Augusto Coutinho - SOLIDARI/PE, Augusto Coutinho - SOLIDARI/PE",camara,SSP,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1765930,-1
 126049,7887049,2018-11-20,1,CAE,Tasso Jereissati PSDB/CE,senado,NA,NA,-1
+126049,7977413,2019-07-09,2,CI,Eduardo Gomes MDB/TO,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7977413,-1
+126049,7977420,2019-07-09,3,CI,Eduardo Gomes MDB/TO,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7977420,-1
+126049,7977431,2019-07-09,4,CI,Eduardo Gomes MDB/TO,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7977431,-1
+126049,7977442,2019-07-09,5,CI,Eduardo Gomes MDB/TO,senado,EMENDA,http://legis.senado.leg.br/sdleg-getter/documento?dm=7977442,-1
 1307190,2175917,2018-05-22,1,PL191715,Antonio Carlos Mendes Thame - PV/SP,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1661848,-1
 1307190,2176033,2018-05-22,2,PL191715,André Figueiredo - PDT/CE,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1662033,-1
 1307190,2176196,2018-05-23,3,PL191715,Marcelo Squassoni - PRB/SP,camara,EMC,http://www.camara.gov.br/proposicoesWeb/prop_mostrarintegra?codteor=1662417,-1

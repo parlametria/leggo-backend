@@ -224,16 +224,43 @@ class EtapaProposicao(models.Model):
     @property
     def top_atores(self):
         '''
-        Retorna os top 10 atores (caso tenha menos de 10 retorna todos)
+        Retorna os top 15 atores (caso tenha menos de 15 retorna todos)
         '''
         atores_filtrados = []
 
         top_n_atores = self.atores.values('id_autor') \
             .annotate(total_docs=Sum('qtd_de_documentos')) \
             .order_by('-total_docs')[:15]
+        atores_por_tipo_gen = self.atores.values('id_autor','nome_autor', 'uf', 'partido',
+        'tipo_generico') \
+           .annotate(total_docs=Sum('qtd_de_documentos')) 
+        for ator in atores_por_tipo_gen:
+            for top_n_ator in top_n_atores:
+                if ator['id_autor'] == top_n_ator['id_autor']:
+                    print(top_n_ator)
+                    atores_filtrados.append({
+                        'id_autor': ator['id_autor'],
+                        'qtd_de_documentos': ator['total_docs'],
+                        'tipo_generico': ator['tipo_generico'],
+                        'nome_partido_uf': ator['nome_autor'] +
+                        ' - ' + ator['partido'] + '/' + ator['uf']
+                    })
+
+        return atores_filtrados
+
+    @property
+    def top_important_atores(self):
+        '''
+        Retorna os atores e comissões e plenário
+        '''
+        atores_filtrados = []
+
+        top_n_atores = self.atores.values('id_autor') \
+            .annotate(total_docs=Sum('qtd_de_documentos')) \
+            .order_by('-total_docs')
         for ator in self.atores.all():
             for top_n_ator in top_n_atores:
-                if ator.id_autor == top_n_ator['id_autor']:
+                if ator.id_autor == top_n_ator['id_autor'] and ator.is_important:
                     atores_filtrados.append({
                         'id_autor': ator.id_autor,
                         'nome_autor': ator.nome_autor,
@@ -241,7 +268,9 @@ class EtapaProposicao(models.Model):
                         'uf': ator.uf,
                         'partido': ator.partido,
                         'tipo_generico': ator.tipo_generico,
-                        'nome_partido_uf': ator.nome_partido_uf
+                        'nome_partido_uf': ator.nome_partido_uf,
+                        'sigla_local': ator.sigla_local,
+                        'is_important': ator.is_important
                     })
 
         return atores_filtrados
@@ -503,6 +532,14 @@ class Atores(models.Model):
 
     tipo_generico = models.TextField(
         'Tipo do documento')
+
+    sigla_local = models.TextField(
+        'Sigla do local'
+    )
+
+    is_important = models.BooleanField(
+        'É uma comissão ou plenário'
+    )
 
     @property
     def nome_partido_uf(self):
