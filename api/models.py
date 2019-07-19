@@ -3,8 +3,8 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
+from math import isnan
 from django.db.models import Sum
-# from api.utils.temperatura import get_coefficient_temperature
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -277,17 +277,17 @@ class EtapaProposicao(models.Model):
 
     @property
     def status(self):
-        if (hasattr(self, '_prefetched_objects_cache') and
-                'tramitacao' in self._prefetched_objects_cache):
-            # It's pefetched, avoid query
-            trams = list(self.tramitacao.all())
-            if trams:
-                return trams[-1].status
-            else:
-                return None
+        # It's pefetched, avoid query
+        status_list = ['Caducou', 'Rejeitada', 'Lei', 'Arquivada']
+        trams = list(self.tramitacao.all())
+        if trams:
+            for tram in trams:
+                if (tram.status in status_list):
+                    print(tram.status)
+                    return tram.status
+            return 'Ativa'
         else:
-            # Not prefetched, query
-            return self.tramitacao.last().status
+            return None
 
     @property
     def resumo_tramitacao(self):
@@ -502,7 +502,12 @@ class Emendas(models.Model):
     @property
     def titulo(self):
         '''Título da emenda.'''
-        return (self.tipo_documento + ' ' + str(self.numero))
+        numero = self.numero
+        if (isnan(numero)):
+            numero = ''
+        else:
+            numero = str(int(numero))
+        return (self.tipo_documento + ' ' + numero)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
@@ -544,7 +549,12 @@ class Atores(models.Model):
     @property
     def nome_partido_uf(self):
         '''Nome do parlamentar + partido e UF'''
-        return (self.nome_autor + ' - ' + self.partido + '/' + self.uf)
+        uf = self.uf
+        if(uf == 'nan'):
+            uf = ''
+        else:
+            uf = '/' + uf
+        return (self.nome_autor + ' - ' + self.partido + uf)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
