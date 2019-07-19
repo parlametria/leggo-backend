@@ -171,8 +171,7 @@ def import_atores():
             atores_df
             .get_group(group_index)
             [['id_autor', 'nome_autor', 'partido', 'uf',
-             'qtd_de_documentos', 'tipo_generico',
-             'sigla_local',
+             'qtd_de_documentos', 'tipo_generico', 'sigla_local',
              'is_important']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )

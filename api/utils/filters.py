@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from api.models import TemperaturaHistorico, PautaHistorico, Atores
+from api.models import TemperaturaHistorico, PautaHistorico
 
 
 def get_time_filtered_temperatura(request):
@@ -56,6 +56,7 @@ def get_time_filtered_pauta(request):
 
     return queryset
 
+
 def get_filtered_autores(request, queryset):
     '''
     Filtra os autores que apresentaram documentos em comissões ou plenário
@@ -63,5 +64,5 @@ def get_filtered_autores(request, queryset):
     is_important = request.query_params.get('is_important')
     if not is_important:
         return queryset.filter()
-    
+
     return queryset.filter(is_important=is_important)

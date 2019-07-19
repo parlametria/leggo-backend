@@ -231,9 +231,9 @@ class EtapaProposicao(models.Model):
         top_n_atores = self.atores.values('id_autor') \
             .annotate(total_docs=Sum('qtd_de_documentos')) \
             .order_by('-total_docs')[:15]
-        atores_por_tipo_gen = self.atores.values('id_autor','nome_autor', 'uf', 'partido',
-        'tipo_generico') \
-           .annotate(total_docs=Sum('qtd_de_documentos')) 
+        atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf', 'partido',
+            'tipo_generico') \
+            .annotate(total_docs=Sum('qtd_de_documentos'))
         for ator in atores_por_tipo_gen:
             for top_n_ator in top_n_atores:
                 if ator['id_autor'] == top_n_ator['id_autor']:

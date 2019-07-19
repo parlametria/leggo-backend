@@ -9,7 +9,8 @@ from api.models import (
     EtapaProposicao, TemperaturaHistorico, InfoGerais, Progresso, Proposicao,
     Comissao, PautaHistorico, Emendas, Atores)
 from datetime import datetime
-from api.utils.filters import get_time_filtered_temperatura, get_time_filtered_pauta, get_filtered_autores
+from api.utils.filters import (
+    get_time_filtered_temperatura, get_time_filtered_pauta, get_filtered_autores)
 
 
 class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
@@ -26,7 +27,7 @@ class ComissaoSerializer(serializers.ModelSerializer):
             'nome', 'foto', 'sigla', 'casa')
 
 
-class AtoresSerializer(serializers.ModelSerializer):
+class AtoresSerializerComissoes(serializers.ModelSerializer):
     class Meta:
         model = Atores
         fields = (
@@ -34,12 +35,12 @@ class AtoresSerializer(serializers.ModelSerializer):
             'qtd_de_documentos', 'tipo_generico', 
             'sigla_local', 'is_important', 'nome_partido_uf')
 
-class AtoresSerializer2(serializers.ModelSerializer):
+
+class AtoresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Atores
         fields = (
-            'id_autor','qtd_de_documentos',
-             'tipo_generico',
+            'id_autor','qtd_de_documentos', 'tipo_generico',
             'nome_partido_uf')
 
 
@@ -52,8 +53,8 @@ class PautaHistoricoSerializer(serializers.ModelSerializer):
 class EtapasSerializer(serializers.ModelSerializer):
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
-    top_atores = AtoresSerializer2(many=True, read_only=True)
-    top_important_atores = AtoresSerializer(many=True, read_only=True)
+    top_atores = AtoresSerializer(many=True, read_only=True)
+    top_important_atores = AtoresSerializerComissoes(many=True, read_only=True)
 
     class Meta:
         model = EtapaProposicao
