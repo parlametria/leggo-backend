@@ -172,7 +172,7 @@ def import_atores():
             .get_group(group_index)
             [['id_autor', 'nome_autor', 'partido', 'uf',
              'qtd_de_documentos', 'tipo_generico', 'sigla_local',
-             'is_important']]
+              'is_important']]
             .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
         )
         Atores.objects.bulk_create(
