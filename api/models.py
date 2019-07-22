@@ -254,7 +254,6 @@ class EtapaProposicao(models.Model):
         if trams:
             for tram in trams:
                 if (tram.status in status_list):
-                    print(tram.status)
                     return tram.status
             return trams[-1].status
         else:
