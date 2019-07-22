@@ -237,7 +237,6 @@ class EtapaProposicao(models.Model):
         for ator in atores_por_tipo_gen:
             for top_n_ator in top_n_atores:
                 if ator['id_autor'] == top_n_ator['id_autor']:
-                    print(top_n_ator)
                     atores_filtrados.append({
                         'id_autor': ator['id_autor'],
                         'qtd_de_documentos': ator['total_docs'],
@@ -283,7 +282,6 @@ class EtapaProposicao(models.Model):
         if trams:
             for tram in trams:
                 if (tram.status in status_list):
-                    print(tram.status)
                     return tram.status
             return 'Ativa'
         else:
