@@ -249,14 +249,14 @@ class EtapaProposicao(models.Model):
     @property
     def status(self):
         # It's pefetched, avoid query
-        status_list = ['Caducou', 'Rejeitada', 'Lei', 'Arquivada']
+        status_list = ['Caducou', 'Rejeitada', 'Lei']
         trams = list(self.tramitacao.all())
         if trams:
             for tram in trams:
                 if (tram.status in status_list):
                     print(tram.status)
                     return tram.status
-            return 'Ativa'
+            return trams[-1].status
         else:
             return None
 
