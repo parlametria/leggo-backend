@@ -516,6 +516,11 @@ class Atores(models.Model):
             uf = ''
         else:
             uf = '/' + uf
+            
+        partido = self.partido
+        if(partido == 'nan'):
+            partido = ''
+
         return (self.nome_autor + ' - ' + self.partido + uf)
 
     proposicao = models.ForeignKey(
