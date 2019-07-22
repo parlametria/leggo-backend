@@ -516,7 +516,7 @@ class Atores(models.Model):
             uf = ''
         else:
             uf = '/' + uf
-            
+
         partido = self.partido
         if(partido == 'nan'):
             partido = ''
