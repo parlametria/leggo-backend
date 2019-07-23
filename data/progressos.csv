@@ -219,6 +219,28 @@ id_ext,casa,fase_global,local,data_inicio,data_fim,local_casa,pulou
 944279,camara,Revisão II,Plenário,NA,NA,camara,FALSE
 944279,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 944279,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+102721,senado,Pré-Construção,,NA,NA,senado,TRUE
+102721,senado,Construção,Comissões,2011-10-06T12:00:00Z,NA,senado,FALSE
+102721,senado,Construção,Plenário,NA,NA,senado,FALSE
+102721,senado,Pré-Revisão I,,NA,NA,senado,FALSE
+102721,senado,Revisão I,Comissões,NA,NA,camara,FALSE
+102721,senado,Revisão I,Plenário,NA,NA,camara,FALSE
+102721,senado,Pré-Revisão II,,NA,NA,senado,FALSE
+102721,senado,Revisão II,Comissões,NA,NA,senado,FALSE
+102721,senado,Revisão II,Plenário,NA,NA,senado,FALSE
+102721,senado,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+102721,senado,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+103831,senado,Pré-Construção,,NA,NA,senado,TRUE
+103831,senado,Construção,Comissões,2011-12-21T12:00:00Z,NA,senado,FALSE
+103831,senado,Construção,Plenário,NA,NA,senado,FALSE
+103831,senado,Pré-Revisão I,,NA,NA,senado,FALSE
+103831,senado,Revisão I,Comissões,NA,NA,camara,FALSE
+103831,senado,Revisão I,Plenário,NA,NA,camara,FALSE
+103831,senado,Pré-Revisão II,,NA,NA,senado,FALSE
+103831,senado,Revisão II,Comissões,NA,NA,senado,FALSE
+103831,senado,Revisão II,Plenário,NA,NA,senado,FALSE
+103831,senado,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+103831,senado,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 111048,senado,Pré-Construção,,NA,NA,senado,TRUE
 111048,senado,Construção,Comissões,2013-02-27T12:00:00Z,2016-12-06T00:00:00Z,senado,FALSE
 111048,senado,Construção,Plenário,NA,NA,senado,TRUE
@@ -558,17 +580,6 @@ id_ext,casa,fase_global,local,data_inicio,data_fim,local_casa,pulou
 16526,camara,Revisão II,Plenário,NA,NA,senado,FALSE
 16526,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 16526,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
-126049,senado,Pré-Construção,,NA,NA,senado,TRUE
-126049,senado,Construção,Comissões,2016-06-09T00:00:00Z,NA,senado,FALSE
-126049,senado,Construção,Plenário,NA,NA,senado,FALSE
-126049,senado,Pré-Revisão I,,NA,NA,senado,FALSE
-126049,senado,Revisão I,Comissões,NA,NA,camara,FALSE
-126049,senado,Revisão I,Plenário,NA,NA,camara,FALSE
-126049,senado,Pré-Revisão II,,NA,NA,senado,FALSE
-126049,senado,Revisão II,Comissões,NA,NA,senado,FALSE
-126049,senado,Revisão II,Plenário,NA,NA,senado,FALSE
-126049,senado,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
-126049,senado,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 1307190,camara,Pré-Construção,,NA,NA,camara,TRUE
 1307190,camara,Construção,Comissões,2015-06-29T15:57:00Z,NA,camara,FALSE
 1307190,camara,Construção,Plenário,NA,NA,camara,FALSE
