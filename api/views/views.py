@@ -9,7 +9,8 @@ from api.models import (
     EtapaProposicao, TemperaturaHistorico, InfoGerais, Progresso, Proposicao,
     Comissao, PautaHistorico, Emendas, Atores)
 from datetime import datetime
-from api.utils.filters import get_time_filtered_temperatura, get_time_filtered_pauta
+from api.utils.filters import (
+    get_time_filtered_temperatura, get_time_filtered_pauta, get_filtered_autores)
 
 
 class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
@@ -26,12 +27,21 @@ class ComissaoSerializer(serializers.ModelSerializer):
             'nome', 'foto', 'sigla', 'casa')
 
 
-class AtoresSerializer(serializers.ModelSerializer):
+class AtoresSerializerComissoes(serializers.ModelSerializer):
     class Meta:
         model = Atores
         fields = (
             'id_autor', 'nome_autor', 'partido', 'uf',
-            'qtd_de_documentos', 'tipo_generico', 'nome_partido_uf')
+            'qtd_de_documentos', 'tipo_generico',
+            'sigla_local', 'is_important', 'nome_partido_uf')
+
+
+class AtoresSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Atores
+        fields = (
+            'id_autor', 'qtd_de_documentos', 'tipo_generico',
+            'nome_partido_uf')
 
 
 class PautaHistoricoSerializer(serializers.ModelSerializer):
@@ -44,6 +54,7 @@ class EtapasSerializer(serializers.ModelSerializer):
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
     top_atores = AtoresSerializer(many=True, read_only=True)
+    top_important_atores = AtoresSerializerComissoes(many=True, read_only=True)
 
     class Meta:
         model = EtapaProposicao
@@ -52,7 +63,8 @@ class EtapasSerializer(serializers.ModelSerializer):
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'tema', 'status', 'top_atores', 'resumo_tramitacao',
-            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas')
+            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas',
+            'top_important_atores')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -276,4 +288,4 @@ class AtoresList(generics.ListAPIView):
         queryset = Atores.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
-        return queryset
+        return get_filtered_autores(self.request, queryset)
