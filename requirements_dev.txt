@@ -1,2 +1,3 @@
 ipython
 django-debug-toolbar
+packaging
