@@ -177,7 +177,7 @@ def import_emendas():
 
         if etapa_prop is None:
             continue
-        
+
         group_df = (
             emendas_df
             .get_group(group_index)
