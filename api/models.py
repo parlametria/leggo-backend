@@ -523,7 +523,9 @@ class Atores(models.Model):
     Atores de documentos
     '''
 
-    id_autor = models.IntegerField('Id do autor do documento')
+    id_autor = models.FloatField('Id do autor do documento')
+
+    tipo_autor = models.TextField('Tipo do autor')
 
     nome_autor = models.TextField('Nome do autor do documento')
 
