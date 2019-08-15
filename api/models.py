@@ -300,7 +300,7 @@ class EtapaProposicao(models.Model):
                 'texto_tramitacao': event.texto_tramitacao,
                 'link_inteiro_teor': event.link_inteiro_teor
             })
-        return sorted(events, key=lambda k: k['data'])
+        return sorted(events, key=lambda k: k['data'])[:5]
 
     @property
     def comissoes_passadas(self):
