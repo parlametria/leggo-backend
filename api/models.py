@@ -301,7 +301,7 @@ class EtapaProposicao(models.Model):
                 'link_inteiro_teor': event.link_inteiro_teor
             })
         return sorted(events, key=lambda k: k['data'])
-        
+
     @property
     def top_resumo_tramitacao(self):
         return self.resumo_tramitacao[:3]

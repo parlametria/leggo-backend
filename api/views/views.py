@@ -1,4 +1,3 @@
-from django.shortcuts import get_object_or_404
 from django.db.models import Prefetch
 from rest_framework import serializers, generics
 from rest_framework.views import APIView
@@ -63,6 +62,7 @@ class EtapasSerializer(serializers.ModelSerializer):
             'em_pauta', 'apelido', 'tema', 'status', 'top_resumo_tramitacao',
             'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas')
 
+
 class EtapasDetailSerializer(serializers.ModelSerializer):
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
@@ -78,6 +78,7 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
             'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao', 'top_atores',
             'top_important_atores', 
             'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas')
+
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
     etapas = EtapasDetailSerializer(many=True, read_only=True)
