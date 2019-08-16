@@ -76,12 +76,13 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao', 'top_atores',
-            'top_important_atores', 
-            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas')
+            'top_important_atores', 'comissoes_passadas', 'temperatura_coeficiente',
+            'pauta_historico', 'temas')
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
     etapas = EtapasDetailSerializer(many=True, read_only=True)
+
     class Meta:
         model = Proposicao
         fields = ('id', 'temas', 'apelido', 'etapas', 'resumo_progresso')
@@ -250,7 +251,8 @@ class ProposicaoDetail(generics.ListAPIView):
         ]
     )
     def get_queryset(self):
-        return Proposicao.objects.filter(id = self.kwargs['id'])
+        id_prop = self.kwargs['id']
+        return Proposicao.objects.filter(id = id_prop)
 
 
 class EmendasList(generics.ListAPIView):
