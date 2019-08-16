@@ -252,7 +252,7 @@ class ProposicaoDetail(generics.ListAPIView):
     )
     def get_queryset(self):
         id_prop = self.kwargs['id']
-        return Proposicao.objects.filter(id = id_prop)
+        return Proposicao.objects.filter(id=id_prop)
 
 
 class EmendasList(generics.ListAPIView):
