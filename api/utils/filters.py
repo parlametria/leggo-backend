@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from api.models import TemperaturaHistorico, PautaHistorico
+from api.models import TemperaturaHistorico, PautaHistorico, Proposicao
 
 
 def get_time_filtered_temperatura(request):
@@ -55,7 +55,6 @@ def get_time_filtered_pauta(request):
                                    data__year=date.isocalendar()[0])
 
     return queryset
-
 
 def get_filtered_autores(request, queryset):
     '''
