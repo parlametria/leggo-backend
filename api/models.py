@@ -519,6 +519,26 @@ class Emendas(models.Model):
         get_latest_by = '-data_apresentacao'
 
 
+class Pressao(models.Model):
+    '''
+    Pressao da proposicao
+    '''
+
+    date = models.DateField('Dia da popularidade')
+
+    max_pressao_principal = models.FloatField(
+        'Pressão do nome formal e do apelido')
+
+    max_pressao_rel = models.FloatField(
+        'Pressão dos termos relacionados')
+
+    maximo_geral = models.FloatField(
+        'Pressão dos termos relacionados')
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='pressao')
+
+
 class Atores(models.Model):
     '''
     Atores de documentos
@@ -555,3 +575,5 @@ class Atores(models.Model):
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
+
+
