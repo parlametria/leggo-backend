@@ -34,9 +34,9 @@ class ProposicaoTests(APITestCase):
         url_detail = (self.url + str(self.etapa_proposicao.id))
         response = self.client.get(url_detail)
 
-        self.assertEqual(response.data['data_apresentacao'],
+        self.assertEqual(response.data[0]['data_apresentacao'],
                          self.etapa_proposicao.data_apresentacao)
-        self.assertEqual(response.data['casa'], self.etapa_proposicao.casa)
+        self.assertEqual(response.data[0]['casa'], self.etapa_proposicao.casa)
 
 
 # class TemperaturaHistoricoTest(APITestCase):
