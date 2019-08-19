@@ -31,7 +31,7 @@ class ProposicaoTests(APITestCase):
         '''
         Check proposicao detail
         '''
-        url_detail = (self.url + self.etapa_proposicao.id)
+        url_detail = (self.url + str(self.etapa_proposicao.id))
         response = self.client.get(url_detail)
 
         self.assertEqual(response.data['data_apresentacao'],
