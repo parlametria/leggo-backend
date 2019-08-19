@@ -120,6 +120,7 @@ def create_proposicao(self):
         em_pauta=False,
         apelido='Lei do Licenciamento Ambiental',
         tema='Meio Ambiente/Clima'
+        id=24
     )
     etapa_proposicao.save()
 
