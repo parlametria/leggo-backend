@@ -575,5 +575,3 @@ class Atores(models.Model):
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
-
-

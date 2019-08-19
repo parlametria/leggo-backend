@@ -227,6 +227,7 @@ def import_comissoes():
         Comissao.objects.bulk_create(
             Comissao(**r[1].to_dict()) for r in group_df.iterrows())
 
+
 def import_pressao():
     '''Carrega pressao das proposicoes'''
     directory = os.fsencode('data/pops')
@@ -247,7 +248,7 @@ def import_pressao():
         pressao_clean_df = (
             pressao_df
             [['date', 'max_pressao_principal',
-            'max_pressao_rel',	'maximo_geral']]
+              'max_pressao_rel',	'maximo_geral']]
             .assign(proposicao=etapa_prop)
         )
 

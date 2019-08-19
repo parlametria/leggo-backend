@@ -270,6 +270,7 @@ class EmendasList(generics.ListAPIView):
 
         return queryset
 
+
 class PressaoList(generics.ListAPIView):
     '''
     Dados de pressão de proposições
