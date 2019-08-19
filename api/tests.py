@@ -119,7 +119,7 @@ def create_proposicao(self):
         relator_nome='Dep. Maurício Quintella Lessa (PR-AL)',
         em_pauta=False,
         apelido='Lei do Licenciamento Ambiental',
-        tema='Meio Ambiente/Clima'
+        tema='Meio Ambiente/Clima',
         id=24
     )
     etapa_proposicao.save()
