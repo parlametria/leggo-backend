@@ -31,7 +31,7 @@ class ProposicaoTests(APITestCase):
         '''
         Check proposicao detail
         '''
-        url_detail = (self.url + str(self.etapa_proposicao.id))
+        url_detail = (self.url + str(self.proposicao.id))
         response = self.client.get(url_detail)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 1)
@@ -117,8 +117,7 @@ def create_proposicao(self):
         relator_nome='Dep. Maurício Quintella Lessa (PR-AL)',
         em_pauta=False,
         apelido='Lei do Licenciamento Ambiental',
-        tema='Meio Ambiente/Clima',
-        id=24
+        tema='Meio Ambiente/Clima'
     )
     etapa_proposicao.save()
 
