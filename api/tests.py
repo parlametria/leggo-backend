@@ -33,6 +33,8 @@ class ProposicaoTests(APITestCase):
         '''
         url_detail = (self.url + str(self.etapa_proposicao.id))
         response = self.client.get(url_detail)
+        						
+        self.assertEqual(url_detail, self.url + "24")
         self.assertEqual(len(response.data), 1)
 
 
