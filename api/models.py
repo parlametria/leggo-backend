@@ -329,7 +329,7 @@ class EtapaProposicao(models.Model):
         if (len(pressoes) == 0):
             return 0
         else:
-            return sorted(pressoes, key=lambda k: k['date'], reverse = True)[0]['maximo_geral']
+            return sorted(pressoes, key=lambda k: k['date'], reverse=True)[0]['maximo_geral']
 
 
 class TramitacaoEvent(models.Model):
