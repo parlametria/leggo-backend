@@ -317,6 +317,20 @@ class EtapaProposicao(models.Model):
                 comissoes.add(row.local)
         return comissoes
 
+    @property
+    def ultima_pressao(self):
+        pressoes = []
+        for p in self.pressao.all():
+            pressoes.append({
+                'maximo_geral': p.maximo_geral,
+                'date': p.date
+            })
+
+        if (len(pressoes) == 0):
+            return 0
+        else:
+            return sorted(pressoes, key=lambda k: k['date'], reverse = True)[0]['maximo_geral']
+
 
 class TramitacaoEvent(models.Model):
 
