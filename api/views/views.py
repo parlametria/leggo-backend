@@ -285,6 +285,7 @@ class AtoresList(generics.ListAPIView):
         '''
         casa = self.kwargs['casa']
         id_ext = self.kwargs['id_ext']
+        print('s')
         queryset = Atores.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 

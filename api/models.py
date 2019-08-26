@@ -4,8 +4,8 @@ from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
 from math import isnan
+from api.utils.ator import get_nome_partido_uf
 from django.db.models import Sum
-
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
     'senado': 'https://www25.senado.leg.br/web/atividade/materias/-/materia/'
@@ -160,9 +160,10 @@ class EtapaProposicao(models.Model):
         ufs = self.autor_uf.split('+')
 
         autores = []
+        presidencia = ['Poder Executivo', 'Presidência', 'Câmara dos Deputados']
         for i in range(len(nomes)):
             autor = nomes[i].strip()
-            if 'Poder Executivo' in autor or 'Presidência' in autor:
+            if autor in presidencia:
                 autores.append(autor)
             elif 'Senado Federal' in autor:
                 senado = autor.split(' - ')
@@ -234,6 +235,7 @@ class EtapaProposicao(models.Model):
         atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
                                                  'partido', 'tipo_generico') \
             .annotate(total_docs=Sum('qtd_de_documentos'))
+
         for ator in atores_por_tipo_gen:
             for top_n_ator in top_n_atores:
                 if ator['id_autor'] == top_n_ator['id_autor']:
@@ -241,8 +243,8 @@ class EtapaProposicao(models.Model):
                         'id_autor': ator['id_autor'],
                         'qtd_de_documentos': ator['total_docs'],
                         'tipo_generico': ator['tipo_generico'],
-                        'nome_partido_uf': ator['nome_autor'] +
-                        ' - ' + ator['partido'] + '/' + ator['uf']
+                        'nome_partido_uf': get_nome_partido_uf(
+                            ator['nome_autor'], ator['partido'], ator['uf'])
                     })
 
         return atores_filtrados
@@ -522,7 +524,9 @@ class Atores(models.Model):
     Atores de documentos
     '''
 
-    id_autor = models.IntegerField('Id do autor do documento')
+    id_autor = models.FloatField('Id do autor do documento')
+
+    tipo_autor = models.TextField('Tipo do autor')
 
     nome_autor = models.TextField('Nome do autor do documento')
 
@@ -547,17 +551,7 @@ class Atores(models.Model):
     @property
     def nome_partido_uf(self):
         '''Nome do parlamentar + partido e UF'''
-        uf = self.uf
-        if(uf == 'nan'):
-            uf = ''
-        else:
-            uf = '/' + uf
-
-        partido = self.partido
-        if(partido == 'nan'):
-            partido = ''
-
-        return (self.nome_autor + ' - ' + self.partido + uf)
+        return get_nome_partido_uf(self.nome_autor, self.partido, self.uf)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
