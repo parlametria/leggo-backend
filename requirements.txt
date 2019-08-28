@@ -1,5 +1,6 @@
 pandas
 Django
+gunicorn
 djangorestframework
 drf-yasg
 django-cors-headers
