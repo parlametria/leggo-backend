@@ -10,7 +10,7 @@ swagger_spec_validator
 munch
 psycopg2-binary
 scipy
-whitenoise
+packaging
 # Deps para testes:
 coverage
 git+https://gitlab.com/pycqa/flake8#egg=flake8  # evita https://github.com/PyCQA/pycodestyle/issues/728
