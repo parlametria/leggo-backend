@@ -544,7 +544,7 @@ class Pressao(models.Model):
     Pressao da proposicao
     '''
 
-    date = models.DateField('Dia da popularidade')
+    date = models.DateField('Data da pressão')
 
     max_pressao_principal = models.FloatField(
         'Pressão do nome formal e do apelido')
@@ -553,7 +553,7 @@ class Pressao(models.Model):
         'Pressão dos termos relacionados')
 
     maximo_geral = models.FloatField(
-        'Pressão dos termos relacionados')
+        'Máximo entre a pressão princial e a pressão relacionados')
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='pressao')
