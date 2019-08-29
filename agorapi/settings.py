@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'agorapi.urls'
@@ -139,6 +140,7 @@ PROJECT_ROOT = BASE_DIR = PROJECT_APP_PATH.parent
 
 STATIC_URL = '/static/'
 STATIC_ROOT = PROJECT_ROOT / STATIC_URL.strip("/")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 REST_FRAMEWORK = {
