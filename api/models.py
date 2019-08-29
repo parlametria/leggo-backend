@@ -160,10 +160,15 @@ class EtapaProposicao(models.Model):
         ufs = self.autor_uf.split('+')
 
         autores = []
-        presidencia = ['Poder Executivo', 'Presidência', 'Câmara dos Deputados']
+        especiais = [
+            'Poder Executivo',
+            'Presidência da República',
+            'Câmara dos Deputados'
+            ]
+
         for i in range(len(nomes)):
             autor = nomes[i].strip()
-            if autor in presidencia:
+            if autor in especiais:
                 autores.append(autor)
             elif 'Senado Federal' in autor:
                 senado = autor.split(' - ')
