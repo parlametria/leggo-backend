@@ -322,6 +322,21 @@ class EtapaProposicao(models.Model):
                 comissoes.add(row.local)
         return comissoes
 
+    @property
+    def ultima_pressao(self):
+        pressoes = []
+        for p in self.pressao.all():
+            pressoes.append({
+                'maximo_geral': p.maximo_geral,
+                'date': p.date
+            })
+
+        if (len(pressoes) == 0):
+            return 0
+        else:
+            sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
+            return sorted_pressoes[0]['maximo_geral']
+
 
 class TramitacaoEvent(models.Model):
 
@@ -522,6 +537,26 @@ class Emendas(models.Model):
     class Meta:
         ordering = ('-data_apresentacao',)
         get_latest_by = '-data_apresentacao'
+
+
+class Pressao(models.Model):
+    '''
+    Pressao da proposicao
+    '''
+
+    date = models.DateField('Data da pressão')
+
+    max_pressao_principal = models.FloatField(
+        'Pressão do nome formal e do apelido')
+
+    max_pressao_rel = models.FloatField(
+        'Pressão dos termos relacionados')
+
+    maximo_geral = models.FloatField(
+        'Máximo entre a pressão princial e a pressão relacionados')
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='pressao')
 
 
 class Atores(models.Model):

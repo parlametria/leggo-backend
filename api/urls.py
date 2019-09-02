@@ -28,4 +28,6 @@ urlpatterns = [
         views.EmendasList.as_view()),
     url(r'^atores/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.AtoresList.as_view()),
+    url(r'^pressao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
+        views.PressaoList.as_view()),
 ]
