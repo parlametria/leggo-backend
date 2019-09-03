@@ -364,15 +364,15 @@ id_ext,casa,fase_global,local,data_inicio,data_fim,local_casa,pulou
 604888,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 2192459,camara,Pré-Construção,,NA,NA,camara,TRUE
 2192459,camara,Construção,Comissões,2019-02-22T17:34:00Z,2019-07-09T16:47:00Z,camara,FALSE
-2192459,camara,Construção,Plenário,2019-07-09T16:47:00Z,NA,camara,FALSE
-2192459,camara,Pré-Revisão I,,NA,NA,camara,FALSE
-2192459,camara,Revisão I,Comissões,NA,NA,senado,FALSE
-2192459,camara,Revisão I,Plenário,NA,NA,senado,FALSE
-2192459,camara,Pré-Revisão II,,NA,NA,camara,FALSE
-2192459,camara,Revisão II,Comissões,NA,NA,camara,FALSE
-2192459,camara,Revisão II,Plenário,NA,NA,camara,FALSE
-2192459,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
-2192459,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+2192459,camara,Construção,Plenário,2019-07-09T16:47:00Z,2019-08-08T00:00:00Z,camara,FALSE
+2192459,camara,Pré-Revisão I,,NA,NA,camara,TRUE
+137999,senado,Revisão I,Comissões,2019-08-08T12:00:00Z,NA,senado,FALSE
+137999,senado,Revisão I,Plenário,NA,NA,senado,FALSE
+137999,senado,Pré-Revisão II,,NA,NA,senado,FALSE
+137999,senado,Revisão II,Comissões,NA,NA,camara,FALSE
+137999,senado,Revisão II,Plenário,NA,NA,camara,FALSE
+137999,senado,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+137999,senado,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 135064,senado,Comissão Mista,,2019-01-01T12:00:00Z,2019-05-09T12:00:00Z,,FALSE
 135064,senado,Câmara dos Deputados,,2019-05-09T12:00:00Z,2019-05-24T12:00:00Z,,FALSE
 135064,senado,Senado Federal,,2019-05-24T12:00:00Z,2019-06-18T12:00:00Z,,FALSE
@@ -580,6 +580,22 @@ id_ext,casa,fase_global,local,data_inicio,data_fim,local_casa,pulou
 16526,camara,Revisão II,Plenário,NA,NA,senado,FALSE
 16526,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 16526,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+136531,senado,Comissão Mista,,2012-03-16T00:00:00Z,2019-07-19T12:00:00Z,,FALSE
+136531,senado,Câmara dos Deputados,,2019-07-19T12:00:00Z,2019-08-15T12:00:00Z,,FALSE
+136531,senado,Senado Federal,,2019-08-15T12:00:00Z,NA,,FALSE
+136531,senado,Câmara dos Deputados - Revisão,,NA,NA,,FALSE
+136531,senado,Sanção Presidencial/Promulgação,,NA,NA,,FALSE
+126049,senado,Pré-Construção,,NA,NA,senado,TRUE
+126049,senado,Construção,Comissões,2016-06-09T00:00:00Z,NA,senado,FALSE
+126049,senado,Construção,Plenário,NA,NA,senado,FALSE
+126049,senado,Pré-Revisão I,,NA,NA,senado,FALSE
+126049,senado,Revisão I,Comissões,NA,NA,camara,FALSE
+126049,senado,Revisão I,Plenário,NA,NA,camara,FALSE
+126049,senado,Pré-Revisão II,,NA,NA,senado,FALSE
+126049,senado,Revisão II,Comissões,NA,NA,senado,FALSE
+126049,senado,Revisão II,Plenário,NA,NA,senado,FALSE
+126049,senado,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+126049,senado,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 1307190,camara,Pré-Construção,,NA,NA,camara,TRUE
 1307190,camara,Construção,Comissões,2015-06-29T15:57:00Z,NA,camara,FALSE
 1307190,camara,Construção,Plenário,NA,NA,camara,FALSE
@@ -591,6 +607,17 @@ id_ext,casa,fase_global,local,data_inicio,data_fim,local_casa,pulou
 1307190,camara,Revisão II,Plenário,NA,NA,camara,FALSE
 1307190,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 1307190,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+2081681,camara,Pré-Construção,,NA,NA,camara,TRUE
+2081681,camara,Construção,Comissões,2016-04-26T16:23:00Z,NA,camara,FALSE
+2081681,camara,Construção,Plenário,NA,NA,camara,FALSE
+2081681,camara,Pré-Revisão I,,NA,NA,camara,FALSE
+2081681,camara,Revisão I,Comissões,NA,NA,senado,FALSE
+2081681,camara,Revisão I,Plenário,NA,NA,senado,FALSE
+2081681,camara,Pré-Revisão II,,NA,NA,camara,FALSE
+2081681,camara,Revisão II,Comissões,NA,NA,camara,FALSE
+2081681,camara,Revisão II,Plenário,NA,NA,camara,FALSE
+2081681,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+2081681,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
 2196833,camara,Pré-Construção,,NA,NA,camara,TRUE
 2196833,camara,Construção,Comissões,2019-04-12T17:04:00Z,NA,camara,FALSE
 2196833,camara,Construção,Plenário,NA,NA,camara,FALSE
