@@ -1,7 +1,8 @@
 from django.db import models
 from api.model.etapa_proposicao import EtapaProposicao
-class TramitacaoEvent(models.Model):
 
+
+class TramitacaoEvent(models.Model):
     data = models.DateField('Data')
 
     sequencia = models.IntegerField(
@@ -55,4 +56,3 @@ class TramitacaoEvent(models.Model):
 
     class Meta:
         ordering = ('data', 'sequencia')
-

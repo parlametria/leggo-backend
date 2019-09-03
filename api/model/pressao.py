@@ -1,5 +1,7 @@
 from django.db import models
 from api.model.etapa_proposicao import EtapaProposicao
+
+
 class Pressao(models.Model):
     '''
     Pressao da proposicao

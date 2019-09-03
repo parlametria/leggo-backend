@@ -1,6 +1,8 @@
 from django.db import models
 from api.utils.ator import get_nome_partido_uf
 from api.model.etapa_proposicao import EtapaProposicao
+
+
 class Atores(models.Model):
     '''
     Atores de documentos

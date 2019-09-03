@@ -19,6 +19,7 @@ ORDER_PROGRESSO_MPV = [
     ("Sanção Presidencial/Promulgação")
 ]
 
+
 class Proposicao(models.Model):
 
     apelido = models.TextField(blank=True)

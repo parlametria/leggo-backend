@@ -1,4 +1,6 @@
 from django.db import models
+
+
 class Comissao(models.Model):
     '''
     Composição das comissões

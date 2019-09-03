@@ -11,9 +11,11 @@ URLS = {
     'senado': 'https://www25.senado.leg.br/web/atividade/materias/-/materia/'
 }
 
+
 class Choices(Munch):
     def __init__(self, choices):
         super().__init__({i: i for i in choices.split(' ')})
+
 
 class EtapaProposicao(models.Model):
     id_ext = models.IntegerField(
@@ -268,4 +270,3 @@ class EtapaProposicao(models.Model):
         else:
             sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
             return sorted_pressoes[0]['maximo_geral']
-

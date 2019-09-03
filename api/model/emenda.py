@@ -1,6 +1,8 @@
 from django.db import models
 from math import isnan
 from api.model.etapa_proposicao import EtapaProposicao
+
+
 class Emendas(models.Model):
     '''
     Emendas de uma proposição

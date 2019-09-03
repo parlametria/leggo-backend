@@ -1,6 +1,8 @@
 
 from django.db import models
 from api.model.etapa_proposicao import EtapaProposicao
+
+
 class PautaHistorico(models.Model):
     '''
     Histórico das pautas de uma proposição

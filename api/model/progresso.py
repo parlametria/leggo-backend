@@ -1,5 +1,7 @@
 from django.db import models
 from api.model.proposicao import Proposicao
+
+
 class Progresso(models.Model):
 
     local_casa = models.CharField(
