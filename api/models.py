@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-from api.model.ator import Atores
-from api.model.comissao import Comissao
-from api.model.emenda import Emendas
-from api.model.etapa_proposicao import EtapaProposicao
-from api.model.info_geral import InfoGerais
-from api.model.pauta_historico import PautaHistorico
-from api.model.pressao import Pressao
-from api.model.progresso import Progresso
-from api.model.proposicao import Proposicao
-from api.model.temperatura_historico import TemperaturaHistorico
-from api.model.tramitacao_event import TramitacaoEvent
-=======
 import time
 from scipy import stats
 from munch import Munch
@@ -608,4 +595,3 @@ class Atores(models.Model):
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
->>>>>>> 6abd44baf3e9cc1c53db7923aad12744945c344b
