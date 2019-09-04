@@ -1,10 +1,11 @@
 from rest_framework.test import APITestCase
-from api.models import (
-    EtapaProposicao, TemperaturaHistorico, Proposicao, Emendas)
+from api.model.emenda import Emendas
+from api.model.etapa_proposicao import EtapaProposicao
+from api.model.proposicao import Proposicao
+from api.model.temperatura_historico import TemperaturaHistorico
 
 
 # class InfoTests(APITestCase):
-
 #     def test_info(self):
 #         '''
 #         Check info

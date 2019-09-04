@@ -1,10 +1,17 @@
 import os
 import datetime
 import pandas as pd
-from api.models import (
-    EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
-    Progresso, Proposicao, Comissao, PautaHistorico, Emendas, InfoGerais, Atores,
-    Pressao)
+from api.model.ator import Atores
+from api.model.comissao import Comissao
+from api.model.emenda import Emendas
+from api.model.etapa_proposicao import EtapaProposicao
+from api.model.info_geral import InfoGerais
+from api.model.pauta_historico import PautaHistorico
+from api.model.pressao import Pressao
+from api.model.progresso import Progresso
+from api.model.proposicao import Proposicao
+from api.model.temperatura_historico import TemperaturaHistorico
+from api.model.tramitacao_event import TramitacaoEvent
 
 
 def import_etapas_proposicoes():
