@@ -67,7 +67,7 @@ class EtapasSerializer(serializers.ModelSerializer):
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
-            'em_pauta', 'apelido', 'tema', 'status', 'top_resumo_tramitacao',
+            'em_pauta', 'apelido', 'tema', 'status', 'top_resumo_tramitacao', 'ultima_pressao',
             'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas')
 
 
