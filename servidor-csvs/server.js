@@ -7,12 +7,19 @@ require('dotenv-safe').config();
 var jwt = require('jsonwebtoken');
 const app = express();
 const PORT = process.env.PORT = 8080;
+var bouncer = require ('express-bouncer')(5000, 900000);
 
 app.use(logger('dev'));
 app.use(helmet());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+bouncer.blocked = function (req, res, next, remaining)
+{
+	res.status(429).send('Foram feitas muitas tentativas, ' +
+  'por favor espere ' + remaining / 1000 + ' segundos');
+};
 
 function verifyJWT(req, res, next){
   var token = req.headers['x-access-token'];
@@ -34,11 +41,12 @@ app.listen(PORT, () => {
   console.log('Server is running at:',PORT);
 });
 
-app.post('/login', (req, res, next) => {
+app.post('/login', bouncer.block, (req, res, next) => {
   var regex = /\r?\n|\r/g;
   if(req.body.user === process.env.USUARIO.replace(regex,'') && req.body.pwd === process.env.SENHA.replace(regex,'')){
     //auth ok
     const id = 1; //esse id viria do banco de dados
+    bouncer.reset (req);
     var token = jwt.sign({ id }, process.env.SECRET, {
       expiresIn: 300 // expires in 5min
     });
