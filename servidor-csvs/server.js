@@ -1,10 +1,10 @@
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const helmet = require('helmet');
 const express = require('express');
 const serveIndex = require('serve-index');
 require('dotenv-safe').config();
-var jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = process.env.PORT = 8080;
 var bouncer = require ('express-bouncer')(5000, 900000);
@@ -26,7 +26,7 @@ function verifyJWT(req, res, next){
   if (!token) return res.status(401).send({ auth: false, message: 'No token provided.' });
   
   jwt.verify(token, process.env.SECRET, function(err, decoded) {
-    if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+    if (err) return res.status(200).send({ auth: false, message: 'Failed to authenticate token.' });
     
     // se tudo estiver ok, salva no request para uso posterior
     req.userId = decoded.id;
@@ -35,7 +35,6 @@ function verifyJWT(req, res, next){
 }
 
 app.use('/csvs',verifyJWT, express.static('./agora-digital/exported'), serveIndex('./agora-digital/exported', {'icons': true}))
-//app.use('/csvs',verifyJWT, express.static('../data'), serveIndex('../data', {'icons': true}))
 
 app.listen(PORT, () => {
   console.log('Server is running at:',PORT);
