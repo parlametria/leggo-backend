@@ -266,7 +266,7 @@ class EtapaProposicao(models.Model):
             })
 
         if (len(pressoes) == 0):
-            return 0
+            return -1
         else:
             sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
             return sorted_pressoes[0]['maximo_geral']
