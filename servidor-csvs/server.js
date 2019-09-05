@@ -17,8 +17,7 @@ app.use(cookieParser());
 
 bouncer.blocked = function (req, res, next, remaining)
 {
-	res.status(429).send('Foram feitas muitas tentativas, ' +
-  'por favor espere ' + remaining / 1000 + ' segundos');
+	res.status(429).send(`Foram feitas muitas tentativas. Por favor espere ${remaining / 1000} segundos`);
 };
 
 function verifyJWT(req, res, next){
