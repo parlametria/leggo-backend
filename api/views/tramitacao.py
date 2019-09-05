@@ -1,7 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import TramitacaoEvent
+from api.model.tramitacao_event import TramitacaoEvent
 from datetime import datetime
 
 
