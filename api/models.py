@@ -3,8 +3,9 @@ from scipy import stats
 from munch import Munch
 from django.db import models
 from django.contrib.postgres.fields import JSONField
-# from api.utils.temperatura import get_coefficient_temperature
-
+from math import isnan
+from api.utils.ator import get_nome_partido_uf
+from django.db.models import Sum
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
     'senado': 'https://www25.senado.leg.br/web/atividade/materias/-/materia/'
@@ -19,6 +20,14 @@ ORDER_PROGRESSO = [
     ('Revisão II', 'Plenário'),
     ('Sanção/Veto', 'Presidência da República'),
     ('Avaliação dos Vetos', 'Congresso'),
+]
+
+ORDER_PROGRESSO_MPV = [
+    ("Comissão Mista"),
+    ("Câmara dos Deputados"),
+    ("Senado Federal"),
+    ("Câmara dos Deputados - Revisão"),
+    ("Sanção Presidencial/Promulgação")
 ]
 
 
@@ -40,16 +49,37 @@ class Proposicao(models.Model):
 
     @property
     def resumo_progresso(self):
-        return sorted(
-            [{
-                'fase_global': progresso.fase_global,
-                'local': progresso.local,
-                'data_inicio': progresso.data_inicio,
-                'data_fim': progresso.data_fim,
-                'local_casa': progresso.local_casa,
-                'pulou': progresso.pulou
-            } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
-            key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
+        if self.progresso.filter(fase_global='Comissão Mista').exists():
+            return sorted(
+                [{
+                    'fase_global': progresso.fase_global,
+                    'local': progresso.local,
+                    'data_inicio': progresso.data_inicio,
+                    'data_fim': progresso.data_fim,
+                    'local_casa': progresso.local_casa,
+                    'is_mpv': True,
+                    'pulou': progresso.pulou
+                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
+                key=lambda x: ORDER_PROGRESSO_MPV.index((x['fase_global'])))
+        else:
+            return sorted(
+                [{
+                    'fase_global': progresso.fase_global,
+                    'local': progresso.local,
+                    'data_inicio': progresso.data_inicio,
+                    'data_fim': progresso.data_fim,
+                    'local_casa': progresso.local_casa,
+                    'is_mpv': False,
+                    'pulou': progresso.pulou
+                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
+                key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
+
+    @property
+    def temas(self):
+        '''
+        Separa temas
+        '''
+        return self.tema.split(";")
 
 
 class EtapaProposicao(models.Model):
@@ -93,6 +123,10 @@ class EtapaProposicao(models.Model):
 
     autor_nome = models.TextField(blank=True)
 
+    autor_uf = models.TextField(blank=True)
+
+    autor_partido = models.TextField(blank=True)
+
     relator_nome = models.TextField(blank=True)
 
     casa_origem = models.TextField(blank=True)
@@ -115,6 +149,51 @@ class EtapaProposicao(models.Model):
             models.Index(fields=['casa', 'id_ext']),
         ]
         ordering = ('data_apresentacao',)
+
+    @property
+    def autores(self):
+        '''
+        Retorna autores das pls de acordo com partido e UF
+        '''
+        nomes = self.autor_nome.split('+')
+        partidos = self.autor_partido.split('+')
+        ufs = self.autor_uf.split('+')
+
+        autores = []
+        especiais = [
+            'Poder Executivo',
+            'Presidência da República',
+            'Câmara dos Deputados'
+            ]
+
+        for i in range(len(nomes)):
+            autor = nomes[i].strip()
+            if autor in especiais:
+                autores.append(autor)
+            elif 'Senado Federal' in autor:
+                senado = autor.split(' - ')
+                if 'Comissão' in senado[-1]:
+                    autores.append(senado[-1])
+                else:
+                    autores.append('Sen. ' + senado[-1])
+            elif 'Legislação' in autor:
+                autores.append('Câm. ' + autor)
+            elif self.casa_origem == 'senado':
+                autores.append('Sen. ' + autor)
+            else:
+                if self.casa == 'senado':
+                    autores.append('Dep. ' + autor)
+                else:
+                    autores.append('Dep. ' +
+                                   autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
+        return autores
+
+    @property
+    def temas(self):
+        '''
+        Separa temas
+        '''
+        return self.tema.split(";")
 
     @property
     def sigla(self):
@@ -149,46 +228,85 @@ class EtapaProposicao(models.Model):
             return 0
 
     @property
+    def top_atores(self):
+        '''
+        Retorna os top 15 atores (caso tenha menos de 15 retorna todos)
+        '''
+        atores_filtrados = []
+
+        top_n_atores = self.atores.values('id_autor') \
+            .annotate(total_docs=Sum('qtd_de_documentos')) \
+            .order_by('-total_docs')[:15]
+        atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
+                                                 'partido', 'tipo_generico') \
+            .annotate(total_docs=Sum('qtd_de_documentos'))
+
+        for ator in atores_por_tipo_gen:
+            for top_n_ator in top_n_atores:
+                if ator['id_autor'] == top_n_ator['id_autor']:
+                    atores_filtrados.append({
+                        'id_autor': ator['id_autor'],
+                        'qtd_de_documentos': ator['total_docs'],
+                        'tipo_generico': ator['tipo_generico'],
+                        'nome_partido_uf': get_nome_partido_uf(
+                            ator['nome_autor'], ator['partido'], ator['uf'])
+                    })
+
+        return atores_filtrados
+
+    @property
+    def top_important_atores(self):
+        '''
+        Retorna os atores e comissões e plenário
+        '''
+        atores_filtrados = []
+
+        top_n_atores = self.atores.values('id_autor') \
+            .annotate(total_docs=Sum('qtd_de_documentos')) \
+            .order_by('-total_docs')
+        for ator in self.atores.all():
+            for top_n_ator in top_n_atores:
+                if ator.id_autor == top_n_ator['id_autor'] and ator.is_important:
+                    atores_filtrados.append({
+                        'id_autor': ator.id_autor,
+                        'nome_autor': ator.nome_autor,
+                        'qtd_de_documentos': ator.qtd_de_documentos,
+                        'uf': ator.uf,
+                        'partido': ator.partido,
+                        'tipo_generico': ator.tipo_generico,
+                        'nome_partido_uf': ator.nome_partido_uf,
+                        'sigla_local': ator.sigla_local,
+                        'is_important': ator.is_important
+                    })
+
+        return atores_filtrados
+
+    @property
     def status(self):
-        if (hasattr(self, '_prefetched_objects_cache')
-           and 'tramitacao' in self._prefetched_objects_cache):
-            # It's pefetched, avoid query
-            trams = list(self.tramitacao.all())
-            if trams:
-                return trams[-1].status
-            else:
-                return None
+        # It's pefetched, avoid query
+        status_list = ['Caducou', 'Rejeitada', 'Lei']
+        trams = list(self.tramitacao.all())
+        if trams:
+            for tram in trams:
+                if (tram.status in status_list):
+                    return tram.status
+            return trams[-1].status
         else:
-            # Not prefetched, query
-            return self.tramitacao.last().status
+            return None
 
     @property
     def resumo_tramitacao(self):
-        locais = []
         events = []
-        local = ""
         for event in self.tramitacao.all():
-            if event.local == "Comissões":
-                locais.append(event.sigla_local)
-                events.append({
-                    'data': event.data,
-                    'casa': event.etapa_proposicao.casa,
-                    'local': event.sigla_local,
-                    'evento': event.evento,
-                    'texto_tramitacao': event.texto_tramitacao,
-                    'link_inteiro_teor': event.link_inteiro_teor
-                })
-            else:
-                if event.local != local:
-                    local = event.local
-                    events.append({
-                        'data': event.data,
-                        'casa': event.etapa_proposicao.casa,
-                        'local': event.sigla_local,
-                        'evento': event.evento,
-                        'texto_tramitacao': event.texto_tramitacao,
-                        'link_inteiro_teor': event.link_inteiro_teor
-                    })
+            events.append({
+                'data': event.data,
+                'casa': event.etapa_proposicao.casa,
+                'sigla_local': event.sigla_local,
+                'local': event.local,
+                'evento': event.evento,
+                'texto_tramitacao': event.texto_tramitacao,
+                'link_inteiro_teor': event.link_inteiro_teor
+            })
         return sorted(events, key=lambda k: k['data'])
 
     @property
@@ -203,6 +321,21 @@ class EtapaProposicao(models.Model):
             if row.local != local_com_c_que_nao_e_comissao and row.local[0] == "C":
                 comissoes.add(row.local)
         return comissoes
+
+    @property
+    def ultima_pressao(self):
+        pressoes = []
+        for p in self.pressao.all():
+            pressoes.append({
+                'maximo_geral': p.maximo_geral,
+                'date': p.date
+            })
+
+        if (len(pressoes) == 0):
+            return -1
+        else:
+            sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
+            return sorted_pressoes[0]['maximo_geral']
 
 
 class TramitacaoEvent(models.Model):
@@ -252,6 +385,11 @@ class TramitacaoEvent(models.Model):
     def proposicao(self):
         '''Proposição a qual esse evento se refere.'''
         return self.etapa_proposicao.proposicao
+
+    @property
+    def tema(self):
+        '''Tema a qual esse evento se refere.'''
+        return self.etapa_proposicao.tema
 
     class Meta:
         ordering = ('data', 'sequencia')
@@ -323,7 +461,7 @@ class PautaHistorico(models.Model):
     Histórico das pautas de uma proposição
     '''
 
-    data = models.DateField('data')
+    data = models.DateTimeField('data')
 
     semana = models.IntegerField('semana')
 
@@ -379,12 +517,17 @@ class Emendas(models.Model):
 
     tipo_documento = models.TextField()
 
-    numero = models.IntegerField()
+    numero = models.FloatField()
 
     @property
     def titulo(self):
         '''Título da emenda.'''
-        return (self.tipo_documento + ' ' + str(self.numero))
+        numero = self.numero
+        if (isnan(numero)):
+            numero = ''
+        else:
+            numero = str(int(numero))
+        return (self.tipo_documento + ' ' + numero)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
@@ -394,3 +537,61 @@ class Emendas(models.Model):
     class Meta:
         ordering = ('-data_apresentacao',)
         get_latest_by = '-data_apresentacao'
+
+
+class Pressao(models.Model):
+    '''
+    Pressao da proposicao
+    '''
+
+    date = models.DateField('Data da pressão')
+
+    max_pressao_principal = models.FloatField(
+        'Pressão do nome formal e do apelido')
+
+    max_pressao_rel = models.FloatField(
+        'Pressão dos termos relacionados')
+
+    maximo_geral = models.FloatField(
+        'Máximo entre a pressão princial e a pressão relacionados')
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='pressao')
+
+
+class Atores(models.Model):
+    '''
+    Atores de documentos
+    '''
+
+    id_autor = models.FloatField('Id do autor do documento')
+
+    tipo_autor = models.TextField('Tipo do autor')
+
+    nome_autor = models.TextField('Nome do autor do documento')
+
+    partido = models.TextField('Partido do ator')
+
+    uf = models.TextField('Estado do ator')
+
+    qtd_de_documentos = models.IntegerField(
+        'Quantidade de documentos feitas por um determinado autor')
+
+    tipo_generico = models.TextField(
+        'Tipo do documento')
+
+    sigla_local = models.TextField(
+        'Sigla do local'
+    )
+
+    is_important = models.BooleanField(
+        'É uma comissão ou plenário'
+    )
+
+    @property
+    def nome_partido_uf(self):
+        '''Nome do parlamentar + partido e UF'''
+        return get_nome_partido_uf(self.nome_autor, self.partido, self.uf)
+
+    proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='atores')

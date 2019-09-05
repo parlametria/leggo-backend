@@ -17,6 +17,7 @@ variables:
   CONTAINER_TEST_IMAGE: $CI_REGISTRY_IMAGE:gitlab-ci-dev
   CONTAINER_RELEASE_IMAGE: $CI_REGISTRY_IMAGE:gitlab-ci
   COMPOSE_CMD: docker-compose -f docker-compose.yml -f deploy/prod.yml
+  DOCKER_TLS_CERTDIR: ""
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY

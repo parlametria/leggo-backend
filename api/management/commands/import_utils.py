@@ -3,7 +3,8 @@ import datetime
 import pandas as pd
 from api.models import (
     EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
-    Progresso, Proposicao, Comissao, PautaHistorico, Emendas, InfoGerais)
+    Progresso, Proposicao, Comissao, PautaHistorico, Emendas, InfoGerais, Atores,
+    Pressao)
 
 
 def import_etapas_proposicoes():
@@ -47,6 +48,12 @@ def import_tramitacoes():
             'casa': group_index[0],
             'id_ext': group_index[1],
         }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
         group_df = (
             grouped
             .get_group(group_index)
@@ -60,7 +67,7 @@ def import_tramitacoes():
             # filtra deixando apenas as colunas desejadas
             .pipe(lambda x: x.loc[:, x.columns.isin(col_names)])
             # adiciona referência para a correspondente etapa da proposição
-            .assign(etapa_proposicao=EtapaProposicao.objects.get(**prop_id))
+            .assign(etapa_proposicao=etapa_prop)
         )
         TramitacaoEvent.objects.bulk_create(
             TramitacaoEvent(**r[1].to_dict()) for r in group_df.iterrows())
@@ -77,12 +84,18 @@ def import_temperaturas():
             'casa': group_index[0],
             'id_ext': group_index[1],
         }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
         group_df = (
             grouped
             .get_group(group_index)
             .assign(periodo=lambda x: x.periodo.apply(lambda s: s.split('T')[0]))
             .filter(['periodo', 'temperatura_periodo', 'temperatura_recente'])
-            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+            .assign(proposicao=etapa_prop)
         )
         TemperaturaHistorico.objects.bulk_create(
             TemperaturaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
@@ -96,10 +109,16 @@ def import_pautas():
             'casa': group_index[0],
             'id_ext': group_index[1],
         }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
         group_df = (
             grouped
             .get_group(group_index)
-            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+            .assign(proposicao=etapa_prop)
             .filter(['data', 'semana', 'local', 'em_pauta', 'proposicao'])
         )
         PautaHistorico.objects.bulk_create(
@@ -126,12 +145,18 @@ def import_progresso():
             'casa': group_index[0],
             'id_ext': group_index[1],
         }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
         group_df = (
             grouped
             .get_group(group_index)
             .filter(['data_inicio', 'data_fim',
                      'local', 'fase_global', 'local_casa', 'pulou'])
-            .assign(proposicao=EtapaProposicao.objects.get(**prop_id).proposicao)
+            .assign(proposicao=etapa_prop.proposicao)
             .assign(data_inicio=lambda x: x.data_inicio.astype('object'))
             .assign(data_fim=lambda x: x.data_fim.astype('object'))
         )
@@ -148,15 +173,47 @@ def import_emendas():
             'casa': group_index[0],
             'id_ext': group_index[1],
         }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
         group_df = (
             emendas_df
             .get_group(group_index)
             [['codigo_emenda', 'numero', 'distancia', 'tipo_documento',
               'data_apresentacao', 'local', 'autor', 'inteiro_teor']]
-            .assign(proposicao=EtapaProposicao.objects.get(**prop_id))
+            .assign(proposicao=etapa_prop)
         )
         Emendas.objects.bulk_create(
             Emendas(**r[1].to_dict()) for r in group_df.iterrows())
+
+
+def import_atores():
+    '''Carrega Atores'''
+    atores_df = pd.read_csv('data/atores.csv').groupby(['casa', 'id_ext'])
+    for group_index in atores_df.groups:
+        prop_id = {
+            'casa': group_index[0],
+            'id_ext': group_index[1],
+        }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
+        group_df = (
+            atores_df
+            .get_group(group_index)
+            [['id_autor', 'nome_autor', 'partido', 'uf',
+             'qtd_de_documentos', 'tipo_generico', 'sigla_local',
+              'is_important']]
+            .assign(proposicao=etapa_prop)
+        )
+        Atores.objects.bulk_create(
+            Atores(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def import_comissoes():
@@ -171,6 +228,46 @@ def import_comissoes():
             Comissao(**r[1].to_dict()) for r in group_df.iterrows())
 
 
+def import_pressao():
+    '''Carrega pressao das proposicoes'''
+    directory = os.fsencode('data/pops')
+
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        pressao_df = pd.read_csv('data/pops/' + str(filename))
+        prop_id = {
+            'casa': pressao_df['casa'][0],
+            'id_ext': pressao_df['id_ext'][0],
+        }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
+        pressao_clean_df = (
+            pressao_df
+            [['date', 'max_pressao_principal',
+              'max_pressao_rel',	'maximo_geral']]
+            .assign(proposicao=etapa_prop)
+        )
+
+        Pressao.objects.bulk_create(
+            Pressao(**r[1].to_dict()) for r in pressao_clean_df.iterrows())
+
+
+def get_etapa_proposicao(prop_id):
+    etapa_prop = None
+
+    try:
+        etapa_prop = EtapaProposicao.objects.get(**prop_id)
+    except Exception:
+        '{} {}'.format('one', 'two')
+        print("Não foi possivel encontrar a etapa proposição: {}".format(str(prop_id)))
+
+    return etapa_prop
+
+
 def import_all_data():
     '''Importa dados dos csv e salva no banco.'''
     import_etapas_proposicoes()
@@ -181,3 +278,5 @@ def import_all_data():
     import_pautas()
     import_emendas()
     import_comissoes()
+    import_atores()
+    import_pressao()
