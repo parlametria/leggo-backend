@@ -27,14 +27,16 @@ function verifyJWT(req, res, next){
   });
 }
 
-app.use('/csvs',verifyJWT, express.static('./agora-digital/exported'), serveIndex('./agora-digital/exported', {'icons': true}))
+//app.use('/csvs',verifyJWT, express.static('./agora-digital/exported'), serveIndex('./agora-digital/exported', {'icons': true}))
+app.use('/csvs',verifyJWT, express.static('../data'), serveIndex('../data', {'icons': true}))
 
 app.listen(PORT, () => {
   console.log('Server is running at:',PORT);
 });
 
 app.post('/login', (req, res, next) => {
-  if(req.body.user === 'luiz' && req.body.pwd === '123'){
+  var regex = /\r?\n|\r/g;
+  if(req.body.user === process.env.USUARIO.replace(regex,'') && req.body.pwd === process.env.SENHA.replace(regex,'')){
     //auth ok
     const id = 1; //esse id viria do banco de dados
     var token = jwt.sign({ id }, process.env.SECRET, {
