@@ -8,7 +8,7 @@ from api import views
 urlpatterns = [
     # url(r'^', include(router.urls)),
     url(r'^info/?$', views.Info.as_view()),
-    url(r'^proposicoes/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
+    url(r'^proposicoes/(?P<id>[0-9]+)/?$',
         views.ProposicaoDetail.as_view()),
     url(r'^proposicoes/?$', views.ProposicaoList.as_view()),
     url(r'^etapas/?$', views.EtapasList.as_view()),
@@ -28,4 +28,6 @@ urlpatterns = [
         views.EmendasList.as_view()),
     url(r'^atores/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         views.AtoresList.as_view()),
+    url(r'^pressao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
+        views.PressaoList.as_view()),
 ]

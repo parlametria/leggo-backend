@@ -1,85 +1,20 @@
 import time
-from scipy import stats
-from munch import Munch
 from django.db import models
-from django.contrib.postgres.fields import JSONField
-from math import isnan
-from api.utils.ator import get_nome_partido_uf
+from munch import Munch
+from api.model.proposicao import Proposicao
 from django.db.models import Sum
+from scipy import stats
+from api.utils.ator import get_nome_partido_uf
+
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
     'senado': 'https://www25.senado.leg.br/web/atividade/materias/-/materia/'
 }
 
-ORDER_PROGRESSO = [
-    ('Construção', 'Comissões'),
-    ('Construção', 'Plenário'),
-    ('Revisão I', 'Comissões'),
-    ('Revisão I', 'Plenário'),
-    ('Revisão II', 'Comissões'),
-    ('Revisão II', 'Plenário'),
-    ('Sanção/Veto', 'Presidência da República'),
-    ('Avaliação dos Vetos', 'Congresso'),
-]
-
-ORDER_PROGRESSO_MPV = [
-    ("Comissão Mista"),
-    ("Câmara dos Deputados"),
-    ("Senado Federal"),
-    ("Câmara dos Deputados - Revisão"),
-    ("Sanção Presidencial/Promulgação")
-]
-
 
 class Choices(Munch):
     def __init__(self, choices):
         super().__init__({i: i for i in choices.split(' ')})
-
-
-class InfoGerais(models.Model):
-
-    name = models.TextField()
-    value = JSONField()
-
-
-class Proposicao(models.Model):
-
-    apelido = models.TextField(blank=True)
-    tema = models.TextField(blank=True)
-
-    @property
-    def resumo_progresso(self):
-        if self.progresso.filter(fase_global='Comissão Mista').exists():
-            return sorted(
-                [{
-                    'fase_global': progresso.fase_global,
-                    'local': progresso.local,
-                    'data_inicio': progresso.data_inicio,
-                    'data_fim': progresso.data_fim,
-                    'local_casa': progresso.local_casa,
-                    'is_mpv': True,
-                    'pulou': progresso.pulou
-                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
-                key=lambda x: ORDER_PROGRESSO_MPV.index((x['fase_global'])))
-        else:
-            return sorted(
-                [{
-                    'fase_global': progresso.fase_global,
-                    'local': progresso.local,
-                    'data_inicio': progresso.data_inicio,
-                    'data_fim': progresso.data_fim,
-                    'local_casa': progresso.local_casa,
-                    'is_mpv': False,
-                    'pulou': progresso.pulou
-                } for progresso in self.progresso.exclude(fase_global__icontains='Pré')],
-                key=lambda x: ORDER_PROGRESSO.index((x['fase_global'], x['local'])))
-
-    @property
-    def temas(self):
-        '''
-        Separa temas
-        '''
-        return self.tema.split(";")
 
 
 class EtapaProposicao(models.Model):
@@ -305,6 +240,10 @@ class EtapaProposicao(models.Model):
         return sorted(events, key=lambda k: k['data'])
 
     @property
+    def top_resumo_tramitacao(self):
+        return self.resumo_tramitacao[:3]
+
+    @property
     def comissoes_passadas(self):
         '''
         Pega todas as comissões nas quais a proposição já
@@ -317,241 +256,17 @@ class EtapaProposicao(models.Model):
                 comissoes.add(row.local)
         return comissoes
 
-
-class TramitacaoEvent(models.Model):
-
-    data = models.DateField('Data')
-
-    sequencia = models.IntegerField(
-        'Sequência',
-        help_text='Sequência desse evento na lista de tramitações.')
-
-    evento = models.TextField()
-
-    titulo_evento = models.TextField()
-
-    sigla_local = models.TextField(blank=True)
-
-    local = models.TextField()
-
-    situacao = models.TextField()
-
-    texto_tramitacao = models.TextField()
-
-    status = models.TextField()
-
-    tipo_documento = models.TextField()
-
-    link_inteiro_teor = models.TextField(blank=True, null=True)
-
-    etapa_proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='tramitacao')
-
-    nivel = models.IntegerField(
-        blank=True, null=True,
-        help_text='Nível de importância deste evento para notificações.')
-
     @property
-    def casa(self):
-        '''Casa onde o evento ocorreu.'''
-        return self.proposicao.casa
+    def ultima_pressao(self):
+        pressoes = []
+        for p in self.pressao.all():
+            pressoes.append({
+                'maximo_geral': p.maximo_geral,
+                'date': p.date
+            })
 
-    @property
-    def proposicao_id(self):
-        '''ID da proposição a qual esse evento se refere.'''
-        return self.etapa_proposicao.proposicao_id
-
-    @property
-    def proposicao(self):
-        '''Proposição a qual esse evento se refere.'''
-        return self.etapa_proposicao.proposicao
-
-    @property
-    def tema(self):
-        '''Tema a qual esse evento se refere.'''
-        return self.etapa_proposicao.tema
-
-    class Meta:
-        ordering = ('data', 'sequencia')
-
-
-class TemperaturaHistorico(models.Model):
-    '''
-    Histórico de temperatura de uma proposição
-    '''
-    periodo = models.DateField('periodo')
-
-    temperatura_periodo = models.IntegerField(
-        help_text='Quantidade de eventos no período (semana).')
-
-    temperatura_recente = models.FloatField(
-        help_text='Temperatura acumulada com decaimento exponencial.')
-
-    proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='temperatura_historico')
-
-    class Meta:
-        ordering = ('-periodo',)
-        get_latest_by = '-periodo'
-
-
-class Comissao(models.Model):
-    '''
-    Composição das comissões
-    '''
-    cargo = models.TextField(
-        blank=True, null=True,
-        help_text='Cargo ocupado pelo parlamentar na comissão')
-
-    id_parlamentar = models.TextField(
-        blank=True, null=True,
-        help_text='Id do parlamentar'
-    )
-
-    partido = models.TextField(
-        blank=True, null=True,
-        help_text='Partido do parlamentar')
-
-    uf = models.TextField(
-        blank=True, null=True,
-        help_text='Estado do parlamentar')
-
-    situacao = models.TextField(
-        blank=True, null=True,
-        help_text='Titular ou suplente')
-
-    nome = models.TextField(
-        blank=True, null=True,
-        help_text='Nome do parlamentar')
-
-    foto = models.TextField(
-        blank=True, null=True,
-        help_text='Foto do parlamentar'
-    )
-
-    sigla = models.TextField(
-        help_text='Sigla da comissão')
-
-    casa = models.TextField(
-        help_text='Camara ou Senado')
-
-
-class PautaHistorico(models.Model):
-    '''
-    Histórico das pautas de uma proposição
-    '''
-
-    data = models.DateTimeField('data')
-
-    semana = models.IntegerField('semana')
-
-    local = models.TextField(blank=True)
-
-    em_pauta = models.NullBooleanField(
-        help_text='TRUE se a proposicao estiver em pauta, FALSE caso contrario')
-
-    proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='pauta_historico')
-
-    class Meta:
-        ordering = ('-data',)
-        get_latest_by = '-data'
-
-
-class Progresso(models.Model):
-
-    local_casa = models.CharField(
-        max_length=30,
-        help_text='Casa desta proposição.',
-        null=True)
-
-    fase_global = models.TextField(blank=True)
-
-    local = models.TextField(blank=True, null=True)
-
-    data_inicio = models.DateField('Data de início', null=True, blank=True)
-
-    data_fim = models.DateField('Data final', null=True, blank=True)
-
-    proposicao = models.ForeignKey(
-        Proposicao, on_delete=models.CASCADE, related_name='progresso')
-
-    pulou = models.NullBooleanField(
-        help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
-
-
-class Emendas(models.Model):
-    '''
-    Emendas de uma proposição
-    '''
-
-    data_apresentacao = models.DateField('data')
-
-    codigo_emenda = models.TextField(blank=True)
-
-    distancia = models.FloatField(null=True)
-
-    local = models.TextField(blank=True)
-
-    autor = models.TextField(blank=True)
-
-    tipo_documento = models.TextField()
-
-    numero = models.FloatField()
-
-    @property
-    def titulo(self):
-        '''Título da emenda.'''
-        numero = self.numero
-        if (isnan(numero)):
-            numero = ''
+        if (len(pressoes) == 0):
+            return -1
         else:
-            numero = str(int(numero))
-        return (self.tipo_documento + ' ' + numero)
-
-    proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='emendas')
-
-    inteiro_teor = models.TextField(blank=True, null=True)
-
-    class Meta:
-        ordering = ('-data_apresentacao',)
-        get_latest_by = '-data_apresentacao'
-
-
-class Atores(models.Model):
-    '''
-    Atores de documentos
-    '''
-
-    id_autor = models.FloatField('Id do autor do documento')
-
-    tipo_autor = models.TextField('Tipo do autor')
-
-    nome_autor = models.TextField('Nome do autor do documento')
-
-    partido = models.TextField('Partido do ator')
-
-    uf = models.TextField('Estado do ator')
-
-    qtd_de_documentos = models.IntegerField(
-        'Quantidade de documentos feitas por um determinado autor')
-
-    tipo_generico = models.TextField(
-        'Tipo do documento')
-
-    sigla_local = models.TextField(
-        'Sigla do local'
-    )
-
-    is_important = models.BooleanField(
-        'É uma comissão ou plenário'
-    )
-
-    @property
-    def nome_partido_uf(self):
-        '''Nome do parlamentar + partido e UF'''
-        return get_nome_partido_uf(self.nome_autor, self.partido, self.uf)
-
-    proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
+            sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
+            return sorted_pressoes[0]['maximo_geral']

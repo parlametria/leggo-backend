@@ -1,9 +1,17 @@
 import os
 import datetime
 import pandas as pd
-from api.models import (
-    EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
-    Progresso, Proposicao, Comissao, PautaHistorico, Emendas, InfoGerais, Atores)
+from api.model.ator import Atores
+from api.model.comissao import Comissao
+from api.model.emenda import Emendas
+from api.model.etapa_proposicao import EtapaProposicao
+from api.model.info_geral import InfoGerais
+from api.model.pauta_historico import PautaHistorico
+from api.model.pressao import Pressao
+from api.model.progresso import Progresso
+from api.model.proposicao import Proposicao
+from api.model.temperatura_historico import TemperaturaHistorico
+from api.model.tramitacao_event import TramitacaoEvent
 
 
 def import_etapas_proposicoes():
@@ -227,6 +235,34 @@ def import_comissoes():
             Comissao(**r[1].to_dict()) for r in group_df.iterrows())
 
 
+def import_pressao():
+    '''Carrega pressao das proposicoes'''
+    directory = os.fsencode('data/pops')
+
+    for file in os.listdir(directory):
+        filename = os.fsdecode(file)
+        pressao_df = pd.read_csv('data/pops/' + str(filename))
+        prop_id = {
+            'casa': pressao_df['casa'][0],
+            'id_ext': pressao_df['id_ext'][0],
+        }
+
+        etapa_prop = get_etapa_proposicao(prop_id)
+
+        if etapa_prop is None:
+            continue
+
+        pressao_clean_df = (
+            pressao_df
+            [['date', 'max_pressao_principal',
+              'max_pressao_rel',	'maximo_geral']]
+            .assign(proposicao=etapa_prop)
+        )
+
+        Pressao.objects.bulk_create(
+            Pressao(**r[1].to_dict()) for r in pressao_clean_df.iterrows())
+
+
 def get_etapa_proposicao(prop_id):
     etapa_prop = None
 
@@ -250,3 +286,4 @@ def import_all_data():
     import_emendas()
     import_comissoes()
     import_atores()
+    import_pressao()

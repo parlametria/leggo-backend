@@ -1,13 +1,20 @@
-from django.shortcuts import get_object_or_404
 from django.db.models import Prefetch
 from rest_framework import serializers, generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.models import (
-    EtapaProposicao, TemperaturaHistorico, InfoGerais, Progresso, Proposicao,
-    Comissao, PautaHistorico, Emendas, Atores)
+from api.model.ator import Atores
+from api.model.comissao import Comissao
+from api.model.emenda import Emendas
+from api.model.etapa_proposicao import EtapaProposicao
+from api.model.info_geral import InfoGerais
+from api.model.pauta_historico import PautaHistorico
+from api.model.pressao import Pressao
+from api.model.progresso import Progresso
+from api.model.proposicao import Proposicao
+from api.model.temperatura_historico import TemperaturaHistorico
+
 from datetime import datetime
 from api.utils.filters import (
     get_time_filtered_temperatura, get_time_filtered_pauta, get_filtered_autores)
@@ -36,6 +43,14 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
             'sigla_local', 'is_important', 'nome_partido_uf')
 
 
+class PressaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Pressao
+        fields = (
+            'date', 'max_pressao_principal',
+            'max_pressao_rel',	'maximo_geral')
+
+
 class AtoresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Atores
@@ -53,6 +68,21 @@ class PautaHistoricoSerializer(serializers.ModelSerializer):
 class EtapasSerializer(serializers.ModelSerializer):
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = EtapaProposicao
+        fields = (
+            'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
+            'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
+            'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
+            'em_pauta', 'apelido', 'tema', 'status', 'top_resumo_tramitacao',
+            'ultima_pressao', 'comissoes_passadas', 'temperatura_coeficiente',
+            'pauta_historico', 'temas')
+
+
+class EtapasDetailSerializer(serializers.ModelSerializer):
+    temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
+    pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
     top_atores = AtoresSerializer(many=True, read_only=True)
     top_important_atores = AtoresSerializerComissoes(many=True, read_only=True)
 
@@ -62,9 +92,17 @@ class EtapasSerializer(serializers.ModelSerializer):
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
-            'em_pauta', 'apelido', 'tema', 'status', 'top_atores', 'resumo_tramitacao',
-            'comissoes_passadas', 'temperatura_coeficiente', 'pauta_historico', 'temas',
-            'top_important_atores')
+            'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao', 'top_atores',
+            'top_important_atores', 'comissoes_passadas', 'temperatura_coeficiente',
+            'pauta_historico', 'temas', 'ultima_pressao')
+
+
+class ProposicaoDetailSerializer(serializers.ModelSerializer):
+    etapas = EtapasDetailSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Proposicao
+        fields = ('id', 'temas', 'apelido', 'etapas', 'resumo_progresso')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -118,11 +156,12 @@ class ProposicaoList(generics.ListAPIView):
     def get_queryset(self):
         temperaturaQs = get_time_filtered_temperatura(self.request)
         pautaQs = get_time_filtered_pauta(self.request)
-        return Proposicao.objects.prefetch_related(
+        props = Proposicao.objects.prefetch_related(
             'etapas', 'etapas__tramitacao', 'progresso',
             Prefetch('etapas__temperatura_historico', queryset=temperaturaQs),
             Prefetch('etapas__pauta_historico', queryset=pautaQs),
         )
+        return props
 
 
 class ProgressoList(generics.ListAPIView):
@@ -211,28 +250,26 @@ class PautaList(generics.ListAPIView):
         '''
         Retorna o histórico da pauta
         '''
-        casa = self.kwargs['casa']
-        id_ext = self.kwargs['id_ext']
-        return get_time_filtered_pauta.filter(
-            proposicao__casa=casa, proposicao__id_ext=id_ext)
+        id = self.kwargs['id']
+        return get_time_filtered_pauta.filter(proposicao__id=id)
 
 
-class ProposicaoDetail(APIView):
+class ProposicaoDetail(generics.ListAPIView):
     '''
     Detalha proposição.
     '''
+    serializer_class = ProposicaoDetailSerializer
+
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-            openapi.Parameter(
-                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                'id', openapi.IN_PATH, 'id da proposição no sistema',
                 type=openapi.TYPE_INTEGER),
         ]
     )
-    def get(self, request, casa, id_ext, format=None):
-        prop = get_object_or_404(EtapaProposicao, casa=casa, id_ext=id_ext)
-        return Response(EtapasSerializer(prop).data)
+    def get_queryset(self):
+        id_prop = self.kwargs['id']
+        return Proposicao.objects.filter(id=id_prop)
 
 
 class EmendasList(generics.ListAPIView):
@@ -263,6 +300,34 @@ class EmendasList(generics.ListAPIView):
         return queryset
 
 
+class PressaoList(generics.ListAPIView):
+    '''
+    Dados de pressão de proposições
+    '''
+
+    serializer_class = PressaoSerializer
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                type=openapi.TYPE_INTEGER),
+        ]
+    )
+    def get_queryset(self):
+        '''
+        Retorna a pressão
+        '''
+        casa = self.kwargs['casa']
+        id_ext = self.kwargs['id_ext']
+        queryset = Pressao.objects.filter(
+            proposicao__casa=casa, proposicao__id_ext=id_ext)
+
+        return queryset
+
+
 class AtoresList(generics.ListAPIView):
     '''
     Dados de atores de uma proposição
@@ -285,7 +350,6 @@ class AtoresList(generics.ListAPIView):
         '''
         casa = self.kwargs['casa']
         id_ext = self.kwargs['id_ext']
-        print('s')
         queryset = Atores.objects.filter(
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 

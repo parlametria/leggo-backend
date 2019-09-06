@@ -1,10 +1,11 @@
 from rest_framework.test import APITestCase
-from api.models import (
-    EtapaProposicao, TemperaturaHistorico, Proposicao, Emendas)
+from api.model.emenda import Emendas
+from api.model.etapa_proposicao import EtapaProposicao
+from api.model.proposicao import Proposicao
+from api.model.temperatura_historico import TemperaturaHistorico
 
 
 # class InfoTests(APITestCase):
-
 #     def test_info(self):
 #         '''
 #         Check info
@@ -31,14 +32,10 @@ class ProposicaoTests(APITestCase):
         '''
         Check proposicao detail
         '''
-        url_detail = (self.url + self.etapa_proposicao.casa + '/' +
-                      self.etapa_proposicao.id_ext)
-
+        url_detail = (self.url + str(self.proposicao.id))
         response = self.client.get(url_detail)
-
-        self.assertEqual(response.data['data_apresentacao'],
-                         self.etapa_proposicao.data_apresentacao)
-        self.assertEqual(response.data['casa'], self.etapa_proposicao.casa)
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.data), 1)
 
 
 # class TemperaturaHistoricoTest(APITestCase):
