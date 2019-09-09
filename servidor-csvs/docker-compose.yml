@@ -1,0 +1,13 @@
+# Compose used for production
+
+version: '3.5'
+
+services:
+  servidor_csvs:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ../data:/agora-digital/exported
