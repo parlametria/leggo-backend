@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
-from api.models import TemperaturaHistorico, PautaHistorico
+from api.model.temperatura_historico import TemperaturaHistorico
+from api.model.pauta_historico import PautaHistorico
 
 
 def get_time_filtered_temperatura(request):
