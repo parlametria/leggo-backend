@@ -26,5 +26,14 @@ Para rodar utilizar o comando:
 docker run -p 8080:8080 <your image>
 ```
 
-Então o seu servidor estará rodando na porta 8080, para ter acesso aos csvs entre na url:
-http://localhost:8080/csvs/
+Então o seu servidor estará rodando na porta 8080
+
+#### Para logar
+
+Acessar a url http://localhost:8080/login/ passando os parâmetros user e pwd, no postman você pode adicionar
+esses parâmetros no body e realizar um POST
+
+#### Para acessar o csv
+
+Para ter acesso aos csvs entre na url: http://localhost:8080/csvs/ passando o token gerado no momento do login,
+no postman você pode adicionar esse parâmetro como x-access-token.
