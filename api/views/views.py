@@ -66,7 +66,6 @@ class PautaHistoricoSerializer(serializers.ModelSerializer):
 
 
 class EtapasSerializer(serializers.ModelSerializer):
-    temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
 
     class Meta:
@@ -74,7 +73,7 @@ class EtapasSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
+            'ultima_temperatura', 'autores', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'tema', 'status', 'top_resumo_tramitacao',
             'ultima_pressao', 'comissoes_passadas', 'temperatura_coeficiente',
             'pauta_historico', 'temas')
@@ -94,7 +93,7 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao', 'top_atores',
             'top_important_atores', 'comissoes_passadas', 'temperatura_coeficiente',
-            'pauta_historico', 'temas', 'ultima_pressao')
+            'pauta_historico', 'temas', 'ultima_pressao',)
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
