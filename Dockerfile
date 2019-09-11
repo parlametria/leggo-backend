@@ -4,6 +4,7 @@ FROM agoradigital/python3.7-pandas-psycopg2-alpine
 
 # needed to install Python packages from Github
 RUN apk add git
+RUN apk add --update --no-cache libc-dev gcc libxslt-dev
 
 RUN mkdir /agora-digital-backend
 WORKDIR /agora-digital-backend

@@ -269,7 +269,6 @@ def get_etapa_proposicao(prop_id):
     try:
         etapa_prop = EtapaProposicao.objects.get(**prop_id)
     except Exception:
-        '{} {}'.format('one', 'two')
         print("Não foi possivel encontrar a etapa proposição: {}".format(str(prop_id)))
 
     return etapa_prop
