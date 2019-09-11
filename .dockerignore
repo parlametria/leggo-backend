@@ -8,3 +8,5 @@
 !deploy/nginx
 !deploy/run.sh
 !setup.cfg
+!servidor-csvs/node_modules
+!servidor-csvs/npm-debug.log

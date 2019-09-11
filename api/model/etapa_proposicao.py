@@ -158,6 +158,13 @@ class EtapaProposicao(models.Model):
             return 0
 
     @property
+    def ultima_temperatura(self):
+        if (len(self.temperatura_historico.all()) == 0):
+            return 0
+        else:
+            return self.temperatura_historico.all()[0].temperatura_recente
+
+    @property
     def top_atores(self):
         '''
         Retorna os top 15 atores (caso tenha menos de 15 retorna todos)
