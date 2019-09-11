@@ -93,7 +93,7 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
             'temperatura_historico', 'autores', 'relator_nome', 'casa_origem',
             'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao', 'top_atores',
             'top_important_atores', 'comissoes_passadas', 'temperatura_coeficiente',
-            'pauta_historico', 'temas', 'ultima_pressao',)
+            'pauta_historico', 'temas', 'ultima_pressao', 'ultima_temperatura')
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
