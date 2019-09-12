@@ -20,5 +20,6 @@ class Command(BaseCommand):
 
             print("Inserindo novos dados no BD...")
             import_all_data()
-        except Exception:
+        except Exception as e:
             print("Não foi possível atualizar os dados a partir dos csvs remotos. =(")
+            print(str(e))
