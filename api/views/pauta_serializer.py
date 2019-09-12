@@ -1,5 +1,5 @@
-from rest_framework import serializers
-from drf_yasg.utils import swagger_auto_schema, generics
+from rest_framework import serializers, generics
+from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from api.utils.filters import get_time_filtered_pauta
 from api.model.pauta_historico import PautaHistorico

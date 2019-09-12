@@ -1,5 +1,5 @@
-from rest_framework import serializers
-from api.views.pauta import PautaHistoricoSerializer
+from rest_framework import serializers, generics
+from api.views.pauta_serializer import PautaHistoricoSerializer
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.model.etapa_proposicao import EtapaProposicao
 from api.views.ator_serializer import AtoresSerializer, AtoresSerializerComissoes

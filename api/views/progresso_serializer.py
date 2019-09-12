@@ -1,5 +1,5 @@
-from rest_framework import serializers
-from drf_yasg.utils import swagger_auto_schema, generics
+from rest_framework import serializers, generics
+from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from api.model.progresso import Progresso
 from datetime import datetime

@@ -1,15 +1,15 @@
 from django.conf.urls import url  # , include
 # from rest_framework.routers import DefaultRouter
-from api.views.info import Info
-from api.views.proposicao import ProposicaoDetail, ProposicaoList
-from api.views.etapa import EtapasList
-from api.views.tramitacao import TramitacaoEventList
-from api.views.progresso import ProgressoList
-from api.views.comissao import ComissaoList
-from api.views.pauta import PautaList
-from api.views.emenda import EmendasList
+from api.views.info_serializer import Info
+from api.views.proposicao_serializer import ProposicaoDetail, ProposicaoList
+from api.views.etapa_serializer import EtapasList
+from api.views.tramitacao_serializer import TramitacaoEventList
+from api.views.progresso_serializer import ProgressoList
+from api.views.comissao_serializer import ComissaoList
+from api.views.pauta_serializer import PautaList
+from api.views.emenda_serializer import EmendasList
 from api.views.ator_serializer import AtoresList
-from api.views.pressao import PressaoList
+from api.views.pressao_serializer import PressaoList
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
