@@ -4,11 +4,13 @@ from drf_yasg import openapi
 from api.model.progresso import Progresso
 from datetime import datetime
 
+
 class ProgressoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Progresso
         fields = ('fase_global', 'local', 'data_inicio',
                   'data_fim', 'local_casa', 'pulou')
+
 
 class ProgressoList(generics.ListAPIView):
     '''

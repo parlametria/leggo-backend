@@ -4,6 +4,7 @@ from drf_yasg.utils import swagger_auto_schema
 from api.utils.filters import get_filtered_autores
 from api.model.ator import Atores
 
+
 class AtoresSerializerComissoes(serializers.ModelSerializer):
     class Meta:
         model = Atores
@@ -11,6 +12,7 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
             'id_autor', 'nome_autor', 'partido', 'uf',
             'qtd_de_documentos', 'tipo_generico',
             'sigla_local', 'is_important', 'nome_partido_uf')
+
 
 class AtoresSerializer(serializers.ModelSerializer):
     class Meta:
@@ -46,4 +48,3 @@ class AtoresList(generics.ListAPIView):
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         return get_filtered_autores(self.request, queryset)
-

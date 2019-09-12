@@ -3,6 +3,7 @@ from api.model.emenda import Emendas
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 
+
 class EmendasSerialzer(serializers.ModelSerializer):
     titulo = serializers.ReadOnlyField()
 
@@ -10,6 +11,7 @@ class EmendasSerialzer(serializers.ModelSerializer):
         model = Emendas
         fields = ('data_apresentacao', 'codigo_emenda', 'local',
                   'autor', 'inteiro_teor', 'distancia', 'titulo')
+
 
 class EmendasList(generics.ListAPIView):
     '''

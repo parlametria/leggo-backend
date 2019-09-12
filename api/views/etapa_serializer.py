@@ -4,6 +4,7 @@ from api.views.temperatura_historico_serializer import TemperaturaHistoricoSeria
 from api.model.etapa_proposicao import EtapaProposicao
 from api.views.ator_serializer import AtoresSerializer, AtoresSerializerComissoes
 
+
 class EtapasSerializer(serializers.ModelSerializer):
     pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
 
@@ -34,6 +35,7 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
             'top_important_atores', 'comissoes_passadas', 'temperatura_coeficiente',
             'pauta_historico', 'temas', 'ultima_pressao', 'ultima_temperatura')
 
+
 class EtapasList(generics.ListAPIView):
     '''
     Dados gerais da proposição.
@@ -41,4 +43,3 @@ class EtapasList(generics.ListAPIView):
     queryset = EtapaProposicao.objects.prefetch_related(
         'tramitacao', 'temperatura_historico')
     serializer_class = EtapasSerializer
-

@@ -6,6 +6,7 @@ from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import (get_time_filtered_temperatura, get_time_filtered_pauta)
 from django.db.models import Prefetch
 
+
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
     etapas = EtapasDetailSerializer(many=True, read_only=True)
 
@@ -37,6 +38,7 @@ class ProposicaoList(generics.ListAPIView):
             Prefetch('etapas__pauta_historico', queryset=pautaQs),
         )
         return props
+
 
 class ProposicaoDetail(generics.ListAPIView):
     '''

@@ -3,12 +3,14 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from api.model.pressao import Pressao
 
+
 class PressaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pressao
         fields = (
             'date', 'max_pressao_principal',
             'max_pressao_rel',	'maximo_geral')
+
 
 class PressaoList(generics.ListAPIView):
     '''
@@ -36,4 +38,3 @@ class PressaoList(generics.ListAPIView):
             proposicao__casa=casa, proposicao__id_ext=id_ext)
 
         return queryset
-

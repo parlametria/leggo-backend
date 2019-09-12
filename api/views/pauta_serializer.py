@@ -4,10 +4,12 @@ from drf_yasg import openapi
 from api.utils.filters import get_time_filtered_pauta
 from api.model.pauta_historico import PautaHistorico
 
+
 class PautaHistoricoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PautaHistorico
         fields = ('data', 'semana', 'local', 'em_pauta')
+
 
 class PautaList(generics.ListAPIView):
     '''
