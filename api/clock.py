@@ -1,6 +1,7 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from django.core import management
-from django.core.management.commands import flush, import_data_from_remote
+from django.core.management.commands import flush
+from api.management.commands import import_data_from_remote
 
 
 sched = BlockingScheduler()
@@ -9,7 +10,7 @@ print('Iniciando scheduler...')
 @sched.scheduled_job('interval', minutes=2)
 def timed_job():
     try:
-        management.call_command(flush.Command(), verbosity=3)
+        management.call_command(flush.Command(), '--no-input')
         mangement.call_command(import_data_from_remote.Command(), verbosity=3)
     except Exception as e:
         print(e)
