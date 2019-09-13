@@ -2,10 +2,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 sched = BackgroundScheduler()
 
-@sched.scheduled_job('interval', minutes=3)
+@sched.scheduled_job('interval', minutes=1)
 def timed_job():
     try:
-        print('This job is run every three minutes.')
+        print('This job is run every one minute.')
     except Exception as e:
         print(e)
 
