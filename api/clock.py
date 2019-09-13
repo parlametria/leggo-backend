@@ -1,7 +1,7 @@
 try:
-    from apscheduler.schedulers.background import BackgroundScheduler
+    from apscheduler.schedulers.blocking import BlockingScheduler
 
-    sched = BackgroundScheduler()
+    sched = BlockingScheduler()
     print('Iniciando scheduler...')
 
     @sched.scheduled_job('interval', minutes=1)
