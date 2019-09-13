@@ -13,7 +13,6 @@ class Command(BaseCommand):
             token = get_token(settings.CSVS_SERVER_URL, 
                         settings.CSVS_SERVER_USER, 
                         settings.CSVS_SERVER_PWD)
-            print("Token:" + token)
 
             print("Obtendo arquivos csv do servidor remoto...")
             get_leggo_files(settings.CSVS_SERVER_URL, token, settings.CSVS_STORAGE_DIR)
