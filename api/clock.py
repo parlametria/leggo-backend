@@ -1,6 +1,7 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 
 sched = BackgroundScheduler()
+print('Iniciando scheduler...')
 
 @sched.scheduled_job('interval', minutes=1)
 def timed_job():
