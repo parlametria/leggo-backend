@@ -1,8 +1,10 @@
 from apscheduler.schedulers.blocking import BlockingScheduler
 from django.core import management
-from agorapi import settings
+import os
+import django
 
-management.setup_environ(settings)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "agorapi.settings")
+django.setup()
 
 sched = BlockingScheduler()
 print('Iniciando scheduler...')
