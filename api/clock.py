@@ -13,7 +13,7 @@ print('Iniciando scheduler...')
 def timed_job():
     try:
         management.call_command('flush', '--no-input')
-        mangement.call_command('import_data_from_remote', verbosity=3)
+        management.call_command('import_data_from_remote', verbosity=3)
     except Exception as e:
         print(e)
 
