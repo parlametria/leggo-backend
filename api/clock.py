@@ -10,10 +10,14 @@ django.setup()
 sched = BlockingScheduler()
 print('Iniciando scheduler...')
 
-@sched.scheduled_job('interval', minutes=3)
+@sched.scheduled_job('interval', minutes=2)
 def timed_job():
     try:
-        management.call_command('flush', '--no-input')
+        management.call_command('makemigrations', verbosity=3)
+        time.sleep(20)
+        management.call_command('migrate',verbosity=3)
+        time.sleep(20)
+        management.call_command('flush', '--no-input',verbosity=3)
         time.sleep(30)
         management.call_command('import_data_from_remote', verbosity=3)
     except Exception as e:
