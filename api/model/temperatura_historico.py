@@ -1,5 +1,5 @@
 from django.db import models
-from api.model.etapa_proposicao import EtapaProposicao
+from api.model.proposicao import Proposicao
 
 
 class TemperaturaHistorico(models.Model):
@@ -15,7 +15,7 @@ class TemperaturaHistorico(models.Model):
         help_text='Temperatura acumulada com decaimento exponencial.')
 
     proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='temperatura_historico')
+        Proposicao, on_delete=models.CASCADE, related_name='temperatura_historico')
 
     class Meta:
         ordering = ('-periodo',)

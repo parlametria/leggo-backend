@@ -35,7 +35,8 @@ def import_proposicoes():
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
-        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema)
+        print(etapa.id_leggo)
+        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo = etapa.id_leggo)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
@@ -85,16 +86,16 @@ def import_tramitacoes():
 
 def import_temperaturas():
     '''Carrega históricos de temperatura'''
-    grouped = pd.read_csv('data/hists_temperatura.csv').groupby(['casa', 'id_ext'])
+    grouped = pd.read_csv('data/hists_temperatura.csv').groupby(['id_leggo'])
     for group_index in grouped.groups:
-        prop_id = {
-            'casa': group_index[0],
-            'id_ext': group_index[1],
+        print(group_index)
+        id_leggo = {
+            'id_leggo': group_index
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        prop = get_proposicao(id_leggo)
 
-        if etapa_prop is None:
+        if prop is None:
             continue
 
         group_df = (
@@ -102,7 +103,7 @@ def import_temperaturas():
             .get_group(group_index)
             .assign(periodo=lambda x: x.periodo.apply(lambda s: s.split('T')[0]))
             .filter(['periodo', 'temperatura_periodo', 'temperatura_recente'])
-            .assign(proposicao=etapa_prop)
+            .assign(proposicao=prop)
         )
         TemperaturaHistorico.objects.bulk_create(
             TemperaturaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
@@ -269,10 +270,20 @@ def get_etapa_proposicao(prop_id):
     try:
         etapa_prop = EtapaProposicao.objects.get(**prop_id)
     except Exception:
-        '{} {}'.format('one', 'two')
         print("Não foi possivel encontrar a etapa proposição: {}".format(str(prop_id)))
 
     return etapa_prop
+
+
+def get_proposicao(leggo_id):
+    prop = None
+
+    try:
+        prop = Proposicao.objects.get(**leggo_id)
+    except Exception:
+        print("Não foi possivel encontrar a proposição: {}".format(str(leggo_id)))
+
+    return prop
 
 
 def import_all_data():
