@@ -36,7 +36,6 @@ class ProposicaoList(generics.ListAPIView):
     serializer_class = ProposicaoSerializer
 
     def get_queryset(self):
-        temperaturaQs = get_time_filtered_temperatura(self.request)
         pautaQs = get_time_filtered_pauta(self.request)
         props = Proposicao.objects.prefetch_related(
             'etapas', 'etapas__tramitacao', 'progresso',
