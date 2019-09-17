@@ -10,18 +10,12 @@ django.setup()
 sched = BlockingScheduler()
 print('Iniciando scheduler...')
 
-@sched.scheduled_job('interval', minutes=5)
+@sched.scheduled_job('interval', minutes=3)
 def timed_job():
     try:
         print("Apagando Banco de Dados...")
         management.call_command('flush', '--no-input',verbosity=3)
         time.sleep(30)
-        print("Fazendo Migrations...")
-        management.call_command('makemigrations', verbosity=3)
-        time.sleep(20)
-        print("Rodando Migrations...")
-        management.call_command('migrate',verbosity=3)
-        time.sleep(20)
         print("Importando dados a partir de servidor remoto...")
         management.call_command('import_data_from_remote', verbosity=3)
     except Exception as e:
