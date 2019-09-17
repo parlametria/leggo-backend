@@ -36,7 +36,7 @@ def import_proposicoes():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
         print(etapa.id_leggo)
-        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo = etapa.id_leggo)
+        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
