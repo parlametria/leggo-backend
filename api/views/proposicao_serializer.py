@@ -9,7 +9,7 @@ from django.db.models import Prefetch
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
-    etapas = EtapasSerializer(many=True, read_only=True)
+    etapas = EtapasDetailSerializer(many=True, read_only=True)
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
 
     class Meta:
