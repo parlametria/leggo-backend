@@ -70,7 +70,6 @@ def create_proposicao(self):
         forma_apreciacao='Plenário',
         ementa='Dispõe sobre o licenciamento ambiental...',
         justificativa='',
-        temperatura=5.7,
         autor_nome='Luciano Zica PSOL/CE',
         relator_nome='Dep. Maurício Quintella Lessa (PR-AL)',
         em_pauta=False,
