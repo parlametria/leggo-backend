@@ -10,7 +10,7 @@ django.setup()
 sched = BlockingScheduler()
 print('Iniciando scheduler...')
 
-@sched.scheduled_job('interval', minutes=2)
+@sched.scheduled_job('interval', minutes=5)
 def timed_job():
     try:
         print("Apagando Banco de Dados...")
