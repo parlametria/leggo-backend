@@ -4,7 +4,7 @@ from drf_yasg import openapi
 from api.model.proposicao import Proposicao
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
-from api.utils.filters import (get_time_filtered_temperatura, get_time_filtered_pauta)
+from api.utils.filters import get_time_filtered_pauta
 from django.db.models import Prefetch
 
 
