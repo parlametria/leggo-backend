@@ -2,6 +2,13 @@ from django.core.management.base import BaseCommand
 from django.conf import settings
 from api.utils.csv_servers import (get_token, get_leggo_files)
 from .import_utils import import_all_data
+from django.core import management
+import os
+import django
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "agorapi.settings")
+django.setup()
+
 
 
 class Command(BaseCommand):
