@@ -14,7 +14,7 @@ print('Iniciando scheduler...')
 def timed_job():
     try:
         print("Apagando Banco de Dados...")
-        management.call_command('flush', verbosity=3, interactive=False)
+        management.call_command('flush', verbosity=2, interactive=False)
         time.sleep(30)
         print("Importando dados a partir de servidor remoto...")
         management.call_command('import_data_from_remote', verbosity=3)
