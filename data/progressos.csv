@@ -629,3 +629,14 @@ id_ext,casa,fase_global,local,data_inicio,data_fim,local_casa,pulou
 2196833,camara,Revisão II,Plenário,NA,NA,camara,FALSE
 2196833,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
 2196833,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE
+2187087,camara,Pré-Construção,,NA,NA,camara,TRUE
+2187087,camara,Construção,Comissões,2018-11-27T16:25:00Z,2019-08-27T20:00:00Z,camara,FALSE
+2187087,camara,Construção,Plenário,2019-08-27T20:00:00Z,NA,camara,FALSE
+2187087,camara,Pré-Revisão I,,NA,NA,camara,FALSE
+2187087,camara,Revisão I,Comissões,NA,NA,senado,FALSE
+2187087,camara,Revisão I,Plenário,NA,NA,senado,FALSE
+2187087,camara,Pré-Revisão II,,NA,NA,camara,FALSE
+2187087,camara,Revisão II,Comissões,NA,NA,camara,FALSE
+2187087,camara,Revisão II,Plenário,NA,NA,camara,FALSE
+2187087,camara,Sanção/Veto,Presidência da República,NA,NA,presidência da república,FALSE
+2187087,camara,Avaliação dos Vetos,Congresso,NA,NA,congresso,FALSE

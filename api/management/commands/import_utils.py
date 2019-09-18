@@ -35,7 +35,6 @@ def import_proposicoes():
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
-        print(etapa.id_leggo)
         prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo)
         prop.save()
         prop.etapas.set(etapas)
@@ -88,7 +87,6 @@ def import_temperaturas():
     '''Carrega históricos de temperatura'''
     grouped = pd.read_csv('data/hists_temperatura.csv').groupby(['id_leggo'])
     for group_index in grouped.groups:
-        print(group_index)
         id_leggo = {
             'id_leggo': group_index
         }
