@@ -81,7 +81,7 @@ def create_proposicao(self):
     proposicao = Proposicao(
                     apelido='Lei do Licenciamento Ambiental',
                     tema='Meio Ambiente/Clima',
-                    id_leggo = 1
+                    id_leggo=1
                 )
     proposicao.save()
     proposicao.etapas.set([etapa_proposicao])
