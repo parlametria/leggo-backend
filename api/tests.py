@@ -22,7 +22,7 @@ class ProposicaoTests(APITestCase):
         '''
         Check proposicao detail
         '''
-        url_detail = (self.url + str(self.proposicao.id))
+        url_detail = (self.url + str(self.proposicao.id_leggo))
         response = self.client.get(url_detail)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 1)
