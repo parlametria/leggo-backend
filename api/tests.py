@@ -61,6 +61,7 @@ def create_proposicao(self):
     Create a proposicao and an etapa_proposicao object and save on test database
     '''
     etapa_proposicao = EtapaProposicao(
+        id_leggo=1,
         id_ext='257161',
         casa='camara',
         data_apresentacao='2004-06-08',
