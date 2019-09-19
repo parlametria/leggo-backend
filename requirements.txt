@@ -14,6 +14,7 @@ packaging
 whitenoise
 lxml
 APScheduler==3.0.0
+dj-database-url
 # Deps para testes:
 coverage
 git+https://gitlab.com/pycqa/flake8#egg=flake8  # evita https://github.com/PyCQA/pycodestyle/issues/728
