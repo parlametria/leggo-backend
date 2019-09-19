@@ -9,7 +9,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         try:
-            print("Obtendo token do SERVER URL:" + settings.CSVS_SERVER_URL + "...")
+            print("Obtendo token do servidor remoto...")
             token = get_token(settings.CSVS_SERVER_URL, 
                         settings.CSVS_SERVER_USER, 
                         settings.CSVS_SERVER_PWD)
