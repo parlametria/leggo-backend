@@ -1,5 +1,4 @@
 # Compose used for production
-# Compose used for production
   
 version: '3.5'
 
