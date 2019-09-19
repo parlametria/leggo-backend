@@ -18,7 +18,7 @@ class Choices(Munch):
 class EtapaProposicao(models.Model):
     id_leggo = models.IntegerField(
         'ID Leggo',
-        help_text='Id interto do leggo.')
+        help_text='Id interno do leggo.')
 
     id_ext = models.IntegerField(
         'ID Externo',
