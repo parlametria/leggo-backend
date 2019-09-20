@@ -14,8 +14,8 @@ class Command(BaseCommand):
         try:
             print("Apagando Banco de Dados...")
             management.call_command('flush', interactive=False)
-            print("Importando dados a partir de servidor remoto...")
-            management.call_command('import_data_from_remote', verbosity=3)
+            #print("Importando dados a partir de servidor remoto...")
+            #management.call_command('import_data_from_remote', verbosity=3)
         except Exception as e:
             print("Não foi possível atualizar os dados a partir dos csvs remotos. =(")
             print(str(e))
