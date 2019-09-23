@@ -13,7 +13,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             print("Apagando Banco de Dados...")
-            management.call_command('flush', load_initial_data=False, interactive=False, verbosity=3)
+            management.call_command('flush', interactive=False, verbosity=3)
             #print("Importando dados a partir de servidor remoto...")
             #management.call_command('import_data_from_remote', verbosity=3)
         except Exception as e:
