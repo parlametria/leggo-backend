@@ -12,7 +12,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Proposicao
-        fields = ('id', 'temas', 'apelido', 'etapas', 'resumo_progresso')
+        fields = ('id', 'temas', 'apelido', 'etapas', 'resumo_progresso', 'advocacy_link')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):

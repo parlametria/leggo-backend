@@ -58,3 +58,7 @@ class Proposicao(models.Model):
         Separa temas
         '''
         return self.tema.split(";")
+
+    @property
+    def advocacy_link(self):
+        return "https://www.google.com"
