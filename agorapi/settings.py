@@ -32,6 +32,8 @@ ALLOWED_HOSTS = [
     'agorapi', 'httpapi', '*'
 ]
 
+ON_HEROKU = os.environ.get('ON_HEROKU')
+
 
 # Application definition
 
@@ -96,8 +98,8 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.config()
-
+if ON_HEROKU:
+    DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
