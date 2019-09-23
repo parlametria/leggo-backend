@@ -13,7 +13,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         try:
-            print datetime.datetime.now()
+            print("----------------------")
+            print(datetime.datetime.now())
             print("Apagando Banco de Dados...")
             management.call_command('flush', interactive=False, verbosity=3)
             print("Importando dados a partir de servidor remoto...")
