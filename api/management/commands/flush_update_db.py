@@ -2,6 +2,7 @@ from django.core.management.base import BaseCommand
 from django.core import management
 import os
 import django
+import datetime
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "agorapi.settings")
 django.setup()
@@ -12,6 +13,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         try:
+            print datetime.datetime.now()
             print("Apagando Banco de Dados...")
             management.call_command('flush', interactive=False, verbosity=3)
             print("Importando dados a partir de servidor remoto...")
