@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,6 +31,8 @@ ALLOWED_HOSTS = [
     'web', '0.0.0.0', 'localhost', '127.0.0.1', '150.165.85.25', 'api',
     'agorapi', 'httpapi', '*'
 ]
+
+ON_HEROKU = os.environ.get('ON_HEROKU')
 
 
 # Application definition
@@ -95,6 +98,8 @@ DATABASES = {
     }
 }
 
+if ON_HEROKU:
+    DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
