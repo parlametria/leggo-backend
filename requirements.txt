@@ -13,7 +13,6 @@ scipy
 packaging
 whitenoise
 lxml
-APScheduler==3.0.0
 dj-database-url
 # Deps para testes:
 coverage
