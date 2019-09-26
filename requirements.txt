@@ -12,6 +12,7 @@ psycopg2-binary
 scipy
 packaging
 whitenoise
+lxml
 dj-database-url
 # Deps para testes:
 coverage

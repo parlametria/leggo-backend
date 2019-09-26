@@ -27,6 +27,12 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'segredo secreto')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') not in ['False', 'false', 'FALSE']
 
+# LEGGO CSV SERVER variables
+CSVS_SERVER_URL = os.getenv('CSVS_SERVER_URL','localhost')
+CSVS_SERVER_USER = os.getenv('CSVS_SERVER_USER','user')
+CSVS_SERVER_PWD = os.getenv('CSVS_SERVER_PWD','pwd')
+CSVS_STORAGE_DIR = os.getenv('CSVS_STORAGE_DIR', './data/')
+
 ALLOWED_HOSTS = [
     'web', '0.0.0.0', 'localhost', '127.0.0.1', '150.165.85.25', 'api',
     'agorapi', 'httpapi', '*'
