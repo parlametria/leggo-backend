@@ -24,6 +24,7 @@ class Proposicao(models.Model):
 
     apelido = models.TextField(blank=True)
     tema = models.TextField(blank=True)
+    advocacy_link = models.TextField(blank=True)
 
     @property
     def resumo_progresso(self):
@@ -58,7 +59,3 @@ class Proposicao(models.Model):
         Separa temas
         '''
         return self.tema.split(";")
-
-    @property
-    def advocacy_link(self):
-        return "https://www.google.com"
