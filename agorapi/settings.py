@@ -40,6 +40,9 @@ ALLOWED_HOSTS = [
 
 ON_HEROKU = os.environ.get('ON_HEROKU')
 
+# Redirect HTTP requests to HTTPS
+SECURE_SSL_REDIRECT = True
+
 
 # Application definition
 
