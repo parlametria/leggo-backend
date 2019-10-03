@@ -27,7 +27,7 @@ build:
   stage: build
   script:
     - $COMPOSE_CMD pull || true
-    - $COMPOSE_CMD build --pull
+    - $COMPOSE_CMD build --pull --no-cache
     - $COMPOSE_CMD push
 
 tests:
