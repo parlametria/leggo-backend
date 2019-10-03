@@ -40,10 +40,6 @@ ALLOWED_HOSTS = [
 
 ON_HEROKU = os.environ.get('ON_HEROKU')
 
-# Redirect HTTP requests to HTTPS
-SECURE_SSL_REDIRECT = True
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -109,6 +105,10 @@ DATABASES = {
 
 if ON_HEROKU:
     DATABASES['default'] = dj_database_url.config()
+    # Redirect HTTP requests to HTTPS
+    SECURE_SSL_REDIRECT = True
+else:
+    SECURE_SSL_REDIRECT = False
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

@@ -9,6 +9,7 @@ RUN apk add --update --no-cache libc-dev gcc libxslt-dev
 RUN mkdir /agora-digital-backend
 WORKDIR /agora-digital-backend
 COPY requirements.txt .
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 COPY requirements_dev.txt .
 RUN pip install -r requirements_dev.txt
