@@ -10,9 +10,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             print("Obtendo token do servidor remoto...")
-            token = get_token(settings.CSVS_SERVER_URL, 
-                        settings.CSVS_SERVER_USER, 
-                        settings.CSVS_SERVER_PWD)
+            token = get_token(settings.CSVS_SERVER_URL,
+                              settings.CSVS_SERVER_USER,
+                              settings.CSVS_SERVER_PWD)
 
             print("Obtendo arquivos csv do servidor remoto...")
             get_leggo_files(settings.CSVS_SERVER_URL, token, settings.CSVS_STORAGE_DIR)

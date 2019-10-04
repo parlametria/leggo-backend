@@ -28,9 +28,9 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'segredo secreto')
 DEBUG = os.getenv('DEBUG') not in ['False', 'false', 'FALSE']
 
 # LEGGO CSV SERVER variables
-CSVS_SERVER_URL = os.getenv('CSVS_SERVER_URL','localhost')
-CSVS_SERVER_USER = os.getenv('CSVS_SERVER_USER','user')
-CSVS_SERVER_PWD = os.getenv('CSVS_SERVER_PWD','pwd')
+CSVS_SERVER_URL = os.getenv('CSVS_SERVER_URL', 'localhost')
+CSVS_SERVER_USER = os.getenv('CSVS_SERVER_USER', 'user')
+CSVS_SERVER_PWD = os.getenv('CSVS_SERVER_PWD', 'pwd')
 CSVS_STORAGE_DIR = os.getenv('CSVS_STORAGE_DIR', './data/')
 
 ALLOWED_HOSTS = [
