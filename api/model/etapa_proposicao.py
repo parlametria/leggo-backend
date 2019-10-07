@@ -1,9 +1,7 @@
-import time
 from django.db import models
 from munch import Munch
 from api.model.proposicao import Proposicao
 from django.db.models import Sum
-from scipy import stats
 from api.utils.ator import get_nome_partido_uf
 
 URLS = {
@@ -18,6 +16,10 @@ class Choices(Munch):
 
 
 class EtapaProposicao(models.Model):
+    id_leggo = models.IntegerField(
+        'ID Leggo',
+        help_text='Id interno do leggo.')
+
     id_ext = models.IntegerField(
         'ID Externo',
         help_text='Id externo do sistema da casa.')
@@ -65,8 +67,6 @@ class EtapaProposicao(models.Model):
     relator_nome = models.TextField(blank=True)
 
     casa_origem = models.TextField(blank=True)
-
-    temperatura = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
         help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario')
@@ -138,31 +138,6 @@ class EtapaProposicao(models.Model):
     def url(self):
         '''URL para a página da proposição em sua respectiva casa.'''
         return URLS[self.casa] + str(self.id_ext)
-
-    @property
-    def temperatura_coeficiente(self):
-        '''
-        Calcula coeficiente linear das temperaturas nas últimas 6 semanas.
-        '''
-        temperatures = self.temperatura_historico.all()[:6]
-        dates_x = [
-            time.mktime(temperatura.periodo.timetuple())
-            for temperatura in temperatures]
-        temperaturas_y = [
-            temperatura.temperatura_recente
-            for temperatura in temperatures]
-
-        if (dates_x and temperaturas_y and len(dates_x) > 1 and len(temperaturas_y) > 1):
-            return stats.linregress(dates_x, temperaturas_y)[0]
-        else:
-            return 0
-
-    @property
-    def ultima_temperatura(self):
-        if (len(self.temperatura_historico.all()) == 0):
-            return 0
-        else:
-            return self.temperatura_historico.all()[0].temperatura_recente
 
     @property
     def top_atores(self):
