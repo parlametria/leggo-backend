@@ -15,6 +15,8 @@ class Command(BaseCommand):
         try:
             print("----------------------")
             print(datetime.datetime.now())
+            print("Aplica migrations ao BD...")
+            management.call_command('migrate', interactive=False, verbosity=3)
             print("Apagando Banco de Dados...")
             management.call_command('flush', interactive=False, verbosity=3)
             print("Importando dados a partir de servidor remoto...")
