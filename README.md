@@ -117,6 +117,10 @@ Testes com cobertura de código:
 ```
 ./manage.py test_all
 ```
+No Docker
+```
+docker exec -it agorapi sh -c './manage.py test_all'
+```
 
 ### Gerar diagrama do BD
 

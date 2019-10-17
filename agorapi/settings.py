@@ -28,9 +28,9 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'segredo secreto')
 DEBUG = os.getenv('DEBUG') not in ['False', 'false', 'FALSE']
 
 # LEGGO CSV SERVER variables
-CSVS_SERVER_URL = os.getenv('CSVS_SERVER_URL','localhost')
-CSVS_SERVER_USER = os.getenv('CSVS_SERVER_USER','user')
-CSVS_SERVER_PWD = os.getenv('CSVS_SERVER_PWD','pwd')
+CSVS_SERVER_URL = os.getenv('CSVS_SERVER_URL', 'localhost')
+CSVS_SERVER_USER = os.getenv('CSVS_SERVER_USER', 'user')
+CSVS_SERVER_PWD = os.getenv('CSVS_SERVER_PWD', 'pwd')
 CSVS_STORAGE_DIR = os.getenv('CSVS_STORAGE_DIR', './data/')
 
 ALLOWED_HOSTS = [
@@ -39,10 +39,6 @@ ALLOWED_HOSTS = [
 ]
 
 ON_HEROKU = os.environ.get('ON_HEROKU')
-
-# Redirect HTTP requests to HTTPS
-SECURE_SSL_REDIRECT = True
-
 
 # Application definition
 
@@ -109,6 +105,10 @@ DATABASES = {
 
 if ON_HEROKU:
     DATABASES['default'] = dj_database_url.config()
+    # Redirect HTTP requests to HTTPS
+    SECURE_SSL_REDIRECT = True
+else:
+    SECURE_SSL_REDIRECT = False
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
