@@ -10,6 +10,7 @@ ORDER_PROGRESSO = [
     ('Revisão I', 'Plenário'),
     ('Revisão II', 'Comissões'),
     ('Revisão II', 'Plenário'),
+    ('Promulgação/Veto', 'Presidência da República'),
     ('Sanção/Veto', 'Presidência da República'),
     ('Avaliação dos Vetos', 'Congresso'),
 ]
