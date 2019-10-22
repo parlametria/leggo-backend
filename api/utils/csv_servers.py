@@ -4,6 +4,7 @@ import os
 from lxml import html
 import subprocess
 
+
 def post_req(req_url, data_dict):
     '''
     Faz uma requisição HTTP POST para uma url.
