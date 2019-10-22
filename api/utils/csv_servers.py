@@ -2,7 +2,7 @@ import requests
 import json
 import os
 from lxml import html
-
+import subprocess
 
 def post_req(req_url, data_dict):
     '''
@@ -54,6 +54,7 @@ def get_binary(req_url, req_headers, req_params, file_path):
     file_resp = requests.get(url=req_url, headers=req_headers, params=req_params,
                              allow_redirects=True)
     open(file_path, 'wb').write(file_resp.content)
+    subprocess.call(['chmod', '0666', file_path])
 
 
 def get_token(base_url, leggo_user, leggo_pwd):
