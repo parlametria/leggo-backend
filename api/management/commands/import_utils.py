@@ -341,3 +341,4 @@ def import_all_data():
     import_atores()
     import_pressao()
     import_nodes()
+    import_edges()
