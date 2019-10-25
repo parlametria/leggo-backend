@@ -10,6 +10,9 @@ from api.views.pauta_serializer import PautaList
 from api.views.emenda_serializer import EmendasList
 from api.views.ator_serializer import AtoresList
 from api.views.pressao_serializer import PressaoList
+from api.views.nodes_serializer import NodesList
+from api.views.edges_serializer import EdgesList
+
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
@@ -39,4 +42,8 @@ urlpatterns = [
         AtoresList.as_view()),
     url(r'^pressao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         PressaoList.as_view()),
+    url(r'^nodes/(?P<id>[0-9]+)/?$',
+        NodesList.as_view()),
+    url(r'^edges/(?P<id>[0-9]+)/?$',
+        NodesList.as_view()),
 ]

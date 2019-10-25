@@ -39,5 +39,5 @@ class EtapasList(generics.ListAPIView):
     Dados gerais da proposição.
     '''
     queryset = EtapaProposicao.objects.prefetch_related(
-        'tramitacao', 'temperatura_historico')
+        'tramitacao')
     serializer_class = EtapasSerializer
