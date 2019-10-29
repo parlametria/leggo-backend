@@ -1,959 +1,494 @@
-index,id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
-0,1,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-1,1,159238,Marcus Pestana,PSDB,MG,governo,Marcus Pestana (PSDB/MG),943.3333333333333
-2,1,160426,Rogério Rosso,PSD,DF,governo,Rogério Rosso (PSD/DF),1168.8095238095239
-3,1,160508,Afonso Florence,PT,BA,oposição,Afonso Florence (PT/BA),3746.3654644247636
-4,1,160518,Weliton Prado,PROS,MG,governo,Weliton Prado (PROS/MG),316.6666666666667
-5,1,160527,Aguinaldo Ribeiro,PP,PB,governo,Aguinaldo Ribeiro (PP/PB),350
-6,1,160530,Antonio Imbassahy,PSDB,BA,governo,Antonio Imbassahy (PSDB/BA),473.33333333333337
-7,1,160622,Vicente Candido,PT,SP,oposição,Vicente Candido (PT/SP),200
-8,1,160637,Ronaldo Fonseca,PODE,DF,governo,Ronaldo Fonseca (PODE/DF),1539.9999999999998
-9,1,160646,Fernando Francischini,PSL,,governo,Fernando Francischini (PSL/NA),833.3333333333333
-10,1,160646,Delegado Francischini,PSL,,governo,Delegado Francischini (PSL/NA),833.3333333333333
-11,1,160655,Ricardo Izar,PP,SP,governo,Ricardo Izar (PP/SP),273.33333333333337
-12,1,167493,Weverton Rocha,PDT,MA,oposição,Weverton Rocha (PDT/MA),988.3333333333333
-13,1,178887,Rubens Pereira Júnior,PCdoB,,governo,Rubens Pereira Júnior (PCdoB/NA),273.33333333333337
-14,1,178900,Carlos Marun,MDB,,governo,Carlos Marun (MDB/NA),300
-15,1,178926,Rodrigo Martins,PSB,PI,oposição,Rodrigo Martins (PSB/PI),273.3333333333333
-16,1,73424,Simão Sessim,PP,RJ,governo,Simão Sessim (PP/RJ),99.99999999999999
-17,1,73441,Celso Russomanno,PRB,SP,governo,Celso Russomanno (PRB/SP),1064.8484848484848
-18,1,73466,Rubens Bueno,CIDADANIA,PR,governo,Rubens Bueno (CIDADANIA/PR),1111.904761904762
-19,1,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),1709.9999999999998
-20,1,73486,Pompeo de Mattos,PDT,RS,oposição,Pompeo de Mattos (PDT/RS),1709.9999999999998
-21,1,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-22,1,73553,Nelson Marquezelli,PTB,SP,governo,Nelson Marquezelli (PTB/SP),328.3333333333333
-23,1,73579,Alberto Fraga,DEM,DF,governo,Alberto Fraga (DEM/DF),475
-24,1,73666,Jovair Arantes,PTB,GO,governo,Jovair Arantes (PTB/GO),1573.8095238095236
-25,1,73931,Zé Geraldo,PT,PA,oposição,Zé Geraldo (PT/PA),99.99999999999999
-26,1,74010,Valdir Colatto,MDB,SC,governo,Valdir Colatto (MDB/SC),479.99999999999994
-27,1,74060,Daniel Almeida,PCdoB,BA,governo,Daniel Almeida (PCdoB/BA),1885.4395604395604
-28,1,74095,Pauderney Avelino,DEM,,governo,Pauderney Avelino (DEM/NA),1266.6666666666665
-29,1,74156,Leonardo Monteiro,PT,MG,oposição,Leonardo Monteiro (PT/MG),3445.449878064433
-30,1,74254,Leonardo Picciani,MDB,RJ,governo,Leonardo Picciani (MDB/RJ),853.8095238095239
-31,1,74385,Takayama,PSC,PR,governo,Takayama (PSC/PR),273.33333333333337
-32,1,74400,Paulo Pimenta,PT,RS,oposição,Paulo Pimenta (PT/RS),4374.937057551612
-33,2,141421,Eduardo Da Fonte,PP,PE,governo,Eduardo Da Fonte (PP/PE),262.5
-34,2,141431,Fernando Coelho Filho,DEM,PE,governo,Fernando Coelho Filho (DEM/PE),466.66666666666663
-35,2,141482,Leonardo Quintão,MDB,MG,governo,Leonardo Quintão (MDB/MG),187.5
-36,2,141483,Lindomar Garçon,PRB,RO,governo,Lindomar Garçon (PRB/RO),183.33333333333331
-37,2,144523,Daniel Vilela,MDB,GO,governo,Daniel Vilela (MDB/GO),187.5
-38,2,160426,Rogério Rosso,PSD,DF,governo,Rogério Rosso (PSD/DF),1168.8095238095239
-39,2,160511,Alessandro Molon,PSB,RJ,oposição,Alessandro Molon (PSB/RJ),996.7948717948718
-40,2,160515,Ronaldo Benedet,MDB,SC,governo,Ronaldo Benedet (MDB/SC),187.5
-41,2,160630,Ságuas Moraes,PT,MT,oposição,Ságuas Moraes (PT/MT),905
-42,2,178850,Marcos Rotta,MDB,,governo,Marcos Rotta (MDB/NA),187.5
-43,2,178869,Vitor Valim,PROS,CE,governo,Vitor Valim (PROS/CE),187.5
-44,2,73454,João Grandão,PT,MS,oposição,João Grandão (PT/MS),160
-45,2,73474,Luci Choinacki,PT,SC,oposição,Luci Choinacki (PT/SC),160
-46,2,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-47,2,73545,Luciano Zica,PT,SP,oposição,Luciano Zica (PT/SP),160
-48,2,73584,Antonio Carlos Mendes Thame,PV,SP,governo,Antonio Carlos Mendes Thame (PV/SP),516.6666666666666
-49,2,73655,Augusto Carvalho,SOLIDARIEDADE,DF,governo,Augusto Carvalho (SOLIDARIEDADE/DF),341.66666666666663
-50,2,73666,Jovair Arantes,PTB,GO,governo,Jovair Arantes (PTB/GO),1573.8095238095236
-51,2,73945,Eduardo Gomes,SD,TO,governo,Eduardo Gomes (SD/TO),183.33333333333331
-52,2,74031,João Alfredo,PSOL,CE,oposição,João Alfredo (PSOL/CE),160
-53,2,74133,Luiz Alberto,PT,BA,oposição,Luiz Alberto (PT/BA),160
-54,2,74137,Luiz Eduardo Greenhalgh,PT,SP,oposição,Luiz Eduardo Greenhalgh (PT/SP),160
-55,2,74145,Zezéu Ribeiro,PT,,oposição,Zezéu Ribeiro (PT/NA),160
-56,2,74153,Ivo José,PT,MG,oposição,Ivo José (PT/MG),160
-57,2,74162,Iriny Lopes,PT,ES,oposição,Iriny Lopes (PT/ES),160
-58,2,74171,Chico Alencar,PSOL,RJ,oposição,Chico Alencar (PSOL/RJ),2875
-59,2,74210,Sarney Filho,PV,MA,governo,Sarney Filho (PV/MA),1035
-60,2,74212,Aníbal Gomes,DEM,CE,governo,Aníbal Gomes (DEM/CE),187.5
-61,2,74218,Walter Pinheiro,PT,BA,oposição,Walter Pinheiro (PT/BA),160
-62,2,74253,Julio Lopes,PP,RJ,governo,Julio Lopes (PP/RJ),200
-63,2,74254,Leonardo Picciani,MDB,RJ,governo,Leonardo Picciani (MDB/RJ),853.8095238095239
-64,2,74262,Carlos Sampaio,PSDB,SP,governo,Carlos Sampaio (PSDB/SP),370
-65,2,74285,Carlos Abicalil,PT,MT,oposição,Carlos Abicalil (PT/MT),241.66666666666663
-66,2,74300,Marcelo Teixeira,PR,CE,governo,Marcelo Teixeira (PR/CE),183.33333333333331
-67,2,74389,Mauro Passos,PT,SC,oposição,Mauro Passos (PT/SC),160
-68,2,74391,Vignatti,PT,SC,oposição,Vignatti (PT/SC),160.00000000000003
-69,2,74397,Luciana Genro,PSOL,RS,oposição,Luciana Genro (PSOL/RS),183.33333333333331
-70,2,74491,Nazareno Fonteles,PT,PI,oposição,Nazareno Fonteles (PT/PI),160
-71,2,74777,Rita Camata,PSDB,ES,governo,Rita Camata (PSDB/ES),183.33333333333331
-72,2,74841,Fernando Gabeira,PV,RJ,governo,Fernando Gabeira (PV/RJ),183.3333333333333
-73,5,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-74,5,160538,Bohn Gass,PT,RS,oposição,Bohn Gass (PT/RS),4025.4498780644335
-75,5,160556,Padre João,PT,MG,oposição,Padre João (PT/MG),4025.4498780644326
-76,5,178970,João Daniel,PT,SE,oposição,João Daniel (PT/SE),4025.449878064433
-77,5,73427,Alberto Goldman,PSDB,,governo,Alberto Goldman (PSDB/NA),116.66666666666666
-78,5,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-79,5,73553,Nelson Marquezelli,PTB,SP,governo,Nelson Marquezelli (PTB/SP),328.3333333333333
-80,5,73592,Kátia Abreu,PFL,TO,governo,Kátia Abreu (PFL/TO),116.66666666666666
-81,5,74160,Patrus Ananias,PT,MG,oposição,Patrus Ananias (PT/MG),4491.237314148365
-82,5,74171,Chico Alencar,PSOL,RJ,oposição,Chico Alencar (PSOL/RJ),2875
-83,5,74265,Dimas Ramalho,PPS,,governo,Dimas Ramalho (PPS/NA),116.66666666666664
-84,5,74269,Enéas,PR,,governo,Enéas (PR/NA),116.66666666666666
-85,6,141422,Efraim Filho,DEM,,governo,Efraim Filho (DEM/NA),350
-86,6,141431,Fernando Coelho Filho,DEM,PE,governo,Fernando Coelho Filho (DEM/PE),466.66666666666663
-87,6,141503,Jô Moraes,PCdoB,MG,governo,Jô Moraes (PCdoB/MG),120
-88,6,141515,Otavio Leite,PSDB,RJ,governo,Otavio Leite (PSDB/RJ),142.85714285714283
-89,6,151208,Laercio Oliveira,PP,SE,governo,Laercio Oliveira (PP/SE),142.85714285714283
-90,6,160426,Rogério Rosso,PSD,DF,governo,Rogério Rosso (PSD/DF),1168.8095238095239
-91,6,160543,Andre Moura,PSC,,governo,Andre Moura (PSC/NA),233.33333333333331
-92,6,160613,Sibá Machado,PT,AC,oposição,Sibá Machado (PT/AC),120
-93,6,160630,Ságuas Moraes,PT,MT,oposição,Ságuas Moraes (PT/MT),905
-94,6,164360,Carmen Zanotto,CIDADANIA,SC,governo,Carmen Zanotto (CIDADANIA/SC),462.38095238095235
-95,6,167493,Weverton Rocha,PDT,MA,oposição,Weverton Rocha (PDT/MA),988.3333333333333
-96,6,178879,Lucas Vergilio,SOLIDARIEDADE,GO,governo,Lucas Vergilio (SOLIDARIEDADE/GO),383.3333333333333
-97,6,4931,Izalci Lucas,PSDB,DF,governo,Izalci Lucas (PSDB/DF),1133.3333333333333
-98,6,4931,Izalci,PSDB,DF,governo,Izalci (PSDB/DF),1133.3333333333333
-99,6,73434,Arnaldo Faria De Sá,PP,SP,governo,Arnaldo Faria De Sá (PP/SP),625
-100,6,73441,Celso Russomanno,PRB,SP,governo,Celso Russomanno (PRB/SP),1064.8484848484848
-101,6,73466,Rubens Bueno,CIDADANIA,PR,governo,Rubens Bueno (CIDADANIA/PR),1111.904761904762
-102,6,73568,Celso Jacob,MDB,RJ,governo,Celso Jacob (MDB/RJ),225
-103,6,73666,Jovair Arantes,PTB,GO,governo,Jovair Arantes (PTB/GO),1573.8095238095236
-104,6,74050,Maurício Quintella Lessa,PR,AL,governo,Maurício Quintella Lessa (PR/AL),242.85714285714283
-105,6,74095,Pauderney Avelino,DEM,,governo,Pauderney Avelino (DEM/NA),1266.6666666666665
-106,6,74210,Sarney Filho,PV,MA,governo,Sarney Filho (PV/MA),1035
-107,6,74399,Onyx Lorenzoni,DEM,,governo,Onyx Lorenzoni (DEM/NA),425
-108,6,74428,Mendonça Filho,DEM,PE,governo,Mendonça Filho (DEM/PE),142.85714285714286
-109,6,74750,Newton Cardoso,PMDB,MG,governo,Newton Cardoso (PMDB/MG),199.99999999999997
-110,6,74848,Jandira Feghali,PCdoB,RJ,governo,Jandira Feghali (PCdoB/RJ),1508.0128205128206
-111,6,97707,Heráclito Fortes,DEM,PI,governo,Heráclito Fortes (DEM/PI),1300
-112,7,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-113,9,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-114,10,141484,Lúcio Vale,PR,,governo,Lúcio Vale (PR/NA),650
-115,10,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-116,10,141536,Rômulo Gouveia,"",PB,governo,Rômulo Gouveia (/PB),650
-117,10,160666,Félix Mendonça Júnior,PDT,BA,oposição,Félix Mendonça Júnior (PDT/BA),650
-118,10,178829,Capitão Augusto,PL,SP,governo,Capitão Augusto (PL/SP),1007.1428571428571
-119,10,178960,Remídio Monai,PR,RR,governo,Remídio Monai (PR/RR),650
-120,10,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-121,10,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),4414.6958001068515
-122,12,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),6446.666666666667
-123,12,152605,Glauber Braga,PSOL,RJ,oposição,Glauber Braga (PSOL/RJ),1660
-124,12,160530,Antonio Imbassahy,PSDB,BA,governo,Antonio Imbassahy (PSDB/BA),473.33333333333337
-125,12,160601,Pr. Marco Feliciano,PODE,SP,governo,Pr. Marco Feliciano (PODE/SP),131.81818181818184
-126,12,160640,Eros Biondini,PROS,MG,governo,Eros Biondini (PROS/MG),213.33333333333334
-127,12,178828,Evandro Gussi,PV,SP,governo,Evandro Gussi (PV/SP),213.33333333333334
-128,12,178836,Alan Rick,DEM,AC,governo,Alan Rick (DEM/AC),345.1515151515151
-129,12,178945,Rosangela Gomes,PRB,RJ,governo,Rosangela Gomes (PRB/RJ),340
-130,12,178947,Sóstenes Cavalcante,DEM,RJ,governo,Sóstenes Cavalcante (DEM/RJ),131.8181818181818
-131,12,193726,Paulo Eduardo Martins,PSC,PR,governo,Paulo Eduardo Martins (PSC/PR),131.8181818181818
-132,12,204369,Caroline De Toni,PSL,SC,governo,Caroline De Toni (PSL/SC),131.8181818181818
-133,12,204374,Bia Kicis,PSL,DF,governo,Bia Kicis (PSL/DF),131.8181818181818
-134,12,204376,Coronel Armando,PSL,SC,governo,Coronel Armando (PSL/SC),131.81818181818184
-135,12,204400,Aline Sleutjes,PSL,PR,governo,Aline Sleutjes (PSL/PR),131.81818181818184
-136,12,204407,Fernanda Melchionna,PSOL,RS,oposição,Fernanda Melchionna (PSOL/RS),2653.333333333333
-137,12,204411,Filipe Barros,PSL,PR,governo,Filipe Barros (PSL/PR),131.81818181818184
-138,12,204420,Julian Lemos,PSL,PB,governo,Julian Lemos (PSL/PB),131.81818181818184
-139,12,204442,Gurgel,PSL,RJ,governo,Gurgel (PSL/RJ),247.27272727272725
-140,12,204449,Nelson Barbudo,PSL,MT,governo,Nelson Barbudo (PSL/MT),131.8181818181818
-141,12,204460,Carlos Jordy,PSL,RJ,governo,Carlos Jordy (PSL/RJ),131.8181818181818
-142,12,204462,Chris Tonietto,PSL,RJ,governo,Chris Tonietto (PSL/RJ),131.8181818181818
-143,12,204464,Talíria Petrone,PSOL,RJ,oposição,Talíria Petrone (PSOL/RJ),2127.1428571428573
-144,12,204507,Carla Zambelli,PSL,SP,governo,Carla Zambelli (PSL/SP),260.6060606060606
-145,12,204509,Áurea Carolina,PSOL,MG,oposição,Áurea Carolina (PSOL/MG),1480
-146,12,204516,Alexis Fonteyne,NOVO,SP,governo,Alexis Fonteyne (NOVO/SP),472.72727272727275
-147,12,204526,Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Luiz Philippe De Orleans e Bragança (PSL/SP),236.36363636363637
-148,12,204526,Luiz Philippe de Orleans e Bragança,PSL,SP,governo,Luiz Philippe de Orleans e Bragança (PSL/SP),236.36363636363637
-149,12,204535,Sâmia Bomfim,PSOL,SP,oposição,Sâmia Bomfim (PSOL/SP),12613.333333333332
-150,12,204536,Kim Kataguiri,DEM,SP,governo,Kim Kataguiri (DEM/SP),177.27272727272728
-151,12,204545,Alê Silva,PSL,MG,governo,Alê Silva (PSL/MG),131.8181818181818
-152,12,204546,Joice Hasselmann,PSL,SP,governo,Joice Hasselmann (PSL/SP),131.8181818181818
-153,12,204547,Léo Motta,PSL,MG,governo,Léo Motta (PSL/MG),131.8181818181818
-154,12,4931,Izalci Lucas,PSDB,DF,governo,Izalci Lucas (PSDB/DF),1133.3333333333333
-155,12,4931,Izalci,PSDB,DF,governo,Izalci (PSDB/DF),1133.3333333333333
-156,12,73441,Celso Russomanno,PRB,SP,governo,Celso Russomanno (PRB/SP),1064.8484848484848
-157,12,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-158,12,73584,Antonio Carlos Mendes Thame,PV,SP,governo,Antonio Carlos Mendes Thame (PV/SP),516.6666666666666
-159,12,73778,Luiz Carlos Hauly,PSDB,PR,governo,Luiz Carlos Hauly (PSDB/PR),213.33333333333334
-160,12,74057,Alice Portugal,PCdoB,BA,governo,Alice Portugal (PCdoB/BA),787.5
-161,12,74254,Leonardo Picciani,MDB,RJ,governo,Leonardo Picciani (MDB/RJ),853.8095238095239
-162,12,74366,João Campos,PRB,GO,governo,João Campos (PRB/GO),706.6666666666666
-163,12,74558,Givaldo Carimbão,AVANTE,AL,governo,Givaldo Carimbão (AVANTE/AL),213.33333333333337
-164,12,74650,Bonifácio De Andrada,DEM,MG,governo,Bonifácio De Andrada (DEM/MG),213.33333333333334
-165,12,74784,Luiza Erundina,PSOL,SP,oposição,Luiza Erundina (PSOL/SP),4726.666666666666
-166,12,92776,Stefano Aguiar,PSD,MG,governo,Stefano Aguiar (PSD/MG),213.33333333333334
-167,13,159238,Marcus Pestana,PSDB,MG,governo,Marcus Pestana (PSDB/MG),943.3333333333333
-168,13,164359,Delegado Waldir,PSL,GO,governo,Delegado Waldir (PSL/GO),183.33333333333331
-169,13,73579,Alberto Fraga,DEM,DF,governo,Alberto Fraga (DEM/DF),475
-170,13,74048,Raul Jungmann,PPS,PE,governo,Raul Jungmann (PPS/PE),199.99999999999997
-171,13,74253,Julio Lopes,PP,RJ,governo,Julio Lopes (PP/RJ),200
-172,13,74847,Jair Bolsonaro,PSL,,governo,Jair Bolsonaro (PSL/NA),433.33333333333326
-173,13,92346,Eduardo Bolsonaro,PSL,SP,governo,Eduardo Bolsonaro (PSL/SP),433.33333333333326
-174,14,113247,Valmir Prascidelli,PT,SP,oposição,Valmir Prascidelli (PT/SP),338.46153846153845
-175,14,129037,Gabriel Guimarães,PT,,oposição,Gabriel Guimarães (PT/NA),338.46153846153845
-176,14,141398,Carlos Zarattini,PT,SP,oposição,Carlos Zarattini (PT/SP),5008.850311613114
-177,14,141445,Pepe Vargas,PT,,oposição,Pepe Vargas (PT/NA),2400
-178,14,141470,José Guimarães,PT,CE,oposição,José Guimarães (PT/CE),8206.438889053443
-179,14,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-180,14,159237,Assis Carvalho,PT,PI,oposição,Assis Carvalho (PT/PI),4868.27393431167
-181,14,160575,Erika Kokay,PT,DF,oposição,Erika Kokay (PT/DF),8452.348480111283
-182,14,178859,Moema Gramacho,PT,,oposição,Moema Gramacho (PT/NA),338.46153846153845
-183,14,178866,Luizianne Lins,PT,CE,oposição,Luizianne Lins (PT/CE),4868.27393431167
-184,14,73433,Arlindo Chinaglia,PT,SP,oposição,Arlindo Chinaglia (PT/SP),10551.572327044025
-185,14,73434,Arnaldo Faria De Sá,PP,SP,governo,Arnaldo Faria De Sá (PP/SP),625
-186,14,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-187,14,73586,Júlio Delgado,PSB,MG,oposição,Júlio Delgado (PSB/MG),350
-188,14,74041,Luiz Couto,PT,PB,oposição,Luiz Couto (PT/PB),697.4358974358975
-189,14,74160,Patrus Ananias,PT,MG,oposição,Patrus Ananias (PT/MG),4491.237314148365
-190,14,74161,Reginaldo Lopes,PT,MG,oposição,Reginaldo Lopes (PT/MG),4423.975519090074
-191,14,74275,José Mentor,PT,SP,oposição,José Mentor (PT/SP),550.9615384615385
-192,14,74283,Vicentinho,PT,SP,oposição,Vicentinho (PT/SP),3168.526801141356
-193,14,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),4414.6958001068515
-194,14,74398,Maria Do Rosário,PT,RS,oposição,Maria Do Rosário (PT/RS),9962.510490408065
-195,14,74398,Maria do Rosário,PT,RS,oposição,Maria do Rosário (PT/RS),9962.510490408065
-196,14,74585,Lincoln Portela,PL,MG,governo,Lincoln Portela (PL/MG),225
-197,14,74688,Luiz Sérgio,PT,RJ,oposição,Luiz Sérgio (PT/RJ),2400
-198,18,141335,Beto Faro,PT,PA,oposição,Beto Faro (PT/PA),3202.5927352072904
-199,18,141405,Celso Maldaner,MDB,SC,governo,Celso Maldaner (MDB/SC),180
-200,18,141423,Eliene Lima,PSD,MT,governo,Eliene Lima (PSD/MT),140
-201,18,160508,Afonso Florence,PT,BA,oposição,Afonso Florence (PT/BA),3746.3654644247636
-202,18,160535,Marcon,PT,RS,oposição,Marcon (PT/RS),3202.5927352072904
-203,18,160544,Junji Abe,MDB,SP,governo,Junji Abe (MDB/SP),140
-204,18,160610,Valmir Assunção,PT,BA,oposição,Valmir Assunção (PT/BA),3202.5927352072904
-205,18,160615,Reinaldo Azambuja,PSDB,,governo,Reinaldo Azambuja (PSDB/NA),140
-206,18,160633,Mandetta,DEM,MS,governo,Mandetta (DEM/MS),140
-207,18,160668,Paulo Cesar Quartiero,DEM,,governo,Paulo Cesar Quartiero (DEM/NA),140
-208,18,171617,Paulão,PT,AL,oposição,Paulão (PT/AL),3202.5927352072904
-209,18,73483,Luis Carlos Heinze,PP,,governo,Luis Carlos Heinze (PP/NA),140
-210,18,73553,Nelson Marquezelli,PTB,SP,governo,Nelson Marquezelli (PTB/SP),328.3333333333333
-211,18,73568,Celso Jacob,MDB,RJ,governo,Celso Jacob (MDB/RJ),225
-212,18,74010,Valdir Colatto,MDB,SC,governo,Valdir Colatto (MDB/SC),479.99999999999994
-213,18,74160,Patrus Ananias,PT,MG,oposição,Patrus Ananias (PT/MG),4491.237314148365
-214,23,74140,José Carlos Araújo,PR,BA,governo,José Carlos Araújo (PR/BA),199.99999999999997
-215,23,74553,José Carlos Aleluia,DEM,BA,governo,José Carlos Aleluia (DEM/BA),199.99999999999997
-216,24,73673,Pedro Wilson,PT,GO,oposição,Pedro Wilson (PT/GO),99.99999999999999
-217,24,74285,Carlos Abicalil,PT,MT,oposição,Carlos Abicalil (PT/MT),241.66666666666663
-218,24,74856,Laura Carneiro,DEM,RJ,governo,Laura Carneiro (DEM/RJ),150
-219,28,160511,Alessandro Molon,PSB,RJ,oposição,Alessandro Molon (PSB/RJ),996.7948717948718
-220,28,178886,Juscelino Filho,DEM,MA,governo,Juscelino Filho (DEM/MA),50
-221,28,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-222,28,74039,Sandra Rosado,PSB,RN,oposição,Sandra Rosado (PSB/RN),199.99999999999997
-223,28,74041,Luiz Couto,PT,PB,oposição,Luiz Couto (PT/PB),697.4358974358975
-224,33,141462,Lira Maia,DEM,PA,governo,Lira Maia (DEM/PA),80
-225,33,73933,Zequinha Marinho,PSC,,governo,Zequinha Marinho (PSC/NA),80
-226,33,74077,Giovanni Queiroz,PDT,PA,oposição,Giovanni Queiroz (PDT/PA),80
-227,33,74222,Asdrubal Bentes,PMDB,PA,governo,Asdrubal Bentes (PMDB/PA),80
-228,34,107283,Gleisi Hoffmann,PT,PR,oposição,Gleisi Hoffmann (PT/PR),7196.880303484077
-229,34,122974,Pedro Lucas Fernandes,PTB,MA,governo,Pedro Lucas Fernandes (PTB/MA),100
-230,34,132504,Enio Verri,PT,,oposição,Enio Verri (PT/NA),3470.4498780644335
-231,34,133439,André Figueiredo,PDT,CE,oposição,André Figueiredo (PDT/CE),611.5384615384615
-232,34,133810,Marcelo Moraes,PTB,RS,governo,Marcelo Moraes (PTB/RS),100
-233,34,133968,Paulo Ramos,PDT,RJ,oposição,Paulo Ramos (PDT/RJ),280
-234,34,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),6446.666666666667
-235,34,141335,Beto Faro,PT,PA,oposição,Beto Faro (PT/PA),3202.5927352072904
-236,34,141398,Carlos Zarattini,PT,SP,oposição,Carlos Zarattini (PT/SP),5008.850311613114
-237,34,141405,Celso Maldaner,MDB,SC,governo,Celso Maldaner (MDB/SC),180
-238,34,141470,José Guimarães,PT,CE,oposição,José Guimarães (PT/CE),8206.438889053443
-239,34,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-240,34,141518,Paulo Pereira Da Silva,SOLIDARIEDADE,SP,governo,Paulo Pereira Da Silva (SOLIDARIEDADE/SP),211.53846153846155
-241,34,141555,Vinicius Carvalho,PRB,SP,governo,Vinicius Carvalho (PRB/SP),50
-242,34,143084,Tiago Dimas,SOLIDARIEDADE,TO,governo,Tiago Dimas (SOLIDARIEDADE/TO),161.53846153846152
-243,34,152605,Glauber Braga,PSOL,RJ,oposição,Glauber Braga (PSOL/RJ),1660
-244,34,156190,Marcel Van Hattem,NOVO,RS,governo,Marcel Van Hattem (NOVO/RS),300
-245,34,159237,Assis Carvalho,PT,PI,oposição,Assis Carvalho (PT/PI),4868.27393431167
-246,34,160508,Afonso Florence,PT,BA,oposição,Afonso Florence (PT/BA),3746.3654644247636
-247,34,160511,Alessandro Molon,PSB,RJ,oposição,Alessandro Molon (PSB/RJ),996.7948717948718
-248,34,160512,Aureo Ribeiro,SOLIDARIEDADE,RJ,governo,Aureo Ribeiro (SOLIDARIEDADE/RJ),915.3846153846155
-249,34,160512,Aureo,SOLIDARIEDADE,RJ,governo,Aureo (SOLIDARIEDADE/RJ),915.3846153846155
-250,34,160528,Danilo Cabral,PSB,PE,oposição,Danilo Cabral (PSB/PE),137.5
-251,34,160535,Marcon,PT,RS,oposição,Marcon (PT/RS),3202.5927352072904
-252,34,160538,Bohn Gass,PT,RS,oposição,Bohn Gass (PT/RS),4025.4498780644335
-253,34,160556,Padre João,PT,MG,oposição,Padre João (PT/MG),4025.4498780644326
-254,34,160569,Waldenor Pereira,PT,BA,oposição,Waldenor Pereira (PT/BA),2864.192301658609
-255,34,160575,Erika Kokay,PT,DF,oposição,Erika Kokay (PT/DF),8452.348480111283
-256,34,160592,Zeca Dirceu,PT,PR,oposição,Zeca Dirceu (PT/PR),3600.9444384107455
-257,34,160604,Pedro Uczai,PT,SC,oposição,Pedro Uczai (PT/SC),7518.801581267888
-258,34,160610,Valmir Assunção,PT,BA,oposição,Valmir Assunção (PT/BA),3202.5927352072904
-259,34,160632,Zé Silva,SOLIDARIEDADE,MG,governo,Zé Silva (SOLIDARIEDADE/MG),161.53846153846155
-260,34,160641,Professora Marcivania,PCdoB,AP,governo,Professora Marcivania (PCdoB/AP),787.5
-261,34,160642,Pastor Eurico,PATRIOTA,PE,governo,Pastor Eurico (PATRIOTA/PE),183.33333333333331
-262,34,160665,Augusto Coutinho,SOLIDARIEDADE,PE,governo,Augusto Coutinho (SOLIDARIEDADE/PE),273.8461538461538
-263,34,160669,Genecias Noronha,SOLIDARIEDADE,CE,governo,Genecias Noronha (SOLIDARIEDADE/CE),161.53846153846155
-264,34,164359,Delegado Waldir,PSL,GO,governo,Delegado Waldir (PSL/GO),183.33333333333331
-265,34,164360,Carmen Zanotto,CIDADANIA,SC,governo,Carmen Zanotto (CIDADANIA/SC),462.38095238095235
-266,34,171617,Paulão,PT,AL,oposição,Paulão (PT/AL),3202.5927352072904
-267,34,171619,Margarida Salomão,PT,MG,oposição,Margarida Salomão (PT/MG),3208.636746103053
-268,34,177282,Subtenente Gonzaga,PDT,MG,oposição,Subtenente Gonzaga (PDT/MG),1877.1428571428569
-269,34,178832,Leandre,PV,PR,governo,Leandre (PV/PR),383.33333333333337
-270,34,178835,Afonso Motta,PDT,RS,oposição,Afonso Motta (PDT/RS),1247.5
-271,34,178857,Jorge Solla,PT,BA,oposição,Jorge Solla (PT/BA),7048.716111182418
-272,34,178866,Luizianne Lins,PT,CE,oposição,Luizianne Lins (PT/CE),4868.27393431167
-273,34,178873,Helder Salomão,PT,ES,oposição,Helder Salomão (PT/ES),2864.192301658609
-274,34,178881,Aluisio Mendes,PODE,MA,governo,Aluisio Mendes (PODE/MA),281.66666666666663
-275,34,178889,Zé Carlos,PT,MA,oposição,Zé Carlos (PT/MA),2864.192301658609
-276,34,178922,Tadeu Alencar,PSB,PE,oposição,Tadeu Alencar (PSB/PE),1062.179487179487
-277,34,178925,Rejane Dias,PT,PI,oposição,Rejane Dias (PT/PI),2577.39984882842
-278,34,178927,Aliel Machado,PSB,PR,oposição,Aliel Machado (PSB/PR),1399.0384615384614
-279,34,178929,Diego Garcia,PODE,PR,governo,Diego Garcia (PODE/PR),100
-280,34,178946,Soraya Santos,PL,RJ,governo,Soraya Santos (PL/RJ),314.2857142857143
-281,34,178964,Heitor Schuch,PSB,RS,oposição,Heitor Schuch (PSB/RS),50
-282,34,178970,João Daniel,PT,SE,oposição,João Daniel (PT/SE),4025.449878064433
-283,34,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),906.8181818181819
-284,34,178986,Nilto Tatto,PT,SP,oposição,Nilto Tatto (PT/SP),7109.8697927808435
-285,34,178987,Orlando Silva,PCdoB,SP,governo,Orlando Silva (PCdoB/SP),914.2857142857142
-286,34,178994,Dulce Miranda,MDB,TO,governo,Dulce Miranda (MDB/TO),199.99999999999997
-287,34,188097,Merlong Solano,PT,,oposição,Merlong Solano (PT/NA),2864.192301658609
-288,34,194260,Nivaldo Albuquerque,PTB,AL,governo,Nivaldo Albuquerque (PTB/AL),100
-289,34,198783,Emanuel Pinheiro Neto,PTB,MT,governo,Emanuel Pinheiro Neto (PTB/MT),274.24242424242425
-290,34,204357,Rose Modesto,PSDB,MS,governo,Rose Modesto (PSDB/MS),80
-291,34,204359,Léo Moraes,PODE,RO,governo,Léo Moraes (PODE/RO),114.28571428571428
-292,34,204364,Eli Borges,SOLIDARIEDADE,TO,governo,Eli Borges (SOLIDARIEDADE/TO),161.53846153846155
-293,34,204365,Gilson Marques,NOVO,SC,governo,Gilson Marques (NOVO/SC),300
-294,34,204370,Célio Moura,PT,TO,oposição,Célio Moura (PT/TO),2864.192301658609
-295,34,204371,Felipe Rigoni,PSB,ES,oposição,Felipe Rigoni (PSB/ES),2600
-296,34,204377,Paula Belmonte,CIDADANIA,DF,governo,Paula Belmonte (CIDADANIA/DF),199.99999999999997
-297,34,204380,Celina Leão,PP,DF,governo,Celina Leão (PP/DF),80
-298,34,204383,Professor Israel Batista,PV,DF,governo,Professor Israel Batista (PV/DF),1125
-299,34,204387,Sargento Fahur,PSD,,governo,Sargento Fahur (PSD/NA),130
-300,34,204393,Frei Anastacio Ribeiro,PT,PB,oposição,Frei Anastacio Ribeiro (PT/PB),2864.192301658609
-301,34,204394,Gervásio Maia,PSB,PB,oposição,Gervásio Maia (PSB/PB),137.5
-302,34,204398,Felipe Francischini,PSL,PR,governo,Felipe Francischini (PSL/PR),141.66666666666663
-303,34,204407,Fernanda Melchionna,PSOL,RS,oposição,Fernanda Melchionna (PSOL/RS),2653.333333333333
-304,34,204408,Gustinho Ribeiro,SOLIDARIEDADE,SE,governo,Gustinho Ribeiro (SOLIDARIEDADE/SE),161.53846153846155
-305,34,204410,Luisa Canziani,PTB,PR,governo,Luisa Canziani (PTB/PR),100.00000000000001
-306,34,204416,Sanderson,PSL,RS,governo,Sanderson (PSL/RS),593.3333333333333
-307,34,204416,Ubiratan Sanderson,PSL,RS,governo,Ubiratan Sanderson (PSL/RS),593.3333333333333
-308,34,204418,Luizão Goulart,PRB,PR,governo,Luizão Goulart (PRB/PR),683.3333333333333
-309,34,204418,Professor Luizão Goulart,PRB,PR,governo,Professor Luizão Goulart (PRB/PR),683.3333333333333
-310,34,204421,Edna Henrique,PSDB,PB,governo,Edna Henrique (PSDB/PB),80
-311,34,204426,Carlos Veras,PT,PE,oposição,Carlos Veras (PT/PE),7048.716111182418
-312,34,204428,Marília Arraes,PT,PE,oposição,Marília Arraes (PT/PE),2584.975541579315
-313,34,204429,João H. Campos,PSB,PE,oposição,João H. Campos (PSB/PE),504.16666666666663
-314,34,204432,Marina Santos,SOLIDARIEDADE,PI,governo,Marina Santos (SOLIDARIEDADE/PI),161.53846153846155
-315,34,204434,Dra. Vanda Milani,SOLIDARIEDADE,AC,governo,Dra. Vanda Milani (SOLIDARIEDADE/AC),161.53846153846155
-316,34,204439,Dr. Leonardo,SOLIDARIEDADE,MT,governo,Dr. Leonardo (SOLIDARIEDADE/MT),261.53846153846155
-317,34,204442,Gurgel,PSL,RJ,governo,Gurgel (PSL/RJ),247.27272727272725
-318,34,204451,Delegado Antônio Furtado,PSL,RJ,governo,Delegado Antônio Furtado (PSL/RJ),141.66666666666663
-319,34,204453,Natália Bonavides,PT,RN,oposição,Natália Bonavides (PT/RN),3208.636746103053
-320,34,204461,Paulo Ganime,NOVO,RJ,governo,Paulo Ganime (NOVO/RJ),425
-321,34,204464,Talíria Petrone,PSOL,RJ,oposição,Talíria Petrone (PSOL/RJ),2127.1428571428573
-322,34,204466,Tereza Nelma,PSDB,AL,governo,Tereza Nelma (PSDB/AL),130
-323,34,204467,Professora Rosa Neide,PT,MT,oposição,Professora Rosa Neide (PT/MT),3858.636746103053
-324,34,204468,Joenia Wapichana,REDE,RR,oposição,Joenia Wapichana (REDE/RR),536.5384615384615
-325,34,204471,Mara Rocha,PSDB,AC,governo,Mara Rocha (PSDB/AC),80
-326,34,204472,José Medeiros,PODE,MT,governo,José Medeiros (PODE/MT),141.66666666666666
-327,34,204475,Otaci Nascimento,SOLIDARIEDADE,RR,governo,Otaci Nascimento (SOLIDARIEDADE/RR),161.53846153846155
-328,34,204477,Felício Laterça,PSL,RJ,governo,Felício Laterça (PSL/RJ),428.33333333333337
-329,34,204479,Nicoletti,PSL,RR,governo,Nicoletti (PSL/RR),141.66666666666663
-330,34,204480,Rogério Correia,PT,MG,oposição,Rogério Correia (PT/MG),2864.192301658609
-331,34,204487,Capitão Wagner,PROS,CE,governo,Capitão Wagner (PROS/CE),210
-332,34,204488,Célio Studart,PV,CE,governo,Célio Studart (PV/CE),114.28571428571428
-333,34,204492,Paulo Guedes,PT,MG,oposição,Paulo Guedes (PT/MG),2864.192301658609
-334,34,204494,Fred Costa,PATRIOTA,MG,governo,Fred Costa (PATRIOTA/MG),397.6190476190476
-335,34,204495,Airton Faleiro,PT,PA,oposição,Airton Faleiro (PT/PA),2864.192301658609
-336,34,204499,Cássio Andrade,PSB,PA,oposição,Cássio Andrade (PSB/PA),137.5
-337,34,204500,Eduardo Costa,PTB,PA,governo,Eduardo Costa (PTB/PA),150
-338,34,204501,Alencar Santana Braga,PT,SP,oposição,Alencar Santana Braga (PT/SP),5116.695299309854
-339,34,204503,Alexandre Padilha,PT,SP,oposição,Alexandre Padilha (PT/SP),2864.192301658609
-340,34,204507,Carla Zambelli,PSL,SP,governo,Carla Zambelli (PSL/SP),260.6060606060606
-341,34,204509,Áurea Carolina,PSOL,MG,oposição,Áurea Carolina (PSOL/MG),1480
-342,34,204512,Delegado Marcelo Freitas,PSL,MG,governo,Delegado Marcelo Freitas (PSL/MG),428.3333333333333
-343,34,204514,Coronel Tadeu,PSL,SP,governo,Coronel Tadeu (PSL/SP),130
-344,34,204516,Alexis Fonteyne,NOVO,SP,governo,Alexis Fonteyne (NOVO/SP),472.72727272727275
-345,34,204518,Dr. Frederico,PATRIOTA,MG,governo,Dr. Frederico (PATRIOTA/MG),347.6190476190476
-346,34,204519,Tiago Mitraud,NOVO,MG,governo,Tiago Mitraud (NOVO/MG),508.3333333333333
-347,34,204520,Cabo Junio Amaral,PSL,MG,governo,Cabo Junio Amaral (PSL/MG),130
-348,34,204523,Lucas Gonzalez,NOVO,MG,governo,Lucas Gonzalez (NOVO/MG),300
-349,34,204528,Adriana Ventura,NOVO,SP,governo,Adriana Ventura (NOVO/SP),458.3333333333333
-350,34,204531,Guilherme Derrite,PP,,governo,Guilherme Derrite (PP/NA),130
-351,34,204535,Sâmia Bomfim,PSOL,SP,oposição,Sâmia Bomfim (PSOL/SP),12613.333333333332
-352,34,204541,Eduardo Bismarck,PDT,CE,oposição,Eduardo Bismarck (PDT/CE),1238.3333333333333
-353,34,204543,Luiz Flávio Gomes,PSB,SP,oposição,Luiz Flávio Gomes (PSB/SP),504.1666666666666
-354,34,204553,Pastor Sargento Isidório,AVANTE,BA,governo,Pastor Sargento Isidório (AVANTE/BA),130
-355,34,204555,José Ricardo,PT,AM,oposição,José Ricardo (PT/AM),2965.449878064433
-356,34,204559,Zé Neto,PT,BA,oposição,Zé Neto (PT/BA),2864.192301658609
-357,34,68720,Fábio Henrique,PDT,SE,oposição,Fábio Henrique (PDT/SE),150
-358,34,73433,Arlindo Chinaglia,PT,SP,oposição,Arlindo Chinaglia (PT/SP),10551.572327044025
-359,34,73460,Gustavo Fruet,PDT,PR,oposição,Gustavo Fruet (PDT/PR),50
-360,34,73482,Henrique Fontana,PT,RS,oposição,Henrique Fontana (PT/RS),7048.716111182418
-361,34,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),1709.9999999999998
-362,34,73486,Pompeo de Mattos,PDT,RS,oposição,Pompeo de Mattos (PDT/RS),1709.9999999999998
-363,34,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-364,34,73586,Júlio Delgado,PSB,MG,oposição,Júlio Delgado (PSB/MG),350
-365,34,73604,Rui Falcão,PT,SP,oposição,Rui Falcão (PT/SP),3256.4999939663007
-366,34,73701,Benedita Da Silva,PT,RJ,oposição,Benedita Da Silva (PT/RJ),2945.449878064433
-367,34,73801,Renildo Calheiros,PCdoB,PE,governo,Renildo Calheiros (PCdoB/PE),800
-368,34,73943,Perpétua Almeida,PCdoB,AC,governo,Perpétua Almeida (PCdoB/AC),750
-369,34,74043,Wellington Roberto,PL,PB,governo,Wellington Roberto (PL/PB),150
-370,34,74044,Wilson Santiago,PTB,PB,governo,Wilson Santiago (PTB/PB),150
-371,34,74057,Alice Portugal,PCdoB,BA,governo,Alice Portugal (PCdoB/BA),787.5
-372,34,74060,Daniel Almeida,PCdoB,BA,governo,Daniel Almeida (PCdoB/BA),1885.4395604395604
-373,34,74156,Leonardo Monteiro,PT,MG,oposição,Leonardo Monteiro (PT/MG),3445.449878064433
-374,34,74159,Odair Cunha,PT,MG,oposição,Odair Cunha (PT/MG),3710.346147812455
-375,34,74160,Patrus Ananias,PT,MG,oposição,Patrus Ananias (PT/MG),4491.237314148365
-376,34,74161,Reginaldo Lopes,PT,MG,oposição,Reginaldo Lopes (PT/MG),4423.975519090074
-377,34,74283,Vicentinho,PT,SP,oposição,Vicentinho (PT/SP),3168.526801141356
-378,34,74366,João Campos,PRB,GO,governo,João Campos (PRB/GO),706.6666666666666
-379,34,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),4414.6958001068515
-380,34,74376,Vander Loubet,PT,MS,oposição,Vander Loubet (PT/MS),2864.192301658609
-381,34,74398,Maria Do Rosário,PT,RS,oposição,Maria Do Rosário (PT/RS),9962.510490408065
-382,34,74398,Maria do Rosário,PT,RS,oposição,Maria do Rosário (PT/RS),9962.510490408065
-383,34,74400,Paulo Pimenta,PT,RS,oposição,Paulo Pimenta (PT/RS),4374.937057551612
-384,34,74571,Nelson Pellegrino,PT,BA,oposição,Nelson Pellegrino (PT/BA),3306.499993966301
-385,34,74655,Eduardo Barbosa,PSDB,MG,governo,Eduardo Barbosa (PSDB/MG),50
-386,34,74784,Luiza Erundina,PSOL,SP,oposição,Luiza Erundina (PSOL/SP),4726.666666666666
-387,34,74848,Jandira Feghali,PCdoB,RJ,governo,Jandira Feghali (PCdoB/RJ),1508.0128205128206
-388,34,75431,Maurício Dziedricki,PTB,RS,governo,Maurício Dziedricki (PTB/RS),100.00000000000001
-389,34,76874,Marcelo Freixo,PSOL,RJ,oposição,Marcelo Freixo (PSOL/RJ),3080
-390,34,81055,Márcio Jerry,PCdoB,MA,governo,Márcio Jerry (PCdoB/MA),750
-391,34,90201,Pedro Augusto Bezerra,PTB,CE,governo,Pedro Augusto Bezerra (PTB/CE),100.00000000000001
-392,34,90842,Santini,PTB,RS,governo,Santini (PTB/RS),100
-393,38,160570,Jerônimo Goergen,PP,RS,governo,Jerônimo Goergen (PP/RS),100
-394,38,178989,Renata Abreu,PODE,SP,governo,Renata Abreu (PODE/SP),50
-395,42,124411,Mauro Pereira,MDB,RS,governo,Mauro Pereira (MDB/RS),50
-396,42,132504,Enio Verri,PT,,oposição,Enio Verri (PT/NA),3470.4498780644335
-397,42,133374,Ademir Camilo,MDB,MG,governo,Ademir Camilo (MDB/MG),278.57142857142856
-398,42,141398,Carlos Zarattini,PT,SP,oposição,Carlos Zarattini (PT/SP),5008.850311613114
-399,42,141422,Efraim Filho,DEM,,governo,Efraim Filho (DEM/NA),350
-400,42,141529,Roberto Britto,PP,BA,governo,Roberto Britto (PP/BA),278.57142857142856
-401,42,143632,Domingos Neto,PSD,CE,governo,Domingos Neto (PSD/CE),925.6493506493507
-402,42,150418,Márcio Marinho,PRB,BA,governo,Márcio Marinho (PRB/BA),278.57142857142856
-403,42,160426,Rogério Rosso,PSD,DF,governo,Rogério Rosso (PSD/DF),1168.8095238095239
-404,42,160508,Afonso Florence,PT,BA,oposição,Afonso Florence (PT/BA),3746.3654644247636
-405,42,160649,Esperidião Amin,PP,SC,governo,Esperidião Amin (PP/SC),300
-406,42,167722,Marcos Rogério,DEM,,governo,Marcos Rogério (DEM/NA),120
-407,42,178802,Luiz Carlos Ramos,PR,RJ,governo,Luiz Carlos Ramos (PR/RJ),278.57142857142856
-408,42,178829,Capitão Augusto,PL,SP,governo,Capitão Augusto (PL/SP),1007.1428571428571
-409,42,178877,Fábio Sousa,PSDB,GO,governo,Fábio Sousa (PSDB/GO),120
-410,42,178922,Tadeu Alencar,PSB,PE,oposição,Tadeu Alencar (PSB/PE),1062.179487179487
-411,42,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),906.8181818181819
-412,42,204371,Felipe Rigoni,PSB,ES,oposição,Felipe Rigoni (PSB/ES),2600
-413,42,204388,Bibo Nunes,PSL,RS,governo,Bibo Nunes (PSL/RS),225
-414,42,204429,João H. Campos,PSB,PE,oposição,João H. Campos (PSB/PE),504.16666666666663
-415,42,69871,Bacelar,PODE,BA,governo,Bacelar (PODE/BA),321.4285714285714
-416,42,73463,Osmar Serraglio,PP,PR,governo,Osmar Serraglio (PP/PR),50
-417,42,73666,Jovair Arantes,PTB,GO,governo,Jovair Arantes (PTB/GO),1573.8095238095236
-418,42,74060,Daniel Almeida,PCdoB,BA,governo,Daniel Almeida (PCdoB/BA),1885.4395604395604
-419,42,74254,Leonardo Picciani,MDB,RJ,governo,Leonardo Picciani (MDB/RJ),853.8095238095239
-420,42,93472,Cristiane Brasil,PTB,RJ,governo,Cristiane Brasil (PTB/RJ),170
-421,43,143632,Domingos Neto,PSD,CE,governo,Domingos Neto (PSD/CE),925.6493506493507
-422,43,146788,Marcelo Aro,PP,MG,governo,Marcelo Aro (PP/MG),472.72727272727275
-423,43,160510,Luis Tibé,AVANTE,MG,governo,Luis Tibé (AVANTE/MG),472.72727272727275
-424,43,160512,Aureo Ribeiro,SOLIDARIEDADE,RJ,governo,Aureo Ribeiro (SOLIDARIEDADE/RJ),915.3846153846155
-425,43,160512,Aureo,SOLIDARIEDADE,RJ,governo,Aureo (SOLIDARIEDADE/RJ),915.3846153846155
-426,43,166401,Nilson Leitão,PSDB,MT,governo,Nilson Leitão (PSDB/MT),584.5454545454546
-427,43,178832,Leandre,PV,PR,governo,Leandre (PV/PR),383.33333333333337
-428,43,178920,Ricardo Teobaldo,PODE,PE,governo,Ricardo Teobaldo (PODE/PE),472.72727272727275
-429,43,73441,Celso Russomanno,PRB,SP,governo,Celso Russomanno (PRB/SP),1064.8484848484848
-430,43,73930,Wladimir Costa,SOLIDARIEDADE,PA,governo,Wladimir Costa (SOLIDARIEDADE/PA),472.7272727272728
-431,43,74554,José Rocha,PL,BA,governo,José Rocha (PL/BA),587.8787878787879
-432,43,88950,Rodrigo Garcia,DEM,,governo,Rodrigo Garcia (DEM/NA),472.72727272727275
-433,45,74210,Sarney Filho,PV,MA,governo,Sarney Filho (PV/MA),1035
-434,54,132504,Enio Verri,PT,,oposição,Enio Verri (PT/NA),3470.4498780644335
-435,54,141335,Beto Faro,PT,PA,oposição,Beto Faro (PT/PA),3202.5927352072904
-436,54,141398,Carlos Zarattini,PT,SP,oposição,Carlos Zarattini (PT/SP),5008.850311613114
-437,54,141470,José Guimarães,PT,CE,oposição,José Guimarães (PT/CE),8206.438889053443
-438,54,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-439,54,160508,Afonso Florence,PT,BA,oposição,Afonso Florence (PT/BA),3746.3654644247636
-440,54,160535,Marcon,PT,RS,oposição,Marcon (PT/RS),3202.5927352072904
-441,54,160538,Bohn Gass,PT,RS,oposição,Bohn Gass (PT/RS),4025.4498780644335
-442,54,160556,Padre João,PT,MG,oposição,Padre João (PT/MG),4025.4498780644326
-443,54,160569,Waldenor Pereira,PT,BA,oposição,Waldenor Pereira (PT/BA),2864.192301658609
-444,54,160575,Erika Kokay,PT,DF,oposição,Erika Kokay (PT/DF),8452.348480111283
-445,54,160592,Zeca Dirceu,PT,PR,oposição,Zeca Dirceu (PT/PR),3600.9444384107455
-446,54,160604,Pedro Uczai,PT,SC,oposição,Pedro Uczai (PT/SC),7518.801581267888
-447,54,160610,Valmir Assunção,PT,BA,oposição,Valmir Assunção (PT/BA),3202.5927352072904
-448,54,171617,Paulão,PT,AL,oposição,Paulão (PT/AL),3202.5927352072904
-449,54,171619,Margarida Salomão,PT,MG,oposição,Margarida Salomão (PT/MG),3208.636746103053
-450,54,178842,Jhc,PSB,AL,oposição,Jhc (PSB/AL),199.99999999999997
-451,54,178857,Jorge Solla,PT,BA,oposição,Jorge Solla (PT/BA),7048.716111182418
-452,54,178873,Helder Salomão,PT,ES,oposição,Helder Salomão (PT/ES),2864.192301658609
-453,54,178889,Zé Carlos,PT,MA,oposição,Zé Carlos (PT/MA),2864.192301658609
-454,54,178925,Rejane Dias,PT,PI,oposição,Rejane Dias (PT/PI),2577.39984882842
-455,54,178970,João Daniel,PT,SE,oposição,João Daniel (PT/SE),4025.449878064433
-456,54,178986,Nilto Tatto,PT,SP,oposição,Nilto Tatto (PT/SP),7109.8697927808435
-457,54,188097,Merlong Solano,PT,,oposição,Merlong Solano (PT/NA),2864.192301658609
-458,54,198783,Emanuel Pinheiro Neto,PTB,MT,governo,Emanuel Pinheiro Neto (PTB/MT),274.24242424242425
-459,54,204370,Célio Moura,PT,TO,oposição,Célio Moura (PT/TO),2864.192301658609
-460,54,204371,Felipe Rigoni,PSB,ES,oposição,Felipe Rigoni (PSB/ES),2600
-461,54,204393,Frei Anastacio Ribeiro,PT,PB,oposição,Frei Anastacio Ribeiro (PT/PB),2864.192301658609
-462,54,204426,Carlos Veras,PT,PE,oposição,Carlos Veras (PT/PE),7048.716111182418
-463,54,204429,João H. Campos,PSB,PE,oposição,João H. Campos (PSB/PE),504.16666666666663
-464,54,204433,Marcelo Calero,CIDADANIA,RJ,governo,Marcelo Calero (CIDADANIA/RJ),100
-465,54,204453,Natália Bonavides,PT,RN,oposição,Natália Bonavides (PT/RN),3208.636746103053
-466,54,204467,Professora Rosa Neide,PT,MT,oposição,Professora Rosa Neide (PT/MT),3858.636746103053
-467,54,204480,Rogério Correia,PT,MG,oposição,Rogério Correia (PT/MG),2864.192301658609
-468,54,204492,Paulo Guedes,PT,MG,oposição,Paulo Guedes (PT/MG),2864.192301658609
-469,54,204495,Airton Faleiro,PT,PA,oposição,Airton Faleiro (PT/PA),2864.192301658609
-470,54,204501,Alencar Santana Braga,PT,SP,oposição,Alencar Santana Braga (PT/SP),5116.695299309854
-471,54,204503,Alexandre Padilha,PT,SP,oposição,Alexandre Padilha (PT/SP),2864.192301658609
-472,54,204519,Tiago Mitraud,NOVO,MG,governo,Tiago Mitraud (NOVO/MG),508.3333333333333
-473,54,204555,José Ricardo,PT,AM,oposição,José Ricardo (PT/AM),2965.449878064433
-474,54,204559,Zé Neto,PT,BA,oposição,Zé Neto (PT/BA),2864.192301658609
-475,54,69871,Bacelar,PODE,BA,governo,Bacelar (PODE/BA),321.4285714285714
-476,54,73482,Henrique Fontana,PT,RS,oposição,Henrique Fontana (PT/RS),7048.716111182418
-477,54,73604,Rui Falcão,PT,SP,oposição,Rui Falcão (PT/SP),3256.4999939663007
-478,54,73701,Benedita Da Silva,PT,RJ,oposição,Benedita Da Silva (PT/RJ),2945.449878064433
-479,54,74156,Leonardo Monteiro,PT,MG,oposição,Leonardo Monteiro (PT/MG),3445.449878064433
-480,54,74159,Odair Cunha,PT,MG,oposição,Odair Cunha (PT/MG),3710.346147812455
-481,54,74160,Patrus Ananias,PT,MG,oposição,Patrus Ananias (PT/MG),4491.237314148365
-482,54,74161,Reginaldo Lopes,PT,MG,oposição,Reginaldo Lopes (PT/MG),4423.975519090074
-483,54,74283,Vicentinho,PT,SP,oposição,Vicentinho (PT/SP),3168.526801141356
-484,54,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),4414.6958001068515
-485,54,74376,Vander Loubet,PT,MS,oposição,Vander Loubet (PT/MS),2864.192301658609
-486,54,74398,Maria Do Rosário,PT,RS,oposição,Maria Do Rosário (PT/RS),9962.510490408065
-487,54,74398,Maria do Rosário,PT,RS,oposição,Maria do Rosário (PT/RS),9962.510490408065
-488,54,74400,Paulo Pimenta,PT,RS,oposição,Paulo Pimenta (PT/RS),4374.937057551612
-489,54,74571,Nelson Pellegrino,PT,BA,oposição,Nelson Pellegrino (PT/BA),3306.499993966301
-490,55,141484,Lúcio Vale,PR,,governo,Lúcio Vale (PR/NA),650
-491,55,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-492,55,141536,Rômulo Gouveia,"",PB,governo,Rômulo Gouveia (/PB),650
-493,55,160665,Augusto Coutinho,SOLIDARIEDADE,PE,governo,Augusto Coutinho (SOLIDARIEDADE/PE),273.8461538461538
-494,55,160666,Félix Mendonça Júnior,PDT,BA,oposição,Félix Mendonça Júnior (PDT/BA),650
-495,55,178829,Capitão Augusto,PL,SP,governo,Capitão Augusto (PL/SP),1007.1428571428571
-496,55,178854,Elmar Nascimento,DEM,BA,governo,Elmar Nascimento (DEM/BA),140
-497,55,178862,Tia Eron,PRB,BA,governo,Tia Eron (PRB/BA),166.66666666666663
-498,55,178884,Hildo Rocha,MDB,MA,governo,Hildo Rocha (MDB/MA),395
-499,55,178960,Remídio Monai,PR,RR,governo,Remídio Monai (PR/RR),650
-500,55,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),7764.615384615384
-501,55,73701,Benedita Da Silva,PT,RJ,oposição,Benedita Da Silva (PT/RJ),2945.449878064433
-502,55,74045,Maurício Rands,PT,PE,oposição,Maurício Rands (PT/PE),100
-503,55,74262,Carlos Sampaio,PSDB,SP,governo,Carlos Sampaio (PSDB/SP),370
-504,55,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),4414.6958001068515
-505,58,118594,Marcelo Squassoni,PRB,SP,governo,Marcelo Squassoni (PRB/SP),289.2156862745098
-506,58,137070,Vicentinho Júnior,PL,TO,governo,Vicentinho Júnior (PL/TO),105.88235294117646
-507,58,141450,Hugo Leal,PSD,RJ,governo,Hugo Leal (PSD/RJ),105.88235294117646
-508,58,141531,Rodrigo De Castro,PSDB,MG,governo,Rodrigo De Castro (PSDB/MG),266.66666666666663
-509,58,141531,Rodrigo de Castro,PSDB,MG,governo,Rodrigo de Castro (PSDB/MG),266.66666666666663
-510,58,160536,Marco Tebaldi,PSDB,SC,governo,Marco Tebaldi (PSDB/SC),105.88235294117646
-511,58,160575,Erika Kokay,PT,DF,oposição,Erika Kokay (PT/DF),8452.348480111283
-512,58,160602,Arnaldo Jordy,PPS,PA,governo,Arnaldo Jordy (PPS/PA),105.88235294117646
-513,58,160607,Jose Stédile,PSB,RS,oposição,Jose Stédile (PSB/RS),105.88235294117646
-514,58,178844,Pedro Vilela,PSDB,AL,governo,Pedro Vilela (PSDB/AL),183.3333333333333
-515,58,178893,Delegado Edson Moreira,PR,MG,governo,Delegado Edson Moreira (PR/MG),200
-516,58,178917,João Fernando Coutinho,PROS,PE,governo,João Fernando Coutinho (PROS/PE),105.88235294117646
-517,58,178937,Altineu Côrtes,PL,RJ,governo,Altineu Côrtes (PL/RJ),105.88235294117646
-518,58,178948,Beto Rosado,PP,RN,governo,Beto Rosado (PP/RN),105.88235294117646
-519,58,178954,Lucio Mosquini,MDB,RO,governo,Lucio Mosquini (MDB/RO),105.88235294117646
-520,58,178957,Abel Mesquita Jr.,DEM,RR,governo,Abel Mesquita Jr. (DEM/RR),105.88235294117646
-521,58,178958,Carlos Andrade,PHS,RR,governo,Carlos Andrade (PHS/RR),105.88235294117646
-522,58,178984,Miguel Haddad,PSDB,SP,governo,Miguel Haddad (PSDB/SP),366.6666666666667
-523,58,73433,Arlindo Chinaglia,PT,SP,oposição,Arlindo Chinaglia (PT/SP),10551.572327044025
-524,58,73584,Antonio Carlos Mendes Thame,PV,SP,governo,Antonio Carlos Mendes Thame (PV/SP),516.6666666666666
-525,58,73655,Augusto Carvalho,SOLIDARIEDADE,DF,governo,Augusto Carvalho (SOLIDARIEDADE/DF),341.66666666666663
-526,58,74235,Marcus Vicente,PP,ES,governo,Marcus Vicente (PP/ES),105.88235294117646
-527,58,74445,João Castelo,PSDB,,governo,João Castelo (PSDB/NA),105.88235294117645
-528,60,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),8410.126038481834
-529,60,141513,Bilac Pinto,DEM,MG,governo,Bilac Pinto (DEM/MG),285.71428571428567
-530,60,177282,Subtenente Gonzaga,PDT,MG,oposição,Subtenente Gonzaga (PDT/MG),1877.1428571428569
-531,60,178939,Clarissa Garotinho,PROS,RJ,governo,Clarissa Garotinho (PROS/RJ),404.76190476190476
-532,60,204461,Paulo Ganime,NOVO,RJ,governo,Paulo Ganime (NOVO/RJ),425
-533,60,204464,Talíria Petrone,PSOL,RJ,oposição,Talíria Petrone (PSOL/RJ),2127.1428571428573
-534,60,204551,Bosco Saraiva,SOLIDARIEDADE,AM,governo,Bosco Saraiva (SOLIDARIEDADE/AM),293.8461538461538
-535,60,204555,José Ricardo,PT,AM,oposição,José Ricardo (PT/AM),2965.449878064433
-536,60,204556,Marcelo Ramos,PL,AM,governo,Marcelo Ramos (PL/AM),160
-537,60,204557,Sidney Leite,PSD,AM,governo,Sidney Leite (PSD/AM),160
-538,60,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),1709.9999999999998
-539,60,73486,Pompeo de Mattos,PDT,RS,oposição,Pompeo de Mattos (PDT/RS),1709.9999999999998
-540,60,76874,Marcelo Freixo,PSOL,RJ,oposição,Marcelo Freixo (PSOL/RJ),3080
-541,60,98057,Lafayette De Andrada,PRB,MG,governo,Lafayette De Andrada (PRB/MG),285.71428571428567
-542,61,143632,Domingos Neto,PSD,CE,governo,Domingos Neto (PSD/CE),925.6493506493507
-543,61,160541,Arthur Lira,PP,AL,governo,Arthur Lira (PP/AL),275
-544,61,178879,Lucas Vergilio,SOLIDARIEDADE,GO,governo,Lucas Vergilio (SOLIDARIEDADE/GO),383.3333333333333
-545,15,3741,Senador Paulo Bauer,PSDB,SC,governo,Senador Paulo Bauer (PSDB/SC),1462.9629629629628
-546,15,456,Senador Ronaldo Caiado,DEM,GO,governo,Senador Ronaldo Caiado (DEM/GO),312.5
-547,15,4763,Senador Vicentinho Alves,PR,TO,governo,Senador Vicentinho Alves (PR/TO),1462.9629629629628
-548,15,4767,Senador Eduardo Lopes,PRB,RJ,governo,Senador Eduardo Lopes (PRB/RJ),312.5
-549,15,715,Senador Armando Monteiro,PTB,PE,governo,Senador Armando Monteiro (PTB/PE),312.5
-550,15,73,Senador Romero Jucá,MDB,RR,governo,Senador Romero Jucá (MDB/RR),312.5
-551,15,739,Senador Ciro Nogueira,PP,PI,governo,Senador Ciro Nogueira (PP/PI),1539.4736842105262
-552,21,3394,Senador João Capiberibe,PSB,AP,oposição,Senador João Capiberibe (PSB/AP),1262.9629629629628
-553,21,4990,Senador Jorge Viana,PT,AC,oposição,Senador Jorge Viana (PT/AC),2462.9629629629626
-554,34,1023,Senadora Maria do Carmo Alves,DEM,SE,governo,Senadora Maria do Carmo Alves (DEM/SE),2499.9999999999995
-555,34,1173,Senador Wellington Fagundes,PR,MT,governo,Senador Wellington Fagundes (PR/MT),16885.920784196645
-556,34,1173,Senador Wellington Fagundes,PL,MT,governo,Senador Wellington Fagundes (PL/MT),16885.920784196645
-557,34,1186,Senador Luis Carlos Heinze,PP,RS,governo,Senador Luis Carlos Heinze (PP/RS),34210.72677002453
-558,34,1249,Senadora Kátia Abreu,PMDB,TO,governo,Senadora Kátia Abreu (PMDB/TO),103349.8669321438
-559,34,1249,Senadora Kátia Abreu,PDT,TO,oposição,Senadora Kátia Abreu (PDT/TO),103349.8669321438
-560,34,22,Senador Esperidião Amin,PP,SC,governo,Senador Esperidião Amin (PP/SC),13049.98728229262
-561,34,2331,Senadora Rose de Freitas,PMDB,ES,governo,Senadora Rose de Freitas (PMDB/ES),33257.684080891886
-562,34,2331,Senadora Rose de Freitas,PODEMOS,ES,governo,Senadora Rose de Freitas (PODEMOS/ES),33257.684080891886
-563,34,2331,Senadora Rose de Freitas,PODE,ES,governo,Senadora Rose de Freitas (PODE/ES),33257.684080891886
-564,34,285,Senador Marcio Bittar,MDB,AC,governo,Senador Marcio Bittar (MDB/AC),2468.4210526315787
-565,34,285,Líder do MDB Marcio Bittar,MDB,AC,governo,Líder do MDB Marcio Bittar (MDB/AC),2468.4210526315787
-566,34,3361,Senador José Maranhão,MDB,PB,governo,Senador José Maranhão (MDB/PB),146652.22764213057
-567,34,3361,Senador José Maranhão,PMDB,PB,governo,Senador José Maranhão (PMDB/PB),146652.22764213057
-568,34,3396,Senador Tasso Jereissati,PSDB,CE,governo,Senador Tasso Jereissati (PSDB/CE),4864.407814407814
-569,34,345,Senador Flávio Arns,REDE,PR,oposição,Senador Flávio Arns (REDE/PR),92859.79047663721
-570,34,374,Senador Paulo Rocha,PT,PA,oposição,Senador Paulo Rocha (PT/PA),98987.15746808026
-571,34,3777,Senador Eduardo Gomes,MDB,TO,governo,Senador Eduardo Gomes (MDB/TO),10031.13213905977
-572,34,3806,Senador Zequinha Marinho,PSC,PA,governo,Senador Zequinha Marinho (PSC/PA),10877.76899105422
-573,34,3830,Senador Davi Alcolumbre,DEM,AP,governo,Senador Davi Alcolumbre (DEM/AP),1923.611111111111
-574,34,4525,Senador Fernando Collor,PROS,AL,governo,Senador Fernando Collor (PROS/AL),2743.548387096774
-575,34,4531,Senador Jayme Campos,DEM,MT,governo,Senador Jayme Campos (DEM/MT),78919.25337485119
-576,34,4560,Senador Sérgio Petecão,PSD,AC,governo,Senador Sérgio Petecão (PSD/AC),32264.399586604373
-577,34,4560,Presidente do Senado Federal: Senador Sérgio Petecão,PSD,AC,governo,Presidente do Senado Federal: Senador Sérgio Petecão (PSD/AC),32264.399586604373
-578,34,470,Senador Chico Rodrigues,DEM,RR,governo,Senador Chico Rodrigues (DEM/RR),6607.70844736362
-579,34,475,Senador Confúcio Moura,MDB,RO,governo,Senador Confúcio Moura (MDB/RO),24357.485325433812
-580,34,4770,Senador Izalci Lucas,PSDB,DF,governo,Senador Izalci Lucas (PSDB/DF),128064.1766542902
-581,34,4770,Presidente do Senado Federal: Senador Izalci Lucas,PSDB,DF,governo,Presidente do Senado Federal: Senador Izalci Lucas (PSDB/DF),128064.1766542902
-582,34,4981,Senador Acir Gurgacz,PDT,RO,oposição,Senador Acir Gurgacz (PDT/RO),87105.46650569199
-583,34,4994,Senador Eduardo Braga,MDB,AM,governo,Senador Eduardo Braga (MDB/AM),7453.347414234511
-584,34,4994,Líder do MDB Eduardo Braga,MDB,AM,governo,Líder do MDB Eduardo Braga (MDB/AM),7453.347414234511
-585,34,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),178955.6238345693
-586,34,5008,Líder do PT Humberto Costa,PT,PE,oposição,Líder do PT Humberto Costa (PT/PE),178955.6238345693
-587,34,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),179458.59784846887
-588,34,5012,Líder do REDE Randolfe Rodrigues,REDE,AP,oposição,Líder do REDE Randolfe Rodrigues (REDE/AP),179458.59784846887
-589,34,5236,Senador Reguffe,"",DF,governo,Senador Reguffe (/DF),134181.19320879714
-590,34,5236,Senador Reguffe,PODEMOS,DF,governo,Senador Reguffe (PODEMOS/DF),134181.19320879714
-591,34,5322,Senador Romário,PODEMOS,RJ,governo,Senador Romário (PODEMOS/RJ),112222.92364661733
-592,34,5322,Senador Romário,PODE,RJ,governo,Senador Romário (PODE/RJ),112222.92364661733
-593,34,5322,Senador Romário,PSB,RJ,oposição,Senador Romário (PSB/RJ),112222.92364661733
-594,34,5350,Senador Jorginho Mello,PL,SC,governo,Senador Jorginho Mello (PL/SC),40911.66497704764
-595,34,5350,Senador Jorginho Mello,PR,SC,governo,Senador Jorginho Mello (PR/SC),40911.66497704764
-596,34,5352,Senador Rogério Carvalho,PT,SE,oposição,Senador Rogério Carvalho (PT/SE),66280.57292997872
-597,34,5376,Senadora Mara Gabrilli,PSDB,SP,governo,Senadora Mara Gabrilli (PSDB/SP),12445.398841354723
-598,34,5385,Senador Irajá,PSD,TO,governo,Senador Irajá (PSD/TO),7230.113636363636
-599,34,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),196605.91688696767
-600,34,5411,Líder do PDT Weverton,PDT,MA,oposição,Líder do PDT Weverton (PDT/MA),196605.91688696767
-601,34,5422,Senador Marcos Rogério,DEM,RO,governo,Senador Marcos Rogério (DEM/RO),12796.870916607757
-602,34,5502,Senador Plínio Valério,PSDB,AM,governo,Senador Plínio Valério (PSDB/AM),82135.23800588181
-603,34,5523,Senador Otto Alencar,PSD,BA,governo,Senador Otto Alencar (PSD/BA),75971.94876595862
-604,34,5525,Senador Omar Aziz,PSD,AM,governo,Senador Omar Aziz (PSD/AM),11745.86320191159
-605,34,5527,Senadora Simone Tebet,PMDB,MS,governo,Senadora Simone Tebet (PMDB/MS),7416.559829059829
-606,34,5527,Senadora Simone Tebet,MDB,MS,governo,Senadora Simone Tebet (MDB/MS),7416.559829059829
-607,34,5531,Senador Elmano Férrer,PODEMOS,PI,governo,Senador Elmano Férrer (PODEMOS/PI),199097.62029725968
-608,34,5531,Senador Elmano Férrer,PODE,PI,governo,Senador Elmano Férrer (PODE/PI),199097.62029725968
-609,34,5531,Senador Elmano Férrer,PMDB,PI,governo,Senador Elmano Férrer (PMDB/PI),199097.62029725968
-610,34,5533,Senador Lasier Martins,PSD,RS,governo,Senador Lasier Martins (PSD/RS),269156.3249183393
-611,34,5533,Senador Lasier Martins,PODEMOS,RS,governo,Senador Lasier Martins (PODEMOS/RS),269156.3249183393
-612,34,5533,Senador Lasier Martins,PDT,RS,oposição,Senador Lasier Martins (PDT/RS),269156.3249183393
-613,34,5533,Senador Lasier Martins,PODE,RS,governo,Senador Lasier Martins (PODE/RS),269156.3249183393
-614,34,5535,Senador Telmário Mota,PROS,RR,governo,Senador Telmário Mota (PROS/RR),54620.61284944316
-615,34,5535,Líder do PROS Telmário Mota,PROS,RR,governo,Líder do PROS Telmário Mota (PROS/RR),54620.61284944316
-616,34,5535,Senador Telmário Mota,PTB,RR,governo,Senador Telmário Mota (PTB/RR),54620.61284944316
-617,34,5537,Senador Dário Berger,MDB,SC,governo,Senador Dário Berger (MDB/SC),63992.15444525899
-618,34,5540,Senador Fernando Bezerra Coelho,PSB,PE,oposição,Senador Fernando Bezerra Coelho (PSB/PE),3068.253968253968
-619,34,5540,Senador Fernando Bezerra Coelho,MDB,PE,governo,Senador Fernando Bezerra Coelho (MDB/PE),3068.253968253968
-620,34,5557,Senadora Mailza Gomes,PP,AC,governo,Senadora Mailza Gomes (PP/AC),55254.6802984644
-621,34,5585,Senador Luiz do Carmo,MDB,GO,governo,Senador Luiz do Carmo (MDB/GO),4984.238641475484
-622,34,5627,Senador Jean Paul Prates,PT,RN,oposição,Senador Jean Paul Prates (PT/RN),81170.72808069683
-623,34,5666,Senador Major Olimpio,PSL,SP,governo,Senador Major Olimpio (PSL/SP),94342.49839716428
-624,34,5666,Líder do PSL Major Olimpio,PSL,SP,governo,Líder do PSL Major Olimpio (PSL/SP),94342.49839716428
-625,34,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),276746.065917777
-626,34,5718,Líder do CIDADANIA Eliziane Gama,CIDADANIA,MA,governo,Líder do CIDADANIA Eliziane Gama (CIDADANIA/MA),276746.065917777
-627,34,5718,Senadora Eliziane Gama,PPS,MA,governo,Senadora Eliziane Gama (PPS/MA),276746.065917777
-628,34,5732,Senador Rodrigo Pacheco,DEM,MG,governo,Senador Rodrigo Pacheco (DEM/MG),22302.367319747045
-629,34,5748,Senador Veneziano Vital do Rêgo,PSB,PB,oposição,Senador Veneziano Vital do Rêgo (PSB/PB),71442.85378754989
-630,34,5783,Senadora Zenaide Maia,PROS,RN,governo,Senadora Zenaide Maia (PROS/RN),193454.73601682944
-631,34,5783,Líder do PROS Zenaide Maia,PROS,RN,governo,Líder do PROS Zenaide Maia (PROS/RN),193454.73601682944
-632,34,581,Senador Jaques Wagner,PT,BA,oposição,Senador Jaques Wagner (PT/BA),54792.49237464877
-633,34,5894,Senador Flávio Bolsonaro,PSL,RJ,governo,Senador Flávio Bolsonaro (PSL/RJ),2913.174603174603
-634,34,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),381387.1826259987
-635,34,5895,Senador Jorge Kajuru,PATRIOTA,GO,governo,Senador Jorge Kajuru (PATRIOTA/GO),381387.1826259987
-636,34,5895,Senador Jorge Kajuru,CIDADANIA,GO,governo,Senador Jorge Kajuru (CIDADANIA/GO),381387.1826259987
-637,34,5895,Senador Jorge Kajuru,PSB,GO,oposição,Senador Jorge Kajuru (PSB/GO),381387.1826259987
-638,34,5895,Presidente do Senado Federal: Senador Jorge Kajuru,PSB,GO,oposição,Presidente do Senado Federal: Senador Jorge Kajuru (PSB/GO),381387.1826259987
-639,34,5899,Senador Vanderlan Cardoso,PP,GO,governo,Senador Vanderlan Cardoso (PP/GO),38241.48496007129
-640,34,5905,Senador Rodrigo Cunha,PSDB,AL,governo,Senador Rodrigo Cunha (PSDB/AL),7316.329284750337
-641,34,5924,Senador Oriovisto Guimarães,PODEMOS,PR,governo,Senador Oriovisto Guimarães (PODEMOS/PR),92578.94328962108
-642,34,5924,Senador Oriovisto Guimarães,PODE,PR,governo,Senador Oriovisto Guimarães (PODE/PR),92578.94328962108
-643,34,5926,Senador Lucas Barreto,PSD,AP,governo,Senador Lucas Barreto (PSD/AP),87608.07721664949
-644,34,5929,Senadora Juíza Selma,PSL,MT,governo,Senadora Juíza Selma (PSL/MT),49340.45610640745
-645,34,5929,Senadora Juíza Selma,PODEMOS,MT,governo,Senadora Juíza Selma (PODEMOS/MT),49340.45610640745
-646,34,5942,Senador Marcos do Val,PODEMOS,ES,governo,Senador Marcos do Val (PODEMOS/ES),93298.64623078745
-647,34,5942,Senador Marcos do Val,PPS,ES,governo,Senador Marcos do Val (PPS/ES),93298.64623078745
-648,34,5942,Senador Marcos do Val,CIDADANIA,ES,governo,Senador Marcos do Val (CIDADANIA/ES),93298.64623078745
-649,34,5953,Senador Fabiano Contarato,REDE,ES,oposição,Senador Fabiano Contarato (REDE/ES),96145.8872600295
-650,34,5959,Senador Styvenson Valentim,PODEMOS,RN,governo,Senador Styvenson Valentim (PODEMOS/RN),208456.6724819238
-651,34,5959,Senador Styvenson Valentim,PODE,RN,governo,Senador Styvenson Valentim (PODE/RN),208456.6724819238
-652,34,5967,Senador Angelo Coronel,PSD,BA,governo,Senador Angelo Coronel (PSD/BA),23741.004379637583
-653,34,5973,Senador Cid Gomes,PDT,CE,oposição,Senador Cid Gomes (PDT/CE),75708.37798194784
-654,34,5976,Senador Eduardo Girão,PODEMOS,CE,governo,Senador Eduardo Girão (PODEMOS/CE),187256.71779880082
-655,34,5976,Senador Eduardo Girão,PODE,CE,governo,Senador Eduardo Girão (PODE/CE),187256.71779880082
-656,34,5979,Senadora Leila Barros,PSB,DF,oposição,Senadora Leila Barros (PSB/DF),86470.48551698188
-657,34,5982,Senador Alessandro Vieira,CIDADANIA,SE,governo,Senador Alessandro Vieira (CIDADANIA/SE),138695.31082609764
-658,34,5982,Senador Alessandro Vieira,PPS,SE,governo,Senador Alessandro Vieira (PPS/SE),138695.31082609764
-659,34,5985,Senador Nelsinho Trad,PSD,MS,governo,Senador Nelsinho Trad (PSD/MS),20486.12894621175
-660,34,5988,Senadora Soraya Thronicke,PSL,MS,governo,Senadora Soraya Thronicke (PSL/MS),8277.033702459066
-661,34,5990,Senador Carlos Viana,PSD,MG,governo,Senador Carlos Viana (PSD/MG),3356.390977443609
-662,34,677,Senador Roberto Rocha,PSDB,MA,governo,Senador Roberto Rocha (PSDB/MA),3739.010989010989
-663,34,70,Senador Renan Calheiros,MDB,AL,governo,Senador Renan Calheiros (MDB/AL),11377.075606635615
-664,34,739,Senador Ciro Nogueira,PP,PI,governo,Senador Ciro Nogueira (PP/PI),1539.4736842105262
-665,34,742,Senador Marcelo Castro,MDB,PI,governo,Senador Marcelo Castro (MDB/PI),30815.26794436216
-666,34,751,Senador Arolde de Oliveira,PSD,RJ,governo,Senador Arolde de Oliveira (PSD/RJ),30500.0632209405
-667,34,825,Senador Paulo Paim,PT,RS,oposição,Senador Paulo Paim (PT/RS),106560.85693427139
-668,34,90,Senador José Serra,PSDB,SP,governo,Senador José Serra (PSDB/SP),3862.433862433862
-669,34,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),312854.71230188967
-670,34,945,Líder do PODEMOS Alvaro Dias,PODEMOS,PR,governo,Líder do PODEMOS Alvaro Dias (PODEMOS/PR),312854.71230188967
-671,34,945,Líder do PODE Alvaro Dias,PODE,PR,governo,Líder do PODE Alvaro Dias (PODE/PR),312854.71230188967
-672,34,945,Senador Alvaro Dias,PODE,PR,governo,Senador Alvaro Dias (PODE/PR),312854.71230188967
-673,34,945,Senador Alvaro Dias,PV,PR,governo,Senador Alvaro Dias (PV/PR),312854.71230188967
-674,35,345,Senador Flávio Arns,REDE,PR,oposição,Senador Flávio Arns (REDE/PR),92859.79047663721
-675,35,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),179458.59784846887
-676,35,5012,Líder do REDE Randolfe Rodrigues,REDE,AP,oposição,Líder do REDE Randolfe Rodrigues (REDE/AP),179458.59784846887
-677,40,1186,Senador Luis Carlos Heinze,PP,RS,governo,Senador Luis Carlos Heinze (PP/RS),34210.72677002453
-678,40,3396,Senador Tasso Jereissati,PSDB,CE,governo,Senador Tasso Jereissati (PSDB/CE),4864.407814407814
-679,40,3806,Senador Zequinha Marinho,PSC,PA,governo,Senador Zequinha Marinho (PSC/PA),10877.76899105422
-680,40,4531,Senador Jayme Campos,DEM,MT,governo,Senador Jayme Campos (DEM/MT),78919.25337485119
-681,40,4560,Senador Sérgio Petecão,PSD,AC,governo,Senador Sérgio Petecão (PSD/AC),32264.399586604373
-682,40,4560,Presidente do Senado Federal: Senador Sérgio Petecão,PSD,AC,governo,Presidente do Senado Federal: Senador Sérgio Petecão (PSD/AC),32264.399586604373
-683,40,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),179458.59784846887
-684,40,5012,Líder do REDE Randolfe Rodrigues,REDE,AP,oposição,Líder do REDE Randolfe Rodrigues (REDE/AP),179458.59784846887
-685,40,5236,Senador Reguffe,"",DF,governo,Senador Reguffe (/DF),134181.19320879714
-686,40,5236,Senador Reguffe,PODEMOS,DF,governo,Senador Reguffe (PODEMOS/DF),134181.19320879714
-687,40,5322,Senador Romário,PODEMOS,RJ,governo,Senador Romário (PODEMOS/RJ),112222.92364661733
-688,40,5322,Senador Romário,PODE,RJ,governo,Senador Romário (PODE/RJ),112222.92364661733
-689,40,5322,Senador Romário,PSB,RJ,oposição,Senador Romário (PSB/RJ),112222.92364661733
-690,40,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),196605.91688696767
-691,40,5411,Líder do PDT Weverton,PDT,MA,oposição,Líder do PDT Weverton (PDT/MA),196605.91688696767
-692,40,5422,Senador Marcos Rogério,DEM,RO,governo,Senador Marcos Rogério (DEM/RO),12796.870916607757
-693,40,5523,Senador Otto Alencar,PSD,BA,governo,Senador Otto Alencar (PSD/BA),75971.94876595862
-694,40,5527,Senadora Simone Tebet,PMDB,MS,governo,Senadora Simone Tebet (PMDB/MS),7416.559829059829
-695,40,5527,Senadora Simone Tebet,MDB,MS,governo,Senadora Simone Tebet (MDB/MS),7416.559829059829
-696,40,5531,Senador Elmano Férrer,PODEMOS,PI,governo,Senador Elmano Férrer (PODEMOS/PI),199097.62029725968
-697,40,5531,Senador Elmano Férrer,PODE,PI,governo,Senador Elmano Férrer (PODE/PI),199097.62029725968
-698,40,5531,Senador Elmano Férrer,PMDB,PI,governo,Senador Elmano Férrer (PMDB/PI),199097.62029725968
-699,40,5533,Senador Lasier Martins,PSD,RS,governo,Senador Lasier Martins (PSD/RS),269156.3249183393
-700,40,5533,Senador Lasier Martins,PODEMOS,RS,governo,Senador Lasier Martins (PODEMOS/RS),269156.3249183393
-701,40,5533,Senador Lasier Martins,PDT,RS,oposição,Senador Lasier Martins (PDT/RS),269156.3249183393
-702,40,5533,Senador Lasier Martins,PODE,RS,governo,Senador Lasier Martins (PODE/RS),269156.3249183393
-703,40,5585,Senador Luiz do Carmo,MDB,GO,governo,Senador Luiz do Carmo (MDB/GO),4984.238641475484
-704,40,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),381387.1826259987
-705,40,5895,Senador Jorge Kajuru,PATRIOTA,GO,governo,Senador Jorge Kajuru (PATRIOTA/GO),381387.1826259987
-706,40,5895,Senador Jorge Kajuru,CIDADANIA,GO,governo,Senador Jorge Kajuru (CIDADANIA/GO),381387.1826259987
-707,40,5895,Senador Jorge Kajuru,PSB,GO,oposição,Senador Jorge Kajuru (PSB/GO),381387.1826259987
-708,40,5895,Presidente do Senado Federal: Senador Jorge Kajuru,PSB,GO,oposição,Presidente do Senado Federal: Senador Jorge Kajuru (PSB/GO),381387.1826259987
-709,40,5905,Senador Rodrigo Cunha,PSDB,AL,governo,Senador Rodrigo Cunha (PSDB/AL),7316.329284750337
-710,40,5926,Senador Lucas Barreto,PSD,AP,governo,Senador Lucas Barreto (PSD/AP),87608.07721664949
-711,40,5942,Senador Marcos do Val,PODEMOS,ES,governo,Senador Marcos do Val (PODEMOS/ES),93298.64623078745
-712,40,5942,Senador Marcos do Val,PPS,ES,governo,Senador Marcos do Val (PPS/ES),93298.64623078745
-713,40,5942,Senador Marcos do Val,CIDADANIA,ES,governo,Senador Marcos do Val (CIDADANIA/ES),93298.64623078745
-714,40,5959,Senador Styvenson Valentim,PODEMOS,RN,governo,Senador Styvenson Valentim (PODEMOS/RN),208456.6724819238
-715,40,5959,Senador Styvenson Valentim,PODE,RN,governo,Senador Styvenson Valentim (PODE/RN),208456.6724819238
-716,40,5967,Senador Angelo Coronel,PSD,BA,governo,Senador Angelo Coronel (PSD/BA),23741.004379637583
-717,40,5976,Senador Eduardo Girão,PODEMOS,CE,governo,Senador Eduardo Girão (PODEMOS/CE),187256.71779880082
-718,40,5976,Senador Eduardo Girão,PODE,CE,governo,Senador Eduardo Girão (PODE/CE),187256.71779880082
-719,40,677,Senador Roberto Rocha,PSDB,MA,governo,Senador Roberto Rocha (PSDB/MA),3739.010989010989
-720,40,751,Senador Arolde de Oliveira,PSD,RJ,governo,Senador Arolde de Oliveira (PSD/RJ),30500.0632209405
-721,40,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),312854.71230188967
-722,40,945,Líder do PODEMOS Alvaro Dias,PODEMOS,PR,governo,Líder do PODEMOS Alvaro Dias (PODEMOS/PR),312854.71230188967
-723,40,945,Líder do PODE Alvaro Dias,PODE,PR,governo,Líder do PODE Alvaro Dias (PODE/PR),312854.71230188967
-724,40,945,Senador Alvaro Dias,PODE,PR,governo,Senador Alvaro Dias (PODE/PR),312854.71230188967
-725,40,945,Senador Alvaro Dias,PV,PR,governo,Senador Alvaro Dias (PV/PR),312854.71230188967
-726,46,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),179458.59784846887
-727,46,5012,Líder do REDE Randolfe Rodrigues,REDE,AP,oposição,Líder do REDE Randolfe Rodrigues (REDE/AP),179458.59784846887
-728,46,5531,Senador Elmano Férrer,PODEMOS,PI,governo,Senador Elmano Férrer (PODEMOS/PI),199097.62029725968
-729,46,5531,Senador Elmano Férrer,PODE,PI,governo,Senador Elmano Férrer (PODE/PI),199097.62029725968
-730,46,5531,Senador Elmano Férrer,PMDB,PI,governo,Senador Elmano Férrer (PMDB/PI),199097.62029725968
-731,46,5533,Senador Lasier Martins,PSD,RS,governo,Senador Lasier Martins (PSD/RS),269156.3249183393
-732,46,5533,Senador Lasier Martins,PODEMOS,RS,governo,Senador Lasier Martins (PODEMOS/RS),269156.3249183393
-733,46,5533,Senador Lasier Martins,PDT,RS,oposição,Senador Lasier Martins (PDT/RS),269156.3249183393
-734,46,5533,Senador Lasier Martins,PODE,RS,governo,Senador Lasier Martins (PODE/RS),269156.3249183393
-735,46,5666,Senador Major Olimpio,PSL,SP,governo,Senador Major Olimpio (PSL/SP),94342.49839716428
-736,46,5666,Líder do PSL Major Olimpio,PSL,SP,governo,Líder do PSL Major Olimpio (PSL/SP),94342.49839716428
-737,46,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),276746.065917777
-738,46,5718,Líder do CIDADANIA Eliziane Gama,CIDADANIA,MA,governo,Líder do CIDADANIA Eliziane Gama (CIDADANIA/MA),276746.065917777
-739,46,5718,Senadora Eliziane Gama,PPS,MA,governo,Senadora Eliziane Gama (PPS/MA),276746.065917777
-740,46,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),381387.1826259987
-741,46,5895,Senador Jorge Kajuru,PATRIOTA,GO,governo,Senador Jorge Kajuru (PATRIOTA/GO),381387.1826259987
-742,46,5895,Senador Jorge Kajuru,CIDADANIA,GO,governo,Senador Jorge Kajuru (CIDADANIA/GO),381387.1826259987
-743,46,5895,Senador Jorge Kajuru,PSB,GO,oposição,Senador Jorge Kajuru (PSB/GO),381387.1826259987
-744,46,5895,Presidente do Senado Federal: Senador Jorge Kajuru,PSB,GO,oposição,Presidente do Senado Federal: Senador Jorge Kajuru (PSB/GO),381387.1826259987
-745,46,5905,Senador Rodrigo Cunha,PSDB,AL,governo,Senador Rodrigo Cunha (PSDB/AL),7316.329284750337
-746,46,5953,Senador Fabiano Contarato,REDE,ES,oposição,Senador Fabiano Contarato (REDE/ES),96145.8872600295
-747,46,5959,Senador Styvenson Valentim,PODEMOS,RN,governo,Senador Styvenson Valentim (PODEMOS/RN),208456.6724819238
-748,46,5959,Senador Styvenson Valentim,PODE,RN,governo,Senador Styvenson Valentim (PODE/RN),208456.6724819238
-749,46,5976,Senador Eduardo Girão,PODEMOS,CE,governo,Senador Eduardo Girão (PODEMOS/CE),187256.71779880082
-750,46,5976,Senador Eduardo Girão,PODE,CE,governo,Senador Eduardo Girão (PODE/CE),187256.71779880082
-751,46,5982,Senador Alessandro Vieira,CIDADANIA,SE,governo,Senador Alessandro Vieira (CIDADANIA/SE),138695.31082609764
-752,46,5982,Senador Alessandro Vieira,PPS,SE,governo,Senador Alessandro Vieira (PPS/SE),138695.31082609764
-753,46,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),312854.71230188967
-754,46,945,Líder do PODEMOS Alvaro Dias,PODEMOS,PR,governo,Líder do PODEMOS Alvaro Dias (PODEMOS/PR),312854.71230188967
-755,46,945,Líder do PODE Alvaro Dias,PODE,PR,governo,Líder do PODE Alvaro Dias (PODE/PR),312854.71230188967
-756,46,945,Senador Alvaro Dias,PODE,PR,governo,Senador Alvaro Dias (PODE/PR),312854.71230188967
-757,46,945,Senador Alvaro Dias,PV,PR,governo,Senador Alvaro Dias (PV/PR),312854.71230188967
-758,51,374,Senador Paulo Rocha,PT,PA,oposição,Senador Paulo Rocha (PT/PA),98987.15746808026
-759,51,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),178955.6238345693
-760,51,5008,Líder do PT Humberto Costa,PT,PE,oposição,Líder do PT Humberto Costa (PT/PE),178955.6238345693
-761,51,5352,Senador Rogério Carvalho,PT,SE,oposição,Senador Rogério Carvalho (PT/SE),66280.57292997872
-762,51,5385,Senador Irajá,PSD,TO,governo,Senador Irajá (PSD/TO),7230.113636363636
-763,51,5531,Senador Elmano Férrer,PODEMOS,PI,governo,Senador Elmano Férrer (PODEMOS/PI),199097.62029725968
-764,51,5531,Senador Elmano Férrer,PODE,PI,governo,Senador Elmano Férrer (PODE/PI),199097.62029725968
-765,51,5531,Senador Elmano Férrer,PMDB,PI,governo,Senador Elmano Férrer (PMDB/PI),199097.62029725968
-766,51,5627,Senador Jean Paul Prates,PT,RN,oposição,Senador Jean Paul Prates (PT/RN),81170.72808069683
-767,51,581,Senador Jaques Wagner,PT,BA,oposição,Senador Jaques Wagner (PT/BA),54792.49237464877
-768,51,825,Senador Paulo Paim,PT,RS,oposição,Senador Paulo Paim (PT/RS),106560.85693427139
-769,53,1023,Senadora Maria do Carmo Alves,DEM,SE,governo,Senadora Maria do Carmo Alves (DEM/SE),2499.9999999999995
-770,53,1186,Senador Luis Carlos Heinze,PP,RS,governo,Senador Luis Carlos Heinze (PP/RS),34210.72677002453
-771,53,1249,Senadora Kátia Abreu,PMDB,TO,governo,Senadora Kátia Abreu (PMDB/TO),103349.8669321438
-772,53,1249,Senadora Kátia Abreu,PDT,TO,oposição,Senadora Kátia Abreu (PDT/TO),103349.8669321438
-773,53,22,Senador Esperidião Amin,PP,SC,governo,Senador Esperidião Amin (PP/SC),13049.98728229262
-774,53,2331,Senadora Rose de Freitas,PMDB,ES,governo,Senadora Rose de Freitas (PMDB/ES),33257.684080891886
-775,53,2331,Senadora Rose de Freitas,PODEMOS,ES,governo,Senadora Rose de Freitas (PODEMOS/ES),33257.684080891886
-776,53,2331,Senadora Rose de Freitas,PODE,ES,governo,Senadora Rose de Freitas (PODE/ES),33257.684080891886
-777,53,3,Senador Antonio Carlos Valadares,PSB,SE,oposição,Senador Antonio Carlos Valadares (PSB/SE),1166.6666666666665
-778,53,3361,Senador José Maranhão,MDB,PB,governo,Senador José Maranhão (MDB/PB),146652.22764213057
-779,53,3361,Senador José Maranhão,PMDB,PB,governo,Senador José Maranhão (PMDB/PB),146652.22764213057
-780,53,3394,Senador João Capiberibe,PSB,AP,oposição,Senador João Capiberibe (PSB/AP),1262.9629629629628
-781,53,3398,Senador Cristovam Buarque,PPS,DF,governo,Senador Cristovam Buarque (PPS/DF),1166.6666666666665
-782,53,3695,Senador Lindbergh Farias,PT,RJ,oposição,Senador Lindbergh Farias (PT/RJ),1166.6666666666665
-783,53,374,Senador Paulo Rocha,PT,PA,oposição,Senador Paulo Rocha (PT/PA),98987.15746808026
-784,53,3741,Senador Paulo Bauer,PSDB,SC,governo,Senador Paulo Bauer (PSDB/SC),1462.9629629629628
-785,53,3823,Senador Benedito de Lira,PP,AL,governo,Senador Benedito de Lira (PP/AL),1166.6666666666665
-786,53,3830,Senador Davi Alcolumbre,DEM,AP,governo,Senador Davi Alcolumbre (DEM/AP),1923.611111111111
-787,53,4531,Senador Jayme Campos,DEM,MT,governo,Senador Jayme Campos (DEM/MT),78919.25337485119
-788,53,4575,Senadora Lídice da Mata,PSB,BA,oposição,Senadora Lídice da Mata (PSB/BA),1166.6666666666665
-789,53,4763,Senador Vicentinho Alves,PR,TO,governo,Senador Vicentinho Alves (PR/TO),1462.9629629629628
-790,53,4981,Senador Acir Gurgacz,PDT,RO,oposição,Senador Acir Gurgacz (PDT/RO),87105.46650569199
-791,53,4990,Senador Jorge Viana,PT,AC,oposição,Senador Jorge Viana (PT/AC),2462.9629629629626
-792,53,4994,Senador Eduardo Braga,MDB,AM,governo,Senador Eduardo Braga (MDB/AM),7453.347414234511
-793,53,4994,Líder do MDB Eduardo Braga,MDB,AM,governo,Líder do MDB Eduardo Braga (MDB/AM),7453.347414234511
-794,53,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),178955.6238345693
-795,53,5008,Líder do PT Humberto Costa,PT,PE,oposição,Líder do PT Humberto Costa (PT/PE),178955.6238345693
-796,53,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),179458.59784846887
-797,53,5012,Líder do REDE Randolfe Rodrigues,REDE,AP,oposição,Líder do REDE Randolfe Rodrigues (REDE/AP),179458.59784846887
-798,53,5052,Senador Roberto Muniz,PP,BA,governo,Senador Roberto Muniz (PP/BA),1166.6666666666665
-799,53,5164,Senador Ataídes Oliveira,PSDB,TO,governo,Senador Ataídes Oliveira (PSDB/TO),1166.6666666666665
-800,53,5182,Senadora Regina Sousa,PT,PI,oposição,Senadora Regina Sousa (PT/PI),1166.6666666666665
-801,53,5236,Senador Reguffe,"",DF,governo,Senador Reguffe (/DF),134181.19320879714
-802,53,5236,Senador Reguffe,PODEMOS,DF,governo,Senador Reguffe (PODEMOS/DF),134181.19320879714
-803,53,5322,Senador Romário,PODEMOS,RJ,governo,Senador Romário (PODEMOS/RJ),112222.92364661733
-804,53,5322,Senador Romário,PODE,RJ,governo,Senador Romário (PODE/RJ),112222.92364661733
-805,53,5322,Senador Romário,PSB,RJ,oposição,Senador Romário (PSB/RJ),112222.92364661733
-806,53,5350,Senador Jorginho Mello,PL,SC,governo,Senador Jorginho Mello (PL/SC),40911.66497704764
-807,53,5350,Senador Jorginho Mello,PR,SC,governo,Senador Jorginho Mello (PR/SC),40911.66497704764
-808,53,5352,Senador Rogério Carvalho,PT,SE,oposição,Senador Rogério Carvalho (PT/SE),66280.57292997872
-809,53,5525,Senador Omar Aziz,PSD,AM,governo,Senador Omar Aziz (PSD/AM),11745.86320191159
-810,53,5527,Senadora Simone Tebet,PMDB,MS,governo,Senadora Simone Tebet (PMDB/MS),7416.559829059829
-811,53,5527,Senadora Simone Tebet,MDB,MS,governo,Senadora Simone Tebet (MDB/MS),7416.559829059829
-812,53,5529,Senador Antonio Anastasia,PSDB,MG,governo,Senador Antonio Anastasia (PSDB/MG),965.625
-813,53,5531,Senador Elmano Férrer,PODEMOS,PI,governo,Senador Elmano Férrer (PODEMOS/PI),199097.62029725968
-814,53,5531,Senador Elmano Férrer,PODE,PI,governo,Senador Elmano Férrer (PODE/PI),199097.62029725968
-815,53,5531,Senador Elmano Férrer,PMDB,PI,governo,Senador Elmano Férrer (PMDB/PI),199097.62029725968
-816,53,5533,Senador Lasier Martins,PSD,RS,governo,Senador Lasier Martins (PSD/RS),269156.3249183393
-817,53,5533,Senador Lasier Martins,PODEMOS,RS,governo,Senador Lasier Martins (PODEMOS/RS),269156.3249183393
-818,53,5533,Senador Lasier Martins,PDT,RS,oposição,Senador Lasier Martins (PDT/RS),269156.3249183393
-819,53,5533,Senador Lasier Martins,PODE,RS,governo,Senador Lasier Martins (PODE/RS),269156.3249183393
-820,53,5627,Senador Jean Paul Prates,PT,RN,oposição,Senador Jean Paul Prates (PT/RN),81170.72808069683
-821,53,5748,Senador Veneziano Vital do Rêgo,PSB,PB,oposição,Senador Veneziano Vital do Rêgo (PSB/PB),71442.85378754989
-822,53,5783,Senadora Zenaide Maia,PROS,RN,governo,Senadora Zenaide Maia (PROS/RN),193454.73601682944
-823,53,5783,Líder do PROS Zenaide Maia,PROS,RN,governo,Líder do PROS Zenaide Maia (PROS/RN),193454.73601682944
-824,53,5967,Senador Angelo Coronel,PSD,BA,governo,Senador Angelo Coronel (PSD/BA),23741.004379637583
-825,53,5973,Senador Cid Gomes,PDT,CE,oposição,Senador Cid Gomes (PDT/CE),75708.37798194784
-826,53,5976,Senador Eduardo Girão,PODEMOS,CE,governo,Senador Eduardo Girão (PODEMOS/CE),187256.71779880082
-827,53,5976,Senador Eduardo Girão,PODE,CE,governo,Senador Eduardo Girão (PODE/CE),187256.71779880082
-828,53,5979,Senadora Leila Barros,PSB,DF,oposição,Senadora Leila Barros (PSB/DF),86470.48551698188
-829,53,5982,Senador Alessandro Vieira,CIDADANIA,SE,governo,Senador Alessandro Vieira (CIDADANIA/SE),138695.31082609764
-830,53,5982,Senador Alessandro Vieira,PPS,SE,governo,Senador Alessandro Vieira (PPS/SE),138695.31082609764
-831,53,615,Senador José Pimentel,PT,CE,oposição,Senador José Pimentel (PT/CE),1166.6666666666665
-832,53,643,Senadora Lúcia Vânia,PSB,GO,oposição,Senadora Lúcia Vânia (PSB/GO),1166.6666666666665
-833,53,70,Senador Renan Calheiros,MDB,AL,governo,Senador Renan Calheiros (MDB/AL),11377.075606635615
-834,53,72,Senador Roberto Requião,PMDB,PR,governo,Senador Roberto Requião (PMDB/PR),1166.6666666666665
-835,53,742,Senador Marcelo Castro,MDB,PI,governo,Senador Marcelo Castro (MDB/PI),30815.26794436216
-836,53,825,Senador Paulo Paim,PT,RS,oposição,Senador Paulo Paim (PT/RS),106560.85693427139
-837,53,87,Senador Garibaldi Alves Filho,PMDB,RN,governo,Senador Garibaldi Alves Filho (PMDB/RN),1166.6666666666665
-838,53,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),312854.71230188967
-839,53,945,Líder do PODEMOS Alvaro Dias,PODEMOS,PR,governo,Líder do PODEMOS Alvaro Dias (PODEMOS/PR),312854.71230188967
-840,53,945,Líder do PODE Alvaro Dias,PODE,PR,governo,Líder do PODE Alvaro Dias (PODE/PR),312854.71230188967
-841,53,945,Senador Alvaro Dias,PODE,PR,governo,Senador Alvaro Dias (PODE/PR),312854.71230188967
-842,53,945,Senador Alvaro Dias,PV,PR,governo,Senador Alvaro Dias (PV/PR),312854.71230188967
-843,1,189593,Wadih Damous,PT,RJ,oposição,Wadih Damous (PT/RJ),733.3333333333333
-844,1,178984,Miguel Haddad,PSDB,SP,governo,Miguel Haddad (PSDB/SP),366.6666666666667
-845,1,178835,Afonso Motta,PDT,RS,oposição,Afonso Motta (PDT/RS),1247.5
-846,1,178884,Hildo Rocha,MDB,MA,governo,Hildo Rocha (MDB/MA),395
-847,1,178968,Adelson Barreto,PR,SE,governo,Adelson Barreto (PR/SE),175
-848,1,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),906.8181818181819
-849,1,178894,Laudivio Carvalho,PODE,MG,governo,Laudivio Carvalho (PODE/MG),199.99999999999997
-850,2,178835,Afonso Motta,PDT,RS,oposição,Afonso Motta (PDT/RS),1247.5
-851,2,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),906.8181818181819
-852,2,141550,Dr. Talmir,PV,SP,governo,Dr. Talmir (PV/SP),183.33333333333331
-853,2,74780,Iara Bernardi,PT,SP,oposição,Iara Bernardi (PT/SP),160
-854,2,141516,Paulo Abi-Ackel,PSDB,MG,governo,Paulo Abi-Ackel (PSDB/MG),200
-855,5,178986,Nilto Tatto,PT,SP,oposição,Nilto Tatto (PT/SP),7109.8697927808435
-856,5,74693,Rodrigo Maia,DEM,RJ,governo,Rodrigo Maia (DEM/RJ),116.66666666666666
-857,5,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),6446.666666666667
-858,6,178891,Caio Narcio,PSDB,,governo,Caio Narcio (PSDB/NA),166.66666666666663
-859,6,178845,Ronaldo Lessa,PDT,AL,oposição,Ronaldo Lessa (PDT/AL),120
-860,6,178998,Raquel Muniz,PSD,MG,governo,Raquel Muniz (PSD/MG),99.99999999999999
-861,6,178916,Daniel Coelho,CIDADANIA,PE,governo,Daniel Coelho (CIDADANIA/PE),142.85714285714283
-862,6,160508,Afonso Florence,PT,BA,oposição,Afonso Florence (PT/BA),3746.3654644247636
-863,6,178882,André Fufuca,PP,MA,governo,André Fufuca (PP/MA),371.4285714285714
-864,6,178848,Conceição Sampaio,PSDB,AM,governo,Conceição Sampaio (PSDB/AM),200
-865,6,178939,Clarissa Garotinho,PROS,RJ,governo,Clarissa Garotinho (PROS/RJ),404.76190476190476
-866,6,159238,Marcus Pestana,PSDB,MG,governo,Marcus Pestana (PSDB/MG),943.3333333333333
-867,6,160646,Fernando Francischini,PSL,,governo,Fernando Francischini (PSL/NA),833.3333333333333
-868,6,160646,Delegado Francischini,PSL,,governo,Delegado Francischini (PSL/NA),833.3333333333333
-869,6,178910,Joaquim Passarinho,PSD,PA,governo,Joaquim Passarinho (PSD/PA),133.33333333333331
-870,7,74171,Chico Alencar,PSOL,RJ,oposição,Chico Alencar (PSOL/RJ),2875
-871,9,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),6446.666666666667
-872,10,178992,Vitor Lippi,PSDB,SP,governo,Vitor Lippi (PSDB/SP),1025
-873,10,74171,Chico Alencar,PSOL,RJ,oposição,Chico Alencar (PSOL/RJ),2875
-874,12,160672,Jean Wyllys,PSOL,,oposição,Jean Wyllys (PSOL/NA),400
-875,12,178977,Eduardo Cury,PSDB,SP,governo,Eduardo Cury (PSDB/SP),213.33333333333334
-876,12,207309,Enéias Reis,PSL,MG,governo,Enéias Reis (PSL/MG),131.81818181818184
-877,12,205548,David Miranda,PSOL,RJ,oposição,David Miranda (PSOL/RJ),1446.6666666666667
-878,12,160641,Professora Marcivania,PCdoB,AP,governo,Professora Marcivania (PCdoB/AP),787.5
-879,13,177282,Subtenente Gonzaga,PDT,MG,oposição,Subtenente Gonzaga (PDT/MG),1877.1428571428569
-880,13,204456,Gutemberg Reis,MDB,RJ,governo,Gutemberg Reis (MDB/RJ),100
-881,13,73588,Mauro Benevides,MDB,CE,governo,Mauro Benevides (MDB/CE),100
-882,13,141516,Paulo Abi-Ackel,PSDB,MG,governo,Paulo Abi-Ackel (PSDB/MG),200
-883,13,160646,Fernando Francischini,PSL,,governo,Fernando Francischini (PSL/NA),833.3333333333333
-884,13,160646,Delegado Francischini,PSL,,governo,Delegado Francischini (PSL/NA),833.3333333333333
-885,14,178973,Ana Perugini,PT,SP,oposição,Ana Perugini (PT/SP),338.46153846153845
-886,14,178890,Adelmo Carneiro Leão,PT,MG,oposição,Adelmo Carneiro Leão (PT/MG),2187.5
-887,14,141383,Antonio Bulhões,PRB,SP,governo,Antonio Bulhões (PRB/SP),150
-888,14,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),6446.666666666667
-889,18,178986,Nilto Tatto,PT,SP,oposição,Nilto Tatto (PT/SP),7109.8697927808435
-890,18,166401,Nilson Leitão,PSDB,MT,governo,Nilson Leitão (PSDB/MT),584.5454545454546
-891,18,74585,Lincoln Portela,PL,MG,governo,Lincoln Portela (PL/MG),225
-892,23,74554,José Rocha,PL,BA,governo,José Rocha (PL/BA),587.8787878787879
-893,24,141468,Iran Barbosa,PT,SE,oposição,Iran Barbosa (PT/SE),99.99999999999999
-894,24,164360,Carmen Zanotto,CIDADANIA,SC,governo,Carmen Zanotto (CIDADANIA/SC),462.38095238095235
-895,28,160649,Esperidião Amin,PP,SC,governo,Esperidião Amin (PP/SC),300
-896,28,178959,Hiran Gonçalves,PP,RR,governo,Hiran Gonçalves (PP/RR),50
-897,28,74171,Chico Alencar,PSOL,RJ,oposição,Chico Alencar (PSOL/RJ),2875
-898,33,160650,Oziel Oliveira,PDT,BA,oposição,Oziel Oliveira (PDT/BA),80
-899,34,209189,Joseildo Ramos,PT,BA,oposição,Joseildo Ramos (PT/BA),2864.192301658609
-900,34,204538,Paulo Bengtson,PTB,PA,governo,Paulo Bengtson (PTB/PA),100.00000000000001
-901,34,204486,Mauro Benevides Filho,PDT,,oposição,Mauro Benevides Filho (PDT/NA),200
-902,34,204572,Capitão Alberto Neto,PRB,AM,governo,Capitão Alberto Neto (PRB/AM),260
-903,34,205548,David Miranda,PSOL,RJ,oposição,David Miranda (PSOL/RJ),1446.6666666666667
-904,34,179001,Márcio Biolchi,MDB,RS,governo,Márcio Biolchi (MDB/RS),100
-905,34,204575,Gil Cutrim,PDT,MA,oposição,Gil Cutrim (PDT/MA),766.6666666666666
-906,34,204551,Bosco Saraiva,SOLIDARIEDADE,AM,governo,Bosco Saraiva (SOLIDARIEDADE/AM),293.8461538461538
-907,34,204532,Vinicius Poit,NOVO,SP,governo,Vinicius Poit (NOVO/SP),350
-908,34,178992,Vitor Lippi,PSDB,SP,governo,Vitor Lippi (PSDB/SP),1025
-909,34,204566,Marreca Filho,PATRIOTA,MA,governo,Marreca Filho (PATRIOTA/MA),233.33333333333331
-910,34,204569,Delegado Pablo,PSL,AM,governo,Delegado Pablo (PSL/AM),428.3333333333333
-911,34,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),2433.333333333333
-912,34,178829,Capitão Augusto,PL,SP,governo,Capitão Augusto (PL/SP),1007.1428571428571
-913,34,204561,Bira Do Pindaré,PSB,MA,oposição,Bira Do Pindaré (PSB/MA),150
-914,34,207176,Bia Cavassa,PSDB,MS,governo,Bia Cavassa (PSDB/MS),80
-915,34,141459,João Maia,PL,RN,governo,João Maia (PL/RN),50
-916,38,204536,Kim Kataguiri,DEM,SP,governo,Kim Kataguiri (DEM/SP),177.27272727272728
-917,38,204391,José Nelto,PODE,GO,governo,José Nelto (PODE/GO),50
-918,42,178825,Leo De Brito,PT,,oposição,Leo De Brito (PT/NA),50
-919,42,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),2433.333333333333
-920,42,178882,André Fufuca,PP,MA,governo,André Fufuca (PP/MA),371.4285714285714
-921,42,204544,Alexandre Frota,PSL,SP,governo,Alexandre Frota (PSL/SP),225
-922,42,178893,Delegado Edson Moreira,PR,MG,governo,Delegado Edson Moreira (PR/MG),200
-923,43,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),906.8181818181819
-924,45,160511,Alessandro Molon,PSB,RJ,oposição,Alessandro Molon (PSB/RJ),996.7948717948718
-925,54,209189,Joseildo Ramos,PT,BA,oposição,Joseildo Ramos (PT/BA),2864.192301658609
-926,54,204528,Adriana Ventura,NOVO,SP,governo,Adriana Ventura (NOVO/SP),458.3333333333333
-927,54,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),2433.333333333333
-928,54,160639,Professora Dorinha Seabra Rezende,DEM,TO,governo,Professora Dorinha Seabra Rezende (DEM/TO),100
-929,55,178992,Vitor Lippi,PSDB,SP,governo,Vitor Lippi (PSDB/SP),1025
-930,55,204358,Beto Pereira,PSDB,MS,governo,Beto Pereira (PSDB/MS),140
-931,55,178945,Rosangela Gomes,PRB,RJ,governo,Rosangela Gomes (PRB/RJ),340
-932,55,74171,Chico Alencar,PSOL,RJ,oposição,Chico Alencar (PSOL/RJ),2875
-933,55,160518,Weliton Prado,PROS,MG,governo,Weliton Prado (PROS/MG),316.6666666666667
-934,58,178868,Odorico Monteiro,PSB,CE,oposição,Odorico Monteiro (PSB/CE),183.33333333333331
-935,58,178990,Samuel Moreira,PSDB,SP,governo,Samuel Moreira (PSDB/SP),105.88235294117646
-936,58,178986,Nilto Tatto,PT,SP,oposição,Nilto Tatto (PT/SP),7109.8697927808435
-937,60,204501,Alencar Santana Braga,PT,SP,oposição,Alencar Santana Braga (PT/SP),5116.695299309854
-938,60,204541,Eduardo Bismarck,PDT,CE,oposição,Eduardo Bismarck (PDT/CE),1238.3333333333333
-939,60,204516,Alexis Fonteyne,NOVO,SP,governo,Alexis Fonteyne (NOVO/SP),472.72727272727275
-940,60,204572,Capitão Alberto Neto,PRB,AM,governo,Capitão Alberto Neto (PRB/AM),260
-941,60,204407,Fernanda Melchionna,PSOL,RS,oposição,Fernanda Melchionna (PSOL/RS),2653.333333333333
-942,61,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),906.8181818181819
-943,15,5527,Senadora Simone Tebet,PMDB,MS,governo,Senadora Simone Tebet (PMDB/MS),7416.559829059829
-944,15,5527,Senadora Simone Tebet,MDB,MS,governo,Senadora Simone Tebet (MDB/MS),7416.559829059829
-945,21,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),179458.59784846887
-946,21,5012,Líder do REDE Randolfe Rodrigues,REDE,AP,oposição,Líder do REDE Randolfe Rodrigues (REDE/AP),179458.59784846887
-947,34,5998,Senadora Daniella Ribeiro,PP,PB,governo,Senadora Daniella Ribeiro (PP/PB),12130.07746257406
-948,35,5953,Senador Fabiano Contarato,REDE,ES,oposição,Senador Fabiano Contarato (REDE/ES),96145.8872600295
-949,40,5982,Senador Alessandro Vieira,CIDADANIA,SE,governo,Senador Alessandro Vieira (CIDADANIA/SE),138695.31082609764
-950,40,5982,Senador Alessandro Vieira,PPS,SE,governo,Senador Alessandro Vieira (PPS/SE),138695.31082609764
-951,46,5988,Senadora Soraya Thronicke,PSL,MS,governo,Senadora Soraya Thronicke (PSL/MS),8277.033702459066
-952,51,5783,Senadora Zenaide Maia,PROS,RN,governo,Senadora Zenaide Maia (PROS/RN),193454.73601682944
-953,51,5783,Líder do PROS Zenaide Maia,PROS,RN,governo,Líder do PROS Zenaide Maia (PROS/RN),193454.73601682944
-954,53,5535,Senador Telmário Mota,PROS,RR,governo,Senador Telmário Mota (PROS/RR),54620.61284944316
-955,53,5535,Líder do PROS Telmário Mota,PROS,RR,governo,Líder do PROS Telmário Mota (PROS/RR),54620.61284944316
-956,53,5535,Senador Telmário Mota,PTB,RR,governo,Senador Telmário Mota (PTB/RR),54620.61284944316
-957,53,5988,Senadora Soraya Thronicke,PSL,MS,governo,Senadora Soraya Thronicke (PSL/MS),8277.033702459066
+id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
+1,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),3325.0396276878755
+1,159238,Marcus Pestana,PSDB,MG,governo,Marcus Pestana (PSDB/MG),310
+1,160426,Rogério Rosso,PSD,DF,governo,Rogério Rosso (PSD/DF),390.3571428571429
+1,160508,Afonso Florence,PT,BA,oposição,Afonso Florence (PT/BA),1276.4956716439196
+1,160518,Weliton Prado,PROS,MG,governo,Weliton Prado (PROS/MG),143.33333333333334
+1,160527,Aguinaldo Ribeiro,PP,PB,governo,Aguinaldo Ribeiro (PP/PB),83.33333333333331
+1,160530,Antonio Imbassahy,PSDB,BA,governo,Antonio Imbassahy (PSDB/BA),186.66666666666669
+1,160622,Vicente Candido,PT,SP,oposição,Vicente Candido (PT/SP),75
+1,160637,Ronaldo Fonseca,PODE,DF,governo,Ronaldo Fonseca (PODE/DF),310
+1,160646,Fernando Francischini,PSL,,governo,Fernando Francischini (PSL/NA),234.99999999999997
+1,160655,Ricardo Izar,PP,SP,governo,Ricardo Izar (PP/SP),93.33333333333334
+1,167493,Weverton Rocha,PDT,MA,oposição,Weverton Rocha (PDT/MA),430
+1,178887,Rubens Pereira Júnior,PCdoB,,governo,Rubens Pereira Júnior (PCdoB/NA),93.33333333333333
+1,178900,Carlos Marun,MDB,,governo,Carlos Marun (MDB/NA),50
+1,178926,Rodrigo Martins,PSB,PI,oposição,Rodrigo Martins (PSB/PI),93.33333333333334
+1,73424,Simão Sessim,PP,RJ,governo,Simão Sessim (PP/RJ),66.66666666666666
+1,73441,Celso Russomanno,PRB,SP,governo,Celso Russomanno (PRB/SP),403.33333333333337
+1,73466,Rubens Bueno,CIDADANIA,PR,governo,Rubens Bueno (CIDADANIA/PR),529.0476190476189
+1,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),304.99999999999994
+1,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),2342.3076923076924
+1,73553,Nelson Marquezelli,PTB,SP,governo,Nelson Marquezelli (PTB/SP),248.33333333333331
+1,73579,Alberto Fraga,DEM,DF,governo,Alberto Fraga (DEM/DF),250
+1,73666,Jovair Arantes,PTB,GO,governo,Jovair Arantes (PTB/GO),541.0714285714286
+1,73931,Zé Geraldo,PT,PA,oposição,Zé Geraldo (PT/PA),66.66666666666666
+1,74010,Valdir Colatto,MDB,SC,governo,Valdir Colatto (MDB/SC),173.33333333333331
+1,74060,Daniel Almeida,PCdoB,BA,governo,Daniel Almeida (PCdoB/BA),789.3315018315018
+1,74095,Pauderney Avelino,DEM,,governo,Pauderney Avelino (DEM/NA),376.66666666666663
+1,74156,Leonardo Monteiro,PT,MG,oposição,Leonardo Monteiro (PT/MG),1114.5909097391575
+1,74254,Leonardo Picciani,MDB,RJ,governo,Leonardo Picciani (MDB/RJ),367.0238095238095
+1,74385,Takayama,PSC,PR,governo,Takayama (PSC/PR),93.33333333333334
+1,74400,Paulo Pimenta,PT,RS,oposição,Paulo Pimenta (PT/RS),1306.8986020468499
+1,189593,Wadih Damous,PT,RJ,oposição,Wadih Damous (PT/RJ),133.33333333333331
+1,178984,Miguel Haddad,PSDB,SP,governo,Miguel Haddad (PSDB/SP),187.45098039215685
+1,178835,Afonso Motta,PDT,RS,oposição,Afonso Motta (PDT/RS),334.16666666666663
+1,178884,Hildo Rocha,MDB,MA,governo,Hildo Rocha (MDB/MA),205
+1,178968,Adelson Barreto,PR,SE,governo,Adelson Barreto (PR/SE),75
+1,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),470.8333333333333
+1,178894,Laudivio Carvalho,PODE,MG,governo,Laudivio Carvalho (PODE/MG),66.66666666666666
+2,141421,Eduardo Da Fonte,PP,PE,governo,Eduardo Da Fonte (PP/PE),87.5
+2,141431,Fernando Coelho Filho,DEM,PE,governo,Fernando Coelho Filho (DEM/PE),284.16666666666663
+2,141482,Leonardo Quintão,MDB,MG,governo,Leonardo Quintão (MDB/MG),87.5
+2,141483,Lindomar Garçon,PRB,RO,governo,Lindomar Garçon (PRB/RO),91.66666666666664
+2,144523,Daniel Vilela,MDB,GO,governo,Daniel Vilela (MDB/GO),87.5
+2,160511,Alessandro Molon,PSB,RJ,oposição,Alessandro Molon (PSB/RJ),379.80769230769226
+2,160515,Ronaldo Benedet,MDB,SC,governo,Ronaldo Benedet (MDB/SC),87.5
+2,160630,Ságuas Moraes,PT,MT,oposição,Ságuas Moraes (PT/MT),392.5
+2,178850,Marcos Rotta,MDB,,governo,Marcos Rotta (MDB/NA),87.5
+2,178869,Vitor Valim,PROS,CE,governo,Vitor Valim (PROS/CE),87.5
+2,73454,João Grandão,PT,MS,oposição,João Grandão (PT/MS),93.33333333333334
+2,73474,Luci Choinacki,PT,SC,oposição,Luci Choinacki (PT/SC),93.33333333333334
+2,73545,Luciano Zica,PT,SP,oposição,Luciano Zica (PT/SP),93.33333333333334
+2,73584,Antonio Carlos Mendes Thame,PV,SP,governo,Antonio Carlos Mendes Thame (PV/SP),268.3333333333333
+2,73655,Augusto Carvalho,SOLIDARIEDADE,DF,governo,Augusto Carvalho (SOLIDARIEDADE/DF),174.99999999999997
+2,73945,Eduardo Gomes,SD,TO,governo,Eduardo Gomes (SD/TO),91.66666666666666
+2,74031,João Alfredo,PSOL,CE,oposição,João Alfredo (PSOL/CE),93.33333333333334
+2,74133,Luiz Alberto,PT,BA,oposição,Luiz Alberto (PT/BA),93.33333333333334
+2,74137,Luiz Eduardo Greenhalgh,PT,SP,oposição,Luiz Eduardo Greenhalgh (PT/SP),93.33333333333334
+2,74145,Zezéu Ribeiro,PT,,oposição,Zezéu Ribeiro (PT/NA),93.33333333333334
+2,74153,Ivo José,PT,MG,oposição,Ivo José (PT/MG),93.33333333333334
+2,74162,Iriny Lopes,PT,ES,oposição,Iriny Lopes (PT/ES),93.33333333333334
+2,74171,Chico Alencar,PSOL,RJ,oposição,Chico Alencar (PSOL/RJ),358.3333333333333
+2,74210,Sarney Filho,PV,MA,governo,Sarney Filho (PV/MA),380
+2,74212,Aníbal Gomes,DEM,CE,governo,Aníbal Gomes (DEM/CE),87.5
+2,74218,Walter Pinheiro,PT,BA,oposição,Walter Pinheiro (PT/BA),93.33333333333334
+2,74253,Julio Lopes,PP,RJ,governo,Julio Lopes (PP/RJ),100
+2,74262,Carlos Sampaio,PSDB,SP,governo,Carlos Sampaio (PSDB/SP),167.5
+2,74285,Carlos Abicalil,PT,MT,oposição,Carlos Abicalil (PT/MT),158.33333333333331
+2,74300,Marcelo Teixeira,PR,CE,governo,Marcelo Teixeira (PR/CE),91.66666666666666
+2,74389,Mauro Passos,PT,SC,oposição,Mauro Passos (PT/SC),93.33333333333334
+2,74391,Vignatti,PT,SC,oposição,Vignatti (PT/SC),93.33333333333333
+2,74397,Luciana Genro,PSOL,RS,oposição,Luciana Genro (PSOL/RS),91.66666666666666
+2,74491,Nazareno Fonteles,PT,PI,oposição,Nazareno Fonteles (PT/PI),93.33333333333334
+2,74777,Rita Camata,PSDB,ES,governo,Rita Camata (PSDB/ES),91.66666666666666
+2,74841,Fernando Gabeira,PV,RJ,governo,Fernando Gabeira (PV/RJ),91.66666666666666
+2,141550,Dr. Talmir,PV,SP,governo,Dr. Talmir (PV/SP),91.66666666666666
+2,74780,Iara Bernardi,PT,SP,oposição,Iara Bernardi (PT/SP),93.33333333333334
+2,141516,Paulo Abi-Ackel,PSDB,MG,governo,Paulo Abi-Ackel (PSDB/MG),100
+5,160538,Bohn Gass,PT,RS,oposição,Bohn Gass (PT/RS),1211.2575764058242
+5,160556,Padre João,PT,MG,oposição,Padre João (PT/MG),1211.2575764058242
+5,178970,João Daniel,PT,SE,oposição,João Daniel (PT/SE),1211.2575764058242
+5,73427,Alberto Goldman,PSDB,,governo,Alberto Goldman (PSDB/NA),83.33333333333331
+5,73592,Kátia Abreu,PFL,TO,governo,Kátia Abreu (PFL/TO),83.33333333333331
+5,74160,Patrus Ananias,PT,MG,oposição,Patrus Ananias (PT/MG),1423.809468957717
+5,74265,Dimas Ramalho,PPS,,governo,Dimas Ramalho (PPS/NA),83.33333333333331
+5,74269,Enéas,PR,,governo,Enéas (PR/NA),83.33333333333331
+5,178986,Nilto Tatto,PT,SP,oposição,Nilto Tatto (PT/SP),2163.6385287867765
+5,74693,Rodrigo Maia,DEM,RJ,governo,Rodrigo Maia (DEM/RJ),83.33333333333331
+5,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),856.6666666666666
+6,141422,Efraim Filho,DEM,,governo,Efraim Filho (DEM/NA),158.33333333333331
+6,141503,Jô Moraes,PCdoB,MG,governo,Jô Moraes (PCdoB/MG),80
+6,141515,Otavio Leite,PSDB,RJ,governo,Otavio Leite (PSDB/RJ),85.71428571428571
+6,151208,Laercio Oliveira,PP,SE,governo,Laercio Oliveira (PP/SE),85.7142857142857
+6,160543,Andre Moura,PSC,,governo,Andre Moura (PSC/NA),133.33333333333331
+6,160613,Sibá Machado,PT,AC,oposição,Sibá Machado (PT/AC),80
+6,164360,Carmen Zanotto,CIDADANIA,SC,governo,Carmen Zanotto (CIDADANIA/SC),299.04761904761904
+6,178879,Lucas Vergilio,SOLIDARIEDADE,GO,governo,Lucas Vergilio (SOLIDARIEDADE/GO),141.66666666666666
+6,4931,Izalci Lucas,PSDB,DF,governo,Izalci Lucas (PSDB/DF),310
+6,73434,Arnaldo Faria De Sá,PP,SP,governo,Arnaldo Faria De Sá (PP/SP),200
+6,73568,Celso Jacob,MDB,RJ,governo,Celso Jacob (MDB/RJ),125
+6,74050,Maurício Quintella Lessa,PR,AL,governo,Maurício Quintella Lessa (PR/AL),135.71428571428572
+6,74399,Onyx Lorenzoni,DEM,,governo,Onyx Lorenzoni (DEM/NA),75
+6,74428,Mendonça Filho,DEM,PE,governo,Mendonça Filho (DEM/PE),85.71428571428571
+6,74750,Newton Cardoso,PMDB,MG,governo,Newton Cardoso (PMDB/MG),66.66666666666666
+6,74848,Jandira Feghali,PCdoB,RJ,governo,Jandira Feghali (PCdoB/RJ),726.474358974359
+6,97707,Heráclito Fortes,DEM,PI,governo,Heráclito Fortes (DEM/PI),375
+6,178891,Caio Narcio,PSDB,,governo,Caio Narcio (PSDB/NA),83.33333333333331
+6,178845,Ronaldo Lessa,PDT,AL,oposição,Ronaldo Lessa (PDT/AL),80
+6,178998,Raquel Muniz,PSD,MG,governo,Raquel Muniz (PSD/MG),66.66666666666666
+6,178916,Daniel Coelho,CIDADANIA,PE,governo,Daniel Coelho (CIDADANIA/PE),85.71428571428571
+6,178882,André Fufuca,PP,MA,governo,André Fufuca (PP/MA),159.52380952380952
+6,178848,Conceição Sampaio,PSDB,AM,governo,Conceição Sampaio (PSDB/AM),80
+6,178939,Clarissa Garotinho,PROS,RJ,governo,Clarissa Garotinho (PROS/RJ),152.38095238095235
+6,178910,Joaquim Passarinho,PSD,PA,governo,Joaquim Passarinho (PSD/PA),66.66666666666666
+10,141484,Lúcio Vale,PR,,governo,Lúcio Vale (PR/NA),175
+10,141536,Rômulo Gouveia,"",PB,governo,Rômulo Gouveia (/PB),175
+10,160666,Félix Mendonça Júnior,PDT,BA,oposição,Félix Mendonça Júnior (PDT/BA),175
+10,178829,Capitão Augusto,PL,SP,governo,Capitão Augusto (PL/SP),317.8571428571429
+10,178960,Remídio Monai,PR,RR,governo,Remídio Monai (PR/RR),175
+10,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),1423.5652687135166
+10,178992,Vitor Lippi,PSDB,SP,governo,Vitor Lippi (PSDB/SP),225
+12,152605,Glauber Braga,PSOL,RJ,oposição,Glauber Braga (PSOL/RJ),440
+12,160601,Pr. Marco Feliciano,PODE,SP,governo,Pr. Marco Feliciano (PODE/SP),95.45454545454547
+12,160640,Eros Biondini,PROS,MG,governo,Eros Biondini (PROS/MG),93.33333333333334
+12,178828,Evandro Gussi,PV,SP,governo,Evandro Gussi (PV/SP),93.33333333333334
+12,178836,Alan Rick,DEM,AC,governo,Alan Rick (DEM/AC),188.7878787878788
+12,178945,Rosangela Gomes,PRB,RJ,governo,Rosangela Gomes (PRB/RJ),159.99999999999997
+12,178947,Sóstenes Cavalcante,DEM,RJ,governo,Sóstenes Cavalcante (DEM/RJ),95.45454545454547
+12,193726,Paulo Eduardo Martins,PSC,PR,governo,Paulo Eduardo Martins (PSC/PR),95.45454545454547
+12,204369,Caroline De Toni,PSL,SC,governo,Caroline De Toni (PSL/SC),95.45454545454547
+12,204374,Bia Kicis,PSL,DF,governo,Bia Kicis (PSL/DF),95.45454545454547
+12,204376,Coronel Armando,PSL,SC,governo,Coronel Armando (PSL/SC),95.45454545454547
+12,204400,Aline Sleutjes,PSL,PR,governo,Aline Sleutjes (PSL/PR),95.45454545454547
+12,204407,Fernanda Melchionna,PSOL,RS,oposição,Fernanda Melchionna (PSOL/RS),1056.6666666666665
+12,204411,Filipe Barros,PSL,PR,governo,Filipe Barros (PSL/PR),95.45454545454547
+12,204420,Julian Lemos,PSL,PB,governo,Julian Lemos (PSL/PB),95.45454545454547
+12,204442,Gurgel,PSL,RJ,governo,Gurgel (PSL/RJ),185.45454545454544
+12,204449,Nelson Barbudo,PSL,MT,governo,Nelson Barbudo (PSL/MT),95.45454545454547
+12,204460,Carlos Jordy,PSL,RJ,governo,Carlos Jordy (PSL/RJ),95.45454545454547
+12,204462,Chris Tonietto,PSL,RJ,governo,Chris Tonietto (PSL/RJ),95.45454545454547
+12,204464,Talíria Petrone,PSOL,RJ,oposição,Talíria Petrone (PSOL/RJ),667.3809523809524
+12,204507,Carla Zambelli,PSL,SP,governo,Carla Zambelli (PSL/SP),187.12121212121212
+12,204509,Áurea Carolina,PSOL,MG,oposição,Áurea Carolina (PSOL/MG),440
+12,204516,Alexis Fonteyne,NOVO,SP,governo,Alexis Fonteyne (NOVO/SP),320.4545454545455
+12,204526,Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Luiz Philippe De Orleans e Bragança (PSL/SP),95.45454545454547
+12,204535,Sâmia Bomfim,PSOL,SP,oposição,Sâmia Bomfim (PSOL/SP),1390
+12,204536,Kim Kataguiri,DEM,SP,governo,Kim Kataguiri (DEM/SP),145.45454545454547
+12,204545,Alê Silva,PSL,MG,governo,Alê Silva (PSL/MG),95.45454545454547
+12,204546,Joice Hasselmann,PSL,SP,governo,Joice Hasselmann (PSL/SP),95.45454545454547
+12,204547,Léo Motta,PSL,MG,governo,Léo Motta (PSL/MG),95.45454545454547
+12,73778,Luiz Carlos Hauly,PSDB,PR,governo,Luiz Carlos Hauly (PSDB/PR),93.33333333333334
+12,74057,Alice Portugal,PCdoB,BA,governo,Alice Portugal (PCdoB/BA),487.5
+12,74366,João Campos,PRB,GO,governo,João Campos (PRB/GO),318.3333333333333
+12,74558,Givaldo Carimbão,AVANTE,AL,governo,Givaldo Carimbão (AVANTE/AL),93.33333333333334
+12,74650,Bonifácio De Andrada,DEM,MG,governo,Bonifácio De Andrada (DEM/MG),93.33333333333334
+12,74784,Luiza Erundina,PSOL,SP,oposição,Luiza Erundina (PSOL/SP),920
+12,92776,Stefano Aguiar,PSD,MG,governo,Stefano Aguiar (PSD/MG),93.33333333333334
+12,160672,Jean Wyllys,PSOL,,oposição,Jean Wyllys (PSOL/NA),80
+12,178977,Eduardo Cury,PSDB,SP,governo,Eduardo Cury (PSDB/SP),93.33333333333334
+12,207309,Enéias Reis,PSL,MG,governo,Enéias Reis (PSL/MG),95.45454545454547
+12,205548,David Miranda,PSOL,RJ,oposição,David Miranda (PSOL/RJ),426.66666666666663
+12,160641,Professora Marcivania,PCdoB,AP,governo,Professora Marcivania (PCdoB/AP),487.5
+13,164359,Delegado Waldir,PSL,GO,governo,Delegado Waldir (PSL/GO),141.66666666666666
+13,74048,Raul Jungmann,PPS,PE,governo,Raul Jungmann (PPS/PE),66.66666666666666
+13,74847,Jair Bolsonaro,PSL,,governo,Jair Bolsonaro (PSL/NA),66.66666666666666
+13,92346,Eduardo Bolsonaro,PSL,SP,governo,Eduardo Bolsonaro (PSL/SP),66.66666666666666
+13,177282,Subtenente Gonzaga,PDT,MG,oposição,Subtenente Gonzaga (PDT/MG),530.7142857142857
+13,204456,Gutemberg Reis,MDB,RJ,governo,Gutemberg Reis (MDB/RJ),50
+13,73588,Mauro Benevides,MDB,CE,governo,Mauro Benevides (MDB/CE),50
+14,113247,Valmir Prascidelli,PT,SP,oposição,Valmir Prascidelli (PT/SP),92.3076923076923
+14,129037,Gabriel Guimarães,PT,,oposição,Gabriel Guimarães (PT/NA),92.3076923076923
+14,141398,Carlos Zarattini,PT,SP,oposição,Carlos Zarattini (PT/SP),1686.6147192629674
+14,141445,Pepe Vargas,PT,,oposição,Pepe Vargas (PT/NA),700
+14,141470,José Guimarães,PT,CE,oposição,José Guimarães (PT/CE),2686.8894445376927
+14,159237,Assis Carvalho,PT,PI,oposição,Assis Carvalho (PT/PI),1583.2983927323548
+14,160575,Erika Kokay,PT,DF,oposição,Erika Kokay (PT/DF),2499.206294354542
+14,178859,Moema Gramacho,PT,,oposição,Moema Gramacho (PT/NA),92.3076923076923
+14,178866,Luizianne Lins,PT,CE,oposição,Luizianne Lins (PT/CE),1583.2983927323548
+14,73433,Arlindo Chinaglia,PT,SP,oposição,Arlindo Chinaglia (PT/SP),2916.6317260656883
+14,73586,Júlio Delgado,PSB,MG,oposição,Júlio Delgado (PSB/MG),212.5
+14,74041,Luiz Couto,PT,PB,oposição,Luiz Couto (PT/PB),192.30769230769232
+14,74161,Reginaldo Lopes,PT,MG,oposição,Reginaldo Lopes (PT/MG),1433.9285165767644
+14,74275,José Mentor,PT,SP,oposição,José Mentor (PT/SP),179.80769230769232
+14,74283,Vicentinho,PT,SP,oposição,Vicentinho (PT/SP),1073.5652687135166
+14,74398,Maria Do Rosário,PT,RS,oposição,Maria Do Rosário (PT/RS),1936.4926191408672
+14,74585,Lincoln Portela,PL,MG,governo,Lincoln Portela (PL/MG),125
+14,74688,Luiz Sérgio,PT,RJ,oposição,Luiz Sérgio (PT/RJ),700
+14,178973,Ana Perugini,PT,SP,oposição,Ana Perugini (PT/SP),92.3076923076923
+14,178890,Adelmo Carneiro Leão,PT,MG,oposição,Adelmo Carneiro Leão (PT/MG),612.5
+14,141383,Antonio Bulhões,PRB,SP,governo,Antonio Bulhões (PRB/SP),75
+15,3741,Senador Paulo Bauer,PSDB,SC,governo,Senador Paulo Bauer (PSDB/SC),183.79629629629628
+15,456,Senador Ronaldo Caiado,DEM,GO,governo,Senador Ronaldo Caiado (DEM/GO),87.5
+15,4763,Senador Vicentinho Alves,PR,TO,governo,Senador Vicentinho Alves (PR/TO),183.79629629629628
+15,4767,Senador Eduardo Lopes,PRB,RJ,governo,Senador Eduardo Lopes (PRB/RJ),87.5
+15,715,Senador Armando Monteiro,PTB,PE,governo,Senador Armando Monteiro (PTB/PE),87.5
+15,73,Senador Romero Jucá,MDB,RR,governo,Senador Romero Jucá (MDB/RR),87.5
+15,739,Senador Ciro Nogueira,PP,PI,governo,Senador Ciro Nogueira (PP/PI),184.86842105263156
+15,5527,Senadora Simone Tebet,PMDB,MS,governo,Senadora Simone Tebet (PMDB/MS),377.75106837606836
+18,141335,Beto Faro,PT,PA,oposição,Beto Faro (PT/PA),1066.97186212011
+18,141405,Celso Maldaner,MDB,SC,governo,Celso Maldaner (MDB/SC),140
+18,141423,Eliene Lima,PSD,MT,governo,Eliene Lima (PSD/MT),90
+18,160535,Marcon,PT,RS,oposição,Marcon (PT/RS),1066.97186212011
+18,160544,Junji Abe,MDB,SP,governo,Junji Abe (MDB/SP),90
+18,160610,Valmir Assunção,PT,BA,oposição,Valmir Assunção (PT/BA),1066.97186212011
+18,160615,Reinaldo Azambuja,PSDB,,governo,Reinaldo Azambuja (PSDB/NA),90
+18,160633,Mandetta,DEM,MS,governo,Mandetta (DEM/MS),90
+18,160668,Paulo Cesar Quartiero,DEM,,governo,Paulo Cesar Quartiero (DEM/NA),90
+18,171617,Paulão,PT,AL,oposição,Paulão (PT/AL),1066.97186212011
+18,73483,Luis Carlos Heinze,PP,,governo,Luis Carlos Heinze (PP/NA),90
+18,166401,Nilson Leitão,PSDB,MT,governo,Nilson Leitão (PSDB/MT),190.00000000000003
+21,3394,Senador João Capiberibe,PSB,AP,oposição,Senador João Capiberibe (PSB/AP),146.29629629629628
+21,4990,Senador Jorge Viana,PT,AC,oposição,Senador Jorge Viana (PT/AC),196.29629629629628
+21,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),7360.6065168088735
+23,74140,José Carlos Araújo,PR,BA,governo,José Carlos Araújo (PR/BA),133.33333333333331
+23,74553,José Carlos Aleluia,DEM,BA,governo,José Carlos Aleluia (DEM/BA),133.33333333333331
+23,74554,José Rocha,PL,BA,governo,José Rocha (PL/BA),233.33333333333331
+24,73673,Pedro Wilson,PT,GO,oposição,Pedro Wilson (PT/GO),66.66666666666666
+24,74856,Laura Carneiro,DEM,RJ,governo,Laura Carneiro (DEM/RJ),50
+24,141468,Iran Barbosa,PT,SE,oposição,Iran Barbosa (PT/SE),66.66666666666666
+28,178886,Juscelino Filho,DEM,MA,governo,Juscelino Filho (DEM/MA),50
+28,74039,Sandra Rosado,PSB,RN,oposição,Sandra Rosado (PSB/RN),66.66666666666666
+28,160649,Esperidião Amin,PP,SC,governo,Esperidião Amin (PP/SC),146.66666666666666
+28,178959,Hiran Gonçalves,PP,RR,governo,Hiran Gonçalves (PP/RR),50
+33,141462,Lira Maia,DEM,PA,governo,Lira Maia (DEM/PA),80
+33,73933,Zequinha Marinho,PSC,,governo,Zequinha Marinho (PSC/NA),80
+33,74077,Giovanni Queiroz,PDT,PA,oposição,Giovanni Queiroz (PDT/PA),80
+33,74222,Asdrubal Bentes,PMDB,PA,governo,Asdrubal Bentes (PMDB/PA),80
+33,160650,Oziel Oliveira,PDT,BA,oposição,Oziel Oliveira (PDT/BA),80
+34,107283,Gleisi Hoffmann,PT,PR,oposição,Gleisi Hoffmann (PT/PR),2343.4174403514025
+34,122974,Pedro Lucas Fernandes,PTB,MA,governo,Pedro Lucas Fernandes (PTB/MA),90.9090909090909
+34,132504,Enio Verri,PT,,oposição,Enio Verri (PT/NA),1147.924243072491
+34,133439,André Figueiredo,PDT,CE,oposição,André Figueiredo (PDT/CE),267.3076923076923
+34,133810,Marcelo Moraes,PTB,RS,governo,Marcelo Moraes (PTB/RS),90.90909090909092
+34,133968,Paulo Ramos,PDT,RJ,oposição,Paulo Ramos (PDT/RJ),165
+34,141518,Paulo Pereira Da Silva,SOLIDARIEDADE,SP,governo,Paulo Pereira Da Silva (SOLIDARIEDADE/SP),142.30769230769232
+34,141555,Vinicius Carvalho,PRB,SP,governo,Vinicius Carvalho (PRB/SP),50
+34,143084,Tiago Dimas,SOLIDARIEDADE,TO,governo,Tiago Dimas (SOLIDARIEDADE/TO),92.3076923076923
+34,156190,Marcel Van Hattem,NOVO,RS,governo,Marcel Van Hattem (NOVO/RS),175
+34,160512,Aureo Ribeiro,SOLIDARIEDADE,RJ,governo,Aureo Ribeiro (SOLIDARIEDADE/RJ),233.21678321678326
+34,160528,Danilo Cabral,PSB,PE,oposição,Danilo Cabral (PSB/PE),87.5
+34,160569,Waldenor Pereira,PT,BA,oposição,Waldenor Pereira (PT/BA),981.2575764058242
+34,160592,Zeca Dirceu,PT,PR,oposição,Zeca Dirceu (PT/PR),1162.4541576024055
+34,160604,Pedro Uczai,PT,SC,oposição,Pedro Uczai (PT/SC),2439.2398718881195
+34,160632,Zé Silva,SOLIDARIEDADE,MG,governo,Zé Silva (SOLIDARIEDADE/MG),92.3076923076923
+34,160642,Pastor Eurico,PATRIOTA,PE,governo,Pastor Eurico (PATRIOTA/PE),83.33333333333331
+34,160665,Augusto Coutinho,SOLIDARIEDADE,PE,governo,Augusto Coutinho (SOLIDARIEDADE/PE),172.30769230769232
+34,160669,Genecias Noronha,SOLIDARIEDADE,CE,governo,Genecias Noronha (SOLIDARIEDADE/CE),92.3076923076923
+34,171619,Margarida Salomão,PT,MG,oposição,Margarida Salomão (PT/MG),1070.1464652947132
+34,178832,Leandre,PV,PR,governo,Leandre (PV/PR),174.24242424242425
+34,178857,Jorge Solla,PT,BA,oposição,Jorge Solla (PT/BA),2341.376624024872
+34,178873,Helder Salomão,PT,ES,oposição,Helder Salomão (PT/ES),981.2575764058244
+34,178881,Aluisio Mendes,PODE,MA,governo,Aluisio Mendes (PODE/MA),171.66666666666666
+34,178889,Zé Carlos,PT,MA,oposição,Zé Carlos (PT/MA),981.2575764058242
+34,178922,Tadeu Alencar,PSB,PE,oposição,Tadeu Alencar (PSB/PE),346.47435897435895
+34,178925,Rejane Dias,PT,PI,oposição,Rejane Dias (PT/PI),883.1443688586545
+34,178927,Aliel Machado,PSB,PR,oposição,Aliel Machado (PSB/PR),529.8076923076923
+34,178929,Diego Garcia,PODE,PR,governo,Diego Garcia (PODE/PR),100
+34,178946,Soraya Santos,PL,RJ,governo,Soraya Santos (PL/RJ),169.04761904761904
+34,178964,Heitor Schuch,PSB,RS,oposição,Heitor Schuch (PSB/RS),50
+34,178987,Orlando Silva,PCdoB,SP,governo,Orlando Silva (PCdoB/SP),573.2142857142857
+34,178994,Dulce Miranda,MDB,TO,governo,Dulce Miranda (MDB/TO),83.33333333333331
+34,188097,Merlong Solano,PT,,oposição,Merlong Solano (PT/NA),981.2575764058244
+34,194260,Nivaldo Albuquerque,PTB,AL,governo,Nivaldo Albuquerque (PTB/AL),90.9090909090909
+34,198783,Emanuel Pinheiro Neto,PTB,MT,governo,Emanuel Pinheiro Neto (PTB/MT),174.24242424242425
+34,204357,Rose Modesto,PSDB,MS,governo,Rose Modesto (PSDB/MS),80
+34,204359,Léo Moraes,PODE,RO,governo,Léo Moraes (PODE/RO),85.71428571428571
+34,204364,Eli Borges,SOLIDARIEDADE,TO,governo,Eli Borges (SOLIDARIEDADE/TO),92.3076923076923
+34,204365,Gilson Marques,NOVO,SC,governo,Gilson Marques (NOVO/SC),175
+34,204370,Célio Moura,PT,TO,oposição,Célio Moura (PT/TO),981.2575764058244
+34,204371,Felipe Rigoni,PSB,ES,oposição,Felipe Rigoni (PSB/ES),1091.6666666666665
+34,204377,Paula Belmonte,CIDADANIA,DF,governo,Paula Belmonte (CIDADANIA/DF),66.66666666666666
+34,204380,Celina Leão,PP,DF,governo,Celina Leão (PP/DF),80
+34,204383,Professor Israel Batista,PV,DF,governo,Professor Israel Batista (PV/DF),491.66666666666663
+34,204387,Sargento Fahur,PSD,,governo,Sargento Fahur (PSD/NA),90
+34,204393,Frei Anastacio Ribeiro,PT,PB,oposição,Frei Anastacio Ribeiro (PT/PB),981.2575764058242
+34,204394,Gervásio Maia,PSB,PB,oposição,Gervásio Maia (PSB/PB),87.5
+34,204398,Felipe Francischini,PSL,PR,governo,Felipe Francischini (PSL/PR),91.66666666666666
+34,204408,Gustinho Ribeiro,SOLIDARIEDADE,SE,governo,Gustinho Ribeiro (SOLIDARIEDADE/SE),92.3076923076923
+34,204410,Luisa Canziani,PTB,PR,governo,Luisa Canziani (PTB/PR),90.90909090909092
+34,204416,Sanderson,PSL,RS,governo,Sanderson (PSL/RS),221.66666666666666
+34,204418,Luizão Goulart,PRB,PR,governo,Luizão Goulart (PRB/PR),91.66666666666666
+34,204421,Edna Henrique,PSDB,PB,governo,Edna Henrique (PSDB/PB),80
+34,204426,Carlos Veras,PT,PE,oposição,Carlos Veras (PT/PE),2341.3766240248715
+34,204428,Marília Arraes,PT,PE,oposição,Marília Arraes (PT/PE),883.298392732355
+34,204429,João H. Campos,PSB,PE,oposição,João H. Campos (PSB/PE),245.83333333333331
+34,204432,Marina Santos,SOLIDARIEDADE,PI,governo,Marina Santos (SOLIDARIEDADE/PI),92.3076923076923
+34,204434,Dra. Vanda Milani,SOLIDARIEDADE,AC,governo,Dra. Vanda Milani (SOLIDARIEDADE/AC),92.3076923076923
+34,204439,Dr. Leonardo,SOLIDARIEDADE,MT,governo,Dr. Leonardo (SOLIDARIEDADE/MT),142.30769230769232
+34,204451,Delegado Antônio Furtado,PSL,RJ,governo,Delegado Antônio Furtado (PSL/RJ),91.66666666666666
+34,204453,Natália Bonavides,PT,RN,oposição,Natália Bonavides (PT/RN),1070.1464652947132
+34,204461,Paulo Ganime,NOVO,RJ,governo,Paulo Ganime (NOVO/RJ),225
+34,204466,Tereza Nelma,PSDB,AL,governo,Tereza Nelma (PSDB/AL),130
+34,204467,Professora Rosa Neide,PT,MT,oposição,Professora Rosa Neide (PT/MT),1220.1464652947134
+34,204468,Joenia Wapichana,REDE,RR,oposição,Joenia Wapichana (REDE/RR),167.30769230769232
+34,204471,Mara Rocha,PSDB,AC,governo,Mara Rocha (PSDB/AC),80
+34,204472,José Medeiros,PODE,MT,governo,José Medeiros (PODE/MT),91.66666666666666
+34,204475,Otaci Nascimento,SOLIDARIEDADE,RR,governo,Otaci Nascimento (SOLIDARIEDADE/RR),92.3076923076923
+34,204477,Felício Laterça,PSL,RJ,governo,Felício Laterça (PSL/RJ),318.3333333333333
+34,204479,Nicoletti,PSL,RR,governo,Nicoletti (PSL/RR),91.66666666666666
+34,204480,Rogério Correia,PT,MG,oposição,Rogério Correia (PT/MG),981.2575764058244
+34,204487,Capitão Wagner,PROS,CE,governo,Capitão Wagner (PROS/CE),170
+34,204488,Célio Studart,PV,CE,governo,Célio Studart (PV/CE),85.71428571428571
+34,204492,Paulo Guedes,PT,MG,oposição,Paulo Guedes (PT/MG),981.2575764058242
+34,204494,Fred Costa,PATRIOTA,MG,governo,Fred Costa (PATRIOTA/MG),219.04761904761904
+34,204495,Airton Faleiro,PT,PA,oposição,Airton Faleiro (PT/PA),981.2575764058242
+34,204499,Cássio Andrade,PSB,PA,oposição,Cássio Andrade (PSB/PA),87.5
+34,204500,Eduardo Costa,PTB,PA,governo,Eduardo Costa (PTB/PA),140.9090909090909
+34,204501,Alencar Santana Braga,PT,SP,oposição,Alencar Santana Braga (PT/SP),1559.065879214127
+34,204503,Alexandre Padilha,PT,SP,oposição,Alexandre Padilha (PT/SP),981.2575764058244
+34,204512,Delegado Marcelo Freitas,PSL,MG,governo,Delegado Marcelo Freitas (PSL/MG),318.3333333333333
+34,204514,Coronel Tadeu,PSL,SP,governo,Coronel Tadeu (PSL/SP),90
+34,204518,Dr. Frederico,PATRIOTA,MG,governo,Dr. Frederico (PATRIOTA/MG),219.04761904761904
+34,204519,Tiago Mitraud,NOVO,MG,governo,Tiago Mitraud (NOVO/MG),308.3333333333333
+34,204520,Cabo Junio Amaral,PSL,MG,governo,Cabo Junio Amaral (PSL/MG),90
+34,204523,Lucas Gonzalez,NOVO,MG,governo,Lucas Gonzalez (NOVO/MG),175
+34,204528,Adriana Ventura,NOVO,SP,governo,Adriana Ventura (NOVO/SP),258.3333333333333
+34,204531,Guilherme Derrite,PP,,governo,Guilherme Derrite (PP/NA),90
+34,204541,Eduardo Bismarck,PDT,CE,oposição,Eduardo Bismarck (PDT/CE),238.33333333333331
+34,204543,Luiz Flávio Gomes,PSB,SP,oposição,Luiz Flávio Gomes (PSB/SP),179.16666666666666
+34,204553,Pastor Sargento Isidório,AVANTE,BA,governo,Pastor Sargento Isidório (AVANTE/BA),90
+34,204555,José Ricardo,PT,AM,oposição,José Ricardo (PT/AM),1061.2575764058242
+34,204559,Zé Neto,PT,BA,oposição,Zé Neto (PT/BA),981.2575764058244
+34,68720,Fábio Henrique,PDT,SE,oposição,Fábio Henrique (PDT/SE),75
+34,73460,Gustavo Fruet,PDT,PR,oposição,Gustavo Fruet (PDT/PR),50
+34,73482,Henrique Fontana,PT,RS,oposição,Henrique Fontana (PT/RS),2341.376624024872
+34,73604,Rui Falcão,PT,SP,oposição,Rui Falcão (PT/SP),1073.5652687135166
+34,73701,Benedita Da Silva,PT,RJ,oposição,Benedita Da Silva (PT/RJ),1047.924243072491
+34,73801,Renildo Calheiros,PCdoB,PE,governo,Renildo Calheiros (PCdoB/PE),487.5
+34,73943,Perpétua Almeida,PCdoB,AC,governo,Perpétua Almeida (PCdoB/AC),437.5
+34,74043,Wellington Roberto,PL,PB,governo,Wellington Roberto (PL/PB),100
+34,74044,Wilson Santiago,PTB,PB,governo,Wilson Santiago (PTB/PB),140.9090909090909
+34,74159,Odair Cunha,PT,MG,oposição,Odair Cunha (PT/MG),1242.796037944286
+34,74376,Vander Loubet,PT,MS,oposição,Vander Loubet (PT/MS),981.2575764058244
+34,74571,Nelson Pellegrino,PT,BA,oposição,Nelson Pellegrino (PT/BA),1123.5652687135166
+34,74655,Eduardo Barbosa,PSDB,MG,governo,Eduardo Barbosa (PSDB/MG),50
+34,75431,Maurício Dziedricki,PTB,RS,governo,Maurício Dziedricki (PTB/RS),90.90909090909092
+34,76874,Marcelo Freixo,PSOL,RJ,oposição,Marcelo Freixo (PSOL/RJ),960
+34,81055,Márcio Jerry,PCdoB,MA,governo,Márcio Jerry (PCdoB/MA),437.5
+34,90201,Pedro Augusto Bezerra,PTB,CE,governo,Pedro Augusto Bezerra (PTB/CE),90.90909090909092
+34,90842,Santini,PTB,RS,governo,Santini (PTB/RS),90.9090909090909
+34,1023,Senadora Maria do Carmo Alves,DEM,SE,governo,Senadora Maria do Carmo Alves (DEM/SE),192.59259259259258
+34,1173,Senador Wellington Fagundes,PR,MT,governo,Senador Wellington Fagundes (PR/MT),676.8273871722147
+34,1186,Senador Luis Carlos Heinze,PP,RS,governo,Senador Luis Carlos Heinze (PP/RS),3084.796430611685
+34,1249,Senadora Kátia Abreu,PMDB,TO,governo,Senadora Kátia Abreu (PMDB/TO),4345.998994948031
+34,22,Senador Esperidião Amin,PP,SC,governo,Senador Esperidião Amin (PP/SC),1063.767144011165
+34,2331,Senadora Rose de Freitas,PMDB,ES,governo,Senadora Rose de Freitas (PMDB/ES),1254.9303394981707
+34,285,Senador Marcio Bittar,MDB,AC,governo,Senador Marcio Bittar (MDB/AC),97.36842105263158
+34,3361,Senador José Maranhão,MDB,PB,governo,Senador José Maranhão (MDB/PB),5801.306472834683
+34,3396,Senador Tasso Jereissati,PSDB,CE,governo,Senador Tasso Jereissati (PSDB/CE),386.23321123321125
+34,345,Senador Flávio Arns,REDE,PR,oposição,Senador Flávio Arns (REDE/PR),7410.893739695769
+34,374,Senador Paulo Rocha,PT,PA,oposição,Senador Paulo Rocha (PT/PA),8010.9111743264075
+34,3777,Senador Eduardo Gomes,MDB,TO,governo,Senador Eduardo Gomes (MDB/TO),775.4050372142477
+34,3806,Senador Zequinha Marinho,PSC,PA,governo,Senador Zequinha Marinho (PSC/PA),871.2894261228303
+34,3830,Senador Davi Alcolumbre,DEM,AP,governo,Senador Davi Alcolumbre (DEM/AP),194.09722222222223
+34,4525,Senador Fernando Collor,PROS,AL,governo,Senador Fernando Collor (PROS/AL),193.44086021505376
+34,4531,Senador Jayme Campos,DEM,MT,governo,Senador Jayme Campos (DEM/MT),6277.95451144218
+34,4560,Senador Sérgio Petecão,PSD,AC,governo,Senador Sérgio Petecão (PSD/AC),1258.527894158712
+34,470,Senador Chico Rodrigues,DEM,RR,governo,Senador Chico Rodrigues (DEM/RR),579.6022623608831
+34,475,Senador Confúcio Moura,MDB,RO,governo,Senador Confúcio Moura (MDB/RO),2123.966029840869
+34,4770,Senador Izalci Lucas,PSDB,DF,governo,Senador Izalci Lucas (PSDB/DF),4732.255636483629
+34,4981,Senador Acir Gurgacz,PDT,RO,oposição,Senador Acir Gurgacz (PDT/RO),7054.475099268508
+34,4994,Senador Eduardo Braga,MDB,AM,governo,Senador Eduardo Braga (MDB/AM),387.29998719918075
+34,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),7337.726076687055
+34,5236,Senador Reguffe,"",DF,governo,Senador Reguffe (/DF),5795.976461581884
+34,5322,Senador Romário,PODEMOS,RJ,governo,Senador Romário (PODEMOS/RJ),2904.6433231366764
+34,5350,Senador Jorginho Mello,PL,SC,governo,Senador Jorginho Mello (PL/SC),2029.4078972205102
+34,5352,Senador Rogério Carvalho,PT,SE,oposição,Senador Rogério Carvalho (PT/SE),5400.573339342928
+34,5376,Senadora Mara Gabrilli,PSDB,SP,governo,Senadora Mara Gabrilli (PSDB/SP),871.6120107917775
+34,5385,Senador Irajá,PSD,TO,governo,Senador Irajá (PSD/TO),860.908189033189
+34,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),7824.716449022255
+34,5422,Senador Marcos Rogério,DEM,RO,governo,Senador Marcos Rogério (DEM/RO),964.2837510929617
+34,5502,Senador Plínio Valério,PSDB,AM,governo,Senador Plínio Valério (PSDB/AM),6570.862737482971
+34,5523,Senador Otto Alencar,PSD,BA,governo,Senador Otto Alencar (PSD/BA),6275.109902922955
+34,5525,Senador Omar Aziz,PSD,AM,governo,Senador Omar Aziz (PSD/AM),870.1596283562358
+34,5531,Senador Elmano Férrer,PODEMOS,PI,governo,Senador Elmano Férrer (PODEMOS/PI),5882.12925514847
+34,5533,Senador Lasier Martins,PSD,RS,governo,Senador Lasier Martins (PSD/RS),5603.099657893066
+34,5535,Senador Telmário Mota,PROS,RR,governo,Senador Telmário Mota (PROS/RR),1497.3973152099281
+34,5537,Senador Dário Berger,MDB,SC,governo,Senador Dário Berger (MDB/SC),5022.908476209132
+34,5540,Senador Fernando Bezerra Coelho,PSB,PE,oposição,Senador Fernando Bezerra Coelho (PSB/PE),193.65079365079362
+34,5557,Senadora Mailza Gomes,PP,AC,governo,Senadora Mailza Gomes (PP/AC),4731.92174410997
+34,5585,Senador Luiz do Carmo,MDB,GO,governo,Senador Luiz do Carmo (MDB/GO),387.6194894286999
+34,5627,Senador Jean Paul Prates,PT,RN,oposição,Senador Jean Paul Prates (PT/RN),6756.036878426543
+34,5666,Senador Major Olimpio,PSL,SP,governo,Senador Major Olimpio (PSL/SP),3477.642405748962
+34,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),7433.95801095083
+34,5732,Senador Rodrigo Pacheco,DEM,MG,governo,Senador Rodrigo Pacheco (DEM/MG),1744.6031933385937
+34,5748,Senador Veneziano Vital do Rêgo,PSB,PB,oposição,Senador Veneziano Vital do Rêgo (PSB/PB),5702.7070045274095
+34,5783,Senadora Zenaide Maia,PROS,RN,governo,Senadora Zenaide Maia (PROS/RN),7956.884194760634
+34,581,Senador Jaques Wagner,PT,BA,oposição,Senador Jaques Wagner (PT/BA),4824.300200173597
+34,5894,Senador Flávio Bolsonaro,PSL,RJ,governo,Senador Flávio Bolsonaro (PSL/RJ),290.7936507936508
+34,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),6759.872971979367
+34,5899,Senador Vanderlan Cardoso,PP,GO,governo,Senador Vanderlan Cardoso (PP/GO),3481.454552269807
+34,5905,Senador Rodrigo Cunha,PSDB,AL,governo,Senador Rodrigo Cunha (PSDB/AL),382.1262558104663
+34,5924,Senador Oriovisto Guimarães,PODEMOS,PR,governo,Senador Oriovisto Guimarães (PODEMOS/PR),3673.019846774836
+34,5926,Senador Lucas Barreto,PSD,AP,governo,Senador Lucas Barreto (PSD/AP),7128.729963272399
+34,5929,Senadora Juíza Selma,PSL,MT,governo,Senadora Juíza Selma (PSL/MT),1914.6922733618842
+34,5942,Senador Marcos do Val,PODEMOS,ES,governo,Senador Marcos do Val (PODEMOS/ES),2323.711440195412
+34,5953,Senador Fabiano Contarato,REDE,ES,oposição,Senador Fabiano Contarato (REDE/ES),7503.0839911748135
+34,5959,Senador Styvenson Valentim,PODEMOS,RN,governo,Senador Styvenson Valentim (PODEMOS/RN),8399.59246115311
+34,5967,Senador Angelo Coronel,PSD,BA,governo,Senador Angelo Coronel (PSD/BA),2123.768884989686
+34,5973,Senador Cid Gomes,PDT,CE,oposição,Senador Cid Gomes (PDT/CE),5794.47200476919
+34,5976,Senador Eduardo Girão,PODEMOS,CE,governo,Senador Eduardo Girão (PODEMOS/CE),7246.933734672777
+34,5979,Senadora Leila Barros,PSB,DF,oposição,Senadora Leila Barros (PSB/DF),6671.909859899876
+34,5982,Senador Alessandro Vieira,CIDADANIA,SE,governo,Senador Alessandro Vieira (CIDADANIA/SE),5597.949892286164
+34,5985,Senador Nelsinho Trad,PSD,MS,governo,Senador Nelsinho Trad (PSD/MS),1643.5803245705695
+34,5988,Senadora Soraya Thronicke,PSL,MS,governo,Senadora Soraya Thronicke (PSL/MS),514.014167547516
+34,5990,Senador Carlos Viana,PSD,MG,governo,Senador Carlos Viana (PSD/MG),290.22556390977445
+34,677,Senador Roberto Rocha,PSDB,MA,governo,Senador Roberto Rocha (PSDB/MA),289.72527472527474
+34,70,Senador Renan Calheiros,MDB,AL,governo,Senador Renan Calheiros (MDB/AL),775.729184635731
+34,742,Senador Marcelo Castro,MDB,PI,governo,Senador Marcelo Castro (MDB/PI),2607.521204695966
+34,751,Senador Arolde de Oliveira,PSD,RJ,governo,Senador Arolde de Oliveira (PSD/RJ),2609.2961828775724
+34,825,Senador Paulo Paim,PT,RS,oposição,Senador Paulo Paim (PT/RS),8589.554552330186
+34,90,Senador José Serra,PSDB,SP,governo,Senador José Serra (PSDB/SP),386.3756613756613
+34,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),5702.216591961826
+34,209189,Joseildo Ramos,PT,BA,oposição,Joseildo Ramos (PT/BA),981.2575764058244
+34,204538,Paulo Bengtson,PTB,PA,governo,Paulo Bengtson (PTB/PA),90.90909090909092
+34,204486,Mauro Benevides Filho,PDT,,oposição,Mauro Benevides Filho (PDT/NA),125
+34,204572,Capitão Alberto Neto,PRB,AM,governo,Capitão Alberto Neto (PRB/AM),170
+34,179001,Márcio Biolchi,MDB,RS,governo,Márcio Biolchi (MDB/RS),50
+34,204575,Gil Cutrim,PDT,MA,oposição,Gil Cutrim (PDT/MA),171.66666666666666
+34,204551,Bosco Saraiva,SOLIDARIEDADE,AM,governo,Bosco Saraiva (SOLIDARIEDADE/AM),172.30769230769232
+34,204532,Vinicius Poit,NOVO,SP,governo,Vinicius Poit (NOVO/SP),225
+34,204566,Marreca Filho,PATRIOTA,MA,governo,Marreca Filho (PATRIOTA/MA),133.33333333333331
+34,204569,Delegado Pablo,PSL,AM,governo,Delegado Pablo (PSL/AM),318.3333333333333
+34,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),1008.3333333333333
+34,204561,Bira Do Pindaré,PSB,MA,oposição,Bira Do Pindaré (PSB/MA),100
+34,207176,Bia Cavassa,PSDB,MS,governo,Bia Cavassa (PSDB/MS),80
+34,141459,João Maia,PL,RN,governo,João Maia (PL/RN),50
+34,5998,Senadora Daniella Ribeiro,PP,PB,governo,Senadora Daniella Ribeiro (PP/PB),1060.6437129701649
+38,160570,Jerônimo Goergen,PP,RS,governo,Jerônimo Goergen (PP/RS),50
+38,178989,Renata Abreu,PODE,SP,governo,Renata Abreu (PODE/SP),50
+38,204391,José Nelto,PODE,GO,governo,José Nelto (PODE/GO),50
+42,124411,Mauro Pereira,MDB,RS,governo,Mauro Pereira (MDB/RS),50
+42,133374,Ademir Camilo,MDB,MG,governo,Ademir Camilo (MDB/MG),92.85714285714285
+42,141529,Roberto Britto,PP,BA,governo,Roberto Britto (PP/BA),92.85714285714286
+42,143632,Domingos Neto,PSD,CE,governo,Domingos Neto (PSD/CE),267.85714285714283
+42,150418,Márcio Marinho,PRB,BA,governo,Márcio Marinho (PRB/BA),92.85714285714285
+42,167722,Marcos Rogério,DEM,,governo,Marcos Rogério (DEM/NA),80
+42,178802,Luiz Carlos Ramos,PR,RJ,governo,Luiz Carlos Ramos (PR/RJ),92.85714285714286
+42,178877,Fábio Sousa,PSDB,GO,governo,Fábio Sousa (PSDB/GO),80
+42,204388,Bibo Nunes,PSL,RS,governo,Bibo Nunes (PSL/RS),75
+42,69871,Bacelar,PODE,BA,governo,Bacelar (PODE/BA),142.85714285714286
+42,73463,Osmar Serraglio,PP,PR,governo,Osmar Serraglio (PP/PR),50
+42,93472,Cristiane Brasil,PTB,RJ,governo,Cristiane Brasil (PTB/RJ),130
+42,178825,Leo De Brito,PT,,oposição,Leo De Brito (PT/NA),50
+42,204544,Alexandre Frota,PSL,SP,governo,Alexandre Frota (PSL/SP),75
+42,178893,Delegado Edson Moreira,PR,MG,governo,Delegado Edson Moreira (PR/MG),174.11764705882354
+43,146788,Marcelo Aro,PP,MG,governo,Marcelo Aro (PP/MG),100
+43,160510,Luis Tibé,AVANTE,MG,governo,Luis Tibé (AVANTE/MG),100
+43,178920,Ricardo Teobaldo,PODE,PE,governo,Ricardo Teobaldo (PODE/PE),100.00000000000001
+43,73930,Wladimir Costa,SOLIDARIEDADE,PA,governo,Wladimir Costa (SOLIDARIEDADE/PA),100.00000000000001
+43,88950,Rodrigo Garcia,DEM,,governo,Rodrigo Garcia (DEM/NA),100
+53,3,Senador Antonio Carlos Valadares,PSB,SE,oposição,Senador Antonio Carlos Valadares (PSB/SE),96.29629629629629
+53,3398,Senador Cristovam Buarque,PPS,DF,governo,Senador Cristovam Buarque (PPS/DF),96.29629629629628
+53,3695,Senador Lindbergh Farias,PT,RJ,oposição,Senador Lindbergh Farias (PT/RJ),96.29629629629629
+53,3823,Senador Benedito de Lira,PP,AL,governo,Senador Benedito de Lira (PP/AL),96.29629629629629
+53,4575,Senadora Lídice da Mata,PSB,BA,oposição,Senadora Lídice da Mata (PSB/BA),96.29629629629628
+53,5052,Senador Roberto Muniz,PP,BA,governo,Senador Roberto Muniz (PP/BA),96.29629629629628
+53,5164,Senador Ataídes Oliveira,PSDB,TO,governo,Senador Ataídes Oliveira (PSDB/TO),96.29629629629629
+53,5182,Senadora Regina Sousa,PT,PI,oposição,Senadora Regina Sousa (PT/PI),96.29629629629628
+53,5529,Senador Antonio Anastasia,PSDB,MG,governo,Senador Antonio Anastasia (PSDB/MG),96.875
+53,615,Senador José Pimentel,PT,CE,oposição,Senador José Pimentel (PT/CE),96.29629629629628
+53,643,Senadora Lúcia Vânia,PSB,GO,oposição,Senadora Lúcia Vânia (PSB/GO),96.29629629629629
+53,72,Senador Roberto Requião,PMDB,PR,governo,Senador Roberto Requião (PMDB/PR),96.29629629629629
+53,87,Senador Garibaldi Alves Filho,PMDB,RN,governo,Senador Garibaldi Alves Filho (PMDB/RN),96.29629629629629
+54,178842,Jhc,PSB,AL,oposição,Jhc (PSB/AL),83.33333333333331
+54,204433,Marcelo Calero,CIDADANIA,RJ,governo,Marcelo Calero (CIDADANIA/RJ),50
+54,160639,Professora Dorinha Seabra Rezende,DEM,TO,governo,Professora Dorinha Seabra Rezende (DEM/TO),50
+55,178854,Elmar Nascimento,DEM,BA,governo,Elmar Nascimento (DEM/BA),80
+55,178862,Tia Eron,PRB,BA,governo,Tia Eron (PRB/BA),66.66666666666666
+55,74045,Maurício Rands,PT,PE,oposição,Maurício Rands (PT/PE),50
+55,204358,Beto Pereira,PSDB,MS,governo,Beto Pereira (PSDB/MS),80
+58,118594,Marcelo Squassoni,PRB,SP,governo,Marcelo Squassoni (PRB/SP),177.45098039215685
+58,137070,Vicentinho Júnior,PL,TO,governo,Vicentinho Júnior (PL/TO),94.11764705882352
+58,141450,Hugo Leal,PSD,RJ,governo,Hugo Leal (PSD/RJ),94.11764705882352
+58,141531,Rodrigo De Castro,PSDB,MG,governo,Rodrigo De Castro (PSDB/MG),83.33333333333331
+58,160536,Marco Tebaldi,PSDB,SC,governo,Marco Tebaldi (PSDB/SC),94.11764705882352
+58,160602,Arnaldo Jordy,PPS,PA,governo,Arnaldo Jordy (PPS/PA),94.11764705882352
+58,160607,Jose Stédile,PSB,RS,oposição,Jose Stédile (PSB/RS),94.11764705882352
+58,178844,Pedro Vilela,PSDB,AL,governo,Pedro Vilela (PSDB/AL),83.33333333333331
+58,178917,João Fernando Coutinho,PROS,PE,governo,João Fernando Coutinho (PROS/PE),94.11764705882352
+58,178937,Altineu Côrtes,PL,RJ,governo,Altineu Côrtes (PL/RJ),94.11764705882352
+58,178948,Beto Rosado,PP,RN,governo,Beto Rosado (PP/RN),94.11764705882352
+58,178954,Lucio Mosquini,MDB,RO,governo,Lucio Mosquini (MDB/RO),94.11764705882352
+58,178957,Abel Mesquita Jr.,DEM,RR,governo,Abel Mesquita Jr. (DEM/RR),94.11764705882352
+58,178958,Carlos Andrade,PHS,RR,governo,Carlos Andrade (PHS/RR),94.11764705882352
+58,74235,Marcus Vicente,PP,ES,governo,Marcus Vicente (PP/ES),94.11764705882352
+58,74445,João Castelo,PSDB,,governo,João Castelo (PSDB/NA),94.11764705882352
+58,178868,Odorico Monteiro,PSB,CE,oposição,Odorico Monteiro (PSB/CE),83.33333333333331
+58,178990,Samuel Moreira,PSDB,SP,governo,Samuel Moreira (PSDB/SP),94.11764705882352
+60,141513,Bilac Pinto,DEM,MG,governo,Bilac Pinto (DEM/MG),85.71428571428571
+60,204556,Marcelo Ramos,PL,AM,governo,Marcelo Ramos (PL/AM),80
+60,204557,Sidney Leite,PSD,AM,governo,Sidney Leite (PSD/AM),80
+60,98057,Lafayette De Andrada,PRB,MG,governo,Lafayette De Andrada (PRB/MG),85.71428571428571
+61,160541,Arthur Lira,PP,AL,governo,Arthur Lira (PP/AL),75
