@@ -9,8 +9,6 @@ class Nodes(models.Model):
     id_leggo = models.IntegerField(
         help_text='Id do leggo.')
 
-    index = models.IntegerField('index')
-
     id_autor = models.IntegerField(
         help_text='Id do autor.')
 

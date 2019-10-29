@@ -7,7 +7,7 @@ from api.model.nodes import Nodes
 class NodesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Nodes
-        fields = ('index', 'id_autor', 'nome', 'partido', 'uf', 
+        fields = ('id_autor', 'nome', 'partido', 'uf', 
         	'bancada', 'nome_eleitoral', 'node_size')
 
 class NodesList(generics.ListAPIView):
