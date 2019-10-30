@@ -45,5 +45,5 @@ urlpatterns = [
     url(r'^nodes/(?P<id>[0-9]+)/?$',
         NodesList.as_view()),
     url(r'^edges/(?P<id>[0-9]+)/?$',
-        NodesList.as_view()),
+        EdgesList.as_view()),
 ]

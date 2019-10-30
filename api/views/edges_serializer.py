@@ -25,4 +25,4 @@ class EdgesList(generics.ListAPIView):
     )
     def get_queryset(self):
         id_prop = self.kwargs['id']
-        return Nodes.objects.filter(id_leggo=id_prop)
+        return Edges.objects.filter(id_leggo=id_prop)
