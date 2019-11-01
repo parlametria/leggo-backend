@@ -1,5 +1,4 @@
 from django.db import models
-from api.model.proposicao import Proposicao
 
 
 class Edges(models.Model):
@@ -8,7 +7,7 @@ class Edges(models.Model):
     '''
     id_leggo = models.IntegerField(
         help_text='Id do leggo.')
-        
+
     source = models.IntegerField(
         help_text='Origem da aresta.')
 
