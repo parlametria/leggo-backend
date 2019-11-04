@@ -1,4 +1,6 @@
 id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
+1,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),1.3333333333333333
+1,74156,Leonardo Monteiro,PT,MG,oposição,Leonardo Monteiro (PT/MG),1.3333333333333333
 1,285,Senador Marcio Bittar,MDB,AC,governo,Senador Marcio Bittar (MDB/AC),4
 1,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),2
 1,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),10
@@ -7,16 +9,25 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 1,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),2
 1,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),2
 1,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),6
+1,189593,Wadih Damous,PT,RJ,oposição,Wadih Damous (PT/RJ),1.3333333333333333
 2,74253,Julio Lopes,PP,RJ,governo,Julio Lopes (PP/RJ),0.5
 2,141516,Paulo Abi-Ackel,PSDB,MG,governo,Paulo Abi-Ackel (PSDB/MG),0.5
+5,160538,Bohn Gass,PT,RS,oposição,Bohn Gass (PT/RS),0.6666666666666666
+5,160556,Padre João,PT,MG,oposição,Padre João (PT/MG),0.6666666666666666
+5,178970,João Daniel,PT,SE,oposição,João Daniel (PT/SE),0.6666666666666666
 6,160531,Jhonatan De Jesus,PRB,RR,governo,Jhonatan De Jesus (PRB/RR),2
+6,178871,Evair Vieira De Melo,PP,ES,governo,Evair Vieira De Melo (PP/ES),2
+9,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),0.5
+9,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),0.5
 12,141411,Dagoberto Nogueira,PDT,MS,oposição,Dagoberto Nogueira (PDT/MS),2
-12,160531,Jhonatan De Jesus,PRB,RR,governo,Jhonatan De Jesus (PRB/RR),2
+12,160531,Jhonatan De Jesus,PRB,RR,governo,Jhonatan De Jesus (PRB/RR),4
+12,160558,Paulo Freire,PL,SP,governo,Paulo Freire (PL/SP),4
 12,204407,Fernanda Melchionna,PSOL,RS,oposição,Fernanda Melchionna (PSOL/RS),1.4666666666666666
 12,204464,Talíria Petrone,PSOL,RJ,oposição,Talíria Petrone (PSOL/RJ),0.8
 12,204509,Áurea Carolina,PSOL,MG,oposição,Áurea Carolina (PSOL/MG),0.8
 12,204535,Sâmia Bomfim,PSOL,SP,oposição,Sâmia Bomfim (PSOL/SP),1.4666666666666666
 12,4931,Izalci Lucas,PSDB,DF,governo,Izalci Lucas (PSDB/DF),2
+12,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),4
 12,74784,Luiza Erundina,PSOL,SP,oposição,Luiza Erundina (PSOL/SP),0.8
 12,205548,David Miranda,PSOL,RJ,oposição,David Miranda (PSOL/RJ),0.6666666666666666
 13,116379,Darci De Matos,PSD,SC,governo,Darci De Matos (PSD/SC),2
@@ -26,8 +37,8 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 13,160646,Fernando Francischini,PSL,,governo,Fernando Francischini (PSL/NA),2.6666666666666665
 13,164359,Delegado Waldir,PSL,GO,governo,Delegado Waldir (PSL/GO),0.5
 13,178826,Major Olimpio,PSL,SP,governo,Major Olimpio (PSL/SP),8
-13,204416,Sanderson,PSL,RS,governo,Sanderson (PSL/RS),6
-13,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),2
+13,204416,Sanderson,PSL,RS,governo,Sanderson (PSL/RS),14
+13,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),6
 13,73579,Alberto Fraga,DEM,DF,governo,Alberto Fraga (DEM/DF),0.5
 13,74048,Raul Jungmann,PPS,PE,governo,Raul Jungmann (PPS/PE),0.6666666666666666
 13,74253,Julio Lopes,PP,RJ,governo,Julio Lopes (PP/RJ),0.5
@@ -39,6 +50,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 13,141516,Paulo Abi-Ackel,PSDB,MG,governo,Paulo Abi-Ackel (PSDB/MG),0.5
 14,178826,Major Olimpio,PSL,SP,governo,Major Olimpio (PSL/SP),6
 14,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),0.5
+14,74398,Maria Do Rosário,PT,RS,oposição,Maria Do Rosário (PT/RS),2
 14,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),0.5
 24,73673,Pedro Wilson,PT,GO,oposição,Pedro Wilson (PT/GO),0.6666666666666666
 24,74285,Carlos Abicalil,PT,MT,oposição,Carlos Abicalil (PT/MT),0.6666666666666666
@@ -46,16 +58,16 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 24,74856,Laura Carneiro,DEM,RJ,governo,Laura Carneiro (DEM/RJ),0.5
 24,141468,Iran Barbosa,PT,SE,oposição,Iran Barbosa (PT/SE),0.6666666666666666
 24,164360,Carmen Zanotto,CIDADANIA,SC,governo,Carmen Zanotto (CIDADANIA/SC),0.5
-33,204526,Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Luiz Philippe De Orleans e Bragança (PSL/SP),6
-34,107283,Gleisi Hoffmann,PT,PR,oposição,Gleisi Hoffmann (PT/PR),14.601190476190476
+33,204526,Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Luiz Philippe De Orleans e Bragança (PSL/SP),8
+34,107283,Gleisi Hoffmann,PT,PR,oposição,Gleisi Hoffmann (PT/PR),14.726190476190476
 34,116379,Darci De Matos,PSD,SC,governo,Darci De Matos (PSD/SC),4
-34,133439,André Figueiredo,PDT,CE,oposição,André Figueiredo (PDT/CE),1.25
-34,133968,Paulo Ramos,PDT,RJ,oposição,Paulo Ramos (PDT/RJ),1.6500000000000001
+34,133439,André Figueiredo,PDT,CE,oposição,André Figueiredo (PDT/CE),2
+34,133968,Paulo Ramos,PDT,RJ,oposição,Paulo Ramos (PDT/RJ),2.4000000000000004
 34,134812,Edmilson Rodrigues,PSOL,PA,oposição,Edmilson Rodrigues (PSOL/PA),3.6000000000000005
 34,141405,Celso Maldaner,MDB,SC,governo,Celso Maldaner (MDB/SC),0.5
 34,141411,Dagoberto Nogueira,PDT,MS,oposição,Dagoberto Nogueira (PDT/MS),8
-34,141470,José Guimarães,PT,CE,oposição,José Guimarães (PT/CE),13.601190476190476
-34,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),15.101190476190474
+34,141470,José Guimarães,PT,CE,oposição,José Guimarães (PT/CE),13.726190476190476
+34,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),15.226190476190476
 34,141518,Paulo Pereira Da Silva,SOLIDARIEDADE,SP,governo,Paulo Pereira Da Silva (SOLIDARIEDADE/SP),0.5
 34,141555,Vinicius Carvalho,PRB,SP,governo,Vinicius Carvalho (PRB/SP),0.5
 34,152605,Glauber Braga,PSOL,RJ,oposição,Glauber Braga (PSOL/RJ),3.6
@@ -63,14 +75,14 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,160511,Alessandro Molon,PSB,RJ,oposição,Alessandro Molon (PSB/RJ),0.5
 34,160512,Aureo Ribeiro,SOLIDARIEDADE,RJ,governo,Aureo Ribeiro (SOLIDARIEDADE/RJ),0.5
 34,160528,Danilo Cabral,PSB,PE,oposição,Danilo Cabral (PSB/PE),0.875
-34,160604,Pedro Uczai,PT,SC,oposição,Pedro Uczai (PT/SC),12.767857142857142
+34,160604,Pedro Uczai,PT,SC,oposição,Pedro Uczai (PT/SC),12.892857142857142
 34,160641,Professora Marcivania,PCdoB,AP,governo,Professora Marcivania (PCdoB/AP),4.375
 34,160642,Pastor Eurico,PATRIOTA,PE,governo,Pastor Eurico (PATRIOTA/PE),0.8333333333333333
 34,164360,Carmen Zanotto,CIDADANIA,SC,governo,Carmen Zanotto (CIDADANIA/SC),1.6904761904761905
 34,177282,Subtenente Gonzaga,PDT,MG,oposição,Subtenente Gonzaga (PDT/MG),2.2
 34,178832,Leandre,PV,PR,governo,Leandre (PV/PR),0.8333333333333333
 34,178835,Afonso Motta,PDT,RS,oposição,Afonso Motta (PDT/RS),0.8
-34,178857,Jorge Solla,PT,BA,oposição,Jorge Solla (PT/BA),13.601190476190476
+34,178857,Jorge Solla,PT,BA,oposição,Jorge Solla (PT/BA),13.726190476190476
 34,178881,Aluisio Mendes,PODE,MA,governo,Aluisio Mendes (PODE/MA),0.8
 34,178922,Tadeu Alencar,PSB,PE,oposição,Tadeu Alencar (PSB/PE),0.875
 34,178927,Aliel Machado,PSB,PR,oposição,Aliel Machado (PSB/PR),4.375
@@ -94,7 +106,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,204416,Sanderson,PSL,RS,governo,Sanderson (PSL/RS),1.3
 34,204421,Edna Henrique,PSDB,PB,governo,Edna Henrique (PSDB/PB),0.8
 34,204429,João H. Campos,PSB,PE,oposição,João H. Campos (PSB/PE),0.875
-34,204439,Dr. Leonardo,SOLIDARIEDADE,MT,governo,Dr. Leonardo (SOLIDARIEDADE/MT),0.5
+34,204439,Dr. Leonardo,SOLIDARIEDADE,MT,governo,Dr. Leonardo (SOLIDARIEDADE/MT),1
 34,204442,Gurgel,PSL,RJ,governo,Gurgel (PSL/RJ),0.9000000000000001
 34,204461,Paulo Ganime,NOVO,RJ,governo,Paulo Ganime (NOVO/RJ),1.75
 34,204464,Talíria Petrone,PSOL,RJ,oposição,Talíria Petrone (PSOL/RJ),4.1000000000000005
@@ -105,7 +117,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,204477,Felício Laterça,PSL,RJ,governo,Felício Laterça (PSL/RJ),2.2666666666666666
 34,204487,Capitão Wagner,PROS,CE,governo,Capitão Wagner (PROS/CE),1.7000000000000002
 34,204488,Célio Studart,PV,CE,governo,Célio Studart (PV/CE),0.8571428571428571
-34,204494,Fred Costa,PATRIOTA,MG,governo,Fred Costa (PATRIOTA/MG),2.1904761904761902
+34,204494,Fred Costa,PATRIOTA,MG,governo,Fred Costa (PATRIOTA/MG),2.6904761904761907
 34,204499,Cássio Andrade,PSB,PA,oposição,Cássio Andrade (PSB/PA),0.875
 34,204509,Áurea Carolina,PSOL,MG,oposição,Áurea Carolina (PSOL/MG),3.6000000000000005
 34,204512,Delegado Marcelo Freitas,PSL,MG,governo,Delegado Marcelo Freitas (PSL/MG),2.2666666666666666
@@ -117,14 +129,14 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,204523,Lucas Gonzalez,NOVO,MG,governo,Lucas Gonzalez (NOVO/MG),1.75
 34,204528,Adriana Ventura,NOVO,SP,governo,Adriana Ventura (NOVO/SP),1.75
 34,204531,Guilherme Derrite,PP,,governo,Guilherme Derrite (PP/NA),0.9000000000000001
-34,204535,Sâmia Bomfim,PSOL,SP,oposição,Sâmia Bomfim (PSOL/SP),12.433333333333334
+34,204535,Sâmia Bomfim,PSOL,SP,oposição,Sâmia Bomfim (PSOL/SP),14.933333333333334
 34,204541,Eduardo Bismarck,PDT,CE,oposição,Eduardo Bismarck (PDT/CE),0.8
 34,204553,Pastor Sargento Isidório,AVANTE,BA,governo,Pastor Sargento Isidório (AVANTE/BA),0.9
-34,68720,Fábio Henrique,PDT,SE,oposição,Fábio Henrique (PDT/SE),0.75
+34,68720,Fábio Henrique,PDT,SE,oposição,Fábio Henrique (PDT/SE),1.5
 34,73460,Gustavo Fruet,PDT,PR,oposição,Gustavo Fruet (PDT/PR),0.5
-34,73482,Henrique Fontana,PT,RS,oposição,Henrique Fontana (PT/RS),13.601190476190476
-34,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),6.8
-34,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),12.433333333333334
+34,73482,Henrique Fontana,PT,RS,oposição,Henrique Fontana (PT/RS),13.726190476190476
+34,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),8.8
+34,73531,Ivan Valente,PSOL,SP,oposição,Ivan Valente (PSOL/SP),14.933333333333334
 34,73586,Júlio Delgado,PSB,MG,oposição,Júlio Delgado (PSB/MG),0.875
 34,73801,Renildo Calheiros,PCdoB,PE,governo,Renildo Calheiros (PCdoB/PE),4.875
 34,73943,Perpétua Almeida,PCdoB,AC,governo,Perpétua Almeida (PCdoB/AC),4.375
@@ -134,24 +146,24 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,74060,Daniel Almeida,PCdoB,BA,governo,Daniel Almeida (PCdoB/BA),4.375
 34,74159,Odair Cunha,PT,MG,oposição,Odair Cunha (PT/MG),1
 34,74366,João Campos,PRB,GO,governo,João Campos (PRB/GO),1.3333333333333333
-34,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),0.875
+34,74371,Rubens Otoni,PT,GO,oposição,Rubens Otoni (PT/GO),1.75
 34,74655,Eduardo Barbosa,PSDB,MG,governo,Eduardo Barbosa (PSDB/MG),0.5
-34,74784,Luiza Erundina,PSOL,SP,oposição,Luiza Erundina (PSOL/SP),7.6
+34,74784,Luiza Erundina,PSOL,SP,oposição,Luiza Erundina (PSOL/SP),8.933333333333334
 34,74848,Jandira Feghali,PCdoB,RJ,governo,Jandira Feghali (PCdoB/RJ),4.375
 34,76874,Marcelo Freixo,PSOL,RJ,oposição,Marcelo Freixo (PSOL/RJ),4.1000000000000005
 34,81055,Márcio Jerry,PCdoB,MA,governo,Márcio Jerry (PCdoB/MA),4.375
 34,285,Senador Marcio Bittar,MDB,AC,governo,Senador Marcio Bittar (MDB/AC),2
-34,4994,Senador Eduardo Braga,MDB,AM,governo,Senador Eduardo Braga (MDB/AM),2
-34,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),82
-34,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),28
-34,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),80
+34,4994,Senador Eduardo Braga,MDB,AM,governo,Senador Eduardo Braga (MDB/AM),6
+34,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),104
+34,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),40
+34,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),82
 34,5535,Senador Telmário Mota,PROS,RR,governo,Senador Telmário Mota (PROS/RR),10.5
-34,5666,Senador Major Olimpio,PSL,SP,governo,Senador Major Olimpio (PSL/SP),8
-34,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),8
-34,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),10
+34,5666,Senador Major Olimpio,PSL,SP,governo,Senador Major Olimpio (PSL/SP),10
+34,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),18
+34,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),12
 34,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),6
-34,204426,Carlos Veras,PT,PE,oposição,Carlos Veras (PT/PE),13.601190476190476
-34,204486,Mauro Benevides Filho,PDT,,oposição,Mauro Benevides Filho (PDT/NA),0.75
+34,204426,Carlos Veras,PT,PE,oposição,Carlos Veras (PT/PE),13.726190476190476
+34,204486,Mauro Benevides Filho,PDT,,oposição,Mauro Benevides Filho (PDT/NA),1.5
 34,204572,Capitão Alberto Neto,PRB,AM,governo,Capitão Alberto Neto (PRB/AM),0.9
 34,205548,David Miranda,PSOL,RJ,oposição,David Miranda (PSOL/RJ),3.6
 34,179001,Márcio Biolchi,MDB,RS,governo,Márcio Biolchi (MDB/RS),0.5
@@ -160,7 +172,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,178992,Vitor Lippi,PSDB,SP,governo,Vitor Lippi (PSDB/SP),0.5
 34,204543,Luiz Flávio Gomes,PSB,SP,oposição,Luiz Flávio Gomes (PSB/SP),0.875
 34,204566,Marreca Filho,PATRIOTA,MA,governo,Marreca Filho (PATRIOTA/MA),1.3333333333333333
-34,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),6.916666666666666
+34,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),6.916666666666667
 34,178829,Capitão Augusto,PL,SP,governo,Capitão Augusto (PL/SP),0.5
 34,204575,Gil Cutrim,PDT,MA,oposição,Gil Cutrim (PDT/MA),0.8
 34,204569,Delegado Pablo,PSL,AM,governo,Delegado Pablo (PSL/AM),2.2666666666666666
@@ -178,7 +190,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 35,4770,Senador Izalci Lucas,PSDB,DF,governo,Senador Izalci Lucas (PSDB/DF),4
 35,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),40
 35,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),18.666666666666668
-35,5535,Senador Telmário Mota,PROS,RR,governo,Senador Telmário Mota (PROS/RR),2
+35,5535,Senador Telmário Mota,PROS,RR,governo,Senador Telmário Mota (PROS/RR),4
 35,5666,Senador Major Olimpio,PSL,SP,governo,Senador Major Olimpio (PSL/SP),10
 35,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),8
 35,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),2
@@ -194,14 +206,14 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 41,4770,Senador Izalci Lucas,PSDB,DF,governo,Senador Izalci Lucas (PSDB/DF),104
 41,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),6
 41,5666,Senador Major Olimpio,PSL,SP,governo,Senador Major Olimpio (PSL/SP),18
-42,132504,Enio Verri,PT,,oposição,Enio Verri (PT/NA),1.6666666666666665
+42,132504,Enio Verri,PT,,oposição,Enio Verri (PT/NA),2.1666666666666665
 42,141422,Efraim Filho,DEM,,governo,Efraim Filho (DEM/NA),0.75
 42,178922,Tadeu Alencar,PSB,PE,oposição,Tadeu Alencar (PSB/PE),0.75
 42,178975,Baleia Rossi,MDB,SP,governo,Baleia Rossi (MDB/SP),0.75
-42,204371,Felipe Rigoni,PSB,ES,oposição,Felipe Rigoni (PSB/ES),1.6666666666666665
+42,204371,Felipe Rigoni,PSB,ES,oposição,Felipe Rigoni (PSB/ES),2.1666666666666665
 42,204388,Bibo Nunes,PSL,RS,governo,Bibo Nunes (PSL/RS),0.75
 42,204429,João H. Campos,PSB,PE,oposição,João H. Campos (PSB/PE),0.75
-42,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),1.6666666666666665
+42,204534,Tabata Amaral,PDT,SP,oposição,Tabata Amaral (PDT/SP),2.1666666666666665
 42,204544,Alexandre Frota,PSL,SP,governo,Alexandre Frota (PSL/SP),0.75
 43,160512,Aureo Ribeiro,SOLIDARIEDADE,RJ,governo,Aureo Ribeiro (SOLIDARIEDADE/RJ),2
 43,160587,Fábio Trad,PSD,MS,governo,Fábio Trad (PSD/MS),2
@@ -217,7 +229,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 46,945,Senador Alvaro Dias,PODEMOS,PR,governo,Senador Alvaro Dias (PODEMOS/PR),2
 47,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),2
 47,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),2
-48,285,Senador Marcio Bittar,MDB,AC,governo,Senador Marcio Bittar (MDB/AC),2
+48,285,Senador Marcio Bittar,MDB,AC,governo,Senador Marcio Bittar (MDB/AC),4
 48,4560,Senador Sérgio Petecão,PSD,AC,governo,Senador Sérgio Petecão (PSD/AC),2
 49,5895,Líder do PSB Jorge Kajuru,PSB,GO,oposição,Líder do PSB Jorge Kajuru (PSB/GO),2
 50,4770,Senador Izalci Lucas,PSDB,DF,governo,Senador Izalci Lucas (PSDB/DF),32
@@ -257,7 +269,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 55,160665,Augusto Coutinho,SOLIDARIEDADE,PE,governo,Augusto Coutinho (SOLIDARIEDADE/PE),0.8
 55,178854,Elmar Nascimento,DEM,BA,governo,Elmar Nascimento (DEM/BA),0.8
 55,178884,Hildo Rocha,MDB,MA,governo,Hildo Rocha (MDB/MA),0.8
-55,204418,Luizão Goulart,PRB,PR,governo,Luizão Goulart (PRB/PR),6
+55,204418,Luizão Goulart,PRB,PR,governo,Luizão Goulart (PRB/PR),8
 55,204504,Cezinha De Madureira,PSD,SP,governo,Cezinha De Madureira (PSD/SP),2
 55,74262,Carlos Sampaio,PSDB,SP,governo,Carlos Sampaio (PSDB/SP),0.8
 55,204358,Beto Pereira,PSDB,MS,governo,Beto Pereira (PSDB/MS),0.8
@@ -267,12 +279,12 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 56,4931,Izalci Lucas,PSDB,DF,governo,Izalci Lucas (PSDB/DF),4
 56,73486,Pompeo De Mattos,PDT,RS,oposição,Pompeo De Mattos (PDT/RS),6
 56,74398,Maria Do Rosário,PT,RS,oposição,Maria Do Rosário (PT/RS),12
-56,4770,Senador Izalci Lucas,PSDB,DF,governo,Senador Izalci Lucas (PSDB/DF),4
-56,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),6
+56,4770,Senador Izalci Lucas,PSDB,DF,governo,Senador Izalci Lucas (PSDB/DF),8
+56,5008,Senador Humberto Costa,PT,PE,oposição,Senador Humberto Costa (PT/PE),10
 56,5012,Senador Randolfe Rodrigues,REDE,AP,oposição,Senador Randolfe Rodrigues (REDE/AP),6
 56,5411,Senador Weverton,PDT,MA,oposição,Senador Weverton (PDT/MA),6
 56,5718,Senadora Eliziane Gama,CIDADANIA,MA,governo,Senadora Eliziane Gama (CIDADANIA/MA),6
-56,5783,Senadora Zenaide Maia,PROS,RN,governo,Senadora Zenaide Maia (PROS/RN),8
+56,5783,Senadora Zenaide Maia,PROS,RN,governo,Senadora Zenaide Maia (PROS/RN),14
 58,118594,Marcelo Squassoni,PRB,SP,governo,Marcelo Squassoni (PRB/SP),0.8333333333333333
 58,141531,Rodrigo De Castro,PSDB,MG,governo,Rodrigo De Castro (PSDB/MG),0.8333333333333333
 58,160575,Erika Kokay,PT,DF,oposição,Erika Kokay (PT/DF),8.666666666666666
@@ -282,7 +294,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 58,73655,Augusto Carvalho,SOLIDARIEDADE,DF,governo,Augusto Carvalho (SOLIDARIEDADE/DF),0.8333333333333333
 58,178868,Odorico Monteiro,PSB,CE,oposição,Odorico Monteiro (PSB/CE),0.8333333333333333
 58,178986,Nilto Tatto,PT,SP,oposição,Nilto Tatto (PT/SP),8.666666666666666
-60,116379,Darci De Matos,PSD,SC,governo,Darci De Matos (PSD/SC),2
+60,116379,Darci De Matos,PSD,SC,governo,Darci De Matos (PSD/SC),6
 60,141488,Paulo Teixeira,PT,SP,oposição,Paulo Teixeira (PT/SP),0.857142857142857
 60,141513,Bilac Pinto,DEM,MG,governo,Bilac Pinto (DEM/MG),0.8571428571428571
 60,141531,Rodrigo De Castro,PSDB,MG,governo,Rodrigo De Castro (PSDB/MG),2
@@ -293,7 +305,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,204461,Paulo Ganime,NOVO,RJ,governo,Paulo Ganime (NOVO/RJ),0.5
 60,204464,Talíria Petrone,PSOL,RJ,oposição,Talíria Petrone (PSOL/RJ),0.857142857142857
 60,204504,Cezinha De Madureira,PSD,SP,governo,Cezinha De Madureira (PSD/SP),4
-60,204526,Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Luiz Philippe De Orleans e Bragança (PSL/SP),2
+60,204526,Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Luiz Philippe De Orleans e Bragança (PSL/SP),8
 60,204551,Bosco Saraiva,SOLIDARIEDADE,AM,governo,Bosco Saraiva (SOLIDARIEDADE/AM),0.8
 60,204555,José Ricardo,PT,AM,oposição,José Ricardo (PT/AM),0.8
 60,204556,Marcelo Ramos,PL,AM,governo,Marcelo Ramos (PL/AM),0.8
