@@ -3,7 +3,7 @@ from django.db import models
 
 class CoautoriaEdges(models.Model):
     '''
-    Edges para criação do grafo de coautorias
+    Arestas para criação do grafo de coautorias
     '''
     id_leggo = models.IntegerField(
         help_text='Id do leggo.')

@@ -12,7 +12,7 @@ class CoautoriaEdgesSerializer(serializers.ModelSerializer):
 
 class CoautoriaEdgesList(generics.ListAPIView):
     '''
-    Lista as edges
+    Lista as arestas
     '''
     serializer_class = CoautoriaEdgesSerializer
 
