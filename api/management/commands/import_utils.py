@@ -12,8 +12,8 @@ from api.model.progresso import Progresso
 from api.model.proposicao import Proposicao
 from api.model.temperatura_historico import TemperaturaHistorico
 from api.model.tramitacao_event import TramitacaoEvent
-from api.model.nodes import Nodes
-from api.model.edges import Edges
+from api.model.coautoria_nodes import CoautoriaNodes
+from api.model.coautoria_edges import CoautoriaEdges
 
 
 def import_etapas_proposicoes():
@@ -109,9 +109,9 @@ def import_temperaturas():
             TemperaturaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
 
 
-def import_nodes():
+def import_coautoria_nodes():
     '''Carrega nós'''
-    grouped = pd.read_csv('data/nodes.csv').groupby(['id_leggo'])
+    grouped = pd.read_csv('data/coautorias_nodes.csv').groupby(['id_leggo'])
     for group_index in grouped.groups:
         id_leggo = {
             'id_leggo': group_index
@@ -126,13 +126,13 @@ def import_nodes():
             grouped
             .get_group(group_index)
         )
-        Nodes.objects.bulk_create(
-            Nodes(**r[1].to_dict()) for r in group_df.iterrows())
+        CoautoriaNodes.objects.bulk_create(
+            CoautoriaNodes(**r[1].to_dict()) for r in group_df.iterrows())
 
 
-def import_edges():
+def import_coautoria_edges():
     '''Carrega edges'''
-    grouped = pd.read_csv('data/edges.csv').groupby(['id_leggo'])
+    grouped = pd.read_csv('data/coautorias_edges.csv').groupby(['id_leggo'])
     for group_index in grouped.groups:
         id_leggo = {
             'id_leggo': group_index
@@ -147,8 +147,8 @@ def import_edges():
             grouped
             .get_group(group_index)
         )
-        Edges.objects.bulk_create(
-            Edges(**r[1].to_dict()) for r in group_df.iterrows())
+        CoautoriaEdges.objects.bulk_create(
+            CoautoriaEdges(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def import_pautas():
@@ -340,5 +340,5 @@ def import_all_data():
     import_comissoes()
     import_atores()
     import_pressao()
-    import_nodes()
-    import_edges()
+    import_coautoria_nodes()
+    import_coautoria_edges()

@@ -1,20 +1,21 @@
 from rest_framework import serializers, generics
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
-from api.model.edges import Edges
+from api.model.coautoria_nodes import CoautoriaNodes
 
 
-class EdgesSerializer(serializers.ModelSerializer):
+class CoautoriaNodesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Edges
-        fields = ('source', 'target', 'value')
+        model = CoautoriaNodes
+        fields = ('id_autor', 'nome', 'partido', 'uf',
+                  'bancada', 'nome_eleitoral', 'node_size')
 
 
-class EdgesList(generics.ListAPIView):
+class CoautoriaNodesList(generics.ListAPIView):
     '''
-    Lista as edges
+    Lista os nós
     '''
-    serializer_class = EdgesSerializer
+    serializer_class = CoautoriaNodesSerializer
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -25,4 +26,4 @@ class EdgesList(generics.ListAPIView):
     )
     def get_queryset(self):
         id_prop = self.kwargs['id']
-        return Edges.objects.filter(id_leggo=id_prop)
+        return CoautoriaNodes.objects.filter(id_leggo=id_prop)
