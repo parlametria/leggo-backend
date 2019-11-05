@@ -42,8 +42,8 @@ urlpatterns = [
         AtoresList.as_view()),
     url(r'^pressao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         PressaoList.as_view()),
-    url(r'^node/(?P<id>[0-9]+)/?$',
+    url(r'^coautorias_node/(?P<id>[0-9]+)/?$',
         CoautoriaNodeList.as_view()),
-    url(r'^edge/(?P<id>[0-9]+)/?$',
+    url(r'^coautorias_edge/(?P<id>[0-9]+)/?$',
         CoautoriaEdgeList.as_view()),
 ]
