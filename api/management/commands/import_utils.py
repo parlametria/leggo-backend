@@ -12,8 +12,8 @@ from api.model.progresso import Progresso
 from api.model.proposicao import Proposicao
 from api.model.temperatura_historico import TemperaturaHistorico
 from api.model.tramitacao_event import TramitacaoEvent
-from api.model.coautoria_nodes import CoautoriaNodes
-from api.model.coautoria_edges import CoautoriaEdges
+from api.model.coautoria_node import CoautoriaNode
+from api.model.coautoria_edge import CoautoriaEdge
 
 
 def import_etapas_proposicoes():
@@ -109,7 +109,7 @@ def import_temperaturas():
             TemperaturaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
 
 
-def import_coautoria_nodes():
+def import_coautoria_node():
     '''Carrega nós'''
     grouped = pd.read_csv('data/coautorias_nodes.csv').groupby(['id_leggo'])
     for group_index in grouped.groups:
@@ -126,12 +126,12 @@ def import_coautoria_nodes():
             grouped
             .get_group(group_index)
         )
-        CoautoriaNodes.objects.bulk_create(
-            CoautoriaNodes(**r[1].to_dict()) for r in group_df.iterrows())
+        CoautoriaNode.objects.bulk_create(
+            CoautoriaNode(**r[1].to_dict()) for r in group_df.iterrows())
 
 
-def import_coautoria_edges():
-    '''Carrega edges'''
+def import_coautoria_edge():
+    '''Carrega arestas'''
     grouped = pd.read_csv('data/coautorias_edges.csv').groupby(['id_leggo'])
     for group_index in grouped.groups:
         id_leggo = {
@@ -147,8 +147,8 @@ def import_coautoria_edges():
             grouped
             .get_group(group_index)
         )
-        CoautoriaEdges.objects.bulk_create(
-            CoautoriaEdges(**r[1].to_dict()) for r in group_df.iterrows())
+        CoautoriaEdge.objects.bulk_create(
+            CoautoriaEdge(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def import_pautas():
@@ -340,5 +340,5 @@ def import_all_data():
     import_comissoes()
     import_atores()
     import_pressao()
-    import_coautoria_nodes()
-    import_coautoria_edges()
+    import_coautoria_node()
+    import_coautoria_edge()

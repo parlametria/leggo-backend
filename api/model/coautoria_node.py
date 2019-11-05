@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class CoautoriaNodes(models.Model):
+class CoautoriaNode(models.Model):
     '''
     Nós para criação do grafo de coautorias
     '''

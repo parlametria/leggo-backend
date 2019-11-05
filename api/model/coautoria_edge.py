@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class CoautoriaEdges(models.Model):
+class CoautoriaEdge(models.Model):
     '''
     Arestas para criação do grafo de coautorias
     '''

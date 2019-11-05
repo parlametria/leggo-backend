@@ -10,8 +10,8 @@ from api.views.pauta_serializer import PautaList
 from api.views.emenda_serializer import EmendasList
 from api.views.ator_serializer import AtoresList
 from api.views.pressao_serializer import PressaoList
-from api.views.coautoria_nodes_serializer import CoautoriaNodesList
-from api.views.coautoria_edges_serializer import CoautoriaEdgesList
+from api.views.coautoria_node_serializer import CoautoriaNodeList
+from api.views.coautoria_edge_serializer import CoautoriaEdgeList
 
 
 # router = DefaultRouter()
@@ -42,8 +42,8 @@ urlpatterns = [
         AtoresList.as_view()),
     url(r'^pressao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         PressaoList.as_view()),
-    url(r'^nodes/(?P<id>[0-9]+)/?$',
-        CoautoriaNodesList.as_view()),
-    url(r'^edges/(?P<id>[0-9]+)/?$',
-        CoautoriaEdgesList.as_view()),
+    url(r'^node/(?P<id>[0-9]+)/?$',
+        CoautoriaNodeList.as_view()),
+    url(r'^edge/(?P<id>[0-9]+)/?$',
+        CoautoriaEdgeList.as_view()),
 ]
