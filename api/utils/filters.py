@@ -1,5 +1,4 @@
 from datetime import datetime, timedelta
-from api.model.temperatura_historico import TemperaturaHistorico
 from api.model.pauta_historico import PautaHistorico
 
 

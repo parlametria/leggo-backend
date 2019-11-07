@@ -64,7 +64,8 @@ class Proposicao(models.Model):
         '''
         Calcula coeficiente linear das temperaturas nas últimas 6 semanas.
         '''
-        temperatures = self.temperatura_historico.values('periodo', 'temperatura_recente')[:6]
+        temperatures = self.temperatura_historico.values(
+            'periodo', 'temperatura_recente')[:6]
         dates_x = [
             time.mktime(temperatura['periodo'].timetuple())
             for temperatura in temperatures]
