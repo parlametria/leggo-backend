@@ -147,18 +147,18 @@ class EtapaProposicao(models.Model):
         atores_filtrados = []
 
         top_n_atores = self.atores.values('id_autor') \
-            .annotate(total_docs=Sum('qtd_de_documentos')) \
+            .annotate(total_docs=Sum('peso_total_documentos')) \
             .order_by('-total_docs')[:15]
         atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
                                                  'partido', 'tipo_generico') \
-            .annotate(total_docs=Sum('qtd_de_documentos'))
+            .annotate(total_docs=Sum('peso_total_documentos'))
 
         for ator in atores_por_tipo_gen:
             for top_n_ator in top_n_atores:
                 if ator['id_autor'] == top_n_ator['id_autor']:
                     atores_filtrados.append({
                         'id_autor': ator['id_autor'],
-                        'qtd_de_documentos': ator['total_docs'],
+                        'peso_total_documentos': ator['total_docs'],
                         'tipo_generico': ator['tipo_generico'],
                         'nome_partido_uf': get_nome_partido_uf(
                             ator['nome_autor'], ator['partido'], ator['uf'])
@@ -174,7 +174,7 @@ class EtapaProposicao(models.Model):
         atores_filtrados = []
 
         top_n_atores = self.atores.values('id_autor') \
-            .annotate(total_docs=Sum('qtd_de_documentos')) \
+            .annotate(total_docs=Sum('peso_total_documentos')) \
             .order_by('-total_docs')
         for ator in self.atores.all():
             for top_n_ator in top_n_atores:
@@ -182,7 +182,7 @@ class EtapaProposicao(models.Model):
                     atores_filtrados.append({
                         'id_autor': ator.id_autor,
                         'nome_autor': ator.nome_autor,
-                        'qtd_de_documentos': ator.qtd_de_documentos,
+                        'peso_total_documentos': ator.peso_total_documentos,
                         'uf': ator.uf,
                         'partido': ator.partido,
                         'tipo_generico': ator.tipo_generico,

@@ -18,7 +18,7 @@ class Atores(models.Model):
 
     uf = models.TextField('Estado do ator')
 
-    qtd_de_documentos = models.IntegerField(
+    peso_total_documentos = models.FloatField(
         'Quantidade de documentos feitas por um determinado autor')
 
     tipo_generico = models.TextField(
