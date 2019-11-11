@@ -233,18 +233,18 @@ class EtapaProposicao(models.Model):
         '''
         comissoes = set()
         local_com_c_que_nao_e_comissao = "CD-MESA-PLEN"
-        for row in self.tramitacao.all():
-            if row.local != local_com_c_que_nao_e_comissao and row.local[0] == "C":
-                comissoes.add(row.local)
+        for row in self.tramitacao.values('local'):
+            if row['local'] != local_com_c_que_nao_e_comissao and row['local'][0] == "C":
+                comissoes.add(row['local'])
         return comissoes
 
     @property
     def ultima_pressao(self):
         pressoes = []
-        for p in self.pressao.all():
+        for p in self.pressao.values('maximo_geral', 'date'):
             pressoes.append({
-                'maximo_geral': p.maximo_geral,
-                'date': p.date
+                'maximo_geral': p['maximo_geral'],
+                'date': p['date']
             })
 
         if (len(pressoes) == 0):
