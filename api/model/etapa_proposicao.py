@@ -150,7 +150,7 @@ class EtapaProposicao(models.Model):
             .annotate(total_docs=Sum('peso_total_documentos')) \
             .order_by('-total_docs')[:15]
         atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
-                                                 'partido', 'tipo_generico') \
+                                                 'partido', 'tipo_generico', 'bancada') \
             .annotate(total_docs=Sum('peso_total_documentos'))
 
         for ator in atores_por_tipo_gen:
@@ -160,8 +160,10 @@ class EtapaProposicao(models.Model):
                         'id_autor': ator['id_autor'],
                         'peso_total_documentos': ator['total_docs'],
                         'tipo_generico': ator['tipo_generico'],
+                        'bancada': ator['bancada'],
                         'nome_partido_uf': get_nome_partido_uf(
-                            ator['nome_autor'], ator['partido'], ator['uf'])
+                            ator['bancada'], ator['nome_autor'],
+                            ator['partido'], ator['uf'])
                     })
 
         return atores_filtrados
@@ -186,6 +188,7 @@ class EtapaProposicao(models.Model):
                         'uf': ator.uf,
                         'partido': ator.partido,
                         'tipo_generico': ator.tipo_generico,
+                        'bancada': ator.bancada,
                         'nome_partido_uf': ator.nome_partido_uf,
                         'sigla_local': ator.sigla_local,
                         'is_important': ator.is_important

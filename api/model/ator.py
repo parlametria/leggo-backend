@@ -18,6 +18,8 @@ class Atores(models.Model):
 
     uf = models.TextField('Estado do ator')
 
+    bancada = models.TextField('Bancada do ator')
+
     peso_total_documentos = models.FloatField(
         'Quantidade de documentos feitas por um determinado autor')
 
@@ -35,7 +37,8 @@ class Atores(models.Model):
     @property
     def nome_partido_uf(self):
         '''Nome do parlamentar + partido e UF'''
-        return get_nome_partido_uf(self.nome_autor, self.partido, self.uf)
+        return get_nome_partido_uf(self.bancada,
+                                   self.nome_autor, self.partido, self.uf)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
