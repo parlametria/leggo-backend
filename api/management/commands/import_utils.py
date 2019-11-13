@@ -364,3 +364,4 @@ def import_all_data():
     import_pressao()
     import_coautoria_node()
     import_coautoria_edge()
+    import_autoria()
