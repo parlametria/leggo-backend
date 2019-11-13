@@ -12,6 +12,7 @@ from api.views.ator_serializer import AtoresList
 from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
+from api.views.autoria_serializer import AutoriaList
 
 
 # router = DefaultRouter()
@@ -44,4 +45,6 @@ urlpatterns = [
         CoautoriaNodeList.as_view()),
     url(r'^coautorias_edge/(?P<id>[0-9]+)/?$',
         CoautoriaEdgeList.as_view()),
+    url(r'^autorias/(?P<id>[0-9]+)/?$',
+        AutoriaList.as_view()),
 ]
