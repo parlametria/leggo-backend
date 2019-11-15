@@ -242,11 +242,11 @@ def import_emendas():
 
 def import_atores():
     '''Carrega Atores'''
-    atores_df = pd.read_csv('data/atores.csv').groupby(['casa', 'id_ext'])
+    atores_df = pd.read_csv('data/atores.csv').groupby(['id_leggo','casa','id_ext'])
     for group_index in atores_df.groups:
         prop_id = {
-            'casa': group_index[0],
-            'id_ext': group_index[1],
+            'casa': group_index[1],
+            'id_ext': group_index[2],
         }
 
         etapa_prop = get_etapa_proposicao(prop_id)
@@ -257,7 +257,7 @@ def import_atores():
         group_df = (
             atores_df
             .get_group(group_index)
-            [['id_autor', 'nome_autor', 'partido', 'uf',
+            [['id_leggo', 'id_autor', 'nome_autor', 'partido', 'uf',
              'peso_total_documentos', 'tipo_generico', 'sigla_local',
               'is_important', 'bancada']]
             .assign(proposicao=etapa_prop)

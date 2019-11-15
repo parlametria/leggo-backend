@@ -7,6 +7,7 @@ class Atores(models.Model):
     '''
     Atores de documentos
     '''
+    id_leggo = models.IntegerField('Id da proposição principal no leggo.')
 
     id_autor = models.FloatField('Id do autor do documento')
 
