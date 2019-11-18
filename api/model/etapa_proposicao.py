@@ -150,7 +150,8 @@ class EtapaProposicao(models.Model):
             .annotate(total_docs=Sum('peso_total_documentos')) \
             .order_by('-total_docs')[:15]
         atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
-                                                 'partido', 'tipo_generico', 'bancada') \
+                                                 'partido', 'tipo_generico', 
+                                                 'bancada', 'casa') \
             .annotate(total_docs=Sum('peso_total_documentos'))
 
         for ator in atores_por_tipo_gen:
@@ -162,7 +163,7 @@ class EtapaProposicao(models.Model):
                         'tipo_generico': ator['tipo_generico'],
                         'bancada': ator['bancada'],
                         'nome_partido_uf': get_nome_partido_uf(
-                            ator['bancada'], ator['nome_autor'],
+                            ator['casa'], ator['bancada'], ator['nome_autor'],
                             ator['partido'], ator['uf'])
                     })
 
@@ -171,7 +172,8 @@ class EtapaProposicao(models.Model):
     @property
     def top_important_atores(self):
         '''
-        Retorna os atores e comissões e plenário
+        Retorna os atores por local (apenas locais importantes:
+        comissões e plenário)
         '''
         atores_filtrados = []
 
