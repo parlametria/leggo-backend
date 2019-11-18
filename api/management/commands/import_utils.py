@@ -242,7 +242,7 @@ def import_emendas():
 
 def import_atores():
     '''Carrega Atores'''
-    atores_df = pd.read_csv('data/atores.csv').groupby(['id_leggo','casa','id_ext'])
+    atores_df = pd.read_csv('data/atores.csv').groupby(['id_leggo', 'casa', 'id_ext'])
     for group_index in atores_df.groups:
         prop_id = {
             'casa': group_index[1],
