@@ -24,8 +24,6 @@ urlpatterns = [
         ProposicaoDetail.as_view()),
     url(r'^proposicoes/?$', ProposicaoList.as_view()),
     url(r'^etapas/?$', EtapasList.as_view()),
-    # url(r'^temperatura/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-    #     views.TemperaturaHistoricoAPI.as_view()),
     url(r'^eventos_tramitacao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         TramitacaoEventList.as_view()),
     url(r'^eventos_tramitacao/?$', TramitacaoEventList.as_view()),
