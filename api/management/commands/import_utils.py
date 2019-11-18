@@ -257,7 +257,7 @@ def import_atores():
         group_df = (
             atores_df
             .get_group(group_index)
-            [['id_leggo', 'id_autor', 'nome_autor', 'partido', 'uf',
+            [['id_leggo', 'id_ext', 'casa', 'id_autor', 'nome_autor', 'partido', 'uf',
              'peso_total_documentos', 'tipo_generico', 'sigla_local',
               'is_important', 'bancada']]
             .assign(proposicao=etapa_prop)

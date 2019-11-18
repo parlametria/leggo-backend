@@ -1,6 +1,7 @@
 from django.db import models
 from api.utils.ator import get_nome_partido_uf
 from api.model.etapa_proposicao import EtapaProposicao
+from api.model.etapa_proposicao import Choices
 
 
 class Atores(models.Model):
@@ -8,6 +9,14 @@ class Atores(models.Model):
     Atores de documentos
     '''
     id_leggo = models.IntegerField('Id da proposição principal no leggo.')
+
+    id_ext = models.IntegerField('ID Externo',
+        help_text='Id externo do sistema da casa.')
+
+    casas = Choices('camara senado')
+    casa = models.CharField(
+        max_length=6, choices=casas.items(),
+        help_text='Casa desta proposição.')
 
     id_autor = models.FloatField('Id do autor do documento')
 
@@ -38,7 +47,7 @@ class Atores(models.Model):
     @property
     def nome_partido_uf(self):
         '''Nome do parlamentar + partido e UF'''
-        return get_nome_partido_uf(self.bancada,
+        return get_nome_partido_uf(self.casa, self.bancada,
                                    self.nome_autor, self.partido, self.uf)
 
     proposicao = models.ForeignKey(
