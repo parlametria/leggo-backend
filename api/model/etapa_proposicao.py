@@ -1,8 +1,6 @@
 from django.db import models
 from munch import Munch
 from api.model.proposicao import Proposicao
-from django.db.models import Sum
-from api.utils.ator import get_nome_partido_uf
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -138,65 +136,6 @@ class EtapaProposicao(models.Model):
     def url(self):
         '''URL para a página da proposição em sua respectiva casa.'''
         return URLS[self.casa] + str(self.id_ext)
-
-    @property
-    def top_atores(self):
-        '''
-        Retorna os top 15 atores (caso tenha menos de 15 retorna todos)
-        '''
-        atores_filtrados = []
-
-        top_n_atores = self.atores.values('id_autor') \
-            .annotate(total_docs=Sum('peso_total_documentos')) \
-            .order_by('-total_docs')[:15]
-        atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
-                                                 'partido', 'tipo_generico', 
-                                                 'bancada', 'casa') \
-            .annotate(total_docs=Sum('peso_total_documentos'))
-
-        for ator in atores_por_tipo_gen:
-            for top_n_ator in top_n_atores:
-                if ator['id_autor'] == top_n_ator['id_autor']:
-                    atores_filtrados.append({
-                        'id_autor': ator['id_autor'],
-                        'peso_total_documentos': ator['total_docs'],
-                        'tipo_generico': ator['tipo_generico'],
-                        'bancada': ator['bancada'],
-                        'nome_partido_uf': get_nome_partido_uf(
-                            ator['casa'], ator['bancada'], ator['nome_autor'],
-                            ator['partido'], ator['uf'])
-                    })
-
-        return atores_filtrados
-
-    @property
-    def top_important_atores(self):
-        '''
-        Retorna os atores por local (apenas locais importantes:
-        comissões e plenário)
-        '''
-        atores_filtrados = []
-
-        top_n_atores = self.atores.values('id_autor') \
-            .annotate(total_docs=Sum('peso_total_documentos')) \
-            .order_by('-total_docs')
-        for ator in self.atores.all():
-            for top_n_ator in top_n_atores:
-                if ator.id_autor == top_n_ator['id_autor'] and ator.is_important:
-                    atores_filtrados.append({
-                        'id_autor': ator.id_autor,
-                        'nome_autor': ator.nome_autor,
-                        'peso_total_documentos': ator.peso_total_documentos,
-                        'uf': ator.uf,
-                        'partido': ator.partido,
-                        'tipo_generico': ator.tipo_generico,
-                        'bancada': ator.bancada,
-                        'nome_partido_uf': ator.nome_partido_uf,
-                        'sigla_local': ator.sigla_local,
-                        'is_important': ator.is_important
-                    })
-
-        return atores_filtrados
 
     @property
     def status(self):

@@ -1,6 +1,6 @@
 from django.db import models
 from api.utils.ator import get_nome_partido_uf
-from api.model.etapa_proposicao import EtapaProposicao
+from api.model.etapa_proposicao import Proposicao
 from api.model.etapa_proposicao import Choices
 
 
@@ -45,10 +45,20 @@ class Atores(models.Model):
     )
 
     @property
+    def sigla_local_formatada(self):
+        '''Formata a sigla local para ter a casa'''
+        if self.casa == 'camara':
+            casa = 'Câmara'
+        else:
+            casa = 'Senado'
+
+        return self.sigla_local + ' - ' + casa
+
+    @property
     def nome_partido_uf(self):
         '''Nome do parlamentar + partido e UF'''
         return get_nome_partido_uf(self.casa, self.bancada,
                                    self.nome_autor, self.partido, self.uf)
 
     proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='atores')
+        Proposicao, on_delete=models.CASCADE, related_name='atores')
