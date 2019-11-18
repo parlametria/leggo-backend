@@ -94,7 +94,7 @@ class Proposicao(models.Model):
         Separa temas
         '''
         return self.tema.split(";")
-    
+
     @property
     def top_atores(self):
         '''
@@ -106,7 +106,7 @@ class Proposicao(models.Model):
             .annotate(total_docs=Sum('peso_total_documentos')) \
             .order_by('-total_docs')[:15]
         atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
-                                                 'partido', 'tipo_generico', 
+                                                 'partido', 'tipo_generico',
                                                  'bancada', 'casa') \
             .annotate(total_docs=Sum('peso_total_documentos'))
 
