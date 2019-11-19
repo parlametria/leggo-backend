@@ -10,7 +10,7 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
         model = Atores
         fields = (
             'id_autor', 'nome_autor', 'partido', 'uf',
-            'peso_total_documentos', 'tipo_generico',
+            'peso_total_documentos', 'num_documentos','tipo_generico',
             'sigla_local_formatada', 'is_important', 'nome_partido_uf')
 
 
@@ -18,8 +18,8 @@ class AtoresSerializer(serializers.ModelSerializer):
     class Meta:
         model = Atores
         fields = (
-            'id_autor', 'peso_total_documentos', 'tipo_generico',
-            'nome_partido_uf')
+            'id_autor', 'peso_total_documentos', 'num_documentos',
+            'tipo_generico', 'nome_partido_uf')
 
 
 class AtoresList(generics.ListAPIView):

@@ -108,7 +108,8 @@ class Proposicao(models.Model):
         atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
                                                  'partido', 'tipo_generico',
                                                  'bancada', 'casa') \
-            .annotate(total_docs=Sum('peso_total_documentos'))
+            .annotate(total_docs=Sum('peso_total_documentos'),
+                        num_docs=Sum('num_documentos'))
 
         for ator in atores_por_tipo_gen:
             for top_n_ator in top_n_atores:
@@ -116,6 +117,7 @@ class Proposicao(models.Model):
                     atores_filtrados.append({
                         'id_autor': ator['id_autor'],
                         'peso_total_documentos': ator['total_docs'],
+                        'num_documentos': ator['num_docs'],
                         'tipo_generico': ator['tipo_generico'],
                         'bancada': ator['bancada'],
                         'casa': ator['casa'],
@@ -144,6 +146,7 @@ class Proposicao(models.Model):
                         'id_autor': ator.id_autor,
                         'nome_autor': ator.nome_autor,
                         'peso_total_documentos': ator.peso_total_documentos,
+                        'num_documentos': ator.num_documentos,
                         'uf': ator.uf,
                         'casa': ator.casa,
                         'partido': ator.partido,

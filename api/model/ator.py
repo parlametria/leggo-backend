@@ -31,7 +31,10 @@ class Atores(models.Model):
     bancada = models.TextField('Bancada do ator')
 
     peso_total_documentos = models.FloatField(
-        'Quantidade de documentos feitas por um determinado autor')
+        'Contribuição agregada de um determinado autor em documentos')
+
+    num_documentos = models.IntegerField(
+        'Quantidade de documentos apresentada por um determinado autor')
 
     tipo_generico = models.TextField(
         'Tipo do documento')
