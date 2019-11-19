@@ -109,7 +109,7 @@ class Proposicao(models.Model):
                                                  'partido', 'tipo_generico',
                                                  'bancada', 'casa') \
             .annotate(total_docs=Sum('peso_total_documentos'),
-                        num_docs=Sum('num_documentos'))
+                      num_docs=Sum('num_documentos'))
 
         for ator in atores_por_tipo_gen:
             for top_n_ator in top_n_atores:
