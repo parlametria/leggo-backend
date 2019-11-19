@@ -11,7 +11,7 @@ class Atores(models.Model):
     id_leggo = models.IntegerField('Id da proposição principal no leggo.')
 
     id_ext = models.IntegerField('ID Externo',
-        help_text='Id externo do sistema da casa.')
+                                 help_text='Id externo do sistema da casa.')
 
     casas = Choices('camara senado')
     casa = models.CharField(
