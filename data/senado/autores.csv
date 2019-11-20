@@ -1,0 +1,22 @@
+id_principal,id_documento,casa,nome_autor,partido,uf,tipo_autor,id_autor
+135216,7916349,senado,Senador Weverton ,PDT,MA,senador,5411
+135216,7943572,senado,Senador Rodrigo Pacheco ,DEM,MG,senador,5732
+135216,7945061,senado,Presidente do Senado Federal: Senador Sérgio Petecão ,PSD,AC,senador,4560
+135796,7928653,senado,Senador Marcio Bittar ,MDB,AC,senador,285
+135796,7949834,senado,Senador Alessandro Vieira ,CIDADANIA,SE,senador,5982
+135796,7957050,senado,Senador Marcio Bittar ,MDB,AC,senador,285
+135796,7963194,senado,Senadora Eliziane Gama ,CIDADANIA,MA,senador,5718
+135796,7967638,senado,Senador Jaques Wagner ,PT,BA,senador,581
+135796,7969802,senado,Senador Randolfe Rodrigues ,REDE,AP,senador,5012
+135796,7989681,senado,Senador Eduardo Braga ,MDB,AM,senador,4994
+135796,7980029,senado,Presidente do Senado Federal: Senador Izalci Lucas ,PSDB,DF,senador,4770
+135796,7990108,senado,Presidente do Senado Federal: Senador Lasier Martins ,PODEMOS,RS,senador,5533
+135796,7993970,senado,Senador Jaques Wagner ,PT,BA,senador,581
+135796,7992303,senado,Presidente do Senado Federal: Senador Lasier Martins ,PODEMOS,RS,senador,5533
+135796,7998306,senado,Senador Alessandro Vieira ,CIDADANIA,SE,senador,5982
+135216,7945325,senado,Presidente do Senado Federal,NA,NA,nao_parlamentar,NA
+135796,7956389,senado,Comissão de Meio Ambiente,NA,NA,nao_parlamentar,NA
+135796,7978964,senado,Comissão de Meio Ambiente,NA,NA,nao_parlamentar,NA
+135796,7979774,senado,Presidente do Senado Federal,NA,NA,nao_parlamentar,NA
+135796,7992854,senado,Senado Federal,NA,NA,nao_parlamentar,NA
+135796,7994171,senado,Comissão de Meio Ambiente,NA,NA,nao_parlamentar,NA

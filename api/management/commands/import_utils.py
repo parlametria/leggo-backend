@@ -12,6 +12,8 @@ from api.model.progresso import Progresso
 from api.model.proposicao import Proposicao
 from api.model.temperatura_historico import TemperaturaHistorico
 from api.model.tramitacao_event import TramitacaoEvent
+from api.model.coautoria_node import CoautoriaNode
+from api.model.coautoria_edge import CoautoriaEdge
 
 
 def import_etapas_proposicoes():
@@ -107,6 +109,48 @@ def import_temperaturas():
             TemperaturaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
 
 
+def import_coautoria_node():
+    '''Carrega nós'''
+    grouped = pd.read_csv('data/coautorias_nodes.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo)
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+        )
+        CoautoriaNode.objects.bulk_create(
+            CoautoriaNode(**r[1].to_dict()) for r in group_df.iterrows())
+
+
+def import_coautoria_edge():
+    '''Carrega arestas'''
+    grouped = pd.read_csv('data/coautorias_edges.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo)
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+        )
+        CoautoriaEdge.objects.bulk_create(
+            CoautoriaEdge(**r[1].to_dict()) for r in group_df.iterrows())
+
+
 def import_pautas():
     '''Carrega históricos de pautas'''
     grouped = pd.read_csv('data/pautas.csv').groupby(['casa', 'id_ext'])
@@ -198,25 +242,24 @@ def import_emendas():
 
 def import_atores():
     '''Carrega Atores'''
-    atores_df = pd.read_csv('data/atores.csv').groupby(['casa', 'id_ext'])
+    atores_df = pd.read_csv('data/atores.csv').groupby(['id_leggo'])
     for group_index in atores_df.groups:
-        prop_id = {
-            'casa': group_index[0],
-            'id_ext': group_index[1],
+        id_leggo = {
+            'id_leggo': group_index
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        prop = get_proposicao(id_leggo)
 
-        if etapa_prop is None:
+        if prop is None:
             continue
 
         group_df = (
             atores_df
             .get_group(group_index)
-            [['id_autor', 'nome_autor', 'partido', 'uf',
-             'qtd_de_documentos', 'tipo_generico', 'sigla_local',
-              'is_important']]
-            .assign(proposicao=etapa_prop)
+            [['id_leggo', 'id_ext', 'casa', 'id_autor', 'nome_autor', 'partido', 'uf',
+             'peso_total_documentos', 'num_documentos', 'tipo_generico', 'sigla_local',
+              'is_important', 'bancada']]
+            .assign(proposicao=prop)
         )
         Atores.objects.bulk_create(
             Atores(**r[1].to_dict()) for r in group_df.iterrows())
@@ -296,3 +339,5 @@ def import_all_data():
     import_comissoes()
     import_atores()
     import_pressao()
+    import_coautoria_node()
+    import_coautoria_edge()
