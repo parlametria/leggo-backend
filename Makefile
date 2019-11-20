@@ -74,6 +74,9 @@ endif
 	@echo "    "
 	@echo "    update"
 	@echo "        This command will execute update-agorapi and import"
+	@echo "    "
+	@echo "    update-data-remote"
+	@echo "        This command will clean the DB and get the data from the remote server"
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -125,3 +128,6 @@ endif
 .PHONY: update-agorapi
  update: update-agorapi import
 .PHONY: reset
+ update-data-remote:
+	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data_from_remote'
+.PHONY: update-data-remote
