@@ -1,9 +1,9 @@
-,id_ext,date,casa,PEC 29/2015,PEC Antiaborto,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral
-0,120152,2019-05-20,senado,94,0,False,94,0,94
-1,120152,2019-05-27,senado,93,0,False,93,0,93
-2,120152,2019-06-03,senado,98,0,False,98,0,98
+,id_ext,date,casa,PEC Antiaborto,PEC 29/2015,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral
+0,120152,2019-05-20,senado,0,0,False,0,0,0
+1,120152,2019-05-27,senado,0,0,False,0,0,0
+2,120152,2019-06-03,senado,0,100,False,100,0,100
 3,120152,2019-06-10,senado,0,0,False,0,0,0
-4,120152,2019-06-17,senado,100,0,False,100,0,100
+4,120152,2019-06-17,senado,0,0,False,0,0,0
 5,120152,2019-06-24,senado,0,0,False,0,0,0
 6,120152,2019-07-01,senado,0,0,False,0,0,0
 7,120152,2019-07-08,senado,0,0,False,0,0,0
@@ -21,7 +21,7 @@
 19,120152,2019-09-30,senado,0,0,False,0,0,0
 20,120152,2019-10-07,senado,0,0,False,0,0,0
 21,120152,2019-10-14,senado,0,0,False,0,0,0
-22,120152,2019-10-21,senado,86,0,False,86,0,86
-23,120152,2019-10-28,senado,0,0,False,0,0,0
+22,120152,2019-10-21,senado,0,0,False,0,0,0
+23,120152,2019-10-28,senado,0,95,False,95,0,95
 24,120152,2019-11-04,senado,0,0,False,0,0,0
 25,120152,2019-11-11,senado,0,0,False,0,0,0

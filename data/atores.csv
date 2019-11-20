@@ -22,6 +22,7 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 55,16526,camara,178910,deputado,Joaquim Passarinho,PSD,PA,Emenda,PLEN,2,2,TRUE,governo
 55,16526,camara,204398,deputado,Felipe Francischini,PSL,PR,Emenda,PLEN,2,2,TRUE,governo
 55,16526,camara,204418,deputado,Luizão Goulart,PRB,PR,Emenda,PLEN,2,2,TRUE,governo
+55,16526,camara,204418,deputado,Luizão Goulart,PRB,PR,Requerimento,PLEN,2,2,TRUE,governo
 55,16526,camara,204530,deputado,Rodrigo Agostinho,PSB,SP,Proposição Apensada,CCP,2,2,FALSE,oposição
 55,16526,camara,178854,deputado,Elmar Nascimento,DEM,BA,Emenda,PLEN,1.2,2,TRUE,governo
 55,16526,camara,74283,deputado,Vicentinho,PT,SP,Requerimento,PLEN,1,1,TRUE,oposição
@@ -43,8 +44,6 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 55,16526,camara,204365,deputado,Gilson Marques,NOVO,SC,Emenda,PLEN,1,1,TRUE,governo
 55,16526,camara,204371,deputado,Felipe Rigoni,PSB,ES,Emenda,PLEN,1,1,TRUE,oposição
 55,16526,camara,204389,deputado,Elias Vaz,PSB,GO,Emenda,PLEN,1,1,TRUE,oposição
-55,16526,camara,204418,deputado,Luizão Goulart,PRB,PR,Requerimento,MESA,1,1,FALSE,governo
-55,16526,camara,204418,deputado,Luizão Goulart,PRB,PR,Requerimento,PLEN,1,1,TRUE,governo
 55,16526,camara,204427,deputado,Fernando Rodolfo,PL,PE,Proposição Apensada,CCP,1,1,FALSE,governo
 55,16526,camara,204429,deputado,João H. Campos,PSB,PE,Emenda,PLEN,1,1,TRUE,oposição
 55,16526,camara,204452,deputado,Márcio Labre,PSL,,Proposição Apensada,CCP,1,1,FALSE,governo
@@ -58,11 +57,13 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 55,16526,camara,74262,deputado,Carlos Sampaio,PSDB,SP,Emenda,PLEN,0.2,1,TRUE,governo
 55,16526,camara,178884,deputado,Hildo Rocha,MDB,MA,Emenda,PLEN,0.2,1,TRUE,governo
 55,16526,camara,204358,deputado,Beto Pereira,PSDB,MS,Emenda,PLEN,0.2,1,TRUE,governo
-5,46249,camara,72442,deputado,Felipe Carreras,PSB,PE,Proposição Apensada,MESA,1,1,FALSE,oposição
+5,46249,camara,72442,deputado,Felipe Carreras,PSB,PE,Proposição Apensada,MESA,2,2,FALSE,oposição
 5,46249,camara,74400,deputado,Paulo Pimenta,PT,RS,Proposição Apensada,CCP,1,1,FALSE,oposição
 5,46249,camara,133968,deputado,Paulo Ramos,PDT,RJ,Proposição Apensada,CCP,1,1,FALSE,oposição
-5,46249,camara,178858,deputado,Mário Negromonte Jr.,PP,BA,Proposição Apensada,CCP,1,1,FALSE,governo
-5,46249,camara,178930,deputado,Evandro Roman,PSD,PR,Proposição Apensada,CCP,1,1,FALSE,governo
+5,46249,camara,160632,deputado,Zé Silva,SOLIDARIEDADE,MG,Proposição Apensada,CCP,1,1,FALSE,governo
+5,46249,camara,178835,deputado,Afonso Motta,PDT,RS,Proposição Apensada,MESA,1,1,FALSE,oposição
+5,46249,camara,178858,deputado,Mário Negromonte Jr.,PP,BA,Proposição Apensada,MESA,1,1,FALSE,governo
+5,46249,camara,178930,deputado,Evandro Roman,PSD,PR,Proposição Apensada,MESA,1,1,FALSE,governo
 5,46249,camara,178970,deputado,João Daniel,PT,SE,Proposição Apensada,CCP,1,1,FALSE,oposição
 5,46249,camara,178986,deputado,Nilto Tatto,PT,SP,Proposição Apensada,CCP,1,1,FALSE,oposição
 5,46249,camara,204478,deputado,Vinicius Farah,MDB,RJ,Requerimento,PLEN,1,3,TRUE,governo
@@ -94,15 +95,16 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 42,353631,camara,204429,deputado,João H. Campos,PSB,PE,Emenda,PLEN,0.25,1,TRUE,oposição
 42,353631,camara,204544,deputado,Alexandre Frota,PSL,SP,Emenda,PLEN,0.25,1,TRUE,governo
 52,522447,camara,178881,deputado,Aluisio Mendes,PODE,MA,Parecer,CSPCCO,1,1,TRUE,governo
-13,541857,camara,204416,deputado,Sanderson,PSL,RS,Proposição Apensada,CCP,3,3,FALSE,governo
 13,541857,camara,160545,deputado,Alexandre Leite,DEM,SP,Proposição Apensada,CCP,2,2,FALSE,governo
+13,541857,camara,204416,deputado,Sanderson,PSL,RS,Proposição Apensada,CCP,2,2,FALSE,governo
+13,541857,camara,204416,deputado,Sanderson,PSL,RS,Proposição Apensada,MESA,2,2,FALSE,governo
 13,541857,camara,204416,deputado,Ubiratan Sanderson,PSL,RS,Requerimento,PLEN,2,2,TRUE,governo
 13,541857,camara,204548,deputado,Heitor Freire,PSL,CE,Proposição Apensada,CCP,2,2,FALSE,governo
 13,541857,camara,204456,deputado,Gutemberg Reis,MDB,RJ,Proposição Apensada,CCP,1.5,2,FALSE,governo
 13,541857,camara,73486,deputado,Pompeo de Mattos,PDT,RS,Proposição Apensada,CCP,1,1,FALSE,oposição
 13,541857,camara,73486,deputado,Pompeo De Mattos,PDT,RS,Proposição Apensada,MESA,1,1,FALSE,oposição
-13,541857,camara,74044,deputado,Wilson Santiago,PTB,PB,Proposição Apensada,CCP,1,1,FALSE,governo
-13,541857,camara,74305,deputado,Roberto Pessoa,PSDB,CE,Proposição Apensada,CCP,1,1,FALSE,governo
+13,541857,camara,74044,deputado,Wilson Santiago,PTB,PB,Proposição Apensada,MESA,1,1,FALSE,governo
+13,541857,camara,74305,deputado,Roberto Pessoa,PSDB,CE,Proposição Apensada,MESA,1,1,FALSE,governo
 13,541857,camara,74399,deputado,Onyx Lorenzoni,DEM,,Requerimento,PLEN,1,1,TRUE,governo
 13,541857,camara,74419,deputado,Gonzaga Patriota,PSB,PE,Proposição Apensada,CCP,1,1,FALSE,oposição
 13,541857,camara,74585,deputado,Lincoln Portela,PL,MG,Proposição Apensada,CCP,1,1,FALSE,governo
@@ -123,20 +125,20 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 13,541857,camara,179587,deputado,Major Vitor Hugo,PSL,GO,Proposição Apensada,CCP,1,1,FALSE,governo
 13,541857,camara,179587,deputado,Major Vitor Hugo,PSL,GO,Requerimento,PLEN,1,2,TRUE,governo
 13,541857,camara,194260,deputado,Nivaldo Albuquerque,PTB,AL,Proposição Apensada,CCP,1,1,FALSE,governo
-13,541857,camara,204355,deputado,Da Vitoria,CIDADANIA,ES,Proposição Apensada,CCP,1,1,FALSE,governo
+13,541857,camara,204355,deputado,Da Vitoria,CIDADANIA,ES,Proposição Apensada,MESA,1,1,FALSE,governo
 13,541857,camara,204356,deputado,Amaro Neto,PRB,ES,Proposição Apensada,CCP,1,1,FALSE,governo
 13,541857,camara,204359,deputado,Léo Moraes,PODE,RO,Requerimento,PLEN,1,1,TRUE,governo
 13,541857,camara,204368,deputado,Fabio Schiochet,PSL,SC,Proposição Apensada,MESA,1,1,FALSE,governo
 13,541857,camara,204388,deputado,Bibo Nunes,PSL,RS,Proposição Apensada,CCP,1,1,FALSE,governo
 13,541857,camara,204388,deputado,Bibo Nunes,PSL,RS,Requerimento,PLEN,1,1,TRUE,governo
 13,541857,camara,204391,deputado,José Nelto,PODE,GO,Proposição Apensada,CCP,1,1,FALSE,governo
-13,541857,camara,204416,deputado,Sanderson,PSL,RS,Proposição Apensada,MESA,1,1,FALSE,governo
 13,541857,camara,204416,deputado,Ubiratan Sanderson,PSL,RS,Requerimento,MESA,1,1,FALSE,governo
 13,541857,camara,204420,deputado,Julian Lemos,PSL,PB,Proposição Apensada,CCP,1,1,FALSE,governo
 13,541857,camara,204421,deputado,Edna Henrique,PSDB,PB,Proposição Apensada,CCP,1,1,FALSE,governo
 13,541857,camara,204441,deputado,Otoni De Paula,PSC,RJ,Proposição Apensada,CCP,1,1,FALSE,governo
+13,541857,camara,204442,deputado,Gurgel,PSL,RJ,Proposição Apensada,MESA,1,1,FALSE,governo
 13,541857,camara,204472,deputado,José Medeiros,PODE,MT,Proposição Apensada,CCP,1,1,FALSE,governo
-13,541857,camara,204511,deputado,David Soares,DEM,SP,Proposição Apensada,CCP,1,1,FALSE,governo
+13,541857,camara,204511,deputado,David Soares,DEM,SP,Proposição Apensada,MESA,1,1,FALSE,governo
 13,541857,camara,204512,deputado,Delegado Marcelo Freitas,PSL,MG,Proposição Apensada,CCP,1,1,FALSE,governo
 13,541857,camara,204529,deputado,Policial Katia Sastre,PL,SP,Proposição Apensada,CCP,1,1,FALSE,governo
 13,541857,camara,204531,deputado,Guilherme Derrite,PP,,Proposição Apensada,CCP,1,1,FALSE,governo
@@ -153,17 +155,18 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 33,604888,camara,160598,deputado,Flávia Morais,PDT,GO,Emenda,PLEN,1,1,TRUE,oposição
 33,604888,camara,160653,deputado,Roberto De Lucena,PODE,SP,Requerimento,PLEN,1,1,TRUE,governo
 33,604888,camara,178881,deputado,Aluisio Mendes,PODE,MA,Emenda,PLEN,1,1,TRUE,governo
-33,604888,camara,204377,deputado,Paula Belmonte,CIDADANIA,DF,Proposição Apensada,CCP,1,1,FALSE,governo
+33,604888,camara,204377,deputado,Paula Belmonte,CIDADANIA,DF,Proposição Apensada,MESA,1,1,FALSE,governo
 33,604888,camara,204488,deputado,Célio Studart,PV,CE,Proposição Apensada,CCP,1,1,FALSE,governo
 33,604888,camara,204526,deputado,Luiz Philippe de Orleans e Bragança,PSL,SP,Proposição Apensada,MESA,1,1,FALSE,governo
 33,604888,camara,204526,deputado,Luiz Philippe De Orleans e Bragança,PSL,SP,Proposição Apensada,MESA,1,1,FALSE,governo
 33,604888,camara,204530,deputado,Rodrigo Agostinho,PSB,SP,Proposição Apensada,CCP,1,1,FALSE,oposição
+33,604888,camara,204536,deputado,Kim Kataguiri,DEM,SP,Proposição Apensada,CCP,1,1,FALSE,governo
+12,606722,camara,204444,deputado,Helio Lopes,PSL,RJ,Proposição Apensada,MESA,2,2,FALSE,governo
 12,606722,camara,160531,deputado,Jhonatan De Jesus,PRB,RR,Requerimento,PLEN,1,1,TRUE,governo
 12,606722,camara,160642,deputado,Pastor Eurico,PATRIOTA,PE,Proposição Apensada,CCP,1,1,FALSE,governo
 12,606722,camara,164359,deputado,Delegado Waldir,PSL,GO,Requerimento,PLEN,1,1,TRUE,governo
 12,606722,camara,204374,deputado,Bia Kicis,PSL,DF,Requerimento,PLEN,1,1,TRUE,governo
 12,606722,camara,204441,deputado,Otoni De Paula,PSC,RJ,Proposição Apensada,CCP,1,1,FALSE,governo
-12,606722,camara,204444,deputado,Helio Lopes,PSL,RJ,Proposição Apensada,MESA,1,1,FALSE,governo
 12,606722,camara,204453,deputado,Natália Bonavides,PT,RN,Proposição Apensada,CCP,1,1,FALSE,oposição
 12,606722,camara,204478,deputado,Vinicius Farah,MDB,RJ,Requerimento,PLEN,1,3,TRUE,governo
 12,606722,camara,204503,deputado,Alexandre Padilha,PT,SP,Proposição Apensada,CCP,1,1,FALSE,oposição
@@ -177,14 +180,15 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 12,606722,camara,204464,deputado,Talíria Petrone,PSOL,RJ,Proposição Apensada,CCP,0.2,1,FALSE,oposição
 12,606722,camara,204509,deputado,Áurea Carolina,PSOL,MG,Proposição Apensada,CCP,0.2,1,FALSE,oposição
 12,606722,camara,204535,deputado,Sâmia Bomfim,PSOL,SP,Proposição Apensada,CCP,0.2,1,FALSE,oposição
-54,1198512,camara,160639,deputado,Professora Dorinha Seabra Rezende,DEM,TO,Requerimento,PEC01515,5,5,TRUE,governo
+54,1198512,camara,160639,deputado,Professora Dorinha Seabra Rezende,DEM,TO,Requerimento,PEC01515,7,7,TRUE,governo
+54,1198512,camara,160604,deputado,Pedro Uczai,PT,SC,Requerimento,PEC01515,3,3,TRUE,oposição
 54,1198512,camara,204467,deputado,Professora Rosa Neide,PT,MT,Requerimento,PEC01515,3,3,TRUE,oposição
 54,1198512,camara,204371,deputado,Felipe Rigoni,PSB,ES,Emenda,PEC01515,1.1666666666666667,3,TRUE,oposição
 54,1198512,camara,69871,deputado,Bacelar,PODE,BA,Requerimento,PEC01515,1,1,TRUE,governo
 54,1198512,camara,74057,deputado,Alice Portugal,PCdoB,BA,Requerimento,PEC01515,1,1,TRUE,oposição
 54,1198512,camara,141523,deputado,Raul Henry,MDB,PE,Requerimento,PEC01515,1,1,TRUE,governo
-54,1198512,camara,160604,deputado,Pedro Uczai,PT,SC,Requerimento,PEC01515,1,1,TRUE,oposição
 54,1198512,camara,160639,deputado,Professora Dorinha Seabra Rezende,DEM,TO,Requerimento,PLEN,1,1,TRUE,governo
+54,1198512,camara,204375,deputado,Leda Sadala,AVANTE,AP,Requerimento,PEC01515,1,1,TRUE,governo
 54,1198512,camara,204459,deputado,Daniela Do Waguinho,MDB,RJ,Requerimento,PEC01515,1,1,TRUE,governo
 54,1198512,camara,204467,deputado,Professora Rosa Neide,PT,MT,Outros,.,1,1,FALSE,oposição
 54,1198512,camara,204467,deputado,Professora Rosa Neide,PT,MT,Outros,Audiência Pública realizada com a presença do senhor JUCA GIL - Representante da Associação Nacional de Pós-Graduação e Pesquisa em Educação - ANPED.,1,1,FALSE,oposição
@@ -209,8 +213,15 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 54,1198512,camara,204453,deputado,Natália Bonavides,PT,RN,Requerimento,CE,0.1111111111111111,1,TRUE,oposição
 54,1198512,camara,204467,deputado,Professora Rosa Neide,PT,MT,Requerimento,CE,0.1111111111111111,1,TRUE,oposição
 54,1198512,camara,204501,deputado,Alencar Santana Braga,PT,SP,Requerimento,CE,0.1111111111111111,1,TRUE,oposição
+58,1307190,camara,160538,deputado,Bohn Gass,PT,RS,Emenda,PL191715,20,20,TRUE,oposição
+58,1307190,camara,141417,deputado,Edio Lopes,PL,RR,Requerimento,PL191715,2,2,TRUE,governo
+58,1307190,camara,160758,deputado,Domingos Sávio,PSDB,MG,Emenda,PL191715,2,2,TRUE,governo
+58,1307190,camara,98057,deputado,Lafayette de Andrada,PRB,MG,Requerimento,PL191715,1,1,TRUE,governo
+58,1307190,camara,108338,deputado,Jaqueline Cassol,PP,RO,Requerimento,PL191715,1,1,TRUE,governo
 58,1307190,camara,141408,deputado,Cleber Verde,PRB,MA,Requerimento,PLEN,1,2,TRUE,governo
+58,1307190,camara,160528,deputado,Danilo Cabral,PSB,PE,Emenda,PL191715,1,1,TRUE,oposição
 58,1307190,camara,204505,deputado,Vavá Martins,PRB,PA,Proposição Apensada,CCP,1,2,FALSE,governo
+58,1307190,camara,204523,deputado,Lucas Gonzalez,NOVO,MG,Emenda,PL191715,1,1,TRUE,governo
 17,1738598,camara,160655,deputado,Ricardo Izar,PP,SP,Requerimento,PLEN,1,1,TRUE,governo
 59,2081681,camara,177282,deputado,Subtenente Gonzaga,PDT,MG,Requerimento,PLEN,1,2,TRUE,oposição
 4,2088990,camara,204523,deputado,Lucas Gonzalez,NOVO,MG,Requerimento,PLEN,1,1,TRUE,governo
@@ -697,9 +708,11 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 47,2193540,camara,204358,deputado,Beto Pereira,PSDB,MS,Emenda,PLEN,1,1,TRUE,governo
 60,2196833,camara,204500,deputado,Eduardo Costa,PTB,PA,Emenda,PEC04519,9,9,TRUE,governo
 60,2196833,camara,151208,deputado,Laercio Oliveira,PP,SE,Emenda,PEC04519,8,8,TRUE,governo
-60,2196833,camara,76874,deputado,Marcelo Freixo,PSOL,RJ,Requerimento,PEC04519,7,20,TRUE,oposição
 60,2196833,camara,74161,deputado,Reginaldo Lopes,PT,MG,Requerimento,PEC04519,6,6,TRUE,oposição
+60,2196833,camara,76874,deputado,Marcelo Freixo,PSOL,RJ,Requerimento,PEC04519,5.5,11,TRUE,oposição
+60,2196833,camara,204407,deputado,Fernanda Melchionna,PSOL,RS,Requerimento,PEC04519,5.5,11,TRUE,oposição
 60,2196833,camara,204516,deputado,Alexis Fonteyne,NOVO,SP,Requerimento,PEC04519,5.5,6,TRUE,governo
+60,2196833,camara,141422,deputado,Efraim Filho,DEM,,Emenda,PEC04519,5,5,TRUE,governo
 60,2196833,camara,178992,deputado,Vitor Lippi,PSDB,SP,Requerimento,PEC04519,5,5,TRUE,governo
 60,2196833,camara,204371,deputado,Felipe Rigoni,PSB,ES,Emenda,PEC04519,5,5,TRUE,oposição
 60,2196833,camara,204468,deputado,Joenia Wapichana,REDE,RR,Emenda,PEC04519,5,5,TRUE,oposição
@@ -710,41 +723,44 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 60,2196833,camara,90842,deputado,Santini,PTB,RS,Emenda,PEC04519,4,4,TRUE,governo
 60,2196833,camara,133439,deputado,André Figueiredo,PDT,CE,Emenda,PEC04519,4,4,TRUE,oposição
 60,2196833,camara,141391,deputado,Arnaldo Jardim,CIDADANIA,SP,Emenda,PEC04519,4,4,TRUE,governo
-60,2196833,camara,141422,deputado,Efraim Filho,DEM,,Emenda,PEC04519,4,4,TRUE,governo
 60,2196833,camara,141488,deputado,Paulo Teixeira,PT,SP,Requerimento,PEC04519,4,4,TRUE,oposição
+60,2196833,camara,160508,deputado,Afonso Florence,PT,BA,Emenda,PEC04519,4,4,TRUE,oposição
 60,2196833,camara,160639,deputado,Professora Dorinha Seabra Rezende,DEM,TO,Emenda,PEC04519,4,4,TRUE,governo
-60,2196833,camara,177282,deputado,Subtenente Gonzaga,PDT,MG,Emenda,PEC04519,4,4,TRUE,oposição
 60,2196833,camara,178896,deputado,Newton Cardoso Jr,MDB,MG,Emenda,PEC04519,4,4,TRUE,governo
 60,2196833,camara,178896,deputado,Newton Cardoso Jr,MDB,MG,Requerimento,PEC04519,4,4,TRUE,governo
 60,2196833,camara,178930,deputado,Evandro Roman,PSD,PR,Emenda,PEC04519,4,4,TRUE,governo
 60,2196833,camara,178933,deputado,Sergio Souza,MDB,PR,Emenda,PEC04519,4,4,TRUE,governo
 60,2196833,camara,178997,deputado,Moses Rodrigues,MDB,CE,Emenda,PEC04519,4,4,TRUE,governo
 60,2196833,camara,204383,deputado,Professor Israel Batista,PV,DF,Emenda,PEC04519,4,4,TRUE,governo
-60,2196833,camara,204407,deputado,Fernanda Melchionna,PSOL,RS,Requerimento,PEC04519,4,11,TRUE,oposição
 60,2196833,camara,204534,deputado,Tabata Amaral,PDT,SP,Emenda,PEC04519,4,4,TRUE,oposição
 60,2196833,camara,204556,deputado,Marcelo Ramos,PL,AM,Emenda,PEC04519,4,4,TRUE,governo
 60,2196833,camara,204557,deputado,Sidney Leite,PSD,AM,Emenda,PEC04519,4,4,TRUE,governo
+60,2196833,camara,177282,deputado,Subtenente Gonzaga,PDT,MG,Emenda,PEC04519,3.25,4,TRUE,oposição
+60,2196833,camara,204572,deputado,Capitão Alberto Neto,PRB,AM,Emenda,PEC04519,3.25,4,TRUE,governo
 60,2196833,camara,204556,deputado,Marcelo Ramos,PL,AM,Requerimento,PEC04519,3.2,4,TRUE,governo
 60,2196833,camara,74317,deputado,Júlio Cesar,PSD,PI,Emenda,PEC04519,3,3,TRUE,governo
+60,2196833,camara,132504,deputado,Enio Verri,PT,,Emenda,PEC04519,3,3,TRUE,oposição
 60,2196833,camara,141553,deputado,Vanderlei Macris,PSDB,SP,Emenda,PEC04519,3,3,TRUE,governo
 60,2196833,camara,160527,deputado,Aguinaldo Ribeiro,PP,PB,Requerimento,PEC04519,3,3,TRUE,governo
+60,2196833,camara,160570,deputado,Jerônimo Goergen,PP,RS,Emenda,PEC04519,3,3,TRUE,governo
 60,2196833,camara,178981,deputado,Herculano Passos,MDB,SP,Emenda,PEC04519,3,3,TRUE,governo
 60,2196833,camara,204381,deputado,Luis Miranda,DEM,DF,Emenda,PEC04519,3,3,TRUE,governo
 60,2196833,camara,204413,deputado,Alcides Rodrigues,PATRIOTA,GO,Requerimento,PEC04519,3,3,TRUE,governo
 60,2196833,camara,204425,deputado,Silvio Costa Filho,PRB,PE,Emenda,PEC04519,3,3,TRUE,governo
 60,2196833,camara,204496,deputado,Celso Sabino,PSDB,PA,Emenda,PEC04519,3,3,TRUE,governo
 60,2196833,camara,204496,deputado,Celso Sabino,PSDB,PA,Requerimento,PEC04519,3,3,TRUE,governo
-60,2196833,camara,204572,deputado,Capitão Alberto Neto,PRB,AM,Emenda,PEC04519,3,3,TRUE,governo
+60,2196833,camara,204514,deputado,Coronel Tadeu,PSL,SP,Emenda,PEC04519,2.25,3,TRUE,governo
 60,2196833,camara,74044,deputado,Wilson Santiago,PTB,PB,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,74305,deputado,Roberto Pessoa,PSDB,CE,Emenda,PEC04519,2,2,TRUE,governo
-60,2196833,camara,74366,deputado,João Campos,PRB,GO,Emenda,PEC04519,2,4,TRUE,governo
+60,2196833,camara,74366,deputado,João Campos,PRB,GO,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,76874,deputado,Marcelo Freixo,PSOL,RJ,Emenda,PEC04519,2,2,TRUE,oposição
+60,2196833,camara,90201,deputado,Pedro Augusto Bezerra,PTB,CE,Requerimento,PEC04519,2,2,TRUE,governo
 60,2196833,camara,116379,deputado,Darci de Matos,PSD,SC,Requerimento,PEC04519,2,2,TRUE,governo
 60,2196833,camara,122974,deputado,Pedro Lucas Fernandes,PTB,MA,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,141523,deputado,Raul Henry,MDB,PE,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,160518,deputado,Weliton Prado,PROS,MG,Emenda,PEC04519,2,2,TRUE,governo
-60,2196833,camara,160570,deputado,Jerônimo Goergen,PP,RS,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,160666,deputado,Félix Mendonça Júnior,PDT,BA,Emenda,PEC04519,2,2,TRUE,oposição
+60,2196833,camara,178884,deputado,Hildo Rocha,MDB,MA,Requerimento,PEC04519,2,2,TRUE,governo
 60,2196833,camara,178977,deputado,Eduardo Cury,PSDB,SP,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,178977,deputado,Eduardo Cury,PSDB,SP,Requerimento,PEC04519,2,2,TRUE,governo
 60,2196833,camara,204355,deputado,Da Vitoria,CIDADANIA,ES,Emenda,PEC04519,2,2,TRUE,governo
@@ -753,7 +769,6 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 60,2196833,camara,204407,deputado,Fernanda Melchionna,PSOL,RS,Emenda,PEC04519,2,2,TRUE,oposição
 60,2196833,camara,204482,deputado,Euclydes Pettersen,PSC,MG,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,204504,deputado,Cezinha de Madureira,PSD,SP,Requerimento,PEC04519,2,2,TRUE,governo
-60,2196833,camara,204514,deputado,Coronel Tadeu,PSL,SP,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,204515,deputado,André Janones,AVANTE,MG,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,204516,deputado,Alexis Fonteyne,NOVO,SP,Emenda,PEC04519,2,2,TRUE,governo
 60,2196833,camara,204518,deputado,Dr. Frederico,PATRIOTA,MG,Emenda,PEC04519,2,2,TRUE,governo
@@ -775,7 +790,6 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 60,2196833,camara,74478,deputado,Luciano Bivar,PSL,PE,Emenda,PEC04519,1,2,TRUE,governo
 60,2196833,camara,74749,deputado,Mauro Lopes,MDB,MG,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,74848,deputado,Jandira Feghali,PCdoB,RJ,Emenda,PEC04519,1,1,TRUE,oposição
-60,2196833,camara,90201,deputado,Pedro Augusto Bezerra,PTB,CE,Requerimento,PEC04519,1,2,TRUE,governo
 60,2196833,camara,109429,deputado,Benes Leocádio,PRB,RN,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,116379,deputado,Darci de Matos,PSD,SC,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,122158,deputado,Pedro Paulo,DEM,RJ,Requerimento,PEC04519,1,1,TRUE,governo
@@ -787,18 +801,20 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 60,2196833,camara,141516,deputado,Paulo Abi-Ackel,PSDB,MG,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,141531,deputado,Rodrigo de Castro,PSDB,MG,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,151208,deputado,Laercio Oliveira,PP,SE,Requerimento,PEC04519,1,1,TRUE,governo
+60,2196833,camara,151208,deputado,Laercio Oliveira,PP,SE,Requerimento,PL345308,1,1,TRUE,governo
 60,2196833,camara,156190,deputado,Marcel Van Hattem,NOVO,RS,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,159237,deputado,Assis Carvalho,PT,PI,Emenda,PEC04519,1,1,TRUE,oposição
 60,2196833,camara,160538,deputado,Bohn Gass,PT,RS,Emenda,PEC04519,1,1,TRUE,oposição
+60,2196833,camara,160569,deputado,Waldenor Pereira,PT,BA,Emenda,PEC04519,1,1,TRUE,oposição
 60,2196833,camara,160600,deputado,Arthur Oliveira Maia,DEM,BA,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,160758,deputado,Domingos Sávio,PSDB,MG,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,162332,deputado,Luiz Nishimori,PL,PR,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178832,deputado,Leandre,PV,PR,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178835,deputado,Afonso Motta,PDT,RS,Requerimento,PLEN,1,1,TRUE,oposição
 60,2196833,camara,178863,deputado,Uldurico Junior,PROS,BA,Emenda,PEC04519,1,1,TRUE,governo
+60,2196833,camara,178871,deputado,Evair Vieira de Melo,PP,ES,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178871,deputado,Evair Vieira de Melo,PP,ES,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178879,deputado,Lucas Vergilio,SOLIDARIEDADE,GO,Emenda,PEC04519,1,1,TRUE,governo
-60,2196833,camara,178884,deputado,Hildo Rocha,MDB,MA,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178886,deputado,Juscelino Filho,DEM,MA,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178934,deputado,Toninho Wandscheer,PROS,PR,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178937,deputado,Altineu Côrtes,PL,RJ,Emenda,PEC04519,1,1,TRUE,governo
@@ -810,10 +826,12 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 60,2196833,camara,178989,deputado,Renata Abreu,PODE,SP,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178989,deputado,Renata Abreu,PODE,SP,Requerimento,PEC04519,1,3,TRUE,governo
 60,2196833,camara,178992,deputado,Vitor Lippi,PSDB,SP,Emenda,PEC04519,1,1,TRUE,governo
+60,2196833,camara,178993,deputado,Carlos Henrique Gaguim,DEM,TO,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,178994,deputado,Dulce Miranda,MDB,TO,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,191923,deputado,Flávio Nogueira,PDT,PI,Emenda,PEC04519,1,1,TRUE,oposição
 60,2196833,camara,204355,deputado,Da Vitoria,CIDADANIA,ES,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204364,deputado,Eli Borges,SOLIDARIEDADE,TO,Emenda,PEC04519,1,1,TRUE,governo
+60,2196833,camara,204377,deputado,Paula Belmonte,CIDADANIA,DF,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204380,deputado,Celina Leão,PP,DF,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204389,deputado,Elias Vaz,PSB,GO,Requerimento,PEC04519,1,1,TRUE,oposição
 60,2196833,camara,204392,deputado,Francisco Jr.,PSD,GO,Emenda,PEC04519,1,1,TRUE,governo
@@ -831,13 +849,16 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 60,2196833,camara,204460,deputado,Carlos Jordy,PSL,RJ,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204464,deputado,Talíria Petrone,PSOL,RJ,Voto em Separado,CCJC,1,1,TRUE,oposição
 60,2196833,camara,204484,deputado,General Peternelli,PSL,SP,Emenda,PEC04519,1,1,TRUE,governo
+60,2196833,camara,204491,deputado,Gilberto Abramo,PRB,MG,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204499,deputado,Cássio Andrade,PSB,PA,Emenda,PEC04519,1,1,TRUE,oposição
+60,2196833,camara,204501,deputado,Alencar Santana Braga,PT,SP,Emenda,PEC04519,1,1,TRUE,oposição
 60,2196833,camara,204506,deputado,Marcos Pereira,PRB,SP,Parecer,MESA,1,1,FALSE,governo
 60,2196833,camara,204517,deputado,Zé Vitor,PL,MG,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204527,deputado,Geninho Zuliani,DEM,SP,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204537,deputado,Enrico Misasi,PV,SP,Emenda,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204543,deputado,Luiz Flávio Gomes,PSB,SP,Emenda,PEC04519,1,1,TRUE,oposição
 60,2196833,camara,204552,deputado,Eduardo Braide,PMN,MA,Emenda,PEC04519,1,1,TRUE,governo
+60,2196833,camara,204552,deputado,Eduardo Braide,PMN,MA,Requerimento,PEC04519,1,1,TRUE,governo
 60,2196833,camara,204555,deputado,José Ricardo,PT,AM,Emenda,PEC04519,1,1,TRUE,oposição
 60,2196833,camara,204559,deputado,Zé Neto,PT,BA,Requerimento,PEC04519,1,3,TRUE,oposição
 60,2196833,camara,204566,deputado,Marreca Filho,PATRIOTA,MA,Emenda,PEC04519,1,1,TRUE,governo
@@ -847,6 +868,7 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 60,2196833,camara,177282,deputado,Subtenente Gonzaga,PDT,MG,Requerimento,CCJC,0.47619047619047616,2,TRUE,oposição
 60,2196833,camara,73486,deputado,Pompeo De Mattos,PDT,RS,Requerimento,CCJC,0.3333333333333333,1,TRUE,oposição
 60,2196833,camara,204541,deputado,Eduardo Bismarck,PDT,CE,Requerimento,CCJC,0.3333333333333333,1,TRUE,oposição
+60,2196833,camara,204487,deputado,Capitão Wagner,PROS,CE,Emenda,PEC04519,0.25,1,TRUE,governo
 60,2196833,camara,204555,deputado,José Ricardo,PT,AM,Requerimento,PEC04519,0.2,1,TRUE,oposição
 60,2196833,camara,204572,deputado,Capitão Alberto Neto,PRB,AM,Requerimento,PEC04519,0.2,1,TRUE,governo
 60,2196833,camara,98057,deputado,Lafayette De Andrada,PRB,MG,Requerimento,CCJC,0.14285714285714285,1,TRUE,governo
@@ -929,13 +951,95 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 62,2208200,camara,204396,deputado,Vermelho,PSD,PR,Emenda,MPV88419,1,1,TRUE,governo
 62,2208200,camara,204449,deputado,Nelson Barbudo,PSL,MT,Parecer,PLEN,1,1,TRUE,governo
 62,2208200,camara,204530,deputado,Rodrigo Agostinho,PSB,SP,Emenda,MPV88419,1,1,TRUE,oposição
+65,2209381,camara,160575,deputado,Erika Kokay,PT,DF,Emenda,PLEN,21,21,TRUE,oposição
+65,2209381,camara,160511,deputado,Alessandro Molon,PSB,RJ,Emenda,PLEN,15,15,TRUE,oposição
+65,2209381,camara,133968,deputado,Paulo Ramos,PDT,RJ,Emenda,PLEN,10.2,11,TRUE,oposição
+65,2209381,camara,164359,deputado,Delegado Waldir,PSL,GO,Emenda,PLEN,8.825,15,TRUE,governo
+65,2209381,camara,160545,deputado,Alexandre Leite,DEM,SP,Parecer,PLEN,4,4,TRUE,governo
+65,2209381,camara,204466,deputado,Tereza Nelma,PSDB,AL,Emenda,PLEN,4,4,TRUE,governo
+65,2209381,camara,204559,deputado,Zé Neto,PT,BA,Emenda,PLEN,4,4,TRUE,oposição
+65,2209381,camara,160545,deputado,Alexandre Leite,DEM,SP,Parecer,PL372319,3,3,TRUE,governo
+65,2209381,camara,160545,deputado,Alexandre Leite,DEM,SP,Requerimento,PLEN,3,3,TRUE,governo
+65,2209381,camara,160674,deputado,Hugo Motta,PRB,PB,Emenda,PLEN,3,3,TRUE,governo
+65,2209381,camara,74366,deputado,João Campos,PRB,GO,Emenda,PLEN,2.783333333333333,5,TRUE,governo
+65,2209381,camara,204572,deputado,Capitão Alberto Neto,PRB,AM,Emenda,PLEN,2.3333333333333335,3,TRUE,governo
+65,2209381,camara,90842,deputado,Santini,PTB,RS,Emenda,PLEN,2.25,3,TRUE,governo
+65,2209381,camara,73486,deputado,Pompeo de Mattos,PDT,RS,Emenda,PLEN,2.2,3,TRUE,oposição
+65,2209381,camara,76874,deputado,Marcelo Freixo,PSOL,RJ,Emenda,PLEN,2,2,TRUE,oposição
+65,2209381,camara,160655,deputado,Ricardo Izar,PP,SP,Emenda,PLEN,2,2,TRUE,governo
+65,2209381,camara,179587,deputado,Vitor Hugo,PSL,GO,Emenda,PLEN,2,2,TRUE,governo
+65,2209381,camara,204376,deputado,Coronel Armando,PSL,SC,Emenda,PLEN,2,2,TRUE,governo
+65,2209381,camara,204479,deputado,Nicoletti,PSL,RR,Emenda,PLEN,2,2,TRUE,governo
+65,2209381,camara,198783,deputado,Emanuel Pinheiro Neto,PTB,MT,Emenda,PLEN,1.4583333333333333,5,TRUE,governo
+65,2209381,camara,204439,deputado,Dr. Leonardo,SOLIDARIEDADE,MT,Emenda,PLEN,1.3333333333333333,4,TRUE,governo
+65,2209381,camara,68720,deputado,Fábio Henrique,PDT,SE,Emenda,PLEN,1.125,2,TRUE,oposição
+65,2209381,camara,74366,deputado,João Campos,PRB,GO,Requerimento,PLEN,1,1,TRUE,governo
+65,2209381,camara,132504,deputado,Enio Verri,PT,,Emenda,PLEN,1,1,TRUE,oposição
+65,2209381,camara,141518,deputado,Paulo Pereira da Silva,SOLIDARIEDADE,SP,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,150418,deputado,Márcio Marinho,PRB,BA,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,160541,deputado,Arthur Lira,PP,AL,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,160545,deputado,Alexandre Leite,DEM,SP,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,160598,deputado,Flávia Morais,PDT,GO,Emenda,PLEN,1,1,TRUE,oposição
+65,2209381,camara,178916,deputado,Daniel Coelho,CIDADANIA,PE,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204363,deputado,Osires Damaso,PSC,TO,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204371,deputado,Felipe Rigoni,PSB,ES,Emenda,PLEN,1,1,TRUE,oposição
+65,2209381,camara,204373,deputado,Hélio Costa,PRB,SC,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204403,deputado,Marlon Santos,PDT,RS,Emenda,PLEN,1,1,TRUE,oposição
+65,2209381,camara,204416,deputado,Sanderson,PSL,RS,Emenda,PLEN,1,2,TRUE,governo
+65,2209381,camara,204418,deputado,Luizão Goulart,PRB,PR,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204427,deputado,Fernando Rodolfo,PL,PE,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204454,deputado,Daniel Silveira,PSL,RJ,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204461,deputado,Paulo Ganime,NOVO,RJ,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204484,deputado,General Peternelli,PSL,SP,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204514,deputado,Coronel Tadeu,PSL,SP,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204526,deputado,Luiz Philippe de Orleans e Bragança,PSL,SP,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204562,deputado,Edilázio Júnior,PSD,MA,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,204570,deputado,Pastor Gildenemyr,PMN,MA,Emenda,PLEN,1,1,TRUE,governo
+65,2209381,camara,141450,deputado,Hugo Leal,PSD,RJ,Emenda,PLEN,0.95,4,TRUE,governo
+65,2209381,camara,73486,deputado,Pompeo de Mattos,PDT,RS,Emenda,CCP,0.6666666666666666,2,FALSE,oposição
+65,2209381,camara,160587,deputado,Fábio Trad,PSD,MS,Emenda,CCP,0.6666666666666666,2,FALSE,governo
+65,2209381,camara,178835,deputado,Afonso Motta,PDT,RS,Emenda,CCP,0.6666666666666666,2,FALSE,oposição
+65,2209381,camara,133439,deputado,André Figueiredo,PDT,CE,Emenda,PLEN,0.5,2,TRUE,oposição
+65,2209381,camara,160604,deputado,Pedro Uczai,PT,SC,Emenda,PLEN,0.5,2,TRUE,oposição
+65,2209381,camara,74585,deputado,Lincoln Portela,PL,MG,Emenda,PLEN,0.45,2,TRUE,governo
+65,2209381,camara,178829,deputado,Capitão Augusto,PL,SP,Emenda,PLEN,0.45,2,TRUE,governo
+65,2209381,camara,179587,deputado,Major Vitor Hugo,PSL,GO,Emenda,PLEN,0.41666666666666663,2,TRUE,governo
+65,2209381,camara,74043,deputado,Wellington Roberto,PL,PB,Emenda,PLEN,0.3333333333333333,1,TRUE,governo
+65,2209381,camara,160545,deputado,Alexandre Leite,DEM,SP,Emenda,MESA,0.3333333333333333,2,FALSE,governo
+65,2209381,camara,160587,deputado,Fábio Trad,PSD,MS,Emenda,PLEN,0.3333333333333333,1,TRUE,governo
+65,2209381,camara,160642,deputado,Pastor Eurico,PATRIOTA,PE,Emenda,MESA,0.3333333333333333,2,FALSE,governo
+65,2209381,camara,160673,deputado,Giovani Cherini,PL,RS,Emenda,PLEN,0.3333333333333333,1,TRUE,governo
+65,2209381,camara,204427,deputado,Fernando Rodolfo,PL,PE,Emenda,MESA,0.3333333333333333,2,FALSE,governo
+65,2209381,camara,204544,deputado,Alexandre Frota,PSL,SP,Emenda,PLEN,0.3333333333333333,1,TRUE,governo
+65,2209381,camara,204359,deputado,Léo Moraes,PODE,RO,Emenda,PLEN,0.325,2,TRUE,governo
+65,2209381,camara,204391,deputado,José Nelto,PODE,GO,Emenda,PLEN,0.29166666666666663,2,TRUE,governo
+65,2209381,camara,141411,deputado,Dagoberto Nogueira,PDT,MS,Emenda,PLEN,0.25,1,TRUE,oposição
+65,2209381,camara,177282,deputado,Subtenente Gonzaga,PDT,MG,Emenda,PLEN,0.25,1,TRUE,oposição
+65,2209381,camara,178881,deputado,Aluisio Mendes,PODE,MA,Emenda,PLEN,0.25,1,TRUE,governo
+65,2209381,camara,204500,deputado,Eduardo Costa,PTB,PA,Emenda,PLEN,0.25,1,TRUE,governo
+65,2209381,camara,204388,deputado,Bibo Nunes,PSL,RS,Emenda,PLEN,0.2,1,TRUE,governo
+65,2209381,camara,204425,deputado,Silvio Costa Filho,PRB,PE,Emenda,PLEN,0.2,1,TRUE,governo
+65,2209381,camara,74366,deputado,João Campos,PRB,GO,Emenda,MESA,0.16666666666666666,1,FALSE,governo
+65,2209381,camara,74585,deputado,Lincoln Portela,PL,MG,Emenda,MESA,0.16666666666666666,1,FALSE,governo
+65,2209381,camara,93083,deputado,Cacá Leão,PP,BA,Emenda,PLEN,0.16666666666666666,1,TRUE,governo
+65,2209381,camara,156190,deputado,Marcel Van Hattem,NOVO,RS,Emenda,PLEN,0.16666666666666666,1,TRUE,governo
+65,2209381,camara,160587,deputado,Fábio Trad,PSD,MS,Emenda,MESA,0.16666666666666666,1,FALSE,governo
+65,2209381,camara,178934,deputado,Toninho Wandscheer,PROS,PR,Emenda,PLEN,0.16666666666666666,1,TRUE,governo
+65,2209381,camara,204369,deputado,Caroline de Toni,PSL,SC,Emenda,MESA,0.16666666666666666,1,FALSE,governo
+65,2209381,camara,204377,deputado,Paula Belmonte,CIDADANIA,DF,Emenda,MESA,0.16666666666666666,1,FALSE,governo
+65,2209381,camara,204507,deputado,Carla Zambelli,PSL,SP,Emenda,MESA,0.16666666666666666,1,FALSE,governo
+65,2209381,camara,74471,deputado,André de Paula,PSD,PE,Emenda,PLEN,0.125,1,TRUE,governo
+65,2209381,camara,204487,deputado,Capitão Wagner,PROS,CE,Emenda,PLEN,0.125,1,TRUE,governo
+65,2209381,camara,204490,deputado,Charlles Evangelista,PSL,MG,Emenda,PLEN,0.125,1,TRUE,governo
 40,120152,senado,5929,senador,Juíza Selma,PSL,MT,Parecer,CCJ,1,1,TRUE,governo
 40,120152,senado,5953,senador,Fabiano Contarato,REDE,ES,Emenda,CCJ,1,1,TRUE,oposição
 40,120152,senado,5982,senador,Alessandro Vieira,CIDADANIA,SE,Emenda,CCJ,1,1,TRUE,governo
-31,120768,senado,5979,senador,Leila Barros,PSB,DF,Parecer,CDH,4,4,TRUE,oposição
+31,120768,senado,5979,senador,Leila Barros,PSB,DF,Parecer,CDH,5,5,TRUE,oposição
 57,126049,senado,3777,senador,Eduardo Gomes,MDB,TO,Emenda,CI,7,7,TRUE,governo
 57,126049,senado,3777,senador,Eduardo Gomes,MDB,TO,Requerimento,CI,1,1,TRUE,governo
+57,126049,senado,5422,senador,Marcos Rogério,DEM,RO,Parecer,CI,1,1,TRUE,governo
 57,126049,senado,5422,senador,Marcos Rogério,DEM,RO,Requerimento,CI,1,1,TRUE,governo
+57,126049,senado,5535,senador,Telmário Mota,PROS,RR,Emenda,CI,1,1,TRUE,governo
 57,126049,senado,5926,senador,Lucas Barreto,PSD,AP,Emenda,CI,1,1,TRUE,governo
 57,126049,senado,5990,senador,Carlos Viana,PSD,MG,Requerimento,CI,1,1,TRUE,governo
 1,128634,senado,5982,senador,Alessandro Vieira,CIDADANIA,SE,Emenda,CCJ,7,7,TRUE,governo
@@ -1216,6 +1320,7 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 46,136033,senado,4994,senador,Eduardo Braga,MDB,AM,Requerimento,CCJ,1,1,TRUE,governo
 46,136033,senado,5942,senador,Marcos do Val,CIDADANIA,ES,Parecer,CCJ,1,1,TRUE,governo
 46,136033,senado,5942,senador,Marcos do Val,CIDADANIA,ES,Requerimento,Plenário,1,1,TRUE,governo
+46,136033,senado,5953,senador,Fabiano Contarato,REDE,ES,Emenda,CCJ,1,1,TRUE,oposição
 46,136033,senado,5982,senador,Alessandro Vieira,CIDADANIA,SE,Emenda,CCJ,1,1,TRUE,governo
 47,136173,senado,5533,senador,Lasier Martins,PODE,RS,Emenda,Plenário,3,3,TRUE,governo
 47,136173,senado,739,senador,Ciro Nogueira,PP,PI,Emenda,Plenário,2,2,TRUE,governo
@@ -1347,10 +1452,11 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 34,137999,senado,5748,senador,Veneziano Vital do Rêgo,PSB,PB,Emenda,CCJ,23,23,TRUE,oposição
 34,137999,senado,581,senador,Jaques Wagner,PT,BA,Emenda,CCJ,22,22,TRUE,oposição
 34,137999,senado,5502,senador,Plínio Valério,PSDB,AM,Emenda,CCJ,21,21,TRUE,governo
+34,137999,senado,825,senador,Paulo Paim,PT,RS,Requerimento,Plenário,19,19,TRUE,oposição
 34,137999,senado,5942,senador,Marcos do Val,PODEMOS,ES,Emenda,CCJ,18,18,TRUE,governo
 34,137999,senado,5012,senador,Randolfe Rodrigues,REDE,AP,Emenda,CCJ,17,17,TRUE,oposição
+34,137999,senado,3396,senador,Tasso Jereissati,PSDB,CE,Parecer,CCJ,13,23,TRUE,governo
 34,137999,senado,2331,senador,Rose de Freitas,PODEMOS,ES,Emenda,CCJ,11,11,TRUE,governo
-34,137999,senado,3396,senador,Tasso Jereissati,PSDB,CE,Parecer,CCJ,10,20,TRUE,governo
 34,137999,senado,5953,senador,Fabiano Contarato,REDE,ES,Emenda,CCJ,9,9,TRUE,oposição
 34,137999,senado,5718,senador,Eliziane Gama,CIDADANIA,MA,Emenda,CCJ,8,8,TRUE,governo
 34,137999,senado,5982,senador,Alessandro Vieira,CIDADANIA,SE,Emenda,CCJ,8,8,TRUE,governo
@@ -1364,9 +1470,12 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 34,137999,senado,5979,senador,Leila Barros,PSB,DF,Emenda,CCJ,5,5,TRUE,oposição
 34,137999,senado,5990,senador,Carlos Viana,PSD,MG,Emenda,CCJ,5,5,TRUE,governo
 34,137999,senado,3361,senador,José Maranhão,MDB,PB,Emenda,CCJ,4,4,TRUE,governo
+34,137999,senado,5012,senador,Randolfe Rodrigues,REDE,AP,Requerimento,Plenário,4,4,TRUE,oposição
 34,137999,senado,5533,senador,Lasier Martins,PODEMOS,RS,Emenda,CCJ,4,4,TRUE,governo
 34,137999,senado,5666,senador,Major Olimpio,PSL,SP,Emenda,CCJ,4,4,TRUE,governo
+34,137999,senado,5008,senador,Humberto Costa,PT,PE,Requerimento,Plenário,3,3,TRUE,oposição
 34,137999,senado,5350,senador,Jorginho Mello,PL,SC,Emenda,CCJ,3,3,TRUE,governo
+34,137999,senado,5411,senador,Weverton,PDT,MA,Requerimento,Plenário,3,3,TRUE,oposição
 34,137999,senado,5523,senador,Otto Alencar,PSD,BA,Emenda,CCJ,3,3,TRUE,governo
 34,137999,senado,5929,senador,Juíza Selma,PSL,MT,Emenda,CCJ,3,3,TRUE,governo
 34,137999,senado,5967,senador,Angelo Coronel,PSD,BA,Emenda,CCJ,3,3,TRUE,governo
@@ -1375,10 +1484,9 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 34,137999,senado,945,senador,Alvaro Dias,PODEMOS,PR,Requerimento,Plenário,2,2,TRUE,governo
 34,137999,senado,4981,senador,Acir Gurgacz,PDT,RO,Emenda,CCJ,2,2,TRUE,oposição
 34,137999,senado,4994,senador,Eduardo Braga,MDB,AM,Emenda,CCJ,2,2,TRUE,governo
-34,137999,senado,5008,senador,Humberto Costa,PT,PE,Requerimento,Plenário,2,2,TRUE,oposição
 34,137999,senado,5008,senador,Humberto Costa,PT,PE,Requerimento,,2,2,FALSE,oposição
-34,137999,senado,5012,senador,Randolfe Rodrigues,REDE,AP,Requerimento,Plenário,2,2,TRUE,oposição
 34,137999,senado,5502,senador,Plínio Valério,PSDB,AM,Requerimento,Plenário,2,2,TRUE,governo
+34,137999,senado,5718,senador,Eliziane Gama,CIDADANIA,MA,Requerimento,Plenário,2,2,TRUE,governo
 34,137999,senado,22,senador,Esperidião Amin,PP,SC,Emenda,CCJ,1,1,TRUE,governo
 34,137999,senado,35,senador,Jader Barbalho,MDB,PA,Emenda,CCJ,1,1,TRUE,governo
 34,137999,senado,70,senador,Renan Calheiros,MDB,AL,Emenda,CCJ,1,1,TRUE,governo
@@ -1389,22 +1497,23 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 34,137999,senado,1186,senador,Luis Carlos Heinze,PP,RS,Emenda,CCJ,1,1,TRUE,governo
 34,137999,senado,4994,senador,Eduardo Braga,MDB,AM,Requerimento,Plenário,1,1,TRUE,governo
 34,137999,senado,5012,senador,Randolfe Rodrigues,REDE,AP,Requerimento,,1,1,FALSE,oposição
+34,137999,senado,5012,senador,Randolfe Rodrigues,REDE,AP,Voto em Separado,CCJ,1,1,TRUE,oposição
 34,137999,senado,5376,senador,Mara Gabrilli,PSDB,SP,Outros,Plenário,1,1,TRUE,governo
 34,137999,senado,5411,senador,Weverton,PDT,MA,Emenda,Plenário,1,1,TRUE,oposição
-34,137999,senado,5411,senador,Weverton,PDT,MA,Requerimento,Plenário,1,1,TRUE,oposição
 34,137999,senado,5411,senador,Weverton,PDT,MA,Voto em Separado,CCJ,1,1,TRUE,oposição
 34,137999,senado,5422,senador,Marcos Rogério,DEM,RO,Emenda,CCJ,1,1,TRUE,governo
+34,137999,senado,5523,senador,Otto Alencar,PSD,BA,Requerimento,Plenário,1,1,TRUE,governo
+34,137999,senado,5535,senador,Telmário Mota,PROS,RR,Requerimento,Plenário,1,2,TRUE,governo
 34,137999,senado,5540,senador,Fernando Bezerra Coelho,MDB,PE,Emenda,CCJ,1,1,TRUE,governo
 34,137999,senado,5627,senador,Jean Paul Prates,PT,RN,Emenda,Plenário,1,1,TRUE,oposição
 34,137999,senado,5666,senador,Major Olimpio,PSL,SP,Requerimento,,1,1,FALSE,governo
-34,137999,senado,5718,senador,Eliziane Gama,CIDADANIA,MA,Requerimento,Plenário,1,1,TRUE,governo
 34,137999,senado,5732,senador,Rodrigo Pacheco,DEM,MG,Emenda,CCJ,1,1,TRUE,governo
 34,137999,senado,5732,senador,Rodrigo Pacheco,DEM,MG,Requerimento,Plenário,1,1,TRUE,governo
 34,137999,senado,5748,senador,Veneziano Vital do Rêgo,PSB,PB,Outros,CCJ,1,1,TRUE,oposição
+34,137999,senado,5783,senador,Zenaide Maia,PROS,RN,Requerimento,Plenário,1,2,TRUE,governo
 34,137999,senado,5924,senador,Oriovisto Guimarães,PODEMOS,PR,Emenda,CCJ,1,1,TRUE,governo
 34,137999,senado,5953,senador,Fabiano Contarato,REDE,ES,Voto em Separado,CCJ,1,1,TRUE,oposição
 34,137999,senado,5979,senador,Leila Barros,PSB,DF,Requerimento,CCJ,1,1,TRUE,oposição
 34,137999,senado,5985,senador,Nelsinho Trad,PSD,MS,Emenda,CCJ,1,1,TRUE,governo
 34,137999,senado,6027,senador,Mecias de Jesus,PRB,RR,Emenda,CCJ,1,1,TRUE,governo
-34,137999,senado,5535,senador,Telmário Mota,PROS,RR,Requerimento,Plenário,0.5,1,TRUE,governo
-34,137999,senado,5783,senador,Zenaide Maia,PROS,RN,Requerimento,Plenário,0.5,1,TRUE,governo
+64,138551,senado,5982,senador,Alessandro Vieira,CIDADANIA,SE,Outros,Plenário,1,1,TRUE,governo

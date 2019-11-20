@@ -1,16 +1,16 @@
-,id_ext,date,casa,nova reforma da previdencia,reforma da previdencia,Nova Previdencia,PEC 6/2019,pec 6/2019 pdf,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral
-0,137999,2019-08-05,senado,1,37,5,1,0,False,5,37,37
-1,137999,2019-08-12,senado,1,15,2,1,0,False,2,15,15
-2,137999,2019-08-19,senado,1,12,2,1,0,False,2,12,12
-3,137999,2019-08-26,senado,1,14,1,1,0,False,1,14,14
-4,137999,2019-09-02,senado,1,17,2,1,0,False,2,17,17
-5,137999,2019-09-09,senado,1,11,1,1,0,False,1,11,11
-6,137999,2019-09-16,senado,1,12,1,1,0,False,1,12,12
-7,137999,2019-09-23,senado,1,13,1,1,0,False,1,13,13
-8,137999,2019-09-30,senado,1,45,3,1,0,False,3,45,45
-9,137999,2019-10-07,senado,0,12,1,0,0,False,1,12,12
-10,137999,2019-10-14,senado,1,12,1,1,0,False,1,12,12
-11,137999,2019-10-21,senado,4,100,18,1,0,False,18,100,100
-12,137999,2019-10-28,senado,1,23,4,0,0,False,4,23,23
-13,137999,2019-11-04,senado,1,14,2,1,0,False,2,14,14
-14,137999,2019-11-11,senado,1,31,8,1,0,False,8,31,31
+,id_ext,date,casa,Nova Previdencia,nova reforma da previdencia,PEC 6/2019,reforma da previdencia,pec 6/2019 pdf,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral
+0,137999,2019-08-05,senado,4,1,1,37,0,False,4,37,37
+1,137999,2019-08-12,senado,2,1,0,15,0,False,2,15,15
+2,137999,2019-08-19,senado,1,1,0,10,0,False,1,10,10
+3,137999,2019-08-26,senado,1,1,1,13,0,False,1,13,13
+4,137999,2019-09-02,senado,1,1,0,15,0,False,1,15,15
+5,137999,2019-09-09,senado,1,1,0,10,0,False,1,10,10
+6,137999,2019-09-16,senado,1,0,1,12,0,False,1,12,12
+7,137999,2019-09-23,senado,1,1,1,12,0,False,1,12,12
+8,137999,2019-09-30,senado,4,1,0,40,0,False,4,40,40
+9,137999,2019-10-07,senado,1,0,1,13,0,False,1,13,13
+10,137999,2019-10-14,senado,1,0,0,12,0,False,1,12,12
+11,137999,2019-10-21,senado,17,4,1,100,0,False,17,100,100
+12,137999,2019-10-28,senado,5,1,0,22,0,False,5,22,22
+13,137999,2019-11-04,senado,3,1,0,15,0,False,3,15,15
+14,137999,2019-11-11,senado,8,1,1,31,0,False,8,31,31
