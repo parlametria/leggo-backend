@@ -14,6 +14,7 @@ from api.model.temperatura_historico import TemperaturaHistorico
 from api.model.tramitacao_event import TramitacaoEvent
 from api.model.coautoria_node import CoautoriaNode
 from api.model.coautoria_edge import CoautoriaEdge
+from api.model.autoria import Autoria
 
 
 def import_etapas_proposicoes():
@@ -149,6 +150,27 @@ def import_coautoria_edge():
         )
         CoautoriaEdge.objects.bulk_create(
             CoautoriaEdge(**r[1].to_dict()) for r in group_df.iterrows())
+
+
+def import_autoria():
+    '''Carrega autorias'''
+    grouped = pd.read_csv('data/autorias.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo)
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+        )
+        Autoria.objects.bulk_create(
+            Autoria(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def import_pautas():
@@ -341,3 +363,4 @@ def import_all_data():
     import_pressao()
     import_coautoria_node()
     import_coautoria_edge()
+    import_autoria()
