@@ -25,3 +25,6 @@ class Autoria(models.Model):
 
     nome_eleitoral = models.TextField(
         help_text='Nome eleitoral do parlamentar.')
+
+    autores = models.TextField(
+        help_text='Todos autores de um documento.')
