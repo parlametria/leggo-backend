@@ -8,7 +8,8 @@ class CoautoriaNodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CoautoriaNode
         fields = ('id_autor', 'nome', 'partido', 'uf',
-                  'bancada', 'nome_eleitoral', 'node_size')
+                  'bancada', 'nome_eleitoral', 'node_size',
+                  'casa', 'id_principal', 'sigla_local')
 
 
 class CoautoriaNodeList(generics.ListAPIView):

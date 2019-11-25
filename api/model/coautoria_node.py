@@ -29,3 +29,12 @@ class CoautoriaNode(models.Model):
     node_size = models.FloatField(
         help_text='Tamanho do nó'
     )
+
+    id_principal = models.IntegerField(
+        help_text='Id da proposição.')
+
+    sigla_local = models.TextField(
+        help_text='Sigla do local do documento.')
+
+    casa = models.TextField(
+        help_text='Casa.')

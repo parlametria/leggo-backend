@@ -10,7 +10,8 @@ class AutoriaSerializer(serializers.ModelSerializer):
         fields = (
             'id_leggo', 'id_documento', 'id_autor',
             'descricao_tipo_documento', 'data',
-            'url_inteiro_teor', 'nome_eleitoral')
+            'url_inteiro_teor', 'nome_eleitoral',
+            'casa', 'id_principal', 'sigla_local')
 
 
 class AutoriaList(generics.ListAPIView):

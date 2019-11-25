@@ -16,3 +16,12 @@ class CoautoriaEdge(models.Model):
 
     value = models.TextField(
         help_text='Valor da aresta.')
+
+    id_principal = models.IntegerField(
+        help_text='Id da proposição.')
+
+    sigla_local = models.TextField(
+        help_text='Sigla do local do documento.')
+
+    casa = models.TextField(
+        help_text='Casa.')
