@@ -1318,6 +1318,7 @@ id_leggo,id_ext,casa,id_autor,tipo_autor,nome_autor,partido,uf,tipo_generico,sig
 46,136033,senado,945,senador,Alvaro Dias,PODE,PR,Requerimento,Plenário,1,1,TRUE,governo
 46,136033,senado,2331,senador,Rose de Freitas,PODE,ES,Emenda,CCJ,1,1,TRUE,governo
 46,136033,senado,4994,senador,Eduardo Braga,MDB,AM,Requerimento,CCJ,1,1,TRUE,governo
+46,136033,senado,5905,senador,Rodrigo Cunha,PSDB,AL,Emenda,CCJ,1,1,TRUE,governo
 46,136033,senado,5942,senador,Marcos do Val,CIDADANIA,ES,Parecer,CCJ,1,1,TRUE,governo
 46,136033,senado,5942,senador,Marcos do Val,CIDADANIA,ES,Requerimento,Plenário,1,1,TRUE,governo
 46,136033,senado,5953,senador,Fabiano Contarato,REDE,ES,Emenda,CCJ,1,1,TRUE,oposição
