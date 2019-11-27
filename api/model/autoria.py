@@ -34,3 +34,6 @@ class Autoria(models.Model):
 
     casa = models.TextField(
         help_text='Casa.')
+
+    autores = models.TextField(
+        help_text='Todos autores de um documento.')
