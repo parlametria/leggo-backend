@@ -8,7 +8,8 @@ class CoautoriaEdgeSerializer(serializers.ModelSerializer):
     class Meta:
         model = CoautoriaEdge
         fields = ('source', 'target', 'value',
-                  'casa', 'id_principal', 'sigla_local')
+                  'casa', 'id_principal', 'sigla_local',
+                  'sigla_local_formatada')
 
 
 class CoautoriaEdgeList(generics.ListAPIView):

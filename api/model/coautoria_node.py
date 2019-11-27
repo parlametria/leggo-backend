@@ -38,3 +38,13 @@ class CoautoriaNode(models.Model):
 
     casa = models.TextField(
         help_text='Casa.')
+
+    @property
+    def sigla_local_formatada(self):
+        '''Formata a sigla local para ter a casa'''
+        if self.casa == 'camara':
+            casa = 'Câmara'
+        else:
+            casa = 'Senado'
+
+        return self.sigla_local + ' - ' + casa
