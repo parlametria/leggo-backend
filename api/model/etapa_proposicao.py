@@ -1,10 +1,6 @@
-import time
 from django.db import models
 from munch import Munch
 from api.model.proposicao import Proposicao
-from django.db.models import Sum
-from scipy import stats
-from api.utils.ator import get_nome_partido_uf
 
 URLS = {
     'camara': 'http://www.camara.gov.br/proposicoesWeb/fichadetramitacao?idProposicao=',
@@ -18,6 +14,10 @@ class Choices(Munch):
 
 
 class EtapaProposicao(models.Model):
+    id_leggo = models.IntegerField(
+        'ID Leggo',
+        help_text='Id interno do leggo.')
+
     id_ext = models.IntegerField(
         'ID Externo',
         help_text='Id externo do sistema da casa.')
@@ -65,8 +65,6 @@ class EtapaProposicao(models.Model):
     relator_nome = models.TextField(blank=True)
 
     casa_origem = models.TextField(blank=True)
-
-    temperatura = models.FloatField(null=True)
 
     em_pauta = models.NullBooleanField(
         help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario')
@@ -142,85 +140,6 @@ class EtapaProposicao(models.Model):
         return URLS[self.casa] + str(self.id_ext)
 
     @property
-    def temperatura_coeficiente(self):
-        '''
-        Calcula coeficiente linear das temperaturas nas últimas 6 semanas.
-        '''
-        temperatures = self.temperatura_historico.all()[:6]
-        dates_x = [
-            time.mktime(temperatura.periodo.timetuple())
-            for temperatura in temperatures]
-        temperaturas_y = [
-            temperatura.temperatura_recente
-            for temperatura in temperatures]
-
-        if (dates_x and temperaturas_y and len(dates_x) > 1 and len(temperaturas_y) > 1):
-            return stats.linregress(dates_x, temperaturas_y)[0]
-        else:
-            return 0
-
-    @property
-    def ultima_temperatura(self):
-        if (len(self.temperatura_historico.all()) == 0):
-            return 0
-        else:
-            return self.temperatura_historico.all()[0].temperatura_recente
-
-    @property
-    def top_atores(self):
-        '''
-        Retorna os top 15 atores (caso tenha menos de 15 retorna todos)
-        '''
-        atores_filtrados = []
-
-        top_n_atores = self.atores.values('id_autor') \
-            .annotate(total_docs=Sum('qtd_de_documentos')) \
-            .order_by('-total_docs')[:15]
-        atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
-                                                 'partido', 'tipo_generico') \
-            .annotate(total_docs=Sum('qtd_de_documentos'))
-
-        for ator in atores_por_tipo_gen:
-            for top_n_ator in top_n_atores:
-                if ator['id_autor'] == top_n_ator['id_autor']:
-                    atores_filtrados.append({
-                        'id_autor': ator['id_autor'],
-                        'qtd_de_documentos': ator['total_docs'],
-                        'tipo_generico': ator['tipo_generico'],
-                        'nome_partido_uf': get_nome_partido_uf(
-                            ator['nome_autor'], ator['partido'], ator['uf'])
-                    })
-
-        return atores_filtrados
-
-    @property
-    def top_important_atores(self):
-        '''
-        Retorna os atores e comissões e plenário
-        '''
-        atores_filtrados = []
-
-        top_n_atores = self.atores.values('id_autor') \
-            .annotate(total_docs=Sum('qtd_de_documentos')) \
-            .order_by('-total_docs')
-        for ator in self.atores.all():
-            for top_n_ator in top_n_atores:
-                if ator.id_autor == top_n_ator['id_autor'] and ator.is_important:
-                    atores_filtrados.append({
-                        'id_autor': ator.id_autor,
-                        'nome_autor': ator.nome_autor,
-                        'qtd_de_documentos': ator.qtd_de_documentos,
-                        'uf': ator.uf,
-                        'partido': ator.partido,
-                        'tipo_generico': ator.tipo_generico,
-                        'nome_partido_uf': ator.nome_partido_uf,
-                        'sigla_local': ator.sigla_local,
-                        'is_important': ator.is_important
-                    })
-
-        return atores_filtrados
-
-    @property
     def status(self):
         # It's pefetched, avoid query
         status_list = ['Caducou', 'Rejeitada', 'Lei']
@@ -260,18 +179,18 @@ class EtapaProposicao(models.Model):
         '''
         comissoes = set()
         local_com_c_que_nao_e_comissao = "CD-MESA-PLEN"
-        for row in self.tramitacao.all():
-            if row.local != local_com_c_que_nao_e_comissao and row.local[0] == "C":
-                comissoes.add(row.local)
+        for row in self.tramitacao.values('local'):
+            if row['local'] != local_com_c_que_nao_e_comissao and row['local'][0] == "C":
+                comissoes.add(row['local'])
         return comissoes
 
     @property
     def ultima_pressao(self):
         pressoes = []
-        for p in self.pressao.all():
+        for p in self.pressao.values('maximo_geral', 'date'):
             pressoes.append({
-                'maximo_geral': p.maximo_geral,
-                'date': p.date
+                'maximo_geral': p['maximo_geral'],
+                'date': p['date']
             })
 
         if (len(pressoes) == 0):

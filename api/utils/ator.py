@@ -1,8 +1,16 @@
-def get_nome_partido_uf(nome, partido, uf):
+def get_nome_partido_uf(casa, bancada, nome, partido, uf):
+    marcador_bancada = ''
 
-    if(uf == 'nan'):
+    if (uf == 'nan'):
         uf = '-'
 
-    if(partido == 'nan'):
+    if (partido == 'nan'):
         partido = '-'
-    return (nome + ' (' + partido + '/' + uf + ')')
+
+    if (bancada == 'oposição'):
+        marcador_bancada = '* '
+
+    descricao_parlamentar = marcador_bancada + \
+        nome + ' (' + partido + '/' + uf + ')'
+
+    return(descricao_parlamentar)

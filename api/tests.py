@@ -5,16 +5,6 @@ from api.model.proposicao import Proposicao
 from api.model.temperatura_historico import TemperaturaHistorico
 
 
-# class InfoTests(APITestCase):
-#     def test_info(self):
-#         '''
-#         Check info
-#         '''
-#         url = '/info/'
-#         response = self.client.get(url)
-#         self.assertTrue(response.data['last_update_trams'])
-
-
 class ProposicaoTests(APITestCase):
 
     def setUp(self):
@@ -32,43 +22,10 @@ class ProposicaoTests(APITestCase):
         '''
         Check proposicao detail
         '''
-        url_detail = (self.url + str(self.proposicao.id))
+        url_detail = (self.url + str(self.proposicao.id_leggo))
         response = self.client.get(url_detail)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 1)
-
-
-# class TemperaturaHistoricoTest(APITestCase):
-
-#     def setUp(self):
-#         create_proposicao(self)
-#         create_temperatura(self, self.etapa_proposicao)
-#         self.url = ('/temperatura/' + self.etapa_proposicao.casa + '/' +
-#                     self.etapa_proposicao.id_ext)
-
-#     def test_get_temperatura(self):
-#         '''
-#         Check temperature list from a proposicao
-#         '''
-
-#         response = self.client.get(self.url)
-
-#         self.assertTrue('coeficiente' in response.data)
-#         self.assertTrue('temperaturas' in response.data)
-
-#     def test_get_temperatura_detail(self):
-#         '''
-#         Check if can get temperature with query params of referenced date
-#         '''
-
-#         url_detail = (self.url +
-#                       '?semanas_anteriores=12&data_referencia=2018-11-07')
-#         response = self.client.get(url_detail)
-
-#         self.assertEquals(response.data['coeficiente'], 0)
-#         self.assertTrue('temperaturas' in response.data)
-#         self.assertEqual(response.status_code, 200)
-#         self.assertGreater(len(response.data), 0)
 
 
 class EmendasTest(APITestCase):
@@ -104,6 +61,7 @@ def create_proposicao(self):
     Create a proposicao and an etapa_proposicao object and save on test database
     '''
     etapa_proposicao = EtapaProposicao(
+        id_leggo=1,
         id_ext='257161',
         casa='camara',
         data_apresentacao='2004-06-08',
@@ -113,7 +71,6 @@ def create_proposicao(self):
         forma_apreciacao='Plenário',
         ementa='Dispõe sobre o licenciamento ambiental...',
         justificativa='',
-        temperatura=5.7,
         autor_nome='Luciano Zica PSOL/CE',
         relator_nome='Dep. Maurício Quintella Lessa (PR-AL)',
         em_pauta=False,
@@ -124,7 +81,8 @@ def create_proposicao(self):
 
     proposicao = Proposicao(
                     apelido='Lei do Licenciamento Ambiental',
-                    tema='Meio Ambiente/Clima'
+                    tema='Meio Ambiente/Clima',
+                    id_leggo=1
                 )
     proposicao.save()
     proposicao.etapas.set([etapa_proposicao])
