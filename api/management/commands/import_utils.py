@@ -26,7 +26,7 @@ def import_etapas_proposicoes():
     )
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
     EtapaProposicao.objects.bulk_create(
-        EtapaProposicao(**r[1].to_dict()) for r in props_df.iterrows())
+        EtapaProposicao(**r[1].to_dict()) for r in props_df.drop(['advocacy_link'], axis=1).iterrows())
 
 
 def import_proposicoes():
@@ -38,8 +38,7 @@ def import_proposicoes():
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
-        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo,
-        advocacy_link=etapa.advocacy_link)
+        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
