@@ -38,7 +38,12 @@ def import_proposicoes():
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
+<<<<<<< HEAD
         prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo)
+=======
+        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo,
+                          advocacy_link=etapa.advocacy_link)
+>>>>>>> 0d2cebe3550baea40fa1a84d2b49fb494fef576c
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
