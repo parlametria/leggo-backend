@@ -30,6 +30,7 @@ class Proposicao(models.Model):
 
     apelido = models.TextField(blank=True)
     tema = models.TextField(blank=True)
+    advocacy_link = models.TextField(blank=True, null=True)
     id_leggo = models.IntegerField(
         'ID do Leggo',
         help_text='Id interno do leggo.')
