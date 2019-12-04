@@ -26,7 +26,7 @@ def import_etapas_proposicoes():
     )
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
     EtapaProposicao.objects.bulk_create(
-        EtapaProposicao(**r[1].to_dict()) for r in props_df.drop(['advocacy_link'], axis=1).iterrows())
+        EtapaProposicao(**r[1].to_dict()) for r in props_df.iterrows())
 
 
 def import_proposicoes():
