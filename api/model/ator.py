@@ -1,5 +1,5 @@
 from django.db import models
-from api.utils.ator import get_nome_partido_uf
+from api.utils.ator import get_nome_partido_uf, get_sigla_formatada
 from api.model.etapa_proposicao import Proposicao
 from api.model.etapa_proposicao import Choices
 
@@ -50,12 +50,7 @@ class Atores(models.Model):
     @property
     def sigla_local_formatada(self):
         '''Formata a sigla local para ter a casa'''
-        if self.casa == 'camara':
-            casa = 'Câmara'
-        else:
-            casa = 'Senado'
-
-        return self.sigla_local + ' - ' + casa
+        return get_sigla_formatada(self.casa, self.sigla_local)
 
     @property
     def nome_partido_uf(self):

@@ -14,3 +14,15 @@ def get_nome_partido_uf(casa, bancada, nome, partido, uf):
         nome + ' (' + partido + '/' + uf + ')'
 
     return(descricao_parlamentar)
+
+def get_sigla_formatada(casa, sigla_local):
+    '''Formata a sigla local para ter a casa'''
+    if casa == 'camara':
+        casa = 'Câmara'
+    else:
+        casa = 'Senado'
+
+    if sigla_local == 'PLEN':
+        sigla_local = 'Plenário'
+
+    return sigla_local + ' - ' + casa
