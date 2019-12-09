@@ -1,4 +1,5 @@
 from django.db import models
+from api.utils.ator import get_sigla_formatada
 
 
 class CoautoriaNode(models.Model):
@@ -42,9 +43,4 @@ class CoautoriaNode(models.Model):
     @property
     def sigla_local_formatada(self):
         '''Formata a sigla local para ter a casa'''
-        if self.casa == 'camara':
-            casa = 'Câmara'
-        else:
-            casa = 'Senado'
-
-        return self.sigla_local + ' - ' + casa
+        return get_sigla_formatada(self.casa, self.sigla_local)
