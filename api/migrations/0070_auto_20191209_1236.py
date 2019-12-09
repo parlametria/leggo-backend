@@ -20,14 +20,4 @@ class Migration(migrations.Migration):
             field=models.TextField(default='', help_text='Todos autores de um documento.'),
             preserve_default=False,
         ),
-        migrations.AddField(
-            model_name='etapaproposicao',
-            name='advocacy_link',
-            field=models.TextField(blank=True, null=True),
-        ),
-        migrations.AddField(
-            model_name='proposicao',
-            name='advocacy_link',
-            field=models.TextField(blank=True, null=True),
-        ),
     ]

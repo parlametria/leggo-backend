@@ -6,7 +6,9 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0071_merge_20191209_1328'),
+	('api', '0069_auto_20191125_1721'),
+        ('api', '0070_auto_20191209_1236'),
+        ('api', '0057_etapaproposicao_advocacy_link'),
     ]
 
     operations = [
