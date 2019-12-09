@@ -15,6 +15,7 @@ def get_nome_partido_uf(casa, bancada, nome, partido, uf):
 
     return(descricao_parlamentar)
 
+
 def get_sigla_formatada(casa, sigla_local):
     '''Formata a sigla local para ter a casa'''
     if casa == 'camara':
