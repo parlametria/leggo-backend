@@ -11,7 +11,7 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
         fields = (
             'id_autor', 'nome_autor', 'partido', 'uf',
             'peso_total_documentos', 'num_documentos', 'tipo_generico',
-            'sigla_local_formatada', 'is_important', 'nome_partido_uf')
+            'sigla_local_formatada', 'is_important', 'nome_partido_uf', 'casa')
 
 
 class AtoresSerializer(serializers.ModelSerializer):
