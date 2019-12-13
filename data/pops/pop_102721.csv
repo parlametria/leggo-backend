@@ -1,4 +1,4 @@
-,id_ext,date,casa,Cana na Amazonia,PLS 626/2011,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral
+,id_ext,date,casa,PLS 626/2011,Cana na Amazonia,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral
 0,102721,2019-06-10,senado,0,0,False,0,0,0
 1,102721,2019-06-17,senado,0,0,False,0,0,0
 2,102721,2019-06-24,senado,0,0,False,0,0,0
@@ -9,19 +9,19 @@
 7,102721,2019-07-29,senado,0,0,False,0,0,0
 8,102721,2019-08-05,senado,0,0,False,0,0,0
 9,102721,2019-08-12,senado,0,0,False,0,0,0
-10,102721,2019-08-19,senado,91,0,False,91,0,91
-11,102721,2019-08-26,senado,0,0,False,0,0,0
+10,102721,2019-08-19,senado,0,0,False,0,0,0
+11,102721,2019-08-26,senado,0,53,False,53,0,53
 12,102721,2019-09-02,senado,0,0,False,0,0,0
-13,102721,2019-09-09,senado,0,0,False,0,0,0
+13,102721,2019-09-09,senado,52,52,False,52,0,52
 14,102721,2019-09-16,senado,0,0,False,0,0,0
-15,102721,2019-09-23,senado,0,0,False,0,0,0
+15,102721,2019-09-23,senado,0,56,False,56,0,56
 16,102721,2019-09-30,senado,0,0,False,0,0,0
 17,102721,2019-10-07,senado,0,0,False,0,0,0
-18,102721,2019-10-14,senado,100,0,False,100,0,100
+18,102721,2019-10-14,senado,0,0,False,0,0,0
 19,102721,2019-10-21,senado,0,0,False,0,0,0
-20,102721,2019-10-28,senado,0,0,False,0,0,0
-21,102721,2019-11-04,senado,81,0,False,81,0,81
+20,102721,2019-10-28,senado,0,50,False,50,0,50
+21,102721,2019-11-04,senado,0,50,False,50,0,50
 22,102721,2019-11-11,senado,0,0,False,0,0,0
-23,102721,2019-11-18,senado,80,0,False,80,0,80
+23,102721,2019-11-18,senado,0,100,False,100,0,100
 24,102721,2019-11-25,senado,0,0,False,0,0,0
 25,102721,2019-12-02,senado,0,0,False,0,0,0
