@@ -321,7 +321,7 @@ def import_pressao():
             pressao_clean_df = (
                 pressao_df
                 [['date', 'max_pressao_principal',
-                'max_pressao_rel',	'maximo_geral']]
+                    'max_pressao_rel',	'maximo_geral']]
                 .assign(proposicao=etapa_prop)
             )
 
