@@ -1,5 +1,4 @@
-id_ext,date,casa,PEC Antiaborto,PEC 29/2015,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral,id_leggo
-120152,2019-06-10,senado,0,0,False,0,0,0,40
+id_ext,date,casa,PEC 29/2015,PEC Antiaborto,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral,id_leggo
 120152,2019-06-17,senado,0,0,False,0,0,0,40
 120152,2019-06-24,senado,0,0,False,0,0,0,40
 120152,2019-07-01,senado,0,0,False,0,0,0,40
@@ -19,7 +18,7 @@ id_ext,date,casa,PEC Antiaborto,PEC 29/2015,isPartial,max_pressao_principal,max_
 120152,2019-10-07,senado,0,0,False,0,0,0,40
 120152,2019-10-14,senado,0,0,False,0,0,0,40
 120152,2019-10-21,senado,0,0,False,0,0,0,40
-120152,2019-10-28,senado,0,100,False,100,0,100,40
+120152,2019-10-28,senado,100,0,False,100,0,100,40
 120152,2019-11-04,senado,0,0,False,0,0,0,40
 120152,2019-11-11,senado,0,0,False,0,0,0,40
 120152,2019-11-18,senado,0,0,False,0,0,0,40

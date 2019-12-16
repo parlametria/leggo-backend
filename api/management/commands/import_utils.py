@@ -308,21 +308,20 @@ def import_pressao():
         filename = os.fsdecode(file)
         pressao_df = pd.read_csv('data/pops/' + str(filename))
         if not pressao_df.empty:
-            prop_id = {
-                'casa': pressao_df['casa'][0],
-                'id_ext': pressao_df['id_ext'][0],
+            id_leggo = {
+                'id_leggo': pressao_df['id_leggo'][0]
             }
 
-            etapa_prop = get_etapa_proposicao(prop_id)
+            prop = get_proposicao(id_leggo)
 
-            if etapa_prop is None:
+            if prop is None:
                 continue
 
             pressao_clean_df = (
                 pressao_df
                 [['date', 'max_pressao_principal',
-                    'max_pressao_rel',	'maximo_geral']]
-                .assign(proposicao=etapa_prop)
+                    'max_pressao_rel',	'maximo_geral', 'id_leggo']]
+                .assign(proposicao=prop)
             )
 
             Pressao.objects.bulk_create(

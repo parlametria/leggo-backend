@@ -23,7 +23,7 @@ SUPLENTE,204370,Célio Moura,PT,TO,Suplente,CAPADR,camara,https://www.camara.leg
 SUPLENTE,141405,Celso Maldaner,MDB,SC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141405.jpg
 SUPLENTE,205476,Charles Fernandes,PSD,BA,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/205476.jpg
 SUPLENTE,204440,Christino Aureo,PP,RJ,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/204440.jpg
-SUPLENTE,141408,Cleber Verde,REPUBLIC,MA,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
+SUPLENTE,141408,Cleber Verde,,,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
 TITULAR,135054,Cristiano Vale,PL,PA,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/135054.jpg
 TITULAR,141411,Dagoberto Nogueira,PDT,MS,Titular,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/141411.jpg
 SUPLENTE,116379,Darci de Matos,PSD,SC,Suplente,CAPADR,camara,https://www.camara.leg.br/internet/deputado/bandep/116379.jpg
@@ -122,6 +122,7 @@ TITULAR,141405,Celso Maldaner,MDB,SC,Titular,CCJC,camara,https://www.camara.leg.
 SUPLENTE,141439,Chico D'Angelo,PDT,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141439.jpg
 SUPLENTE,204476,Chiquinho Brazão,AVANTE,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204476.jpg
 SUPLENTE,204462,Chris Tonietto,PSL,RJ,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204462.jpg
+SUPLENTE,178928,Christiane de Souza Yared,PL,PR,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178928.jpg
 TITULAR,178939,Clarissa Garotinho,PROS,RJ,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178939.jpg
 SUPLENTE,204514,Coronel Tadeu,PSL,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204514.jpg
 SUPLENTE,141411,Dagoberto Nogueira,PDT,MS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141411.jpg
@@ -129,9 +130,10 @@ TITULAR,204367,Daniel Freitas,PSL,SC,Titular,CCJC,camara,https://www.camara.leg.
 TITULAR,160528,Danilo Cabral,PSB,PE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160528.jpg
 TITULAR,116379,Darci de Matos,PSD,SC,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/116379.jpg
 SUPLENTE,73891,Darcísio Perondi,MDB,RS,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/73891.jpg
+TITULAR,204451,Delegado Antônio Furtado,PSL,RJ,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204451.jpg
 TITULAR,178908,Delegado Éder Mauro,PSD,PA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178908.jpg
 TITULAR,204512,Delegado Marcelo Freitas,PSL,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204512.jpg
-TITULAR,204569,Delegado Pablo,PSL,AM,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204569.jpg
+SUPLENTE,204569,Delegado Pablo,PSL,AM,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204569.jpg
 SUPLENTE,164359,Delegado Waldir,PSL,GO,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/164359.jpg
 TITULAR,178929,Diego Garcia,PODE,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178929.jpg
 SUPLENTE,204518,Dr. Frederico,PATRIOTA,MG,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
@@ -148,8 +150,6 @@ TITULAR,160587,Fábio Trad,PSD,MS,Titular,CCJC,camara,https://www.camara.leg.br/
 PRESIDENTE,204398,Felipe Francischini,PSL,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204398.jpg
 SUPLENTE,204354,Flávia Arruda,PL,DF,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204354.jpg
 SUPLENTE,204392,Francisco Jr.,PSD,GO,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204392.jpg
-TITULAR,160669,Genecias Noronha,SOLIDARI,CE,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/160669.jpg
-SUPLENTE,204484,General Peternelli,PSL,SP,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204484.jpg
 TITULAR,204527,Geninho Zuliani,DEM,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204527.jpg
 SUPLENTE,204394,Gervásio Maia,PSB,PB,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204394.jpg
 TITULAR,204365,Gilson Marques ,NOVO,SC,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204365.jpg
@@ -198,6 +198,7 @@ TITULAR,74160,Patrus Ananias,PT,MG,Titular,CCJC,camara,https://www.camara.leg.br
 TITULAR,141516,Paulo Abi-Ackel,PSDB,MG,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141516.jpg
 TITULAR,178860,Paulo Azi,DEM,BA,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178860.jpg
 TITULAR,193726,Paulo Eduardo Martins,PSC,PR,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/193726.jpg
+TITULAR,141518,Paulo Pereira da Silva,SOLIDARI,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141518.jpg
 TITULAR,141488,Paulo Teixeira,PT,SP,Titular,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/141488.jpg
 SUPLENTE,178912,Pedro Cunha Lima,PSDB,PB,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/178912.jpg
 SUPLENTE,204395,Pedro Lupion,DEM,PR,Suplente,CCJC,camara,https://www.camara.leg.br/internet/deputado/bandep/204395.jpg
@@ -243,7 +244,7 @@ SUPLENTE,204487,Capitão Wagner,PROS,CE,Suplente,CCTCI,camara,https://www.camara
 TITULAR,204361,Carlos Chiodini,MDB,SC,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204361.jpg
 SUPLENTE,204380,Celina Leão,PP,DF,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204380.jpg
 TITULAR,204504,Cezinha de Madureira ,PSD,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204504.jpg
-TITULAR,141408,Cleber Verde,REPUBLIC,MA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
+TITULAR,141408,Cleber Verde,,,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
 SUPLENTE,204378,Coronel Chrisóstomo,PSL,RO,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204378.jpg
 SUPLENTE,204367,Daniel Freitas,PSL,SC,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204367.jpg
 TITULAR,204409,Daniel Trzeciak,PSDB,RS,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204409.jpg
@@ -283,6 +284,7 @@ SUPLENTE,141516,Paulo Abi-Ackel,PSDB,MG,Suplente,CCTCI,camara,https://www.camara
 SUPLENTE,193726,Paulo Eduardo Martins,PSC,PR,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/193726.jpg
 SUPLENTE,160558,Paulo Freire Costa,PL,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/160558.jpg
 SUPLENTE,204461,Paulo Ganime,NOVO,RJ,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204461.jpg
+TITULAR,74574,Paulo Magalhães,PSD,BA,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/74574.jpg
 SUPLENTE,204383,Professor Israel Batista,PV,DF,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/204383.jpg
 SUPLENTE,178989,Renata Abreu,PODE,SP,Suplente,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/178989.jpg
 TITULAR,152610,Roberto Alves,REPUBLIC,SP,Titular,CCTCI,camara,https://www.camara.leg.br/internet/deputado/bandep/152610.jpg
@@ -763,7 +765,7 @@ SUPLENTE,122158,Pedro Paulo,DEM,RJ,Suplente,CFFC,camara,https://www.camara.leg.b
 TITULAR,73788,Ricardo Barros,PP,PR,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/73788.jpg
 SUPLENTE,204360,Silvia Cristina,PDT,RO,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204360.jpg
 SUPLENTE,204425,Silvio Costa Filho,REPUBLIC,PE,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/204425.jpg
-TITULAR,160591,Vinicius Gurgel,PL,AP,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/160591.jpg
+TITULAR,160591,Vinicius Gurgel,,,Titular,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/160591.jpg
 SUPLENTE,74044,Wilson Santiago,PTB,PB,Suplente,CFFC,camara,https://www.camara.leg.br/internet/deputado/bandep/74044.jpg
 SUPLENTE,74646,Aécio Neves,PSDB,MG,Suplente,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/74646.jpg
 TITULAR,160508,Afonso Florence,PT,BA,Titular,CFT,camara,https://www.camara.leg.br/internet/deputado/bandep/160508.jpg
@@ -957,6 +959,7 @@ SUPLENTE,204407,Fernanda Melchionna ,PSOL,RS,Suplente,CMADS,camara,https://www.c
 TITULAR,204494,Fred Costa,PATRIOTA,MG,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204494.jpg
 SUPLENTE,204393,Frei Anastacio Ribeiro,PT,PB,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204393.jpg
 SUPLENTE,160673,Giovani Cherini,PL,RS,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/160673.jpg
+TITULAR,204548,Heitor Freire,PSL,CE,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204548.jpg
 SUPLENTE,204429,João H. Campos,PSB,PE,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204429.jpg
 SUPLENTE,204468,Joenia Wapichana,REDE,RR,Suplente,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204468.jpg
 TITULAR,204386,Jose Mario Schreiner,DEM,GO,Titular,CMADS,camara,https://www.camara.leg.br/internet/deputado/bandep/204386.jpg
@@ -993,7 +996,7 @@ SEGUNDO VICE-PRESIDENTE,204499,Cássio Andrade,PSB,PA,Titular,CME,camara,https:/
 SUPLENTE,204496,Celso Sabino,PSDB,PA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204496.jpg
 TITULAR,205476,Charles Fernandes,PSD,BA,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/205476.jpg
 TITULAR,204440,Christino Aureo,PP,RJ,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204440.jpg
-SUPLENTE,141408,Cleber Verde,REPUBLIC,MA,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
+SUPLENTE,141408,Cleber Verde,,,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
 TITULAR,204376,Coronel Armando,PSL,SC,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204376.jpg
 TITULAR,204378,Coronel Chrisóstomo,PSL,RO,Titular,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204378.jpg
 SUPLENTE,204355,Da Vitoria,CIDADANIA,ES,Suplente,CME,camara,https://www.camara.leg.br/internet/deputado/bandep/204355.jpg
@@ -1424,7 +1427,6 @@ SEGUNDO VICE-PRESIDENTE,75431,Maurício Dziedricki,PTB,RS,Titular,CTASP,camara,h
 TITULAR,141508,Mauro Nazif,PSB,RO,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/141508.jpg
 SUPLENTE,74571,Nelson Pellegrino,,,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/74571.jpg
 SUPLENTE,178987,Orlando Silva,PCdoB,SP,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/178987.jpg
-TITULAR,141518,Paulo Pereira da Silva,SOLIDARI,SP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/141518.jpg
 TITULAR,133968,Paulo Ramos,PDT,RJ,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/133968.jpg
 SUPLENTE,122974,Pedro Lucas Fernandes ,PTB,MA,Suplente,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/122974.jpg
 PRESIDENTE,160641,Professora Marcivania,PCdoB,AP,Titular,CTASP,camara,https://www.camara.leg.br/internet/deputado/bandep/160641.jpg
@@ -1555,6 +1557,8 @@ TITULAR,204463,Wladimir Garotinho,PSD,RJ,Titular,CVT,camara,https://www.camara.l
 SUPLENTE,204559,Zé Neto,PT,BA,Suplente,CVT,camara,https://www.camara.leg.br/internet/deputado/bandep/204559.jpg
 TITULAR,160527,Aguinaldo Ribeiro,PP,PB,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/160527.jpg
 TITULAR,160511,Alessandro Molon,PSB,RJ,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/160511.jpg
+TITULAR,74471,André de Paula,PSD,PE,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/74471.jpg
+TITULAR,204423,André Ferreira,PSC,PE,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/204423.jpg
 TITULAR,133439,André Figueiredo,PDT,CE,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/133439.jpg
 TITULAR,73433,Arlindo Chinaglia,PT,SP,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/73433.jpg
 TITULAR,69871,Bacelar,PODE,BA,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/69871.jpg
@@ -1588,7 +1592,6 @@ TITULAR,177282,Subtenente Gonzaga,PDT,MG,Titular,PEC01719,camara,https://www.cam
 SUPLENTE,143084,Tiago Dimas,SOLIDARI,TO,Suplente,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/143084.jpg
 TITULAR,204532,Vinicius Poit,NOVO,SP,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/204532.jpg
 TITULAR,178952,Walter Alves,MDB,RN,Titular,PEC01719,camara,https://www.camara.leg.br/internet/deputado/bandep/178952.jpg
-TITULAR,178836,Alan Rick,DEM,AC,Titular,PEC02419,camara,https://www.camara.leg.br/internet/deputado/bandep/178836.jpg
 SUPLENTE,160511,Alessandro Molon,PSB,RJ,Suplente,PEC02419,camara,https://www.camara.leg.br/internet/deputado/bandep/160511.jpg
 TITULAR,74057,Alice Portugal,PCdoB,BA,Titular,PEC02419,camara,https://www.camara.leg.br/internet/deputado/bandep/74057.jpg
 TITULAR,73696,Angela Amin,PP,SC,Titular,PEC02419,camara,https://www.camara.leg.br/internet/deputado/bandep/73696.jpg
@@ -1820,6 +1823,55 @@ TITULAR,178930,Roman,PSD,PR,Titular,PEC04819,camara,https://www.camara.leg.br/in
 SUPLENTE,204425,Silvio Costa Filho,REPUBLIC,PE,Suplente,PEC04819,camara,https://www.camara.leg.br/internet/deputado/bandep/204425.jpg
 SUPLENTE,204396,Vermelho,PSD,PR,Suplente,PEC04819,camara,https://www.camara.leg.br/internet/deputado/bandep/204396.jpg
 TITULAR,204559,Zé Neto,PT,BA,Titular,PEC04819,camara,https://www.camara.leg.br/internet/deputado/bandep/204559.jpg
+SUPLENTE,204528,Adriana Ventura,NOVO,SP,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204528.jpg
+TITULAR,178835,Afonso Motta,PDT,RS,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178835.jpg
+SUPLENTE,204501,Alencar Santana Braga,PT,SP,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204501.jpg
+TITULAR,178972,Alex Manente,CIDADANIA,SP,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178972.jpg
+TITULAR,160545,Alexandre Leite,DEM,SP,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/160545.jpg
+TITULAR,178927,Aliel Machado,PSB,PR,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178927.jpg
+TITULAR,74471,André de Paula,PSD,PE,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/74471.jpg
+TITULAR,160600,Arthur Oliveira Maia,DEM,BA,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/160600.jpg
+TITULAR,204374,Bia Kicis,PSL,DF,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204374.jpg
+SUPLENTE,204572,Capitão Alberto Neto,REPUBLIC,AM,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204572.jpg
+TITULAR,204507,Carla Zambelli,PSL,SP,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204507.jpg
+TITULAR,74262,Carlos Sampaio,PSDB,SP,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/74262.jpg
+TITULAR,204369,Caroline de Toni,PSL,SC,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204369.jpg
+TITULAR,204476,Chiquinho Brazão,AVANTE,RJ,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204476.jpg
+TITULAR,204409,Daniel Trzeciak,PSDB,RS,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204409.jpg
+NA,160587,Fábio Trad,PSD,MS,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/160587.jpg
+SUPLENTE,204411,Filipe Barros,PSL,PR,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204411.jpg
+TITULAR,74270,Gilberto Nascimento,PSC,SP,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/74270.jpg
+TITULAR,204570,Gildenemyr,PL,MA,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204570.jpg
+TITULAR,204365,Gilson Marques ,NOVO,SC,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204365.jpg
+TITULAR,73482,Henrique Fontana,PT,RS,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/73482.jpg
+TITULAR,178884,Hildo Rocha,MDB,MA,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178884.jpg
+TITULAR,73531,Ivan Valente,PSOL,SP,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/73531.jpg
+TITULAR,74366,João Campos,REPUBLIC,GO,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/74366.jpg
+SUPLENTE,178910,Joaquim Passarinho,PSD,PA,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178910.jpg
+TITULAR,141470,José Guimarães,PT,CE,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/141470.jpg
+TITULAR,204391,José Nelto,PODE,GO,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204391.jpg
+TITULAR,73586,Júlio Delgado,PSB,MG,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/73586.jpg
+SUPLENTE,204497,Júnior Ferrari,PSD,PA,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204497.jpg
+TITULAR,98057,Lafayette de Andrada,REPUBLIC,MG,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/98057.jpg
+SUPLENTE,204375,Leda Sadala,AVANTE,AP,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204375.jpg
+SUPLENTE,204359,Léo Moraes,PODE,RO,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204359.jpg
+SUPLENTE,204547,Léo Motta,PSL,MG,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204547.jpg
+SUPLENTE,133810,Marcelo Moraes,PTB,RS,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/133810.jpg
+PRESIDENTE,204556,Marcelo Ramos ,PL,AM,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204556.jpg
+TITULAR,171619,Margarida Salomão,PT,MG,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/171619.jpg
+SUPLENTE,141508,Mauro Nazif,PSB,RO,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/141508.jpg
+SUPLENTE,204453,Natália Bonavides,PT,RN,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204453.jpg
+TITULAR,178987,Orlando Silva,PCdoB,SP,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178987.jpg
+SUPLENTE,204363,Osires Damaso,PSC,TO,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204363.jpg
+TITULAR,133968,Paulo Ramos,PDT,RJ,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/133968.jpg
+SUPLENTE,141488,Paulo Teixeira,PT,SP,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/141488.jpg
+SUPLENTE,204395,Pedro Lupion,DEM,PR,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204395.jpg
+SUPLENTE,73801,Renildo Calheiros,PCdoB,PE,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/73801.jpg
+TITULAR,178930,Roman,PSD,PR,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178930.jpg
+SUPLENTE,204416,Sanderson,PSL,RS,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/204416.jpg
+SUPLENTE,178947,Sóstenes Cavalcante,DEM,RJ,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178947.jpg
+SUPLENTE,178922,Tadeu Alencar,PSB,PE,Suplente,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/178922.jpg
+TITULAR,74044,Wilson Santiago,PTB,PB,Titular,PEC19919,camara,https://www.camara.leg.br/internet/deputado/bandep/74044.jpg
 SUPLENTE,204554,Abílio Santana,PL,BA,Suplente,PEC39717,camara,https://www.camara.leg.br/internet/deputado/bandep/204554.jpg
 TITULAR,204413,Alcides Rodrigues ,PATRIOTA,GO,Titular,PEC39717,camara,https://www.camara.leg.br/internet/deputado/bandep/204413.jpg
 TITULAR,133439,André Figueiredo,PDT,CE,Titular,PEC39717,camara,https://www.camara.leg.br/internet/deputado/bandep/133439.jpg
@@ -1877,6 +1929,7 @@ TITULAR,178981,Herculano Passos,MDB,SP,Titular,PL10887,camara,https://www.camara
 TITULAR,178884,Hildo Rocha,MDB,MA,Titular,PL10887,camara,https://www.camara.leg.br/internet/deputado/bandep/178884.jpg
 SUPLENTE,160570,Jerônimo Goergen,PP,RS,Suplente,PL10887,camara,https://www.camara.leg.br/internet/deputado/bandep/160570.jpg
 SUPLENTE,178910,Joaquim Passarinho,PSD,PA,Suplente,PL10887,camara,https://www.camara.leg.br/internet/deputado/bandep/178910.jpg
+SUPLENTE,204375,Leda Sadala,AVANTE,AP,Suplente,PL10887,camara,https://www.camara.leg.br/internet/deputado/bandep/204375.jpg
 TITULAR,204359,Léo Moraes,PODE,RO,Titular,PL10887,camara,https://www.camara.leg.br/internet/deputado/bandep/204359.jpg
 TITULAR,204485,Luiz Carlos Motta,PL,SP,Titular,PL10887,camara,https://www.camara.leg.br/internet/deputado/bandep/204485.jpg
 TITULAR,204543,Luiz Flávio Gomes,PSB,SP,Titular,PL10887,camara,https://www.camara.leg.br/internet/deputado/bandep/204543.jpg
@@ -2153,7 +2206,7 @@ SUPLENTE,74052,Bosco Costa,PL,SE,Suplente,PL326719,camara,https://www.camara.leg
 SUPLENTE,178829,Capitão Augusto,PL,SP,Suplente,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/178829.jpg
 TITULAR,204504,Cezinha de Madureira ,PSD,SP,Titular,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/204504.jpg
 TITULAR,178928,Christiane de Souza Yared,PL,PR,Titular,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/178928.jpg
-TITULAR,141408,Cleber Verde,REPUBLIC,MA,Titular,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
+TITULAR,141408,Cleber Verde,,,Titular,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/141408.jpg
 SUPLENTE,141411,Dagoberto Nogueira,PDT,MS,Suplente,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/141411.jpg
 SUPLENTE,204454,Daniel Silveira,PSL,RJ,Suplente,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/204454.jpg
 SUPLENTE,116379,Darci de Matos,PSD,SC,Suplente,PL326719,camara,https://www.camara.leg.br/internet/deputado/bandep/116379.jpg
@@ -2243,6 +2296,7 @@ SUPLENTE,74571,Nelson Pellegrino,,,Suplente,PL351515,camara,https://www.camara.l
 SUPLENTE,178987,Orlando Silva,PCdoB,SP,Suplente,PL351515,camara,https://www.camara.leg.br/internet/deputado/bandep/178987.jpg
 TITULAR,204363,Osires Damaso,PSC,TO,Titular,PL351515,camara,https://www.camara.leg.br/internet/deputado/bandep/204363.jpg
 TITULAR,204461,Paulo Ganime,NOVO,RJ,Titular,PL351515,camara,https://www.camara.leg.br/internet/deputado/bandep/204461.jpg
+SUPLENTE,122158,Pedro Paulo,DEM,RJ,Suplente,PL351515,camara,https://www.camara.leg.br/internet/deputado/bandep/122158.jpg
 TITULAR,73943,Perpétua Almeida,PCdoB,AC,Titular,PL351515,camara,https://www.camara.leg.br/internet/deputado/bandep/73943.jpg
 SUPLENTE,204524,Pinheirinho,PP,MG,Suplente,PL351515,camara,https://www.camara.leg.br/internet/deputado/bandep/204524.jpg
 SUPLENTE,204383,Professor Israel Batista,PV,DF,Suplente,PL351515,camara,https://www.camara.leg.br/internet/deputado/bandep/204383.jpg
@@ -2274,6 +2328,7 @@ TITULAR,178916,Daniel Coelho,CIDADANIA,PE,Titular,PL488112,camara,https://www.ca
 SEGUNDO VICE-PRESIDENTE,204454,Daniel Silveira,PSL,RJ,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204454.jpg
 TITULAR,204518,Dr. Frederico,PATRIOTA,MG,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204518.jpg
 TITULAR,204552,Eduardo Braide,PMN,MA,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204552.jpg
+TITULAR,178977,Eduardo Cury,PSDB,SP,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/178977.jpg
 TITULAR,160532,Eli Corrêa Filho,DEM,SP,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/160532.jpg
 SUPLENTE,204389,Elias Vaz,PSB,GO,Suplente,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204389.jpg
 TITULAR,207309,Enéias Reis,PSL,MG,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/207309.jpg
@@ -2290,13 +2345,14 @@ TITULAR,205550,Jorge Braz,REPUBLIC,RJ,Titular,PL488112,camara,https://www.camara
 TITULAR,204372,Julio Cesar Ribeiro,REPUBLIC,DF,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204372.jpg
 TERCEIRO VICE-PRESIDENTE,204457,Juninho do Pneu,DEM,RJ,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204457.jpg
 TITULAR,74299,Leônidas Cristino,PDT,CE,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/74299.jpg
-SUPLENTE,204523,Lucas Gonzalez,NOVO,MG,Suplente,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204523.jpg
+TITULAR,204523,Lucas Gonzalez,NOVO,MG,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204523.jpg
 SUPLENTE,204381,Luis Miranda,DEM,DF,Suplente,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204381.jpg
 SUPLENTE,133810,Marcelo Moraes,PTB,RS,Suplente,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/133810.jpg
 SUPLENTE,204431,Marcos Aurélio Sampaio,MDB,PI,Suplente,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204431.jpg
 TITULAR,204428,Marília Arraes,PT,PE,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204428.jpg
 TITULAR,75431,Maurício Dziedricki,PTB,RS,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/75431.jpg
 SUPLENTE,74571,Nelson Pellegrino,,,Suplente,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/74571.jpg
+TITULAR,193726,Paulo Eduardo Martins,PSC,PR,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/193726.jpg
 PRIMEIRO VICE-PRESIDENTE,204399,Schiavinato,PP,PR,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204399.jpg
 TITULAR,178874,Sergio Vidigal,PDT,ES,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/178874.jpg
 NA,204532,Vinicius Poit,NOVO,SP,Titular,PL488112,camara,https://www.camara.leg.br/internet/deputado/bandep/204532.jpg
@@ -2458,19 +2514,23 @@ NA,3855,Leônidas Cristino,NA,NA,Titular,CMMC,congresso_nacional,http://www.sena
 NA,6089,Acácio Favacho,NA,NA,Suplente,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6089.jpg
 NA,5374,Roberto de Lucena,NA,NA,Titular,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5374.jpg
 NA,6069,Léo Moraes,NA,NA,Suplente,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6069.jpg
-NA,3788,Leonardo Monteiro,NA,NA,Titular,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3788.jpg
+NA,4587,José Airton Félix Cirilo,NA,NA,Titular,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4587.jpg
 NA,5820,Nilto Tatto,NA,NA,Suplente,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5820.jpg
 NA,6062,Camilo Capiberibe,NA,NA,Titular,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6062.jpg
 NA,4575,Lídice da Mata,PSB,BA,Suplente,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4575.jpg
 NA,6167,Talíria Petrone,NA,NA,Titular,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6167.jpg
 NA,5657,Edmilson Rodrigues,NA,NA,Suplente,CMMC,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5657.jpg
+NA,151,Luiz Pastore,MDB,ES,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador151.jpg
+NA,4545,Jarbas Vasconcelos,MDB,PE,Suplente,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4545.jpg
+NA,6027,Mecias de Jesus,REPUBLICANOS,RR,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6027.jpg
+NA,35,Jader Barbalho,MDB,PA,Suplente,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador35.jpg
 NA,5998,Daniella Ribeiro,PP,PB,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5998.jpg
 NA,345,Flávio Arns,REDE,PR,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador345.jpg
 NA,5718,Eliziane Gama,CIDADANIA,MA,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg
-NA,5376,Mara Gabrilli,PSDB,SP,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5376.jpg
+RELATOR,5376,Mara Gabrilli,PSDB,SP,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5376.jpg
 NA,4770,Izalci Lucas,PSDB,DF,Suplente,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4770.jpg
 NA,5529,Antonio Anastasia,PSDB,MG,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5529.jpg
-NA,825,Paulo Paim,PT,RS,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador825.jpg
+VICE-PRESIDENTE,825,Paulo Paim,PT,RS,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador825.jpg
 NA,374,Paulo Rocha,PT,PA,Suplente,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador374.jpg
 NA,5535,Telmário Mota,PROS,RR,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5535.jpg
 NA,5783,Zenaide Maia,PROS,RN,Suplente,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5783.jpg
@@ -2482,7 +2542,7 @@ NA,4729,Carlos Zarattini,NA,NA,Titular,CMMIR,congresso_nacional,http://www.senad
 NA,3727,Maria do Rosário,NA,NA,Suplente,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3727.jpg
 NA,5401,Stefano Aguiar,NA,NA,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5401.jpg
 NA,5817,Marcio Alvino,NA,NA,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5817.jpg
-NA,5380,Bruna Furlan,NA,NA,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5380.jpg
+PRESIDENTE,5380,Bruna Furlan,NA,NA,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5380.jpg
 NA,423,Eduardo Barbosa,NA,NA,Suplente,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador423.jpg
 NA,6091,Luis Miranda,NA,NA,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6091.jpg
 NA,6055,Túlio Gadêlha,NA,NA,Titular,CMMIR,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6055.jpg
@@ -3239,6 +3299,7 @@ NA,5976,Eduardo Girão,PODEMOS,CE,Suplente,CMMPV899,congresso_nacional,http://ww
 NA,5693,Mário Negromonte Jr.,NA,NA,Titular,CMMPV899,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5693.jpg
 NA,5341,Alceu Moreira,NA,NA,Suplente,CMMPV899,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5341.jpg
 NA,6240,Hercílio Coelho Diniz,NA,NA,Titular,CMMPV899,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6240.jpg
+NA,6195,Fred Costa,NA,NA,Suplente,CMMPV899,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6195.jpg
 NA,4729,Carlos Zarattini,NA,NA,Titular,CMMPV899,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4729.jpg
 NA,5216,Afonso Florence,NA,NA,Suplente,CMMPV899,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5216.jpg
 NA,5647,Eduardo Bolsonaro,NA,NA,Titular,CMMPV899,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5647.jpg
@@ -3272,7 +3333,7 @@ NA,5988,Soraya Thronicke,PSL,MS,Titular,CMMPV900,congresso_nacional,http://www.s
 NA,5666,Major Olimpio,PSL,SP,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
 NA,5411,Weverton,PDT,MA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5411.jpg
 NA,5979,Leila Barros,PSB,DF,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg
-NA,5982,Alessandro Vieira,CIDADANIA,SE,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5982.jpg
+RELATOR,5982,Alessandro Vieira,CIDADANIA,SE,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5982.jpg
 NA,5012,Randolfe Rodrigues,REDE,AP,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg
 NA,4560,Sérgio Petecão,PSD,AC,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4560.jpg
 NA,5990,Carlos Viana,PSD,MG,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5990.jpg
@@ -3282,15 +3343,15 @@ NA,581,Jaques Wagner,PT,BA,Titular,CMMPV900,congresso_nacional,http://www.senado
 NA,5627,Jean Paul Prates,PT,RN,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5627.jpg
 NA,5732,Rodrigo Pacheco,DEM,MG,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5732.jpg
 NA,3806,Zequinha Marinho,PSC,PA,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3806.jpg
-NA,945,Alvaro Dias,PODEMOS,PR,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador945.jpg
-NA,5976,Eduardo Girão,PODEMOS,CE,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5976.jpg
-NA,6239,Paulo Bengtson,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6239.jpg
+NA,5533,Lasier Martins,PODEMOS,RS,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5533.jpg
+NA,945,Alvaro Dias,PODEMOS,PR,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador945.jpg
+NA,5205,Arthur Lira,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5205.jpg
 NA,5809,Baleia Rossi,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5809.jpg
 NA,5820,Nilto Tatto,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5820.jpg
-NA,6036,Rui Falcão,NA,NA,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6036.jpg
+NA,6196,Airton Faleiro,NA,NA,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6196.jpg
 NA,5647,Eduardo Bolsonaro,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5647.jpg
-NA,6118,Filipe Barros,NA,NA,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6118.jpg
-NA,6258,Sidney Leite,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6258.jpg
+NA,6163,Carlos Jordy,NA,NA,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6163.jpg
+PRESIDENTE,6258,Sidney Leite,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6258.jpg
 NA,5265,Diego Andrade,NA,NA,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5265.jpg
 NA,6218,Zé Vitor,NA,NA,Titular,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6218.jpg
 NA,6268,Raimundo Costa,NA,NA,Suplente,CMMPV900,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6268.jpg
@@ -3332,7 +3393,7 @@ NA,5924,Oriovisto Guimarães,PODEMOS,PR,Titular,CMMPV901,congresso_nacional,http
 NA,5531,Elmano Férrer,PODEMOS,PI,Suplente,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5531.jpg
 NA,5793,Hiran Gonçalves,NA,NA,Titular,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5793.jpg
 NA,6089,Acácio Favacho,NA,NA,Titular,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6089.jpg
-VICE-PRESIDENTE,6159,Gutemberg Reis,NA,NA,Suplente,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6159.jpg
+NA,6159,Gutemberg Reis,NA,NA,Suplente,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6159.jpg
 NA,5820,Nilto Tatto,NA,NA,Titular,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5820.jpg
 NA,4729,Carlos Zarattini,NA,NA,Suplente,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4729.jpg
 NA,6181,Nicoletti,NA,NA,Titular,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6181.jpg
@@ -3355,7 +3416,7 @@ NA,5361,Pr. Marco Feliciano,NA,NA,Titular,CMMPV901,congresso_nacional,http://www
 NA,5642,Bacelar,NA,NA,Suplente,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5642.jpg
 NA,6085,Leda Sadala,NA,NA,Titular,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6085.jpg
 NA,6058,Tito,NA,NA,Suplente,CMMPV901,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6058.jpg
-NA,70,Renan Calheiros,MDB,AL,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador70.jpg
+NA,151,Luiz Pastore,MDB,ES,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador151.jpg
 NA,4545,Jarbas Vasconcelos,MDB,PE,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4545.jpg
 NA,5540,Fernando Bezerra Coelho,MDB,PE,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5540.jpg
 NA,3361,José Maranhão,MDB,PB,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3361.jpg
@@ -3366,7 +3427,7 @@ NA,4770,Izalci Lucas,PSDB,DF,Suplente,CMMPV902,congresso_nacional,http://www.sen
 NA,5666,Major Olimpio,PSL,SP,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
 NA,5988,Soraya Thronicke,PSL,MS,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
 NA,5895,Jorge Kajuru,CIDADANIA,GO,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg
-NA,5985,Nelsinho Trad,PSD,MS,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5985.jpg
+RELATOR,5985,Nelsinho Trad,PSD,MS,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5985.jpg
 NA,5967,Angelo Coronel,PSD,BA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5967.jpg
 NA,4560,Sérgio Petecão,PSD,AC,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4560.jpg
 NA,751,Arolde de Oliveira,PSD,RJ,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador751.jpg
@@ -3379,7 +3440,9 @@ NA,5350,Jorginho Mello,PL,SC,Suplente,CMMPV902,congresso_nacional,http://www.sen
 NA,5942,Marcos do Val,PODEMOS,ES,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5942.jpg
 NA,5924,Oriovisto Guimarães,PODEMOS,PR,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5924.jpg
 NA,5341,Alceu Moreira,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5341.jpg
-NA,7,Benedita da Silva,PT,RJ,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador7.jpg
+NA,6050,Marcelo Moraes,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6050.jpg
+NA,4797,Neri Geller,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4797.jpg
+PRESIDENTE,7,Benedita da Silva,PT,RJ,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador7.jpg
 NA,4729,Carlos Zarattini,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4729.jpg
 NA,6084,Bia Kicis,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6084.jpg
 NA,6163,Carlos Jordy,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6163.jpg
@@ -3391,14 +3454,14 @@ NA,5757,Tadeu Alencar,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senad
 NA,6098,Elias Vaz,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6098.jpg
 NA,5330,Jhonatan de Jesus,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5330.jpg
 NA,6276,João Roma,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6276.jpg
-NA,3765,Carlos Sampaio,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3765.jpg
+NA,5824,Samuel Moreira,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5824.jpg
 NA,6068,Beto Pereira,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6068.jpg
 NA,6091,Luis Miranda,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6091.jpg
 NA,4642,Efraim Filho,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4642.jpg
 NA,4320,André Figueiredo,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4320.jpg
 NA,5543,Afonso Motta,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5543.jpg
-NA,6100,José Nelto,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6100.jpg
-NA,5642,Bacelar,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5642.jpg
+NA,5764,Diego Garcia,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5764.jpg
+NA,5361,Pr. Marco Feliciano,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5361.jpg
 NA,6195,Fred Costa,NA,NA,Titular,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6195.jpg
 NA,6190,Célio Studart,NA,NA,Suplente,CMMPV902,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6190.jpg
 NA,5585,Luiz do Carmo,MDB,GO,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5585.jpg
@@ -3413,7 +3476,7 @@ NA,5666,Major Olimpio,PSL,SP,Titular,CMMPV903,congresso_nacional,http://www.sena
 NA,5988,Soraya Thronicke,PSL,MS,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
 NA,5411,Weverton,PDT,MA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5411.jpg
 NA,5012,Randolfe Rodrigues,REDE,AP,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg
-NA,5748,Veneziano Vital do Rêgo,PSB,PB,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg
+PRESIDENTE,5748,Veneziano Vital do Rêgo,PSB,PB,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg
 NA,5718,Eliziane Gama,CIDADANIA,MA,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg
 NA,4560,Sérgio Petecão,PSD,AC,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4560.jpg
 NA,5385,Irajá,PSD,TO,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5385.jpg
@@ -3426,6 +3489,7 @@ NA,5350,Jorginho Mello,PL,SC,Suplente,CMMPV903,congresso_nacional,http://www.sen
 NA,5531,Elmano Férrer,PODEMOS,PI,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5531.jpg
 NA,945,Alvaro Dias,PODEMOS,PR,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador945.jpg
 NA,6239,Paulo Bengtson,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6239.jpg
+NA,5862,Nivaldo Albuquerque,NA,NA,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5862.jpg
 NA,5809,Baleia Rossi,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5809.jpg
 NA,4729,Carlos Zarattini,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4729.jpg
 NA,5216,Afonso Florence,NA,NA,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5216.jpg
@@ -3439,7 +3503,7 @@ NA,5757,Tadeu Alencar,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senad
 NA,6098,Elias Vaz,NA,NA,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6098.jpg
 NA,5330,Jhonatan de Jesus,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5330.jpg
 NA,6276,João Roma,NA,NA,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6276.jpg
-NA,5270,Domingos Sávio,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5270.jpg
+RELATOR,5270,Domingos Sávio,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5270.jpg
 NA,6068,Beto Pereira,NA,NA,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6068.jpg
 NA,5689,Elmar Nascimento,NA,NA,Titular,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5689.jpg
 NA,4642,Efraim Filho,NA,NA,Suplente,CMMPV903,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4642.jpg
@@ -3470,8 +3534,8 @@ NA,5352,Rogério Carvalho,PT,SE,Titular,CMMPV904,congresso_nacional,http://www.s
 NA,5627,Jean Paul Prates,PT,RN,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5627.jpg
 NA,5783,Zenaide Maia,PROS,RN,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5783.jpg
 NA,5008,Humberto Costa,PT,PE,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5008.jpg
-NA,5732,Rodrigo Pacheco,DEM,MG,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5732.jpg
-NA,5350,Jorginho Mello,PL,SC,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5350.jpg
+RELATOR,5422,Marcos Rogério,DEM,RO,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5422.jpg
+NA,5732,Rodrigo Pacheco,DEM,MG,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5732.jpg
 NA,5959,Styvenson Valentim,PODEMOS,RN,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5959.jpg
 NA,5942,Marcos do Val,PODEMOS,ES,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5942.jpg
 NA,5693,Mário Negromonte Jr.,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5693.jpg
@@ -3479,7 +3543,7 @@ NA,6176,Juarez Costa,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senad
 NA,412,Mauro Lopes,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador412.jpg
 NA,5648,Cacá Leão,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5648.jpg
 NA,5692,Jorge Solla,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5692.jpg
-NA,6036,Rui Falcão,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6036.jpg
+NA,6204,Alexandre Padilha,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6204.jpg
 NA,6123,Sanderson,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6123.jpg
 NA,6163,Carlos Jordy,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6163.jpg
 NA,4676,Hugo Leal,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4676.jpg
@@ -3489,14 +3553,14 @@ NA,6257,Marcelo Ramos,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.sena
 NA,6098,Elias Vaz,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6098.jpg
 NA,5283,Hugo Motta,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5283.jpg
 NA,6172,Manuel Marcos,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6172.jpg
-NA,3765,Carlos Sampaio,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3765.jpg
+NA,5270,Domingos Sávio,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5270.jpg
 NA,6068,Beto Pereira,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6068.jpg
-NA,5714,Lucas Vergilio,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5714.jpg
+PRESIDENTE,5714,Lucas Vergilio,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5714.jpg
 NA,4642,Efraim Filho,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4642.jpg
 NA,6035,Fábio Henrique,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6035.jpg
 NA,3855,Leônidas Cristino,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3855.jpg
-NA,6100,José Nelto,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6100.jpg
-NA,5642,Bacelar,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5642.jpg
+NA,6069,Léo Moraes,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6069.jpg
+NA,5361,Pr. Marco Feliciano,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5361.jpg
 NA,6171,Joenia Wapichana,NA,NA,Titular,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6171.jpg
 NA,6224,Lucas Gonzalez,NA,NA,Suplente,CMMPV904,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6224.jpg
 NA,4994,Eduardo Braga,MDB,AM,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg
@@ -3514,9 +3578,9 @@ NA,4560,Sérgio Petecão,PSD,AC,Titular,CMMPV905,congresso_nacional,http://www.s
 NA,751,Arolde de Oliveira,PSD,RJ,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador751.jpg
 NA,5385,Irajá,PSD,TO,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5385.jpg
 NA,5990,Carlos Viana,PSD,MG,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5990.jpg
-NA,5008,Humberto Costa,PT,PE,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5008.jpg
+NA,374,Paulo Rocha,PT,PA,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador374.jpg
 NA,5352,Rogério Carvalho,PT,SE,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5352.jpg
-NA,5535,Telmário Mota,PROS,RR,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5535.jpg
+NA,825,Paulo Paim,PT,RS,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador825.jpg
 NA,5783,Zenaide Maia,PROS,RN,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5783.jpg
 NA,5732,Rodrigo Pacheco,DEM,MG,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5732.jpg
 NA,5350,Jorginho Mello,PL,SC,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5350.jpg
@@ -3531,7 +3595,7 @@ NA,6182,Rogério Correia,NA,NA,Suplente,CMMPV905,congresso_nacional,http://www.s
 NA,6161,Major Fabiana,NA,NA,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6161.jpg
 NA,6123,Sanderson,NA,NA,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6123.jpg
 NA,713,André de Paula,NA,NA,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador713.jpg
-NA,5265,Diego Andrade,NA,NA,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5265.jpg
+NA,4676,Hugo Leal,NA,NA,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4676.jpg
 NA,5714,Lucas Vergilio,NA,NA,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5714.jpg
 NA,399,Lincoln Portela,NA,NA,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador399.jpg
 NA,5292,Danilo Cabral,NA,NA,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5292.jpg
@@ -3548,7 +3612,9 @@ NA,6100,José Nelto,NA,NA,Titular,CMMPV905,congresso_nacional,http://www.senado.
 NA,5361,Pr. Marco Feliciano,NA,NA,Suplente,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5361.jpg
 NA,4746,Paulo Pereira da Silva,NA,NA,Titular,CMMPV905,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4746.jpg
 NA,4994,Eduardo Braga,MDB,AM,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg
-NA,285,Marcio Bittar,MDB,AC,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador285.jpg
+NA,5585,Luiz do Carmo,MDB,GO,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5585.jpg
+NA,151,Luiz Pastore,MDB,ES,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador151.jpg
+NA,475,Confúcio Moura,MDB,RO,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador475.jpg
 NA,1186,Luis Carlos Heinze,PP,RS,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1186.jpg
 NA,5899,Vanderlan Cardoso,PP,GO,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5899.jpg
 NA,677,Roberto Rocha,PSDB,MA,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador677.jpg
@@ -3575,7 +3641,7 @@ NA,5205,Arthur Lira,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.
 NA,5809,Baleia Rossi,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5809.jpg
 NA,3726,Paulo Pimenta,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3726.jpg
 NA,6036,Rui Falcão,NA,NA,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6036.jpg
-NA,6084,Bia Kicis,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6084.jpg
+NA,6233,Vinicius Poit,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6233.jpg
 NA,6163,Carlos Jordy,NA,NA,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6163.jpg
 NA,6105,Vermelho,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6105.jpg
 NA,5265,Diego Andrade,NA,NA,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5265.jpg
@@ -3594,14 +3660,16 @@ NA,6100,José Nelto,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.
 NA,5642,Bacelar,NA,NA,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5642.jpg
 NA,2324,Ivan Valente,NA,NA,Titular,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador2324.jpg
 NA,6114,Fernanda Melchionna,NA,NA,Suplente,CMMPV906,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6114.jpg
-NA,4994,Eduardo Braga,MDB,AM,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg
-NA,285,Marcio Bittar,MDB,AC,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador285.jpg
-NA,739,Ciro Nogueira,PP,PI,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador739.jpg
+NA,5540,Fernando Bezerra Coelho,MDB,PE,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5540.jpg
+NA,742,Marcelo Castro,MDB,PI,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg
+NA,5537,Dário Berger,MDB,SC,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5537.jpg
+NA,4545,Jarbas Vasconcelos,MDB,PE,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4545.jpg
+NA,1186,Luis Carlos Heinze,PP,RS,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1186.jpg
 NA,22,Esperidião Amin,PP,SC,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador22.jpg
 NA,5905,Rodrigo Cunha,PSDB,AL,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5905.jpg
 NA,5666,Major Olimpio,PSL,SP,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
 NA,5988,Soraya Thronicke,PSL,MS,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
-NA,5411,Weverton,PDT,MA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5411.jpg
+NA,5748,Veneziano Vital do Rêgo,PSB,PB,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg
 NA,5979,Leila Barros,PSB,DF,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg
 NA,5012,Randolfe Rodrigues,REDE,AP,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg
 NA,5718,Eliziane Gama,CIDADANIA,MA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg
@@ -3618,7 +3686,8 @@ NA,5350,Jorginho Mello,PL,SC,Suplente,CMMPV907,congresso_nacional,http://www.sen
 NA,945,Alvaro Dias,PODEMOS,PR,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador945.jpg
 NA,5976,Eduardo Girão,PODEMOS,CE,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5976.jpg
 NA,5205,Arthur Lira,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5205.jpg
-NA,5809,Baleia Rossi,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5809.jpg
+NA,5815,Herculano Passos,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5815.jpg
+NA,5731,Newton Cardoso Jr,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5731.jpg
 NA,3726,Paulo Pimenta,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3726.jpg
 NA,6036,Rui Falcão,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6036.jpg
 NA,6084,Bia Kicis,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6084.jpg
@@ -3631,15 +3700,64 @@ NA,5757,Tadeu Alencar,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senad
 NA,6098,Elias Vaz,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6098.jpg
 NA,5330,Jhonatan de Jesus,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5330.jpg
 NA,6276,João Roma,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6276.jpg
-NA,3765,Carlos Sampaio,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3765.jpg
+NA,1168,Roberto Pessoa,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1168.jpg
 NA,6068,Beto Pereira,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6068.jpg
-NA,6042,Leur Lomanto Júnior,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6042.jpg
-NA,4320,André Figueiredo,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4320.jpg
+NA,5695,Paulo Azi,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5695.jpg
+NA,6042,Leur Lomanto Júnior,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6042.jpg
+NA,6035,Fábio Henrique,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6035.jpg
 NA,5543,Afonso Motta,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5543.jpg
 NA,6100,José Nelto,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6100.jpg
 NA,5642,Bacelar,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5642.jpg
 NA,3851,Daniel Almeida,NA,NA,Titular,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3851.jpg
 NA,3822,Perpétua Almeida,NA,NA,Suplente,CMMPV907,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3822.jpg
+NA,742,Marcelo Castro,MDB,PI,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg
+NA,70,Renan Calheiros,MDB,AL,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador70.jpg
+NA,5540,Fernando Bezerra Coelho,MDB,PE,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5540.jpg
+NA,4545,Jarbas Vasconcelos,MDB,PE,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4545.jpg
+NA,5899,Vanderlan Cardoso,PP,GO,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5899.jpg
+NA,5998,Daniella Ribeiro,PP,PB,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5998.jpg
+NA,677,Roberto Rocha,PSDB,MA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador677.jpg
+NA,4770,Izalci Lucas,PSDB,DF,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4770.jpg
+NA,5666,Major Olimpio,PSL,SP,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
+NA,5988,Soraya Thronicke,PSL,MS,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
+NA,5411,Weverton,PDT,MA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5411.jpg
+NA,5979,Leila Barros,PSB,DF,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg
+NA,5012,Randolfe Rodrigues,REDE,AP,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg
+NA,5718,Eliziane Gama,CIDADANIA,MA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5718.jpg
+NA,5523,Otto Alencar,PSD,BA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5523.jpg
+NA,5967,Angelo Coronel,PSD,BA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5967.jpg
+NA,5385,Irajá,PSD,TO,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5385.jpg
+NA,5008,Humberto Costa,PT,PE,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5008.jpg
+NA,5352,Rogério Carvalho,PT,SE,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5352.jpg
+NA,5535,Telmário Mota,PROS,RR,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5535.jpg
+NA,5783,Zenaide Maia,PROS,RN,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5783.jpg
+NA,5732,Rodrigo Pacheco,DEM,MG,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5732.jpg
+NA,5350,Jorginho Mello,PL,SC,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5350.jpg
+NA,945,Alvaro Dias,PODEMOS,PR,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador945.jpg
+NA,5976,Eduardo Girão,PODEMOS,CE,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5976.jpg
+NA,5205,Arthur Lira,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5205.jpg
+NA,5809,Baleia Rossi,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5809.jpg
+NA,3726,Paulo Pimenta,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3726.jpg
+NA,6036,Rui Falcão,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6036.jpg
+NA,6084,Bia Kicis,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6084.jpg
+NA,6163,Carlos Jordy,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6163.jpg
+NA,713,André de Paula,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador713.jpg
+NA,5265,Diego Andrade,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5265.jpg
+NA,6268,Raimundo Costa,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6268.jpg
+NA,6270,Gildenemyr,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6270.jpg
+NA,6134,João H. Campos,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6134.jpg
+NA,5330,Jhonatan de Jesus,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5330.jpg
+NA,6276,João Roma,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6276.jpg
+NA,3765,Carlos Sampaio,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3765.jpg
+NA,6068,Beto Pereira,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6068.jpg
+NA,5689,Elmar Nascimento,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5689.jpg
+NA,4642,Efraim Filho,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4642.jpg
+NA,6055,Túlio Gadêlha,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6055.jpg
+NA,6242,Eduardo Bismarck,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6242.jpg
+NA,6100,José Nelto,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6100.jpg
+NA,5642,Bacelar,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5642.jpg
+NA,6267,Marreca Filho,NA,NA,Titular,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6267.jpg
+NA,5293,Pastor Eurico,NA,NA,Suplente,CMMPV908,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5293.jpg
 PRESIDENTE,742,Marcelo Castro,MDB,PI,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg
 NA,3777,Eduardo Gomes,MDB,TO,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3777.jpg
 NA,5585,Luiz do Carmo,MDB,GO,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5585.jpg
@@ -3650,8 +3768,7 @@ NA,4770,Izalci Lucas,PSDB,DF,Titular,CMO,congresso_nacional,http://www.senado.le
 NA,5376,Mara Gabrilli,PSDB,SP,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5376.jpg
 2º VICE-PRESIDENTE,5531,Elmano Férrer,PODEMOS,PI,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5531.jpg
 Relator do Projeto de Plano Plurianual,5924,Oriovisto Guimarães,PODEMOS,PR,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5924.jpg
-NA,5894,Flávio Bolsonaro,S/Partido,RJ,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg
-NA,5988,Soraya Thronicke,PSL,MS,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
+NA,5988,Soraya Thronicke,PSL,MS,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
 NA,5748,Veneziano Vital do Rêgo,PSB,PB,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg
 NA,5012,Randolfe Rodrigues,REDE,AP,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5012.jpg
 NA,1249,Kátia Abreu,PDT,TO,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1249.jpg
@@ -3711,7 +3828,7 @@ NA,3850,Alice Portugal,NA,NA,Suplente,CMO,congresso_nacional,http://www.senado.l
 NA,3800,Vander Loubet,NA,NA,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3800.jpg
 NA,5338,Bohn Gass,NA,NA,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5338.jpg
 NA,5300,Zeca Dirceu,NA,NA,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5300.jpg
-NA,595,Nelson Pellegrino,NA,NA,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador595.jpg
+NA,4729,Carlos Zarattini,NA,NA,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4729.jpg
 3º VICE-PRESIDENTE,4639,Beto Faro,NA,NA,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4639.jpg
 NA,5724,Zé Carlos,NA,NA,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5724.jpg
 NA,1180,Gonzaga Patriota,NA,NA,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1180.jpg
@@ -3723,6 +3840,74 @@ NA,6267,Marreca Filho,NA,NA,Titular,CMO,congresso_nacional,http://www.senado.leg
 NA,5765,Roman,NA,NA,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5765.jpg
 NA,6224,Lucas Gonzalez,NA,NA,Titular,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6224.jpg
 NA,6217,Alexis Fonteyne,NA,NA,Suplente,CMO,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6217.jpg
+NA,742,Marcelo Castro,MDB,PI,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador742.jpg
+NA,6027,Mecias de Jesus,REPUBLICANOS,RR,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6027.jpg
+NA,285,Marcio Bittar,MDB,AC,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador285.jpg
+NA,5008,Humberto Costa,PT,PE,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5008.jpg
+NA,1186,Luis Carlos Heinze,PP,RS,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1186.jpg
+NA,5905,Rodrigo Cunha,PSDB,AL,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5905.jpg
+NA,5988,Soraya Thronicke,PSL,MS,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5988.jpg
+NA,5748,Veneziano Vital do Rêgo,PSB,PB,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5748.jpg
+NA,345,Flávio Arns,REDE,PR,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador345.jpg
+NA,5942,Marcos do Val,PODEMOS,ES,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5942.jpg
+NA,5979,Leila Barros,PSB,DF,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg
+NA,5967,Angelo Coronel,PSD,BA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5967.jpg
+NA,5985,Nelsinho Trad,PSD,MS,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5985.jpg
+NA,5535,Telmário Mota,PROS,RR,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5535.jpg
+NA,581,Jaques Wagner,PT,BA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador581.jpg
+NA,5732,Rodrigo Pacheco,DEM,MG,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5732.jpg
+NA,4531,Jayme Campos,DEM,MT,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4531.jpg
+NA,6086,Coronel Armando,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6086.jpg
+NA,6163,Carlos Jordy,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6163.jpg
+NA,5402,Delegado Waldir,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5402.jpg
+NA,6249,Heitor Freire,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6249.jpg
+NA,4512,Afonso Hamm,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4512.jpg
+NA,5640,Fausto Pinato,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5640.jpg
+NA,353,Ricardo Barros,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador353.jpg
+NA,6183,Dr. Jaziel,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6183.jpg
+NA,588,José Rocha,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador588.jpg
+NA,4698,Edio Lopes,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4698.jpg
+NA,5336,Giovani Cherini,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5336.jpg
+NA,5340,Danrlei de Deus Hinterholz,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5340.jpg
+NA,6205,Cezinha de Madureira,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6205.jpg
+NA,6105,Vermelho,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6105.jpg
+NA,4676,Hugo Leal,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4676.jpg
+NA,5831,Moses Rodrigues,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5831.jpg
+NA,4714,Celso Maldaner,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4714.jpg
+NA,6180,Vinicius Farah,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6180.jpg
+NA,5348,Rogério Peninha Mendonça,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5348.jpg
+NA,859,Celso Russomanno,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador859.jpg
+NA,5796,Carlos Gomes,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5796.jpg
+NA,6111,Lucas Redecker,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6111.jpg
+NA,6068,Beto Pereira,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6068.jpg
+NA,5365,Alexandre Leite,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5365.jpg
+NA,6104,Pedro Lupion,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6104.jpg
+NA,5396,Maurício Dziedricki,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5396.jpg
+NA,6285,Santini,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6285.jpg
+NA,5858,Paulo Eduardo Martins,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5858.jpg
+NA,5380,Bruna Furlan,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5380.jpg
+NA,6051,Paulo Ramos,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6051.jpg
+NA,5543,Afonso Motta,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5543.jpg
+NA,5321,Aureo Ribeiro,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5321.jpg
+NA,6053,Tiago Dimas,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6053.jpg
+NA,5642,Bacelar,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5642.jpg
+NA,5374,Roberto de Lucena,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5374.jpg
+NA,3822,Perpétua Almeida,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3822.jpg
+NA,769,Jandira Feghali,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador769.jpg
+NA,5293,Pastor Eurico,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5293.jpg
+NA,6267,Marreca Filho,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6267.jpg
+NA,853,Arlindo Chinaglia,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador853.jpg
+NA,3727,Maria do Rosário,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3727.jpg
+NA,3785,Odair Cunha,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador3785.jpg
+NA,5493,Paulão,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5493.jpg
+NA,5798,Heitor Schuch,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5798.jpg
+NA,6114,Fernanda Melchionna,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6114.jpg
+NA,4821,Glauber Braga,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4821.jpg
+NA,5300,Zeca Dirceu,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5300.jpg
+NA,6054,Marcel Van Hattem,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6054.jpg
+NA,6075,Gilson Marques,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6075.jpg
+NA,5779,Rosangela Gomes,NA,NA,Titular,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5779.jpg
+NA,5263,Eros Biondini,NA,NA,Suplente,CPCMS,congresso_nacional,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5263.jpg
 NA,4994,Eduardo Braga,MDB,AM,Titular,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4994.jpg
 NA,70,Renan Calheiros,MDB,AL,Suplente,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador70.jpg
 NA,6027,Mecias de Jesus,REPUBLICANOS,RR,Titular,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador6027.jpg
@@ -3747,7 +3932,6 @@ NA,5533,Lasier Martins,PODEMOS,RS,Titular,CAE,senado,http://www.senado.leg.br/se
 NA,5666,Major Olimpio,PSL,SP,Suplente,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5666.jpg
 NA,5236,Reguffe,PODEMOS,DF,Titular,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5236.jpg
 NA,677,Roberto Rocha,PSDB,MA,Suplente,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador677.jpg
-NA,5894,Flávio Bolsonaro,S/Partido,RJ,Titular,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg
 NA,4770,Izalci Lucas,PSDB,DF,Suplente,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4770.jpg
 NA,5895,Jorge Kajuru,CIDADANIA,GO,Titular,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5895.jpg
 NA,5979,Leila Barros,PSB,DF,Suplente,CAE,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5979.jpg
@@ -4033,7 +4217,6 @@ NA,5899,Vanderlan Cardoso,PP,GO,Titular,CI,senado,http://www.senado.leg.br/senad
 NA,1186,Luis Carlos Heinze,PP,RS,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador1186.jpg
 NA,5502,Plínio Valério,PSDB,AM,Titular,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5502.jpg
 NA,90,José Serra,PSDB,SP,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador90.jpg
-NA,5894,Flávio Bolsonaro,S/Partido,RJ,Titular,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5894.jpg
 NA,4770,Izalci Lucas,PSDB,DF,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador4770.jpg
 NA,677,Roberto Rocha,PSDB,MA,Titular,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador677.jpg
 NA,5929,Juíza Selma,PODEMOS,MT,Suplente,CI,senado,http://www.senado.leg.br/senadores/img/fotos-oficiais/senador5929.jpg
