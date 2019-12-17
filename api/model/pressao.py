@@ -1,11 +1,13 @@
 from django.db import models
-from api.model.etapa_proposicao import EtapaProposicao
+from api.model.proposicao import Proposicao
 
 
 class Pressao(models.Model):
     '''
     Pressao da proposicao
     '''
+
+    id_leggo = models.IntegerField('Id da proposição principal no leggo.')
 
     date = models.DateField('Dia da popularidade')
 
@@ -19,4 +21,4 @@ class Pressao(models.Model):
         'Pressão dos termos relacionados')
 
     proposicao = models.ForeignKey(
-        EtapaProposicao, on_delete=models.CASCADE, related_name='pressao')
+        Proposicao, on_delete=models.CASCADE, related_name='pressao')

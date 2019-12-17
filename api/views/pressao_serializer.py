@@ -22,9 +22,7 @@ class PressaoList(generics.ListAPIView):
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING),
-            openapi.Parameter(
-                'id_ext', openapi.IN_PATH, 'id da proposição no sistema da casa',
+                'id_leggo', openapi.IN_PATH, 'id da proposição no sistema',
                 type=openapi.TYPE_INTEGER),
         ]
     )
@@ -32,9 +30,8 @@ class PressaoList(generics.ListAPIView):
         '''
         Retorna a pressão
         '''
-        casa = self.kwargs['casa']
-        id_ext = self.kwargs['id_ext']
+        id_leggo = self.kwargs['id_leggo']
         queryset = Pressao.objects.filter(
-            proposicao__casa=casa, proposicao__id_ext=id_ext)
+            proposicao__id_leggo=id_leggo)
 
         return queryset

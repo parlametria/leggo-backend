@@ -39,7 +39,7 @@ urlpatterns = [
         EmendasList.as_view()),
     url(r'^atores/(?P<id_leggo>[0-9]+)/?$',
         AtoresList.as_view()),
-    url(r'^pressao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
+    url(r'^pressao/(?P<id_leggo>[0-9]+)/?$',
         PressaoList.as_view()),
     url(r'^coautorias_node/(?P<id>[0-9]+)/?$',
         CoautoriaNodeList.as_view()),
