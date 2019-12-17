@@ -183,4 +183,3 @@ class EtapaProposicao(models.Model):
             if row['local'] != local_com_c_que_nao_e_comissao and row['local'][0] == "C":
                 comissoes.add(row['local'])
         return comissoes
-
