@@ -1,4 +1,4 @@
-id_ext,date,casa,Anistia Tributaria para Partidos,PL 1321/2019,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral,id_leggo
+id_ext,date,casa,PL 1321/2019,Anistia Tributaria para Partidos,isPartial,max_pressao_principal,max_pressao_rel,maximo_geral,id_leggo
 2193540,2019-06-17,camara,0,0,False,0,0,0,47
 2193540,2019-06-24,camara,0,0,False,0,0,0,47
 2193540,2019-07-01,camara,0,0,False,0,0,0,47
@@ -22,6 +22,6 @@ id_ext,date,casa,Anistia Tributaria para Partidos,PL 1321/2019,isPartial,max_pre
 2193540,2019-11-04,camara,0,0,False,0,0,0,47
 2193540,2019-11-11,camara,0,0,False,0,0,0,47
 2193540,2019-11-18,camara,0,0,False,0,0,0,47
-2193540,2019-11-25,camara,0,97,False,97,0,97,47
+2193540,2019-11-25,camara,96,0,False,96,0,96,47
 2193540,2019-12-02,camara,0,0,False,0,0,0,47
-2193540,2019-12-09,camara,0,100,False,100,0,100,47
+2193540,2019-12-09,camara,100,0,False,100,0,100,47
