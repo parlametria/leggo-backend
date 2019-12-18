@@ -20,7 +20,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'temas', 'apelido', 'etapas', 'resumo_progresso', 'id_leggo',
             'temperatura_historico', 'ultima_temperatura', 'temperatura_coeficiente',
-            'top_atores', 'top_important_atores')
+            'top_atores', 'top_important_atores', 'advocacy_link')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):

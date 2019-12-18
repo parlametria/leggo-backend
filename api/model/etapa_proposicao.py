@@ -77,6 +77,8 @@ class EtapaProposicao(models.Model):
         'Tema da proposição.', max_length=40,
         help_text='Podendo ser entre Meio Ambiente e agenda nacional.', null=True)
 
+    advocacy_link = models.TextField(blank=True, null=True)
+
     class Meta:
         indexes = [
             models.Index(fields=['casa', 'id_ext']),
