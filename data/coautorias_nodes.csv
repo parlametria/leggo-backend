@@ -1,30 +1,5 @@
 id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
-1,141488,Dep. Paulo Teixeira,PT,SP,oposição,Dep. Paulo Teixeira (PT/SP),11.333333333333334
-1,141553,Dep. Vanderlei Macris,PSDB,SP,governo,Dep. Vanderlei Macris (PSDB/SP),2
-1,146788,Dep. Marcelo Aro,PP,MG,governo,Dep. Marcelo Aro (PP/MG),2
 1,160426,Dep. Rogério Rosso,PSD,DF,governo,Dep. Rogério Rosso (PSD/DF),1
-1,160637,Dep. Ronaldo Fonseca,PODE,DF,governo,Dep. Ronaldo Fonseca (PODE/DF),1
-1,160640,Dep. Eros Biondini,PROS,MG,governo,Dep. Eros Biondini (PROS/MG),1
-1,160758,Dep. Domingos Sávio,PSDB,MG,governo,Dep. Domingos Sávio (PSDB/MG),1
-1,167614,Dep. Severino Ninho,PSB,PE,oposição,Dep. Severino Ninho (PSB/PE),2
-1,178833,Dep. Alexandre Serfiotis,PSD,RJ,governo,Dep. Alexandre Serfiotis (PSD/RJ),1
-1,178865,Dep. Cabo Sabino,AVANTE,CE,governo,Dep. Cabo Sabino (AVANTE/CE),5
-1,178874,Dep. Sergio Vidigal,PDT,ES,oposição,Dep. Sergio Vidigal (PDT/ES),3
-1,178877,Dep. Fábio Sousa,PSDB,GO,governo,Dep. Fábio Sousa (PSDB/GO),2
-1,178894,Dep. Laudivio Carvalho,PODE,MG,governo,Dep. Laudivio Carvalho (PODE/MG),1
-1,178912,Dep. Pedro Cunha Lima,PSDB,PB,governo,Dep. Pedro Cunha Lima (PSDB/PB),1
-1,178927,Dep. Aliel Machado,PSB,PR,oposição,Dep. Aliel Machado (PSB/PR),1
-1,178929,Dep. Diego Garcia,PODE,PR,governo,Dep. Diego Garcia (PODE/PR),1
-1,189593,Dep. Wadih Damous,PT,RJ,oposição,Dep. Wadih Damous (PT/RJ),2.333333333333333
-1,192120,Dep. Angela Albino,PCdoB,SC,oposição,Dep. Angela Albino (PCdoB/SC),1
-1,73466,Dep. Rubens Bueno,CIDADANIA,PR,governo,Dep. Rubens Bueno (CIDADANIA/PR),3
-1,73584,Dep. Antonio Carlos Mendes Thame,PV,SP,governo,Dep. Antonio Carlos Mendes Thame (PV/SP),9
-1,73778,Dep. Luiz Carlos Hauly,PSDB,PR,governo,Dep. Luiz Carlos Hauly (PSDB/PR),3
-1,74010,Dep. Valdir Colatto,MDB,SC,governo,Dep. Valdir Colatto (MDB/SC),2
-1,74156,Dep. Leonardo Monteiro,PT,MG,oposição,Dep. Leonardo Monteiro (PT/MG),1.3333333333333333
-1,74319,Dep. Paes Landim,PTB,PI,governo,Dep. Paes Landim (PTB/PI),1
-1,74399,Dep. Onyx Lorenzoni,DEM,,governo,Dep. Onyx Lorenzoni (DEM/NA),4
-1,92776,Dep. Stefano Aguiar,PSD,MG,governo,Dep. Stefano Aguiar (PSD/MG),1
 1,285,Sen. Marcio Bittar,MDB,AC,governo,Sen. Marcio Bittar (MDB/AC),2
 1,5008,Sen. Humberto Costa,PT,PE,oposição,Sen. Humberto Costa (PT/PE),1
 1,5411,Sen. Weverton,PDT,MA,oposição,Sen. Weverton (PDT/MA),5
@@ -43,7 +18,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 1,945,Sen. Alvaro Dias,PODEMOS,PR,governo,Sen. Alvaro Dias (PODEMOS/PR),3
 2,141516,Dep. Paulo Abi-Ackel,PSDB,MG,governo,Dep. Paulo Abi-Ackel (PSDB/MG),1.5
 2,141536,Dep. Rômulo Gouveia,"",PB,governo,Dep. Rômulo Gouveia (/PB),1
-2,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/RJ),2
+2,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/RJ),1
 2,160515,Dep. Ronaldo Benedet,MDB,SC,governo,Dep. Ronaldo Benedet (MDB/SC),2
 2,160559,Dep. Alceu Moreira,MDB,,governo,Dep. Alceu Moreira (MDB/NA),1
 2,160636,Dep. Wilson Filho,PTB,PB,governo,Dep. Wilson Filho (PTB/PB),1
@@ -64,44 +39,22 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 2,74665,Dep. Jaime Martins,PROS,MG,governo,Dep. Jaime Martins (PROS/MG),1
 2,76874,Dep. Marcelo Freixo,PSOL,RJ,oposição,Dep. Marcelo Freixo (PSOL/RJ),1
 3,1186,Sen. Luis Carlos Heinze,PP,RS,governo,Sen. Luis Carlos Heinze (PP/RS),1
+3,4560,Sen. Sérgio Petecão,PSD,AC,governo,Sen. Sérgio Petecão (PSD/AC),1
 4,204523,Dep. Lucas Gonzalez,NOVO,MG,governo,Dep. Lucas Gonzalez (NOVO/MG),1
 5,133968,Dep. Paulo Ramos,PDT,RJ,oposição,Dep. Paulo Ramos (PDT/RJ),1
-5,141536,Dep. Rômulo Gouveia,"",PB,governo,Dep. Rômulo Gouveia (/PB),1
 5,148134,Dep. Professor Victório Galli,PSL,MT,governo,Dep. Professor Victório Galli (PSL/MT),1
-5,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/RJ),4
-5,160538,Dep. Bohn Gass,PT,RS,oposição,Dep. Bohn Gass (PT/RS),4.666666666666666
-5,160556,Dep. Padre João,PT,MG,oposição,Dep. Padre João (PT/MG),1.6666666666666665
-5,160651,Dep. Rogério Peninha Mendonça,MDB,SC,governo,Dep. Rogério Peninha Mendonça (MDB/SC),1
-5,162332,Dep. Luiz Nishimori,PL,PR,governo,Dep. Luiz Nishimori (PL/PR),24
-5,178857,Dep. Jorge Solla,PT,BA,oposição,Dep. Jorge Solla (PT/BA),1
+5,160632,Dep. Zé Silva,SOLIDARIEDADE,MG,governo,Dep. Zé Silva (SOLIDARIEDADE/MG),1
+5,178835,Dep. Afonso Motta,PDT,RS,oposição,Dep. Afonso Motta (PDT/RS),1
 5,178858,Dep. Mário Negromonte Jr.,PP,BA,governo,Dep. Mário Negromonte Jr. (PP/BA),1
-5,178901,Dep. Tereza Cristina,DEM,,governo,Dep. Tereza Cristina (DEM/NA),2
-5,178930,Dep. Evandro Roman,PSD,PR,governo,Dep. Evandro Roman (PSD/PR),2
-5,178933,Dep. Sergio Souza,MDB,PR,governo,Dep. Sergio Souza (MDB/PR),1
-5,178963,Dep. Covatti Filho,PP,,governo,Dep. Covatti Filho (PP/NA),1
-5,178964,Dep. Heitor Schuch,PSB,RS,oposição,Dep. Heitor Schuch (PSB/RS),1
-5,178970,Dep. João Daniel,PT,SE,oposição,Dep. João Daniel (PT/SE),3.6666666666666665
-5,178986,Dep. Nilto Tatto,PT,SP,oposição,Dep. Nilto Tatto (PT/SP),3
+5,178930,Dep. Evandro Roman,PSD,PR,governo,Dep. Evandro Roman (PSD/PR),1
+5,178970,Dep. João Daniel,PT,SE,oposição,Dep. João Daniel (PT/SE),2
+5,178986,Dep. Nilto Tatto,PT,SP,oposição,Dep. Nilto Tatto (PT/SP),1
 5,204478,Dep. Vinicius Farah,MDB,RJ,governo,Dep. Vinicius Farah (MDB/RJ),1
-5,72442,Dep. Felipe Carreras,PSB,PE,oposição,Dep. Felipe Carreras (PSB/PE),1
+5,72442,Dep. Felipe Carreras,PSB,PE,oposição,Dep. Felipe Carreras (PSB/PE),2
 5,73459,Dep. Dr. Rosinha,PT,PR,oposição,Dep. Dr. Rosinha (PT/PR),1
-5,73778,Dep. Luiz Carlos Hauly,PSDB,PR,governo,Dep. Luiz Carlos Hauly (PSDB/PR),1
-5,74010,Dep. Valdir Colatto,MDB,SC,governo,Dep. Valdir Colatto (MDB/SC),1
-5,74160,Dep. Patrus Ananias,PT,MG,oposição,Dep. Patrus Ananias (PT/MG),1
-5,74210,Dep. Sarney Filho,PV,MA,governo,Dep. Sarney Filho (PV/MA),1
 5,74400,Dep. Paulo Pimenta,PT,RS,oposição,Dep. Paulo Pimenta (PT/RS),1
-6,160426,Dep. Rogério Rosso,PSD,DF,governo,Dep. Rogério Rosso (PSD/DF),1
 6,160531,Dep. Jhonatan De Jesus,PRB,RR,governo,Dep. Jhonatan De Jesus (PRB/RR),1
-6,167722,Dep. Marcos Rogério,DEM,,governo,Dep. Marcos Rogério (DEM/NA),2
-6,178871,Dep. Evair Vieira De Melo,PP,ES,governo,Dep. Evair Vieira De Melo (PP/ES),1
-6,178874,Dep. Sergio Vidigal,PDT,ES,oposição,Dep. Sergio Vidigal (PDT/ES),1
-6,178980,Dep. Goulart,PSD,SP,governo,Dep. Goulart (PSD/SP),2
-6,178993,Dep. Carlos Henrique Gaguim,DEM,TO,governo,Dep. Carlos Henrique Gaguim (DEM/TO),1
 6,204544,Dep. Alexandre Frota,PSL,SP,governo,Dep. Alexandre Frota (PSL/SP),1
-6,73466,Dep. Rubens Bueno,CIDADANIA,PR,governo,Dep. Rubens Bueno (CIDADANIA/PR),5
-6,74057,Dep. Alice Portugal,PCdoB,BA,oposição,Dep. Alice Portugal (PCdoB/BA),7
-6,74171,Dep. Chico Alencar,PSOL,RJ,oposição,Dep. Chico Alencar (PSOL/RJ),1
-6,74585,Dep. Lincoln Portela,PL,MG,governo,Dep. Lincoln Portela (PL/MG),1
 7,141417,Dep. Edio Lopes,PL,RR,governo,Dep. Edio Lopes (PL/RR),3
 7,141448,Dep. Homero Pereira,PSD,,governo,Dep. Homero Pereira (PSD/NA),1
 7,148134,Dep. Professor Victório Galli,PSL,MT,governo,Dep. Professor Victório Galli (PSL/MT),1
@@ -115,44 +68,21 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 7,74010,Dep. Valdir Colatto,MDB,SC,governo,Dep. Valdir Colatto (MDB/SC),1
 7,74542,Dep. Félix Mendonça,DEM,BA,governo,Dep. Félix Mendonça (DEM/BA),1
 7,74566,Dep. Geraldo Simões,PT,BA,oposição,Dep. Geraldo Simões (PT/BA),1
-8,160611,Dep. Toninho Pinheiro,PP,MG,governo,Dep. Toninho Pinheiro (PP/MG),1
-9,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/RJ),4
-9,160556,Dep. Padre João,PT,MG,oposição,Dep. Padre João (PT/MG),2
-9,160604,Dep. Pedro Uczai,PT,SC,oposição,Dep. Pedro Uczai (PT/SC),12
-9,178901,Dep. Tereza Cristina,DEM,,governo,Dep. Tereza Cristina (DEM/NA),1
-9,178926,Dep. Rodrigo Martins,PSB,PI,oposição,Dep. Rodrigo Martins (PSB/PI),1
-9,178970,Dep. João Daniel,PT,SE,oposição,Dep. João Daniel (PT/SE),5
-9,178986,Dep. Nilto Tatto,PT,SP,oposição,Dep. Nilto Tatto (PT/SP),10
-9,73531,Dep. Ivan Valente,PSOL,SP,oposição,Dep. Ivan Valente (PSOL/SP),0.5
-9,74160,Dep. Patrus Ananias,PT,MG,oposição,Dep. Patrus Ananias (PT/MG),1
-9,134812,Dep. Edmilson Rodrigues,PSOL,PA,oposição,Dep. Edmilson Rodrigues (PSOL/PA),0.5
-10,160573,Dep. João Arruda,MDB,PR,governo,Dep. João Arruda (MDB/PR),1
-10,178834,Dep. Bebeto,PSB,BA,oposição,Dep. Bebeto (PSB/BA),1
-10,178890,Dep. Adelmo Carneiro Leão,PT,MG,oposição,Dep. Adelmo Carneiro Leão (PT/MG),1
+9,178970,Dep. João Daniel,PT,SE,oposição,Dep. João Daniel (PT/SE),1
+9,178986,Dep. Nilto Tatto,PT,SP,oposição,Dep. Nilto Tatto (PT/SP),1
 10,74171,Dep. Chico Alencar,PSOL,RJ,oposição,Dep. Chico Alencar (PSOL/RJ),1
-12,124411,Dep. Mauro Pereira,MDB,RS,governo,Dep. Mauro Pereira (MDB/RS),1
-12,141383,Dep. Antonio Bulhões,PRB,SP,governo,Dep. Antonio Bulhões (PRB/SP),1
 12,141411,Dep. Dagoberto Nogueira,PDT,MS,oposição,Dep. Dagoberto Nogueira (PDT/MS),1
 12,148134,Dep. Professor Victório Galli,PSL,MT,governo,Dep. Professor Victório Galli (PSL/MT),1
-12,152605,Dep. Glauber Braga,PSOL,RJ,oposição,Dep. Glauber Braga (PSOL/RJ),2
 12,160531,Dep. Jhonatan De Jesus,PRB,RR,governo,Dep. Jhonatan De Jesus (PRB/RR),2
-12,160558,Dep. Paulo Freire,PL,SP,governo,Dep. Paulo Freire (PL/SP),2
-12,160575,Dep. Erika Kokay,PT,DF,oposição,Dep. Erika Kokay (PT/DF),2
 12,160642,Dep. Pastor Eurico,PATRIOTA,PE,governo,Dep. Pastor Eurico (PATRIOTA/PE),2
 12,160672,Dep. Jean Wyllys,PSOL,,oposição,Dep. Jean Wyllys (PSOL/NA),1
 12,164359,Dep. Delegado Waldir,PSL,GO,governo,Dep. Delegado Waldir (PSL/GO),2
-12,167722,Dep. Marcos Rogério,DEM,,governo,Dep. Marcos Rogério (DEM/NA),2
 12,178825,Dep. Leo De Brito,PT,,oposição,Dep. Leo De Brito (PT/NA),1
-12,178884,Dep. Hildo Rocha,MDB,MA,governo,Dep. Hildo Rocha (MDB/MA),1
-12,178910,Dep. Joaquim Passarinho,PSD,PA,governo,Dep. Joaquim Passarinho (PSD/PA),1
 12,178938,Dep. Cabo Daciolo,PATRI,RJ,governo,Dep. Cabo Daciolo (PATRI/RJ),1
-12,178947,Dep. Sóstenes Cavalcante,DEM,RJ,governo,Dep. Sóstenes Cavalcante (DEM/RJ),7
-12,178978,Dep. Flavinho,PSC,SP,governo,Dep. Flavinho (PSC/SP),7
-12,194258,Dep. Creuza Pereira,PSB,PE,oposição,Dep. Creuza Pereira (PSB/PE),1
 12,204374,Dep. Bia Kicis,PSL,DF,governo,Dep. Bia Kicis (PSL/DF),1
 12,204407,Dep. Fernanda Melchionna,PSOL,RS,oposição,Dep. Fernanda Melchionna (PSOL/RS),1.4666666666666666
 12,204441,Dep. Otoni De Paula,PSC,RJ,governo,Dep. Otoni De Paula (PSC/RJ),1
-12,204444,Dep. Helio Lopes,PSL,RJ,governo,Dep. Helio Lopes (PSL/RJ),1
+12,204444,Dep. Helio Lopes,PSL,RJ,governo,Dep. Helio Lopes (PSL/RJ),2
 12,204453,Dep. Natália Bonavides,PT,RN,oposição,Dep. Natália Bonavides (PT/RN),1
 12,204464,Dep. Talíria Petrone,PSOL,RJ,oposição,Dep. Talíria Petrone (PSOL/RJ),0.8
 12,204478,Dep. Vinicius Farah,MDB,RJ,governo,Dep. Vinicius Farah (MDB/RJ),1
@@ -162,13 +92,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 12,204542,Dep. Denis Bezerra,PSB,CE,oposição,Dep. Denis Bezerra (PSB/CE),1
 12,204564,Dep. Igor Kannário,PHS,BA,governo,Dep. Igor Kannário (PHS/BA),1
 12,4931,Dep. Izalci Lucas,PSDB,DF,governo,Dep. Izalci Lucas (PSDB/DF),1
-12,69871,Dep. Bacelar,PODE,BA,governo,Dep. Bacelar (PODE/BA),5
-12,73486,Dep. Pompeo De Mattos,PDT,RS,oposição,Dep. Pompeo De Mattos (PDT/RS),2
-12,74057,Dep. Alice Portugal,PCdoB,BA,oposição,Dep. Alice Portugal (PCdoB/BA),1
-12,74366,Dep. João Campos,PRB,GO,governo,Dep. João Campos (PRB/GO),1
-12,74585,Dep. Lincoln Portela,PL,MG,governo,Dep. Lincoln Portela (PL/MG),2
 12,74784,Dep. Luiza Erundina,PSOL,SP,oposição,Dep. Luiza Erundina (PSOL/SP),0.8
-12,92346,Dep. Eduardo Bolsonaro,PSL,SP,governo,Dep. Eduardo Bolsonaro (PSL/SP),2
 12,99654,Dep. Erivelton Santana,PATRI,BA,governo,Dep. Erivelton Santana (PATRI/BA),2
 12,205548,Dep. David Miranda,PSOL,RJ,oposição,Dep. David Miranda (PSOL/RJ),0.6666666666666666
 13,109152,Dep. Bernardo Santana De Vasconcellos,"",MG,governo,Dep. Bernardo Santana De Vasconcellos (/MG),1
@@ -200,9 +124,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 13,160637,Dep. Ronaldo Fonseca,PODE,DF,governo,Dep. Ronaldo Fonseca (PODE/DF),1
 13,160646,Dep. Fernando Francischini,PSL,,governo,Dep. Fernando Francischini (PSL/NA),1.6666666666666665
 13,160651,Dep. Rogério Peninha Mendonça,MDB,SC,governo,Dep. Rogério Peninha Mendonça (MDB/SC),3
-13,160660,Dep. Marcelo Aguiar,DEM,SP,governo,Dep. Marcelo Aguiar (DEM/SP),1
 13,160663,Dep. Leopoldo Meyer,PSB,PR,oposição,Dep. Leopoldo Meyer (PSB/PR),1
-13,160667,Dep. Guilherme Mussi,PP,SP,governo,Dep. Guilherme Mussi (PP/SP),1
 13,162332,Dep. Luiz Nishimori,PL,PR,governo,Dep. Luiz Nishimori (PL/PR),1
 13,164359,Dep. Delegado Waldir,PSL,GO,governo,Dep. Delegado Waldir (PSL/GO),5.5
 13,166401,Dep. Nilson Leitão,PSDB,MT,governo,Dep. Nilson Leitão (PSDB/MT),1
@@ -216,7 +138,6 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 13,178865,Dep. Cabo Sabino,AVANTE,CE,governo,Dep. Cabo Sabino (AVANTE/CE),1
 13,178869,Dep. Vitor Valim,PROS,CE,governo,Dep. Vitor Valim (PROS/CE),1
 13,178881,Dep. Aluisio Mendes,PODE,MA,governo,Dep. Aluisio Mendes (PODE/MA),1
-13,178894,Dep. Laudivio Carvalho,PODE,MG,governo,Dep. Laudivio Carvalho (PODE/MG),1
 13,178898,Dep. Tenente Lúcio,PR,MG,governo,Dep. Tenente Lúcio (PR/MG),1
 13,178900,Dep. Carlos Marun,MDB,,governo,Dep. Carlos Marun (MDB/NA),1
 13,178908,Dep. Delegado Éder Mauro,PSD,PA,governo,Dep. Delegado Éder Mauro (PSD/PA),1
@@ -239,9 +160,11 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 13,204388,Dep. Bibo Nunes,PSL,RS,governo,Dep. Bibo Nunes (PSL/RS),2
 13,204391,Dep. José Nelto,PODE,GO,governo,Dep. José Nelto (PODE/GO),1
 13,204416,Dep. Sanderson,PSL,RS,governo,Dep. Sanderson (PSL/RS),7
+13,204418,Dep. Luizão Goulart,PRB,PR,governo,Dep. Luizão Goulart (PRB/PR),1
 13,204420,Dep. Julian Lemos,PSL,PB,governo,Dep. Julian Lemos (PSL/PB),1
 13,204421,Dep. Edna Henrique,PSDB,PB,governo,Dep. Edna Henrique (PSDB/PB),1
 13,204441,Dep. Otoni De Paula,PSC,RJ,governo,Dep. Otoni De Paula (PSC/RJ),1
+13,204442,Dep. Gurgel,PSL,RJ,governo,Dep. Gurgel (PSL/RJ),1
 13,204456,Dep. Gutemberg Reis,MDB,RJ,governo,Dep. Gutemberg Reis (MDB/RJ),1.5
 13,204472,Dep. José Medeiros,PODE,MT,governo,Dep. José Medeiros (PODE/MT),1
 13,204511,Dep. David Soares,DEM,SP,governo,Dep. David Soares (DEM/SP),1
@@ -298,16 +221,11 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 14,74275,Dep. José Mentor,PT,SP,oposição,Dep. José Mentor (PT/SP),1
 14,74366,Dep. João Campos,PRB,GO,governo,Dep. João Campos (PRB/GO),1
 14,74378,Dep. Assis Do Couto,PDT,PR,oposição,Dep. Assis Do Couto (PDT/PR),1
-14,74398,Dep. Maria Do Rosário,PT,RS,oposição,Dep. Maria Do Rosário (PT/RS),1
 14,74399,Dep. Onyx Lorenzoni,DEM,,governo,Dep. Onyx Lorenzoni (DEM/NA),1
-16,160611,Dep. Toninho Pinheiro,PP,MG,governo,Dep. Toninho Pinheiro (PP/MG),1
 17,160655,Dep. Ricardo Izar,PP,SP,governo,Dep. Ricardo Izar (PP/SP),1
-17,73808,Dep. Sérgio Brito,PSD,,governo,Dep. Sérgio Brito (PSD/NA),1
 19,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/RJ),1
 19,178986,Dep. Nilto Tatto,PT,SP,oposição,Dep. Nilto Tatto (PT/SP),3
 19,204386,Dep. Jose Mario Schreiner,DEM,GO,governo,Dep. Jose Mario Schreiner (DEM/GO),1
-20,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/RJ),1
-20,74210,Dep. Sarney Filho,PV,MA,governo,Dep. Sarney Filho (PV/MA),1
 24,141391,Dep. Arnaldo Jardim,CIDADANIA,SP,governo,Dep. Arnaldo Jardim (CIDADANIA/SP),1
 24,160515,Dep. Ronaldo Benedet,MDB,SC,governo,Dep. Ronaldo Benedet (MDB/SC),1
 24,160528,Dep. Danilo Cabral,PSB,PE,oposição,Dep. Danilo Cabral (PSB/PE),1
@@ -331,10 +249,6 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 24,74856,Dep. Laura Carneiro,DEM,RJ,governo,Dep. Laura Carneiro (DEM/RJ),0.5
 24,141468,Dep. Iran Barbosa,PT,SE,oposição,Dep. Iran Barbosa (PT/SE),0.6666666666666666
 24,164360,Dep. Carmen Zanotto,CIDADANIA,SC,governo,Dep. Carmen Zanotto (CIDADANIA/SC),0.5
-25,160543,Dep. Andre Moura,PSC,,governo,Dep. Andre Moura (PSC/-),1
-25,160636,Dep. Wilson Filho,PTB,PB,governo,Dep. Wilson Filho (PTB/-),1
-25,195278,Dep. Moisés Diniz,PCdoB,AC,oposição,Dep. Moisés Diniz (PCdoB/-),1
-25,74095,Dep. Pauderney Avelino,DEM,,governo,Dep. Pauderney Avelino (DEM/-),1
 26,160567,Dep. Nelson Marchezan Junior,PSDB,,governo,Dep. Nelson Marchezan Junior (PSDB/-),1
 26,160639,Dep. Professora Dorinha Seabra Rezende,DEM,TO,governo,Dep. Professora Dorinha Seabra Rezende (DEM/-),1
 28,148134,Dep. Professor Victório Galli,PSL,MT,governo,Dep. Professor Victório Galli (PSL/MT),1
@@ -352,17 +266,17 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 30,204425,Dep. Silvio Costa Filho,PRB,PE,governo,Dep. Silvio Costa Filho (PRB/PE),1
 30,204523,Dep. Lucas Gonzalez,NOVO,MG,governo,Dep. Lucas Gonzalez (NOVO/MG),1
 30,73579,Dep. Alberto Fraga,DEM,DF,governo,Dep. Alberto Fraga (DEM/DF),1
-31,5979,Sen. Leila Barros,PSB,DF,oposição,Sen. Leila Barros (PSB/DF),4
+31,5979,Sen. Leila Barros,PSB,DF,oposição,Sen. Leila Barros (PSB/DF),6
 33,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/RJ),1
 33,160598,Dep. Flávia Morais,PDT,GO,oposição,Dep. Flávia Morais (PDT/GO),1
 33,160653,Dep. Roberto De Lucena,PODE,SP,governo,Dep. Roberto De Lucena (PODE/SP),1
-33,167722,Dep. Marcos Rogério,DEM,,governo,Dep. Marcos Rogério (DEM/NA),1
 33,178881,Dep. Aluisio Mendes,PODE,MA,governo,Dep. Aluisio Mendes (PODE/MA),1
 33,178915,Dep. Betinho Gomes,PSDB,PE,governo,Dep. Betinho Gomes (PSDB/PE),2
 33,204377,Dep. Paula Belmonte,CIDADANIA,DF,governo,Dep. Paula Belmonte (CIDADANIA/DF),1
 33,204488,Dep. Célio Studart,PV,CE,governo,Dep. Célio Studart (PV/CE),1
 33,204526,Dep. Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Dep. Luiz Philippe De Orleans e Bragança (PSL/SP),4
 33,204530,Dep. Rodrigo Agostinho,PSB,SP,oposição,Dep. Rodrigo Agostinho (PSB/SP),1
+33,204536,Dep. Kim Kataguiri,DEM,SP,governo,Dep. Kim Kataguiri (DEM/SP),1
 33,74585,Dep. Lincoln Portela,PL,MG,governo,Dep. Lincoln Portela (PL/MG),1
 33,74665,Dep. Jaime Martins,PROS,MG,governo,Dep. Jaime Martins (PROS/MG),1
 33,88950,Dep. Rodrigo Garcia,DEM,,governo,Dep. Rodrigo Garcia (DEM/NA),2
@@ -573,28 +487,28 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,2331,Sen. Rose de Freitas,PMDB,ES,governo,Sen. Rose de Freitas (PMDB/ES),11
 34,285,Sen. Marcio Bittar,MDB,AC,governo,Sen. Marcio Bittar (MDB/AC),1
 34,3361,Sen. José Maranhão,MDB,PB,governo,Sen. José Maranhão (MDB/PB),4
-34,3396,Sen. Tasso Jereissati,PSDB,CE,governo,Sen. Tasso Jereissati (PSDB/CE),10
+34,3396,Sen. Tasso Jereissati,PSDB,CE,governo,Sen. Tasso Jereissati (PSDB/CE),13
 34,35,Sen. Jader Barbalho,MDB,PA,governo,Sen. Jader Barbalho (MDB/PA),1
 34,374,Sen. Paulo Rocha,PT,PA,oposição,Sen. Paulo Rocha (PT/PA),39
 34,4981,Sen. Acir Gurgacz,PDT,RO,oposição,Sen. Acir Gurgacz (PDT/RO),2
 34,4994,Sen. Eduardo Braga,MDB,AM,governo,Sen. Eduardo Braga (MDB/AM),3
-34,5008,Sen. Humberto Costa,PT,PE,oposição,Sen. Humberto Costa (PT/PE),52
-34,5012,Sen. Randolfe Rodrigues,REDE,AP,oposição,Sen. Randolfe Rodrigues (REDE/AP),20
+34,5008,Sen. Humberto Costa,PT,PE,oposição,Sen. Humberto Costa (PT/PE),53
+34,5012,Sen. Randolfe Rodrigues,REDE,AP,oposição,Sen. Randolfe Rodrigues (REDE/AP),23
 34,5350,Sen. Jorginho Mello,PL,SC,governo,Sen. Jorginho Mello (PL/SC),3
 34,5352,Sen. Rogério Carvalho,PT,SE,oposição,Sen. Rogério Carvalho (PT/SE),34
 34,5376,Sen. Mara Gabrilli,PSDB,SP,governo,Sen. Mara Gabrilli (PSDB/SP),1
-34,5411,Sen. Weverton,PDT,MA,oposição,Sen. Weverton (PDT/MA),41
+34,5411,Sen. Weverton,PDT,MA,oposição,Sen. Weverton (PDT/MA),43
 34,5422,Sen. Marcos Rogério,DEM,RO,governo,Sen. Marcos Rogério (DEM/RO),1
 34,5502,Sen. Plínio Valério,PSDB,AM,governo,Sen. Plínio Valério (PSDB/AM),23
-34,5523,Sen. Otto Alencar,PSD,BA,governo,Sen. Otto Alencar (PSD/BA),3
+34,5523,Sen. Otto Alencar,PSD,BA,governo,Sen. Otto Alencar (PSD/BA),4
 34,5529,Sen. Antonio Anastasia,PSDB,MG,governo,Sen. Antonio Anastasia (PSDB/MG),7
 34,5533,Sen. Lasier Martins,PSD,RS,governo,Sen. Lasier Martins (PSD/RS),4
-34,5535,Sen. Telmário Mota,PROS,RR,governo,Sen. Telmário Mota (PROS/RR),5.5
+34,5535,Sen. Telmário Mota,PROS,RR,governo,Sen. Telmário Mota (PROS/RR),6
 34,5537,Sen. Dário Berger,MDB,SC,governo,Sen. Dário Berger (MDB/SC),30
 34,5540,Sen. Fernando Bezerra Coelho,PSB,PE,oposição,Sen. Fernando Bezerra Coelho (PSB/PE),1
 34,5627,Sen. Jean Paul Prates,PT,RN,oposição,Sen. Jean Paul Prates (PT/RN),1
 34,5666,Sen. Major Olimpio,PSL,SP,governo,Sen. Major Olimpio (PSL/SP),5
-34,5718,Sen. Eliziane Gama,CIDADANIA,MA,governo,Sen. Eliziane Gama (CIDADANIA/MA),9
+34,5718,Sen. Eliziane Gama,CIDADANIA,MA,governo,Sen. Eliziane Gama (CIDADANIA/MA),10
 34,5732,Sen. Rodrigo Pacheco,DEM,MG,governo,Sen. Rodrigo Pacheco (DEM/MG),2
 34,5748,Sen. Veneziano Vital do Rêgo,PSB,PB,oposição,Sen. Veneziano Vital do Rêgo (PSB/PB),24
 34,581,Sen. Jaques Wagner,PT,BA,oposição,Sen. Jaques Wagner (PT/BA),22
@@ -614,7 +528,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,6027,Sen. Mecias de Jesus,PRB,RR,governo,Sen. Mecias de Jesus (PRB/RR),1
 34,70,Sen. Renan Calheiros,MDB,AL,governo,Sen. Renan Calheiros (MDB/AL),1
 34,739,Sen. Ciro Nogueira,PP,PI,governo,Sen. Ciro Nogueira (PP/PI),1
-34,825,Sen. Paulo Paim,PT,RS,oposição,Sen. Paulo Paim (PT/RS),38
+34,825,Sen. Paulo Paim,PT,RS,oposição,Sen. Paulo Paim (PT/RS),57
 34,90,Sen. José Serra,PSDB,SP,governo,Sen. José Serra (PSDB/SP),2
 34,945,Sen. Alvaro Dias,PODEMOS,PR,governo,Sen. Alvaro Dias (PODEMOS/PR),3
 34,205548,Dep. David Miranda,PSOL,RJ,oposição,Dep. David Miranda (PSOL/RJ),3.6
@@ -626,7 +540,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 34,204569,Dep. Delegado Pablo,PSL,AM,governo,Dep. Delegado Pablo (PSL/AM),2.2666666666666666
 34,207176,Dep. Bia Cavassa,PSDB,MS,governo,Dep. Bia Cavassa (PSDB/MS),0.8
 34,141459,Dep. João Maia,PL,RN,governo,Dep. João Maia (PL/RN),0.5
-34,5783,Sen. Zenaide Maia,PROS,RN,governo,Sen. Zenaide Maia (PROS/RN),0.5
+34,5783,Sen. Zenaide Maia,PROS,RN,governo,Sen. Zenaide Maia (PROS/RN),1
 35,133439,Dep. André Figueiredo,PDT,CE,oposição,Dep. André Figueiredo (PDT/CE),3
 35,134812,Dep. Edmilson Rodrigues,PSOL,PA,oposição,Dep. Edmilson Rodrigues (PSOL/PA),20
 35,137070,Dep. Vicentinho Júnior,PL,TO,governo,Dep. Vicentinho Júnior (PL/TO),2
@@ -842,11 +756,13 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 46,5523,Sen. Otto Alencar,PSD,BA,governo,Sen. Otto Alencar (PSD/BA),5
 46,5531,Sen. Elmano Férrer,PODEMOS,PI,governo,Sen. Elmano Férrer (PODEMOS/PI),2
 46,5666,Sen. Major Olimpio,PSL,SP,governo,Sen. Major Olimpio (PSL/SP),2
-46,5718,Sen. Eliziane Gama,CIDADANIA,MA,governo,Sen. Eliziane Gama (CIDADANIA/MA),2
+46,5718,Sen. Eliziane Gama,CIDADANIA,MA,governo,Sen. Eliziane Gama (CIDADANIA/MA),3
+46,5905,Sen. Rodrigo Cunha,PSDB,AL,governo,Sen. Rodrigo Cunha (PSDB/AL),1
 46,5942,Sen. Marcos do Val,PODEMOS,ES,governo,Sen. Marcos do Val (PODEMOS/ES),2
+46,5953,Sen. Fabiano Contarato,REDE,ES,oposição,Sen. Fabiano Contarato (REDE/ES),1
 46,5982,Sen. Alessandro Vieira,CIDADANIA,SE,governo,Sen. Alessandro Vieira (CIDADANIA/SE),1
 46,5988,Sen. Soraya Thronicke,PSL,MS,governo,Sen. Soraya Thronicke (PSL/MS),5
-46,751,Sen. Arolde de Oliveira,PSD,RJ,governo,Sen. Arolde de Oliveira (PSD/RJ),7
+46,751,Sen. Arolde de Oliveira,PSD,RJ,governo,Sen. Arolde de Oliveira (PSD/RJ),8
 46,945,Sen. Alvaro Dias,PODEMOS,PR,governo,Sen. Alvaro Dias (PODEMOS/PR),1
 47,122974,Dep. Pedro Lucas Fernandes,PTB,MA,governo,Dep. Pedro Lucas Fernandes (PTB/MA),2
 47,132504,Dep. Enio Verri,PT,,oposição,Dep. Enio Verri (PT/NA),2
@@ -938,16 +854,14 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 52,178881,Dep. Aluisio Mendes,PODE,MA,governo,Dep. Aluisio Mendes (PODE/MA),1
 54,141523,Dep. Raul Henry,MDB,PE,governo,Dep. Raul Henry (MDB/PE),1
 54,160592,Dep. Zeca Dirceu,PT,PR,oposição,Dep. Zeca Dirceu (PT/PR),0.8888888888888888
-54,160604,Dep. Pedro Uczai,PT,SC,oposição,Dep. Pedro Uczai (PT/SC),1.8888888888888888
-54,160630,Dep. Ságuas Moraes,PT,MT,oposição,Dep. Ságuas Moraes (PT/MT),1
-54,160639,Dep. Professora Dorinha Seabra Rezende,DEM,TO,governo,Dep. Professora Dorinha Seabra Rezende (DEM/TO),26.5
+54,160604,Dep. Pedro Uczai,PT,SC,oposição,Dep. Pedro Uczai (PT/SC),3.888888888888889
+54,160639,Dep. Professora Dorinha Seabra Rezende,DEM,TO,governo,Dep. Professora Dorinha Seabra Rezende (DEM/TO),8.5
 54,171619,Dep. Margarida Salomão,PT,MG,oposição,Dep. Margarida Salomão (PT/MG),0.8888888888888888
 54,178842,Dep. Jhc,PSB,AL,oposição,Dep. Jhc (PSB/AL),0.8333333333333333
-54,178865,Dep. Cabo Sabino,AVANTE,CE,governo,Dep. Cabo Sabino (AVANTE/CE),1
-54,178998,Dep. Raquel Muniz,PSD,MG,governo,Dep. Raquel Muniz (PSD/MG),3
-54,195997,Dep. Pollyana Gama,PPS,SP,governo,Dep. Pollyana Gama (PPS/SP),1
+54,178998,Dep. Raquel Muniz,PSD,MG,governo,Dep. Raquel Muniz (PSD/MG),1
 54,198783,Dep. Emanuel Pinheiro Neto,PTB,MT,governo,Dep. Emanuel Pinheiro Neto (PTB/MT),0.8333333333333333
 54,204371,Dep. Felipe Rigoni,PSB,ES,oposição,Dep. Felipe Rigoni (PSB/ES),2.3333333333333335
+54,204375,Dep. Leda Sadala,AVANTE,AP,governo,Dep. Leda Sadala (AVANTE/AP),1
 54,204429,Dep. João H. Campos,PSB,PE,oposição,Dep. João H. Campos (PSB/PE),0.8333333333333333
 54,204433,Dep. Marcelo Calero,CIDADANIA,RJ,governo,Dep. Marcelo Calero (CIDADANIA/RJ),0.5
 54,204453,Dep. Natália Bonavides,PT,RN,oposição,Dep. Natália Bonavides (PT/RN),0.8888888888888888
@@ -959,7 +873,6 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 54,74160,Dep. Patrus Ananias,PT,MG,oposição,Dep. Patrus Ananias (PT/MG),0.8888888888888888
 54,74161,Dep. Reginaldo Lopes,PT,MG,oposição,Dep. Reginaldo Lopes (PT/MG),0.8888888888888888
 54,74398,Dep. Maria Do Rosário,PT,RS,oposição,Dep. Maria Do Rosário (PT/RS),0.8888888888888888
-54,74459,Dep. Átila Lira,PSB,PI,oposição,Dep. Átila Lira (PSB/PI),1
 54,204501,Dep. Alencar Santana Braga,PT,SP,oposição,Dep. Alencar Santana Braga (PT/SP),0.8888888888888888
 54,204528,Dep. Adriana Ventura,NOVO,SP,governo,Dep. Adriana Ventura (NOVO/SP),0.8333333333333333
 54,204534,Dep. Tabata Amaral,PDT,SP,oposição,Dep. Tabata Amaral (PDT/SP),1.5
@@ -967,7 +880,6 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 55,133810,Dep. Marcelo Moraes,PTB,RS,governo,Dep. Marcelo Moraes (PTB/RS),1
 55,141391,Dep. Arnaldo Jardim,CIDADANIA,SP,governo,Dep. Arnaldo Jardim (CIDADANIA/SP),5
 55,141405,Dep. Celso Maldaner,MDB,SC,governo,Dep. Celso Maldaner (MDB/SC),1
-55,141458,Dep. João Carlos Bacelar,PL,BA,governo,Dep. João Carlos Bacelar (PL/BA),1
 55,141485,Dep. Luiz Carlos Busato,PTB,,governo,Dep. Luiz Carlos Busato (PTB/NA),1
 55,141497,Dep. Márcio França,PSB,,oposição,Dep. Márcio França (PSB/NA),1
 55,141508,Dep. Mauro Nazif,PSB,RO,oposição,Dep. Mauro Nazif (PSB/RO),1
@@ -975,27 +887,21 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 55,151208,Dep. Laercio Oliveira,PP,SE,governo,Dep. Laercio Oliveira (PP/SE),6
 55,160508,Dep. Afonso Florence,PT,BA,oposição,Dep. Afonso Florence (PT/BA),9
 55,160531,Dep. Jhonatan De Jesus,PRB,RR,governo,Dep. Jhonatan De Jesus (PRB/RR),1
-55,160573,Dep. João Arruda,MDB,PR,governo,Dep. João Arruda (MDB/PR),2
 55,160587,Dep. Fábio Trad,PSD,MS,governo,Dep. Fábio Trad (PSD/MS),3
-55,160611,Dep. Toninho Pinheiro,PP,MG,governo,Dep. Toninho Pinheiro (PP/MG),1
 55,160635,Dep. Ruy Carneiro,PSDB,PB,governo,Dep. Ruy Carneiro (PSDB/PB),1
 55,160638,Dep. Ângelo Agnolin,PDT,TO,oposição,Dep. Ângelo Agnolin (PDT/TO),1
-55,160639,Dep. Professora Dorinha Seabra Rezende,DEM,TO,governo,Dep. Professora Dorinha Seabra Rezende (DEM/TO),7
+55,160639,Dep. Professora Dorinha Seabra Rezende,DEM,TO,governo,Dep. Professora Dorinha Seabra Rezende (DEM/TO),6
 55,160653,Dep. Roberto De Lucena,PODE,SP,governo,Dep. Roberto De Lucena (PODE/SP),1
 55,160655,Dep. Ricardo Izar,PP,SP,governo,Dep. Ricardo Izar (PP/SP),1
-55,160665,Dep. Augusto Coutinho,SOLIDARIEDADE,PE,governo,Dep. Augusto Coutinho (SOLIDARIEDADE/PE),8.8
-55,160666,Dep. Félix Mendonça Júnior,PDT,BA,oposição,Dep. Félix Mendonça Júnior (PDT/BA),2
+55,160665,Dep. Augusto Coutinho,SOLIDARIEDADE,PE,governo,Dep. Augusto Coutinho (SOLIDARIEDADE/PE),7.8
+55,160666,Dep. Félix Mendonça Júnior,PDT,BA,oposição,Dep. Félix Mendonça Júnior (PDT/BA),1
 55,160672,Dep. Jean Wyllys,PSOL,,oposição,Dep. Jean Wyllys (PSOL/NA),1
 55,164359,Dep. Delegado Waldir,PSL,GO,governo,Dep. Delegado Waldir (PSL/GO),3
-55,178834,Dep. Bebeto,PSB,BA,oposição,Dep. Bebeto (PSB/BA),1
 55,178854,Dep. Elmar Nascimento,DEM,BA,governo,Dep. Elmar Nascimento (DEM/BA),1.8
 55,178874,Dep. Sergio Vidigal,PDT,ES,oposição,Dep. Sergio Vidigal (PDT/ES),2
-55,178878,Dep. Giuseppe Vecci,PSDB,GO,governo,Dep. Giuseppe Vecci (PSDB/GO),2
 55,178884,Dep. Hildo Rocha,MDB,MA,governo,Dep. Hildo Rocha (MDB/MA),0.8
-55,178890,Dep. Adelmo Carneiro Leão,PT,MG,oposição,Dep. Adelmo Carneiro Leão (PT/MG),3
-55,178910,Dep. Joaquim Passarinho,PSD,PA,governo,Dep. Joaquim Passarinho (PSD/PA),3
+55,178910,Dep. Joaquim Passarinho,PSD,PA,governo,Dep. Joaquim Passarinho (PSD/PA),2
 55,178916,Dep. Daniel Coelho,CIDADANIA,PE,governo,Dep. Daniel Coelho (CIDADANIA/PE),1
-55,178977,Dep. Eduardo Cury,PSDB,SP,governo,Dep. Eduardo Cury (PSDB/SP),1
 55,178992,Dep. Vitor Lippi,PSDB,SP,governo,Dep. Vitor Lippi (PSDB/SP),1
 55,194260,Dep. Nivaldo Albuquerque,PTB,AL,governo,Dep. Nivaldo Albuquerque (PTB/AL),1
 55,204364,Dep. Eli Borges,SOLIDARIEDADE,TO,governo,Dep. Eli Borges (SOLIDARIEDADE/TO),1
@@ -1020,15 +926,13 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 55,204543,Dep. Luiz Flávio Gomes,PSB,SP,oposição,Dep. Luiz Flávio Gomes (PSB/SP),1
 55,205865,Dep. Reinhold Stephanes Junior,PSD,PR,governo,Dep. Reinhold Stephanes Junior (PSD/PR),3
 55,4930,Dep. Silvio Costa,AVANTE,PE,governo,Dep. Silvio Costa (AVANTE/PE),1
-55,69871,Dep. Bacelar,PODE,BA,governo,Dep. Bacelar (PODE/BA),1
 55,73466,Dep. Rubens Bueno,CIDADANIA,PR,governo,Dep. Rubens Bueno (CIDADANIA/PR),2
 55,73492,Dep. Antonio Carlos Biscaia,PT,RJ,oposição,Dep. Antonio Carlos Biscaia (PT/RJ),1
 55,73584,Dep. Antonio Carlos Mendes Thame,PV,SP,governo,Dep. Antonio Carlos Mendes Thame (PV/SP),1
 55,74043,Dep. Wellington Roberto,PL,PB,governo,Dep. Wellington Roberto (PL/PB),17
 55,74060,Dep. Daniel Almeida,PCdoB,BA,oposição,Dep. Daniel Almeida (PCdoB/BA),4
 55,74158,Dep. Mário Heringer,PDT,MG,oposição,Dep. Mário Heringer (PDT/MG),4
-55,74160,Dep. Patrus Ananias,PT,MG,oposição,Dep. Patrus Ananias (PT/MG),1
-55,74171,Dep. Chico Alencar,PSOL,RJ,oposição,Dep. Chico Alencar (PSOL/RJ),2
+55,74171,Dep. Chico Alencar,PSOL,RJ,oposição,Dep. Chico Alencar (PSOL/RJ),1
 55,74262,Dep. Carlos Sampaio,PSDB,SP,governo,Dep. Carlos Sampaio (PSDB/SP),0.8
 55,74283,Dep. Vicentinho,PT,SP,oposição,Dep. Vicentinho (PT/SP),2
 55,74366,Dep. João Campos,PRB,GO,governo,Dep. João Campos (PRB/GO),2
@@ -1127,19 +1031,28 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 56,5998,Sen. Daniella Ribeiro,PP,PB,governo,Sen. Daniella Ribeiro (PP/PB),2
 56,90,Sen. José Serra,PSDB,SP,governo,Sen. José Serra (PSDB/SP),1
 57,3777,Sen. Eduardo Gomes,MDB,TO,governo,Sen. Eduardo Gomes (MDB/TO),8
-57,5422,Sen. Marcos Rogério,DEM,RO,governo,Sen. Marcos Rogério (DEM/RO),1
+57,5422,Sen. Marcos Rogério,DEM,RO,governo,Sen. Marcos Rogério (DEM/RO),3
+57,5535,Sen. Telmário Mota,PROS,RR,governo,Sen. Telmário Mota (PROS/RR),1
 57,5926,Sen. Lucas Barreto,PSD,AP,governo,Sen. Lucas Barreto (PSD/AP),1
 57,5990,Sen. Carlos Viana,PSD,MG,governo,Sen. Carlos Viana (PSD/MG),1
+58,108338,Dep. Jaqueline Cassol,PP,RO,governo,Dep. Jaqueline Cassol (PP/RO),1
 58,118594,Dep. Marcelo Squassoni,PRB,SP,governo,Dep. Marcelo Squassoni (PRB/SP),0.8333333333333333
 58,141408,Dep. Cleber Verde,PRB,MA,governo,Dep. Cleber Verde (PRB/MA),1
+58,141417,Dep. Edio Lopes,PL,RR,governo,Dep. Edio Lopes (PL/RR),2
+58,141421,Dep. Eduardo Da Fonte,PP,PE,governo,Dep. Eduardo Da Fonte (PP/PE),1
 58,141531,Dep. Rodrigo De Castro,PSDB,MG,governo,Dep. Rodrigo De Castro (PSDB/MG),0.8333333333333333
+58,160528,Dep. Danilo Cabral,PSB,PE,oposição,Dep. Danilo Cabral (PSB/PE),1
+58,160538,Dep. Bohn Gass,PT,RS,oposição,Dep. Bohn Gass (PT/RS),20
 58,160575,Dep. Erika Kokay,PT,DF,oposição,Dep. Erika Kokay (PT/DF),8.666666666666666
+58,160758,Dep. Domingos Sávio,PSDB,MG,governo,Dep. Domingos Sávio (PSDB/MG),2
 58,178844,Dep. Pedro Vilela,PSDB,AL,governo,Dep. Pedro Vilela (PSDB/AL),0.8333333333333333
 58,178905,Dep. Fabio Garcia,DEM,MT,governo,Dep. Fabio Garcia (DEM/MT),1
 58,204505,Dep. Vavá Martins,PRB,PA,governo,Dep. Vavá Martins (PRB/PA),1
+58,204523,Dep. Lucas Gonzalez,NOVO,MG,governo,Dep. Lucas Gonzalez (NOVO/MG),1
 58,73433,Dep. Arlindo Chinaglia,PT,SP,oposição,Dep. Arlindo Chinaglia (PT/SP),8.666666666666666
 58,73584,Dep. Antonio Carlos Mendes Thame,PV,SP,governo,Dep. Antonio Carlos Mendes Thame (PV/SP),0.8333333333333333
 58,73655,Dep. Augusto Carvalho,SOLIDARIEDADE,DF,governo,Dep. Augusto Carvalho (SOLIDARIEDADE/DF),0.8333333333333333
+58,98057,Dep. Lafayette De Andrada,PRB,MG,governo,Dep. Lafayette De Andrada (PRB/MG),1
 58,178868,Dep. Odorico Monteiro,PSB,CE,oposição,Dep. Odorico Monteiro (PSB/CE),0.8333333333333333
 58,178986,Dep. Nilto Tatto,PT,SP,oposição,Dep. Nilto Tatto (PT/SP),8.666666666666666
 59,177282,Dep. Subtenente Gonzaga,PDT,MG,oposição,Dep. Subtenente Gonzaga (PDT/MG),2
@@ -1147,11 +1060,11 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,116379,Dep. Darci De Matos,PSD,SC,governo,Dep. Darci De Matos (PSD/SC),3
 60,122158,Dep. Pedro Paulo,DEM,RJ,governo,Dep. Pedro Paulo (DEM/RJ),1
 60,122974,Dep. Pedro Lucas Fernandes,PTB,MA,governo,Dep. Pedro Lucas Fernandes (PTB/MA),2
-60,132504,Dep. Enio Verri,PT,,oposição,Dep. Enio Verri (PT/NA),1
+60,132504,Dep. Enio Verri,PT,,oposição,Dep. Enio Verri (PT/NA),4
 60,133439,Dep. André Figueiredo,PDT,CE,oposição,Dep. André Figueiredo (PDT/CE),4
 60,141391,Dep. Arnaldo Jardim,CIDADANIA,SP,governo,Dep. Arnaldo Jardim (CIDADANIA/SP),4
 60,141417,Dep. Edio Lopes,PL,RR,governo,Dep. Edio Lopes (PL/RR),1
-60,141422,Dep. Efraim Filho,DEM,,governo,Dep. Efraim Filho (DEM/NA),4
+60,141422,Dep. Efraim Filho,DEM,,governo,Dep. Efraim Filho (DEM/NA),5
 60,141427,Dep. Fábio Ramalho,MDB,MG,governo,Dep. Fábio Ramalho (MDB/MG),1
 60,141458,Dep. João Carlos Bacelar,PL,BA,governo,Dep. João Carlos Bacelar (PL/BA),1
 60,141488,Dep. Paulo Teixeira,PT,SP,oposição,Dep. Paulo Teixeira (PT/SP),4.857142857142858
@@ -1161,25 +1074,27 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,141523,Dep. Raul Henry,MDB,PE,governo,Dep. Raul Henry (MDB/PE),2
 60,141531,Dep. Rodrigo De Castro,PSDB,MG,governo,Dep. Rodrigo De Castro (PSDB/MG),1
 60,141553,Dep. Vanderlei Macris,PSDB,SP,governo,Dep. Vanderlei Macris (PSDB/SP),3
-60,151208,Dep. Laercio Oliveira,PP,SE,governo,Dep. Laercio Oliveira (PP/SE),9
+60,151208,Dep. Laercio Oliveira,PP,SE,governo,Dep. Laercio Oliveira (PP/SE),10
 60,156190,Dep. Marcel Van Hattem,NOVO,RS,governo,Dep. Marcel Van Hattem (NOVO/RS),1
 60,159237,Dep. Assis Carvalho,PT,PI,oposição,Dep. Assis Carvalho (PT/PI),1
+60,160508,Dep. Afonso Florence,PT,BA,oposição,Dep. Afonso Florence (PT/BA),4
 60,160518,Dep. Weliton Prado,PROS,MG,governo,Dep. Weliton Prado (PROS/MG),2
 60,160527,Dep. Aguinaldo Ribeiro,PP,PB,governo,Dep. Aguinaldo Ribeiro (PP/PB),3
 60,160538,Dep. Bohn Gass,PT,RS,oposição,Dep. Bohn Gass (PT/RS),1
-60,160570,Dep. Jerônimo Goergen,PP,RS,governo,Dep. Jerônimo Goergen (PP/RS),2
+60,160569,Dep. Waldenor Pereira,PT,BA,oposição,Dep. Waldenor Pereira (PT/BA),1
+60,160570,Dep. Jerônimo Goergen,PP,RS,governo,Dep. Jerônimo Goergen (PP/RS),3
 60,160600,Dep. Arthur Oliveira Maia,DEM,BA,governo,Dep. Arthur Oliveira Maia (DEM/BA),1
 60,160639,Dep. Professora Dorinha Seabra Rezende,DEM,TO,governo,Dep. Professora Dorinha Seabra Rezende (DEM/TO),4
 60,160666,Dep. Félix Mendonça Júnior,PDT,BA,oposição,Dep. Félix Mendonça Júnior (PDT/BA),2
 60,160758,Dep. Domingos Sávio,PSDB,MG,governo,Dep. Domingos Sávio (PSDB/MG),1
 60,162332,Dep. Luiz Nishimori,PL,PR,governo,Dep. Luiz Nishimori (PL/PR),1
-60,177282,Dep. Subtenente Gonzaga,PDT,MG,oposição,Dep. Subtenente Gonzaga (PDT/MG),5.523809523809524
+60,177282,Dep. Subtenente Gonzaga,PDT,MG,oposição,Dep. Subtenente Gonzaga (PDT/MG),5.273809523809524
 60,178832,Dep. Leandre,PV,PR,governo,Dep. Leandre (PV/PR),1
 60,178835,Dep. Afonso Motta,PDT,RS,oposição,Dep. Afonso Motta (PDT/RS),1
 60,178863,Dep. Uldurico Junior,PROS,BA,governo,Dep. Uldurico Junior (PROS/BA),1
-60,178871,Dep. Evair Vieira De Melo,PP,ES,governo,Dep. Evair Vieira De Melo (PP/ES),1
+60,178871,Dep. Evair Vieira De Melo,PP,ES,governo,Dep. Evair Vieira De Melo (PP/ES),2
 60,178879,Dep. Lucas Vergilio,SOLIDARIEDADE,GO,governo,Dep. Lucas Vergilio (SOLIDARIEDADE/GO),1
-60,178884,Dep. Hildo Rocha,MDB,MA,governo,Dep. Hildo Rocha (MDB/MA),1
+60,178884,Dep. Hildo Rocha,MDB,MA,governo,Dep. Hildo Rocha (MDB/MA),2
 60,178886,Dep. Juscelino Filho,DEM,MA,governo,Dep. Juscelino Filho (DEM/MA),1
 60,178896,Dep. Newton Cardoso Jr,MDB,MG,governo,Dep. Newton Cardoso Jr (MDB/MG),8
 60,178930,Dep. Evandro Roman,PSD,PR,governo,Dep. Evandro Roman (PSD/PR),4
@@ -1196,6 +1111,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,178983,Dep. Marcio Alvino,PL,SP,governo,Dep. Marcio Alvino (PL/SP),1
 60,178989,Dep. Renata Abreu,PODE,SP,governo,Dep. Renata Abreu (PODE/SP),2
 60,178992,Dep. Vitor Lippi,PSDB,SP,governo,Dep. Vitor Lippi (PSDB/SP),6
+60,178993,Dep. Carlos Henrique Gaguim,DEM,TO,governo,Dep. Carlos Henrique Gaguim (DEM/TO),1
 60,178994,Dep. Dulce Miranda,MDB,TO,governo,Dep. Dulce Miranda (MDB/TO),1
 60,178997,Dep. Moses Rodrigues,MDB,CE,governo,Dep. Moses Rodrigues (MDB/CE),4
 60,191923,Dep. Flavio Nogueira,PDT,PI,oposição,Dep. Flavio Nogueira (PDT/PI),1
@@ -1203,6 +1119,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,204359,Dep. Léo Moraes,PODE,RO,governo,Dep. Léo Moraes (PODE/RO),4
 60,204364,Dep. Eli Borges,SOLIDARIEDADE,TO,governo,Dep. Eli Borges (SOLIDARIEDADE/TO),1
 60,204371,Dep. Felipe Rigoni,PSB,ES,oposição,Dep. Felipe Rigoni (PSB/ES),5
+60,204377,Dep. Paula Belmonte,CIDADANIA,DF,governo,Dep. Paula Belmonte (CIDADANIA/DF),1
 60,204380,Dep. Celina Leão,PP,DF,governo,Dep. Celina Leão (PP/DF),1
 60,204381,Dep. Luis Miranda,DEM,DF,governo,Dep. Luis Miranda (DEM/DF),3
 60,204383,Dep. Professor Israel Batista,PV,DF,governo,Dep. Professor Israel Batista (PV/DF),4
@@ -1227,13 +1144,15 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,204482,Dep. Euclydes Pettersen,PSC,MG,governo,Dep. Euclydes Pettersen (PSC/MG),2
 60,204484,Dep. General Peternelli,PSL,SP,governo,Dep. General Peternelli (PSL/SP),1
 60,204485,Dep. Luiz Carlos Motta,PL,SP,governo,Dep. Luiz Carlos Motta (PL/SP),5
+60,204487,Dep. Capitão Wagner,PROS,CE,governo,Dep. Capitão Wagner (PROS/CE),0.75
+60,204491,Dep. Gilberto Abramo,PRB,MG,governo,Dep. Gilberto Abramo (PRB/MG),1
 60,204496,Dep. Celso Sabino,PSDB,PA,governo,Dep. Celso Sabino (PSDB/PA),6
 60,204499,Dep. Cássio Andrade,PSB,PA,oposição,Dep. Cássio Andrade (PSB/PA),1
 60,204500,Dep. Eduardo Costa,PTB,PA,governo,Dep. Eduardo Costa (PTB/PA),9
-60,204501,Dep. Alencar Santana Braga,PT,SP,oposição,Dep. Alencar Santana Braga (PT/SP),1.8571428571428572
+60,204501,Dep. Alencar Santana Braga,PT,SP,oposição,Dep. Alencar Santana Braga (PT/SP),2.857142857142857
 60,204504,Dep. Cezinha De Madureira,PSD,SP,governo,Dep. Cezinha De Madureira (PSD/SP),2
 60,204506,Dep. Marcos Pereira,PRB,SP,governo,Dep. Marcos Pereira (PRB/SP),1
-60,204514,Dep. Coronel Tadeu,PSL,SP,governo,Dep. Coronel Tadeu (PSL/SP),2
+60,204514,Dep. Coronel Tadeu,PSL,SP,governo,Dep. Coronel Tadeu (PSL/SP),2.75
 60,204515,Dep. André Janones,AVANTE,MG,governo,Dep. André Janones (AVANTE/MG),2
 60,204516,Dep. Alexis Fonteyne,NOVO,SP,governo,Dep. Alexis Fonteyne (NOVO/SP),7.5
 60,204517,Dep. Zé Vitor,PL,MG,governo,Dep. Zé Vitor (PL/MG),1
@@ -1244,14 +1163,14 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,204537,Dep. Enrico Misasi,PV,SP,governo,Dep. Enrico Misasi (PV/SP),1
 60,204543,Dep. Luiz Flávio Gomes,PSB,SP,oposição,Dep. Luiz Flávio Gomes (PSB/SP),1
 60,204551,Dep. Bosco Saraiva,SOLIDARIEDADE,AM,governo,Dep. Bosco Saraiva (SOLIDARIEDADE/AM),1.8
-60,204552,Dep. Eduardo Braide,PMN,MA,governo,Dep. Eduardo Braide (PMN/MA),1
+60,204552,Dep. Eduardo Braide,PMN,MA,governo,Dep. Eduardo Braide (PMN/MA),2
 60,204555,Dep. José Ricardo,PT,AM,oposição,Dep. José Ricardo (PT/AM),1.8
 60,204556,Dep. Marcelo Ramos,PL,AM,governo,Dep. Marcelo Ramos (PL/AM),7.8
 60,204557,Dep. Sidney Leite,PSD,AM,governo,Dep. Sidney Leite (PSD/AM),5.800000000000001
 60,204559,Dep. Zé Neto,PT,BA,oposição,Dep. Zé Neto (PT/BA),1
 60,204566,Dep. Marreca Filho,PATRIOTA,MA,governo,Dep. Marreca Filho (PATRIOTA/MA),1
 60,204570,Dep. Pastor Gildenemyr,PMN,MA,governo,Dep. Pastor Gildenemyr (PMN/MA),2
-60,204572,Dep. Capitão Alberto Neto,PRB,AM,governo,Dep. Capitão Alberto Neto (PRB/AM),3.8
+60,204572,Dep. Capitão Alberto Neto,PRB,AM,governo,Dep. Capitão Alberto Neto (PRB/AM),4.55
 60,204575,Dep. Gil Cutrim,PDT,MA,oposição,Dep. Gil Cutrim (PDT/MA),2
 60,204576,Dep. João Roma,PRB,BA,governo,Dep. João Roma (PRB/BA),3
 60,207309,Dep. Enéias Reis,PSL,MG,governo,Dep. Enéias Reis (PSL/MG),1
@@ -1270,7 +1189,7 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 60,74749,Dep. Mauro Lopes,MDB,MG,governo,Dep. Mauro Lopes (MDB/MG),1
 60,74848,Dep. Jandira Feghali,PCdoB,RJ,oposição,Dep. Jandira Feghali (PCdoB/RJ),1
 60,76874,Dep. Marcelo Freixo,PSOL,RJ,oposição,Dep. Marcelo Freixo (PSOL/RJ),7.5
-60,90201,Dep. Pedro Augusto Bezerra,PTB,CE,governo,Dep. Pedro Augusto Bezerra (PTB/CE),1
+60,90201,Dep. Pedro Augusto Bezerra,PTB,CE,governo,Dep. Pedro Augusto Bezerra (PTB/CE),2
 60,90842,Dep. Santini,PTB,RS,governo,Dep. Santini (PTB/RS),4
 60,98057,Dep. Lafayette De Andrada,PRB,MG,governo,Dep. Lafayette De Andrada (PRB/MG),0.8571428571428571
 60,204541,Dep. Eduardo Bismarck,PDT,CE,oposição,Dep. Eduardo Bismarck (PDT/CE),0.6666666666666666
@@ -1287,6 +1206,16 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 61,74043,Dep. Wellington Roberto,PL,PB,governo,Dep. Wellington Roberto (PL/PB),1
 61,74044,Dep. Wilson Santiago,PTB,PB,governo,Dep. Wilson Santiago (PTB/PB),13
 61,74471,Dep. André De Paula,PSD,PE,governo,Dep. André De Paula (PSD/PE),1
+61,1173,Sen. Wellington Fagundes,PR,MT,governo,Sen. Wellington Fagundes (PR/MT),3
+61,5411,Sen. Weverton,PDT,MA,oposição,Sen. Weverton (PDT/MA),4
+61,5527,Sen. Simone Tebet,PMDB,MS,governo,Sen. Simone Tebet (PMDB/MS),4
+61,5533,Sen. Lasier Martins,PSD,RS,governo,Sen. Lasier Martins (PSD/RS),3
+61,5535,Sen. Telmário Mota,PROS,RR,governo,Sen. Telmário Mota (PROS/RR),4
+61,5924,Sen. Oriovisto Guimarães,PODEMOS,PR,governo,Sen. Oriovisto Guimarães (PODEMOS/PR),1
+61,5929,Sen. Juíza Selma,PSL,MT,governo,Sen. Juíza Selma (PSL/MT),2
+61,5953,Sen. Fabiano Contarato,REDE,ES,oposição,Sen. Fabiano Contarato (REDE/ES),5
+61,5982,Sen. Alessandro Vieira,CIDADANIA,SE,governo,Sen. Alessandro Vieira (CIDADANIA/SE),21
+61,677,Sen. Roberto Rocha,PSDB,MA,governo,Sen. Roberto Rocha (PSDB/MA),1
 61,178975,Dep. Baleia Rossi,MDB,SP,governo,Dep. Baleia Rossi (MDB/SP),0.75
 62,141398,Dep. Carlos Zarattini,PT,SP,oposição,Dep. Carlos Zarattini (PT/SP),2
 62,141508,Dep. Mauro Nazif,PSB,RO,oposição,Dep. Mauro Nazif (PSB/RO),1
@@ -1311,3 +1240,83 @@ id_leggo,id_autor,nome,partido,uf,bancada,nome_eleitoral,node_size
 62,5718,Sen. Eliziane Gama,CIDADANIA,MA,governo,Sen. Eliziane Gama (CIDADANIA/MA),1
 62,5959,Sen. Styvenson Valentim,PODEMOS,RN,governo,Sen. Styvenson Valentim (PODEMOS/RN),1
 62,141458,Sen. João Carlos Bacelar,PL,BA,governo,Sen. João Carlos Bacelar (PL/BA),0.5
+64,5982,Sen. Alessandro Vieira,CIDADANIA,SE,governo,Sen. Alessandro Vieira (CIDADANIA/SE),1
+65,132504,Dep. Enio Verri,PT,,oposição,Dep. Enio Verri (PT/-),1
+65,133439,Dep. André Figueiredo,PDT,CE,oposição,Dep. André Figueiredo (PDT/-),1.5
+65,133968,Dep. Paulo Ramos,PDT,RJ,oposição,Dep. Paulo Ramos (PDT/-),10.8
+65,141411,Dep. Dagoberto Nogueira,PDT,MS,oposição,Dep. Dagoberto Nogueira (PDT/-),0.75
+65,141450,Dep. Hugo Leal,PSD,RJ,governo,Dep. Hugo Leal (PSD/-),3.05
+65,141518,Dep. Paulo Pereira Da Silva,SOLIDARIEDADE,SP,governo,Dep. Paulo Pereira Da Silva (SOLIDARIEDADE/-),1
+65,150418,Dep. Márcio Marinho,PRB,BA,governo,Dep. Márcio Marinho (PRB/-),1
+65,156190,Dep. Marcel Van Hattem,NOVO,RS,governo,Dep. Marcel Van Hattem (NOVO/-),0.8333333333333333
+65,160511,Dep. Alessandro Molon,PSB,RJ,oposição,Dep. Alessandro Molon (PSB/-),15
+65,160541,Dep. Arthur Lira,PP,AL,governo,Dep. Arthur Lira (PP/-),1
+65,160545,Dep. Alexandre Leite,DEM,SP,governo,Dep. Alexandre Leite (DEM/-),12.666666666666666
+65,160575,Dep. Erika Kokay,PT,DF,oposição,Dep. Erika Kokay (PT/-),21
+65,160587,Dep. Fábio Trad,PSD,MS,governo,Dep. Fábio Trad (PSD/-),2.833333333333333
+65,160598,Dep. Flávia Morais,PDT,GO,oposição,Dep. Flávia Morais (PDT/-),1
+65,160604,Dep. Pedro Uczai,PT,SC,oposição,Dep. Pedro Uczai (PT/-),1.5
+65,160642,Dep. Pastor Eurico,PATRIOTA,PE,governo,Dep. Pastor Eurico (PATRIOTA/-),1.6666666666666665
+65,160655,Dep. Ricardo Izar,PP,SP,governo,Dep. Ricardo Izar (PP/-),2
+65,160673,Dep. Giovani Cherini,PL,RS,governo,Dep. Giovani Cherini (PL/-),0.6666666666666666
+65,160674,Dep. Hugo Motta,PRB,PB,governo,Dep. Hugo Motta (PRB/-),3
+65,164359,Dep. Delegado Waldir,PSL,GO,governo,Dep. Delegado Waldir (PSL/-),12.175
+65,178829,Dep. Capitão Augusto,PL,SP,governo,Dep. Capitão Augusto (PL/-),1.55
+65,178881,Dep. Aluisio Mendes,PODE,MA,governo,Dep. Aluisio Mendes (PODE/-),0.75
+65,178916,Dep. Daniel Coelho,CIDADANIA,PE,governo,Dep. Daniel Coelho (CIDADANIA/-),1
+65,178934,Dep. Toninho Wandscheer,PROS,PR,governo,Dep. Toninho Wandscheer (PROS/-),0.8333333333333333
+65,179587,Dep. Major Vitor Hugo,PSL,GO,governo,Dep. Major Vitor Hugo (PSL/-),3.583333333333333
+65,198783,Dep. Emanuel Pinheiro Neto,PTB,MT,governo,Dep. Emanuel Pinheiro Neto (PTB/-),3.5416666666666665
+65,204359,Dep. Léo Moraes,PODE,RO,governo,Dep. Léo Moraes (PODE/-),1.675
+65,204363,Dep. Osires Damaso,PSC,TO,governo,Dep. Osires Damaso (PSC/-),1
+65,204369,Dep. Caroline De Toni,PSL,SC,governo,Dep. Caroline De Toni (PSL/-),0.8333333333333333
+65,204371,Dep. Felipe Rigoni,PSB,ES,oposição,Dep. Felipe Rigoni (PSB/-),1
+65,204373,Dep. Hélio Costa,PRB,SC,governo,Dep. Hélio Costa (PRB/-),1
+65,204376,Dep. Coronel Armando,PSL,SC,governo,Dep. Coronel Armando (PSL/-),2
+65,204377,Dep. Paula Belmonte,CIDADANIA,DF,governo,Dep. Paula Belmonte (CIDADANIA/-),0.8333333333333333
+65,204388,Dep. Bibo Nunes,PSL,RS,governo,Dep. Bibo Nunes (PSL/-),0.8
+65,204391,Dep. José Nelto,PODE,GO,governo,Dep. José Nelto (PODE/-),1.7083333333333333
+65,204403,Dep. Marlon Santos,PDT,RS,oposição,Dep. Marlon Santos (PDT/-),1
+65,204418,Dep. Luizão Goulart,PRB,PR,governo,Dep. Luizão Goulart (PRB/-),1
+65,204427,Dep. Fernando Rodolfo,PL,PE,governo,Dep. Fernando Rodolfo (PL/-),2.6666666666666665
+65,204454,Dep. Daniel Silveira,PSL,RJ,governo,Dep. Daniel Silveira (PSL/-),1
+65,204461,Dep. Paulo Ganime,NOVO,RJ,governo,Dep. Paulo Ganime (NOVO/-),1
+65,204466,Dep. Tereza Nelma,PSDB,AL,governo,Dep. Tereza Nelma (PSDB/-),4
+65,204479,Dep. Nicoletti,PSL,RR,governo,Dep. Nicoletti (PSL/-),2
+65,204484,Dep. General Peternelli,PSL,SP,governo,Dep. General Peternelli (PSL/-),1
+65,204487,Dep. Capitão Wagner,PROS,CE,governo,Dep. Capitão Wagner (PROS/-),0.875
+65,204514,Dep. Coronel Tadeu,PSL,SP,governo,Dep. Coronel Tadeu (PSL/-),1
+65,204526,Dep. Luiz Philippe De Orleans e Bragança,PSL,SP,governo,Dep. Luiz Philippe De Orleans e Bragança (PSL/-),1
+65,204559,Dep. Zé Neto,PT,BA,oposição,Dep. Zé Neto (PT/-),4
+65,204562,Dep. Edilázio Júnior,PSD,MA,governo,Dep. Edilázio Júnior (PSD/-),1
+65,204570,Dep. Pastor Gildenemyr,PMN,MA,governo,Dep. Pastor Gildenemyr (PMN/-),1
+65,204572,Dep. Capitão Alberto Neto,PRB,AM,governo,Dep. Capitão Alberto Neto (PRB/-),2.6666666666666665
+65,68720,Dep. Fábio Henrique,PDT,SE,oposição,Dep. Fábio Henrique (PDT/-),1.875
+65,73486,Dep. Pompeo De Mattos,PDT,RS,oposição,Dep. Pompeo De Mattos (PDT/-),4.133333333333333
+65,74043,Dep. Wellington Roberto,PL,PB,governo,Dep. Wellington Roberto (PL/-),0.6666666666666666
+65,74366,Dep. João Campos,PRB,GO,governo,Dep. João Campos (PRB/-),6.05
+65,74471,Dep. André De Paula,PSD,PE,governo,Dep. André De Paula (PSD/-),0.875
+65,74585,Dep. Lincoln Portela,PL,MG,governo,Dep. Lincoln Portela (PL/-),2.3833333333333333
+65,76874,Dep. Marcelo Freixo,PSOL,RJ,oposição,Dep. Marcelo Freixo (PSOL/-),2
+65,90842,Dep. Santini,PTB,RS,governo,Dep. Santini (PTB/-),2.75
+65,93083,Dep. Cacá Leão,PP,BA,governo,Dep. Cacá Leão (PP/-),0.8333333333333333
+65,177282,Dep. Subtenente Gonzaga,PDT,MG,oposição,Dep. Subtenente Gonzaga (PDT/-),0.75
+65,204507,Dep. Carla Zambelli,PSL,SP,governo,Dep. Carla Zambelli (PSL/-),0.8333333333333333
+65,178835,Dep. Afonso Motta,PDT,RS,oposição,Dep. Afonso Motta (PDT/-),1.3333333333333333
+65,204416,Dep. Sanderson,PSL,RS,governo,Dep. Sanderson (PSL/-),1
+65,204439,Dep. Dr. Leonardo,SOLIDARIEDADE,MT,governo,Dep. Dr. Leonardo (SOLIDARIEDADE/-),2.6666666666666665
+65,204490,Dep. Charlles Evangelista,PSL,MG,governo,Dep. Charlles Evangelista (PSL/-),0.875
+65,204500,Dep. Eduardo Costa,PTB,PA,governo,Dep. Eduardo Costa (PTB/-),0.75
+65,204425,Dep. Silvio Costa Filho,PRB,PE,governo,Dep. Silvio Costa Filho (PRB/-),0.8
+65,204544,Dep. Alexandre Frota,PSL,SP,governo,Dep. Alexandre Frota (PSL/-),0.6666666666666666
+66,5012,Sen. Randolfe Rodrigues,REDE,AP,oposição,Sen. Randolfe Rodrigues (REDE/AP),1
+67,4560,Sen. Sérgio Petecão,PSD,AC,governo,Sen. Sérgio Petecão (PSD/AC),1
+67,5411,Sen. Weverton,PDT,MA,oposição,Sen. Weverton (PDT/MA),1
+67,5732,Sen. Rodrigo Pacheco,DEM,MG,governo,Sen. Rodrigo Pacheco (DEM/MG),1
+68,3396,Sen. Tasso Jereissati,PSDB,CE,governo,Sen. Tasso Jereissati (PSDB/CE),1
+68,5350,Sen. Jorginho Mello,PL,SC,governo,Sen. Jorginho Mello (PL/SC),0.75
+68,5535,Sen. Telmário Mota,PROS,RR,governo,Sen. Telmário Mota (PROS/RR),0.75
+68,5732,Sen. Rodrigo Pacheco,DEM,MG,governo,Sen. Rodrigo Pacheco (DEM/MG),0.75
+68,581,Sen. Jaques Wagner,PT,BA,oposição,Sen. Jaques Wagner (PT/BA),1
+68,677,Sen. Roberto Rocha,PSDB,MA,governo,Sen. Roberto Rocha (PSDB/MA),11
+68,5895,Sen. Jorge Kajuru,PSB,GO,oposição,Sen. Jorge Kajuru (PSB/GO),0.75

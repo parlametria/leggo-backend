@@ -183,18 +183,3 @@ class EtapaProposicao(models.Model):
             if row['local'] != local_com_c_que_nao_e_comissao and row['local'][0] == "C":
                 comissoes.add(row['local'])
         return comissoes
-
-    @property
-    def ultima_pressao(self):
-        pressoes = []
-        for p in self.pressao.values('maximo_geral', 'date'):
-            pressoes.append({
-                'maximo_geral': p['maximo_geral'],
-                'date': p['date']
-            })
-
-        if (len(pressoes) == 0):
-            return -1
-        else:
-            sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
-            return sorted_pressoes[0]['maximo_geral']
