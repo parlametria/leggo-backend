@@ -302,10 +302,12 @@ def import_comissoes():
 
 def import_pressao():
     '''Carrega pressao das proposicoes'''
-    directory = os.fsencode('data/pops')
+    directory = os.fsencode('data/pops/')
 
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
+        if not filename.endswith(".csv"):
+            continue
         pressao_df = pd.read_csv('data/pops/' + str(filename))
         if not pressao_df.empty:
             id_leggo = {
