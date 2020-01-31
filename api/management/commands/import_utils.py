@@ -60,7 +60,7 @@ def import_tramitacoes():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Eventos da Tramitação")
 
         if etapa_prop is None:
             continue
@@ -95,7 +95,7 @@ def import_temperaturas():
             'id_leggo': group_index
         }
 
-        prop = get_proposicao(id_leggo)
+        prop = get_proposicao(id_leggo, "Histórico de Temperatura")
 
         if prop is None:
             continue
@@ -119,7 +119,7 @@ def import_coautoria_node():
             'id_leggo': group_index
         }
 
-        prop = get_proposicao(id_leggo)
+        prop = get_proposicao(id_leggo, "Coautorias Nodes")
 
         if prop is None:
             continue
@@ -140,7 +140,7 @@ def import_coautoria_edge():
             'id_leggo': group_index
         }
 
-        prop = get_proposicao(id_leggo)
+        prop = get_proposicao(id_leggo, "Coautorias Edges")
 
         if prop is None:
             continue
@@ -161,7 +161,7 @@ def import_autoria():
             'id_leggo': group_index
         }
 
-        prop = get_proposicao(id_leggo)
+        prop = get_proposicao(id_leggo, "Autorias")
 
         if prop is None:
             continue
@@ -183,7 +183,7 @@ def import_pautas():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Pautas")
 
         if etapa_prop is None:
             continue
@@ -219,7 +219,7 @@ def import_progresso():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Progresso")
 
         if etapa_prop is None:
             continue
@@ -247,7 +247,7 @@ def import_emendas():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Emendas")
 
         if etapa_prop is None:
             continue
@@ -271,7 +271,7 @@ def import_atores():
             'id_leggo': group_index
         }
 
-        prop = get_proposicao(id_leggo)
+        prop = get_proposicao(id_leggo, "Atores")
 
         if prop is None:
             continue
@@ -314,7 +314,7 @@ def import_pressao():
                 'id_leggo': pressao_df['id_leggo'][0]
             }
 
-            prop = get_proposicao(id_leggo)
+            prop = get_proposicao(id_leggo, "Pressão")
 
             if prop is None:
                 continue
@@ -330,24 +330,28 @@ def import_pressao():
                 Pressao(**r[1].to_dict()) for r in pressao_clean_df.iterrows())
 
 
-def get_etapa_proposicao(prop_id):
+def get_etapa_proposicao(prop_id, entity_str):
     etapa_prop = None
 
     try:
         etapa_prop = EtapaProposicao.objects.get(**prop_id)
-    except Exception:
+    except Exception as e:
         print("Não foi possivel encontrar a etapa proposição: {}".format(str(prop_id)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
 
     return etapa_prop
 
 
-def get_proposicao(leggo_id):
+def get_proposicao(leggo_id, entity_str):
     prop = None
 
     try:
         prop = Proposicao.objects.get(**leggo_id)
-    except Exception:
+    except Exception as e:
         print("Não foi possivel encontrar a proposição: {}".format(str(leggo_id)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
 
     return prop
 
