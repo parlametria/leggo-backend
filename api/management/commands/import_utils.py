@@ -169,6 +169,8 @@ def import_autoria():
         group_df = (
             grouped
             .get_group(group_index)
+            # pega apenas a data e não a hora
+            .assign(data=lambda x: x.data.apply(lambda s: s.split('T')[0]))
         )
         Autoria.objects.bulk_create(
             Autoria(**r[1].to_dict()) for r in group_df.iterrows())
