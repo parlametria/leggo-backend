@@ -11,10 +11,10 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - proposicoes_data:/agora-digital/exported
+      - leggo_data:/agora-digital/leggo_data
 
 volumes:
-  proposicoes_data:
+  leggo_data:
     external:
-      name: back_proposicoes_data
+      name: leggo_data
 
