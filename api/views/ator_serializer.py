@@ -13,21 +13,12 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
             'peso_total_documentos', 'num_documentos', 'tipo_generico',
             'sigla_local_formatada', 'is_important', 'nome_partido_uf')
 
-
-class AtoresSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Atores
-        fields = (
-            'id_autor', 'peso_total_documentos', 'num_documentos',
-            'tipo_generico', 'nome_partido_uf')
-
-
 class AtoresList(generics.ListAPIView):
     '''
     Dados de atores de uma proposição
     '''
 
-    serializer_class = AtoresSerializer
+    serializer_class = AtoresSerializerComissoes
 
     @swagger_auto_schema(
         manual_parameters=[
