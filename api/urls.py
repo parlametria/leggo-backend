@@ -1,33 +1,50 @@
 from django.conf.urls import url  # , include
 # from rest_framework.routers import DefaultRouter
-from api import views
+from api.views.info_serializer import Info
+from api.views.proposicao_serializer import ProposicaoDetail, ProposicaoList
+from api.views.etapa_serializer import EtapasList
+from api.views.tramitacao_serializer import TramitacaoEventList
+from api.views.progresso_serializer import ProgressoList
+from api.views.comissao_serializer import ComissaoList
+from api.views.pauta_serializer import PautaList
+from api.views.emenda_serializer import EmendasList
+from api.views.ator_serializer import AtoresList
+from api.views.pressao_serializer import PressaoList
+from api.views.coautoria_node_serializer import CoautoriaNodeList
+from api.views.coautoria_edge_serializer import CoautoriaEdgeList
+from api.views.autoria_serializer import AutoriaList
+
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
 
 urlpatterns = [
     # url(r'^', include(router.urls)),
-    url(r'^info/?$', views.Info.as_view()),
-    url(r'^proposicoes/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.ProposicaoDetail.as_view()),
-    url(r'^proposicoes/?$', views.ProposicaoList.as_view()),
-    url(r'^etapas/?$', views.EtapasList.as_view()),
-    # url(r'^temperatura/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-    #     views.TemperaturaHistoricoAPI.as_view()),
+    url(r'^info/?$', Info.as_view()),
+    url(r'^proposicoes/(?P<id>[0-9]+)/?$',
+        ProposicaoDetail.as_view()),
+    url(r'^proposicoes/?$', ProposicaoList.as_view()),
+    url(r'^etapas/?$', EtapasList.as_view()),
     url(r'^eventos_tramitacao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.TramitacaoEventList.as_view()),
-    url(r'^eventos_tramitacao/?$', views.TramitacaoEventList.as_view()),
-    url(r'^proposicoes/(?P<id_ext>[0-9]+)/fases/?$', views.Info.as_view()),
+        TramitacaoEventList.as_view()),
+    url(r'^eventos_tramitacao/?$', TramitacaoEventList.as_view()),
+    url(r'^proposicoes/(?P<id_ext>[0-9]+)/fases/?$', Info.as_view()),
     url(r'^progresso/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.ProgressoList.as_view()),
+        ProgressoList.as_view()),
     url(r'^comissao/(?P<casa>[a-z]+)/(?P<sigla>([a-z]+|[A-Z]+)[0-9]*)/?$',
-        views.ComissaoList.as_view()),
+        ComissaoList.as_view()),
     url(r'^pauta/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.PautaList.as_view()),
+        PautaList.as_view()),
     url(r'^emenda/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.EmendasList.as_view()),
-    url(r'^atores/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.AtoresList.as_view()),
-    url(r'^pressao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
-        views.PressaoList.as_view()),
+        EmendasList.as_view()),
+    url(r'^atores/(?P<id_leggo>[0-9]+)/?$',
+        AtoresList.as_view()),
+    url(r'^pressao/(?P<id_leggo>[0-9]+)/?$',
+        PressaoList.as_view()),
+    url(r'^coautorias_node/(?P<id>[0-9]+)/?$',
+        CoautoriaNodeList.as_view()),
+    url(r'^coautorias_edge/(?P<id>[0-9]+)/?$',
+        CoautoriaEdgeList.as_view()),
+    url(r'^autorias/(?P<id>[0-9]+)/?$',
+        AutoriaList.as_view()),
 ]

@@ -19,6 +19,7 @@ Usando o make ele já ajuda a rodar os comandos do docker-compose de maneira sim
 **make import** | Importa dados da pasta `data/` e escreve no banco de dados.	
 **make update** | Realiza as migrações e importa os dados	
 **make update-agorapi** | Realiza as migrações do banco.	
+**make update-data-remote** | Atualiza o banco de acordo com os dados do servidor remoto.
 **make help** | Para visualizar os demais comandos.
 
 ### Docker
@@ -116,6 +117,10 @@ Gera migrações, migra, limpa dados e importa de novo ao mesmo tempo:
 Testes com cobertura de código:
 ```
 ./manage.py test_all
+```
+No Docker
+```
+docker exec -it agorapi sh -c './manage.py test_all'
 ```
 
 ### Gerar diagrama do BD

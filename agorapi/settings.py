@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,11 +27,18 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'segredo secreto')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG') not in ['False', 'false', 'FALSE']
 
+# LEGGO CSV SERVER variables
+CSVS_SERVER_URL = os.getenv('CSVS_SERVER_URL', 'localhost')
+CSVS_SERVER_USER = os.getenv('CSVS_SERVER_USER', 'user')
+CSVS_SERVER_PWD = os.getenv('CSVS_SERVER_PWD', 'pwd')
+CSVS_STORAGE_DIR = os.getenv('CSVS_STORAGE_DIR', './data/')
+
 ALLOWED_HOSTS = [
     'web', '0.0.0.0', 'localhost', '127.0.0.1', '150.165.85.25', 'api',
     'agorapi', 'httpapi', '*'
 ]
 
+ON_HEROKU = os.environ.get('ON_HEROKU')
 
 # Application definition
 
@@ -95,6 +103,12 @@ DATABASES = {
     }
 }
 
+if ON_HEROKU:
+    DATABASES['default'] = dj_database_url.config()
+    # Redirect HTTP requests to HTTPS
+    SECURE_SSL_REDIRECT = True
+else:
+    SECURE_SSL_REDIRECT = False
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

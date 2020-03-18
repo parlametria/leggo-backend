@@ -1,10 +1,20 @@
 import os
 import datetime
 import pandas as pd
-from api.models import (
-    EtapaProposicao, TramitacaoEvent, TemperaturaHistorico,
-    Progresso, Proposicao, Comissao, PautaHistorico, Emendas, InfoGerais, Atores,
-    Pressao)
+from api.model.ator import Atores
+from api.model.comissao import Comissao
+from api.model.emenda import Emendas
+from api.model.etapa_proposicao import EtapaProposicao
+from api.model.info_geral import InfoGerais
+from api.model.pauta_historico import PautaHistorico
+from api.model.pressao import Pressao
+from api.model.progresso import Progresso
+from api.model.proposicao import Proposicao
+from api.model.temperatura_historico import TemperaturaHistorico
+from api.model.tramitacao_event import TramitacaoEvent
+from api.model.coautoria_node import CoautoriaNode
+from api.model.coautoria_edge import CoautoriaEdge
+from api.model.autoria import Autoria
 
 
 def import_etapas_proposicoes():
@@ -28,7 +38,8 @@ def import_proposicoes():
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
-        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema)
+        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo,
+                          advocacy_link=etapa.advocacy_link)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
@@ -49,7 +60,7 @@ def import_tramitacoes():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Eventos da Tramitação")
 
         if etapa_prop is None:
             continue
@@ -78,16 +89,15 @@ def import_tramitacoes():
 
 def import_temperaturas():
     '''Carrega históricos de temperatura'''
-    grouped = pd.read_csv('data/hists_temperatura.csv').groupby(['casa', 'id_ext'])
+    grouped = pd.read_csv('data/hists_temperatura.csv').groupby(['id_leggo'])
     for group_index in grouped.groups:
-        prop_id = {
-            'casa': group_index[0],
-            'id_ext': group_index[1],
+        id_leggo = {
+            'id_leggo': group_index
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        prop = get_proposicao(id_leggo, "Histórico de Temperatura")
 
-        if etapa_prop is None:
+        if prop is None:
             continue
 
         group_df = (
@@ -95,10 +105,73 @@ def import_temperaturas():
             .get_group(group_index)
             .assign(periodo=lambda x: x.periodo.apply(lambda s: s.split('T')[0]))
             .filter(['periodo', 'temperatura_periodo', 'temperatura_recente'])
-            .assign(proposicao=etapa_prop)
+            .assign(proposicao=prop)
         )
         TemperaturaHistorico.objects.bulk_create(
             TemperaturaHistorico(**r[1].to_dict()) for r in group_df.iterrows())
+
+
+def import_coautoria_node():
+    '''Carrega nós'''
+    grouped = pd.read_csv('data/coautorias_nodes.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo, "Coautorias Nodes")
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+        )
+        CoautoriaNode.objects.bulk_create(
+            CoautoriaNode(**r[1].to_dict()) for r in group_df.iterrows())
+
+
+def import_coautoria_edge():
+    '''Carrega arestas'''
+    grouped = pd.read_csv('data/coautorias_edges.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo, "Coautorias Edges")
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+        )
+        CoautoriaEdge.objects.bulk_create(
+            CoautoriaEdge(**r[1].to_dict()) for r in group_df.iterrows())
+
+
+def import_autoria():
+    '''Carrega autorias'''
+    grouped = pd.read_csv('data/autorias.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo, "Autorias")
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+        )
+        Autoria.objects.bulk_create(
+            Autoria(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def import_pautas():
@@ -110,7 +183,7 @@ def import_pautas():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Pautas")
 
         if etapa_prop is None:
             continue
@@ -146,7 +219,7 @@ def import_progresso():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Progresso")
 
         if etapa_prop is None:
             continue
@@ -174,7 +247,7 @@ def import_emendas():
             'id_ext': group_index[1],
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        etapa_prop = get_etapa_proposicao(prop_id, "Emendas")
 
         if etapa_prop is None:
             continue
@@ -192,25 +265,24 @@ def import_emendas():
 
 def import_atores():
     '''Carrega Atores'''
-    atores_df = pd.read_csv('data/atores.csv').groupby(['casa', 'id_ext'])
+    atores_df = pd.read_csv('data/atores.csv').groupby(['id_leggo'])
     for group_index in atores_df.groups:
-        prop_id = {
-            'casa': group_index[0],
-            'id_ext': group_index[1],
+        id_leggo = {
+            'id_leggo': group_index
         }
 
-        etapa_prop = get_etapa_proposicao(prop_id)
+        prop = get_proposicao(id_leggo, "Atores")
 
-        if etapa_prop is None:
+        if prop is None:
             continue
 
         group_df = (
             atores_df
             .get_group(group_index)
-            [['id_autor', 'nome_autor', 'partido', 'uf',
-             'qtd_de_documentos', 'tipo_generico', 'sigla_local',
-              'is_important']]
-            .assign(proposicao=etapa_prop)
+            [['id_leggo', 'id_ext', 'casa', 'id_autor', 'nome_autor', 'partido', 'uf',
+             'peso_total_documentos', 'num_documentos', 'tipo_generico', 'sigla_local',
+              'is_important', 'bancada']]
+            .assign(proposicao=prop)
         )
         Atores.objects.bulk_create(
             Atores(**r[1].to_dict()) for r in group_df.iterrows())
@@ -230,42 +302,58 @@ def import_comissoes():
 
 def import_pressao():
     '''Carrega pressao das proposicoes'''
-    directory = os.fsencode('data/pops')
+    directory = os.fsencode('data/pops/')
 
     for file in os.listdir(directory):
         filename = os.fsdecode(file)
-        pressao_df = pd.read_csv('data/pops/' + str(filename))
-        prop_id = {
-            'casa': pressao_df['casa'][0],
-            'id_ext': pressao_df['id_ext'][0],
-        }
-
-        etapa_prop = get_etapa_proposicao(prop_id)
-
-        if etapa_prop is None:
+        if not filename.endswith(".csv"):
             continue
+        pressao_df = pd.read_csv('data/pops/' + str(filename))
+        if not pressao_df.empty:
+            id_leggo = {
+                'id_leggo': pressao_df['id_leggo'][0]
+            }
 
-        pressao_clean_df = (
-            pressao_df
-            [['date', 'max_pressao_principal',
-              'max_pressao_rel',	'maximo_geral']]
-            .assign(proposicao=etapa_prop)
-        )
+            prop = get_proposicao(id_leggo, "Pressão")
 
-        Pressao.objects.bulk_create(
-            Pressao(**r[1].to_dict()) for r in pressao_clean_df.iterrows())
+            if prop is None:
+                continue
+
+            pressao_clean_df = (
+                pressao_df
+                [['date', 'max_pressao_principal',
+                    'max_pressao_rel',	'maximo_geral', 'id_leggo']]
+                .assign(proposicao=prop)
+            )
+
+            Pressao.objects.bulk_create(
+                Pressao(**r[1].to_dict()) for r in pressao_clean_df.iterrows())
 
 
-def get_etapa_proposicao(prop_id):
+def get_etapa_proposicao(prop_id, entity_str):
     etapa_prop = None
 
     try:
         etapa_prop = EtapaProposicao.objects.get(**prop_id)
-    except Exception:
-        '{} {}'.format('one', 'two')
+    except Exception as e:
         print("Não foi possivel encontrar a etapa proposição: {}".format(str(prop_id)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
 
     return etapa_prop
+
+
+def get_proposicao(leggo_id, entity_str):
+    prop = None
+
+    try:
+        prop = Proposicao.objects.get(**leggo_id)
+    except Exception as e:
+        print("Não foi possivel encontrar a proposição: {}".format(str(leggo_id)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
+
+    return prop
 
 
 def import_all_data():
@@ -280,3 +368,6 @@ def import_all_data():
     import_comissoes()
     import_atores()
     import_pressao()
+    import_coautoria_node()
+    import_coautoria_edge()
+    import_autoria()
