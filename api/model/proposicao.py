@@ -2,7 +2,6 @@ import time
 from django.db import models
 from scipy import stats
 from django.db.models import Sum
-from api.utils.ator import get_nome_partido_uf
 
 
 ORDER_PROGRESSO = [
@@ -106,7 +105,7 @@ class Proposicao(models.Model):
 
         top_n_atores = self.atores.values('id_autor', 'nome_autor') \
             .annotate(total_docs=Sum('peso_total_documentos')) \
-            .order_by('-total_docs','nome_autor')
+            .order_by('-total_docs', 'nome_autor')
         for ator in self.atores.all():
             for top_n_ator in top_n_atores:
                 if ator.id_autor == top_n_ator['id_autor']:
