@@ -8,10 +8,12 @@ stages:
   - test
 
 variables:
+  DOCKER_HOST: tcp://docker:2375/
   COMPOSE_CMD: docker-compose -f docker-compose.yml -f deploy/prod.yml
 
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - export API_IMAGE_TAG=$CONTAINER_TEST_IMAGE
 
 build:
   stage: build
