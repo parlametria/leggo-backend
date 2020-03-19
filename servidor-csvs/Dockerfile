@@ -3,9 +3,10 @@ FROM node:10
 WORKDIR /
 
 COPY package* ./
-COPY . .
 
 RUN npm install
+
+COPY . .
 
 EXPOSE 8080
 

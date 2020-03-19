@@ -33,7 +33,7 @@ function verifyJWT(req, res, next){
   });
 }
 
-app.use('/csvs',verifyJWT, express.static('./agora-digital/exported'), serveIndex('./agora-digital/exported', {'icons': true}))
+app.use('/csvs',verifyJWT, express.static('./agora-digital/leggo_data'), serveIndex('./agora-digital/leggo_data', {'icons': true}))
 
 app.listen(PORT, () => {
   console.log('Server is running at:',PORT);
