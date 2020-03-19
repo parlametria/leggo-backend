@@ -36,3 +36,19 @@ tests:
     - $COMPOSE_CMD pull
     - $COMPOSE_CMD run api sh -c './manage.py test_all'
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
+
+release-image:
+  stage: release
+  script:
+    - $COMPOSE_CMD pull
+    - docker tag $CONTAINER_TEST_IMAGE $CONTAINER_RELEASE_IMAGE
+    - docker push $CONTAINER_RELEASE_IMAGE
+  only:
+    - master
+
+deploy:
+  stage: deploy
+  script:
+    - curl --fail -XPOST "$DEPLOY_WEBHOOK"
+  only:
+    - master
