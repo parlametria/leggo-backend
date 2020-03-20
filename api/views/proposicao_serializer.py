@@ -45,14 +45,13 @@ class ProposicaoList(generics.ListAPIView):
         interesseArg = self.request.query_params.get('interesse')
 
         # Adiciona interesse default
-        if not interesseArg:
+        if interesseArg is None:
             interesseArg = 'leggo'
 
         props = Proposicao.objects.filter(interesse__interesse=interesseArg)\
             .prefetch_related('etapas', 'etapas__tramitacao', 'progresso',
                               Prefetch('etapas__pauta_historico', queryset=pautaQs),
                               )
-        print(props.query)
         return props
 
 
