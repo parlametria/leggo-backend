@@ -49,10 +49,9 @@ class ProposicaoList(generics.ListAPIView):
             interesseArg = 'leggo'
 
         props = Proposicao.objects.filter(interesse__interesse=interesseArg)\
-        .prefetch_related(
-            'etapas', 'etapas__tramitacao', 'progresso',
-            Prefetch('etapas__pauta_historico', queryset=pautaQs),
-        )
+            .prefetch_related('etapas', 'etapas__tramitacao', 'progresso',
+                              Prefetch('etapas__pauta_historico', queryset=pautaQs),
+                              )
         print(props.query)
         return props
 
