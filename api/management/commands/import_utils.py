@@ -358,6 +358,7 @@ def get_proposicao(leggo_id, entity_str):
 
     return prop
 
+
 def import_interesse():
     '''Carrega Interesses'''
     grouped = pd.read_csv('data/interesses.csv').groupby(['id_leggo'])
@@ -375,7 +376,7 @@ def import_interesse():
             grouped
             .get_group(group_index)
             [['id_ext', 'casa', 'id_leggo', 'interesse']]
-            .assign(proposicao=prop)           
+            .assign(proposicao=prop)
         )
         Interesse.objects.bulk_create(
             Interesse(**r[1].to_dict()) for r in group_df.iterrows())

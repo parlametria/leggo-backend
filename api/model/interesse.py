@@ -5,7 +5,7 @@ from api.model.proposicao import Proposicao
 class Interesse(models.Model):
     '''
     Interesses analisados e relacionados as PL's
-    '''    
+    '''
 
     id_ext = models.IntegerField(
         help_text='Id externo da proposição na casa correspondente.')

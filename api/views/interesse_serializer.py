@@ -6,7 +6,7 @@ from api.model.interesse import Interesse
 
 class InteresseSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Interesse        
+        model = Interesse
         fields = (
             'id_ext', 'interesse')
 
@@ -29,5 +29,5 @@ class InteresseList(generics.ListAPIView):
         '''
         Retorna interesses associados a uma PL
         '''
-        id_prop = self.kwargs['id_leggo']
+        id_prop = self.kwargs['id']
         return Interesse.objects.filter(id_leggo=id_prop)

@@ -48,4 +48,6 @@ urlpatterns = [
         CoautoriaEdgeList.as_view()),
     url(r'^autorias/(?P<id>[0-9]+)/?$',
         AutoriaList.as_view()),
+    url(r'^interesses/(?P<id>[0-9]+)/?$',
+        InteresseList.as_view()),
 ]

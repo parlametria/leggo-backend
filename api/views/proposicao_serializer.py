@@ -7,7 +7,6 @@ from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import get_time_filtered_pauta
 from django.db.models import Prefetch
 from api.views.ator_serializer import AtoresSerializerComissoes
-from api.views.interesse_serializer import InteresseSerializer
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
@@ -44,12 +43,13 @@ class ProposicaoList(generics.ListAPIView):
         pautaQs = get_time_filtered_pauta(self.request)
 
         interesseArg = self.request.query_params.get('interesse')
-        
+
         # Adiciona interesse default
         if not interesseArg:
             interesseArg = 'leggo'
 
-        props = Proposicao.objects.filter(interesse__interesse=interesseArg).prefetch_related(
+        props = Proposicao.objects.filter(interesse__interesse=interesseArg)\
+        .prefetch_related(
             'etapas', 'etapas__tramitacao', 'progresso',
             Prefetch('etapas__pauta_historico', queryset=pautaQs),
         )
