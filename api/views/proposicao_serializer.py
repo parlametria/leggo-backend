@@ -46,7 +46,7 @@ class ProposicaoList(generics.ListAPIView):
         interesseArg = self.request.query_params.get('interesse')
         
         # Adiciona interesse default
-        if interesseArg is None:
+        if not interesseArg:
             interesseArg = 'leggo'
 
         props = Proposicao.objects.filter(interesse__interesse=interesseArg).prefetch_related(
