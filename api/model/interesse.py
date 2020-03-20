@@ -1,4 +1,5 @@
 from django.db import models
+from api.model.proposicao import Proposicao
 
 
 class Interesse(models.Model):
@@ -17,3 +18,6 @@ class Interesse(models.Model):
 
     interesse = models.TextField(
         help_text='Interesse da PL')
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name='interesse')
