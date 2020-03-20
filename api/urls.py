@@ -13,6 +13,7 @@ from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
 from api.views.autoria_serializer import AutoriaList
+from api.views.interesse_serializer import InteresseList
 
 
 # router = DefaultRouter()
