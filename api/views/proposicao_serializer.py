@@ -25,12 +25,11 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
 
 class ProposicaoSerializer(serializers.ModelSerializer):
     etapas = EtapasSerializer(many=True, read_only=True)
-    interesse = InteresseSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
         fields = (
-            'id', 'temas', 'interesse', 'apelido', 'etapas', 'resumo_progresso',
+            'id', 'temas', 'apelido', 'etapas', 'resumo_progresso',
             'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo', 'advocacy_link',
             'ultima_pressao')
 
@@ -43,14 +42,14 @@ class ProposicaoList(generics.ListAPIView):
 
     def get_queryset(self):
         pautaQs = get_time_filtered_pauta(self.request)
-        
+
         interesseArg = self.request.query_params.get('interesse')
-        if interesseArg is not None:
-            props = Proposicao.objects.filter(interesse__interesse=interesseArg)            
-        else:
-            props = Proposicao.objects 
         
-        props = props.prefetch_related(
+        # Adiciona interesse default
+        if interesseArg is None:
+            interesseArg = 'leggo'
+
+        props = Proposicao.objects.filter(interesse__interesse=interesseArg).prefetch_related(
             'etapas', 'etapas__tramitacao', 'progresso',
             Prefetch('etapas__pauta_historico', queryset=pautaQs),
         )
