@@ -48,7 +48,7 @@ class ProposicaoList(generics.ListAPIView):
         if interesseArg is None:
             interesseArg = 'leggo'
 
-        props = Proposicao.objects.filter(interesse__interesse=interesseArg)\
+        props = Proposicao.objects.filter(interesse__interesse=interesseArg).distinct()\
             .prefetch_related('etapas', 'etapas__tramitacao', 'progresso',
                               Prefetch('etapas__pauta_historico', queryset=pautaQs),
                               )
