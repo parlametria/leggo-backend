@@ -7,13 +7,7 @@ class Interesse(models.Model):
     Interesses analisados e relacionados as PL's
     '''
 
-    id_ext = models.IntegerField(
-        help_text='Id externo da proposição na casa correspondente.')
-
-    casa = models.TextField(
-        help_text='Casa de tramitação da proposição.')
-
-    id_leggo = models.TextField(
+    id_leggo = models.IntegerField(
         help_text='Id da proposição no Leggo.')
 
     interesse = models.TextField(

@@ -375,7 +375,7 @@ def import_interesse():
         group_df = (
             grouped
             .get_group(group_index)
-            [['id_ext', 'casa', 'id_leggo', 'interesse']]
+            [['id_leggo', 'interesse']]
             .assign(proposicao=prop)
         )
         Interesse.objects.bulk_create(
