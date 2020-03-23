@@ -90,8 +90,6 @@ def create_proposicao(self):
     proposicao.save()
 
     interesse = Interesse(
-        id_ext='257161',
-        casa='camara',
         id_leggo=1,
         interesse='leggo',
         proposicao=proposicao
