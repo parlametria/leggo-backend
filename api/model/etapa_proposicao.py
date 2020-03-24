@@ -79,6 +79,9 @@ class EtapaProposicao(models.Model):
 
     advocacy_link = models.TextField(blank=True, null=True)
 
+    keywords = models.TextField(blank=True, null=True)
+    tipo_agenda = models.TextField(blank=True, null=True)
+
     class Meta:
         indexes = [
             models.Index(fields=['casa', 'id_ext']),

@@ -40,7 +40,8 @@ def import_proposicoes():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
         prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo,
-                          advocacy_link=etapa.advocacy_link)
+                          advocacy_link=etapa.advocacy_link, keywords=etapa.keywords,
+                          tipo_agenda=etapa.tipo_agenda)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()

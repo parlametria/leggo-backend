@@ -17,9 +17,10 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Proposicao
         fields = (
-            'id', 'temas', 'apelido', 'etapas', 'resumo_progresso', 'id_leggo',
-            'temperatura_historico', 'ultima_temperatura', 'temperatura_coeficiente',
-            'important_atores', 'advocacy_link', 'ultima_pressao')
+            'id', 'temas', 'apelido', 'tipo_agenda', 'etapas', 'resumo_progresso',
+            'id_leggo', 'temperatura_historico', 'ultima_temperatura',
+            'temperatura_coeficiente', 'important_atores', 'advocacy_link',
+            'ultima_pressao')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
