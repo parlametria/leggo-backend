@@ -26,10 +26,7 @@ ORDER_PROGRESSO_MPV = [
 
 
 class Proposicao(models.Model):
-
-    apelido = models.TextField(blank=True)
-    tema = models.TextField(blank=True)
-    advocacy_link = models.TextField(blank=True, null=True)
+    
     id_leggo = models.IntegerField(
         'ID do Leggo',
         help_text='Id interno do leggo.')
@@ -87,13 +84,6 @@ class Proposicao(models.Model):
             return 0
         else:
             return temperaturas[0]['temperatura_recente']
-
-    @property
-    def temas(self):
-        '''
-        Separa temas
-        '''
-        return self.tema.split(";")
 
     @property
     def important_atores(self):

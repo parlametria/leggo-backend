@@ -7,29 +7,31 @@ from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import get_time_filtered_pauta
 from django.db.models import Prefetch
 from api.views.ator_serializer import AtoresSerializerComissoes
-
+from api.views.interesse_serializer import InteresseSerializer
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
     etapas = EtapasDetailSerializer(many=True, read_only=True)
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     important_atores = AtoresSerializerComissoes(many=True, read_only=True)
+    interesse = InteresseSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
         fields = (
-            'id', 'temas', 'apelido', 'etapas', 'resumo_progresso', 'id_leggo',
+            'id', 'interesse', 'etapas', 'resumo_progresso', 'id_leggo',
             'temperatura_historico', 'ultima_temperatura', 'temperatura_coeficiente',
-            'important_atores', 'advocacy_link', 'ultima_pressao')
+            'important_atores', 'ultima_pressao')
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
     etapas = EtapasSerializer(many=True, read_only=True)
+    interesse = InteresseSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
         fields = (
-            'id', 'temas', 'apelido', 'etapas', 'resumo_progresso',
-            'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo', 'advocacy_link',
+            'id', 'interesse', 'etapas', 'resumo_progresso',
+            'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo',
             'ultima_pressao')
 
 
@@ -70,4 +72,11 @@ class ProposicaoDetail(generics.ListAPIView):
     )
     def get_queryset(self):
         id_prop = self.kwargs['id']
-        return Proposicao.objects.filter(id_leggo=id_prop)
+
+        interesseArg = self.request.query_params.get('interesse')
+
+        # Adiciona interesse default
+        if interesseArg is None:
+            interesseArg = 'leggo'
+
+        return Proposicao.objects.filter(id_leggo=id_prop, interesse__interesse=interesseArg).distinct()

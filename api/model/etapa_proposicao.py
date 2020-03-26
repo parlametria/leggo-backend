@@ -67,17 +67,7 @@ class EtapaProposicao(models.Model):
     casa_origem = models.TextField(blank=True)
 
     em_pauta = models.NullBooleanField(
-        help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario')
-
-    apelido = models.TextField(
-        'Apelido da proposição.',
-        help_text='Apelido dado para proposição.', null=True)
-
-    tema = models.TextField(
-        'Tema da proposição.', max_length=40,
-        help_text='Podendo ser entre Meio Ambiente e agenda nacional.', null=True)
-
-    advocacy_link = models.TextField(blank=True, null=True)
+        help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario')    
 
     class Meta:
         indexes = [
@@ -118,13 +108,6 @@ class EtapaProposicao(models.Model):
                     autores.append('Dep. ' +
                                    autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
         return autores
-
-    @property
-    def temas(self):
-        '''
-        Separa temas
-        '''
-        return self.tema.split(";")
 
     @property
     def sigla(self):

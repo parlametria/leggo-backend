@@ -34,13 +34,12 @@ def import_proposicoes():
     '''Carrega proposições'''
     props_df = pd.read_csv('data/proposicoes.csv')
 
-    for _, etapas_df in props_df.groupby('apelido'):
+    for _, etapas_df in props_df.groupby(['id_leggo']):
         etapas = []
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
-        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo,
-                          advocacy_link=etapa.advocacy_link)
+        prop = Proposicao(id_leggo=etapa.id_leggo)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
@@ -375,7 +374,7 @@ def import_interesse():
         group_df = (
             grouped
             .get_group(group_index)
-            [['id_leggo', 'interesse']]
+            [['id_leggo', 'interesse', 'apelido', 'keywords', 'tema', 'advocacy_link', 'tipo_agenda']]
             .assign(proposicao=prop)
         )
         Interesse.objects.bulk_create(
