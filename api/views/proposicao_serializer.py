@@ -41,10 +41,17 @@ class ProposicaoList(generics.ListAPIView):
 
     def get_queryset(self):
         pautaQs = get_time_filtered_pauta(self.request)
-        props = Proposicao.objects.prefetch_related(
-            'etapas', 'etapas__tramitacao', 'progresso',
-            Prefetch('etapas__pauta_historico', queryset=pautaQs),
-        )
+
+        interesseArg = self.request.query_params.get('interesse')
+
+        # Adiciona interesse default
+        if interesseArg is None:
+            interesseArg = 'leggo'
+
+        props = Proposicao.objects.filter(interesse__interesse=interesseArg).distinct()\
+            .prefetch_related('etapas', 'etapas__tramitacao', 'progresso',
+                              Prefetch('etapas__pauta_historico', queryset=pautaQs),
+                              )
         return props
 
 

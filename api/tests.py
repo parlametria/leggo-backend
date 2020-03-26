@@ -3,6 +3,7 @@ from api.model.emenda import Emendas
 from api.model.etapa_proposicao import EtapaProposicao
 from api.model.proposicao import Proposicao
 from api.model.temperatura_historico import TemperaturaHistorico
+from api.model.interesse import Interesse
 
 
 class ProposicaoTests(APITestCase):
@@ -87,6 +88,13 @@ def create_proposicao(self):
     proposicao.save()
     proposicao.etapas.set([etapa_proposicao])
     proposicao.save()
+
+    interesse = Interesse(
+        id_leggo=1,
+        interesse='leggo',
+        proposicao=proposicao
+    )
+    interesse.save()
 
     self.proposicao = proposicao
     self.etapa_proposicao = etapa_proposicao

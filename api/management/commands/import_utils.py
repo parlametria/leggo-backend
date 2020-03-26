@@ -15,6 +15,7 @@ from api.model.tramitacao_event import TramitacaoEvent
 from api.model.coautoria_node import CoautoriaNode
 from api.model.coautoria_edge import CoautoriaEdge
 from api.model.autoria import Autoria
+from api.model.interesse import Interesse
 
 
 def import_etapas_proposicoes():
@@ -358,6 +359,29 @@ def get_proposicao(leggo_id, entity_str):
     return prop
 
 
+def import_interesse():
+    '''Carrega Interesses'''
+    grouped = pd.read_csv('data/interesses.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo, "Interesse")
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+            [['id_leggo', 'interesse']]
+            .assign(proposicao=prop)
+        )
+        Interesse.objects.bulk_create(
+            Interesse(**r[1].to_dict()) for r in group_df.iterrows())
+
+
 def import_all_data():
     '''Importa dados dos csv e salva no banco.'''
     import_etapas_proposicoes()
@@ -373,3 +397,4 @@ def import_all_data():
     import_coautoria_node()
     import_coautoria_edge()
     import_autoria()
+    import_interesse()
