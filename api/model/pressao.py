@@ -9,13 +9,12 @@ class Pressao(models.Model):
     '''
 
     id_leggo = models.IntegerField('Id da proposição principal no leggo.')
-
-    id_ext = models.IntegerField('ID Externo', default=-1, 
-        help_text='Id externo do sistema da casa.')
+    id_ext = models.IntegerField(
+        'ID Externo', default=-1, help_text='Id externo do sistema da casa.')
 
     casas = Choices('camara senado')
     casa = models.CharField(
-        max_length=6, choices=casas.items(), default='', 
+        max_length=6, choices=casas.items(), default='',
         help_text='Casa.')
 
     date = models.DateField('Dia da popularidade')
@@ -33,7 +32,7 @@ class Pressao(models.Model):
         'Pressão no twitter', default=0)
 
     popularity = models.FloatField(
-        'Pressão combinada do Twitter e Google Trends', 
+        'Pressão combinada do Twitter e Google Trends',
         default=0)
 
     proposicao = models.ForeignKey(

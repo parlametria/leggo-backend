@@ -9,7 +9,7 @@ class PressaoSerializer(serializers.ModelSerializer):
         model = Pressao
         fields = (
             'date', 'trends_max_pressao_principal',
-            'trends_max_pressao_rel',	'trends_max_popularity', 
+            'trends_max_pressao_rel',	'trends_max_popularity',
             'twitter_mean_popularity', 'popularity')
 
 
