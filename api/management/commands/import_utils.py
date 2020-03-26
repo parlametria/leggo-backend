@@ -391,7 +391,7 @@ def import_all_data():
     import_emendas()
     import_comissoes()
     import_atores()
-    # import_pressao()
+    import_pressao()
     import_coautoria_node()
     import_coautoria_edge()
     import_autoria()
