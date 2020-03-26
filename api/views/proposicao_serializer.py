@@ -4,10 +4,11 @@ from drf_yasg import openapi
 from api.model.proposicao import Proposicao
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
-from api.utils.filters import get_time_filtered_pauta
+from api.utils.filters import get_time_filtered_pauta, get_filtered_interesses
 from django.db.models import Prefetch
 from api.views.ator_serializer import AtoresSerializerComissoes
 from api.views.interesse_serializer import InteresseSerializer
+
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
     etapas = EtapasDetailSerializer(many=True, read_only=True)
@@ -50,9 +51,12 @@ class ProposicaoList(generics.ListAPIView):
         if interesseArg is None:
             interesseArg = 'leggo'
 
+        interessesFiltered = get_filtered_interesses(interesseArg)
+
         props = Proposicao.objects.filter(interesse__interesse=interesseArg).distinct()\
             .prefetch_related('etapas', 'etapas__tramitacao', 'progresso',
                               Prefetch('etapas__pauta_historico', queryset=pautaQs),
+                              Prefetch('interesse', queryset=interessesFiltered)
                               )
         return props
 
@@ -79,4 +83,7 @@ class ProposicaoDetail(generics.ListAPIView):
         if interesseArg is None:
             interesseArg = 'leggo'
 
-        return Proposicao.objects.filter(id_leggo=id_prop, interesse__interesse=interesseArg).distinct()
+        interessesFiltered = get_filtered_interesses(interesseArg)
+
+        return Proposicao.objects.filter(id_leggo=id_prop, interesse__interesse=interesseArg).distinct()\
+            .prefetch_related(Prefetch('interesse', queryset=interessesFiltered))

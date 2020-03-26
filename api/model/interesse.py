@@ -30,7 +30,7 @@ class Interesse(models.Model):
 
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='interesse')
-    
+
     @property
     def temas(self):
         '''
