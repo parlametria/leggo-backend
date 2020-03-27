@@ -282,7 +282,7 @@ def import_atores():
             atores_df
             .get_group(group_index)
             [['id_leggo', 'id_ext', 'casa', 'id_autor', 'nome_autor', 'partido', 'uf',
-             'peso_total_documentos', 'num_documentos', 'tipo_generico', 'sigla_local',
+              'peso_total_documentos', 'num_documentos', 'tipo_generico', 'sigla_local',
               'is_important', 'bancada']]
             .assign(proposicao=prop)
         )
@@ -374,7 +374,8 @@ def import_interesse():
         group_df = (
             grouped
             .get_group(group_index)
-            [['id_leggo', 'interesse', 'apelido', 'keywords', 'tema', 'advocacy_link', 'tipo_agenda']]
+            [['id_leggo', 'interesse', 'apelido', 'keywords',
+                'tema', 'advocacy_link', 'tipo_agenda']]
             .assign(proposicao=prop)
         )
         Interesse.objects.bulk_create(

@@ -85,5 +85,6 @@ class ProposicaoDetail(generics.ListAPIView):
 
         interessesFiltered = get_filtered_interesses(interesseArg)
 
-        return Proposicao.objects.filter(id_leggo=id_prop, interesse__interesse=interesseArg).distinct()\
+        return Proposicao.objects.filter(id_leggo=id_prop,
+                                         interesse__interesse=interesseArg).distinct()\
             .prefetch_related(Prefetch('interesse', queryset=interessesFiltered))

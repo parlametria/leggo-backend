@@ -8,7 +8,7 @@ class InteresseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interesse
         fields = (
-            'interesse', 'temas', 'apelido', 'advocacy_link')
+            'interesse', 'temas', 'apelido', 'advocacy_link', 'tipo_agenda')
 
 
 class InteresseList(generics.ListAPIView):
