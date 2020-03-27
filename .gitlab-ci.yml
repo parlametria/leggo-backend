@@ -1,5 +1,3 @@
-image: agoradigital/backend-cicd:latest
-
 services:
   - docker:dind
 
