@@ -8,8 +8,9 @@ class PressaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pressao
         fields = (
-            'date', 'max_pressao_principal',
-            'max_pressao_rel',	'maximo_geral')
+            'date', 'trends_max_pressao_principal',
+            'trends_max_pressao_rel',	'trends_max_popularity',
+            'twitter_mean_popularity', 'popularity')
 
 
 class PressaoList(generics.ListAPIView):

@@ -119,9 +119,9 @@ class Proposicao(models.Model):
     @property
     def ultima_pressao(self):
         pressoes = []
-        for p in self.pressao.values('maximo_geral', 'date'):
+        for p in self.pressao.values('trends_max_popularity', 'date'):
             pressoes.append({
-                'maximo_geral': p['maximo_geral'],
+                'maximo_geral': p['trends_max_popularity'],
                 'date': p['date']
             })
 

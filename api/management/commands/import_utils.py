@@ -304,32 +304,30 @@ def import_comissoes():
 
 def import_pressao():
     '''Carrega pressao das proposicoes'''
-    directory = os.fsencode('data/pops/')
+    pressao_df = pd.read_csv('data/pressao.csv').groupby(['id_leggo', 'date'])
+    for group_index in pressao_df.groups:
 
-    for file in os.listdir(directory):
-        filename = os.fsdecode(file)
-        if not filename.endswith(".csv"):
+        id_leggo = {
+            'id_leggo': group_index[0]
+        }
+
+        prop = get_proposicao(id_leggo, "Pressão")
+
+        if prop is None:
             continue
-        pressao_df = pd.read_csv('data/pops/' + str(filename))
-        if not pressao_df.empty:
-            id_leggo = {
-                'id_leggo': pressao_df['id_leggo'][0]
-            }
 
-            prop = get_proposicao(id_leggo, "Pressão")
+        group_df = (
+            pressao_df
+            .get_group(group_index)
+            [['id_leggo', 'id_ext', 'casa',
+                'date', 'trends_max_pressao_principal',
+                'trends_max_pressao_rel',	'trends_max_popularity',
+                'twitter_mean_popularity', 'popularity']]
+            .assign(proposicao=prop)
+        )
 
-            if prop is None:
-                continue
-
-            pressao_clean_df = (
-                pressao_df
-                [['date', 'max_pressao_principal',
-                    'max_pressao_rel',	'maximo_geral', 'id_leggo']]
-                .assign(proposicao=prop)
-            )
-
-            Pressao.objects.bulk_create(
-                Pressao(**r[1].to_dict()) for r in pressao_clean_df.iterrows())
+        Pressao.objects.bulk_create(
+            Pressao(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def get_etapa_proposicao(prop_id, entity_str):
