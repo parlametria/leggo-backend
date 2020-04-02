@@ -319,7 +319,7 @@ def import_pressao():
         group_df = (
             pressao_df
             .get_group(group_index)
-            [['id_leggo', 'id_ext', 'casa',
+            [['id_leggo', 'id_ext', 'casa', 'interesse',
                 'date', 'trends_max_pressao_principal',
                 'trends_max_pressao_rel',	'trends_max_popularity',
                 'twitter_mean_popularity', 'popularity']]

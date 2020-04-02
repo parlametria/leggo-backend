@@ -17,6 +17,9 @@ class Pressao(models.Model):
         max_length=6, choices=casas.items(), default='',
         help_text='Casa.')
 
+    interesse = models.TextField(blank=True, null=True,
+                                 help_text='Interesse da proposição')
+
     date = models.DateField('Dia da popularidade')
 
     trends_max_pressao_principal = models.FloatField(
