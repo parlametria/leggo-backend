@@ -304,16 +304,25 @@ def import_comissoes():
 
 def import_pressao():
     '''Carrega pressao das proposicoes'''
-    pressao_df = pd.read_csv('data/pressao.csv').groupby(['id_leggo', 'date'])
+    pressao_df = pd.read_csv('data/pressao.csv').groupby(['id_leggo', 'id_ext', 'casa', 'interesse', 'date'])
     for group_index in pressao_df.groups:
 
         id_leggo = {
             'id_leggo': group_index[0]
         }
 
+        interesse_obj = {
+            'id_leggo': group_index[0],
+            'interesse': group_index[3]
+        }
+
         prop = get_proposicao(id_leggo, "Pressão")
+        inter = get_interesse(interesse_obj, "Pressão Interesse")
 
         if prop is None:
+            continue
+        
+        if inter is None:
             continue
 
         group_df = (
@@ -324,6 +333,7 @@ def import_pressao():
                 'trends_max_pressao_rel',	'trends_max_popularity',
                 'twitter_mean_popularity', 'popularity']]
             .assign(proposicao=prop)
+            .assign(interesse_relacionado=inter)
         )
 
         Pressao.objects.bulk_create(
@@ -355,6 +365,17 @@ def get_proposicao(leggo_id, entity_str):
 
     return prop
 
+def get_interesse(interesse_obj, entity_str):
+    interesse = None
+
+    try:
+        interesse = Interesse.objects.get(**interesse_obj)
+    except Exception as e:
+        print("Não foi possivel encontrar o interesse: {}".format(str(interesse_obj)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
+    
+    return interesse
 
 def import_interesse():
     '''Carrega Interesses'''
@@ -384,6 +405,7 @@ def import_all_data():
     '''Importa dados dos csv e salva no banco.'''
     import_etapas_proposicoes()
     import_proposicoes()
+    import_interesse()
     import_tramitacoes()
     import_temperaturas()
     import_progresso()
@@ -395,4 +417,3 @@ def import_all_data():
     import_coautoria_node()
     import_coautoria_edge()
     import_autoria()
-    import_interesse()

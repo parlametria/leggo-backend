@@ -37,3 +37,18 @@ class Interesse(models.Model):
         Separa temas
         '''
         return self.tema.split(";")
+    
+    @property
+    def ultima_pressao(self):
+        pressoes = []
+        for p in self.pressaoInteresse.values('trends_max_popularity', 'date'):
+            pressoes.append({
+                'maximo_geral': p['trends_max_popularity'],
+                'date': p['date']
+            })
+
+        if (len(pressoes) == 0):
+            return -1
+        else:
+            sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
+            return sorted_pressoes[0]['maximo_geral']

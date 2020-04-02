@@ -1,6 +1,7 @@
 from django.db import models
 from api.model.proposicao import Proposicao
 from api.model.etapa_proposicao import Choices
+from api.model.interesse import Interesse
 
 
 class Pressao(models.Model):
@@ -40,3 +41,6 @@ class Pressao(models.Model):
 
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='pressao')
+    
+    interesse_relacionado = models.ForeignKey(
+        Interesse, on_delete=models.CASCADE, related_name='pressaoInteresse', null=True)
