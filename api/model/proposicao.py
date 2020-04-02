@@ -115,4 +115,3 @@ class Proposicao(models.Model):
                     })
 
         return atores_filtrados
-

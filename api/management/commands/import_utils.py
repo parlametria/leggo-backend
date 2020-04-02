@@ -304,7 +304,8 @@ def import_comissoes():
 
 def import_pressao():
     '''Carrega pressao das proposicoes'''
-    pressao_df = pd.read_csv('data/pressao.csv').groupby(['id_leggo', 'id_ext', 'casa', 'interesse', 'date'])
+    pressao_df = pd.read_csv('data/pressao.csv').groupby(['id_leggo', 'id_ext', 'casa',
+                                                          'interesse', 'date'])
     for group_index in pressao_df.groups:
 
         id_leggo = {
@@ -321,7 +322,7 @@ def import_pressao():
 
         if prop is None:
             continue
-        
+
         if inter is None:
             continue
 
@@ -365,6 +366,7 @@ def get_proposicao(leggo_id, entity_str):
 
     return prop
 
+
 def get_interesse(interesse_obj, entity_str):
     interesse = None
 
@@ -374,8 +376,9 @@ def get_interesse(interesse_obj, entity_str):
         print("Não foi possivel encontrar o interesse: {}".format(str(interesse_obj)))
         print("\tErro ao inserir: {}".format(str(entity_str)))
         print("\t{}".format(str(e)))
-    
+
     return interesse
+
 
 def import_interesse():
     '''Carrega Interesses'''

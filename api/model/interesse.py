@@ -37,7 +37,7 @@ class Interesse(models.Model):
         Separa temas
         '''
         return self.tema.split(";")
-    
+
     @property
     def ultima_pressao(self):
         pressoes = []

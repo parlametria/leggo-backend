@@ -41,6 +41,6 @@ class Pressao(models.Model):
 
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='pressao')
-    
+
     interesse_relacionado = models.ForeignKey(
         Interesse, on_delete=models.CASCADE, related_name='pressaoInteresse', null=True)
