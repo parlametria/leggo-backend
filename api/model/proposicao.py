@@ -27,9 +27,6 @@ ORDER_PROGRESSO_MPV = [
 
 class Proposicao(models.Model):
 
-    apelido = models.TextField(blank=True)
-    tema = models.TextField(blank=True)
-    advocacy_link = models.TextField(blank=True, null=True)
     id_leggo = models.IntegerField(
         'ID do Leggo',
         help_text='Id interno do leggo.')
@@ -89,13 +86,6 @@ class Proposicao(models.Model):
             return temperaturas[0]['temperatura_recente']
 
     @property
-    def temas(self):
-        '''
-        Separa temas
-        '''
-        return self.tema.split(";")
-
-    @property
     def important_atores(self):
         '''
         Retorna os atores por local (apenas locais importantes:
@@ -125,18 +115,3 @@ class Proposicao(models.Model):
                     })
 
         return atores_filtrados
-
-    @property
-    def ultima_pressao(self):
-        pressoes = []
-        for p in self.pressao.values('maximo_geral', 'date'):
-            pressoes.append({
-                'maximo_geral': p['maximo_geral'],
-                'date': p['date']
-            })
-
-        if (len(pressoes) == 0):
-            return -1
-        else:
-            sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
-            return sorted_pressoes[0]['maximo_geral']
