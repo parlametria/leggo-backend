@@ -74,17 +74,11 @@ def create_proposicao(self):
         justificativa='',
         autor_nome='Luciano Zica PSOL/CE',
         relator_nome='Dep. Maurício Quintella Lessa (PR-AL)',
-        em_pauta=False,
-        apelido='Lei do Licenciamento Ambiental',
-        tema='Meio Ambiente/Clima'
+        em_pauta=False
     )
     etapa_proposicao.save()
 
-    proposicao = Proposicao(
-                    apelido='Lei do Licenciamento Ambiental',
-                    tema='Meio Ambiente/Clima',
-                    id_leggo=1
-                )
+    proposicao = Proposicao(id_leggo=1)
     proposicao.save()
     proposicao.etapas.set([etapa_proposicao])
     proposicao.save()
@@ -92,6 +86,8 @@ def create_proposicao(self):
     interesse = Interesse(
         id_leggo=1,
         interesse='leggo',
+        apelido='Lei do Licenciamento Ambiental',
+        tema='Meio Ambiente/Clima',
         proposicao=proposicao
     )
     interesse.save()
@@ -105,10 +101,10 @@ def create_temperatura(self, proposicao):
     Create a temperatura object and save on test database
     '''
     temperatura = TemperaturaHistorico(
-            temperatura_periodo=1.25,
-            temperatura_recente=1.25,
-            periodo='2018-06-08',
-            proposicao=proposicao
+        temperatura_periodo=1.25,
+        temperatura_recente=1.25,
+        periodo='2018-06-08',
+        proposicao=proposicao
     )
 
     temperatura.save()

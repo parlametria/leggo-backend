@@ -1,6 +1,7 @@
 from django.db import models
 from api.model.proposicao import Proposicao
 from api.model.etapa_proposicao import Choices
+from api.model.interesse import Interesse
 
 
 class Pressao(models.Model):
@@ -16,6 +17,9 @@ class Pressao(models.Model):
     casa = models.CharField(
         max_length=6, choices=casas.items(), default='',
         help_text='Casa.')
+
+    interesse = models.TextField(blank=True, null=True,
+                                 help_text='Interesse da proposição')
 
     date = models.DateField('Dia da popularidade')
 
@@ -37,3 +41,6 @@ class Pressao(models.Model):
 
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='pressao')
+
+    interesse_relacionado = models.ForeignKey(
+        Interesse, on_delete=models.CASCADE, related_name='pressaoInteresse', null=True)

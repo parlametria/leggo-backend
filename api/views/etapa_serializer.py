@@ -12,8 +12,8 @@ class EtapasSerializer(serializers.ModelSerializer):
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'autores', 'relator_nome', 'casa_origem',
-            'em_pauta', 'apelido', 'tema', 'status', 'top_resumo_tramitacao',
-            'comissoes_passadas', 'pauta_historico', 'temas')
+            'em_pauta', 'status', 'top_resumo_tramitacao',
+            'comissoes_passadas', 'pauta_historico')
 
 
 class EtapasDetailSerializer(serializers.ModelSerializer):
@@ -25,8 +25,8 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
             'autores', 'relator_nome', 'casa_origem',
-            'em_pauta', 'apelido', 'tema', 'status', 'resumo_tramitacao',
-            'comissoes_passadas', 'pauta_historico', 'temas', 'advocacy_link')
+            'em_pauta', 'status', 'resumo_tramitacao',
+            'comissoes_passadas', 'pauta_historico')
 
 
 class EtapasList(generics.ListAPIView):

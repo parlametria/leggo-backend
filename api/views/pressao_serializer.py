@@ -31,8 +31,15 @@ class PressaoList(generics.ListAPIView):
         '''
         Retorna a pressão
         '''
+
+        interesseArg = self.request.query_params.get('interesse')
+
+        # Adiciona interesse default
+        if interesseArg is None:
+            interesseArg = 'leggo'
+
         id_leggo = self.kwargs['id_leggo']
         queryset = Pressao.objects.filter(
-            proposicao__id_leggo=id_leggo)
+            proposicao__id_leggo=id_leggo, interesse=interesseArg)
 
         return queryset

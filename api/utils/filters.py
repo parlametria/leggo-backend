@@ -1,5 +1,6 @@
 from datetime import datetime, timedelta
 from api.model.pauta_historico import PautaHistorico
+from api.model.interesse import Interesse
 
 
 def get_time_filtered_pauta(request):
@@ -26,6 +27,16 @@ def get_time_filtered_pauta(request):
                                    data__year=date.isocalendar()[0])
 
     return queryset
+
+
+def get_filtered_interesses(interesseArg):
+    '''
+    Filtra interesses a partir da string do interesse passado como parâmetroa
+    '''
+    if interesseArg is None:
+        return Interesse.objects
+
+    return Interesse.objects.filter(interesse=interesseArg)
 
 
 def get_filtered_autores(request, queryset):
