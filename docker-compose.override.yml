@@ -16,9 +16,15 @@ services:
       - DEBUG=True
     volumes:
       - ${BACKEND_PATH:-.}:/agora-digital-backend
+      - leggo_data:/agora-digital-backend/data
     depends_on:
       - db
     ports:
       - "8000:8000"
     env_file:
       - ${BACKEND_PATH:-.}/.ENV
+
+volumes:
+  leggo_data:
+    external:
+      name: leggo_data

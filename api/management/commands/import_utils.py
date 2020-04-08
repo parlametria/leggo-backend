@@ -15,6 +15,7 @@ from api.model.tramitacao_event import TramitacaoEvent
 from api.model.coautoria_node import CoautoriaNode
 from api.model.coautoria_edge import CoautoriaEdge
 from api.model.autoria import Autoria
+from api.model.interesse import Interesse
 
 
 def import_etapas_proposicoes():
@@ -33,13 +34,12 @@ def import_proposicoes():
     '''Carrega proposições'''
     props_df = pd.read_csv('data/proposicoes.csv')
 
-    for _, etapas_df in props_df.groupby('apelido'):
+    for _, etapas_df in props_df.groupby(['id_leggo']):
         etapas = []
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext))
-        prop = Proposicao(apelido=etapa.apelido, tema=etapa.tema, id_leggo=etapa.id_leggo,
-                          advocacy_link=etapa.advocacy_link)
+        prop = Proposicao(id_leggo=etapa.id_leggo)
         prop.save()
         prop.etapas.set(etapas)
         prop.save()
@@ -169,6 +169,8 @@ def import_autoria():
         group_df = (
             grouped
             .get_group(group_index)
+            # pega apenas a data e não a hora
+            .assign(data=lambda x: x.data.apply(lambda s: s.split('T')[0]))
         )
         Autoria.objects.bulk_create(
             Autoria(**r[1].to_dict()) for r in group_df.iterrows())
@@ -280,7 +282,7 @@ def import_atores():
             atores_df
             .get_group(group_index)
             [['id_leggo', 'id_ext', 'casa', 'id_autor', 'nome_autor', 'partido', 'uf',
-             'peso_total_documentos', 'num_documentos', 'tipo_generico', 'sigla_local',
+              'peso_total_documentos', 'num_documentos', 'tipo_generico', 'sigla_local',
               'is_important', 'bancada']]
             .assign(proposicao=prop)
         )
@@ -302,32 +304,41 @@ def import_comissoes():
 
 def import_pressao():
     '''Carrega pressao das proposicoes'''
-    directory = os.fsencode('data/pops/')
+    pressao_df = pd.read_csv('data/pressao.csv').groupby(['id_leggo', 'id_ext', 'casa',
+                                                          'interesse', 'date'])
+    for group_index in pressao_df.groups:
 
-    for file in os.listdir(directory):
-        filename = os.fsdecode(file)
-        if not filename.endswith(".csv"):
+        id_leggo = {
+            'id_leggo': group_index[0]
+        }
+
+        interesse_obj = {
+            'id_leggo': group_index[0],
+            'interesse': group_index[3]
+        }
+
+        prop = get_proposicao(id_leggo, "Pressão")
+        inter = get_interesse(interesse_obj, "Pressão Interesse")
+
+        if prop is None:
             continue
-        pressao_df = pd.read_csv('data/pops/' + str(filename))
-        if not pressao_df.empty:
-            id_leggo = {
-                'id_leggo': pressao_df['id_leggo'][0]
-            }
 
-            prop = get_proposicao(id_leggo, "Pressão")
+        if inter is None:
+            continue
 
-            if prop is None:
-                continue
+        group_df = (
+            pressao_df
+            .get_group(group_index)
+            [['id_leggo', 'id_ext', 'casa', 'interesse',
+                'date', 'trends_max_pressao_principal',
+                'trends_max_pressao_rel',	'trends_max_popularity',
+                'twitter_mean_popularity', 'popularity']]
+            .assign(proposicao=prop)
+            .assign(interesse_relacionado=inter)
+        )
 
-            pressao_clean_df = (
-                pressao_df
-                [['date', 'max_pressao_principal',
-                    'max_pressao_rel',	'maximo_geral', 'id_leggo']]
-                .assign(proposicao=prop)
-            )
-
-            Pressao.objects.bulk_create(
-                Pressao(**r[1].to_dict()) for r in pressao_clean_df.iterrows())
+        Pressao.objects.bulk_create(
+            Pressao(**r[1].to_dict()) for r in group_df.iterrows())
 
 
 def get_etapa_proposicao(prop_id, entity_str):
@@ -356,10 +367,48 @@ def get_proposicao(leggo_id, entity_str):
     return prop
 
 
+def get_interesse(interesse_obj, entity_str):
+    interesse = None
+
+    try:
+        interesse = Interesse.objects.get(**interesse_obj)
+    except Exception as e:
+        print("Não foi possivel encontrar o interesse: {}".format(str(interesse_obj)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
+
+    return interesse
+
+
+def import_interesse():
+    '''Carrega Interesses'''
+    grouped = pd.read_csv('data/interesses.csv').groupby(['id_leggo'])
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo, "Interesse")
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+            [['id_leggo', 'interesse', 'apelido', 'keywords',
+                'tema', 'advocacy_link', 'tipo_agenda']]
+            .assign(proposicao=prop)
+        )
+        Interesse.objects.bulk_create(
+            Interesse(**r[1].to_dict()) for r in group_df.iterrows())
+
+
 def import_all_data():
     '''Importa dados dos csv e salva no banco.'''
     import_etapas_proposicoes()
     import_proposicoes()
+    import_interesse()
     import_tramitacoes()
     import_temperaturas()
     import_progresso()

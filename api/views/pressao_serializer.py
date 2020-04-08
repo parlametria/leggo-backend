@@ -8,8 +8,9 @@ class PressaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pressao
         fields = (
-            'date', 'max_pressao_principal',
-            'max_pressao_rel',	'maximo_geral')
+            'date', 'trends_max_pressao_principal',
+            'trends_max_pressao_rel',	'trends_max_popularity',
+            'twitter_mean_popularity', 'popularity')
 
 
 class PressaoList(generics.ListAPIView):
@@ -30,8 +31,15 @@ class PressaoList(generics.ListAPIView):
         '''
         Retorna a pressão
         '''
+
+        interesseArg = self.request.query_params.get('interesse')
+
+        # Adiciona interesse default
+        if interesseArg is None:
+            interesseArg = 'leggo'
+
         id_leggo = self.kwargs['id_leggo']
         queryset = Pressao.objects.filter(
-            proposicao__id_leggo=id_leggo)
+            proposicao__id_leggo=id_leggo, interesse=interesseArg)
 
         return queryset

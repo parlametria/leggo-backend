@@ -2,7 +2,6 @@ import time
 from django.db import models
 from scipy import stats
 from django.db.models import Sum
-from api.utils.ator import get_nome_partido_uf
 
 
 ORDER_PROGRESSO = [
@@ -28,9 +27,6 @@ ORDER_PROGRESSO_MPV = [
 
 class Proposicao(models.Model):
 
-    apelido = models.TextField(blank=True)
-    tema = models.TextField(blank=True)
-    advocacy_link = models.TextField(blank=True, null=True)
     id_leggo = models.IntegerField(
         'ID do Leggo',
         help_text='Id interno do leggo.')
@@ -90,59 +86,19 @@ class Proposicao(models.Model):
             return temperaturas[0]['temperatura_recente']
 
     @property
-    def temas(self):
-        '''
-        Separa temas
-        '''
-        return self.tema.split(";")
-
-    @property
-    def top_atores(self):
-        '''
-        Retorna os top 15 atores (caso tenha menos de 15 retorna todos)
-        '''
-        atores_filtrados = []
-
-        top_n_atores = self.atores.values('id_autor') \
-            .annotate(total_docs=Sum('peso_total_documentos')) \
-            .order_by('-total_docs')[:15]
-        atores_por_tipo_gen = self.atores.values('id_autor', 'nome_autor', 'uf',
-                                                 'partido', 'tipo_generico',
-                                                 'bancada', 'casa') \
-            .annotate(total_docs=Sum('peso_total_documentos'),
-                      num_docs=Sum('num_documentos'))
-
-        for ator in atores_por_tipo_gen:
-            for top_n_ator in top_n_atores:
-                if ator['id_autor'] == top_n_ator['id_autor']:
-                    atores_filtrados.append({
-                        'id_autor': ator['id_autor'],
-                        'peso_total_documentos': ator['total_docs'],
-                        'num_documentos': ator['num_docs'],
-                        'tipo_generico': ator['tipo_generico'],
-                        'bancada': ator['bancada'],
-                        'casa': ator['casa'],
-                        'nome_partido_uf': get_nome_partido_uf(
-                            ator['casa'], ator['bancada'], ator['nome_autor'],
-                            ator['partido'], ator['uf'])
-                    })
-
-        return atores_filtrados
-
-    @property
-    def top_important_atores(self):
+    def important_atores(self):
         '''
         Retorna os atores por local (apenas locais importantes:
         comissões e plenário)
         '''
         atores_filtrados = []
 
-        top_n_atores = self.atores.values('id_autor') \
+        top_n_atores = self.atores.values('id_autor', 'nome_autor') \
             .annotate(total_docs=Sum('peso_total_documentos')) \
-            .order_by('-total_docs')
+            .order_by('-total_docs', 'nome_autor')
         for ator in self.atores.all():
             for top_n_ator in top_n_atores:
-                if ator.id_autor == top_n_ator['id_autor'] and ator.is_important:
+                if ator.id_autor == top_n_ator['id_autor']:
                     atores_filtrados.append({
                         'id_autor': ator.id_autor,
                         'nome_autor': ator.nome_autor,
@@ -159,18 +115,3 @@ class Proposicao(models.Model):
                     })
 
         return atores_filtrados
-
-    @property
-    def ultima_pressao(self):
-        pressoes = []
-        for p in self.pressao.values('maximo_geral', 'date'):
-            pressoes.append({
-                'maximo_geral': p['maximo_geral'],
-                'date': p['date']
-            })
-
-        if (len(pressoes) == 0):
-            return -1
-        else:
-            sorted_pressoes = sorted(pressoes, key=lambda k: k['date'], reverse=True)
-            return sorted_pressoes[0]['maximo_geral']
