@@ -32,7 +32,7 @@ class Interesse(models.Model):
         Proposicao, on_delete=models.CASCADE, related_name='interesse')
 
     nome_interesse = models.TextField(blank=True, null=True,
-                                 help_text='Nome do Interesse da Proposição')
+                                      help_text='Nome do Interesse da Proposição')
 
     @property
     def temas(self):
