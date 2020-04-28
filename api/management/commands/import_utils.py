@@ -396,7 +396,7 @@ def import_interesse():
         group_df = (
             grouped
             .get_group(group_index)
-            [['id_leggo', 'interesse', 'apelido', 'keywords',
+            [['id_leggo', 'interesse', 'nome_interesse', 'apelido', 'keywords',
                 'tema', 'advocacy_link', 'tipo_agenda']]
             .assign(proposicao=prop)
         )
