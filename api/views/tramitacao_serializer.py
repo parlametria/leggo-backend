@@ -91,12 +91,14 @@ class TramitacaoEventList(generics.ListAPIView):
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
 
-        queryset = queryset.order_by('-data').filter(data__lte=data_fim_dt)
+        queryset = queryset.filter(data__lte=data_fim_dt)
 
         if nivel:
-            queryset = queryset.filter(nivel__lte=nivel)
+            queryset = queryset.order_by('nivel', '-data').filter(nivel__lte=nivel)
 
         if ultimos_n is not None:
             queryset = queryset[:int(ultimos_n)]
+
+        queryset = sorted(queryset, key=lambda x: x.data, reverse=True)
 
         return queryset
