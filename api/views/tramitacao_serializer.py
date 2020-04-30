@@ -13,6 +13,10 @@ class TramitacaoEventSerializer(serializers.ModelSerializer):
 
 
 class TramitacaoEventList(generics.ListAPIView):
+    '''
+    Retorna os eventos de tramitação de uma proposição. A lista de eventos apresenta
+    informações como o local e o nível de importância do evento.
+    '''
 
     serializer_class = TramitacaoEventSerializer
 

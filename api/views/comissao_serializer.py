@@ -12,7 +12,8 @@ class ComissaoSerializer(serializers.ModelSerializer):
 
 class ComissaoList(generics.ListAPIView):
     '''
-    Dados da composição de uma comissão
+    A partir da casa (camara ou senado) e da sigla da Comissão lista os parlamentares
+    que fazem parte da Comissão incluindo informações como cargo e situação.
     '''
     serializer_class = ComissaoSerializer
 

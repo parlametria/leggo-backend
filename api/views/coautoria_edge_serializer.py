@@ -12,7 +12,8 @@ class CoautoriaEdgeSerializer(serializers.ModelSerializer):
 
 class CoautoriaEdgeList(generics.ListAPIView):
     '''
-    Lista as arestas
+    A partir de uma proposição lista ligações (arestas) entre os parlamentares
+    que apresentaram documentos relacionados a proposição.
     '''
     serializer_class = CoautoriaEdgeSerializer
 

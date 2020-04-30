@@ -16,7 +16,9 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
 
 class AtoresList(generics.ListAPIView):
     '''
-    Dados de atores de uma proposição
+    Dados de atores de uma proposição. Lista parlamentares que atuaram numa proposição 
+    com informações como o número de documentos criados e o peso desses 
+    documentos.
     '''
 
     serializer_class = AtoresSerializerComissoes

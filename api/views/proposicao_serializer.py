@@ -37,7 +37,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
 
 class ProposicaoList(generics.ListAPIView):
     '''
-    Lista de proposições e seus dados gerais.
+    Recupera lista de proposições analisadas pelo leggo de acordo com um interesse 
+    passado como parâmetro (Exemplo: ?interesse=leggo). O interesse default é leggo.
     '''
     serializer_class = ProposicaoSerializer
 
@@ -62,7 +63,9 @@ class ProposicaoList(generics.ListAPIView):
 
 class ProposicaoDetail(generics.ListAPIView):
     '''
-    Detalha proposição.
+    Recupera os detalhes de uma proposição a partir do id desta proposição
+    no sistema Leggo. O interesse ao qual a proposição pertence é passado como
+    parâmetro (Exemplo: ?interesse=leggo). O interesse default é leggo.
     '''
     serializer_class = ProposicaoDetailSerializer
 

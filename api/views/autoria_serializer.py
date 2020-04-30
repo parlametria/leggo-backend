@@ -15,7 +15,8 @@ class AutoriaSerializer(serializers.ModelSerializer):
 
 class AutoriaList(generics.ListAPIView):
     '''
-    Dados de autoria de uma proposição
+    Dados de autoria de uma proposição. Apresenta lista de documentos contendo informações
+    como a data de apresentação, tipo e autores.
     '''
 
     serializer_class = AutoriaSerializer
