@@ -14,7 +14,7 @@ class ProgressoSerializer(serializers.ModelSerializer):
 
 class ProgressoList(generics.ListAPIView):
     '''
-    Dados do progresso da proposição por período, de acordo com uma data de referência 
+    Dados do progresso da proposição por período, de acordo com uma data de referência
     passada como parâmetro (?data_referencia=yyyy-mm-dd).
     '''
     serializer_class = ProgressoSerializer

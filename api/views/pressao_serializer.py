@@ -15,7 +15,7 @@ class PressaoSerializer(serializers.ModelSerializer):
 
 class PressaoList(generics.ListAPIView):
     '''
-    A partir do id da proposição no Sistema leggo recupera histório da pressão 
+    A partir do id da proposição no Sistema leggo recupera histório da pressão
     com as informações da pesquisa no Google Trends e a popularidade da proposição
     no Twitter.
     '''

@@ -37,7 +37,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
 
 class ProposicaoList(generics.ListAPIView):
     '''
-    Recupera lista de proposições analisadas pelo leggo de acordo com um interesse 
+    Recupera lista de proposições analisadas pelo leggo de acordo com um interesse
     passado como parâmetro (Exemplo: ?interesse=leggo). O interesse default é leggo.
     '''
     serializer_class = ProposicaoSerializer

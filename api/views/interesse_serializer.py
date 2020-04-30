@@ -14,7 +14,7 @@ class InteresseSerializer(serializers.ModelSerializer):
 
 class InteresseList(generics.ListAPIView):
     '''
-    Apresenta lista com mapeamento entre as proposições analisadas e os 
+    Apresenta lista com mapeamento entre as proposições analisadas e os
     interesses abordados pelo Leggo
     '''
 

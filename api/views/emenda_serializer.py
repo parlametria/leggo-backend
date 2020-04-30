@@ -15,8 +15,9 @@ class EmendasSerialzer(serializers.ModelSerializer):
 
 class EmendasList(generics.ListAPIView):
     '''
-    A partir do id de uma proposição na casa de origem (camara ou senado) recupera as emendas
-    feitas a essa proposição. Inclui informações como a data de apresentação e o autor.
+    A partir do id de uma proposição na casa de origem (camara ou senado)
+    recupera as emendas feitas a essa proposição. Inclui informações como a
+    data de apresentação e o autor.
     '''
 
     serializer_class = EmendasSerialzer

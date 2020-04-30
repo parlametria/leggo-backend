@@ -14,7 +14,7 @@ class CoautoriaNodeSerializer(serializers.ModelSerializer):
 class CoautoriaNodeList(generics.ListAPIView):
     '''
     A partir de uma proposição lista todos os parlamentares (nós) que atuaram
-    na proposição com a apresentação de documentos. 
+    na proposição com a apresentação de documentos.
     '''
     serializer_class = CoautoriaNodeSerializer
 

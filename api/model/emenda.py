@@ -8,20 +8,21 @@ class Emendas(models.Model):
     Emendas de uma proposição
     '''
 
-    data_apresentacao = models.DateField('data',
-        help_text='Data de apresentação da emenda')
+    data_apresentacao = models.DateField(
+        'data', help_text='Data de apresentação da emenda')
 
     codigo_emenda = models.TextField(blank=True,
-        help_text='Código da emenda na casa correspondente')
+                                     help_text='Código da emenda na casa correspondente')
 
     distancia = models.FloatField(null=True,
-        help_text='Distância calculada entre a emenda e o texto original')
+                                  help_text='Distância calculada entre a emenda e o texto\
+                                    original')
 
     local = models.TextField(blank=True,
-        help_text='Local de apresentação da emenda')
+                             help_text='Local de apresentação da emenda')
 
     autor = models.TextField(blank=True,
-        help_text='Autor da emenda')
+                             help_text='Autor da emenda')
 
     tipo_documento = models.TextField(
         help_text='Tipo de documento')
