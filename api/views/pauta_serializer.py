@@ -13,7 +13,7 @@ class PautaHistoricoSerializer(serializers.ModelSerializer):
 
 class PautaList(generics.ListAPIView):
     '''
-    Retorna dados do histórico da pauta de uma proposição incluindo informações
+    Retorna dados do histórico da pauta de uma proposição com informações
     de semana e local
     '''
 

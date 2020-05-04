@@ -15,7 +15,14 @@ class InteresseSerializer(serializers.ModelSerializer):
 class InteresseList(generics.ListAPIView):
     '''
     Apresenta lista com mapeamento entre as proposições analisadas e os
-    interesses abordados pelo Leggo
+    interesses abordados pelo Leggo. Um interesse é um assunto geral
+    no qual um conjunto de proposições está relacionado. O primeiro
+    interesse analisado pelo Leggo é o da RAC, que é uma rede de
+    organizações que atua no Congresso em diferentes eixos como
+    Meio Ambiente, Direitos Humanos, Nova Economia e Transparência.
+    Outros possíveis interesses seriam Primeira Infância (conjunto
+    de proposições ligadas a direitos e deveres relacionados às
+    crianças).
     '''
 
     serializer_class = InteresseSerializer

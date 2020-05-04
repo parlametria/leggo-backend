@@ -17,8 +17,12 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
 class AtoresList(generics.ListAPIView):
     '''
     Dados de atores de uma proposição. Lista parlamentares que atuaram numa proposição
-    com informações como o número de documentos criados e o peso desses
-    documentos.
+    com informações como o número de documentos criados e o peso do autor com relação
+    aos documentos apresentados. A participação do parlamentar em um documento é
+    inversamente proporcional à quantidade de parlamentares que assinaram o documento
+    juntos: um documento feito por dois parlamentares terá valor de
+    participação igual a 1/2 = 0.5. Desta forma o peso do ator é a soma das
+    participações do parlamentar nos documentos relacionados à proposição.
     '''
 
     serializer_class = AtoresSerializerComissoes
