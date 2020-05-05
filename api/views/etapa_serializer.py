@@ -31,7 +31,9 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
 
 class EtapasList(generics.ListAPIView):
     '''
-    Dados gerais da proposição.
+    Lista as etapas de todas as proposições em cada casa de tramitação.
+    Retorna os detalhes da tramitação como o regime de tramitação, a forma de apreciação,
+    as comissões passadas, dentre outras.
     '''
     queryset = EtapaProposicao.objects.prefetch_related(
         'tramitacao')

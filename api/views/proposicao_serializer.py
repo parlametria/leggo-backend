@@ -37,7 +37,16 @@ class ProposicaoSerializer(serializers.ModelSerializer):
 
 class ProposicaoList(generics.ListAPIView):
     '''
-    Lista de proposições e seus dados gerais.
+    Recupera lista de proposições analisadas pelo leggo de acordo com um interesse
+    passado como parâmetro (Exemplo: ?interesse=leggo). O interesse default é leggo.
+    Um interesse é um assunto geral
+    no qual um conjunto de proposições está relacionado. O primeiro
+    interesse analisado pelo Leggo é o da RAC, que é uma rede de
+    organizações que atua no Congresso em diferentes eixos como
+    Meio Ambiente, Direitos Humanos, Nova Economia e Transparência.
+    Outros possíveis interesses seriam Primeira Infância (conjunto
+    de proposições ligadas a direitos e deveres relacionados às
+    crianças).
     '''
     serializer_class = ProposicaoSerializer
 
@@ -62,7 +71,17 @@ class ProposicaoList(generics.ListAPIView):
 
 class ProposicaoDetail(generics.ListAPIView):
     '''
-    Detalha proposição.
+    Recupera os detalhes de uma proposição a partir do id desta proposição
+    no sistema Leggo. O interesse ao qual a proposição pertence é passado como
+    parâmetro (Exemplo: ?interesse=leggo). O interesse default é leggo.
+    Um interesse é um assunto geral
+    no qual um conjunto de proposições está relacionado. O primeiro
+    interesse analisado pelo Leggo é o da RAC, que é uma rede de
+    organizações que atua no Congresso em diferentes eixos como
+    Meio Ambiente, Direitos Humanos, Nova Economia e Transparência.
+    Outros possíveis interesses seriam Primeira Infância (conjunto
+    de proposições ligadas a direitos e deveres relacionados às
+    crianças).
     '''
     serializer_class = ProposicaoDetailSerializer
 
