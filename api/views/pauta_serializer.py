@@ -13,7 +13,8 @@ class PautaHistoricoSerializer(serializers.ModelSerializer):
 
 class PautaList(generics.ListAPIView):
     '''
-    Dados do progresso da proposição por periodo de acordo com uma data de referência.
+    Retorna dados do histórico da pauta de uma proposição com informações
+    de semana e local
     '''
 
     serializer_class = PautaHistoricoSerializer

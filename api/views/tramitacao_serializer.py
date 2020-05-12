@@ -13,6 +13,10 @@ class TramitacaoEventSerializer(serializers.ModelSerializer):
 
 
 class TramitacaoEventList(generics.ListAPIView):
+    '''
+    Retorna os eventos de tramitação de uma proposição. A lista de eventos apresenta
+    informações como o local e o nível de importância do evento.
+    '''
 
     serializer_class = TramitacaoEventSerializer
 
@@ -62,7 +66,7 @@ class TramitacaoEventList(generics.ListAPIView):
         data_fim = self.request.query_params.get('data_fim', None)
         nivel = self.request.query_params.get('nivel', 100)
         ultimos_n = self.request.query_params.get('ultimos_n', 100)
-        interesseArg = self.request.query_params.get('interesse', 'leggo')
+        interesseArg = self.request.query_params.get('interesse', None)
 
         data_inicio_dt = None
         data_fim_dt = None
@@ -91,12 +95,14 @@ class TramitacaoEventList(generics.ListAPIView):
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
 
-        queryset = queryset.order_by('-data').filter(data__lte=data_fim_dt)
+        queryset = queryset.filter(data__lte=data_fim_dt)
 
         if nivel:
-            queryset = queryset.filter(nivel__lte=nivel)
+            queryset = queryset.order_by('nivel', '-data').filter(nivel__lte=nivel)
 
         if ultimos_n is not None:
             queryset = queryset[:int(ultimos_n)]
+
+        queryset = sorted(queryset, key=lambda x: x.data, reverse=True)
 
         return queryset
