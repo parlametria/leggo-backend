@@ -14,9 +14,9 @@ class Emendas(models.Model):
     codigo_emenda = models.TextField(blank=True,
                                      help_text='Código da emenda na casa correspondente')
 
-    distancia = models.FloatField(null=True,
-                                  help_text='Distância calculada entre a emenda e o texto\
-                                    original')
+    distancia = models.FloatField(
+        null=True,
+        help_text='Distância calculada entre a emenda e o texto original')
 
     local = models.TextField(blank=True,
                              help_text='Local de apresentação da emenda')
