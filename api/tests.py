@@ -100,7 +100,15 @@ def create_proposicao(self):
         proposicao=proposicao
     )
 
+    temperatura2 = TemperaturaHistorico(
+        temperatura_periodo=0,
+        temperatura_recente=1.37,
+        periodo='2018-06-15',
+        proposicao=proposicao
+    )
+
     temperatura.save()
+    temperatura2.save()
 
     self.proposicao = proposicao
     self.etapa_proposicao = etapa_proposicao
