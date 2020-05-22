@@ -16,6 +16,7 @@ from api.model.coautoria_node import CoautoriaNode
 from api.model.coautoria_edge import CoautoriaEdge
 from api.model.autoria import Autoria
 from api.model.interesse import Interesse
+from api.model.anotacao import Anotacao
 
 
 def import_etapas_proposicoes():
@@ -403,6 +404,33 @@ def import_interesse():
         Interesse.objects.bulk_create(
             Interesse(**r[1].to_dict()) for r in group_df.iterrows())
 
+def import_anotacoes():
+    '''Carrega anotações das proposições'''
+    grouped = pd.read_csv('data/anotacoes.csv').groupby(['id_leggo'])
+        
+    for group_index in grouped.groups:
+        id_leggo = {
+            'id_leggo': group_index
+        }
+
+        prop = get_proposicao(id_leggo, "Anotação")
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped
+            .get_group(group_index)
+            [['id_leggo', 'data_criacao', 'data_ultima_modificacao', 'autor', 'titulo',
+                'anotacao', 'peso', 'interesse']]
+            .assign(data_criacao=lambda x: x.data_criacao.apply(
+                lambda s: s.split('T')[0]))
+            .assign(data_ultima_modificacao=lambda x: x.data_ultima_modificacao.apply(
+                lambda s: s.split('T')[0]))
+            .assign(proposicao=prop)
+        )
+        Anotacao.objects.bulk_create(
+            Anotacao(**r[1].to_dict()) for r in group_df.iterrows())
 
 def import_all_data():
     '''Importa dados dos csv e salva no banco.'''
@@ -420,3 +448,4 @@ def import_all_data():
     import_coautoria_node()
     import_coautoria_edge()
     import_autoria()
+    import_anotacoes()
