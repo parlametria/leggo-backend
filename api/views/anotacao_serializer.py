@@ -25,8 +25,15 @@ class AnotacaoList(generics.ListAPIView):
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                'id', openapi.IN_PATH, 'id da proposição no sistema do Leg.go',
+                'id', openapi.IN_PATH, 'Id da proposição no sistema do Leg.go',
                 type=openapi.TYPE_INTEGER),
+            openapi.Parameter(
+                'interesse', openapi.IN_PATH, 'Nome do interesse-alvo', type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'peso', openapi.IN_PATH, 'Se deve retornar apenas as anotações tão ou mais importantes do que este valor', type=openapi.TYPE_INTEGER),
+            openapi.Parameter(
+                'ultimas_n', openapi.IN_PATH, 'Número máximo de retorno das últimas anotações',
+                type=openapi.TYPE_INTEGER)
         ]
     )
 
@@ -36,13 +43,20 @@ class AnotacaoList(generics.ListAPIView):
         '''
 
         interesseArg = self.request.query_params.get('interesse')
+        peso = self.request.query_params.get('peso', 100)
+        ultimos_n = self.request.query_params.get('ultimas_n', 10)
+        id_leggo = self.kwargs['id']
 
-        # Adiciona interesse default
-        if interesseArg is None:
+        if not interesseArg:
             interesseArg = 'leggo'
 
-        id_leggo = self.kwargs['id']
         queryset = Anotacao.objects.filter(
             id_leggo=id_leggo, interesse=interesseArg)
+        
+        if peso:
+            queryset = queryset.order_by('peso', '-data_ultima_modificacao').filter(peso__lte=peso)
+        
+        if ultimos_n:
+            queryset = queryset[:int(ultimos_n)]
 
         return queryset
