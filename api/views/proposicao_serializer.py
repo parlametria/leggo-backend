@@ -32,7 +32,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         model = Proposicao
         fields = (
             'id', 'interesse', 'etapas', 'resumo_progresso',
-            'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo', 'ultima_anotacao')
+            'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo', 'anotacao_data_ultima_modificacao')
 
 
 class ProposicaoList(generics.ListAPIView):
