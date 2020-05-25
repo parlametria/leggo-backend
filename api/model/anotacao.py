@@ -10,10 +10,10 @@ class Anotacao(models.Model):
     id_leggo = models.IntegerField(
         help_text='Id da proposição no Leggo')
 
-    data_criacao = models.DateField(
+    data_criacao = models.DateTimeField(
         help_text='Data de criação da anotação')
 
-    data_ultima_modificacao = models.DateField(
+    data_ultima_modificacao = models.DateTimeField(
         help_text='Data de ultima modificação da anotação')
 
     autor = models.TextField(blank=True, null=True,

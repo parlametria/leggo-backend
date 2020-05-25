@@ -423,10 +423,10 @@ def import_anotacoes():
             .get_group(group_index)
             [['id_leggo', 'data_criacao', 'data_ultima_modificacao', 'autor', 'titulo',
                 'anotacao', 'peso', 'interesse']]
-            .assign(data_criacao=lambda x: x.data_criacao.apply(
-                lambda s: s.split('T')[0]))
-            .assign(data_ultima_modificacao=lambda x: x.data_ultima_modificacao.apply(
-                lambda s: s.split('T')[0]))
+            # .assign(data_criacao=lambda x: x.data_criacao.apply(
+            #     lambda s: s.replace('T', ' ').split('Z')[0]))
+            # .assign(data_ultima_modificacao=lambda x: x.data_ultima_modificacao.apply(
+            #     lambda s: s.replace('T', ' ').split('Z')[0]))
             .assign(proposicao=prop)
         )
         Anotacao.objects.bulk_create(
