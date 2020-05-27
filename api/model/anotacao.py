@@ -18,6 +18,9 @@ class Anotacao(models.Model):
 
     autor = models.TextField(blank=True, null=True,
         help_text='Autor da anotação')
+
+    categoria = models.TextField(blank=True, null=True,
+        help_text='Categoria da anotação')
     
     titulo = models.TextField(blank=True, null=True,
         help_text='Título da anotação')

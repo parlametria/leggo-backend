@@ -9,8 +9,8 @@ class AnotacaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Anotacao
         fields = (
-            'id_leggo', 'interesse', 'data_criacao', 'data_ultima_modificacao', 'autor', 'titulo',
-            'anotacao', 'peso')
+            'id_leggo', 'interesse', 'data_criacao', 'data_ultima_modificacao', 'autor', 'categoria', 
+            'titulo', 'anotacao', 'peso')
 
 
 class AnotacaoListByProp(generics.ListAPIView):

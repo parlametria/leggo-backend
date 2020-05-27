@@ -421,12 +421,8 @@ def import_anotacoes():
         group_df = (
             grouped
             .get_group(group_index)
-            [['id_leggo', 'data_criacao', 'data_ultima_modificacao', 'autor', 'titulo',
+            [['id_leggo', 'data_criacao', 'data_ultima_modificacao', 'autor', 'categoria', 'titulo',
                 'anotacao', 'peso', 'interesse']]
-            # .assign(data_criacao=lambda x: x.data_criacao.apply(
-            #     lambda s: s.replace('T', ' ').split('Z')[0]))
-            # .assign(data_ultima_modificacao=lambda x: x.data_ultima_modificacao.apply(
-            #     lambda s: s.replace('T', ' ').split('Z')[0]))
             .assign(proposicao=prop)
         )
         Anotacao.objects.bulk_create(
