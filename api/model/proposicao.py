@@ -115,3 +115,12 @@ class Proposicao(models.Model):
                     })
 
         return atores_filtrados
+
+    @property
+    def anotacao_data_ultima_modificacao(self):
+        datas_anotacoes = self.anotacao.values('data_ultima_modificacao')
+        len_datas_anotacoes = len(datas_anotacoes)
+        if (len_datas_anotacoes == 0):
+            return None
+        else:
+            return datas_anotacoes[len_datas_anotacoes - 1]['data_ultima_modificacao']

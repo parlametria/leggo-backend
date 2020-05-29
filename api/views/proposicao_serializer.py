@@ -32,7 +32,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
         model = Proposicao
         fields = (
             'id', 'interesse', 'etapas', 'resumo_progresso',
-            'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo')
+            'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo', 'anotacao_data_ultima_modificacao')
 
 
 class ProposicaoList(generics.ListAPIView):
@@ -60,6 +60,7 @@ class ProposicaoList(generics.ListAPIView):
             interesseArg = 'leggo'
 
         interessesFiltered = get_filtered_interesses(interesseArg)
+        
 
         props = Proposicao.objects.filter(interesse__interesse=interesseArg).distinct()\
             .prefetch_related('etapas', 'etapas__tramitacao', 'progresso',
