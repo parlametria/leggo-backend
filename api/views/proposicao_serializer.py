@@ -19,9 +19,16 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = Proposicao
         fields = (
-            'id', 'interesse', 'etapas', 'resumo_progresso', 'id_leggo',
-            'temperatura_historico', 'ultima_temperatura', 'temperatura_coeficiente',
-            'important_atores')
+            "id",
+            "interesse",
+            "etapas",
+            "resumo_progresso",
+            "id_leggo",
+            "temperatura_historico",
+            "ultima_temperatura",
+            "temperatura_coeficiente",
+            "important_atores",
+        )
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
@@ -31,12 +38,19 @@ class ProposicaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Proposicao
         fields = (
-            'id', 'interesse', 'etapas', 'resumo_progresso',
-            'ultima_temperatura', 'temperatura_coeficiente', 'id_leggo', 'anotacao_data_ultima_modificacao')
+            "id",
+            "interesse",
+            "etapas",
+            "resumo_progresso",
+            "ultima_temperatura",
+            "temperatura_coeficiente",
+            "id_leggo",
+            "anotacao_data_ultima_modificacao",
+        )
 
 
 class ProposicaoList(generics.ListAPIView):
-    '''
+    """
     Recupera lista de proposições analisadas pelo leggo de acordo com um interesse
     passado como parâmetro (Exemplo: ?interesse=leggo). O interesse default é leggo.
     Um interesse é um assunto geral
@@ -47,31 +61,37 @@ class ProposicaoList(generics.ListAPIView):
     Outros possíveis interesses seriam Primeira Infância (conjunto
     de proposições ligadas a direitos e deveres relacionados às
     crianças).
-    '''
+    """
+
     serializer_class = ProposicaoSerializer
 
     def get_queryset(self):
         pautaQs = get_time_filtered_pauta(self.request)
 
-        interesseArg = self.request.query_params.get('interesse')
+        interesseArg = self.request.query_params.get("interesse")
 
         # Adiciona interesse default
         if interesseArg is None:
-            interesseArg = 'leggo'
+            interesseArg = "leggo"
 
         interessesFiltered = get_filtered_interesses(interesseArg)
-        
 
-        props = Proposicao.objects.filter(interesse__interesse=interesseArg).distinct()\
-            .prefetch_related('etapas', 'etapas__tramitacao', 'progresso',
-                              Prefetch('etapas__pauta_historico', queryset=pautaQs),
-                              Prefetch('interesse', queryset=interessesFiltered)
-                              )
+        props = (
+            Proposicao.objects.filter(interesse__interesse=interesseArg)
+            .distinct()
+            .prefetch_related(
+                "etapas",
+                "etapas__tramitacao",
+                "progresso",
+                Prefetch("etapas__pauta_historico", queryset=pautaQs),
+                Prefetch("interesse", queryset=interessesFiltered),
+            )
+        )
         return props
 
 
 class ProposicaoDetail(generics.ListAPIView):
-    '''
+    """
     Recupera os detalhes de uma proposição a partir do id desta proposição
     no sistema Leggo. O interesse ao qual a proposição pertence é passado como
     parâmetro (Exemplo: ?interesse=leggo). O interesse default é leggo.
@@ -83,27 +103,35 @@ class ProposicaoDetail(generics.ListAPIView):
     Outros possíveis interesses seriam Primeira Infância (conjunto
     de proposições ligadas a direitos e deveres relacionados às
     crianças).
-    '''
+    """
+
     serializer_class = ProposicaoDetailSerializer
 
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                'id', openapi.IN_PATH, 'id da proposição no sistema',
-                type=openapi.TYPE_INTEGER),
+                "id",
+                openapi.IN_PATH,
+                "id da proposição no sistema",
+                type=openapi.TYPE_INTEGER,
+            ),
         ]
     )
     def get_queryset(self):
-        id_prop = self.kwargs['id']
+        id_prop = self.kwargs["id"]
 
-        interesseArg = self.request.query_params.get('interesse')
+        interesseArg = self.request.query_params.get("interesse")
 
         # Adiciona interesse default
         if interesseArg is None:
-            interesseArg = 'leggo'
+            interesseArg = "leggo"
 
         interessesFiltered = get_filtered_interesses(interesseArg)
 
-        return Proposicao.objects.filter(id_leggo=id_prop,
-                                         interesse__interesse=interesseArg).distinct()\
-            .prefetch_related(Prefetch('interesse', queryset=interessesFiltered))
+        return (
+            Proposicao.objects.filter(
+                id_leggo=id_prop, interesse__interesse=interesseArg
+            )
+            .distinct()
+            .prefetch_related(Prefetch("interesse", queryset=interessesFiltered))
+        )
