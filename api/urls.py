@@ -14,7 +14,11 @@ from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
 from api.views.autoria_serializer import AutoriaList
 from api.views.interesse_serializer import InteresseList
+<<<<<<< HEAD
 from api.views.anotacao_serializer import AnotacaoListByProp, AnotacaoList
+=======
+from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
+>>>>>>> 15176a685473b914ecc517e15865456643f3ab9a
 
 
 # router = DefaultRouter()
@@ -55,4 +59,5 @@ urlpatterns = [
         AnotacaoList.as_view()),
     url(r'^anotacoes/(?P<id>[0-9]+)/?$',
         AnotacaoListByProp.as_view())
+    url(r'^temperatura/max/?$', TemperaturaMaxPeriodo.as_view()),
 ]
