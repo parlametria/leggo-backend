@@ -55,6 +55,6 @@ urlpatterns = [
     url(r'^anotacoes/?$',
         AnotacaoList.as_view()),
     url(r'^anotacoes/(?P<id>[0-9]+)/?$',
-        AnotacaoListByProp.as_view())
-    url(r'^temperatura/max/?$', TemperaturaMaxPeriodo.as_view()),
+        AnotacaoListByProp.as_view()),
+    url(r'^temperatura/max/?$', TemperaturaMaxPeriodo.as_view())
 ]
