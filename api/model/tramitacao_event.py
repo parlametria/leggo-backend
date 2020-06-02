@@ -41,8 +41,8 @@ class TramitacaoEvent(models.Model):
 
     @property
     def proposicao_id(self):
-        '''ID da proposição a qual esse evento se refere.'''
-        return self.etapa_proposicao.proposicao_id
+        '''ID da proposição no sistema leggo a qual esse evento se refere.'''
+        return self.etapa_proposicao.proposicao.id_leggo
 
     @property
     def proposicao(self):
