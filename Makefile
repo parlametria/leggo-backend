@@ -136,4 +136,4 @@ endif
 .PHONY: update-data-remote
  shell:
 	docker exec -it "dbapi" psql -U postgres
-.PHONY: update-data-remote
+.PHONY: shell
