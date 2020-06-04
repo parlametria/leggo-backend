@@ -3,24 +3,41 @@
 
 # Leggo backend
 
-API para consulta de propostas de leis no senado e na câmara
+Este é o repositório com a API do [Leg.go](https://leggo.parlametria.org). 
+
+Leg.go é uma plataforma de inteligência para o acompanhamento das atividades no Congresso Nacional. Coletamos dados da Câmara e do Senado para encontrar quais proposições estão quentes, o que está tramitando com mais energia, como o conteúdo dos projetos é alterado e quem são os atores importantes nesse processo. Acesse o [Leg.go](https://leggo.parlametria.org).
 
 ## Setup
 
-O código atual assume que este repositório está em uma pasta lado a lado com o repositório R. Isso é importante para que este código consiga acessar os CSVs gerados pelo R.
+Recomendamos que você instale o [docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce) e o [docker-compose](https://docs.docker.com/compose/install/) para configuração do ambiente de desenvolvimento.
+
+Este repositório é responsável apenas pelo código do backend do Leg.go. Recomendamos que caso você esteja interessado em configurar o ambiente de desenvolvimento por completo, acesse nosso [orquestrador de repositórios](https://github.com/parlametria/leggo-geral/tree/master/compose): o leggo-geral. Lá você irá encontrar instruções para configurar todo o ambiente incluindo: **banco de dados, backend e frontend**.
+
+Pelo leggo-geral você conseguirá executar todos os serviços incluindo este aqui: o leggo-backend.
+
+Antes de ir lá pro leggo-geral, outra etapa de configuração importante é a criação do arquivo de variáveis de ambiente usado pelo leggo-backend. 
+
+Para isto faça uma cópia do arquivo .ENV.sample e a reinomeie para .ENV. Entre em [contato](https://github.com/parlametria/leggo-backend/issues) com a equipe de desenvolvimento para obter as chaves de acesso ao servidor de dados processados e atualizados diariamente.
+
+Com o arquivo .ENV criado e preenchido agora é possível seguir os passos do [leggo-geral](https://github.com/parlametria/leggo-geral/tree/master/compose) para levantar os serviços e configurar o ambiente de desenvolvimento.
+
+A API estará disponível em localhost:8000.
+O nome do container que está servindo a api é **agorapi**.
 
 ## Make	
-Usando o make ele já ajuda a rodar os comandos do docker-compose de maneira simples:	
+O make deste repositório ajuda a executar alguns comandos docker comuns durante o processo de desenvolvimento.
 
  Comando | Descrição	
-------- | -----------	
-**make run** | Build e create dos containers.	
-**make start** |Começa containers já existentes.	
-**make import** | Importa dados da pasta `data/` e escreve no banco de dados.	
-**make update** | Realiza as migrações e importa os dados	
+------- | -----------
+**make update** | Realiza as migrações e importa os dados.
+**make update-data-remote** | Atualiza o banco de acordo com os dados do servidor remoto. Muio útil para quando não se quer processar os dados localmente usando os repositórios de tratamento de dados. Os csvs são recuperados já processados e são importados para o banco de dados pelo leggo-backend.
+**make run** | Build e create dos containers. (não usa o leggo-geral)	
+**make start** | Começa containers já existentes. (não usa o leggo-geral)		
+**make import** | Importa dados da pasta `data/` e escreve no banco de dados.
 **make update-agorapi** | Realiza as migrações do banco.	
-**make update-data-remote** | Atualiza o banco de acordo com os dados do servidor remoto.
 **make help** | Para visualizar os demais comandos.
+
+## Executando sem ajuda do leggo-geral
 
 ### Docker
 Rodando com docker, o serviço estará disponível em http://0.0.0.0:8000/
