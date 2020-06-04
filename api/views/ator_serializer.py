@@ -11,10 +11,9 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
         fields = (
             'id_autor', 'nome_autor', 'partido', 'uf',
             'peso_total_documentos', 'num_documentos', 'tipo_generico',
-            'sigla_local_formatada', 'is_important', 'nome_partido_uf')
+            'sigla_local_formatada', 'is_important', 'nome_partido_uf')  
 
-
-class AtoresList(generics.ListAPIView):
+class AtoresProposicaoList(generics.ListAPIView):
     '''
     Dados de atores de uma proposição. Lista parlamentares que atuaram numa proposição
     com informações como o número de documentos criados e o peso do autor com relação
@@ -36,7 +35,7 @@ class AtoresList(generics.ListAPIView):
     )
     def get_queryset(self):
         '''
-        Retorna os atores
+        Retorna os atores por proposição
         '''
         prop_leggo_id = self.kwargs['id_leggo']
         queryset = Atores.objects.filter(id_leggo=prop_leggo_id)
