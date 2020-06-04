@@ -28,6 +28,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "ultima_temperatura",
             "temperatura_coeficiente",
             "important_atores",
+            "anotacao_data_ultima_modificacao",
         )
 
 
