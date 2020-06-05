@@ -135,11 +135,8 @@ endif
  update: update-agorapi import
 .PHONY: reset
  update-data-remote:
-	docker exec -it "agorapi" sh -c './manage.py clear_tables; ./manage.py import_data_from_remote'
+	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_all_data_from_remote'
 .PHONY: update-data-remote
- update-insights-data-remote:
-	docker exec -it "agorapi" sh -c './manage.py clear_insights; ./manage.py import_insights_from_remote'
-.PHONY: update-insights-data-remote
  shell:
 	docker exec -it "dbapi" psql -U postgres
 .PHONY: shell
