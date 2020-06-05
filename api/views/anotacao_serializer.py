@@ -176,7 +176,7 @@ class AnotacaoList(generics.ListAPIView):
         queryset = queryset.filter(data_ultima_modificacao__lte=data_fim_dt)
 
         if peso:
-            queryset = queryset.order_by("peso", "-data_ultima_modificacao").filter(
+            queryset = queryset.order_by("-data_ultima_modificacao", "data_criacao").filter(
                 peso__lte=peso
             )
 
