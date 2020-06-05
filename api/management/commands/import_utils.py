@@ -505,5 +505,6 @@ def import_all_data_but_insights():
     import_coautoria_edge()
     import_autoria()
 
+
 def import_insights():
     import_anotacoes()
