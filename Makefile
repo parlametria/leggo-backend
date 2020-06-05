@@ -78,9 +78,6 @@ endif
 	@echo "    update-data-remote"
 	@echo "        This command will clean the DB and get the data from the remote server"
 	@echo "    "
-	@echo "    update-insights-data-remote"
-	@echo "        This command will clean the table anotacoes and get the data from the remote server"
-	@echo "    "
 	@echo "    shell"
 	@echo "        This command will open a psql terminal to manage the DB"
 .PHONY: help
