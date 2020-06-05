@@ -16,7 +16,7 @@ class Command(BaseCommand):
             print("----------------------")
             print(datetime.datetime.now())
             print("Apagando Banco de Dados...")
-            management.call_command('flush', interactive=False, verbosity=3)
+            management.call_command('clear_tables', interactive=False, verbosity=3)
             print("Aplica migrations ao BD...")
             management.call_command('migrate', interactive=False, verbosity=3)
             print("Importando dados a partir de servidor remoto...")

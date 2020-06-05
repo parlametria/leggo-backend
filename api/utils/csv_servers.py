@@ -160,4 +160,3 @@ def get_file(base_url, token, leggo_file, output_folderpath):
         None,
         output_folderpath + os.sep + leggo_file,
     )
-
