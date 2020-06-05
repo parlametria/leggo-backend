@@ -128,3 +128,24 @@ def get_leggo_files(base_url, token, output_folderpath):
     for pop_file in pop_files:
         get_binary(base_url + "/csvs/pops/" + pop_file, token_header, None,
                    output_folderpath + os.sep + "pops" + os.sep + pop_file)
+
+def get_file(base_url, token, leggo_file, output_folderpath):
+    '''
+    Função que faz o download de um arquivo do servidor de CSVs do Leggo.
+
+    Parameters
+    ----------
+    base_url : str
+            A URL base do Servidor de CSVs do Leggo
+    token : str
+            O Token obtido para acessar o servidor
+    file : str
+            O arquivo que se deseja baixar (já com a extensão .csv)
+    output_folderpath: str
+            O caminho da pasta onde serão salvos os CSVs.
+
+    '''
+    token_header = {"x-access-token": token}
+
+    get_binary(base_url + "/csvs/" + leggo_file, token_header, None,
+        output_folderpath + os.sep + leggo_file)

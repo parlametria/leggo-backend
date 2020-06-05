@@ -78,6 +78,9 @@ endif
 	@echo "    update-data-remote"
 	@echo "        This command will clean the DB and get the data from the remote server"
 	@echo "    "
+	@echo "    update-insights-data-remote"
+	@echo "        This command will clean the table anotacoes and get the data from the remote server"
+	@echo "    "
 	@echo "    shell"
 	@echo "        This command will open a psql terminal to manage the DB"
 .PHONY: help
@@ -134,6 +137,9 @@ endif
  update-data-remote:
 	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data_from_remote'
 .PHONY: update-data-remote
+ update-insights-data-remote:
+	docker exec -it "agorapi" sh -c './manage.py clear_insights; ./manage.py import_insights_from_remote'
+.PHONY: update-insights-data-remote
  shell:
 	docker exec -it "dbapi" psql -U postgres
 .PHONY: shell
