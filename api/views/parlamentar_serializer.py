@@ -1,9 +1,11 @@
 
 from rest_framework import serializers, generics
+from django.db.models import Sum, Count, OuterRef, Subquery
+from django.core.paginator import Paginator
+
 from api.model.ator import Atores
 from api.model.autoria import Autoria
 from api.model.interesse import Interesse
-from django.db.models import Sum, Count, OuterRef, Subquery
 
 
 class ParlamentaresSerializer(serializers.Serializer):
@@ -33,7 +35,18 @@ class ParlamentaresList(generics.ListAPIView):
                                    .values('id_autor')
                                    .annotate(n_autorias=Count('id_autor')))
 
-        # Junta todos os dados dos parlamentares
+        # Seleciona ranking ou define ranking padrão
+        ranking_arg = self.request.query_params.get('ranking')
+        if ranking_arg == 'ativos-twitter':
+            ranking = '-discursos_twitter'
+        elif ranking_arg == 'papeis-importantes':
+            ranking = '-n_autorias'
+        elif ranking_arg == 'peso-politico':
+            ranking = '-peso_politico'
+        else:
+            ranking = '-peso_documentos'
+
+        # Junta todos os dados dos parlamentares e os ordena
         todos_atores = Atores.objects.values(
                 'uf', 'partido', 'casa', 'bancada',
                 'id_leggo', 'id_autor', 'nome_autor'
@@ -41,13 +54,24 @@ class ParlamentaresList(generics.ListAPIView):
             total_documentos=Sum('num_documentos'),
             peso_documentos=Sum('peso_total_documentos'),
             n_autorias=Subquery(autorias.values('n_autorias'))
-        )
-
-        # Seleciona interesse ou define interesse padrão
-        interesse_arg = self.request.query_params.get("interesse")
-        if interesse_arg is None:
-            interesse_arg = "leggo"
-        interesses = Interesse.objects.filter(interesse=interesse_arg)
+        ).order_by(ranking)
 
         # Retorna apenas os atores de um interesse específico
-        return todos_atores.filter(id_leggo__in=interesses)
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = Interesse.objects.filter(interesse=interesse_arg)
+        atores_por_interesse = todos_atores.filter(id_leggo__in=interesses)
+
+        # Implementa paginação
+        paginador = Paginator(atores_por_interesse, 50)  # 50 parlamentares p/ página
+        pagina = self.request.query_params.get('pagina')
+        if pagina is None:
+            pagina = 1
+        elif int(pagina) > paginador.num_pages:
+            pagina = paginador.num_pages
+        else:
+            pagina = int(pagina)
+
+        # Retorna página com parlamentares
+        return paginador.page(pagina)
