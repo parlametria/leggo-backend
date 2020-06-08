@@ -1,8 +1,10 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from api.utils.filters import get_filtered_autores
+from django.db.models import Prefetch, Sum
+
 from api.model.ator import Atores
+from api.utils.filters import get_filtered_autores, get_filtered_interesses
 
 
 class AtoresSerializerComissoes(serializers.ModelSerializer):
@@ -11,7 +13,9 @@ class AtoresSerializerComissoes(serializers.ModelSerializer):
         fields = (
             'id_autor', 'nome_autor', 'partido', 'uf',
             'peso_total_documentos', 'num_documentos', 'tipo_generico',
-            'sigla_local_formatada', 'is_important', 'nome_partido_uf')  
+            'sigla_local_formatada', 'is_important', 'nome_partido_uf'
+        )
+
 
 class AtoresProposicaoList(generics.ListAPIView):
     '''
@@ -40,3 +44,40 @@ class AtoresProposicaoList(generics.ListAPIView):
         prop_leggo_id = self.kwargs['id_leggo']
         queryset = Atores.objects.filter(id_leggo=prop_leggo_id)
         return get_filtered_autores(self.request, queryset)
+
+
+class AtoresAgregadosSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    nome_autor = serializers.CharField()
+    partido = serializers.CharField()
+    uf = serializers.CharField()
+    casa = serializers.CharField()
+    bancada = serializers.CharField()
+    total_documentos = serializers.IntegerField()
+    peso_documentos = serializers.IntegerField()
+
+
+class AtoresAgregadosList(generics.ListAPIView):
+    '''
+    Informação agregada sobre parlamentares.
+    '''
+    serializer_class = AtoresAgregadosSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna dados básicos e de atividade parlamentar por interesse.
+        '''
+        interesse_arg = self.request.query_params.get("interesse")
+        interesses = get_filtered_interesses(interesse_arg)
+
+        atores = (
+            Atores.objects
+            .filter(id_leggo__in=interesses)
+            .values('id_autor', 'nome_autor', 'uf', 'partido', 'casa', 'bancada')
+            .annotate(
+                total_documentos=Sum('num_documentos'),
+                peso_documentos=Sum('peso_total_documentos')
+            )
+            .prefetch_related(Prefetch("interesse", queryset=interesses))
+        )
+        return atores

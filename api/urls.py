@@ -8,12 +8,11 @@ from api.views.progresso_serializer import ProgressoList
 from api.views.comissao_serializer import ComissaoList
 from api.views.pauta_serializer import PautaList
 from api.views.emenda_serializer import EmendasList
-from api.views.ator_serializer import AtoresProposicaoList
-from api.views.parlamentar_serializer import ParlamentaresList
+from api.views.ator_serializer import AtoresAgregadosList, AtoresProposicaoList
 from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
-from api.views.autoria_serializer import AutoriaList
+from api.views.autoria_serializer import AutoriaList, AutoriasAgregadasList
 from api.views.interesse_serializer import InteresseList
 from api.views.anotacao_serializer import AnotacaoListByProp, AnotacaoList
 from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
@@ -41,10 +40,10 @@ urlpatterns = [
         PautaList.as_view()),
     url(r'^emenda/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         EmendasList.as_view()),
-    url(r'^parlamentares/?$',
-        ParlamentaresList.as_view()),
     url(r'^atores/(?P<id_leggo>[0-9]+)/?$',
         AtoresProposicaoList.as_view()),
+    url(r'^atores/agregados/?$',
+        AtoresAgregadosList.as_view()),
     url(r'^pressao/(?P<id_leggo>[0-9]+)/?$',
         PressaoList.as_view()),
     url(r'^coautorias_node/(?P<id>[0-9]+)/?$',
@@ -53,6 +52,8 @@ urlpatterns = [
         CoautoriaEdgeList.as_view()),
     url(r'^autorias/(?P<id>[0-9]+)/?$',
         AutoriaList.as_view()),
+    url(r'^autorias/agregadas/?$',
+        AutoriasAgregadasList.as_view()),
     url(r'^interesses/(?P<id>[0-9]+)/?$',
         InteresseList.as_view()),
     url(r'^anotacoes/?$',

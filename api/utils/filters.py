@@ -33,9 +33,10 @@ def get_filtered_interesses(interesseArg):
     '''
     Filtra interesses a partir da string do interesse passado como parâmetroa
     '''
+    # Adiciona interesse default
     if interesseArg is None:
-        return Interesse.objects
-
+        interesseArg = 'leggo'
+        
     return Interesse.objects.filter(interesse=interesseArg)
 
 
