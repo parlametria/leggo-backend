@@ -127,7 +127,7 @@ endif
  update-agorapi: makemigrations migrate
 .PHONY: update-agorapi
  import:
-	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_data'
+	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_all_data'
 .PHONY: update-agorapi
  update: update-agorapi import
 .PHONY: reset
