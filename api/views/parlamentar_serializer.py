@@ -2,14 +2,7 @@
 from rest_framework import serializers, generics
 from api.model.ator import Atores
 from api.model.autoria import Autoria
-from django.db.models import Sum, Count, OuterRef, Subquery, Case, When, IntegerField
-
-
-# class DocumentosSerializer(serializers.Serializer):
-#     tipo_generico = serializers.CharField()
-#     num_documentos = serializers.IntegerField()
-#     peso_total_documentos = serializers.FloatField()
-      
+from django.db.models import Sum, Count, OuterRef, Subquery, Case, When, IntegerField  
 
 class ParlamentaresSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
