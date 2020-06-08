@@ -2,7 +2,8 @@
 from rest_framework import serializers, generics
 from api.model.ator import Atores
 from api.model.autoria import Autoria
-from django.db.models import Sum, Count, OuterRef, Subquery, Case, When, IntegerField  
+from django.db.models import Sum, Count, OuterRef, Subquery
+
 
 class ParlamentaresSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
@@ -15,15 +16,20 @@ class ParlamentaresSerializer(serializers.Serializer):
     peso_documentos = serializers.IntegerField()
     n_autorias = serializers.IntegerField()
 
+
 class ParlamentaresList(generics.ListAPIView):
     '''
-    Dados de todos os parlamentares. Lista informações agregadas de parlamentares como nome, atividade no congresso, vezes que foi autor, relator ou presidente de comissão, etc.
+    Dados de todos os parlamentares. Lista informações agregadas
+    de parlamentares como nome, atividade no congresso, vezes que foi autor,
+    relator ou presidente de comissão, etc.
     '''
     serializer_class = ParlamentaresSerializer
 
     def get_queryset(self):
         unicos = Atores.objects.filter(id_autor=OuterRef('id_autor')).distinct('id_autor')
-        autorias = Autoria.objects.filter(id_autor=OuterRef('id_autor')).values('id_autor').annotate(n_autorias=Count('id_autor'))
+        autorias = (Autoria.objects.filter(id_autor=OuterRef('id_autor'))
+                                   .values('id_autor')
+                                   .annotate(n_autorias=Count('id_autor')))
 
         return Atores.objects.values('id_autor').annotate(
             total_documentos=Sum('num_documentos'),
