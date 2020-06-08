@@ -486,3 +486,25 @@ def import_all_data():
     import_coautoria_edge()
     import_autoria()
     import_anotacoes()
+
+
+def import_all_data_but_insights():
+    """Importa dados dos csv e salva no banco (menos os insights)."""
+    import_etapas_proposicoes()
+    import_proposicoes()
+    import_interesse()
+    import_tramitacoes()
+    import_temperaturas()
+    import_progresso()
+    import_pautas()
+    import_emendas()
+    import_comissoes()
+    import_atores()
+    import_pressao()
+    import_coautoria_node()
+    import_coautoria_edge()
+    import_autoria()
+
+
+def import_insights():
+    import_anotacoes()

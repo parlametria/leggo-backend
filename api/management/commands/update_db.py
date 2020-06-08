@@ -28,7 +28,7 @@ class Command(BaseCommand):
             subprocess.run('./manage.py flush --no-input'.split(), check=True)
 
             print(bcolors.OKBLUE, 'Importando dados novos...' + bcolors.ENDC)
-            subprocess.run('./manage.py import_data'.split(), check=True)
+            subprocess.run('./manage.py import_all_data'.split(), check=True)
 
         except subprocess.CalledProcessError:
             print(bcolors.FAIL, 'OCORREU UM ERRO')
