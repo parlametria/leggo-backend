@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.conf import settings
 from api.utils.csv_servers import (get_token, get_leggo_files)
-from .import_utils import import_all_data_but_insights
+from .import_utils import import_all_data
 
 
 class Command(BaseCommand):
@@ -18,7 +18,7 @@ class Command(BaseCommand):
             get_leggo_files(settings.CSVS_SERVER_URL, token, settings.CSVS_STORAGE_DIR)
 
             print("Inserindo novos dados no BD...")
-            import_all_data_but_insights()
+            import_all_data()
 
             print("Dados atualizados com sucesso!")
         except Exception as e:
