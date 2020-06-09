@@ -67,7 +67,9 @@ class AtoresAgregadosList(generics.ListAPIView):
         '''
         Retorna dados básicos e de atividade parlamentar por interesse.
         '''
-        interesse_arg = self.request.query_params.get("interesse")
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg)
 
         atores = (
