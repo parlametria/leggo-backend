@@ -106,22 +106,19 @@ class AnotacaoList(generics.ListAPIView):
             openapi.Parameter(
                 "data_inicio",
                 openapi.IN_PATH,
-                "data de início do período de tempo ao qual " +
-                "as anotações devem ser modificadas",
+                "data de início do período de tempo ao qual "
+                + "as anotações devem ser modificadas",
                 type=openapi.TYPE_STRING,
             ),
             openapi.Parameter(
                 "data_fim",
                 openapi.IN_PATH,
-                "data de fim do período de tempo ao qual " +
-                "as anotações devem ser modificadas",
+                "data de fim do período de tempo ao qual "
+                + "as anotações devem ser modificadas",
                 type=openapi.TYPE_STRING,
             ),
             openapi.Parameter(
-                "peso",
-                openapi.IN_PATH,
-                "Peso máximo",
-                type=openapi.TYPE_INTEGER,
+                "peso", openapi.IN_PATH, "Peso máximo", type=openapi.TYPE_INTEGER,
             ),
             openapi.Parameter(
                 "ultimas_n",
@@ -176,9 +173,9 @@ class AnotacaoList(generics.ListAPIView):
         queryset = queryset.filter(data_ultima_modificacao__lte=data_fim_dt)
 
         if peso:
-            queryset = queryset.order_by("-data_ultima_modificacao", "data_criacao").filter(
-                peso__lte=peso
-            )
+            queryset = queryset.order_by(
+                "-data_ultima_modificacao", "data_criacao"
+            ).filter(peso__lte=peso)
 
         if ultimos_n:
             queryset = queryset[: int(ultimos_n)]
