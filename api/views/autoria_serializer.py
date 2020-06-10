@@ -53,7 +53,7 @@ class AutoriasAgregadasList(generics.ListAPIView):
     def get_queryset(self):
         '''
         Retorna quantidade de autorias por parlamentar.
-        Se não for passado um interesse como argumento, todos os dados são retornados.
+        Se não for passado um interesse como argumento, os dados retornados serão os do interesse default (leggo).
         '''
         interesse_arg = self.request.query_params.get('interesse')
         if interesse_arg is None:
