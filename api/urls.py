@@ -61,10 +61,10 @@ urlpatterns = [
         AnotacaoList.as_view()),
     url(r'^anotacoes/(?P<id>[0-9]+)/?$',
         AnotacaoListByProp.as_view()),
-    url(r'^temperatura/max/?$', 
+    url(r'^temperatura/max/?$',
         TemperaturaMaxPeriodo.as_view()),
-    url(r'^peso_politico/?$', 
+    url(r'^peso_politico/?$',
         PesoPoliticoLista.as_view()),
-    url(r'^peso_politico/(?P<id>[0-9]+)/?$', 
+    url(r'^peso_politico/(?P<id>[0-9]+)/?$',
         PesoPoliticoParlamentar.as_view())
 ]

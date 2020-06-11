@@ -27,7 +27,7 @@ class PesoPoliticoLista(generics.ListAPIView):
             openapi.Parameter(
                 "interesse",
                 openapi.IN_PATH,
-                "Interesse que se deseja obter a lista com os parlamentares e seus pesos políticos",
+                "Interesse para retornar peso político dos atores",
                 type=openapi.TYPE_INTEGER,
             )
         ]
