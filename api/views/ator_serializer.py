@@ -4,6 +4,7 @@ from drf_yasg.utils import swagger_auto_schema
 from django.db.models import Prefetch, Sum
 
 from api.model.ator import Atores
+from api.model.etapa_proposicao import EtapaProposicao
 from api.utils.filters import get_filtered_autores, get_filtered_interesses
 
 
@@ -83,3 +84,49 @@ class AtoresAgregadosList(generics.ListAPIView):
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return atores
+
+class AtoresRelatoresSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Atores
+        fields = (
+            'nome_autor'
+        )
+
+class AtoresRelatoresList(generics.ListAPIView):
+
+    serializer_class = AtoresRelatoresSerializer
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'interesse', openapi.IN_PATH, 'interesse da proposição no sistema Leggo',
+                type=openapi.TYPE_STRING),
+        ]
+    )
+
+    def get_queryset(self):
+        '''
+        Retorna os atores por proposição
+        '''
+        interesseArg = self.request.query_params.get("interesse")
+        if interesseArg is None:
+            interesseArg = 'leggo'
+        interesses = get_filtered_interesses(interesseArg)
+        print('interesses: ', interesses.values)
+        queryset = Atores.objects.filter(id_leggo__in=interesses)
+        print('queryset: ', queryset)
+        atoresRelatores = []
+        for etapa in EtapaProposicao.objects.all():
+            quantRelatorias = 0
+            if (etapa.relator_nome != 'Relator não encontrado'):
+                for ator in Atores.objects.all():
+                    if (ator.nome_autor in etapa.relator_nome):
+                        quantRelatorias += 1
+
+                atoresRelatores.append({
+                    'nome_autor': etapa.relator_nome,
+                    'relatorias': quantRelatorias
+                })
+        print('atores: ', atoresRelatores)
+
+        return atoresRelatores
