@@ -28,3 +28,19 @@ class Autoria(models.Model):
 
     autores = models.TextField(
         help_text='Todos autores de um documento.')
+
+    id_principal = models.IntegerField(
+        null=True,
+        help_text='Id da proposição principal do documento.')
+
+    casa = models.TextField(
+        null=True,
+        help_text='Casa de origem da proposição principal.')
+
+    id_autor_parlametria = models.IntegerField(
+        null=True,
+        help_text='Id do autor na plataforma parlametria.')
+
+    casa_autor = models.TextField(
+        null=True,
+        help_text='Casa do autor do documento.')
