@@ -87,10 +87,8 @@ class AtoresAgregadosList(generics.ListAPIView):
 
 class AtoresRelatoresSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Atores
-        fields = (
-            'nome_autor'
-        )
+        model = EtapaProposicao
+        fields = ('id', 'relator_nome')
 
 class AtoresRelatoresList(generics.ListAPIView):
 
@@ -106,27 +104,28 @@ class AtoresRelatoresList(generics.ListAPIView):
 
     def get_queryset(self):
         '''
-        Retorna os atores por proposição
+        R
         '''
-        interesseArg = self.request.query_params.get("interesse")
+        interesseArg = self.request.query_params.get('interesse')
         if interesseArg is None:
             interesseArg = 'leggo'
         interesses = get_filtered_interesses(interesseArg)
-        print('interesses: ', interesses.values)
-        queryset = Atores.objects.filter(id_leggo__in=interesses)
-        print('queryset: ', queryset)
-        atoresRelatores = []
-        for etapa in EtapaProposicao.objects.all():
+        
+        queryset = (
+            EtapaProposicao.objects.filter(id_leggo__in=interesses)
+        )
+
+        atoresRE = []
+        for etapa in queryset.all():
             quantRelatorias = 0
             if (etapa.relator_nome != 'Relator não encontrado'):
                 for ator in Atores.objects.all():
                     if (ator.nome_autor in etapa.relator_nome):
                         quantRelatorias += 1
-
-                atoresRelatores.append({
+                atoresRE.append({
                     'nome_autor': etapa.relator_nome,
                     'relatorias': quantRelatorias
                 })
-        print('atores: ', atoresRelatores)
+        print('atores: ', atoresRE)
 
-        return atoresRelatores
+        return atoresRE
