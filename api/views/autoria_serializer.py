@@ -41,12 +41,13 @@ class AutoriaList(generics.ListAPIView):
 
 class AutoriasAgregadasSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
     quantidade_autorias = serializers.IntegerField()
 
 
 class AutoriasAgregadasList(generics.ListAPIView):
     '''
-    Informação agregada sobre autorias.
+    Informação agregada sobre autorias de projetos de lei
     '''
     serializer_class = AutoriasAgregadasSerializer
 
@@ -63,8 +64,8 @@ class AutoriasAgregadasList(generics.ListAPIView):
 
         autorias = (
             Autoria.objects
-            .filter(id_leggo__in=interesses)
-            .values('id_autor')
+            .filter(id_leggo__in=interesses, tipo_documento="Prop. Original / Apensada")
+            .values('id_autor', 'id_autor_parlametria')
             .annotate(quantidade_autorias=Count('id_autor'))
             .prefetch_related(
                 Prefetch("interesse", queryset=interesses)
