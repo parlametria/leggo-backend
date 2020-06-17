@@ -85,12 +85,11 @@ class AtoresAgregadosList(generics.ListAPIView):
         )
         return atores
 
-class AtoresRelatoresSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = EtapaProposicao
-        fields = ('id', 'relator_nome')
+class AtoresRelatoresSerializer(serializers.Serializer):
+    relator_id = serializers.IntegerField()
+    relatorias = serializers.IntegerField()
 
-class AtoresRelatoresList(generics.ListAPIView):
+class AtoresRelatoriasList(generics.ListAPIView):
 
     serializer_class = AtoresRelatoresSerializer
 
@@ -104,7 +103,7 @@ class AtoresRelatoresList(generics.ListAPIView):
 
     def get_queryset(self):
         '''
-        R
+        Retrona parlamentares e a quantidade de relatorias
         '''
         interesseArg = self.request.query_params.get('interesse')
         if interesseArg is None:
@@ -118,14 +117,18 @@ class AtoresRelatoresList(generics.ListAPIView):
         atoresRE = []
         for etapa in queryset.all():
             quantRelatorias = 0
+            relator_id = 0
             if (etapa.relator_nome != 'Relator não encontrado'):
                 for ator in Atores.objects.all():
                     if (ator.nome_autor in etapa.relator_nome):
                         quantRelatorias += 1
-                atoresRE.append({
-                    'nome_autor': etapa.relator_nome,
-                    'relatorias': quantRelatorias
-                })
+                        relator_id = ator.id_autor
+                if (relator_id != 0):
+                    atoresRE.append({
+                        'relator_id': relator_id,
+                        'relatorias': quantRelatorias
+                    })
+                
         print('atores: ', atoresRE)
 
         return atoresRE
