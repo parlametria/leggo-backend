@@ -72,3 +72,38 @@ class AutoriasAgregadasList(generics.ListAPIView):
             )
         )
         return autorias
+
+
+class AutoriasAgregadasByAutor(generics.ListAPIView):
+    '''
+    Informação agregada sobre autorias de projetos de lei
+    para um autor específico passado como parâmetro
+    '''
+    serializer_class = AutoriasAgregadasSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna quantidade de autorias para um parlamentar específico.
+        Considera as autorias do parlamentar para um interesse específico.
+        Se não for passado um interesse como argumento,
+        os dados retornados serão os do interesse default (leggo).
+        '''
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg)
+
+        id_autor_parlametria = self.kwargs["id_autor"]
+        print(id_autor_parlametria)
+
+        autorias = (
+            Autoria.objects
+            .filter(id_autor_parlametria=id_autor_parlametria,
+                    id_leggo__in=interesses, tipo_documento="Prop. Original / Apensada")
+            .values('id_autor', 'id_autor_parlametria')
+            .annotate(quantidade_autorias=Count('id_autor'))
+            .prefetch_related(
+                Prefetch("interesse", queryset=interesses)
+            )
+        )
+        return autorias
