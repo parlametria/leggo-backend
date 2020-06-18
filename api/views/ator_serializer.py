@@ -86,8 +86,8 @@ class AtoresAgregadosList(generics.ListAPIView):
         return atores
 
 class AtoresRelatoresSerializer(serializers.Serializer):
-    relator_id = serializers.IntegerField()
-    relatorias = serializers.IntegerField()
+    id_relator = serializers.IntegerField()
+    quantidade_relatorias = serializers.IntegerField()
 
 class AtoresRelatoriasList(generics.ListAPIView):
 
@@ -125,10 +125,8 @@ class AtoresRelatoriasList(generics.ListAPIView):
                         relator_id = ator.id_autor
                 if (relator_id != 0):
                     atoresRE.append({
-                        'relator_id': relator_id,
-                        'relatorias': quantRelatorias
+                        'id_relator': relator_id,
+                        'quantidade_relatorias': quantRelatorias
                     })
-                
-        print('atores: ', atoresRE)
 
         return atoresRE
