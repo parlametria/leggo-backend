@@ -1,9 +1,10 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import Prefetch, Sum
+from django.db.models import Prefetch, Sum, Count
 
 from api.model.ator import Atores
+from api.model.etapa_proposicao import EtapaProposicao
 from api.utils.filters import get_filtered_autores, get_filtered_interesses
 
 
@@ -83,3 +84,56 @@ class AtoresAgregadosList(generics.ListAPIView):
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return atores
+
+class AtoresRelatoriasDetalhadaSerializer(serializers.Serializer):
+    id_leggo = serializers.ListField()
+    quantidade_relatorias = serializers.IntegerField()
+
+class AtoresRelatoriasDetalhada(generics.ListAPIView):
+
+    serializer_class = AtoresRelatoriasDetalhadaSerializer
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'id_autor', openapi.IN_PATH, 'id do autor no sistema Leggo',
+                type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'interesse', openapi.IN_PATH, 'interesse da proposição no sistema Leggo',
+                type=openapi.TYPE_STRING),
+        ]
+    )
+
+    def get_queryset(self):
+        '''
+        Retorna id's e quantidade de relatorias de um determinado parlamentar
+        '''
+        leggo_id_autor = self.request.query_params.get('id_autor')
+        interesseArg = self.request.query_params.get('interesse')
+        if interesseArg is None:
+            interesseArg = 'leggo'
+        interesses = get_filtered_interesses(interesseArg)
+
+        atoresRE = (
+            Atores.objects.filter(id_autor=leggo_id_autor)
+            .values('nome_autor')
+            .distinct()
+        )
+        
+        relatorias = list(
+            EtapaProposicao.objects.filter(id_leggo__in=interesses)
+            .filter(relator_nome__icontains=atoresRE)
+            .values('id_leggo')
+            .prefetch_related(
+                Prefetch("interesse", queryset=interesses)
+            )
+        )
+
+        queryset = [
+            {
+                'id_leggo': relatorias,
+                'quantidade_relatorias': len(relatorias)
+            }
+        ]
+
+        return queryset

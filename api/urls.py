@@ -8,7 +8,7 @@ from api.views.progresso_serializer import ProgressoList
 from api.views.comissao_serializer import ComissaoList
 from api.views.pauta_serializer import PautaList
 from api.views.emenda_serializer import EmendasList
-from api.views.ator_serializer import AtoresAgregadosList, AtoresProposicaoList
+from api.views.ator_serializer import AtoresAgregadosList, AtoresProposicaoList, AtoresRelatoriasDetalhada
 from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
@@ -44,6 +44,8 @@ urlpatterns = [
         AtoresProposicaoList.as_view()),
     url(r'^atores/agregados/?$',
         AtoresAgregadosList.as_view()),
+    url(r'^atores/relatorias/detalhada/?$',
+        AtoresRelatoriasDetalhada.as_view()),
     url(r'^pressao/(?P<id_leggo>[0-9]+)/?$',
         PressaoList.as_view()),
     url(r'^coautorias_node/(?P<id>[0-9]+)/?$',
