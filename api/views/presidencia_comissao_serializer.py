@@ -5,19 +5,18 @@ from drf_yasg.utils import swagger_auto_schema
 from api.model.ator import Atores
 from api.utils.filters import get_filtered_interesses
 from api.utils.presidencia_comissao import(
-    get_comissao_parlamentar,
+    get_comissao_parlamentar
 )
 
-class PresidenciaSerializer(serializers.Serializer):
+class PresidenciaComissaoSerializer(serializers.Serializer):
     #idParlamentarVoz = serializers.IntegerField()
-
     idComissaoPresidencia = serializers.IntegerField()
     #quantidadeComissoesPresidente = serializers.IntegerField()
 
 
 class PresidenciaComissaoLista(generics.ListAPIView):
    
-    serializer_class = PresidenciaSerializer
+    serializer_class = PresidenciaComissaoSerializer
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -29,6 +28,7 @@ class PresidenciaComissaoLista(generics.ListAPIView):
             )
         ]
     )
+
     def get_queryset(self):
        
         # interesse_arg = self.request.query_params.get("interesse")
@@ -41,7 +41,7 @@ class PresidenciaComissaoLista(generics.ListAPIView):
         #         "id_autor_parlametria", flat=True
         #     )
         # )
-
+        
         data = get_comissao_parlamentar()
         
         return data
