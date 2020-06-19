@@ -4,14 +4,15 @@ from drf_yasg.utils import swagger_auto_schema
 
 from api.model.ator import Atores
 from api.utils.filters import get_filtered_interesses
-from api.utils.presidencia import(
-    get_comissao_lista,
+from api.utils.presidencia_comissao import(
     get_comissao_parlamentar,
 )
 
 class PresidenciaSerializer(serializers.Serializer):
     #idParlamentarVoz = serializers.IntegerField()
+
     idComissaoPresidencia = serializers.IntegerField()
+    #quantidadeComissoesPresidente = serializers.IntegerField()
 
 
 class PresidenciaComissaoLista(generics.ListAPIView):

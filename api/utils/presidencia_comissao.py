@@ -12,10 +12,10 @@ def get_comissao_parlamentar():
         data = json.loads(r.text)
              
         obj_arr = []
-
-
         for obj in data:
             for a in obj['parlamentarComissoes']:
+                    print(a['parlamentarComissoes'])
+                    print("------------------------------------")
                     if( a['cargo'] == "Presidente"):
                         quant += 1
                         teste.append({
