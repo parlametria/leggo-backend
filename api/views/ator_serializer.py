@@ -1,7 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import Prefetch, Sum
+from django.db.models import Prefetch, Sum, Count
 
 from api.model.ator import Atores
 from api.model.etapa_proposicao import EtapaProposicao
@@ -86,7 +86,7 @@ class AtoresAgregadosList(generics.ListAPIView):
         return atores
 
 class AtoresRelatoresSerializer(serializers.Serializer):
-    id_relator = serializers.IntegerField()
+    id_autor = serializers.IntegerField()
     quantidade_relatorias = serializers.IntegerField()
 
 class AtoresRelatoriasList(generics.ListAPIView):
@@ -112,21 +112,18 @@ class AtoresRelatoriasList(generics.ListAPIView):
         
         queryset = (
             EtapaProposicao.objects.filter(id_leggo__in=interesses)
+            .exclude(relator_nome='Relator não encontrado')
+            .values('id')
+            .distinct()
+            .prefetch_related(
+                Prefetch("interesse", queryset=interesses)
+            )
         )
-
-        atoresRE = []
-        for etapa in queryset.all():
-            quantRelatorias = 0
-            relator_id = 0
-            if (etapa.relator_nome != 'Relator não encontrado'):
-                for ator in Atores.objects.all():
-                    if (ator.nome_autor in etapa.relator_nome):
-                        quantRelatorias += 1
-                        relator_id = ator.id_autor
-                if (relator_id != 0):
-                    atoresRE.append({
-                        'id_relator': relator_id,
-                        'quantidade_relatorias': quantRelatorias
-                    })
-
+        
+        atoresRE = (
+            Atores.objects.filter(id_leggo__in=queryset)
+            .values('id_autor')
+            .annotate(quantidade_relatorias=Count('id_autor'))
+        )
+        
         return atoresRE
