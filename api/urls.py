@@ -8,7 +8,7 @@ from api.views.progresso_serializer import ProgressoList
 from api.views.comissao_serializer import ComissaoList
 from api.views.pauta_serializer import PautaList
 from api.views.emenda_serializer import EmendasList
-from api.views.ator_serializer import AtoresAgregadosList, AtoresProposicaoList
+from api.views.ator_serializer import AtorList, AtoresAgregadosList, AtoresProposicaoList
 from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
@@ -40,6 +40,8 @@ urlpatterns = [
         PautaList.as_view()),
     url(r'^emenda/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$',
         EmendasList.as_view()),
+    url(r'^ator/(?P<id_autor>[0-9]+)/?$',
+        AtorList.as_view()),
     url(r'^atores/(?P<id_leggo>[0-9]+)/?$',
         AtoresProposicaoList.as_view()),
     url(r'^atores/agregados/?$',

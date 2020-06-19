@@ -7,6 +7,41 @@ from api.model.ator import Atores
 from api.utils.filters import get_filtered_autores, get_filtered_interesses
 
 
+class AtorSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    nome_autor = serializers.CharField()
+    partido = serializers.CharField()
+    uf = serializers.CharField()
+    casa = serializers.CharField()
+    bancada = serializers.CharField()
+
+
+class AtorList(generics.ListAPIView):
+    '''
+    Informações sobre um parlamentar específico.
+    '''
+    serializer_class = AtorSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna dados básicos e de atividade de um parlamentar por interesse.
+        '''
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg)
+
+        id_autor_arg = self.kwargs['id_autor']
+        ator = (
+            Atores.objects
+            .filter(id_leggo__in=interesses, id_autor=id_autor_arg)
+            .values('id_autor', 'nome_autor', 'uf', 'partido',
+                    'casa', 'bancada')
+            .prefetch_related(Prefetch("interesse", queryset=interesses))
+        )
+        return ator
+
+
 class AtoresSerializerComissoes(serializers.ModelSerializer):
     class Meta:
         model = Atores
