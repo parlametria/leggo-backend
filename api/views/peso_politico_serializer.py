@@ -44,12 +44,9 @@ class PesoPoliticoLista(generics.ListAPIView):
 
         lista_ids = list(
             Atores.objects.filter(id_leggo__in=interesses).values_list(
-                "id_autor", flat=True
+                "id_autor_parlametria", flat=True
             )
         )
-
-        # TODO: Remover a linha abaixo quando o mapeamento estiver concluído
-        # data = get_peso_politico_lista([1, 23396, 173531])
 
         data = get_peso_politico_lista(lista_ids)
 
@@ -81,13 +78,10 @@ class PesoPoliticoParlamentar(generics.ListAPIView):
         id_autor_arg = self.kwargs["id"]
 
         id = (
-            Atores.objects.filter(id_autor=id_autor_arg)
-            .values_list("id_autor", flat=True)
+            Atores.objects.filter(id_autor_parlametria=id_autor_arg)
+            .values_list("id_autor_parlametria", flat=True)
             .first()
         )
-
-        # TODO: Remover a linha abaixo quando o mapeamento estiver concluído
-        # id = 1204467
 
         data = get_peso_politico_parlamentar(id)
 
