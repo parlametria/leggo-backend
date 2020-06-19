@@ -47,6 +47,14 @@ class Atores(models.Model):
         'É uma comissão ou plenário'
     )
 
+    id_autor_parlametria = models.IntegerField(
+        null=True,
+        help_text='Id do autor na plataforma parlametria.')
+
+    casa_autor = models.TextField(
+        null=True,
+        help_text='Casa do autor do documento.')
+
     @property
     def sigla_local_formatada(self):
         '''Formata a sigla local para ter a casa'''

@@ -311,6 +311,8 @@ def import_atores():
                 "sigla_local",
                 "is_important",
                 "bancada",
+                "id_autor_parlametria",
+                "casa_autor"
             ]
         ].assign(proposicao=prop)
         Atores.objects.bulk_create(
