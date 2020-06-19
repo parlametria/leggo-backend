@@ -6,12 +6,13 @@ from api.utils.csv_servers import post_req
 
 URL_PRESIDENCIA_COMISSAO = "https://perfil.parlametria.org/api/busca-parlamentar"
 
-def get_comissao_parlamentar(lista_ids):
+def get_comissao_parlamentar():
     try:
         r = requests.get(url=URL_PRESIDENCIA_COMISSAO)
         data = json.loads(r.text)
              
-        teste = []
+        obj_arr = []
+
 
         for obj in data:
             for a in obj['parlamentarComissoes']:
@@ -20,7 +21,7 @@ def get_comissao_parlamentar(lista_ids):
                         teste.append({
                             'idComissaoPresidencia': a['idComissaoVoz']
                         })
-        return teste 
+        return obj_arr 
     except Exception as e: 
         print(e)
         return []

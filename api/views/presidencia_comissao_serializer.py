@@ -30,18 +30,18 @@ class PresidenciaComissaoLista(generics.ListAPIView):
     )
     def get_queryset(self):
        
-        interesse_arg = self.request.query_params.get("interesse")
-        if interesse_arg is None:
-            interesse_arg = "leggo"
-        interesses = get_filtered_interesses(interesse_arg)
+        # interesse_arg = self.request.query_params.get("interesse")
+        # if interesse_arg is None:
+        #     interesse_arg = "leggo"
+        # interesses = get_filtered_interesses(interesse_arg)
 
-        lista_ids = list(
-            Atores.objects.filter(id_leggo__in=interesses).values_list(
-                "id_autor_parlametria", flat=True
-            )
-        )
+        # lista_ids = list(
+        #     Atores.objects.filter(id_leggo__in=interesses).values_list(
+        #         "id_autor_parlametria", flat=True
+        #     )
+        # )
 
-        data = get_comissao_parlamentar(lista_ids)
+        data = get_comissao_parlamentar()
         
         return data
 
