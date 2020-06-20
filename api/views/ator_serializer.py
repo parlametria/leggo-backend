@@ -9,6 +9,7 @@ from api.utils.filters import get_filtered_autores, get_filtered_interesses
 
 class AtorSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
+    id_ext = serializers.IntegerField()
     nome_autor = serializers.CharField()
     partido = serializers.CharField()
     uf = serializers.CharField()
@@ -35,8 +36,10 @@ class AtorList(generics.ListAPIView):
         ator = (
             Atores.objects
             .filter(id_leggo__in=interesses, id_autor=id_autor_arg)
-            .values('id_autor', 'nome_autor', 'uf', 'partido',
+            .values('id_autor', 'id_ext', 'nome_autor', 'uf', 'partido',
                     'casa', 'bancada')
+            .order_by('-casa')
+            .distinct()
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return ator
