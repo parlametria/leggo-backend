@@ -9,10 +9,19 @@ URL_PESO_POLITICO = "https://perfil.parlametria.org/api/perfil/"
 
 def get_peso_politico_lista(lista_ids):
     try:
-        payload = {"parlamentares": lista_ids}
+        r = requests.get(url=URL_PESO_POLITICO + "lista")
+        data = json.loads(r.text)
 
-        r = post_req(URL_PESO_POLITICO + "lista", payload)
-        return json.loads(r)
+        lista_ids_str = list(map(str, lista_ids))
+
+        filtered_parlamentares = [
+            obj for obj in data if obj["idParlamentarVoz"] in lista_ids_str
+        ]
+
+        for obj in filtered_parlamentares:
+            obj["idParlamentarVoz"] = int(obj["idParlamentarVoz"])
+
+        return filtered_parlamentares
 
     except Exception:
         return []
