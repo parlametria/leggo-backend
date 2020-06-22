@@ -12,7 +12,9 @@ from api.views.ator_serializer import AtorList, AtoresAgregadosList, AtoresPropo
 from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
-from api.views.autoria_serializer import AutoriaList, AutoriasAgregadasList
+from api.views.autoria_serializer import (AutoriaList,
+                                          AutoriasAgregadasList,
+                                          AutoriasAutorList)
 from api.views.interesse_serializer import InteresseList
 from api.views.anotacao_serializer import AnotacaoListByProp, AnotacaoList
 from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
@@ -54,6 +56,8 @@ urlpatterns = [
         CoautoriaEdgeList.as_view()),
     url(r'^autorias/(?P<id>[0-9]+)/?$',
         AutoriaList.as_view()),
+    url(r'^autorias/autor/(?P<id_autor>[0-9]+)/?$',
+        AutoriasAutorList.as_view()),
     url(r'^autorias/agregadas/?$',
         AutoriasAgregadasList.as_view()),
     url(r'^interesses/(?P<id>[0-9]+)/?$',

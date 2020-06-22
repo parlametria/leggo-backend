@@ -39,6 +39,39 @@ class AutoriaList(generics.ListAPIView):
         return Autoria.objects.filter(id_leggo=id_prop)
 
 
+class AutoriaAutorSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    id_documento = serializers.IntegerField()
+    id_leggo = serializers.IntegerField()
+    data = serializers.DateField()
+    descricao_tipo_documento = serializers.CharField()
+    url_inteiro_teor = serializers.CharField()
+
+
+class AutoriasAutorList(generics.ListAPIView):
+    '''
+    Informações sobre autorias de um autor específico.
+    '''
+    serializer_class = AutoriaAutorSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna as autorias de um parlamentar.
+        Se não for passado um interesse como argumento,
+        os dados retornados serão os do interesse default (leggo).
+        '''
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg)
+        id_autor_arg = self.kwargs['id_autor']
+        autorias = (
+            Autoria.objects
+            .filter(id_leggo__in=interesses, id_autor=id_autor_arg)
+        )
+        return autorias
+
+
 class AutoriasAgregadasSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     quantidade_autorias = serializers.IntegerField()
