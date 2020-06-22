@@ -16,6 +16,7 @@ from api.views.autoria_serializer import AutoriaList, AutoriasAgregadasList
 from api.views.interesse_serializer import InteresseList
 from api.views.anotacao_serializer import AnotacaoListByProp, AnotacaoList
 from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
+from api.views.autoria_serializer import AutoriasAgregadasByAutor
 
 
 # router = DefaultRouter()
@@ -56,6 +57,8 @@ urlpatterns = [
         AutoriaList.as_view()),
     url(r'^autorias/agregadas/?$',
         AutoriasAgregadasList.as_view()),
+    url(r'^autorias/agregadas/(?P<id_autor>[0-9]+)/?$',
+        AutoriasAgregadasByAutor.as_view()),
     url(r'^interesses/(?P<id>[0-9]+)/?$',
         InteresseList.as_view()),
     url(r'^anotacoes/?$',
