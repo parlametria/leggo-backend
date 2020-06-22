@@ -44,3 +44,7 @@ class Autoria(models.Model):
     casa_autor = models.TextField(
         null=True,
         help_text='Casa do autor do documento.')
+
+    tipo_documento = models.TextField(
+        null=True,
+        help_text='Tipo geral do documento.')
