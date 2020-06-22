@@ -1,8 +1,6 @@
 import json
 import requests
 
-from api.utils.csv_servers import post_req
-
 
 URL_PESO_POLITICO = "https://perfil.parlametria.org/api/perfil/"
 
@@ -19,7 +17,8 @@ def get_peso_politico_lista(lista_ids):
         ]
 
         for obj in filtered_parlamentares:
-            obj["idParlamentarVoz"] = int(obj["idParlamentarVoz"])
+            obj["id_autor_parlametria"] = int(obj["idParlamentarVoz"])
+            obj["peso_politico"] = obj["pesoPolitico"]
 
         return filtered_parlamentares
 
@@ -34,7 +33,8 @@ def get_peso_politico_parlamentar(id):
 
         obj_arr = []
 
-        data["idParlamentarVoz"] = int(data["idParlamentarVoz"])
+        data["id_autor_parlametria"] = int(data["idParlamentarVoz"])
+        data["peso_politico"] = data["pesoPolitico"]
 
         obj_arr.append(data)
 

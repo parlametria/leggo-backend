@@ -11,8 +11,8 @@ from api.utils.peso_politico import (
 
 
 class PesoPoliticoSerializer(serializers.Serializer):
-    idParlamentarVoz = serializers.IntegerField()
-    pesoPolitico = serializers.FloatField()
+    id_autor_parlametria = serializers.IntegerField()
+    peso_politico = serializers.FloatField()
 
 
 class PesoPoliticoLista(generics.ListAPIView):
