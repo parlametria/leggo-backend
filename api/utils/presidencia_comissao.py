@@ -11,12 +11,18 @@ def get_comissao_parlamentar():
         r = requests.get(url=URL_PRESIDENCIA_COMISSAO)
         data = json.loads(r.text)
         obj_arr = []
+        quant = 0
+     
         for obj in data:
-            for a in obj['parlamentarComissoes']:
-                    if( a['cargo'] == "Presidente"):
-                        obj_arr.append({
-                            'idComissaoPresidencia': a['idComissaoVoz']
+            for index in obj['parlamentarComissoes']:
+                if( index['cargo'] == "Presidente"):
+                    countComissoes += 1
+                    obj_arr.append({
+                        'idParlamentarVoz': obj['idParlamentarVoz'],
+                        'idComissaoPresidencia': index['idComissaoVoz'],
+                        'quantidadePresidenciaComissoes': countComissoes 
                         })
+                    countComissoes = 0
         return obj_arr 
         
     except Exception as e: 

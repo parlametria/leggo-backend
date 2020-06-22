@@ -9,9 +9,9 @@ from api.utils.presidencia_comissao import(
 )
 
 class PresidenciaComissaoSerializer(serializers.Serializer):
-    #idParlamentarVoz = serializers.IntegerField()
+    idParlamentarVoz = serializers.IntegerField()
     idComissaoPresidencia = serializers.IntegerField()
-    #quantidadeComissoesPresidente = serializers.IntegerField()
+    quantidadePresidenciaComissoes = serializers.IntegerField()
 
 
 class PresidenciaComissaoLista(generics.ListAPIView):
