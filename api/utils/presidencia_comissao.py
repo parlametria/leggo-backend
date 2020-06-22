@@ -11,16 +11,19 @@ def get_comissao_parlamentar():
         r = requests.get(url=URL_PRESIDENCIA_COMISSAO)
         data = json.loads(r.text)
         obj_arr = []
-        quant = 0
-     
+        countComissoes = 0
+        
         for obj in data:
             for index in obj['parlamentarComissoes']:
+                print(index)
+                print("---")
                 if( index['cargo'] == "Presidente"):
                     countComissoes += 1
                     obj_arr.append({
                         'idParlamentarVoz': obj['idParlamentarVoz'],
                         'idComissaoPresidencia': index['idComissaoVoz'],
-                        'quantidadePresidenciaComissoes': countComissoes 
+                        'quantidadePresidenciaComissoes': countComissoes,
+                        'infoComissao': index['infoComissao']
                         })
                     countComissoes = 0
         return obj_arr 

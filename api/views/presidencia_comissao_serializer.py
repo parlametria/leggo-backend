@@ -2,6 +2,9 @@ from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 
+import json
+import requests
+
 from api.model.ator import Atores
 from api.utils.filters import get_filtered_interesses
 from api.utils.presidencia_comissao import(
@@ -12,7 +15,10 @@ class PresidenciaComissaoSerializer(serializers.Serializer):
     idParlamentarVoz = serializers.IntegerField()
     idComissaoPresidencia = serializers.IntegerField()
     quantidadePresidenciaComissoes = serializers.IntegerField()
+    infoComissao = serializers.CharField()
 
+
+URL_PRESIDENCIA_COMISSAO = "https://perfil.parlametria.org/api/busca-parlamentar"
 
 class PresidenciaComissaoLista(generics.ListAPIView):
    
@@ -31,17 +37,6 @@ class PresidenciaComissaoLista(generics.ListAPIView):
 
     def get_queryset(self):
        
-        # interesse_arg = self.request.query_params.get("interesse")
-        # if interesse_arg is None:
-        #     interesse_arg = "leggo"
-        # interesses = get_filtered_interesses(interesse_arg)
-
-        # lista_ids = list(
-        #     Atores.objects.filter(id_leggo__in=interesses).values_list(
-        #         "id_autor_parlametria", flat=True
-        #     )
-        # )
-        
         data = get_comissao_parlamentar()
         
         return data
