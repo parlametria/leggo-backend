@@ -56,7 +56,7 @@ urlpatterns = [
         CoautoriaEdgeList.as_view()),
     url(r'^autorias/(?P<id>[0-9]+)/?$',
         AutoriaList.as_view()),
-    url(r'^autorias/autor/(?P<id_autor>[0-9]+)/?$',
+    url(r'^ator/(?P<id_autor>[0-9]+)/autorias/?$',
         AutoriasAutorList.as_view()),
     url(r'^autorias/agregadas/?$',
         AutoriasAgregadasList.as_view()),
