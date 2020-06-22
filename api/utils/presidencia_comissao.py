@@ -5,8 +5,8 @@ from api.utils.csv_servers import post_req
 
 URL_PRESIDENCIA_COMISSAO = "https://perfil.parlametria.org/api/busca-parlamentar"
 
-
 def get_comissao_parlamentar():
+  
     try:
         r = requests.get(url=URL_PRESIDENCIA_COMISSAO)
         data = json.loads(r.text)
@@ -15,15 +15,14 @@ def get_comissao_parlamentar():
         
         for obj in data:
             for index in obj['parlamentarComissoes']:
-                print(index)
-                print("---")
-                if( index['cargo'] == "Presidente"):
+                if(index['cargo'] == "Presidente"):
                     countComissoes += 1
                     obj_arr.append({
-                        'idParlamentarVoz': obj['idParlamentarVoz'],
-                        'idComissaoPresidencia': index['idComissaoVoz'],
-                        'quantidadePresidenciaComissoes': countComissoes,
-                        'infoComissao': index['infoComissao']
+                        'id_comissao': index['idComissaoVoz'],
+                        'id_autor': obj['idParlamentar'],
+                        'id_autor_Voz': obj['idParlamentarVoz'],
+                        'info_comissao': index['infoComissao'],
+                        'quantidade_comissao_presidente': countComissoes
                         })
                     countComissoes = 0
         return obj_arr 
