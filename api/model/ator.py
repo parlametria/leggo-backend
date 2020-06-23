@@ -18,7 +18,7 @@ class Atores(models.Model):
         max_length=6, choices=casas.items(),
         help_text='Casa desta proposição.')
 
-    id_autor = models.FloatField('Id do autor do documento')
+    id_autor = models.IntegerField('Id do autor do documento')
 
     tipo_autor = models.TextField('Tipo do autor')
 
