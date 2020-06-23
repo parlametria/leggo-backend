@@ -10,6 +10,7 @@ from api.utils.filters import get_filtered_autores, get_filtered_interesses
 
 class AtorSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
     nome_autor = serializers.CharField()
     partido = serializers.CharField()
     uf = serializers.CharField()
@@ -35,8 +36,9 @@ class AtorList(generics.ListAPIView):
         id_autor_arg = self.kwargs['id_autor']
         ator = (
             Atores.objects
-            .filter(id_leggo__in=interesses, id_autor=id_autor_arg)
-            .values('id_autor', 'nome_autor', 'uf', 'partido',
+            .filter(id_leggo__in=interesses,
+                    id_autor_parlametria=id_autor_arg)
+            .values('id_autor', 'id_autor_parlametria', 'nome_autor', 'uf', 'partido',
                     'casa', 'bancada')
             .order_by('-casa')
             .distinct()
@@ -96,6 +98,7 @@ class AtoresProposicaoList(generics.ListAPIView):
 
 class AtoresAgregadosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
     nome_autor = serializers.CharField()
     partido = serializers.CharField()
     uf = serializers.CharField()
@@ -123,7 +126,8 @@ class AtoresAgregadosList(generics.ListAPIView):
 
         atores = (
             Atores.objects.filter(id_leggo__in=interesses)
-            .values("id_autor", "nome_autor", "uf", "partido", "casa", "bancada")
+            .values("id_autor", "id_autor_parlametria", "nome_autor", "uf",
+                    "partido", "casa", "bancada")
             .annotate(
                 total_documentos=Sum("num_documentos"),
                 peso_documentos=Sum("peso_total_documentos"),

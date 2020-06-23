@@ -41,6 +41,7 @@ class AutoriaList(generics.ListAPIView):
 
 class AutoriaAutorSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
     id_documento = serializers.IntegerField()
     id_leggo = serializers.IntegerField()
     data = serializers.DateField()
@@ -67,7 +68,8 @@ class AutoriasAutorList(generics.ListAPIView):
         id_autor_arg = self.kwargs['id_autor']
         autorias = (
             Autoria.objects
-            .filter(id_leggo__in=interesses, id_autor=id_autor_arg)
+            .filter(id_leggo__in=interesses,
+                    id_autor_parlametria=id_autor_arg)
         )
         return autorias
 
@@ -127,7 +129,6 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         interesses = get_filtered_interesses(interesse_arg)
 
         id_autor_parlametria = self.kwargs["id_autor"]
-        print(id_autor_parlametria)
 
         autorias = (
             Autoria.objects
