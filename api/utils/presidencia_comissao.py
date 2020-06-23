@@ -20,7 +20,7 @@ def get_comissao_parlamentar():
                     obj_arr.append({
                         'id_comissao': index['idComissaoVoz'],
                         'id_autor': obj['idParlamentar'],
-                        'id_autor_Voz': obj['idParlamentarVoz'],
+                        'id_autor_voz': obj['idParlamentarVoz'],
                         'info_comissao': index['infoComissao'],
                         'quantidade_comissao_presidente': countComissoes
                         })
