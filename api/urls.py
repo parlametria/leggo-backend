@@ -22,7 +22,11 @@ from api.views.autoria_serializer import (AutoriaList,
                                           AutoriasAgregadasList,
                                           AutoriasAutorList)
 from api.views.interesse_serializer import InteresseList
-from api.views.anotacao_serializer import AnotacaoListByProp, AnotacaoList
+from api.views.anotacao_serializer import (
+    AnotacaoListByProp,
+    AnotacaoList,
+    AnotacaoGeralList
+)
 from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
 from api.views.presidencia_comissao_serializer import PresidenciaComissaoLista
 from api.views.peso_politico_serializer import PesoPoliticoLista, PesoPoliticoParlamentar
@@ -79,6 +83,8 @@ urlpatterns = [
         AnotacaoList.as_view()),
     url(r'^anotacoes/(?P<id>[0-9]+)/?$',
         AnotacaoListByProp.as_view()),
+    url(r'^anotacoes-gerais/?$',
+        AnotacaoGeralList.as_view()),
     url(r'^temperatura/max/?$',
         TemperaturaMaxPeriodo.as_view()),
     url(r'^comissao/presidencia/?$',
