@@ -44,7 +44,7 @@ urlpatterns = [
         AtoresProposicaoList.as_view()),
     url(r'^atores/agregados/?$',
         AtoresAgregadosList.as_view()),
-    url(r'^atores/relatorias/detalhada/?$',
+    url(r'^atores/relatorias/detalhada/(?P<id_autor>[0-9]+)/?$',
         AtoresRelatoriasDetalhada.as_view()),
     url(r'^pressao/(?P<id_leggo>[0-9]+)/?$',
         PressaoList.as_view()),

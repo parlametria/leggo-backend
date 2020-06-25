@@ -108,7 +108,7 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
         '''
         Retorna id's e quantidade de relatorias de um determinado parlamentar
         '''
-        leggo_id_autor = self.request.query_params.get('id_autor')
+        leggo_id_autor = self.kwargs['id_autor']
         interesseArg = self.request.query_params.get('interesse')
         if interesseArg is None:
             interesseArg = 'leggo'
