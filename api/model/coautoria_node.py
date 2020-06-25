@@ -23,9 +23,17 @@ class CoautoriaNode(models.Model):
     bancada = models.TextField(
         help_text='Bancada do parlamentar.')
 
+    casa_autor = models.TextField(
+        null=True,
+        help_text='Casa do autor.')
+
     nome_eleitoral = models.TextField(
         help_text='Nome eleitoral do parlamentar.')
 
     node_size = models.FloatField(
         help_text='Tamanho do nó'
     )
+
+    id_autor_parlametria = models.IntegerField(
+        null=True,
+        help_text='Id do autor na plataforma parlametria.')

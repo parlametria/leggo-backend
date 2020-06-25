@@ -18,7 +18,7 @@ class Atores(models.Model):
         max_length=6, choices=casas.items(),
         help_text='Casa desta proposição.')
 
-    id_autor = models.FloatField('Id do autor do documento')
+    id_autor = models.IntegerField('Id do autor do documento')
 
     tipo_autor = models.TextField('Tipo do autor')
 
@@ -46,6 +46,14 @@ class Atores(models.Model):
     is_important = models.BooleanField(
         'É uma comissão ou plenário'
     )
+
+    id_autor_parlametria = models.IntegerField(
+        null=True,
+        help_text='Id do autor na plataforma parlametria.')
+
+    casa_autor = models.TextField(
+        null=True,
+        help_text='Casa do autor do documento.')
 
     @property
     def sigla_local_formatada(self):
