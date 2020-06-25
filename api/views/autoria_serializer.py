@@ -47,6 +47,7 @@ class AutoriaAutorSerializer(serializers.Serializer):
     data = serializers.DateField()
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
+    tipo_documento = serializers.CharField()
 
 
 class AutoriasAutorList(generics.ListAPIView):
