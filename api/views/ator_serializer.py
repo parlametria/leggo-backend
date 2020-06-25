@@ -198,7 +198,8 @@ class AtoresRelatoresSerializer(serializers.Serializer):
 class AtoresRelatoriasList(generics.ListAPIView):
 
     serializer_class = AtoresRelatoresSerializer
-     @swagger_auto_schema(
+    
+    @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
                 "interesse",
