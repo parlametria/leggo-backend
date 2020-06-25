@@ -17,6 +17,7 @@ from api.model.coautoria_edge import CoautoriaEdge
 from api.model.autoria import Autoria
 from api.model.interesse import Interesse
 from api.model.anotacao import Anotacao
+from api.model.anotacao_geral import AnotacaoGeral
 
 
 def import_etapas_proposicoes():
@@ -312,7 +313,7 @@ def import_atores():
                 "is_important",
                 "bancada",
                 "id_autor_parlametria",
-                "casa_autor"
+                "casa_autor",
             ]
         ].assign(proposicao=prop)
         Atores.objects.bulk_create(
@@ -441,9 +442,9 @@ def import_interesse():
         )
 
 
-def import_anotacoes():
+def import_anotacoes_especificas():
     """Carrega anotações das proposições"""
-    grouped = pd.read_csv("data/anotacoes.csv").groupby(["id_leggo"])
+    grouped = pd.read_csv("data/anotacoes_especificas.csv").groupby(["id_leggo"])
 
     for group_index in grouped.groups:
         id_leggo = {"id_leggo": group_index}
@@ -469,6 +470,20 @@ def import_anotacoes():
         Anotacao.objects.bulk_create(
             Anotacao(**r[1].to_dict()) for r in group_df.iterrows()
         )
+
+
+def import_anotacoes_gerais():
+    """Carrega anotações dos interesses"""
+    anotacoes = pd.read_csv("data/anotacoes_gerais.csv")
+
+    AnotacaoGeral.objects.bulk_create(
+        AnotacaoGeral(**r[1].to_dict()) for r in anotacoes.iterrows()
+    )
+
+
+def import_anotacoes():
+    import_anotacoes_especificas()
+    import_anotacoes_gerais()
 
 
 def import_all_data():
