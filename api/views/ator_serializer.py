@@ -125,7 +125,7 @@ class AtoresAgregadosList(generics.ListAPIView):
         interesses = get_filtered_interesses(interesse_arg)
 
         atores = (
-            Atores.objects.filter(id_leggo__in=interesses)
+            Atores.objects.filter(id_leggo__in=interesses.values('id_leggo'))
             .values("id_autor", "id_autor_parlametria", "nome_autor", "uf",
                     "partido", "casa", "bancada")
             .annotate(
