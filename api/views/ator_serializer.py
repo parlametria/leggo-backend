@@ -137,7 +137,7 @@ class AtoresAgregadosList(generics.ListAPIView):
         return atores
 
 class AtoresRelatoriasDetalhadaSerializer(serializers.Serializer):
-    id_leggo = serializers.ListField()
+    ids_relatorias = serializers.ListField()
     quantidade_relatorias = serializers.IntegerField()
 
 class AtoresRelatoriasDetalhada(generics.ListAPIView):
@@ -182,7 +182,7 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
 
         queryset = [
             {
-                'id_leggo': relatorias,
+                'ids_relatorias': relatorias,
                 'quantidade_relatorias': len(relatorias)
             }
         ]
