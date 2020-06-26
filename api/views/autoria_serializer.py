@@ -69,7 +69,7 @@ class AutoriasAutorList(generics.ListAPIView):
         id_autor_arg = self.kwargs['id_autor']
         autorias = (
             Autoria.objects
-            .filter(id_leggo__in=interesses,
+            .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg)
         )
         return autorias
@@ -100,13 +100,15 @@ class AutoriasAgregadasList(generics.ListAPIView):
 
         autorias = (
             Autoria.objects
-            .filter(id_leggo__in=interesses, tipo_documento="Prop. Original / Apensada")
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    tipo_documento="Prop. Original / Apensada")
             .values('id_autor', 'id_autor_parlametria')
             .annotate(quantidade_autorias=Count('id_autor'))
             .prefetch_related(
                 Prefetch("interesse", queryset=interesses)
             )
         )
+
         return autorias
 
 
@@ -134,7 +136,8 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         autorias = (
             Autoria.objects
             .filter(id_autor_parlametria=id_autor_parlametria,
-                    id_leggo__in=interesses, tipo_documento="Prop. Original / Apensada")
+                    id_leggo__in=interesses.values('id_leggo'),
+                    tipo_documento="Prop. Original / Apensada")
             .values('id_autor', 'id_autor_parlametria')
             .annotate(quantidade_autorias=Count('id_autor'))
             .prefetch_related(

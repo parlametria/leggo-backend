@@ -43,7 +43,7 @@ class PesoPoliticoLista(generics.ListAPIView):
         interesses = get_filtered_interesses(interesse_arg)
 
         lista_ids = list(
-            Atores.objects.filter(id_leggo__in=interesses).values_list(
+            Atores.objects.filter(id_leggo__in=interesses.values('id_leggo')).values_list(
                 "id_autor_parlametria", flat=True
             )
         )
