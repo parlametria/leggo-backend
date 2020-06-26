@@ -86,7 +86,7 @@ class EtapaProposicao(models.Model):
 
         autores = []
         presidencia = ['Poder Executivo', 'Presidência', 'Câmara dos Deputados',
-                       'Iniciativa Popular']
+                       'Iniciativa Popular', 'Mesa Diretora da Câmara dos Deputados']
         for i in range(len(nomes)):
             autor = nomes[i].strip()
             if autor in presidencia:
@@ -105,8 +105,11 @@ class EtapaProposicao(models.Model):
                 if self.casa == 'senado':
                     autores.append('Sen. ' + autor)
                 else:
-                    autores.append('Dep. ' +
-                                   autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
+                    if 'Sen.' in autor:
+                        autores.append(autor)
+                    else:
+                        autores.append('Dep. ' +
+                                       autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
         return autores
 
     @property
