@@ -36,7 +36,7 @@ class AtorList(generics.ListAPIView):
         id_autor_arg = self.kwargs['id_autor']
         ator = (
             Atores.objects
-            .filter(id_leggo__in=interesses,
+            .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg)
             .values('id_autor', 'id_autor_parlametria', 'nome_autor', 'uf', 'partido',
                     'casa', 'bancada')
@@ -125,7 +125,7 @@ class AtoresAgregadosList(generics.ListAPIView):
         interesses = get_filtered_interesses(interesse_arg)
 
         atores = (
-            Atores.objects.filter(id_leggo__in=interesses)
+            Atores.objects.filter(id_leggo__in=interesses.values('id_leggo'))
             .values("id_autor", "id_autor_parlametria", "nome_autor", "uf",
                     "partido", "casa", "bancada")
             .annotate(
@@ -219,7 +219,7 @@ class AtoresRelatoriasList(generics.ListAPIView):
         interesses = get_filtered_interesses(interesseArg)
 
         queryset = (
-            EtapaProposicao.objects.filter(id_leggo__in=interesses)
+            EtapaProposicao.objects.filter(id_leggo__in=interesses.values('id_leggo'))
             .exclude(relator_nome="Relator não encontrado")
             .values("id")
             .distinct()
