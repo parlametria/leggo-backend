@@ -166,7 +166,7 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
         interesses = get_filtered_interesses(interesseArg)
 
         atoresRE = (
-            Atores.objects.filter(id_autor=leggo_id_autor)
+            Atores.objects.filter(id_autor_parlametria=leggo_id_autor)
             .values('nome_autor')
             .distinct()
         )
