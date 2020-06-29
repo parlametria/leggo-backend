@@ -13,6 +13,7 @@ from api.views.ator_serializer import (
     AtoresAgregadosList,
     AtoresProposicaoList,
     AtoresRelatoriasList,
+    AtoresRelatoriasDetalhada,
     AtorList,
 )
 from api.views.pressao_serializer import PressaoList
@@ -63,6 +64,8 @@ urlpatterns = [
         AtoresRelatoriasList.as_view()),
     url(r'^atores/agregados/?$',
         AtoresAgregadosList.as_view()),
+    url(r'^atores/relatorias/detalhada/(?P<id_autor>[0-9]+)/?$',
+        AtoresRelatoriasDetalhada.as_view()),
     url(r'^pressao/(?P<id_leggo>[0-9]+)/?$',
         PressaoList.as_view()),
     url(r'^coautorias_node/(?P<id>[0-9]+)/?$',
