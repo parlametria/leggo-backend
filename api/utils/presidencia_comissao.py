@@ -32,6 +32,7 @@ def get_comissao_parlamentar():
 
 
 def get_comissao_parlamentar_id(id_parlamentar):
+    
     try:
         r = requests.get(url=URL_PRESIDENCIA_COMISSAO)
         data = json.loads(r.text)
@@ -39,7 +40,7 @@ def get_comissao_parlamentar_id(id_parlamentar):
         countComissoes = 0
 
         for obj in data:
-            if(obj['idParlamentar'] == id_parlamentar):
+            if(obj['idParlamentarVoz'] == id_parlamentar):
                 for index in obj['parlamentarComissoes']:
                     if(index['cargo'] == "Presidente"):
                         countComissoes += 1
