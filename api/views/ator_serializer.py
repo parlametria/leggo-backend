@@ -136,9 +136,11 @@ class AtoresAgregadosList(generics.ListAPIView):
         )
         return atores
 
+
 class AtoresRelatoriasDetalhadaSerializer(serializers.Serializer):
     ids_relatorias = serializers.ListField()
     quantidade_relatorias = serializers.IntegerField()
+
 
 class AtoresRelatoriasDetalhada(generics.ListAPIView):
 
@@ -154,7 +156,6 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
                 type=openapi.TYPE_STRING),
         ]
     )
-
     def get_queryset(self):
         '''
         Retorna id's e quantidade de relatorias de um determinado parlamentar
@@ -170,7 +171,7 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
             .values('nome_autor')
             .distinct()
         )
-        
+
         relatorias = list(
             EtapaProposicao.objects.filter(id_leggo__in=interesses)
             .filter(relator_nome__icontains=atoresRE)
@@ -189,6 +190,7 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
 
         return queryset
 
+
 class AtoresRelatoresSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
@@ -198,7 +200,7 @@ class AtoresRelatoresSerializer(serializers.Serializer):
 class AtoresRelatoriasList(generics.ListAPIView):
 
     serializer_class = AtoresRelatoresSerializer
-    
+
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
