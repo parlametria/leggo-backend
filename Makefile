@@ -80,6 +80,9 @@ endif
 	@echo "    "
 	@echo "    shell"
 	@echo "        This command will open a psql terminal to manage the DB"
+	@echo "    "
+	@echo "    test"
+	@echo "        This command will run the tests for the repository"
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -137,3 +140,6 @@ endif
  shell:
 	docker exec -it "dbapi" psql -U postgres
 .PHONY: shell
+ test:
+	docker exec -it agorapi sh -c './manage.py test_all'
+.PHONY: test
