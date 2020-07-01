@@ -1,0 +1,7 @@
+data_criacao,data_ultima_modificacao,autor,categoria,titulo,anotacao,peso,interesse
+2020-06-24T08:34:17Z,2020-06-24T08:34:35Z,Pulso Público,NA,Insight geral 1,Este é um exemplo de insight geral para o interesse primeira-infancia.,99,primeira-infancia
+2020-06-24T08:34:39Z,2020-06-24T08:34:46Z,Pulso Público,NA,Insight geral 2,Este é um segundo exemplo de insight geral para o interesse primeira-infancia.,99,primeira-infancia
+2020-06-24T08:34:53Z,2020-06-24T08:34:53Z,Pulso Público,NA,Insight geral 3,Este é um terceiro exemplo de insight geral para o interesse primeira-infancia.,99,primeira-infancia
+2020-06-24T08:34:57Z,2020-06-24T08:34:56Z,Pulso Público,NA,Insight geral 4,Este é um quarto exemplo de insight geral para o interesse primeira-infancia.,99,primeira-infancia
+2020-06-24T08:54:23Z,2020-06-24T08:54:32Z,Pulso Público,NA,Insight geral 1,Este é um exemplo de insight geral para o interesse congresso-remoto.,99,congresso-remoto
+2020-06-24T08:54:35Z,2020-06-24T08:54:41Z,Pulso Público,NA,Insight geral 2,Este é um segundo exemplo de insight geral para o interesse congresso-remoto.,99,congresso-remoto
