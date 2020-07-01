@@ -59,5 +59,3 @@ def get_comissao_parlamentar_id(id_parlamentar):
         print(e)
         return []
    
-def getInfoComissao(info):
-    return  info['sigla']
