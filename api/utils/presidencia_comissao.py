@@ -49,12 +49,11 @@ def get_comissao_parlamentar_id(id_parlamentar):
                             'id_comissao': index['idComissaoVoz'],
                             'id_autor': obj['idParlamentar'],
                             'id_autor_voz': obj['idParlamentarVoz'],
-                            'info_comissao': info,
+                            'info_comissao': index['infoComissao']['sigla'],
                             'quantidade_comissao_presidente': countComissoes
                         })
                         countComissoes = 0
         return obj_arr
-
 
     except Exception as e:
         print(e)
