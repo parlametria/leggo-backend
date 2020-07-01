@@ -43,7 +43,6 @@ def get_comissao_parlamentar_id(id_parlamentar):
             if(obj['idParlamentarVoz'] == id_parlamentar):
                 for index in obj['parlamentarComissoes']:
                     if(index['cargo'] == "Presidente"):
-                        info = getInfoComissao(index['infoComissao'])
                         countComissoes += 1
                         obj_arr.append({
                             'id_comissao': index['idComissaoVoz'],
