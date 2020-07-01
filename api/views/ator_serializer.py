@@ -137,6 +137,60 @@ class AtoresAgregadosList(generics.ListAPIView):
         return atores
 
 
+class AtoresRelatoriasDetalhadaSerializer(serializers.Serializer):
+    ids_relatorias = serializers.ListField()
+    quantidade_relatorias = serializers.IntegerField()
+
+
+class AtoresRelatoriasDetalhada(generics.ListAPIView):
+
+    serializer_class = AtoresRelatoriasDetalhadaSerializer
+
+    @swagger_auto_schema(
+        manual_parameters=[
+            openapi.Parameter(
+                'id_autor', openapi.IN_PATH, 'id do autor no sistema Leggo',
+                type=openapi.TYPE_STRING),
+            openapi.Parameter(
+                'interesse', openapi.IN_PATH, 'interesse da proposição no sistema Leggo',
+                type=openapi.TYPE_STRING),
+        ]
+    )
+    def get_queryset(self):
+        '''
+        Retorna id's e quantidade de relatorias de um determinado parlamentar
+        '''
+        leggo_id_autor = self.kwargs['id_autor']
+        interesseArg = self.request.query_params.get('interesse')
+        if interesseArg is None:
+            interesseArg = 'leggo'
+        interesses = get_filtered_interesses(interesseArg)
+
+        atoresRE = (
+            Atores.objects.filter(id_autor_parlametria=leggo_id_autor)
+            .values('nome_autor')
+            .distinct()
+        )
+
+        relatorias = list(
+            EtapaProposicao.objects.filter(id_leggo__in=interesses)
+            .filter(relator_nome__icontains=atoresRE)
+            .values('id_leggo')
+            .prefetch_related(
+                Prefetch("interesse", queryset=interesses)
+            )
+        )
+
+        queryset = [
+            {
+                'ids_relatorias': relatorias,
+                'quantidade_relatorias': len(relatorias)
+            }
+        ]
+
+        return queryset
+
+
 class AtoresRelatoresSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
