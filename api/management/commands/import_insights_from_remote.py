@@ -20,7 +20,14 @@ class Command(BaseCommand):
             get_file(
                 settings.CSVS_SERVER_URL,
                 token,
-                "anotacoes.csv",
+                "anotacoes_especificas.csv",
+                settings.CSVS_STORAGE_DIR,
+            )
+
+            get_file(
+                settings.CSVS_SERVER_URL,
+                token,
+                "anotacoes_gerais.csv",
                 settings.CSVS_STORAGE_DIR,
             )
 

@@ -32,6 +32,7 @@ O make deste repositório ajuda a executar alguns comandos docker comuns durante
 **make update** | Realiza as migrações e importa os dados.
 **make update-data-remote** | Atualiza o banco de acordo com os dados do servidor remoto. Muio útil para quando não se quer processar os dados localmente usando os repositórios de tratamento de dados. Os csvs são recuperados já processados e são importados para o banco de dados pelo leggo-backend.
 **make shell** | Abre terminal psql para o banco de dados presente no container dbapi.
+**make test** | Executa linter e testes localmente.
 **make run** | Build e create dos containers. (não usa o leggo-geral)	
 **make start** | Começa containers já existentes. (não usa o leggo-geral)		
 **make import** | Importa dados da pasta `data/` e escreve no banco de dados.
