@@ -86,7 +86,8 @@ class EtapaProposicao(models.Model):
 
         autores = []
         presidencia = ['Poder Executivo', 'Presidência', 'Câmara dos Deputados',
-                       'Iniciativa Popular', 'Mesa Diretora da Câmara dos Deputados']
+                       'Presidência da República', 'Iniciativa Popular',
+                       'Mesa Diretora da Câmara dos Deputados']
         for i in range(len(nomes)):
             autor = nomes[i].strip()
             if autor in presidencia:
