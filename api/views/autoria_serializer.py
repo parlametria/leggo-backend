@@ -148,6 +148,7 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         )
         return autorias
 
+
 class AcoesSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
@@ -155,9 +156,10 @@ class AcoesSerializer(serializers.Serializer):
     ranking_documentos = serializers.IntegerField()
     tipo_documento = serializers.CharField()
 
+
 class Acoes(generics.ListAPIView):
     '''
-    Dados de ações de um parlamentar. Apresenta números de emendas e requerimentos, 
+    Dados de ações de um parlamentar. Apresenta números de emendas e requerimentos,
     assim como sua posição no ranking.
     '''
 
@@ -171,7 +173,7 @@ class Acoes(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg)
-        
+
         autores = (
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
@@ -183,10 +185,11 @@ class Acoes(generics.ListAPIView):
             autores.filter(tipo_documento__in=['Emenda', 'Requerimento'])
             .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
             .annotate(num_documentos=Count('tipo_documento'))
-            .annotate(ranking_documentos = Window(
+            .annotate(ranking_documentos=Window(
                     expression=RowNumber(),
                     partition_by=[F('tipo_documento')],
-                    order_by=F('num_documentos').desc())).order_by('ranking_documentos', 'tipo_documento')
+                    order_by=F('num_documentos').desc()))
+            .order_by('ranking_documentos', 'tipo_documento')
         )
 
         return result
