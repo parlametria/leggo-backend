@@ -182,7 +182,7 @@ class Acoes(generics.ListAPIView):
         )
 
         result = (
-            autores.filter(tipo_documento__in=['Emenda', 'Requerimento'])
+            autores.filter(tipo_documento__in=['Emenda', 'Requerimento', 'Outros'])
             .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
             .annotate(num_documentos=Count('tipo_documento'))
             .annotate(ranking_documentos=Window(
