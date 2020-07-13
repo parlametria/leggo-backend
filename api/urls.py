@@ -32,6 +32,7 @@ from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
 from api.views.presidencia_comissao_serializer import PresidenciaComissaoLista
 from api.views.peso_politico_serializer import PesoPoliticoLista, PesoPoliticoParlamentar
 from api.views.autoria_serializer import AutoriasAgregadasByAutor
+from api.views.entidade_serializer import EntidadeList
 
 
 # router = DefaultRouter()
@@ -95,5 +96,7 @@ urlpatterns = [
     url(r'^atores/peso_politico/?$',
         PesoPoliticoLista.as_view()),
     url(r'^atores/peso_politico/(?P<id>[0-9]+)/?$',
-        PesoPoliticoParlamentar.as_view())
+        PesoPoliticoParlamentar.as_view()),
+    url(r'^entidades/?$',
+        EntidadeList.as_view()),
 ]
