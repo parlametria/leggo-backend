@@ -18,6 +18,7 @@ from api.model.autoria import Autoria
 from api.model.interesse import Interesse
 from api.model.anotacao import Anotacao
 from api.model.anotacao_geral import AnotacaoGeral
+from api.model.entidade import Entidade
 
 
 def import_etapas_proposicoes():
@@ -481,6 +482,34 @@ def import_anotacoes_gerais():
     )
 
 
+def import_entidades():
+    grouped = pd.read_csv("data/entidades.csv")
+
+    grouped = grouped.groupby(["legislatura", "id_entidade_parlametria"])
+
+    for group_index in grouped.groups:
+
+        group_df = grouped.get_group(group_index)[
+            [
+                "legislatura",
+                "id_entidade",
+                "id_entidade_parlametria",
+                "casa",
+                "nome",
+                "sexo",
+                "partido",
+                "uf",
+                "situacao",
+                "em_exercicio",
+                "is_parlamentar"
+            ]
+        ]
+
+        Entidade.objects.bulk_create(
+            Entidade(**r[1].to_dict()) for r in group_df.iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -497,6 +526,7 @@ def import_all_data():
     import_pautas()
     import_emendas()
     import_comissoes()
+    import_entidades()
     import_atores()
     import_pressao()
     import_coautoria_node()
@@ -516,6 +546,7 @@ def import_all_data_but_insights():
     import_pautas()
     import_emendas()
     import_comissoes()
+    import_entidades()
     import_atores()
     import_pressao()
     import_coautoria_node()
