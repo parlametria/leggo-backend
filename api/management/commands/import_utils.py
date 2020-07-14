@@ -537,7 +537,6 @@ def import_all_data():
 
 def import_all_data_but_insights():
     """Importa dados dos csv e salva no banco (menos os insights)."""
-    import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
