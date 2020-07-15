@@ -19,6 +19,7 @@ from api.model.interesse import Interesse
 from api.model.anotacao import Anotacao
 from api.model.anotacao_geral import AnotacaoGeral
 from api.model.entidade import Entidade
+from api.model.autores_proposicao import AutoresProposicao
 
 
 def import_etapas_proposicoes():
@@ -415,6 +416,23 @@ def get_interesse(interesse_obj, entity_str):
     return interesse
 
 
+def get_entidade(entidade_obj, entity_str):
+    entidade = None
+
+    try:
+        entidade = (
+            Entidade.objects.filter(**entidade_obj)
+            .order_by('id_entidade_parlametria', '-legislatura')
+            .distinct('id_entidade_parlametria').first()
+        )
+    except Exception as e:
+        print("Não foi possivel encontrar a entidade: {}".format(str(entidade_obj)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
+
+    return entidade
+
+
 def import_interesse():
     """Carrega Interesses"""
     grouped = pd.read_csv("data/interesses.csv").groupby(["id_leggo"])
@@ -510,6 +528,53 @@ def import_entidades():
         )
 
 
+def import_autores_proposicoes():
+    """Carrega Autores das proposições"""
+    grouped = pd.read_csv("data/autores_leggo.csv")
+    grouped = grouped.groupby(["id_autor_parlametria", "id_leggo"])
+
+    for group_index in grouped.groups:
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index[0]}
+
+        id_leggo = {"id_leggo": group_index[1]}
+
+        entidade_relacionada = get_entidade(id_entidade_parlametria,
+                                            "AutoresProposicaoEntidade")
+
+        prop = get_proposicao(id_leggo, "AutoresProposicaoProp")
+
+        if entidade_relacionada is None:
+            continue
+
+        if prop is None:
+            continue
+
+        group_df = (grouped.get_group(group_index)[
+            [
+                "id_leggo",
+                "id_camara",
+                "id_senado",
+                "id_autor_parlametria",
+                "id_autor"
+            ]
+        ]
+            .assign(entidade=entidade_relacionada)
+            .assign(proposicao=prop)
+        )
+
+        a = []
+        for r in group_df.iterrows():
+            if r[1]['id_camara'] == 'None':
+                r[1]['id_camara'] = None
+            
+            if r[1]['id_senado'] == 'None':
+                r[1]['id_senado'] = None
+
+            a.append(AutoresProposicao(**r[1].to_dict()))
+
+        AutoresProposicao.objects.bulk_create(a)
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -532,6 +597,7 @@ def import_all_data():
     import_coautoria_node()
     import_coautoria_edge()
     import_autoria()
+    import_autores_proposicoes()
     import_anotacoes()
 
 
@@ -552,6 +618,7 @@ def import_all_data_but_insights():
     import_coautoria_node()
     import_coautoria_edge()
     import_autoria()
+    import_autores_proposicoes()
 
 
 def import_insights():
