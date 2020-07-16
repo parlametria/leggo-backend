@@ -566,7 +566,7 @@ def import_autores_proposicoes():
         for r in group_df.iterrows():
             if r[1]['id_camara'] == 'None':
                 r[1]['id_camara'] = None
-            
+
             if r[1]['id_senado'] == 'None':
                 r[1]['id_senado'] = None
 

@@ -34,4 +34,13 @@ class AutoresProposicao(models.Model):
     entidade = models.ForeignKey(
         Entidade, on_delete=models.CASCADE, related_name='entidadeAutor', null=True)
 
-    
+    @property
+    def autor(self):
+        infoAutor = {
+            "nome": self.entidade.nome,
+            "uf": self.entidade.uf,
+            "partido": self.entidade.partido,
+            "is_parlamentar": self.entidade.is_parlamentar,
+            "casa": self.entidade.casa
+        }
+        return infoAutor
