@@ -5,7 +5,6 @@ URL_PRESIDENCIA_COMISSAO = "https://perfil.parlametria.org/api/busca-parlamentar
 
 
 def get_comissao_parlamentar(listaComissoesPassadas):
-    
     try:
         r = requests.get(url=URL_PRESIDENCIA_COMISSAO)
         data = json.loads(r.text)
@@ -32,7 +31,7 @@ def get_comissao_parlamentar(listaComissoesPassadas):
         return []
 
 def get_comissao_parlamentar_id(id_parlamentar, listaComissoesPassadas):
-  
+
     try:
         r = requests.get(url=URL_PRESIDENCIA_COMISSAO)
         data = json.loads(r.text)
