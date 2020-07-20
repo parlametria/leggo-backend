@@ -33,11 +33,8 @@ from api.views.anotacao_serializer import (
 from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
 from api.views.presidencia_comissao_serializer import PresidenciaComissaoLista, PresidenciaComissaoParlamentar
 from api.views.peso_politico_serializer import PesoPoliticoLista, PesoPoliticoParlamentar
-<<<<<<< HEAD
 from api.views.autoria_serializer import AutoriasAgregadasByAutor
 from api.views.entidade_serializer import EntidadeList
-=======
->>>>>>> 052ff135cd26c1d1b3e52cd0549808aa09fcc9c9
 
 
 # router = DefaultRouter()
