@@ -3,7 +3,9 @@ from api.views.interesse_serializer import InteresseSerializer
 from api.model.tramitacao_event import TramitacaoEvent
 from api.utils.presidencia_comissao import (
     get_comissao_parlamentar,
-    get_comissao_parlamentar_id)
+    get_comissao_parlamentar_id,
+)
+
 
 class PresidenciaComissaoSerializer(serializers.Serializer):
 
@@ -14,29 +16,29 @@ class PresidenciaComissaoSerializer(serializers.Serializer):
     info_comissao = serializers.CharField()
     interesse = InteresseSerializer(many=True, read_only=True)
 
+
 class PresidenciaComissaoLista(generics.ListAPIView):
     serializer_class = PresidenciaComissaoSerializer
 
     def get_queryset(self):
 
-        '''
+        """
         Retorna informações sobre os parlamentares presidentes de comissões que
         passaram por tramitação.
-        '''
+        """
         interesseArg = self.request.query_params.get("interesse")
 
         if interesseArg is None:
             interesseArg = "leggo"
 
-        consultaTramitacao = TramitacaoEvent.objects.raw("SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
-
+        consultaTramitacao = TramitacaoEvent.objects.raw(
+            "SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
             + "LEFT JOIN api_etapaproposicao as etapa ON etapa_proposicao_id = etapa.id "
-
             + "LEFT JOIN api_proposicao as prop ON proposicao_id = prop.id "
-
             + "LEFT JOIN api_interesse as interesse ON prop.id = interesse.id "
-
-            + "WHERE interesse.interesse = %s ", [interesseArg])
+            + "WHERE interesse.interesse = %s ",
+            [interesseArg],
+        )
 
         listaComissoesPassadas = []
 
@@ -47,28 +49,28 @@ class PresidenciaComissaoLista(generics.ListAPIView):
 
         return data
 
+
 class PresidenciaComissaoParlamentar(generics.ListAPIView):
 
     serializer_class = PresidenciaComissaoSerializer
 
     def get_queryset(self):
 
-        '''Retorna informações sobre os parlamentares presidentes de comissões de
-        acordo com o id.'''
+        """Retorna informações sobre os parlamentares presidentes de comissões de
+        acordo com o id."""
         interesseArg = self.request.query_params.get("interesse")
 
         if interesseArg is None:
             interesseArg = "leggo"
 
-        consultaTramitacao = TramitacaoEvent.objects.raw("SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
-
+        consultaTramitacao = TramitacaoEvent.objects.raw(
+            "SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
             + "LEFT JOIN api_etapaproposicao as etapa ON etapa_proposicao_id = etapa.id "
-
             + "LEFT JOIN api_proposicao as prop ON proposicao_id = prop.id "
-
             + "LEFT JOIN api_interesse as interesse ON prop.id = interesse.id "
-
-            + "WHERE interesse.interesse = %s ", [interesseArg])
+            + "WHERE interesse.interesse = %s ",
+            [interesseArg],
+        )
 
         listaComissoesPassadas = []
 
