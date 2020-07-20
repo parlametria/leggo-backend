@@ -1,7 +1,9 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import Count, Prefetch
+from django.db.models import F, Count, Prefetch
+from django.db.models.expressions import Window
+from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
 from api.utils.filters import get_filtered_interesses
@@ -145,3 +147,49 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
             )
         )
         return autorias
+
+
+class AcoesSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
+    num_documentos = serializers.IntegerField()
+    ranking_documentos = serializers.IntegerField()
+    tipo_documento = serializers.CharField()
+
+
+class Acoes(generics.ListAPIView):
+    '''
+    Dados de ações de um parlamentar. Apresenta números de emendas e requerimentos,
+    assim como sua posição no ranking.
+    '''
+
+    serializer_class = AcoesSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna as ações do parlamentar
+        '''
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg)
+
+        autores = (
+            Autoria.objects
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    data__gte='2019-01-31')
+            .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
+        )
+
+        result = (
+            autores.filter(tipo_documento__in=['Emenda', 'Requerimento', 'Outros'])
+            .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
+            .annotate(num_documentos=Count('tipo_documento'))
+            .annotate(ranking_documentos=Window(
+                    expression=RowNumber(),
+                    partition_by=[F('tipo_documento')],
+                    order_by=F('num_documentos').desc()))
+            .order_by('ranking_documentos', 'tipo_documento')
+        )
+
+        return result
