@@ -35,6 +35,7 @@ from api.views.presidencia_comissao_serializer import PresidenciaComissaoLista, 
 from api.views.peso_politico_serializer import PesoPoliticoLista, PesoPoliticoParlamentar
 from api.views.autoria_serializer import AutoriasAgregadasByAutor
 from api.views.entidade_serializer import EntidadeList
+from api.views.autores_proposicao_serializer import AutoresList
 
 
 # router = DefaultRouter()
@@ -104,5 +105,7 @@ urlpatterns = [
     url(r'^entidades/?$',
         EntidadeList.as_view()),
     url(r'^autorias/acoes/?$',
-        Acoes.as_view())
+        Acoes.as_view()),
+    url(r'^autores/?$',
+        AutoresList.as_view()),
 ]
