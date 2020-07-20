@@ -290,7 +290,7 @@ def import_emendas():
 
 def import_atores():
     """Carrega Atores"""
-    atores_df = pd.read_csv("data/atores.csv").groupby(["id_leggo"])
+    atores_df = pd.read_csv("data/atuacao.csv").groupby(["id_leggo"])
     for group_index in atores_df.groups:
         id_leggo = {"id_leggo": group_index}
 
