@@ -14,7 +14,7 @@ class AtorSerializer(serializers.Serializer):
     nome_autor = serializers.CharField()
     partido = serializers.CharField()
     uf = serializers.CharField()
-    casa = serializers.CharField()
+    casa_autor = serializers.CharField()
     bancada = serializers.CharField()
 
 
@@ -39,8 +39,8 @@ class AtorList(generics.ListAPIView):
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg)
             .values('id_autor', 'id_autor_parlametria', 'nome_autor', 'uf', 'partido',
-                    'casa', 'bancada')
-            .order_by('-casa')
+                    'casa_autor', 'bancada')
+            .order_by('-casa_autor')
             .distinct()
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
