@@ -42,7 +42,6 @@ class AutoriaList(generics.ListAPIView):
 
 
 class AutoriaAutorSerializer(serializers.Serializer):
-    id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
     id_documento = serializers.IntegerField()
     id_leggo = serializers.IntegerField()
@@ -50,6 +49,9 @@ class AutoriaAutorSerializer(serializers.Serializer):
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
     tipo_documento = serializers.CharField()
+    etapa_proposicao__sigla_tipo = serializers.CharField()
+    etapa_proposicao__numero = serializers.IntegerField()
+    etapa_proposicao__data_apresentacao = serializers.DateField()
 
 
 class AutoriasAutorList(generics.ListAPIView):
@@ -73,6 +75,11 @@ class AutoriasAutorList(generics.ListAPIView):
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg)
+            .select_related('etapa_proposicao')
+            .values('id_autor_parlametria', 'id_documento', 'id_leggo',
+                    'data', 'descricao_tipo_documento', 'url_inteiro_teor',
+                    'tipo_documento', 'etapa_proposicao__sigla_tipo', 
+                    'etapa_proposicao__numero', 'etapa_proposicao__data_apresentacao')
         )
         return autorias
 
@@ -186,9 +193,9 @@ class Acoes(generics.ListAPIView):
             .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
             .annotate(num_documentos=Count('tipo_documento'))
             .annotate(ranking_documentos=Window(
-                    expression=RowNumber(),
-                    partition_by=[F('tipo_documento')],
-                    order_by=F('num_documentos').desc()))
+                expression=RowNumber(),
+                partition_by=[F('tipo_documento')],
+                order_by=F('num_documentos').desc()))
             .order_by('ranking_documentos', 'tipo_documento')
         )
 
