@@ -102,7 +102,7 @@ class AtoresAgregadosSerializer(serializers.Serializer):
     nome_autor = serializers.CharField()
     partido = serializers.CharField()
     uf = serializers.CharField()
-    casa = serializers.CharField()
+    casa_autor = serializers.CharField()
     bancada = serializers.CharField()
     total_documentos = serializers.IntegerField()
     peso_documentos = serializers.IntegerField()
@@ -127,7 +127,7 @@ class AtoresAgregadosList(generics.ListAPIView):
         atores = (
             Atores.objects.filter(id_leggo__in=interesses.values('id_leggo'))
             .values("id_autor", "id_autor_parlametria", "nome_autor", "uf",
-                    "partido", "casa", "bancada")
+                    "partido", "casa_autor", "bancada")
             .annotate(
                 total_documentos=Sum("num_documentos"),
                 peso_documentos=Sum("peso_total_documentos"),
