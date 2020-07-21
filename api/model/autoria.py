@@ -48,3 +48,7 @@ class Autoria(models.Model):
     tipo_documento = models.TextField(
         null=True,
         help_text='Tipo geral do documento.')
+
+    peso_autor_documento = models.FloatField(
+        null=True,
+        help_text='Peso do autor no documento')
