@@ -50,7 +50,7 @@ class AutoriaAutorSerializer(serializers.Serializer):
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
     tipo_documento = serializers.CharField()
-    peso_autor_documento = serializers.IntegerField()
+    peso_autor_documento = serializers.FloatField()
 
 
 class AutoriasAutorList(generics.ListAPIView):
