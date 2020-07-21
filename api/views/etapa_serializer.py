@@ -10,10 +10,10 @@ class EtapasSerializer(serializers.ModelSerializer):
         model = EtapaProposicao
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
-            'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'autores', 'relator_nome', 'casa_origem',
-            'em_pauta', 'status', 'top_resumo_tramitacao',
-            'comissoes_passadas', 'pauta_historico')
+            'regime_tramitacao', 'forma_apreciacao', 'ementa', 'url',
+            'relator_nome', 'casa_origem',
+            'em_pauta', 'status',
+            'pauta_historico')
 
 
 class EtapasDetailSerializer(serializers.ModelSerializer):
@@ -24,7 +24,7 @@ class EtapasDetailSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'id_ext', 'casa', 'sigla', 'data_apresentacao', 'ano', 'sigla_tipo',
             'regime_tramitacao', 'forma_apreciacao', 'ementa', 'justificativa', 'url',
-            'autores', 'relator_nome', 'casa_origem',
+            'relator_nome', 'casa_origem',
             'em_pauta', 'status', 'resumo_tramitacao',
             'comissoes_passadas', 'pauta_historico')
 

@@ -12,16 +12,21 @@ def get_comissao_parlamentar(listaComissoesPassadas):
         countComissoes = 0
 
         for obj in data:
-            for index in obj['parlamentarComissoes']:
-                if(index['cargo'] == "Presidente" and index['infoComissao']['sigla'] in listaComissoesPassadas):
+            for index in obj["parlamentarComissoes"]:
+                if (
+                    index["cargo"] == "Presidente"
+                    and index["infoComissao"]["sigla"] in listaComissoesPassadas
+                ):
                     countComissoes += 1
-                    obj_arr.append({
-                        'id_comissao': index['idComissaoVoz'],
-                        'id_autor': obj['idParlamentar'],
-                        'id_autor_voz': obj['idParlamentarVoz'],
-                        'info_comissao': index['infoComissao']['sigla'],
-                        'quantidade_comissao_presidente': countComissoes
-                    })
+                    obj_arr.append(
+                        {
+                            "id_comissao": index["idComissaoVoz"],
+                            "id_autor": obj["idParlamentar"],
+                            "id_autor_voz": obj["idParlamentarVoz"],
+                            "info_comissao": index["infoComissao"]["sigla"],
+                            "quantidade_comissao_presidente": countComissoes,
+                        }
+                    )
                     countComissoes = 0
 
         return obj_arr
@@ -29,6 +34,7 @@ def get_comissao_parlamentar(listaComissoesPassadas):
     except Exception as e:
         print(e)
         return []
+
 
 def get_comissao_parlamentar_id(id_parlamentar, listaComissoesPassadas):
 
@@ -39,17 +45,22 @@ def get_comissao_parlamentar_id(id_parlamentar, listaComissoesPassadas):
         countComissoes = 0
 
         for obj in data:
-            if(obj['idParlamentarVoz'] == id_parlamentar):
-                for index in obj['parlamentarComissoes']:
-                    if(index['cargo'] == "Presidente" and index['infoComissao']['sigla'] in listaComissoesPassadas):
+            if obj["idParlamentarVoz"] == id_parlamentar:
+                for index in obj["parlamentarComissoes"]:
+                    if (
+                        index["cargo"] == "Presidente"
+                        and index["infoComissao"]["sigla"] in listaComissoesPassadas
+                    ):
                         countComissoes += 1
-                        obj_arr.append({
-                            'id_comissao': index['idComissaoVoz'],
-                            'id_autor': obj['idParlamentar'],
-                            'id_autor_voz': obj['idParlamentarVoz'],
-                            'info_comissao': index['infoComissao']['sigla'],
-                            'quantidade_comissao_presidente': countComissoes
-                        })
+                        obj_arr.append(
+                            {
+                                "id_comissao": index["idComissaoVoz"],
+                                "id_autor": obj["idParlamentar"],
+                                "id_autor_voz": obj["idParlamentarVoz"],
+                                "info_comissao": index["infoComissao"]["sigla"],
+                                "quantidade_comissao_presidente": countComissoes,
+                            }
+                        )
                         countComissoes = 0
 
         return obj_arr
