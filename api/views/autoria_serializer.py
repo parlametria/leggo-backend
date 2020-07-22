@@ -1,8 +1,9 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import F, Count, Prefetch
+from django.db.models import F, Count, Prefetch, Value, CharField
 from django.db.models.expressions import Window
+from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
@@ -50,9 +51,7 @@ class AutoriaAutorSerializer(serializers.Serializer):
     url_inteiro_teor = serializers.CharField()
     tipo_documento = serializers.CharField()
     peso_autor_documento = serializers.FloatField()
-    etapa_proposicao__sigla_tipo = serializers.CharField()
-    etapa_proposicao__numero = serializers.IntegerField()
-    etapa_proposicao__data_apresentacao = serializers.DateField()
+    sigla = serializers.CharField()
 
 
 class AutoriasAutorList(generics.ListAPIView):
@@ -79,9 +78,19 @@ class AutoriasAutorList(generics.ListAPIView):
             .select_related('etapa_proposicao')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
-                    'tipo_documento', 'etapa_proposicao__sigla_tipo', 
-                    'etapa_proposicao__numero', 'etapa_proposicao__data_apresentacao')
+                    'tipo_documento', 'peso_autor_documento',
+                    'etapa_proposicao__sigla_tipo',
+                    'etapa_proposicao__numero',
+                    'etapa_proposicao__data_apresentacao')
+            .annotate(
+                sigla=Concat(
+                    'etapa_proposicao__sigla_tipo', Value(' '),
+                    'etapa_proposicao__numero', Value('/'),
+                    ExtractYear('etapa_proposicao__data_apresentacao'),
+                    output_field=CharField())
+                )
         )
+
         return autorias
 
 

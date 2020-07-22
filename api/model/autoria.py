@@ -1,6 +1,6 @@
 from django.db import models
-from api.model.proposicao import Proposicao
 from api.model.etapa_proposicao import EtapaProposicao
+
 
 class Autoria(models.Model):
     '''
