@@ -1,7 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import F, Count, Prefetch, Value, CharField
+from django.db.models import F, Count, Prefetch, Value, CharField, Sum
 from django.db.models.expressions import Window
 from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
@@ -74,7 +74,8 @@ class AutoriasAutorList(generics.ListAPIView):
         autorias = (
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
-                    id_autor_parlametria=id_autor_arg)
+                    id_autor_parlametria=id_autor_arg,
+                    data__gte='2019-01-31')
             .select_related('etapa_proposicao')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
@@ -172,6 +173,7 @@ class AcoesSerializer(serializers.Serializer):
     num_documentos = serializers.IntegerField()
     ranking_documentos = serializers.IntegerField()
     tipo_documento = serializers.CharField()
+    peso_total = serializers.FloatField()
 
 
 class Acoes(generics.ListAPIView):
@@ -202,10 +204,11 @@ class Acoes(generics.ListAPIView):
             autores.filter(tipo_documento__in=['Emenda', 'Requerimento', 'Outros'])
             .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
             .annotate(num_documentos=Count('tipo_documento'))
+            .annotate(peso_total=Sum('peso_autor_documento'))
             .annotate(ranking_documentos=Window(
                 expression=RowNumber(),
                 partition_by=[F('tipo_documento')],
-                order_by=F('num_documentos').desc()))
+                order_by=F('peso_total').desc()))
             .order_by('ranking_documentos', 'tipo_documento')
         )
 
