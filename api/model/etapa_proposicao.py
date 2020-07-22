@@ -76,44 +76,6 @@ class EtapaProposicao(models.Model):
         ordering = ('data_apresentacao',)
 
     @property
-    def autores(self):
-        '''
-        Retorna autores das pls de acordo com partido e UF
-        '''
-        nomes = self.autor_nome.split('+')
-        partidos = self.autor_partido.split('+')
-        ufs = self.autor_uf.split('+')
-
-        autores = []
-        presidencia = ['Poder Executivo', 'Presidência', 'Câmara dos Deputados',
-                       'Presidência da República', 'Iniciativa Popular',
-                       'Mesa Diretora da Câmara dos Deputados']
-        for i in range(len(nomes)):
-            autor = nomes[i].strip()
-            if autor in presidencia:
-                autores.append(autor)
-            elif 'Senado Federal' in autor:
-                senado = autor.split(' - ')
-                if 'Comissão' in senado[-1]:
-                    autores.append(senado[-1])
-                else:
-                    autores.append('Sen. ' + senado[-1])
-            elif 'Legislação' in autor:
-                autores.append('Câm. ' + autor)
-            elif self.casa_origem == 'senado':
-                autores.append('Sen. ' + autor)
-            else:
-                if self.casa == 'senado':
-                    autores.append('Sen. ' + autor)
-                else:
-                    if 'Sen.' in autor:
-                        autores.append(autor)
-                    else:
-                        autores.append('Dep. ' +
-                                       autor + ' (' + partidos[i] + '-' + ufs[i] + ')')
-        return autores
-
-    @property
     def sigla(self):
         '''Sigla da proposição (ex.: PL 400/2010)'''
         return f'{self.sigla_tipo} {self.numero}/{self.ano}'
