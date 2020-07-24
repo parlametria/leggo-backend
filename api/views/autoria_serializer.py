@@ -200,9 +200,11 @@ class Acoes(generics.ListAPIView):
             .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
         )
 
+        (autores.filter(tipo_documento__in=['Outros', 'Parecer', 'Prop. Original / Apensada', 'Voto em Separado'])
+            .update(tipo_documento='Outros'))
+
         result = (
-            autores.filter(tipo_documento__in=['Emenda', 'Requerimento', 'Outros'])
-            .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
+            autores.values('id_autor', 'id_autor_parlametria', 'tipo_documento')
             .annotate(num_documentos=Count('tipo_documento'))
             .annotate(peso_total=Sum('peso_autor_documento'))
             .annotate(ranking_documentos=Window(
