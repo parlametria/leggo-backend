@@ -200,7 +200,9 @@ class Acoes(generics.ListAPIView):
             .values('id_autor', 'id_autor_parlametria', 'tipo_documento')
         )
 
-        (autores.filter(tipo_documento__in=['Outros', 'Parecer', 'Prop. Original / Apensada', 'Voto em Separado'])
+        (autores.filter(tipo_documento__in=['Outros', 'Parecer',
+                                            'Prop. Original / Apensada',
+                                            'Voto em Separado'])
             .update(tipo_documento='Outros'))
 
         result = (
