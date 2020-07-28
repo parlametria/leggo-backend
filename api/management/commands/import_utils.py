@@ -28,9 +28,25 @@ def import_etapas_proposicoes():
         data_apresentacao=lambda x: x.data_apresentacao.apply(lambda s: s.split("T")[0])
     )
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
-    EtapaProposicao.objects.bulk_create(
-        EtapaProposicao(**r[1].to_dict()) for r in props_df.iterrows()
-    )
+
+    props_df = props_df.groupby(["id_leggo", "relator_id_parlametria"])
+    
+    for group_index in props_df.groups:
+        
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
+        relator = get_entidade(id_entidade_parlametria, "EtapaProposicao")
+
+        if relator is None:
+            continue
+
+        group_df = (
+            props_df.get_group(group_index)
+            .assign(relatoria=relator)
+        )
+
+        EtapaProposicao.objects.bulk_create(
+            EtapaProposicao(**r[1].to_dict()) for r in group_df.iterrows()
+        )
 
 
 def import_proposicoes():
@@ -422,8 +438,9 @@ def get_entidade(entidade_obj, entity_str):
     try:
         entidade = (
             Entidade.objects.filter(**entidade_obj)
-            .order_by('id_entidade_parlametria', '-legislatura')
-            .distinct('id_entidade_parlametria').first()
+            .order_by("id_entidade_parlametria", "-legislatura")
+            .distinct("id_entidade_parlametria")
+            .first()
         )
     except Exception as e:
         print("Não foi possivel encontrar a entidade: {}".format(str(entidade_obj)))
@@ -519,7 +536,7 @@ def import_entidades():
                 "uf",
                 "situacao",
                 "em_exercicio",
-                "is_parlamentar"
+                "is_parlamentar",
             ]
         ]
 
@@ -538,8 +555,9 @@ def import_autores_proposicoes():
 
         id_leggo = {"id_leggo": group_index[1]}
 
-        entidade_relacionada = get_entidade(id_entidade_parlametria,
-                                            "AutoresProposicaoEntidade")
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "AutoresProposicaoEntidade"
+        )
 
         prop = get_proposicao(id_leggo, "AutoresProposicaoProp")
 
@@ -549,26 +567,27 @@ def import_autores_proposicoes():
         if prop is None:
             continue
 
-        group_df = (grouped.get_group(group_index)[
-            [
-                "id_leggo",
-                "id_camara",
-                "id_senado",
-                "id_autor_parlametria",
-                "id_autor"
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "id_camara",
+                    "id_senado",
+                    "id_autor_parlametria",
+                    "id_autor",
+                ]
             ]
-        ]
             .assign(entidade=entidade_relacionada)
             .assign(proposicao=prop)
         )
 
         a = []
         for r in group_df.iterrows():
-            if r[1]['id_camara'] == 'None':
-                r[1]['id_camara'] = None
+            if r[1]["id_camara"] == "None":
+                r[1]["id_camara"] = None
 
-            if r[1]['id_senado'] == 'None':
-                r[1]['id_senado'] = None
+            if r[1]["id_senado"] == "None":
+                r[1]["id_senado"] = None
 
             a.append(AutoresProposicao(**r[1].to_dict()))
 
@@ -582,6 +601,7 @@ def import_anotacoes():
 
 def import_all_data():
     """Importa dados dos csv e salva no banco."""
+    import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
@@ -591,7 +611,6 @@ def import_all_data():
     import_pautas()
     import_emendas()
     import_comissoes()
-    import_entidades()
     import_atores()
     import_pressao()
     import_coautoria_node()
@@ -603,6 +622,7 @@ def import_all_data():
 
 def import_all_data_but_insights():
     """Importa dados dos csv e salva no banco (menos os insights)."""
+    import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
@@ -612,7 +632,6 @@ def import_all_data_but_insights():
     import_pautas()
     import_emendas()
     import_comissoes()
-    import_entidades()
     import_atores()
     import_pressao()
     import_coautoria_node()
