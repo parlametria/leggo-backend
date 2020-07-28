@@ -89,3 +89,35 @@ class EntidadeList(generics.ListAPIView):
             queryset = queryset.filter(uf=uf_arg)
 
         return queryset
+
+
+class EntidadeParlamentarSerializer(serializers.ModelSerializer):
+    id_autor_parlametria = serializers.IntegerField(source='id_entidade_parlametria')
+    casa_autor = serializers.CharField(source='casa')
+    nome_autor = serializers.CharField(source='nome')
+
+    class Meta:
+        model = Entidade
+        fields = (
+            "id_autor_parlametria",
+            "casa_autor",
+            "nome_autor",
+            "partido",
+            "uf"
+        )
+
+
+class ParlamentaresExercicioList(generics.ListAPIView):
+    """
+    Retorna lista com todos os parlamentares em exercício para a legislatura 56
+    """
+
+    serializer_class = EntidadeParlamentarSerializer
+
+    def get_queryset(self):
+
+        queryset = Entidade.objects.filter(legislatura=56,
+                                           is_parlamentar=1,
+                                           em_exercicio=1)
+
+        return queryset
