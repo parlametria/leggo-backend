@@ -1,4 +1,5 @@
 from django.db import models
+from api.model.etapa_proposicao import EtapaProposicao
 
 
 class Autoria(models.Model):
@@ -52,3 +53,6 @@ class Autoria(models.Model):
     peso_autor_documento = models.FloatField(
         null=True,
         help_text='Peso do autor no documento')
+
+    etapa_proposicao = models.ForeignKey(
+        EtapaProposicao, on_delete=models.CASCADE, related_name='autorias', null=True)

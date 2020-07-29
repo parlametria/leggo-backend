@@ -1,8 +1,9 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import F, Count, Prefetch
+from django.db.models import F, Count, Prefetch, Value, CharField, Sum
 from django.db.models.expressions import Window
+from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
@@ -50,7 +51,6 @@ class AutoriaList(generics.ListAPIView):
 
 
 class AutoriaAutorSerializer(serializers.Serializer):
-    id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
     id_documento = serializers.IntegerField()
     id_leggo = serializers.IntegerField()
@@ -58,6 +58,8 @@ class AutoriaAutorSerializer(serializers.Serializer):
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
     tipo_documento = serializers.CharField()
+    peso_autor_documento = serializers.FloatField()
+    sigla = serializers.CharField()
 
 
 class AutoriasAutorList(generics.ListAPIView):
@@ -77,11 +79,28 @@ class AutoriasAutorList(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = "leggo"
         interesses = get_filtered_interesses(interesse_arg)
-        id_autor_arg = self.kwargs["id_autor"]
-        autorias = Autoria.objects.filter(
-            id_leggo__in=interesses.values("id_leggo"),
-            id_autor_parlametria=id_autor_arg,
+        id_autor_arg = self.kwargs['id_autor']
+        autorias = (
+            Autoria.objects
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    id_autor_parlametria=id_autor_arg,
+                    data__gte='2019-01-31')
+            .select_related('etapa_proposicao')
+            .values('id_autor_parlametria', 'id_documento', 'id_leggo',
+                    'data', 'descricao_tipo_documento', 'url_inteiro_teor',
+                    'tipo_documento', 'peso_autor_documento',
+                    'etapa_proposicao__sigla_tipo',
+                    'etapa_proposicao__numero',
+                    'etapa_proposicao__data_apresentacao')
+            .annotate(
+                sigla=Concat(
+                    'etapa_proposicao__sigla_tipo', Value(' '),
+                    'etapa_proposicao__numero', Value('/'),
+                    ExtractYear('etapa_proposicao__data_apresentacao'),
+                    output_field=CharField())
+                )
         )
+
         return autorias
 
 
@@ -163,6 +182,7 @@ class AcoesSerializer(serializers.Serializer):
     num_documentos = serializers.IntegerField()
     ranking_documentos = serializers.IntegerField()
     tipo_documento = serializers.CharField()
+    peso_total = serializers.FloatField()
 
 
 class Acoes(generics.ListAPIView):
@@ -186,18 +206,20 @@ class Acoes(generics.ListAPIView):
             id_leggo__in=interesses.values("id_leggo"), data__gte="2019-01-31"
         ).values("id_autor", "id_autor_parlametria", "tipo_documento")
 
+        (autores.filter(tipo_documento__in=['Outros', 'Parecer',
+                                            'Prop. Original / Apensada',
+                                            'Voto em Separado'])
+            .update(tipo_documento='Outros'))
+
         result = (
-            autores.filter(tipo_documento__in=["Emenda", "Requerimento", "Outros"])
-            .values("id_autor", "id_autor_parlametria", "tipo_documento")
-            .annotate(num_documentos=Count("tipo_documento"))
-            .annotate(
-                ranking_documentos=Window(
-                    expression=RowNumber(),
-                    partition_by=[F("tipo_documento")],
-                    order_by=F("num_documentos").desc(),
-                )
-            )
-            .order_by("ranking_documentos", "tipo_documento")
+            autores.values('id_autor', 'id_autor_parlametria', 'tipo_documento')
+            .annotate(num_documentos=Count('tipo_documento'))
+            .annotate(peso_total=Sum('peso_autor_documento'))
+            .annotate(ranking_documentos=Window(
+                expression=RowNumber(),
+                partition_by=[F('tipo_documento')],
+                order_by=F('peso_total').desc()))
+            .order_by('ranking_documentos', 'tipo_documento')
         )
 
         return result
