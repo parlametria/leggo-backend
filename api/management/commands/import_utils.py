@@ -30,19 +30,16 @@ def import_etapas_proposicoes():
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
 
     props_df = props_df.groupby(["id_leggo", "relator_id_parlametria"])
-    
+
     for group_index in props_df.groups:
-        
+
         id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
         relator = get_entidade(id_entidade_parlametria, "EtapaProposicao")
 
         if relator is None:
             continue
 
-        group_df = (
-            props_df.get_group(group_index)
-            .assign(relatoria=relator)
-        )
+        group_df = props_df.get_group(group_index).assign(relatoria=relator)
 
         EtapaProposicao.objects.bulk_create(
             EtapaProposicao(**r[1].to_dict()) for r in group_df.iterrows()
