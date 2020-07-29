@@ -2,6 +2,7 @@ from django.db import models
 from api.utils.ator import get_nome_partido_uf
 from api.model.etapa_proposicao import Proposicao
 from api.model.etapa_proposicao import Choices
+from api.model.entidade import Entidade
 
 
 class Atores(models.Model):
@@ -14,6 +15,7 @@ class Atores(models.Model):
                                  help_text='Id externo do sistema da casa.')
 
     casas = Choices('camara senado')
+    
     casa = models.CharField(
         max_length=6, choices=casas.items(),
         help_text='Casa desta proposição.')
@@ -21,12 +23,6 @@ class Atores(models.Model):
     id_autor = models.IntegerField('Id do autor do documento')
 
     tipo_autor = models.TextField('Tipo do autor')
-
-    nome_autor = models.TextField('Nome do autor do documento')
-
-    partido = models.TextField('Partido do ator')
-
-    uf = models.TextField('Estado do ator')
 
     bancada = models.TextField('Bancada do ator')
 
@@ -65,11 +61,8 @@ class Atores(models.Model):
 
         return self.sigla_local + ' - ' + casa
 
-    @property
-    def nome_partido_uf(self):
-        '''Nome do parlamentar + partido e UF'''
-        return get_nome_partido_uf(self.casa, self.bancada,
-                                   self.nome_autor, self.partido, self.uf)
-
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='atores')
+
+    entidade = models.ForeignKey(
+        Entidade, on_delete=models.CASCADE, related_name='entidadeAtor', null=True)

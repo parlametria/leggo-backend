@@ -291,37 +291,46 @@ def import_emendas():
 def import_atores():
     """Carrega Atores"""
     atores_df = pd.read_csv("data/atuacao.csv").groupby(["id_leggo"])
+
     for group_index in atores_df.groups:
+
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index}
+        
         id_leggo = {"id_leggo": group_index}
 
         prop = get_proposicao(id_leggo, "Atores")
+        entidade_relacionada = get_entidade(id_entidade_parlametria, 
+                                            "AtoresProposicaoEntidade")       
+
+        if entidade_relacionada is None:
+            continue
 
         if prop is None:
             continue
 
-        group_df = atores_df.get_group(group_index)[
-            [
-                "id_leggo",
-                "id_ext",
-                "casa",
-                "id_autor",
-                "nome_autor",
-                "partido",
-                "uf",
-                "peso_total_documentos",
-                "num_documentos",
-                "tipo_generico",
-                "sigla_local",
-                "is_important",
-                "bancada",
-                "id_autor_parlametria",
-                "casa_autor",
+        group_df = (
+            atores_df.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "id_ext",
+                    "casa",
+                    "id_autor",
+                    "peso_total_documentos",
+                    "num_documentos",
+                    "tipo_generico",
+                    "sigla_local",
+                    "is_important",
+                    "bancada",
+                    "id_autor_parlametria",
+                    "casa_autor",
+                ]
             ]
-        ].assign(proposicao=prop)
+            .assign(proposicao=prop)
+            .assign(entidade=entidade_relacionada)
+        )
         Atores.objects.bulk_create(
             Atores(**r[1].to_dict()) for r in group_df.iterrows()
         )
-
 
 def import_comissoes():
     """Carrega Comissoes"""

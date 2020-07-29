@@ -1,7 +1,7 @@
 from rest_framework import serializers, generics
 from api.model.comissao import Comissao
 
-
+# ASK 
 class ComissaoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comissao
