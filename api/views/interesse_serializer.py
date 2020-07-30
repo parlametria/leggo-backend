@@ -8,12 +8,18 @@ class InteresseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interesse
         fields = (
-            'interesse', 'nome_interesse', 'temas', 'apelido', 'advocacy_link',
-            'tipo_agenda', 'ultima_pressao')
+            "interesse",
+            "nome_interesse",
+            "temas",
+            "apelido",
+            "advocacy_link",
+            "tipo_agenda",
+            "ultima_pressao",
+        )
 
 
 class InteresseList(generics.ListAPIView):
-    '''
+    """
     Apresenta lista com mapeamento entre as proposições analisadas e os
     interesses abordados pelo Leggo. Um interesse é um assunto geral
     no qual um conjunto de proposições está relacionado. O primeiro
@@ -23,20 +29,23 @@ class InteresseList(generics.ListAPIView):
     Outros possíveis interesses seriam Primeira Infância (conjunto
     de proposições ligadas a direitos e deveres relacionados às
     crianças).
-    '''
+    """
 
     serializer_class = InteresseSerializer
 
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                'id', openapi.IN_PATH, 'id da proposição no sistema do Leg.go',
-                type=openapi.TYPE_INTEGER),
+                "id",
+                openapi.IN_PATH,
+                "id da proposição no sistema do Leg.go",
+                type=openapi.TYPE_INTEGER,
+            ),
         ]
     )
     def get_queryset(self):
-        '''
+        """
         Retorna interesses associados a uma PL
-        '''
-        id_prop = self.kwargs['id']
+        """
+        id_prop = self.kwargs["id"]
         return Interesse.objects.filter(id_leggo=id_prop)

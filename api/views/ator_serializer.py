@@ -11,14 +11,15 @@ from api.utils.filters import get_filtered_autores, get_filtered_interesses
 class AtorSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    nome_autor = serializers.CharField()
-    partido = serializers.CharField()
-    uf = serializers.CharField()
+    nome_autor = serializers.CharField(source='entidade__nome')
+    partido = serializers.CharField(source='entidade__partido')
+    uf = serializers.CharField(source='entidade__uf')
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
 
 
 class AtorList(generics.ListAPIView):
+
     '''
     Informações sobre um parlamentar específico.
     '''
@@ -38,30 +39,25 @@ class AtorList(generics.ListAPIView):
             Atores.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg)
-            .values('id_autor', 'id_autor_parlametria', 'nome_autor', 'uf', 'partido',
-                    'casa_autor', 'bancada')
+            .select_related('entidade')
+            .values('id_autor', 'id_autor_parlametria', 'entidade__nome',
+                    'entidade__uf', 'entidade__partido', 'casa_autor', 'bancada')
             .order_by('-casa_autor')
             .distinct()
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
+
         return ator
 
 
-class AtoresSerializerComissoes(serializers.ModelSerializer):
-    class Meta:
-        model = Atores
-        fields = (
-            "id_autor",
-            "nome_autor",
-            "partido",
-            "uf",
-            "peso_total_documentos",
-            "num_documentos",
-            "tipo_generico",
-            "sigla_local_formatada",
-            "is_important",
-            "nome_partido_uf",
-        )
+class AtoresSerializerComissoes(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
+    nome_autor = serializers.CharField(source='entidade__nome')
+    partido = serializers.CharField(source='entidade__partido')
+    uf = serializers.CharField(source='entidade__uf')
+    casa_autor = serializers.CharField()
+    bancada = serializers.CharField()
 
 
 class AtoresProposicaoList(generics.ListAPIView):
@@ -92,16 +88,21 @@ class AtoresProposicaoList(generics.ListAPIView):
         Retorna os atores por proposição
         """
         prop_leggo_id = self.kwargs["id_leggo"]
-        queryset = Atores.objects.filter(id_leggo=prop_leggo_id)
+        queryset = (
+            Atores.objects.filter(id_leggo=prop_leggo_id)
+            .select_related('entidade')
+            .values('id_autor', 'id_autor_parlametria', 'entidade__nome',
+                    'entidade__uf', 'entidade__partido', 'casa_autor', 'bancada')
+        )
         return get_filtered_autores(self.request, queryset)
 
 
 class AtoresAgregadosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    nome_autor = serializers.CharField()
-    partido = serializers.CharField()
-    uf = serializers.CharField()
+    nome_autor = serializers.CharField(source='entidade__nome')
+    partido = serializers.CharField(source='entidade__partido')
+    uf = serializers.CharField(source='entidade__uf')
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
     total_documentos = serializers.IntegerField()
@@ -126,8 +127,9 @@ class AtoresAgregadosList(generics.ListAPIView):
 
         atores = (
             Atores.objects.filter(id_leggo__in=interesses.values('id_leggo'))
-            .values("id_autor", "id_autor_parlametria", "nome_autor", "uf",
-                    "partido", "casa_autor", "bancada")
+            .select_related('entidade')
+            .values("id_autor", "id_autor_parlametria", "entidade__nome", "entidade__uf",
+                    "entidade__partido", "casa_autor", "bancada")
             .annotate(
                 total_documentos=Sum("num_documentos"),
                 peso_documentos=Sum("peso_total_documentos"),
@@ -213,7 +215,7 @@ class AtoresRelatoriasList(generics.ListAPIView):
     )
     def get_queryset(self):
         """
-        Retrona parlamentares e a quantidade de relatorias
+        Retorna parlamentares e a quantidade de relatorias
         """
         interesseArg = self.request.query_params.get("interesse")
         if interesseArg is None:
