@@ -250,7 +250,7 @@ class AutoriasOriginaisList(generics.ListAPIView):
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31',
-                    descricao_tipo_documento='Projeto de Lei')
+                    tipo_documento='Prop. Original / Apensada')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
                     'tipo_documento')
