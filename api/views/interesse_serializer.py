@@ -11,10 +11,11 @@ class InteresseSerializer(serializers.ModelSerializer):
             "interesse",
             "nome_interesse",
             "temas",
+            "slug_temas",
             "apelido",
             "advocacy_link",
             "tipo_agenda",
-            "ultima_pressao",
+            "ultima_pressao"
         )
 
 
