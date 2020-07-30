@@ -60,10 +60,10 @@ class TemaList(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = 'leggo'
 
-        tema = (
+        temas = (
             Interesse.objects.filter(interesse=interesse_arg)
             .values('tema')
             .distinct()
         )
 
-        return tema
+        return temas
