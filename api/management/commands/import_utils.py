@@ -295,13 +295,13 @@ def import_emendas():
 def import_atores():
     """Carrega Atores"""
     atores_df = pd.read_csv("data/atuacao.csv").groupby(["id_leggo",
-                                                        " id_autor_parlametria"])
+                                                        "id_autor_parlametria"])
 
     for group_index in atores_df.groups:
 
-        id_entidade_parlametria = {"id_entidade_parlametria": group_index[0]}
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
 
-        id_leggo = {"id_leggo": group_index[1]}
+        id_leggo = {"id_leggo": group_index[0]}
 
         prop = get_proposicao(id_leggo, "Atores")
         entidade_relacionada = get_entidade(id_entidade_parlametria,
