@@ -40,3 +40,20 @@ class InteresseList(generics.ListAPIView):
         '''
         id_prop = self.kwargs['id']
         return Interesse.objects.filter(id_leggo=id_prop)
+
+
+class TemaSerializer(serializers.ModelSerializer):
+    tema = serializers.CharField()
+
+    # [tipo_agenda]
+
+class TemaList(generics.ListAPIView):
+
+    serializer_class = TemaSerializer
+
+    def get_queryset(self):
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg)
+
