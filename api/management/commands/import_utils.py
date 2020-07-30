@@ -299,12 +299,12 @@ def import_atores():
     for group_index in atores_df.groups:
 
         id_entidade_parlametria = {"id_entidade_parlametria": group_index}
-        
+
         id_leggo = {"id_leggo": group_index}
 
         prop = get_proposicao(id_leggo, "Atores")
-        entidade_relacionada = get_entidade(id_entidade_parlametria, 
-                                            "AtoresProposicaoEntidade")       
+        entidade_relacionada = get_entidade(id_entidade_parlametria,
+                                            "AtoresProposicaoEntidade")
 
         if entidade_relacionada is None:
             continue
@@ -336,8 +336,11 @@ def import_atores():
             Atores(**r[1].to_dict()) for r in group_df.iterrows()
         )
 
+
 def import_comissoes():
+
     """Carrega Comissoes"""
+
     comissoes_df = pd.read_csv("data/comissoes.csv").groupby(["casa", "sigla"])
     for group_index in comissoes_df.groups:
         group_df = comissoes_df.get_group(group_index)

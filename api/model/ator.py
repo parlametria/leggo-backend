@@ -1,5 +1,4 @@
 from django.db import models
-from api.utils.ator import get_nome_partido_uf
 from api.model.etapa_proposicao import Proposicao
 from api.model.etapa_proposicao import Choices
 from api.model.entidade import Entidade
@@ -15,7 +14,6 @@ class Atores(models.Model):
                                  help_text='Id externo do sistema da casa.')
 
     casas = Choices('camara senado')
-    
     casa = models.CharField(
         max_length=6, choices=casas.items(),
         help_text='Casa desta proposição.')

@@ -4,7 +4,6 @@ from drf_yasg.utils import swagger_auto_schema
 from django.db.models import Prefetch, Sum, Count
 
 from api.model.ator import Atores
-from api.model.entidade import Entidade
 from api.model.etapa_proposicao import EtapaProposicao
 from api.utils.filters import get_filtered_autores, get_filtered_interesses
 
@@ -12,13 +11,15 @@ from api.utils.filters import get_filtered_autores, get_filtered_interesses
 class AtorSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    entidade__nome = serializers.CharField()
-    entidade__partido = serializers.CharField()
-    entidade__uf = serializers.CharField()
+    nome_autor = serializers.CharField(source='entidade__nome')
+    partido = serializers.CharField(source='entidade__partido')
+    uf = serializers.CharField(source='entidade__uf')
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
 
+
 class AtorList(generics.ListAPIView):
+
     '''
     Informações sobre um parlamentar específico.
     '''
@@ -39,22 +40,22 @@ class AtorList(generics.ListAPIView):
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg)
             .select_related('entidade')
-            .values('id_autor', 'id_autor_parlametria','entidade__nome', 
-                    'entidade__uf', 'entidade__partido','casa_autor', 'bancada')
+            .values('id_autor', 'id_autor_parlametria', 'entidade__nome',
+                    'entidade__uf', 'entidade__partido', 'casa_autor', 'bancada')
             .order_by('-casa_autor')
             .distinct()
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
-        
+
         return ator
 
 
 class AtoresSerializerComissoes(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    entidade__nome = serializers.CharField()
-    entidade__partido = serializers.CharField()
-    entidade__uf = serializers.CharField()
+    nome_autor = serializers.CharField(source='entidade__nome')
+    partido = serializers.CharField(source='entidade__partido')
+    uf = serializers.CharField(source='entidade__uf')
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
 
@@ -90,18 +91,18 @@ class AtoresProposicaoList(generics.ListAPIView):
         queryset = (
             Atores.objects.filter(id_leggo=prop_leggo_id)
             .select_related('entidade')
-            .values('id_autor', 'id_autor_parlametria','entidade__nome', 
-                    'entidade__uf', 'entidade__partido','casa_autor', 'bancada')
-        ) 
+            .values('id_autor', 'id_autor_parlametria', 'entidade__nome',
+                    'entidade__uf', 'entidade__partido', 'casa_autor', 'bancada')
+        )
         return get_filtered_autores(self.request, queryset)
 
 
 class AtoresAgregadosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    entidade__nome = serializers.CharField()
-    entidade__partido = serializers.CharField()
-    entidade__uf = serializers.CharField()
+    nome_autor = serializers.CharField(source='entidade__nome')
+    partido = serializers.CharField(source='entidade__partido')
+    uf = serializers.CharField(source='entidade__uf')
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
     total_documentos = serializers.IntegerField()
