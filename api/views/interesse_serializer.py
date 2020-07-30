@@ -42,18 +42,25 @@ class InteresseList(generics.ListAPIView):
         return Interesse.objects.filter(id_leggo=id_prop)
 
 
-class TemaSerializer(serializers.ModelSerializer):
+class TemaSerializer(serializers.Serializer):
     tema = serializers.CharField()
-
-    # [tipo_agenda]
-
 class TemaList(generics.ListAPIView):
-
+    """
+    Retorna lista de temas associados a uma agenda.
+    """
     serializer_class = TemaSerializer
-
     def get_queryset(self):
-        interesse_arg = self.request.query_params.get('interesse')
+        interesse_arg = self.request.query_params.get("interesse")
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg)
-
+        tema = (
+            Interesse.objects.filter(interesse=interesse_arg)
+            .values('tema')
+            .distinct()
+        )
+        queryset = [
+            {
+                'tema': tema,
+            }
+        ]
+        return queryset
