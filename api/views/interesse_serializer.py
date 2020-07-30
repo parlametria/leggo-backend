@@ -66,10 +66,4 @@ class TemaList(generics.ListAPIView):
             .distinct()
         )
 
-        queryset = [
-            {
-                'tema': tema,
-            }
-        ]
-
-        return queryset
+        return tema
