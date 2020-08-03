@@ -62,7 +62,7 @@ class TemaList(generics.ListAPIView):
             interesse_arg = 'leggo'
 
         [
-            temas.extend(list(set(i.temas) - set(temas))) 
+            temas.extend(list(set(i.temas) - set(temas)))
             for i in Interesse.objects.filter(interesse=interesse_arg).distinct('tema')
         ]
 
