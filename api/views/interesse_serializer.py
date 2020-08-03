@@ -43,7 +43,7 @@ class InteresseList(generics.ListAPIView):
 
 
 class TemaSerializer(serializers.Serializer):
-    temas = serializers.CharField()
+    temas = serializers.ListField()
 
 
 class TemaList(generics.ListAPIView):
