@@ -43,7 +43,7 @@ class InteresseList(generics.ListAPIView):
 
 
 class TemaSerializer(serializers.Serializer):
-    tema = serializers.CharField()
+    temas = serializers.CharField()
 
 
 class TemaList(generics.ListAPIView):
@@ -55,15 +55,21 @@ class TemaList(generics.ListAPIView):
 
     def get_queryset(self):
 
-        # interesse_arg = self.request.query_params.get("interesse")
-        interesse_arg = self.kwargs['interesse']
+        temas = []
+
+        interesse_arg = self.request.query_params.get("interesse")
         if interesse_arg is None:
             interesse_arg = 'leggo'
 
-        temas = (
-            Interesse.objects.filter(interesse=interesse_arg)
-            .values('tema')
-            .distinct()
-        )
+        [
+            temas.extend(list(set(i.temas) - set(temas))) 
+            for i in Interesse.objects.filter(interesse=interesse_arg).distinct('tema')
+        ]
 
-        return temas
+        queryset = [
+            {
+                'temas': temas
+            }
+        ]
+
+        return queryset

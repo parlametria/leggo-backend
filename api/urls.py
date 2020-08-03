@@ -89,7 +89,7 @@ urlpatterns = [
         AutoriasAgregadasByAutor.as_view(),
     ),
     url(r"^interesses/(?P<id>[0-9]+)/?$", InteresseList.as_view()),
-    url(r"^(?P<interesse>[a-z]+)/temas/?$", TemaList.as_view()),
+    url(r"^temas/?$", TemaList.as_view()),
     url(r"^anotacoes/?$", AnotacaoList.as_view()),
     url(r"^anotacoes/(?P<id>[0-9]+)/?$", AnotacaoListByProp.as_view()),
     url(r"^anotacoes-gerais/?$", AnotacaoGeralList.as_view()),
