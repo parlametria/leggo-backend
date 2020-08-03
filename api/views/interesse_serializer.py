@@ -50,3 +50,36 @@ class InteresseList(generics.ListAPIView):
         """
         id_prop = self.kwargs["id"]
         return Interesse.objects.filter(id_leggo=id_prop)
+
+
+class TemaSerializer(serializers.Serializer):
+    temas = serializers.ListField()
+
+
+class TemaList(generics.ListAPIView):
+    """
+    Retorna lista de temas associados a uma agenda.
+    """
+
+    serializer_class = TemaSerializer
+
+    def get_queryset(self):
+
+        temas = []
+
+        interesse_arg = self.request.query_params.get("interesse")
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+
+        [
+            temas.extend(list(set(i.temas) - set(temas)))
+            for i in Interesse.objects.filter(interesse=interesse_arg).distinct('tema')
+        ]
+
+        queryset = [
+            {
+                'temas': temas
+            }
+        ]
+
+        return queryset
