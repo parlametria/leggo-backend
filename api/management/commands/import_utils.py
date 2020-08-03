@@ -469,6 +469,7 @@ def import_interesse():
                 "apelido",
                 "keywords",
                 "tema",
+                "tema_slug",
                 "advocacy_link",
                 "tipo_agenda",
             ]
