@@ -67,9 +67,10 @@ class AutoriasAutorList(generics.ListAPIView):
         os dados retornados serão os do interesse default (leggo).
         '''
         interesse_arg = self.request.query_params.get('interesse')
+        tema_arg = self.request.query_params.get('tema')
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg)
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
         id_autor_arg = self.kwargs['id_autor']
         autorias = (
             Autoria.objects
@@ -114,9 +115,10 @@ class AutoriasAgregadasList(generics.ListAPIView):
         os dados retornados serão os do interesse default (leggo).
         '''
         interesse_arg = self.request.query_params.get('interesse')
+        tema_arg = self.request.query_params.get('tema')
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg)
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
         autorias = (
             Autoria.objects
@@ -147,9 +149,10 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         os dados retornados serão os do interesse default (leggo).
         '''
         interesse_arg = self.request.query_params.get('interesse')
+        tema_arg = self.request.query_params.get('tema')
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg)
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
         id_autor_parlametria = self.kwargs["id_autor"]
 
@@ -189,10 +192,10 @@ class Acoes(generics.ListAPIView):
         Retorna as ações do parlamentar
         '''
         interesse_arg = self.request.query_params.get('interesse')
+        tema_arg = self.request.query_params.get('tema')
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg)
-
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
         autores = (
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
