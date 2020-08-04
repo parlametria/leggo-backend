@@ -15,7 +15,7 @@ class InteresseSerializer(serializers.ModelSerializer):
             "apelido",
             "advocacy_link",
             "tipo_agenda",
-            "ultima_pressao"
+            "ultima_pressao",
         )
 
 
@@ -65,21 +65,23 @@ class TemaList(generics.ListAPIView):
 
     def get_queryset(self):
 
-        temas = []
-
         interesse_arg = self.request.query_params.get("interesse")
         if interesse_arg is None:
-            interesse_arg = 'leggo'
+            interesse_arg = "leggo"
 
-        [
-            temas.extend(list(set(i.temas) - set(temas)))
-            for i in Interesse.objects.filter(interesse=interesse_arg).distinct('tema')
-        ]
+        queryset = (
+            Interesse.objects.all().filter(interesse=interesse_arg).distinct("tema")
+        )
+ 
+        temas = []
+        
+        for obj in queryset:
+            for i in range(len(obj.temas)):
+                data = {"tema": obj.temas[i], "tema-slug": obj.slug_temas[i]}
+                temas.append(data)
 
-        queryset = [
-            {
-                'temas': temas
-            }
-        ]
+        lista_temas = list({v["tema-slug"]: v for v in temas}.values())
 
-        return queryset
+        obj = [{"temas": lista_temas}]
+
+        return obj
