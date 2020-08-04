@@ -53,7 +53,8 @@ class InteresseList(generics.ListAPIView):
 
 
 class TemaSerializer(serializers.Serializer):
-    temas = serializers.ListField()
+    tema = serializers.CharField()
+    tema_slug = serializers.CharField()
 
 
 class TemaList(generics.ListAPIView):
@@ -72,16 +73,11 @@ class TemaList(generics.ListAPIView):
         queryset = (
             Interesse.objects.all().filter(interesse=interesse_arg).distinct("tema")
         )
- 
+
         temas = []
-        
-        for obj in queryset:
-            for i in range(len(obj.temas)):
-                data = {"tema": obj.temas[i], "tema-slug": obj.slug_temas[i]}
-                temas.append(data)
+        for tema_list in queryset:
+            temas.extend(tema_list.obj_temas)
 
-        lista_temas = list({v["tema-slug"]: v for v in temas}.values())
+        lista_temas = list({v["tema_slug"]: v for v in temas}.values())
 
-        obj = [{"temas": lista_temas}]
-
-        return obj
+        return lista_temas
