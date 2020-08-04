@@ -25,6 +25,7 @@ from api.views.autoria_serializer import (
     AutoriasAutorList,
     AutoriasAgregadasByAutor,
     Acoes,
+    AutoriasOriginaisList,
 )
 from api.views.interesse_serializer import (
     InteresseList,
@@ -105,4 +106,5 @@ urlpatterns = [
     url(r"^entidades/parlamentares/exercicio?$", ParlamentaresExercicioList.as_view()),
     url(r"^autorias/acoes/?$", Acoes.as_view()),
     url(r"^autores/?$", AutoresList.as_view()),
+    url(r"^ator/(?P<id_autor>[0-9]+)/originais/?$", AutoriasOriginaisList.as_view()),
 ]
