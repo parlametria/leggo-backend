@@ -42,7 +42,7 @@ def get_filtered_interesses(interesseArg, temaArg=None):
         return Interesse.objects.filter(interesse=interesseArg)
 
     return Interesse.objects.filter(interesse=interesseArg,
-                                    tema=temaArg)
+                                    tema_slug__contains=temaArg)
 
 
 def get_filtered_autores(request, queryset):
