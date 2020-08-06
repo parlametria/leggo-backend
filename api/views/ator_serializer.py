@@ -173,7 +173,8 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
 
         atoresRE = (
             Atores.objects.filter(id_autor_parlametria=leggo_id_autor)
-            .values('nome_autor')
+            .select_related('entidade')
+            .values('entidade__nome')
             .distinct()
         )
 
