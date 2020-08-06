@@ -73,12 +73,11 @@ class ProposicaoList(generics.ListAPIView):
         pautaQs = get_time_filtered_pauta(self.request)
 
         interesseArg = self.request.query_params.get("interesse")
-
+        tema_arg = self.request.query_params.get('tema')
         # Adiciona interesse default
         if interesseArg is None:
             interesseArg = "leggo"
-
-        interessesFiltered = get_filtered_interesses(interesseArg)
+        interessesFiltered = get_filtered_interesses(interesseArg, tema_arg)
 
         props = (
             Proposicao.objects.filter(interesse__interesse=interesseArg)
@@ -124,12 +123,12 @@ class ProposicaoDetail(generics.ListAPIView):
         id_prop = self.kwargs["id"]
 
         interesseArg = self.request.query_params.get("interesse")
-
+        tema_arg = self.request.query_params.get('tema')
         # Adiciona interesse default
         if interesseArg is None:
             interesseArg = "leggo"
 
-        interessesFiltered = get_filtered_interesses(interesseArg)
+        interessesFiltered = get_filtered_interesses(interesseArg, tema_arg)
 
         return (
             Proposicao.objects.filter(

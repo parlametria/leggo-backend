@@ -27,17 +27,20 @@ class PresidenciaComissaoLista(generics.ListAPIView):
         passaram por tramitação.
         """
         interesseArg = self.request.query_params.get("interesse")
+        tema_arg = self.request.query_params.get('tema')
 
         if interesseArg is None:
             interesseArg = "leggo"
+        if tema_arg is None:
+            tema_arg = ""
 
         consultaTramitacao = TramitacaoEvent.objects.raw(
             "SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
             + "LEFT JOIN api_etapaproposicao as etapa ON etapa_proposicao_id = etapa.id "
             + "LEFT JOIN api_proposicao as prop ON proposicao_id = prop.id "
             + "LEFT JOIN api_interesse as interesse ON prop.id = interesse.id "
-            + "WHERE interesse.interesse = %s ",
-            [interesseArg],
+            + "WHERE interesse.interesse = %s AND interesse.tema_slug LIKE %s ",
+            [interesseArg, tema_arg.center(len(tema_arg) + 2, '%')],
         )
 
         listaComissoesPassadas = []
@@ -56,20 +59,26 @@ class PresidenciaComissaoParlamentar(generics.ListAPIView):
 
     def get_queryset(self):
 
-        """Retorna informações sobre os parlamentares presidentes de comissões de
-        acordo com o id."""
+        """
+        Retorna informações sobre os parlamentares presidentes de comissões de
+        acordo com o id.
+        """
         interesseArg = self.request.query_params.get("interesse")
+        tema_arg = self.request.query_params.get('tema')
 
         if interesseArg is None:
             interesseArg = "leggo"
+
+        if tema_arg is None:
+            tema_arg = ""
 
         consultaTramitacao = TramitacaoEvent.objects.raw(
             "SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
             + "LEFT JOIN api_etapaproposicao as etapa ON etapa_proposicao_id = etapa.id "
             + "LEFT JOIN api_proposicao as prop ON proposicao_id = prop.id "
             + "LEFT JOIN api_interesse as interesse ON prop.id = interesse.id "
-            + "WHERE interesse.interesse = %s ",
-            [interesseArg],
+            + "WHERE interesse.interesse = %s AND interesse.tema_slug LIKE %s ",
+            [interesseArg, tema_arg.center(len(tema_arg) + 2, '%')],
         )
 
         listaComissoesPassadas = []
