@@ -89,7 +89,8 @@ def create_proposicao(self):
         id_leggo=1,
         interesse='leggo',
         apelido='Lei do Licenciamento Ambiental',
-        tema='Meio Ambiente/Clima',
+        tema='Meio Ambiente',
+        tema_slug='meio-ambiente',
         proposicao=proposicao
     )
     interesse.save()

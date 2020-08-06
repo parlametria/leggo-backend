@@ -8,12 +8,19 @@ class InteresseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interesse
         fields = (
-            'interesse', 'nome_interesse', 'temas', 'apelido', 'advocacy_link',
-            'tipo_agenda', 'ultima_pressao')
+            "interesse",
+            "nome_interesse",
+            "temas",
+            "slug_temas",
+            "apelido",
+            "advocacy_link",
+            "tipo_agenda",
+            "ultima_pressao",
+        )
 
 
 class InteresseList(generics.ListAPIView):
-    '''
+    """
     Apresenta lista com mapeamento entre as proposições analisadas e os
     interesses abordados pelo Leggo. Um interesse é um assunto geral
     no qual um conjunto de proposições está relacionado. O primeiro
@@ -23,20 +30,54 @@ class InteresseList(generics.ListAPIView):
     Outros possíveis interesses seriam Primeira Infância (conjunto
     de proposições ligadas a direitos e deveres relacionados às
     crianças).
-    '''
+    """
 
     serializer_class = InteresseSerializer
 
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                'id', openapi.IN_PATH, 'id da proposição no sistema do Leg.go',
-                type=openapi.TYPE_INTEGER),
+                "id",
+                openapi.IN_PATH,
+                "id da proposição no sistema do Leg.go",
+                type=openapi.TYPE_INTEGER,
+            ),
         ]
     )
     def get_queryset(self):
-        '''
+        """
         Retorna interesses associados a uma PL
-        '''
-        id_prop = self.kwargs['id']
+        """
+        id_prop = self.kwargs["id"]
         return Interesse.objects.filter(id_leggo=id_prop)
+
+
+class TemaSerializer(serializers.Serializer):
+    tema = serializers.CharField()
+    tema_slug = serializers.CharField()
+
+
+class TemaList(generics.ListAPIView):
+    """
+    Retorna lista de temas associados a uma agenda.
+    """
+
+    serializer_class = TemaSerializer
+
+    def get_queryset(self):
+
+        interesse_arg = self.request.query_params.get("interesse")
+        if interesse_arg is None:
+            interesse_arg = "leggo"
+
+        queryset = (
+            Interesse.objects.all().filter(interesse=interesse_arg).distinct("tema")
+        )
+
+        temas = []
+        for tema_list in queryset:
+            temas.extend(tema_list.obj_temas)
+
+        lista_temas = list({v["tema_slug"]: v for v in temas}.values())
+
+        return lista_temas

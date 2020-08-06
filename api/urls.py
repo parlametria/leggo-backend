@@ -25,8 +25,12 @@ from api.views.autoria_serializer import (
     AutoriasAutorList,
     AutoriasAgregadasByAutor,
     Acoes,
+    AutoriasOriginaisList,
 )
-from api.views.interesse_serializer import InteresseList
+from api.views.interesse_serializer import (
+    InteresseList,
+    TemaList
+)
 from api.views.anotacao_serializer import (
     AnotacaoListByProp,
     AnotacaoList,
@@ -86,6 +90,7 @@ urlpatterns = [
         AutoriasAgregadasByAutor.as_view(),
     ),
     url(r"^interesses/(?P<id>[0-9]+)/?$", InteresseList.as_view()),
+    url(r"^temas/?$", TemaList.as_view()),
     url(r"^anotacoes/?$", AnotacaoList.as_view()),
     url(r"^anotacoes/(?P<id>[0-9]+)/?$", AnotacaoListByProp.as_view()),
     url(r"^anotacoes-gerais/?$", AnotacaoGeralList.as_view()),
@@ -101,4 +106,5 @@ urlpatterns = [
     url(r"^entidades/parlamentares/exercicio?$", ParlamentaresExercicioList.as_view()),
     url(r"^autorias/acoes/?$", Acoes.as_view()),
     url(r"^autores/?$", AutoresList.as_view()),
+    url(r"^ator/(?P<id_autor>[0-9]+)/originais/?$", AutoriasOriginaisList.as_view()),
 ]

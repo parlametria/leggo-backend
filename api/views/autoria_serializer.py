@@ -1,7 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import F, Count, Prefetch, Value, CharField, Sum
+from django.db.models import F, Count, Prefetch, Value, CharField, Sum, Case, When
 from django.db.models.expressions import Window
 from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
@@ -177,12 +177,11 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
 
 
 class AcoesSerializer(serializers.Serializer):
-    id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
     num_documentos = serializers.IntegerField()
     ranking_documentos = serializers.IntegerField()
-    tipo_documento = serializers.CharField()
     peso_total = serializers.FloatField()
+    tipo_acao = serializers.CharField()
 
 
 class Acoes(generics.ListAPIView):
@@ -202,24 +201,68 @@ class Acoes(generics.ListAPIView):
             interesse_arg = "leggo"
         interesses = get_filtered_interesses(interesse_arg)
 
-        autores = Autoria.objects.filter(
-            id_leggo__in=interesses.values("id_leggo"), data__gte="2019-01-31"
-        ).values("id_autor", "id_autor_parlametria", "tipo_documento")
-
-        (autores.filter(tipo_documento__in=['Outros', 'Parecer',
-                                            'Prop. Original / Apensada',
-                                            'Voto em Separado'])
-            .update(tipo_documento='Outros'))
+        autores = (
+            Autoria.objects
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    data__gte='2019-01-31')
+        )
 
         result = (
-            autores.values('id_autor', 'id_autor_parlametria', 'tipo_documento')
-            .annotate(num_documentos=Count('tipo_documento'))
+            autores.annotate(tipo_acao=Case(
+                When(tipo_documento='Emenda', then=Value('Emenda')),
+                When(tipo_documento='Requerimento', then=Value('Requerimento')),
+                default=Value('Outros'),
+                output_field=CharField(),
+                ))
+            .values('id_autor_parlametria', 'tipo_acao')
+            .annotate(num_documentos=Count('tipo_acao'))
             .annotate(peso_total=Sum('peso_autor_documento'))
             .annotate(ranking_documentos=Window(
                 expression=RowNumber(),
-                partition_by=[F('tipo_documento')],
+                partition_by=[F('tipo_acao')],
                 order_by=F('peso_total').desc()))
-            .order_by('ranking_documentos', 'tipo_documento')
+            .order_by('ranking_documentos', 'tipo_acao')
         )
 
         return result
+
+
+class AutoriasOriginaisSerializer(serializers.Serializer):
+    id_autor_parlametria = serializers.IntegerField()
+    id_documento = serializers.IntegerField()
+    id_leggo = serializers.IntegerField()
+    data = serializers.DateField()
+    descricao_tipo_documento = serializers.CharField()
+    url_inteiro_teor = serializers.CharField()
+    tipo_documento = serializers.CharField()
+
+
+class AutoriasOriginaisList(generics.ListAPIView):
+    '''
+    Informações sobre proposições originais ou apensadas de um autor específico.
+    '''
+    serializer_class = AutoriasOriginaisSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna as proposições originais ou apensadas de um parlamentar.
+        Se não for passado um interesse como argumento,
+        os dados retornados serão os do interesse default (leggo).
+        '''
+        interesse_arg = self.request.query_params.get('interesse')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg)
+        id_autor_arg = self.kwargs['id_autor']
+        autorias = (
+            Autoria.objects
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    id_autor_parlametria=id_autor_arg,
+                    data__gte='2019-01-31',
+                    tipo_documento='Prop. Original / Apensada')
+            .values('id_autor_parlametria', 'id_documento', 'id_leggo',
+                    'data', 'descricao_tipo_documento', 'url_inteiro_teor',
+                    'tipo_documento')
+        )
+
+        return autorias
