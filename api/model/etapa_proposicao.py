@@ -73,8 +73,9 @@ class EtapaProposicao(models.Model):
 
     casa_origem = models.TextField(blank=True)
 
-    em_pauta = models.NullBooleanField(
-        help_text="TRUE se a proposicao estará em pauta na semana, FALSE caso contrario"
+    em_pauta = models.BooleanField(
+        help_text="TRUE se a proposicao estará em pauta na semana, FALSE caso contrario",
+        null=True
     )
 
     relatoria = models.ForeignKey(

@@ -1,6 +1,7 @@
 import os
 import datetime
 import pandas as pd
+import numpy as np
 from api.model.ator import Atores
 from api.model.comissao import Comissao
 from api.model.emenda import Emendas
@@ -26,25 +27,30 @@ def import_etapas_proposicoes():
     """Carrega etapas das proposições"""
     props_df = pd.read_csv("data/proposicoes.csv", decimal=",").assign(
         data_apresentacao=lambda x: x.data_apresentacao.apply(lambda s: s.split("T")[0])
-    )
+    ).replace(np.nan, None)
+    
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
 
-    props_df = props_df.groupby(["id_leggo", "relator_id_parlametria"])
+    props_df = props_df.groupby(by=["id_leggo"])
 
     for group_index in props_df.groups:
+        group_df = props_df.get_group(group_index)
+        relator_id_parlametria = list(group_df["relator_id_parlametria"])[0]
 
-        id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
+        id_entidade_parlametria = {
+            "id_entidade_parlametria": relator_id_parlametria
+        }
+
         relator = get_entidade(id_entidade_parlametria, "EtapaProposicao")
 
         if relator is None:
             continue
-
-        group_df = props_df.get_group(group_index).assign(relatoria=relator)
+            
+        group_df = group_df.assign(relatoria=relator)
 
         EtapaProposicao.objects.bulk_create(
             EtapaProposicao(**r[1].to_dict()) for r in group_df.iterrows()
         )
-
 
 def import_proposicoes():
     """Carrega proposições"""
