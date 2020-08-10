@@ -26,15 +26,16 @@ class AtorList(generics.ListAPIView):
     serializer_class = AtorSerializer
 
     def get_queryset(self):
-        """
+        '''
         Retorna dados básicos e de atividade de um parlamentar por interesse.
-        """
-        interesse_arg = self.request.query_params.get("interesse")
+        '''
+        tema_arg = self.request.query_params.get('tema')
+        interesse_arg = self.request.query_params.get('interesse')
         if interesse_arg is None:
-            interesse_arg = "leggo"
-        interesses = get_filtered_interesses(interesse_arg)
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
+        id_autor_arg = self.kwargs['id_autor']
 
-        id_autor_arg = self.kwargs["id_autor"]
         ator = (
             Atores.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
@@ -120,10 +121,11 @@ class AtoresAgregadosList(generics.ListAPIView):
         """
         Retorna dados básicos e de atividade parlamentar por interesse.
         """
+        tema_arg = self.request.query_params.get('tema')
         interesse_arg = self.request.query_params.get("interesse")
         if interesse_arg is None:
             interesse_arg = "leggo"
-        interesses = get_filtered_interesses(interesse_arg)
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
         atores = (
             Atores.objects.filter(id_leggo__in=interesses.values('id_leggo'))
@@ -170,9 +172,10 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
         """
         leggo_id_autor = self.kwargs["id_autor"]
         interesseArg = self.request.query_params.get("interesse")
+        tema_arg = self.request.query_params.get('tema')
         if interesseArg is None:
             interesseArg = "leggo"
-        interesses = get_filtered_interesses(interesseArg)
+        interesses = get_filtered_interesses(interesseArg, tema_arg)
 
         queryset = EtapaProposicao.objects.filter(
             id_leggo__in=interesses, relator_id_parlametria=leggo_id_autor
@@ -206,9 +209,10 @@ class AtoresRelatoriasList(generics.ListAPIView):
         Retorna parlamentares e a quantidade de relatorias
         """
         interesseArg = self.request.query_params.get("interesse")
+        tema_arg = self.request.query_params.get('tema')
         if interesseArg is None:
             interesseArg = "leggo"
-        interesses = get_filtered_interesses(interesseArg)
+        interesses = get_filtered_interesses(interesseArg, tema_arg)
 
         queryset = (
             EtapaProposicao.objects.filter(id_leggo__in=interesses)
