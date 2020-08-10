@@ -123,6 +123,7 @@ class AutoriasAgregadasList(generics.ListAPIView):
         autorias = (
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
+                    data__gte='2019-01-31',
                     tipo_documento="Prop. Original / Apensada")
             .values('id_autor', 'id_autor_parlametria')
             .annotate(quantidade_autorias=Count('id_autor'))
