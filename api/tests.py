@@ -75,7 +75,7 @@ def create_proposicao(self):
         justificativa='',
         autor_nome='Luciano Zica PSOL/CE',
         relator_id=74050,
-        relator_id_parlametria=74050,
+        relator_id_parlametria=174050,
         em_pauta=False
     )
     etapa_proposicao.save()
