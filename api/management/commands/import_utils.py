@@ -25,10 +25,16 @@ from api.model.autores_proposicao import AutoresProposicao
 
 def import_etapas_proposicoes():
     """Carrega etapas das proposições"""
-    props_df = pd.read_csv("data/proposicoes.csv", decimal=",").assign(
-        data_apresentacao=lambda x: x.data_apresentacao.apply(lambda s: s.split("T")[0])
-    ).replace(np.nan, None)
-    
+    props_df = (
+        pd.read_csv("data/proposicoes.csv", decimal=",")
+        .assign(
+            data_apresentacao=lambda x: x.data_apresentacao.apply(
+                lambda s: s.split("T")[0]
+            )
+        )
+        .replace(np.nan, None)
+    )
+
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
 
     props_df = props_df.groupby(by=["id_leggo"])
@@ -37,20 +43,19 @@ def import_etapas_proposicoes():
         group_df = props_df.get_group(group_index)
         relator_id_parlametria = list(group_df["relator_id_parlametria"])[0]
 
-        id_entidade_parlametria = {
-            "id_entidade_parlametria": relator_id_parlametria
-        }
+        id_entidade_parlametria = {"id_entidade_parlametria": relator_id_parlametria}
 
         relator = get_entidade(id_entidade_parlametria, "EtapaProposicao")
 
         if relator is None:
             continue
-            
+
         group_df = group_df.assign(relatoria=relator)
 
         EtapaProposicao.objects.bulk_create(
             EtapaProposicao(**r[1].to_dict()) for r in group_df.iterrows()
         )
+
 
 def import_proposicoes():
     """Carrega proposições"""
@@ -195,8 +200,9 @@ def import_autoria():
         group_df = (
             grouped.get_group(group_index)
             # pega apenas a data e não a hora
-            .assign(data=lambda x: x.data.apply(lambda s: s.split("T")[0]))
-            .assign(etapa_proposicao=etapa_prop)
+            .assign(data=lambda x: x.data.apply(lambda s: s.split("T")[0])).assign(
+                etapa_proposicao=etapa_prop
+            )
         )
         Autoria.objects.bulk_create(
             Autoria(**r[1].to_dict()) for r in group_df.iterrows()
@@ -313,8 +319,9 @@ def import_emendas():
 
 def import_atores():
     """Carrega Atores"""
-    atores_df = pd.read_csv("data/atuacao.csv").groupby(["id_leggo",
-                                                        "id_autor_parlametria"])
+    atores_df = pd.read_csv("data/atuacao.csv").groupby(
+        ["id_leggo", "id_autor_parlametria"]
+    )
 
     for group_index in atores_df.groups:
 
@@ -323,8 +330,9 @@ def import_atores():
         id_leggo = {"id_leggo": group_index[0]}
 
         prop = get_proposicao(id_leggo, "Atores")
-        entidade_relacionada = get_entidade(id_entidade_parlametria,
-                                            "AtoresProposicaoEntidade")
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "AtoresProposicaoEntidade"
+        )
 
         if entidade_relacionada is None:
             continue
