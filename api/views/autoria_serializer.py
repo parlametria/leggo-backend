@@ -249,7 +249,7 @@ class AutoriasOriginaisList(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
-        
+
         id_autor_arg = self.kwargs['id_autor']
 
         autorias = (
