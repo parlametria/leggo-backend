@@ -29,14 +29,20 @@ def get_time_filtered_pauta(request):
     return queryset
 
 
-def get_filtered_interesses(interesseArg):
+def get_filtered_interesses(interesseArg, temaArg=None):
     '''
-    Filtra interesses a partir da string do interesse passado como parâmetroa
+    Filtra interesses e temas a partir da string do interesse passado como parâmetro.
+    Caso o tema esteja vazio, ou inexistente, a função retorna
+    apenas o filtro para interesses.
     '''
     if interesseArg is None:
         return Interesse.objects
 
-    return Interesse.objects.filter(interesse=interesseArg)
+    if temaArg is None:
+        return Interesse.objects.filter(interesse=interesseArg)
+
+    return Interesse.objects.filter(interesse=interesseArg,
+                                    tema_slug__contains=temaArg)
 
 
 def get_filtered_autores(request, queryset):

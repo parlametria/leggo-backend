@@ -92,21 +92,17 @@ class Proposicao(models.Model):
         comissões e plenário)
         '''
         atores_filtrados = []
-
-        top_n_atores = self.atores.values('id_autor', 'nome_autor') \
+        top_n_atores = self.atores.values('id_autor') \
             .annotate(total_docs=Sum('peso_total_documentos')) \
-            .order_by('-total_docs', 'nome_autor')
+            .order_by('-total_docs')
         for ator in self.atores.all():
             for top_n_ator in top_n_atores:
                 if ator.id_autor == top_n_ator['id_autor']:
                     atores_filtrados.append({
                         'id_autor': ator.id_autor,
-                        'nome_autor': ator.nome_autor,
                         'peso_total_documentos': ator.peso_total_documentos,
                         'num_documentos': ator.num_documentos,
-                        'uf': ator.uf,
                         'casa': ator.casa,
-                        'partido': ator.partido,
                         'tipo_generico': ator.tipo_generico,
                         'bancada': ator.bancada,
                         'nome_partido_uf': ator.nome_partido_uf,
