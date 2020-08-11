@@ -16,11 +16,6 @@ class Migration(migrations.Migration):
             field=models.BooleanField(help_text='TRUE se a proposicao estará em pauta na semana, FALSE caso contrario', null=True),
         ),
         migrations.AlterField(
-            model_name='infogerais',
-            name='value',
-            field=models.JSONField(),
-        ),
-        migrations.AlterField(
             model_name='pautahistorico',
             name='em_pauta',
             field=models.BooleanField(help_text='TRUE se a proposicao estiver em pauta, FALSE caso contrario', null=True),
