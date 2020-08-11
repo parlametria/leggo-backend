@@ -1,7 +1,8 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import Prefetch, Sum, Count
+from django.db.models import Prefetch, Sum, Count, IntegerField
+from django.db.models.functions import Cast
 
 from api.model.ator import Atores
 from api.model.etapa_proposicao import EtapaProposicao
@@ -11,9 +12,9 @@ from api.utils.filters import get_filtered_autores, get_filtered_interesses
 class AtorSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    nome_autor = serializers.CharField(source='entidade__nome')
-    partido = serializers.CharField(source='entidade__partido')
-    uf = serializers.CharField(source='entidade__uf')
+    nome_autor = serializers.CharField(source="entidade__nome")
+    partido = serializers.CharField(source="entidade__partido")
+    uf = serializers.CharField(source="entidade__uf")
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
 
@@ -26,24 +27,32 @@ class AtorList(generics.ListAPIView):
     serializer_class = AtorSerializer
 
     def get_queryset(self):
-        '''
+        """
         Retorna dados básicos e de atividade de um parlamentar por interesse.
-        '''
-        tema_arg = self.request.query_params.get('tema')
-        interesse_arg = self.request.query_params.get('interesse')
+        """
+        tema_arg = self.request.query_params.get("tema")
+        interesse_arg = self.request.query_params.get("interesse")
         if interesse_arg is None:
-            interesse_arg = 'leggo'
+            interesse_arg = "leggo"
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
-        id_autor_arg = self.kwargs['id_autor']
+        id_autor_arg = self.kwargs["id_autor"]
 
         ator = (
-            Atores.objects
-            .filter(id_leggo__in=interesses.values('id_leggo'),
-                    id_autor_parlametria=id_autor_arg)
-            .select_related('entidade')
-            .values('id_autor', 'id_autor_parlametria', 'entidade__nome',
-                    'entidade__uf', 'entidade__partido', 'casa_autor', 'bancada')
-            .order_by('-casa_autor')
+            Atores.objects.filter(
+                id_leggo__in=interesses.values("id_leggo"),
+                id_autor_parlametria=id_autor_arg,
+            )
+            .select_related("entidade")
+            .values(
+                "id_autor",
+                "id_autor_parlametria",
+                "entidade__nome",
+                "entidade__uf",
+                "entidade__partido",
+                "casa_autor",
+                "bancada",
+            )
+            .order_by("-casa_autor")
             .distinct()
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
@@ -54,9 +63,9 @@ class AtorList(generics.ListAPIView):
 class AtoresSerializerComissoes(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    nome_autor = serializers.CharField(source='entidade__nome')
-    partido = serializers.CharField(source='entidade__partido')
-    uf = serializers.CharField(source='entidade__uf')
+    nome_autor = serializers.CharField(source="entidade__nome")
+    partido = serializers.CharField(source="entidade__partido")
+    uf = serializers.CharField(source="entidade__uf")
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
 
@@ -91,9 +100,16 @@ class AtoresProposicaoList(generics.ListAPIView):
         prop_leggo_id = self.kwargs["id_leggo"]
         queryset = (
             Atores.objects.filter(id_leggo=prop_leggo_id)
-            .select_related('entidade')
-            .values('id_autor', 'id_autor_parlametria', 'entidade__nome',
-                    'entidade__uf', 'entidade__partido', 'casa_autor', 'bancada')
+            .select_related("entidade")
+            .values(
+                "id_autor",
+                "id_autor_parlametria",
+                "entidade__nome",
+                "entidade__uf",
+                "entidade__partido",
+                "casa_autor",
+                "bancada",
+            )
         )
         return get_filtered_autores(self.request, queryset)
 
@@ -101,9 +117,9 @@ class AtoresProposicaoList(generics.ListAPIView):
 class AtoresAgregadosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    nome_autor = serializers.CharField(source='entidade__nome')
-    partido = serializers.CharField(source='entidade__partido')
-    uf = serializers.CharField(source='entidade__uf')
+    nome_autor = serializers.CharField(source="entidade__nome")
+    partido = serializers.CharField(source="entidade__partido")
+    uf = serializers.CharField(source="entidade__uf")
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
     total_documentos = serializers.IntegerField()
@@ -121,17 +137,24 @@ class AtoresAgregadosList(generics.ListAPIView):
         """
         Retorna dados básicos e de atividade parlamentar por interesse.
         """
-        tema_arg = self.request.query_params.get('tema')
+        tema_arg = self.request.query_params.get("tema")
         interesse_arg = self.request.query_params.get("interesse")
         if interesse_arg is None:
             interesse_arg = "leggo"
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
         atores = (
-            Atores.objects.filter(id_leggo__in=interesses.values('id_leggo'))
-            .select_related('entidade')
-            .values("id_autor", "id_autor_parlametria", "entidade__nome", "entidade__uf",
-                    "entidade__partido", "casa_autor", "bancada")
+            Atores.objects.filter(id_leggo__in=interesses.values("id_leggo"))
+            .select_related("entidade")
+            .values(
+                "id_autor",
+                "id_autor_parlametria",
+                "entidade__nome",
+                "entidade__uf",
+                "entidade__partido",
+                "casa_autor",
+                "bancada",
+            )
             .annotate(
                 total_documentos=Sum("num_documentos"),
                 peso_documentos=Sum("peso_total_documentos"),
@@ -172,7 +195,7 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
         """
         leggo_id_autor = self.kwargs["id_autor"]
         interesseArg = self.request.query_params.get("interesse")
-        tema_arg = self.request.query_params.get('tema')
+        tema_arg = self.request.query_params.get("tema")
         if interesseArg is None:
             interesseArg = "leggo"
         interesses = get_filtered_interesses(interesseArg, tema_arg)
@@ -185,8 +208,10 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
 
 
 class AtoresRelatoresSerializer(serializers.Serializer):
-    autor_id = serializers.IntegerField(source="relator_id")
-    autor_id_parlametria = serializers.IntegerField(source="relator_id_parlametria")
+    autor_id = serializers.IntegerField(source="relator_id_as_int")
+    autor_id_parlametria = serializers.IntegerField(
+        source="relator_id_parlametria_as_int"
+    )
     quantidade_relatorias = serializers.IntegerField()
 
 
@@ -209,16 +234,23 @@ class AtoresRelatoriasList(generics.ListAPIView):
         Retorna parlamentares e a quantidade de relatorias
         """
         interesseArg = self.request.query_params.get("interesse")
-        tema_arg = self.request.query_params.get('tema')
+        tema_arg = self.request.query_params.get("tema")
         if interesseArg is None:
             interesseArg = "leggo"
         interesses = get_filtered_interesses(interesseArg, tema_arg)
 
         queryset = (
-            EtapaProposicao.objects.filter(id_leggo__in=interesses)
-            .exclude(relator_id__isnull=True)
+            EtapaProposicao.objects.filter(
+                id_leggo__in=interesses, relator_id__isnull=False
+            )
             .values("relator_id", "relator_id_parlametria")
-            .annotate(quantidade_relatorias=Count("relator_id"))
+            .annotate(
+                quantidade_relatorias=Count("relator_id"),
+                relator_id_as_int=Cast("relator_id", IntegerField()),
+                relator_id_parlametria_as_int=Cast(
+                    "relator_id_parlametria", IntegerField()
+                ),
+            )
             .order_by("-quantidade_relatorias")
         )
 

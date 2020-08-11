@@ -21,40 +21,46 @@ from api.model.anotacao import Anotacao
 from api.model.anotacao_geral import AnotacaoGeral
 from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
+from api.utils.relator import check_relator_id
 
 
 def import_etapas_proposicoes():
     """Carrega etapas das proposições"""
-    props_df = (
-        pd.read_csv("data/proposicoes.csv", decimal=",")
-        .assign(
-            data_apresentacao=lambda x: x.data_apresentacao.apply(
-                lambda s: s.split("T")[0]
-            )
-        )
-        .replace(np.nan, None)
+    props_df = pd.read_csv("data/proposicoes.csv", decimal=",").assign(
+        data_apresentacao=lambda x: x.data_apresentacao.apply(lambda s: s.split("T")[0])
     )
 
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
+    props_df = props_df.fillna(-1)
 
-    props_df = props_df.groupby(by=["id_leggo"])
+    props_df = props_df.groupby(["id_leggo", "relator_id_parlametria"])
 
     for group_index in props_df.groups:
-        group_df = props_df.get_group(group_index)
-        relator_id_parlametria = list(group_df["relator_id_parlametria"])[0]
+        relator = None
 
-        id_entidade_parlametria = {"id_entidade_parlametria": relator_id_parlametria}
+        # Pesquisa a entidade somente se o relator_id_parlametria
+        # for diferente de NaN (representado por -1)
+        if group_index[1] != -1:
 
-        relator = get_entidade(id_entidade_parlametria, "EtapaProposicao")
+            id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
 
-        if relator is None:
-            continue
+            relator = get_entidade(id_entidade_parlametria, "EtapaProposicao")
 
-        group_df = group_df.assign(relatoria=relator)
-
-        EtapaProposicao.objects.bulk_create(
-            EtapaProposicao(**r[1].to_dict()) for r in group_df.iterrows()
+        group_df = (
+            props_df.get_group(group_index)
+            .assign(relatoria=relator)
+            .replace(-1, np.nan)
         )
+
+        array = []
+        for r in group_df.iterrows():
+            r[1]["relator_id"] = check_relator_id(r[1]["relator_id"])
+            r[1]["relator_id_parlametria"] = check_relator_id(
+                r[1]["relator_id_parlametria"]
+            )
+            array.append(EtapaProposicao(**r[1].to_dict()))
+
+        EtapaProposicao.objects.bulk_create(array)
 
 
 def import_proposicoes():
@@ -634,19 +640,19 @@ def import_all_data():
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
-    import_tramitacoes()
-    import_temperaturas()
-    import_progresso()
-    import_pautas()
-    import_emendas()
-    import_comissoes()
-    import_atores()
-    import_pressao()
-    import_coautoria_node()
-    import_coautoria_edge()
-    import_autoria()
-    import_autores_proposicoes()
-    import_anotacoes()
+    # import_tramitacoes()
+    # import_temperaturas()
+    # import_progresso()
+    # import_pautas()
+    # import_emendas()
+    # import_comissoes()
+    # import_atores()
+    # import_pressao()
+    # import_coautoria_node()
+    # import_coautoria_edge()
+    # import_autoria()
+    # import_autores_proposicoes()
+    # import_anotacoes()
 
 
 def import_all_data_but_insights():

@@ -67,9 +67,9 @@ class EtapaProposicao(models.Model):
 
     autor_partido = models.TextField(blank=True)
 
-    relator_id = models.IntegerField(blank=True, null=True)
+    relator_id = models.TextField(blank=True, null=True)
 
-    relator_id_parlametria = models.IntegerField(blank=True, null=True)
+    relator_id_parlametria = models.TextField(blank=True, null=True)
 
     casa_origem = models.TextField(blank=True)
 
