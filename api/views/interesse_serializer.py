@@ -71,7 +71,8 @@ class TemaList(generics.ListAPIView):
             interesse_arg = "leggo"
 
         queryset = (
-            Interesse.objects.all().filter(interesse=interesse_arg).distinct("tema")
+            Interesse.objects.all().filter(interesse=interesse_arg)
+            .distinct("tema")
         )
 
         temas = []
@@ -79,5 +80,6 @@ class TemaList(generics.ListAPIView):
             temas.extend(tema_list.obj_temas)
 
         lista_temas = list({v["tema_slug"]: v for v in temas}.values())
+        lista_temas.sort(key=lambda item:item["tema_slug"])
 
         return lista_temas
