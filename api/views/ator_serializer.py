@@ -1,8 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import Prefetch, Sum, Count, IntegerField
-from django.db.models.functions import Cast
+from django.db.models import Prefetch, Sum, Count
 
 from api.model.ator import Atores
 from api.model.etapa_proposicao import EtapaProposicao
@@ -208,10 +207,8 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
 
 
 class AtoresRelatoresSerializer(serializers.Serializer):
-    autor_id = serializers.IntegerField(source="relator_id_as_int")
-    autor_id_parlametria = serializers.IntegerField(
-        source="relator_id_parlametria_as_int"
-    )
+    autor_id = serializers.IntegerField(source="relator_id")
+    autor_id_parlametria = serializers.IntegerField(source="relator_id_parlametria")
     quantidade_relatorias = serializers.IntegerField()
 
 
@@ -244,13 +241,7 @@ class AtoresRelatoriasList(generics.ListAPIView):
                 id_leggo__in=interesses, relator_id__isnull=False
             )
             .values("relator_id", "relator_id_parlametria")
-            .annotate(
-                quantidade_relatorias=Count("relator_id"),
-                relator_id_as_int=Cast("relator_id", IntegerField()),
-                relator_id_parlametria_as_int=Cast(
-                    "relator_id_parlametria", IntegerField()
-                ),
-            )
+            .annotate(quantidade_relatorias=Count("relator_id"))
             .order_by("-quantidade_relatorias")
         )
 
