@@ -14,8 +14,9 @@ class PautaHistorico(models.Model):
 
     local = models.TextField(blank=True)
 
-    em_pauta = models.NullBooleanField(
-        help_text='TRUE se a proposicao estiver em pauta, FALSE caso contrario')
+    em_pauta = models.BooleanField(
+        help_text='TRUE se a proposicao estiver em pauta, FALSE caso contrario',
+        null=True)
 
     proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='pauta_historico')
