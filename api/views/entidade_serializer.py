@@ -124,7 +124,7 @@ class ParlamentaresExercicioList(generics.ListAPIView):
 
 
 class RelatorSerializer(serializers.ModelSerializer):
-    id_relator = serializers.IntegerField(source="id_entidade_parlametria")
+    id_relator = serializers.IntegerField(source="id_entidade")
     id_relator_parlametria = serializers.IntegerField(source="id_entidade_parlametria")
 
     class Meta:
