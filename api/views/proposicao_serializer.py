@@ -86,6 +86,7 @@ class ProposicaoList(generics.ListAPIView):
                 "etapas",
                 "progresso",
                 Prefetch("etapas__pauta_historico", queryset=pautaQs),
+                Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
             )
         )
