@@ -1,6 +1,7 @@
 import os
 import datetime
 import pandas as pd
+import numpy as np
 from api.model.ator import Atores
 from api.model.comissao import Comissao
 from api.model.emenda import Emendas
@@ -20,6 +21,7 @@ from api.model.anotacao import Anotacao
 from api.model.anotacao_geral import AnotacaoGeral
 from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
+from api.utils.relator import check_relator_id
 
 
 def import_etapas_proposicoes():
@@ -27,10 +29,38 @@ def import_etapas_proposicoes():
     props_df = pd.read_csv("data/proposicoes.csv", decimal=",").assign(
         data_apresentacao=lambda x: x.data_apresentacao.apply(lambda s: s.split("T")[0])
     )
+
     props_df.casa = props_df.casa.apply(lambda r: EtapaProposicao.casas[r])
-    EtapaProposicao.objects.bulk_create(
-        EtapaProposicao(**r[1].to_dict()) for r in props_df.iterrows()
-    )
+    props_df = props_df.fillna(-1)
+
+    props_df = props_df.groupby(["id_leggo", "relator_id_parlametria"])
+
+    for group_index in props_df.groups:
+        relator = None
+
+        # Pesquisa a entidade somente se o relator_id_parlametria
+        # for diferente de NaN (representado por -1)
+        if group_index[1] != -1:
+
+            id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
+
+            relator = get_entidade(id_entidade_parlametria, "EtapaProposicao")
+
+        group_df = (
+            props_df.get_group(group_index)
+            .assign(relatoria=relator)
+            .replace(-1, np.nan)
+        )
+
+        array = []
+        for r in group_df.iterrows():
+            r[1]["relator_id"] = check_relator_id(r[1]["relator_id"])
+            r[1]["relator_id_parlametria"] = check_relator_id(
+                r[1]["relator_id_parlametria"]
+            )
+            array.append(EtapaProposicao(**r[1].to_dict()))
+
+        EtapaProposicao.objects.bulk_create(array)
 
 
 def import_proposicoes():
@@ -176,8 +206,9 @@ def import_autoria():
         group_df = (
             grouped.get_group(group_index)
             # pega apenas a data e não a hora
-            .assign(data=lambda x: x.data.apply(lambda s: s.split("T")[0]))
-            .assign(etapa_proposicao=etapa_prop)
+            .assign(data=lambda x: x.data.apply(lambda s: s.split("T")[0])).assign(
+                etapa_proposicao=etapa_prop
+            )
         )
         Autoria.objects.bulk_create(
             Autoria(**r[1].to_dict()) for r in group_df.iterrows()
@@ -294,8 +325,9 @@ def import_emendas():
 
 def import_atores():
     """Carrega Atores"""
-    atores_df = pd.read_csv("data/atuacao.csv").groupby(["id_leggo",
-                                                        "id_autor_parlametria"])
+    atores_df = pd.read_csv("data/atuacao.csv").groupby(
+        ["id_leggo", "id_autor_parlametria"]
+    )
 
     for group_index in atores_df.groups:
 
@@ -304,8 +336,9 @@ def import_atores():
         id_leggo = {"id_leggo": group_index[0]}
 
         prop = get_proposicao(id_leggo, "Atores")
-        entidade_relacionada = get_entidade(id_entidade_parlametria,
-                                            "AtoresProposicaoEntidade")
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "AtoresProposicaoEntidade"
+        )
 
         if entidade_relacionada is None:
             continue
@@ -439,8 +472,9 @@ def get_entidade(entidade_obj, entity_str):
     try:
         entidade = (
             Entidade.objects.filter(**entidade_obj)
-            .order_by('id_entidade_parlametria', '-legislatura')
-            .distinct('id_entidade_parlametria').first()
+            .order_by("id_entidade_parlametria", "-legislatura")
+            .distinct("id_entidade_parlametria")
+            .first()
         )
     except Exception as e:
         print("Não foi possivel encontrar a entidade: {}".format(str(entidade_obj)))
@@ -537,7 +571,7 @@ def import_entidades():
                 "uf",
                 "situacao",
                 "em_exercicio",
-                "is_parlamentar"
+                "is_parlamentar",
             ]
         ]
 
@@ -556,8 +590,9 @@ def import_autores_proposicoes():
 
         id_leggo = {"id_leggo": group_index[1]}
 
-        entidade_relacionada = get_entidade(id_entidade_parlametria,
-                                            "AutoresProposicaoEntidade")
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "AutoresProposicaoEntidade"
+        )
 
         prop = get_proposicao(id_leggo, "AutoresProposicaoProp")
 
@@ -567,26 +602,27 @@ def import_autores_proposicoes():
         if prop is None:
             continue
 
-        group_df = (grouped.get_group(group_index)[
-            [
-                "id_leggo",
-                "id_camara",
-                "id_senado",
-                "id_autor_parlametria",
-                "id_autor"
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "id_camara",
+                    "id_senado",
+                    "id_autor_parlametria",
+                    "id_autor",
+                ]
             ]
-        ]
             .assign(entidade=entidade_relacionada)
             .assign(proposicao=prop)
         )
 
         a = []
         for r in group_df.iterrows():
-            if r[1]['id_camara'] == 'None':
-                r[1]['id_camara'] = None
+            if r[1]["id_camara"] == "None":
+                r[1]["id_camara"] = None
 
-            if r[1]['id_senado'] == 'None':
-                r[1]['id_senado'] = None
+            if r[1]["id_senado"] == "None":
+                r[1]["id_senado"] = None
 
             a.append(AutoresProposicao(**r[1].to_dict()))
 
@@ -600,6 +636,7 @@ def import_anotacoes():
 
 def import_all_data():
     """Importa dados dos csv e salva no banco."""
+    import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
@@ -609,7 +646,6 @@ def import_all_data():
     import_pautas()
     import_emendas()
     import_comissoes()
-    import_entidades()
     import_atores()
     import_pressao()
     import_coautoria_node()
@@ -621,6 +657,7 @@ def import_all_data():
 
 def import_all_data_but_insights():
     """Importa dados dos csv e salva no banco (menos os insights)."""
+    import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
@@ -630,7 +667,6 @@ def import_all_data_but_insights():
     import_pautas()
     import_emendas()
     import_comissoes()
-    import_entidades()
     import_atores()
     import_pressao()
     import_coautoria_node()

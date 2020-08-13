@@ -74,7 +74,8 @@ def create_proposicao(self):
         ementa='Dispõe sobre o licenciamento ambiental...',
         justificativa='',
         autor_nome='Luciano Zica PSOL/CE',
-        relator_nome='Dep. Maurício Quintella Lessa (PR-AL)',
+        relator_id=74050,
+        relator_id_parlametria=174050,
         em_pauta=False
     )
     etapa_proposicao.save()
