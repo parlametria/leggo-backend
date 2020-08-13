@@ -200,7 +200,8 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
         interesses = get_filtered_interesses(interesseArg, tema_arg)
 
         queryset = EtapaProposicao.objects.filter(
-            id_leggo__in=interesses, relator_id_parlametria=leggo_id_autor
+            id_leggo__in=interesses.values("id_leggo"),
+            relator_id_parlametria=leggo_id_autor
         ).all()
 
         return queryset
@@ -238,7 +239,8 @@ class AtoresRelatoriasList(generics.ListAPIView):
 
         queryset = (
             EtapaProposicao.objects.filter(
-                id_leggo__in=interesses, relator_id__isnull=False
+                id_leggo__in=interesses.values("id_leggo"),
+                relator_id__isnull=False
             )
             .values("relator_id", "relator_id_parlametria")
             .annotate(quantidade_relatorias=Count("relator_id"))
