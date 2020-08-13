@@ -14,31 +14,39 @@ class AutoriaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Autoria
         fields = (
-            'id_leggo', 'id_documento', 'id_autor',
-            'descricao_tipo_documento', 'data',
-            'url_inteiro_teor', 'autores')
+            "id_leggo",
+            "id_documento",
+            "id_autor",
+            "descricao_tipo_documento",
+            "data",
+            "url_inteiro_teor",
+            "autores",
+        )
 
 
 class AutoriaList(generics.ListAPIView):
-    '''
+    """
     Dados de autoria de uma proposição. Apresenta lista de documentos contendo informações
     como a data de apresentação, tipo e autores.
-    '''
+    """
 
     serializer_class = AutoriaSerializer
 
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                'id', openapi.IN_PATH, 'id da proposição no sistema do Leg.go',
-                type=openapi.TYPE_INTEGER),
+                "id",
+                openapi.IN_PATH,
+                "id da proposição no sistema do Leg.go",
+                type=openapi.TYPE_INTEGER,
+            ),
         ]
     )
     def get_queryset(self):
-        '''
+        """
         Retorna a autoria
-        '''
-        id_prop = self.kwargs['id']
+        """
+        id_prop = self.kwargs["id"]
         return Autoria.objects.filter(id_leggo=id_prop)
 
 
@@ -55,9 +63,10 @@ class AutoriaAutorSerializer(serializers.Serializer):
 
 
 class AutoriasAutorList(generics.ListAPIView):
-    '''
+    """
     Informações sobre autorias de um autor específico.
-    '''
+    """
+
     serializer_class = AutoriaAutorSerializer
 
     def get_queryset(self):
@@ -103,9 +112,10 @@ class AutoriasAgregadasSerializer(serializers.Serializer):
 
 
 class AutoriasAgregadasList(generics.ListAPIView):
-    '''
+    """
     Informação agregada sobre autorias de projetos de lei
-    '''
+    """
+
     serializer_class = AutoriasAgregadasSerializer
 
     def get_queryset(self):
@@ -130,16 +140,20 @@ class AutoriasAgregadasList(generics.ListAPIView):
             .prefetch_related(
                 Prefetch("interesse", queryset=interesses)
             )
+            .values("id_autor", "id_autor_parlametria")
+            .annotate(quantidade_autorias=Count("id_autor"))
+            .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
 
         return autorias
 
 
 class AutoriasAgregadasByAutor(generics.ListAPIView):
-    '''
+    """
     Informação agregada sobre autorias de projetos de lei
     para um autor específico passado como parâmetro
-    '''
+    """
+
     serializer_class = AutoriasAgregadasSerializer
 
     def get_queryset(self):
@@ -158,15 +172,14 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         id_autor_parlametria = self.kwargs["id_autor"]
 
         autorias = (
-            Autoria.objects
-            .filter(id_autor_parlametria=id_autor_parlametria,
-                    id_leggo__in=interesses.values('id_leggo'),
-                    tipo_documento="Prop. Original / Apensada")
-            .values('id_autor', 'id_autor_parlametria')
-            .annotate(quantidade_autorias=Count('id_autor'))
-            .prefetch_related(
-                Prefetch("interesse", queryset=interesses)
+            Autoria.objects.filter(
+                id_autor_parlametria=id_autor_parlametria,
+                id_leggo__in=interesses.values("id_leggo"),
+                tipo_documento="Prop. Original / Apensada",
             )
+            .values("id_autor", "id_autor_parlametria")
+            .annotate(quantidade_autorias=Count("id_autor"))
+            .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return autorias
 
@@ -180,10 +193,10 @@ class AcoesSerializer(serializers.Serializer):
 
 
 class Acoes(generics.ListAPIView):
-    '''
+    """
     Dados de ações de um parlamentar. Apresenta números de emendas e requerimentos,
     assim como sua posição no ranking.
-    '''
+    """
 
     serializer_class = AcoesSerializer
 

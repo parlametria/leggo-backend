@@ -20,5 +20,6 @@ class Progresso(models.Model):
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name='progresso')
 
-    pulou = models.NullBooleanField(
-        help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario')
+    pulou = models.BooleanField(
+        help_text='TRUE se a proposicao pulou a fase, FALSE caso contrario',
+        null=True)
