@@ -243,6 +243,7 @@ class AutoriasOriginaisSerializer(serializers.Serializer):
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
     tipo_documento = serializers.CharField()
+    sigla = serializers.CharField()
 
 
 class AutoriasOriginaisList(generics.ListAPIView):
@@ -271,9 +272,19 @@ class AutoriasOriginaisList(generics.ListAPIView):
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31',
                     tipo_documento='Prop. Original / Apensada')
+            .select_related('etapa_proposicao')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
-                    'tipo_documento')
+                    'tipo_documento', 'etapa_proposicao__sigla_tipo',
+                    'etapa_proposicao__numero',
+                    'etapa_proposicao__data_apresentacao')
+            .annotate(
+                sigla=Concat(
+                    'etapa_proposicao__sigla_tipo', Value(' '),
+                    'etapa_proposicao__numero', Value('/'),
+                    ExtractYear('etapa_proposicao__data_apresentacao'),
+                    output_field=CharField())
+            )
         )
 
         return autorias

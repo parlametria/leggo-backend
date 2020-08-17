@@ -116,9 +116,14 @@ class ParlamentaresExercicioList(generics.ListAPIView):
 
     def get_queryset(self):
 
+        casa_arg = self.request.query_params.get("casa")
+
         queryset = Entidade.objects.filter(legislatura=56,
                                            is_parlamentar=1,
                                            em_exercicio=1)
+
+        if casa_arg:
+            queryset = queryset.filter(casa=casa_arg)
 
         return queryset
 
