@@ -201,7 +201,7 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
 
         queryset = EtapaProposicao.objects.filter(
             id_leggo__in=interesses.values("id_leggo"),
-            relator_id_parlametria=leggo_id_autor
+            relator_id_parlametria=leggo_id_autor,
         ).all()
 
         return queryset
@@ -239,8 +239,7 @@ class AtoresRelatoriasList(generics.ListAPIView):
 
         queryset = (
             EtapaProposicao.objects.filter(
-                id_leggo__in=interesses.values("id_leggo"),
-                relator_id__isnull=False
+                id_leggo__in=interesses.values("id_leggo"), relator_id__isnull=False
             )
             .values("relator_id", "relator_id_parlametria")
             .annotate(quantidade_relatorias=Count("relator_id"))
@@ -248,3 +247,19 @@ class AtoresRelatoriasList(generics.ListAPIView):
         )
 
         return queryset
+
+
+class AtoresProposicoesSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
+    tipo_generico = serializers.CharField()
+    sigla_local = serializers.CharField()
+    tipo_autor = serializers.CharField()
+    casa_autor = serializers.CharField()
+    autor_nome = serializers.CharField(source="entidade__nome")
+    autor_partido = serializers.CharField(source="entidade__partido")
+    autor_uf = serializers.CharField(source="entidade__uf")
+    bancada = serializers.CharField()
+    is_important = serializers.CharField()
+    peso_total_documentos = serializers.FloatField()
+    num_documentos = serializers.IntegerField()

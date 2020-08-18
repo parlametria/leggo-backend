@@ -6,7 +6,7 @@ from api.views.temperatura_historico_serializer import TemperaturaHistoricoSeria
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import get_time_filtered_pauta, get_filtered_interesses
 from django.db.models import Prefetch
-from api.views.ator_serializer import AtoresSerializerComissoes
+from api.views.ator_serializer import AtoresProposicoesSerializer
 from api.views.interesse_serializer import InteresseSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
 
@@ -14,7 +14,7 @@ from api.views.autores_proposicao_serializer import AutoresSerializer
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
     etapas = EtapasDetailSerializer(many=True, read_only=True)
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
-    important_atores = AtoresSerializerComissoes(many=True, read_only=True)
+    important_atores = AtoresProposicoesSerializer(many=True, read_only=True)
     interesse = InteresseSerializer(many=True, read_only=True)
     autoresProposicao = AutoresSerializer(many=True, read_only=True)
 
