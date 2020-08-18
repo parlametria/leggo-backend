@@ -13,8 +13,7 @@ from api.views.ator_serializer import (
     AtoresAgregadosList,
     AtoresProposicaoList,
     AtoresRelatoriasList,
-    AtoresRelatoriasDetalhada,
-    AtorList,
+    AtoresRelatoriasDetalhada
 )
 from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
@@ -46,7 +45,7 @@ from api.views.peso_politico_serializer import (
     PesoPoliticoParlamentar,
 )
 from api.views.entidade_serializer import (
-    EntidadeList, 
+    EntidadeList,
     ParlamentaresExercicioList,
     AtorEntidadeInfo
 )
