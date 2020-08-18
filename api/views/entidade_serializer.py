@@ -143,3 +143,40 @@ class RelatorSerializer(serializers.ModelSerializer):
             "uf",
             "em_exercicio",
         )
+
+
+class AtorEntidadeSerializer(serializers.ModelSerializer):
+    id_autor = serializers.IntegerField(source="id_entidade")
+    id_autor_parlametria = serializers.IntegerField(source="id_entidade_parlametria")
+    nome_autor = serializers.CharField(source="nome")
+    casa_autor = serializers.CharField(source="casa")
+
+    class Meta:
+        model = Entidade
+        fields = (
+            "id_autor",
+            "id_autor_parlametria",
+            "nome_autor",
+            "partido",
+            "uf",
+            "casa_autor"
+        )
+
+
+class AtorEntidadeInfo(generics.ListAPIView):
+    """
+    Retorna informações específicas de um parlamentar como nome, uf e partido
+    """
+
+    serializer_class = AtorEntidadeSerializer
+
+    def get_queryset(self):
+
+        id_autor_arg = self.kwargs["id_autor"]
+
+        queryset = (
+            Entidade.objects.filter(id_entidade_parlametria=id_autor_arg)
+            .order_by("-legislatura")
+        )[:1]
+
+        return queryset

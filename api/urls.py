@@ -45,7 +45,11 @@ from api.views.peso_politico_serializer import (
     PesoPoliticoLista,
     PesoPoliticoParlamentar,
 )
-from api.views.entidade_serializer import EntidadeList, ParlamentaresExercicioList
+from api.views.entidade_serializer import (
+    EntidadeList, 
+    ParlamentaresExercicioList,
+    AtorEntidadeInfo
+)
 from api.views.autores_proposicao_serializer import AutoresList
 
 
@@ -71,7 +75,7 @@ urlpatterns = [
     ),
     url(r"^pauta/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$", PautaList.as_view()),
     url(r"^emenda/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$", EmendasList.as_view()),
-    url(r"^ator/(?P<id_autor>[0-9]+)/?$", AtorList.as_view()),
+    url(r"^ator/(?P<id_autor>[0-9]+)/?$", AtorEntidadeInfo.as_view()),
     url(r"^atores/(?P<id_leggo>[0-9]+)/?$", AtoresProposicaoList.as_view()),
     url(r"^atores/relatorias/?$", AtoresRelatoriasList.as_view()),
     url(r"^atores/agregados/?$", AtoresAgregadosList.as_view()),
