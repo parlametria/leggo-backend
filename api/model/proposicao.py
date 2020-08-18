@@ -91,26 +91,29 @@ class Proposicao(models.Model):
         Retorna os atores por local (apenas locais importantes:
         comissões e plenário)
         '''
-        atores_filtrados = []
         top_n_atores = self.atores.values('id_autor') \
             .annotate(total_docs=Sum('peso_total_documentos')) \
-            .order_by('-total_docs')
-        for ator in self.atores.all():
-            for top_n_ator in top_n_atores:
-                if ator.id_autor == top_n_ator['id_autor']:
-                    atores_filtrados.append({
-                        'id_autor': ator.id_autor,
-                        'peso_total_documentos': ator.peso_total_documentos,
-                        'num_documentos': ator.num_documentos,
-                        'casa': ator.casa,
-                        'tipo_generico': ator.tipo_generico,
-                        'bancada': ator.bancada,
-                        'nome_partido_uf': ator.nome_partido_uf,
-                        'sigla_local_formatada': ator.sigla_local_formatada,
-                        'is_important': ator.is_important
-                    })
+            .order_by('-total_docs') \
+            .values('id_autor')
 
-        return atores_filtrados
+        atores = self.atores.filter(id_autor__in=top_n_atores) \
+            .select_related("entidade") \
+            .values(
+                "id_autor",
+                "id_autor_parlametria",
+                "tipo_generico",
+                "sigla_local",
+                "tipo_autor",
+                "casa_autor",
+                "bancada",
+                "is_important",
+                "num_documentos",
+                "peso_total_documentos",
+                "entidade__nome",
+                "entidade__uf",
+                "entidade__partido"
+            )
+        return atores
 
     @property
     def anotacao_data_ultima_modificacao(self):
