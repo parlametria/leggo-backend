@@ -219,6 +219,7 @@ class Acoes(generics.ListAPIView):
             autores.annotate(tipo_acao=Case(
                 When(tipo_documento='Emenda', then=Value('Emenda')),
                 When(tipo_documento='Requerimento', then=Value('Requerimento')),
+                When(tipo_documento='Prop. Original / Apensada', then=Value('Projeto')),
                 default=Value('Outros'),
                 output_field=CharField(),
                 ))
