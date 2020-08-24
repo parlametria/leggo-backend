@@ -15,6 +15,7 @@ class PresidenciaComissaoSerializer(serializers.Serializer):
     quantidade_comissao_presidente = serializers.IntegerField()
     info_comissao = serializers.CharField()
     interesse = InteresseSerializer(many=True, read_only=True)
+    tramitou_agenda = serializers.BooleanField()
 
 
 class PresidenciaComissaoLista(generics.ListAPIView):
