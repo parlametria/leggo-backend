@@ -11,7 +11,8 @@ def get_comissao_parlamentar(listaComissoesPassadas):
         obj_arr = []
         countComissoes = 0
         """
-        'tramitou' vai guardar a informação se proposições tramitaram nas comissões nesta agenda
+        'tramitou' vai guardar a informação se proposições
+        tramitaram nas comissões nesta agenda
         """
         tramitou = False
 
@@ -49,7 +50,8 @@ def get_comissao_parlamentar_id(id_parlamentar, listaComissoesPassadas):
         obj_arr = []
         countComissoes = 0
         """
-        'tramitou' vai guardar a informação se proposições tramitaram nas comissões nesta agenda
+        'tramitou' vai guardar a informação se proposições
+        tramitaram nas comissões nesta agenda
         """
         tramitou = False
 
