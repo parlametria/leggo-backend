@@ -264,6 +264,7 @@ class AtoresProposicoesSerializer(serializers.Serializer):
     peso_total_documentos = serializers.FloatField()
     num_documentos = serializers.IntegerField()
 
+
 class AtoresAgregadosByIDSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField()
     total_documentos = serializers.IntegerField()
@@ -302,8 +303,9 @@ class AtoresAgregadosByID(generics.ListAPIView):
             )
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
-        min_max = atores.aggregate(max_peso_documentos = Max("peso_documentos"),
-            min_peso_documentos = Min("peso_documentos"))
+        min_max = atores.aggregate(
+            max_peso_documentos=Max("peso_documentos"),
+            min_peso_documentos=Min("peso_documentos"))
         ator = atores.filter(id_autor_parlametria=leggo_id_autor).annotate(
                 max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
                 min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
