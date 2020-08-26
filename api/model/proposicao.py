@@ -27,7 +27,7 @@ ORDER_PROGRESSO_MPV = [
 
 class Proposicao(models.Model):
 
-    id_leggo = models.IntegerField(
+    id_leggo = models.TextField(
         'ID do Leggo',
         help_text='Id interno do leggo.')
 

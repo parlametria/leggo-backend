@@ -5,7 +5,7 @@ class CoautoriaNode(models.Model):
     '''
     Nós para criação do grafo de coautorias
     '''
-    id_leggo = models.IntegerField(
+    id_leggo = models.TextField(
         help_text='Id do leggo.')
 
     id_autor = models.IntegerField(

@@ -8,7 +8,7 @@ class AutoresProposicao(models.Model):
     Corresponde ao model de autores das proposições monitoradas pelo Leggo
     """
 
-    id_leggo = models.IntegerField(help_text="ID interno do Leggo")
+    id_leggo = models.TextField(help_text="ID interno do Leggo")
 
     id_camara = models.IntegerField(
         help_text="Id externo do sistema da Câmara",

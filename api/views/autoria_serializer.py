@@ -53,7 +53,7 @@ class AutoriaList(generics.ListAPIView):
 class AutoriaAutorSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField()
     id_documento = serializers.IntegerField()
-    id_leggo = serializers.IntegerField()
+    id_leggo = serializers.CharField()
     data = serializers.DateField()
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
@@ -239,7 +239,7 @@ class Acoes(generics.ListAPIView):
 class AutoriasOriginaisSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField()
     id_documento = serializers.IntegerField()
-    id_leggo = serializers.IntegerField()
+    id_leggo = serializers.CharField()
     data = serializers.DateField()
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
