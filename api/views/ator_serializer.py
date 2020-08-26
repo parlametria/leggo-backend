@@ -1,7 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import Prefetch, Sum, Count
+from django.db.models import Prefetch, Sum, Count, Max, Min, Value, FloatField
 
 from api.model.ator import Atores
 from api.model.etapa_proposicao import EtapaProposicao
@@ -122,7 +122,7 @@ class AtoresAgregadosSerializer(serializers.Serializer):
     casa_autor = serializers.CharField()
     bancada = serializers.CharField()
     total_documentos = serializers.IntegerField()
-    peso_documentos = serializers.IntegerField()
+    peso_documentos = serializers.FloatField()
 
 
 class AtoresAgregadosList(generics.ListAPIView):
@@ -263,3 +263,52 @@ class AtoresProposicoesSerializer(serializers.Serializer):
     is_important = serializers.CharField()
     peso_total_documentos = serializers.FloatField()
     num_documentos = serializers.IntegerField()
+
+
+class AtoresAgregadosByIDSerializer(serializers.Serializer):
+    id_autor_parlametria = serializers.IntegerField()
+    total_documentos = serializers.IntegerField()
+    peso_documentos = serializers.FloatField()
+    min_peso_documentos = serializers.FloatField()
+    max_peso_documentos = serializers.FloatField()
+
+
+class AtoresAgregadosByID(generics.ListAPIView):
+    """
+    Informação agregada sobre um parlamentar.
+    """
+
+    serializer_class = AtoresAgregadosByIDSerializer
+
+    def get_queryset(self):
+        """
+        Retorna a atividade parlamentar por interesse e tema de um parlamentar.
+        """
+        leggo_id_autor = self.kwargs["id_autor"]
+        tema_arg = self.request.query_params.get("tema")
+        interesse_arg = self.request.query_params.get("interesse")
+        if interesse_arg is None:
+            interesse_arg = "leggo"
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
+
+        atores = (
+            Atores.objects.filter(id_leggo__in=interesses.values("id_leggo"))
+            .select_related("entidade")
+            .values(
+                "id_autor_parlametria"
+            )
+            .annotate(
+                total_documentos=Sum("num_documentos"),
+                peso_documentos=Sum("peso_total_documentos"),
+            )
+            .prefetch_related(Prefetch("interesse", queryset=interesses))
+        )
+        min_max = atores.aggregate(
+            max_peso_documentos=Max("peso_documentos"),
+            min_peso_documentos=Min("peso_documentos"))
+        ator = atores.filter(id_autor_parlametria=leggo_id_autor).annotate(
+                max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
+                min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
+            )
+
+        return ator
