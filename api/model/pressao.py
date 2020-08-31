@@ -9,7 +9,7 @@ class Pressao(models.Model):
     Pressao da proposicao
     '''
 
-    id_leggo = models.IntegerField('Id da proposição principal no leggo.')
+    id_leggo = models.TextField('Id da proposição principal no leggo.')
     id_ext = models.IntegerField(
         'ID Externo', default=-1, help_text='Id externo do sistema da casa.')
 

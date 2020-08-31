@@ -164,7 +164,7 @@ class AtoresAgregadosList(generics.ListAPIView):
 
 
 class AtoresRelatoriasDetalhadaSerializer(serializers.Serializer):
-    id_leggo = serializers.IntegerField()
+    id_leggo = serializers.CharField()
     sigla = serializers.CharField()
 
 

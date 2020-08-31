@@ -8,7 +8,7 @@ class Atores(models.Model):
     '''
     Atores de documentos
     '''
-    id_leggo = models.IntegerField('Id da proposição principal no leggo.')
+    id_leggo = models.TextField('Id da proposição principal no leggo.')
 
     id_ext = models.IntegerField('ID Externo',
                                  help_text='Id externo do sistema da casa.')

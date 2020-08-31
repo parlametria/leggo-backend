@@ -7,7 +7,7 @@ class Anotacao(models.Model):
     Anotações relacionadas as PL's feitas por diferentes interesses
     """
 
-    id_leggo = models.IntegerField(help_text="Id da proposição no Leggo")
+    id_leggo = models.TextField(help_text="Id da proposição no Leggo")
 
     data_criacao = models.DateTimeField(help_text="Data de criação da anotação")
 
