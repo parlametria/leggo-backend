@@ -77,12 +77,6 @@ class PesoPoliticoParlamentar(generics.ListAPIView):
         """
         id_autor_arg = self.kwargs["id"]
 
-        id = (
-            Atores.objects.filter(id_autor_parlametria=id_autor_arg)
-            .values_list("id_autor_parlametria", flat=True)
-            .first()
-        )
-
-        data = get_peso_politico_parlamentar(id)
+        data = get_peso_politico_parlamentar(id_autor_arg)
 
         return data
