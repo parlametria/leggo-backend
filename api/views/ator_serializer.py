@@ -331,7 +331,7 @@ class AtuacaoParlamentarSerializer(serializers.Serializer):
 
 class AtuacaoParlamentarList(generics.ListAPIView):
     """
-    Informação sobre a atualçao dos parlamentares
+    Informação sobre a atuação dos parlamentares
     """
 
     serializer_class = AtuacaoParlamentarSerializer
