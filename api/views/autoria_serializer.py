@@ -58,6 +58,7 @@ class AutoriaAutorSerializer(serializers.Serializer):
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
     tipo_documento = serializers.CharField()
+    tipo_acao = serializers.CharField()
     peso_autor_documento = serializers.FloatField()
     sigla = serializers.CharField()
 
@@ -89,7 +90,7 @@ class AutoriasAutorList(generics.ListAPIView):
             .select_related('etapa_proposicao')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
-                    'tipo_documento', 'peso_autor_documento',
+                    'tipo_documento', 'tipo_acao', 'peso_autor_documento',
                     'etapa_proposicao__sigla_tipo',
                     'etapa_proposicao__numero',
                     'etapa_proposicao__data_apresentacao')
@@ -216,14 +217,7 @@ class Acoes(generics.ListAPIView):
         )
 
         result = (
-            autores.annotate(tipo_acao=Case(
-                When(tipo_documento='Emenda', then=Value('Emenda')),
-                When(tipo_documento='Requerimento', then=Value('Requerimento')),
-                When(tipo_documento='Prop. Original / Apensada', then=Value('Projeto')),
-                default=Value('Outros'),
-                output_field=CharField(),
-                ))
-            .values('id_autor_parlametria', 'tipo_acao')
+            autores.values('id_autor_parlametria', 'tipo_acao')
             .annotate(num_documentos=Count('tipo_acao'))
             .annotate(peso_total=Sum('peso_autor_documento'))
             .annotate(ranking_documentos=Window(
@@ -244,6 +238,7 @@ class AutoriasOriginaisSerializer(serializers.Serializer):
     descricao_tipo_documento = serializers.CharField()
     url_inteiro_teor = serializers.CharField()
     tipo_documento = serializers.CharField()
+    tipo_acao = serializers.CharField()
     sigla = serializers.CharField()
 
 
@@ -276,7 +271,7 @@ class AutoriasOriginaisList(generics.ListAPIView):
             .select_related('etapa_proposicao')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
-                    'tipo_documento', 'etapa_proposicao__sigla_tipo',
+                    'tipo_documento', 'tipo_acao', 'etapa_proposicao__sigla_tipo',
                     'etapa_proposicao__numero',
                     'etapa_proposicao__data_apresentacao')
             .annotate(
