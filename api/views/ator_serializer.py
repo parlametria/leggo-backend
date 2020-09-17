@@ -293,6 +293,7 @@ class AtoresAgregadosByID(generics.ListAPIView):
 
         atores = (
             Atores.objects.filter(id_leggo__in=interesses.values("id_leggo"))
+            .filter(tipo_acao__in=['Proposição', 'Recurso'])
             .select_related("entidade")
             .values(
                 "id_autor_parlametria"
@@ -324,6 +325,7 @@ class AtuacaoParlamentarSerializer(serializers.Serializer):
     id_ext = serializers.CharField()
     casa = serializers.CharField()
     tipo_generico = serializers.CharField()
+    tipo_acao = serializers.CharField()
     sigla_local = serializers.CharField()
     num_documentos = serializers.IntegerField()
     peso_total_documentos = serializers.FloatField()
@@ -359,6 +361,7 @@ class AtuacaoParlamentarList(generics.ListAPIView):
                 "id_ext",
                 "casa",
                 "tipo_generico",
+                "tipo_acao",
                 "sigla_local",
                 "num_documentos",
                 "peso_total_documentos"
