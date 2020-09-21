@@ -33,6 +33,10 @@ class Atores(models.Model):
     tipo_generico = models.TextField(
         'Tipo do documento')
 
+    tipo_acao = models.TextField(
+        null=True,
+        help_text='Tipo de ação')
+
     sigla_local = models.TextField(
         'Sigla do local'
     )

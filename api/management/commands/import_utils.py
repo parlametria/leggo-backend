@@ -356,6 +356,7 @@ def import_atores():
                     "peso_total_documentos",
                     "num_documentos",
                     "tipo_generico",
+                    "tipo_acao",
                     "sigla_local",
                     "is_important",
                     "bancada",
