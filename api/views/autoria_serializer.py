@@ -1,7 +1,7 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import F, Count, Prefetch, Value, CharField, Sum
+from django.db.models import F, Count, Prefetch, Value, CharField, Sum, Max, Min, FloatField
 from django.db.models.expressions import Window
 from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
@@ -110,6 +110,9 @@ class AutoriasAgregadasSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
     quantidade_autorias = serializers.IntegerField()
+    peso_documentos = serializers.FloatField()
+    min_peso_documentos = serializers.FloatField()
+    max_peso_documentos = serializers.FloatField()
 
 
 class AutoriasAgregadasList(generics.ListAPIView):
@@ -142,9 +145,20 @@ class AutoriasAgregadasList(generics.ListAPIView):
                 Prefetch("interesse", queryset=interesses)
             )
             .values("id_autor", "id_autor_parlametria")
-            .annotate(quantidade_autorias=Count("id_autor"))
+            .annotate(
+                quantidade_autorias=Count("id_autor"),
+                total_documentos=Sum("peso_autor_documento"),
+                peso_documentos=Sum("peso_autor_documento"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
+
+        min_max = autorias.aggregate(
+            max_peso_documentos=Max("peso_autor_documento"),
+            min_peso_documentos=Min("peso_autor_documento"))
+        autorias = autorias.annotate(
+                max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
+                min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
+            )
 
         return autorias
 
@@ -179,9 +193,22 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
                 tipo_documento="Prop. Original / Apensada",
             )
             .values("id_autor", "id_autor_parlametria")
-            .annotate(quantidade_autorias=Count("id_autor"))
+            .annotate(
+                quantidade_autorias=Count("id_autor"),
+                total_documentos=Sum("peso_autor_documento"),
+                peso_documentos=Sum("peso_autor_documento"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
+
+        min_max = autorias.aggregate(
+            max_peso_documentos=Max("peso_autor_documento"),
+            min_peso_documentos=Min("peso_autor_documento"))
+
+        autorias = autorias.filter(id_autor_parlametria=id_autor_parlametria).annotate(
+                max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
+                min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
+            )
+
         return autorias
 
 
