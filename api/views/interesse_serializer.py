@@ -84,3 +84,29 @@ class TemaList(generics.ListAPIView):
         lista_temas.sort(key=lambda item: item["tema_slug"])
 
         return lista_temas
+
+
+class InteresseByNomeSerializer(serializers.Serializer):
+    interesse = serializers.CharField()
+    nome_interesse = serializers.CharField()
+
+
+class InteresseByNome(generics.ListAPIView):
+    """
+    Retorna nome de agenda com base no interesse recebido.
+    """
+
+    serializer_class = InteresseByNomeSerializer
+
+    def get_queryset(self):
+
+        interesse_arg = self.request.query_params.get("interesse")
+        if interesse_arg is None:
+            interesse_arg = "leggo"
+
+        queryset = (
+            Interesse.objects.all().filter(interesse=interesse_arg)
+            .distinct("interesse", "nome_interesse")
+        )
+
+        return queryset

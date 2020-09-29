@@ -30,7 +30,8 @@ from api.views.autoria_serializer import (
 )
 from api.views.interesse_serializer import (
     InteresseList,
-    TemaList
+    TemaList,
+    InteresseByNome
 )
 from api.views.anotacao_serializer import (
     AnotacaoListByProp,
@@ -116,4 +117,6 @@ urlpatterns = [
     url(r"^interesses/(?P<id>[a-z0-9]+)/?$", InteresseList.as_view()),
     url(r"^anotacoes/(?P<id>[a-z0-9]+)/?$", AnotacaoListByProp.as_view()),
     url(r"^proposicoes/(?P<id>[a-z0-9]+)/?$", ProposicaoDetail.as_view()),
+    url(r"^interesses/?$", InteresseByNome.as_view()),
+
 ]
