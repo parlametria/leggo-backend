@@ -27,6 +27,7 @@ from api.views.autoria_serializer import (
     AutoriasAgregadasByAutor,
     Acoes,
     AutoriasOriginaisList,
+    AutoriasTabelaList
 )
 from api.views.interesse_serializer import (
     InteresseList,
@@ -110,6 +111,7 @@ urlpatterns = [
     # Estão embaixo para evitar ambiguidade nos endpoints
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
     url(r"^autorias/(?P<id>[a-z0-9]+)/?$", AutoriaList.as_view()),
+    url(r"^autorias/?$", AutoriasTabelaList.as_view()),
     url(r"^pressao/(?P<id_leggo>[a-z0-9]+)/?$", PressaoList.as_view()),
     url(r"^coautorias_node/(?P<id>[a-z0-9]+)/?$", CoautoriaNodeList.as_view()),
     url(r"^coautorias_edge/(?P<id>[a-z0-9]+)/?$", CoautoriaEdgeList.as_view()),
