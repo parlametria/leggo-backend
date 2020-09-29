@@ -138,7 +138,8 @@ class AutoriasAgregadasList(generics.ListAPIView):
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     data__gte='2019-01-31',
-                    tipo_documento="Prop. Original / Apensada")
+                    tipo_documento="Prop. Original / Apensada",
+                    tipo_acao__in=['Proposição', 'Recurso'])
             .values('id_autor', 'id_autor_parlametria')
             .annotate(quantidade_autorias=Count('id_autor'))
             .prefetch_related(
@@ -153,8 +154,8 @@ class AutoriasAgregadasList(generics.ListAPIView):
         )
 
         min_max = autorias.aggregate(
-            max_peso_documentos=Max("peso_autor_documento"),
-            min_peso_documentos=Min("peso_autor_documento"))
+                max_peso_documentos=Max("peso_documentos"),
+                min_peso_documentos=Min("peso_documentos"))
         autorias = autorias.annotate(
                 max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
                 min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
@@ -188,10 +189,10 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
 
         autorias = (
             Autoria.objects.filter(
-                id_autor_parlametria=id_autor_parlametria,
-                id_leggo__in=interesses.values("id_leggo"),
+                id_leggo__in=interesses.values('id_leggo'),
+                data__gte='2019-01-31',
                 tipo_documento="Prop. Original / Apensada",
-            )
+                tipo_acao__in=['Proposição', 'Recurso'])
             .values("id_autor", "id_autor_parlametria")
             .annotate(
                 quantidade_autorias=Count("id_autor"),
@@ -201,9 +202,8 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         )
 
         min_max = autorias.aggregate(
-            max_peso_documentos=Max("peso_autor_documento"),
-            min_peso_documentos=Min("peso_autor_documento"))
-
+                max_peso_documentos=Max("peso_documentos"),
+                min_peso_documentos=Min("peso_documentos"))
         autorias = autorias.filter(id_autor_parlametria=id_autor_parlametria).annotate(
                 max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
                 min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
