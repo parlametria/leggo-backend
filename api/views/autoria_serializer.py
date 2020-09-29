@@ -1,7 +1,16 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import F, Count, Prefetch, Value, CharField, Sum, Max, Min, FloatField
+from django.db.models import (
+    F,
+    Count,
+    Prefetch,
+    Value,
+    CharField,
+    Sum,
+    Max,
+    Min,
+    FloatField)
 from django.db.models.expressions import Window
 from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
@@ -147,7 +156,6 @@ class AutoriasAgregadasList(generics.ListAPIView):
             .values("id_autor", "id_autor_parlametria")
             .annotate(
                 quantidade_autorias=Count("id_autor"),
-                total_documentos=Sum("peso_autor_documento"),
                 peso_documentos=Sum("peso_autor_documento"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
@@ -194,7 +202,6 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
             .values("id_autor", "id_autor_parlametria")
             .annotate(
                 quantidade_autorias=Count("id_autor"),
-                total_documentos=Sum("peso_autor_documento"),
                 peso_documentos=Sum("peso_autor_documento"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
