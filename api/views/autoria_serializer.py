@@ -138,7 +138,6 @@ class AutoriasAgregadasList(generics.ListAPIView):
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     data__gte='2019-01-31',
-                    tipo_documento="Prop. Original / Apensada",
                     tipo_acao__in=['Proposição', 'Recurso'])
             .values('id_autor', 'id_autor_parlametria')
             .annotate(quantidade_autorias=Count('id_autor'))
@@ -191,7 +190,6 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
             Autoria.objects.filter(
                 id_leggo__in=interesses.values('id_leggo'),
                 data__gte='2019-01-31',
-                tipo_documento="Prop. Original / Apensada",
                 tipo_acao__in=['Proposição', 'Recurso'])
             .values("id_autor", "id_autor_parlametria")
             .annotate(
