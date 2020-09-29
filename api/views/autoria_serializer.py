@@ -224,15 +224,14 @@ class AutoriasAgregadasCrachaSerializer(serializers.Serializer):
 
 class AutoriasAgregadasCracha(generics.ListAPIView):
     """
-    Informação agregada sobre autorias de projetos de lei.
+    Informação agregada sobre autorias de projetos de lei para crachas.
     """
 
     serializer_class = AutoriasAgregadasCrachaSerializer
 
     def get_queryset(self):
         '''
-        Retorna quantidade de autorias para um parlamentar específico.
-        Considera as autorias do parlamentar para um interesse específico.
+        Retorna quantidade de autorias por parlamentar.
         Se não for passado um interesse como argumento,
         os dados retornados serão os do interesse default (leggo).
         '''
@@ -263,11 +262,20 @@ class AutoriasAgregadasCracha(generics.ListAPIView):
 
 
 class AutoriasAgregadasCrachaById(generics.ListAPIView):
+    """
+    Informação agregada sobre autorias de projetos de lei para crachas,
+    para um autor específico passado como parâmetro.
+    """
 
     serializer_class = AutoriasAgregadasCrachaSerializer
 
     def get_queryset(self):
-
+        '''
+        Retorna quantidade de autorias para um parlamentar específico.
+        Considera as autorias do parlamentar para um interesse específico.
+        Se não for passado um interesse como argumento,
+        os dados retornados serão os do interesse default (leggo).
+        '''
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
         if interesse_arg is None:
