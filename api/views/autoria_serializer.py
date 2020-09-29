@@ -1,7 +1,16 @@
 from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
-from django.db.models import F, Count, Prefetch, Value, CharField, Sum, Max, Min, FloatField
+from django.db.models import (
+    F,
+    Count,
+    Prefetch,
+    Value,
+    CharField,
+    Sum,
+    Max,
+    Min,
+    FloatField)
 from django.db.models.expressions import Window
 from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
@@ -147,11 +156,9 @@ class AutoriasAgregadasList(generics.ListAPIView):
             .values("id_autor", "id_autor_parlametria")
             .annotate(
                 quantidade_autorias=Count("id_autor"),
-                total_documentos=Sum("peso_autor_documento"),
                 peso_documentos=Sum("peso_autor_documento"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
-
         min_max = autorias.aggregate(
                 max_peso_documentos=Max("peso_documentos"),
                 min_peso_documentos=Min("peso_documentos"))
@@ -194,7 +201,6 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
             .values("id_autor", "id_autor_parlametria")
             .annotate(
                 quantidade_autorias=Count("id_autor"),
-                total_documentos=Sum("peso_autor_documento"),
                 peso_documentos=Sum("peso_autor_documento"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
@@ -206,6 +212,82 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
                 max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
                 min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
             )
+
+        return autorias
+
+
+class AutoriasAgregadasCrachaSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
+    quantidade_autorias = serializers.IntegerField()
+
+
+class AutoriasAgregadasCracha(generics.ListAPIView):
+    """
+    Informação agregada sobre autorias de projetos de lei.
+    """
+
+    serializer_class = AutoriasAgregadasCrachaSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna quantidade de autorias para um parlamentar específico.
+        Considera as autorias do parlamentar para um interesse específico.
+        Se não for passado um interesse como argumento,
+        os dados retornados serão os do interesse default (leggo).
+        '''
+
+        interesse_arg = self.request.query_params.get('interesse')
+        tema_arg = self.request.query_params.get('tema')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
+
+        autorias = (
+            Autoria.objects
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    data__gte='2019-01-31',
+                    tipo_documento="Prop. Original / Apensada",
+                    tipo_acao__in=['Proposição', 'Recurso'])
+            .values('id_autor', 'id_autor_parlametria')
+            .annotate(quantidade_autorias=Count('id_autor'))
+            .prefetch_related(
+                Prefetch("interesse", queryset=interesses)
+            )
+            .values("id_autor", "id_autor_parlametria")
+            .annotate(
+                quantidade_autorias=Count("id_autor"))
+            .prefetch_related(Prefetch("interesse", queryset=interesses))
+        )
+        return autorias
+
+
+class AutoriasAgregadasCrachaById(generics.ListAPIView):
+
+    serializer_class = AutoriasAgregadasCrachaSerializer
+
+    def get_queryset(self):
+
+        interesse_arg = self.request.query_params.get('interesse')
+        tema_arg = self.request.query_params.get('tema')
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
+
+        id_autor_parlametria = self.kwargs["id_autor"]
+
+        autorias = (
+            Autoria.objects.filter(
+                id_autor_parlametria=id_autor_parlametria,
+                id_leggo__in=interesses.values('id_leggo'),
+                data__gte='2019-01-31',
+                tipo_documento="Prop. Original / Apensada",
+                tipo_acao__in=['Proposição', 'Recurso'])
+            .values("id_autor", "id_autor_parlametria")
+            .annotate(
+                quantidade_autorias=Count("id_autor"))
+            .prefetch_related(Prefetch("interesse", queryset=interesses))
+        )
 
         return autorias
 
