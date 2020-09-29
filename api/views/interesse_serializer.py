@@ -77,7 +77,8 @@ class TemaList(generics.ListAPIView):
 
         temas = []
         for tema_list in queryset:
-            temas.extend(tema_list.obj_temas)
+            if len(tema_list.obj_temas) and tema_list.obj_temas[0]['tema'] != 'nan':
+                temas.extend(tema_list.obj_temas)
 
         lista_temas = list({v["tema_slug"]: v for v in temas}.values())
         lista_temas.sort(key=lambda item: item["tema_slug"])
