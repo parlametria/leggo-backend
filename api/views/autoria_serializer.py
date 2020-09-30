@@ -219,7 +219,7 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
 class AutoriasAgregadasProjetosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    quantidade_autorias = serializers.IntegerField()
+    quant_autorias_projetos = serializers.IntegerField()
 
 
 class AutoriasAgregadasProjetos(generics.ListAPIView):
@@ -249,13 +249,12 @@ class AutoriasAgregadasProjetos(generics.ListAPIView):
                     tipo_documento="Prop. Original / Apensada",
                     tipo_acao__in=['Proposição', 'Recurso'])
             .values('id_autor', 'id_autor_parlametria')
-            .annotate(quantidade_autorias=Count('id_autor'))
             .prefetch_related(
                 Prefetch("interesse", queryset=interesses)
             )
             .values("id_autor", "id_autor_parlametria")
             .annotate(
-                quantidade_autorias=Count("id_autor"))
+                quant_autorias_projetos=Count("id_autor"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return autorias
@@ -293,7 +292,7 @@ class AutoriasAgregadasProjetosById(generics.ListAPIView):
                 tipo_acao__in=['Proposição', 'Recurso'])
             .values("id_autor", "id_autor_parlametria")
             .annotate(
-                quantidade_autorias=Count("id_autor"))
+                quant_autorias_projetos=Count("id_autor"))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
 
