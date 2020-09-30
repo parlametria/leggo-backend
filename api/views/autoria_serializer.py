@@ -316,3 +316,54 @@ class AutoriasOriginaisList(generics.ListAPIView):
         )
 
         return autorias
+
+
+class AutoriasTabelaSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    casa_autor = serializers.CharField()
+    id_documento = serializers.IntegerField()
+    id_leggo = serializers.CharField()
+    id_principal = serializers.CharField()
+    casa = serializers.CharField()
+    data = serializers.DateField()
+    descricao_tipo_documento = serializers.CharField()
+    tipo_documento = serializers.CharField()
+    tipo_acao = serializers.CharField()
+    peso_autor_documento = serializers.FloatField()
+
+
+class AutoriasTabelaList(generics.ListAPIView):
+    """
+    Informações sobre autorias de documentos relacionadas a projetos
+    """
+
+    serializer_class = AutoriasTabelaSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna as autorias dos parlamentares
+        Se não for passado um interesse como argumento,
+        os dados retornados serão os do interesse default (leggo).
+        '''
+        interesse_arg = self.request.query_params.get('interesse')
+        tema_arg = self.request.query_params.get('tema')
+
+        if interesse_arg is None:
+            interesse_arg = 'leggo'
+        interesses = get_filtered_interesses(interesse_arg, tema_arg)
+
+        autorias = (
+            Autoria.objects
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    data__gt='2019-01-31')
+            .select_related('etapa_proposicao')
+            .values('id_autor', 'casa_autor', 'id_documento', 'id_leggo',
+                    'id_principal', 'casa',
+                    'data', 'descricao_tipo_documento',
+                    'tipo_documento', 'tipo_acao', 'peso_autor_documento',
+                    'etapa_proposicao__sigla_tipo',
+                    'etapa_proposicao__numero',
+                    'etapa_proposicao__data_apresentacao')
+        )
+
+        return autorias
