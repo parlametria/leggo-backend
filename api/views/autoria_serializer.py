@@ -216,18 +216,18 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         return autorias
 
 
-class AutoriasAgregadasCrachaSerializer(serializers.Serializer):
+class AutoriasAgregadasProjetosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
     quantidade_autorias = serializers.IntegerField()
 
 
-class AutoriasAgregadasCracha(generics.ListAPIView):
+class AutoriasAgregadasProjetos(generics.ListAPIView):
     """
     Informação agregada sobre autorias de projetos de lei para crachas.
     """
 
-    serializer_class = AutoriasAgregadasCrachaSerializer
+    serializer_class = AutoriasAgregadasProjetosSerializer
 
     def get_queryset(self):
         '''
@@ -261,13 +261,13 @@ class AutoriasAgregadasCracha(generics.ListAPIView):
         return autorias
 
 
-class AutoriasAgregadasCrachaById(generics.ListAPIView):
+class AutoriasAgregadasProjetosById(generics.ListAPIView):
     """
     Informação agregada sobre autorias de projetos de lei para crachas,
     para um autor específico passado como parâmetro.
     """
 
-    serializer_class = AutoriasAgregadasCrachaSerializer
+    serializer_class = AutoriasAgregadasProjetosSerializer
 
     def get_queryset(self):
         '''
