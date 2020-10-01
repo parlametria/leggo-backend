@@ -15,7 +15,7 @@ from api.views.ator_serializer import (
     AtoresRelatoriasList,
     AtoresRelatoriasDetalhada,
     AtoresAgregadosByID,
-    AtuacaoParlamentarList
+    AtuacaoParlamentarList,
 )
 from api.views.pressao_serializer import PressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
@@ -25,6 +25,8 @@ from api.views.autoria_serializer import (
     AutoriasAgregadasList,
     AutoriasAutorList,
     AutoriasAgregadasByAutor,
+    AutoriasAgregadasProjetos,
+    AutoriasAgregadasProjetosById,
     Acoes,
     AutoriasOriginaisList,
     AutoriasTabelaList
@@ -91,6 +93,11 @@ urlpatterns = [
     url(
         r"^autorias/agregadas/(?P<id_autor>[0-9]+)/?$",
         AutoriasAgregadasByAutor.as_view(),
+    ),
+    url(r"^autorias/projetos/?$", AutoriasAgregadasProjetos.as_view()),
+    url(
+        r"^autorias/projetos/(?P<id_autor>[0-9]+)/?$",
+        AutoriasAgregadasProjetosById.as_view(),
     ),
     url(r"^temas/?$", TemaList.as_view()),
     url(r"^anotacoes/?$", AnotacaoList.as_view()),
