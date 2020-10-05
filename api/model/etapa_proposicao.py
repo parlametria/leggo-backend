@@ -82,6 +82,8 @@ class EtapaProposicao(models.Model):
         Entidade, on_delete=models.SET_NULL, related_name="relatoria", null=True
     )
 
+    status = models.TextField(blank=True, null=True)
+
     class Meta:
         indexes = [
             models.Index(fields=["casa", "id_ext"]),
@@ -101,19 +103,6 @@ class EtapaProposicao(models.Model):
     def url(self):
         """URL para a página da proposição em sua respectiva casa."""
         return URLS[self.casa] + str(self.id_ext)
-
-    @property
-    def status(self):
-        # It's pefetched, avoid query
-        status_list = ["Caducou", "Rejeitada", "Lei"]
-        trams = list(self.tramitacao.all())
-        if trams:
-            for tram in trams:
-                if tram.status in status_list:
-                    return tram.status
-            return trams[-1].status
-        else:
-            return None
 
     @property
     def resumo_tramitacao(self):
