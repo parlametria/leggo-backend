@@ -69,14 +69,52 @@ def import_proposicoes():
 
     for _, etapas_df in props_df.groupby(["id_leggo"]):
         etapas = []
+        sigla_camara = ''
+        sigla_senado = ''
         for _, etapa in etapas_df.iterrows():
             etapas.append(
                 EtapaProposicao.objects.get(casa=etapa.casa, id_ext=etapa.id_ext)
             )
         prop = Proposicao(id_leggo=etapa.id_leggo)
         prop.save()
+
+        # formata siglas
+        if len(etapas) == 2:
+            if etapas[0].casa == 'camara':
+                sigla_camara = cria_sigla(etapas[0])
+                sigla_senado = cria_sigla(etapas[1])
+
+            elif etapas[0].casa == 'senado':
+                sigla_senado = cria_sigla(etapas[0])
+                sigla_camara = cria_sigla(etapas[1])
+
+            prop.sigla_camara = sigla_camara
+            prop.save()
+            prop.sigla_senado = sigla_senado
+            prop.save()
+                
+        else:
+            if etapas[0].casa == 'camara':
+                sigla_camara = cria_sigla(etapas[0])
+                prop.sigla_camara = sigla_camara
+                prop.save()
+
+            elif etapas[0].casa == 'senado':
+                sigla_senado = cria_sigla(etapas[0])
+                prop.sigla_senado = sigla_senado
+                prop.save()
+
         prop.etapas.set(etapas)
         prop.save()
+
+
+def cria_sigla(etapa):
+    sigla = str(
+        etapa.sigla_tipo + ' ' +
+        str(etapa.numero) + '/' +
+        str(etapa.data_apresentacao.year)
+    )
+    return sigla
 
 
 def import_tramitacoes():
