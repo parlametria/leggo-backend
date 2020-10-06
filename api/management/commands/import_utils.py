@@ -92,7 +92,7 @@ def import_proposicoes():
             prop.save()
             prop.sigla_senado = sigla_senado
             prop.save()
-                
+
         else:
             if etapas[0].casa == 'camara':
                 sigla_camara = cria_sigla(etapas[0])
