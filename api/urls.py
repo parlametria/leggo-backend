@@ -17,7 +17,7 @@ from api.views.ator_serializer import (
     AtoresAgregadosByID,
     AtuacaoParlamentarList,
 )
-from api.views.pressao_serializer import PressaoList
+from api.views.pressao_serializer import PressaoList, UltimaPressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
 from api.views.autoria_serializer import (
@@ -120,6 +120,7 @@ urlpatterns = [
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
     url(r"^autorias/(?P<id>[a-z0-9]+)/?$", AutoriaList.as_view()),
     url(r"^autorias/?$", AutoriasTabelaList.as_view()),
+    url(r"^pressao/ultima/?$", UltimaPressaoList.as_view()),
     url(r"^pressao/(?P<id_leggo>[a-z0-9]+)/?$", PressaoList.as_view()),
     url(r"^coautorias_node/(?P<id>[a-z0-9]+)/?$", CoautoriaNodeList.as_view()),
     url(r"^coautorias_edge/(?P<id>[a-z0-9]+)/?$", CoautoriaEdgeList.as_view()),
