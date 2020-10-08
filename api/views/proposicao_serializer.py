@@ -31,7 +31,9 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "ultima_temperatura",
             "temperatura_coeficiente",
             "important_atores",
-            "anotacao_data_ultima_modificacao"
+            "anotacao_data_ultima_modificacao",
+            "sigla_camara",
+            "sigla_senado"
         )
 
 
@@ -50,6 +52,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "temperatura_coeficiente",
             "id_leggo",
             "anotacao_data_ultima_modificacao",
+            "sigla_camara",
+            "sigla_senado"
         )
 
 
