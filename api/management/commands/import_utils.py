@@ -22,6 +22,7 @@ from api.model.anotacao_geral import AnotacaoGeral
 from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
 from api.utils.relator import check_relator_id
+from api.utils.sigla import cria_sigla
 
 
 def import_etapas_proposicoes():
@@ -106,15 +107,6 @@ def import_proposicoes():
 
         prop.etapas.set(etapas)
         prop.save()
-
-
-def cria_sigla(etapa):
-    sigla = str(
-        etapa.sigla_tipo + ' ' +
-        str(etapa.numero) + '/' +
-        str(etapa.data_apresentacao.year)
-    )
-    return sigla
 
 
 def import_tramitacoes():
