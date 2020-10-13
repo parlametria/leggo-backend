@@ -14,8 +14,7 @@ class InteresseSerializer(serializers.ModelSerializer):
             "slug_temas",
             "apelido",
             "advocacy_link",
-            "tipo_agenda",
-            "ultima_pressao",
+            "tipo_agenda"
         )
 
 

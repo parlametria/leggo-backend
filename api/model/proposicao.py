@@ -90,14 +90,6 @@ class Proposicao(models.Model):
             return 0
 
     @property
-    def ultima_temperatura(self):
-        temperaturas = self.temperatura_historico.values('temperatura_recente')
-        if (len(temperaturas) == 0):
-            return 0
-        else:
-            return temperaturas[0]['temperatura_recente']
-
-    @property
     def important_atores(self):
         '''
         Retorna os atores por local (apenas locais importantes:
