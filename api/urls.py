@@ -17,7 +17,7 @@ from api.views.ator_serializer import (
     AtoresAgregadosByID,
     AtuacaoParlamentarList,
 )
-from api.views.pressao_serializer import PressaoList
+from api.views.pressao_serializer import PressaoList, UltimaPressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
 from api.views.autoria_serializer import (
@@ -29,19 +29,18 @@ from api.views.autoria_serializer import (
     AutoriasAgregadasProjetosById,
     Acoes,
     AutoriasOriginaisList,
-    AutoriasTabelaList
+    AutoriasTabelaList,
 )
-from api.views.interesse_serializer import (
-    InteresseList,
-    TemaList,
-    InteresseByNome
-)
+from api.views.interesse_serializer import InteresseList, TemaList, InteresseByNome
 from api.views.anotacao_serializer import (
     AnotacaoListByProp,
     AnotacaoList,
     AnotacaoGeralList,
 )
-from api.views.temperatura_historico_serializer import TemperaturaMaxPeriodo
+from api.views.temperatura_historico_serializer import (
+    TemperaturaMaxPeriodo,
+    UltimaTemperaturaList,
+)
 from api.views.presidencia_comissao_serializer import (
     PresidenciaComissaoLista,
     PresidenciaComissaoParlamentar,
@@ -53,7 +52,7 @@ from api.views.peso_politico_serializer import (
 from api.views.entidade_serializer import (
     EntidadeList,
     ParlamentaresExercicioList,
-    AtorEntidadeInfo
+    AtorEntidadeInfo,
 )
 from api.views.autores_proposicao_serializer import AutoresList
 
@@ -103,6 +102,7 @@ urlpatterns = [
     url(r"^anotacoes/?$", AnotacaoList.as_view()),
     url(r"^anotacoes-gerais/?$", AnotacaoGeralList.as_view()),
     url(r"^temperatura/max/?$", TemperaturaMaxPeriodo.as_view()),
+    url(r"^temperatura/ultima/?$", UltimaTemperaturaList.as_view()),
     url(r"^comissao/presidencia/?$", PresidenciaComissaoLista.as_view()),
     url(
         r"^comissao/presidencia/(?P<id>[0-9]+)/?$",
@@ -115,11 +115,11 @@ urlpatterns = [
     url(r"^autorias/acoes/?$", Acoes.as_view()),
     url(r"^autores/?$", AutoresList.as_view()),
     url(r"^ator/(?P<id_autor>[0-9]+)/originais/?$", AutoriasOriginaisList.as_view()),
-
     # Estão embaixo para evitar ambiguidade nos endpoints
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
     url(r"^autorias/(?P<id>[a-z0-9]+)/?$", AutoriaList.as_view()),
     url(r"^autorias/?$", AutoriasTabelaList.as_view()),
+    url(r"^pressao/ultima/?$", UltimaPressaoList.as_view()),
     url(r"^pressao/(?P<id_leggo>[a-z0-9]+)/?$", PressaoList.as_view()),
     url(r"^coautorias_node/(?P<id>[a-z0-9]+)/?$", CoautoriaNodeList.as_view()),
     url(r"^coautorias_edge/(?P<id>[a-z0-9]+)/?$", CoautoriaEdgeList.as_view()),
@@ -127,5 +127,4 @@ urlpatterns = [
     url(r"^anotacoes/(?P<id>[a-z0-9]+)/?$", AnotacaoListByProp.as_view()),
     url(r"^proposicoes/(?P<id>[a-z0-9]+)/?$", ProposicaoDetail.as_view()),
     url(r"^interesses/?$", InteresseByNome.as_view()),
-
 ]

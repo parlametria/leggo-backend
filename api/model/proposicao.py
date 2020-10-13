@@ -31,6 +31,18 @@ class Proposicao(models.Model):
         'ID do Leggo',
         help_text='Id interno do leggo.')
 
+    sigla_camara = models.TextField(
+        'Sigla da proposição na Câmara',
+        null=True,
+        blank=True
+    )
+
+    sigla_senado = models.TextField(
+        'Sigla da proposição no Senado',
+        null=True,
+        blank=True
+    )
+
     @property
     def resumo_progresso(self):
         if self.progresso.filter(fase_global='Comissão Mista').exists():
@@ -76,14 +88,6 @@ class Proposicao(models.Model):
             return stats.linregress(dates_x, temperaturas_y)[0]
         else:
             return 0
-
-    @property
-    def ultima_temperatura(self):
-        temperaturas = self.temperatura_historico.values('temperatura_recente')
-        if (len(temperaturas) == 0):
-            return 0
-        else:
-            return temperaturas[0]['temperatura_recente']
 
     @property
     def important_atores(self):
