@@ -28,10 +28,11 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "resumo_progresso",
             "id_leggo",
             "temperatura_historico",
-            "ultima_temperatura",
             "temperatura_coeficiente",
             "important_atores",
-            "anotacao_data_ultima_modificacao"
+            "anotacao_data_ultima_modificacao",
+            "sigla_camara",
+            "sigla_senado"
         )
 
 
@@ -46,10 +47,11 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "interesse",
             "etapas",
             "resumo_progresso",
-            "ultima_temperatura",
             "temperatura_coeficiente",
             "id_leggo",
             "anotacao_data_ultima_modificacao",
+            "sigla_camara",
+            "sigla_senado"
         )
 
 
