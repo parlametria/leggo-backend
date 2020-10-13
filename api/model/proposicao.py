@@ -31,6 +31,18 @@ class Proposicao(models.Model):
         'ID do Leggo',
         help_text='Id interno do leggo.')
 
+    sigla_camara = models.TextField(
+        'Sigla da proposição na Câmara',
+        null=True,
+        blank=True
+    )
+
+    sigla_senado = models.TextField(
+        'Sigla da proposição no Senado',
+        null=True,
+        blank=True
+    )
+
     @property
     def resumo_progresso(self):
         if self.progresso.filter(fase_global='Comissão Mista').exists():
