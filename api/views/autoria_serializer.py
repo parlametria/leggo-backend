@@ -220,6 +220,7 @@ class AutoriasAgregadasProjetosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
     quant_autorias_projetos = serializers.IntegerField()
+    peso_autorias_projetos = serializers.FloatField()
 
 
 class AutoriasAgregadasProjetos(generics.ListAPIView):
@@ -248,13 +249,13 @@ class AutoriasAgregadasProjetos(generics.ListAPIView):
                     data__gte='2019-01-31',
                     tipo_documento="Prop. Original / Apensada",
                     tipo_acao__in=['Proposição', 'Recurso'])
-            .values('id_autor', 'id_autor_parlametria')
             .prefetch_related(
                 Prefetch("interesse", queryset=interesses)
             )
             .values("id_autor", "id_autor_parlametria")
             .annotate(
-                quant_autorias_projetos=Count("id_autor"))
+                quant_autorias_projetos=Count("id_autor"),
+                peso_autorias_projetos=Sum('peso_autor_documento'))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return autorias
@@ -347,6 +348,7 @@ class Acoes(generics.ListAPIView):
 class AutoriasOriginaisSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField()
     id_documento = serializers.IntegerField()
+    peso_autor_documento = serializers.FloatField()
     id_leggo = serializers.CharField()
     data = serializers.DateField()
     descricao_tipo_documento = serializers.CharField()
@@ -383,8 +385,9 @@ class AutoriasOriginaisList(generics.ListAPIView):
                     data__gte='2019-01-31',
                     tipo_documento='Prop. Original / Apensada')
             .select_related('etapa_proposicao')
-            .values('id_autor_parlametria', 'id_documento', 'id_leggo',
-                    'data', 'descricao_tipo_documento', 'url_inteiro_teor',
+            .values('id_autor_parlametria', 'id_documento', 'peso_autor_documento',
+                    'id_leggo', 'data',
+                    'descricao_tipo_documento', 'url_inteiro_teor',
                     'tipo_documento', 'tipo_acao', 'etapa_proposicao__sigla_tipo',
                     'etapa_proposicao__numero',
                     'etapa_proposicao__data_apresentacao')
