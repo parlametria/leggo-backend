@@ -49,7 +49,6 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "resumo_progresso",
             "temperatura_coeficiente",
             "id_leggo",
-            "anotacao_data_ultima_modificacao",
             "sigla_camara",
             "sigla_senado"
         )

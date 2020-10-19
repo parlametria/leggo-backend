@@ -4,6 +4,7 @@ from drf_yasg.utils import swagger_auto_schema
 from api.model.anotacao import Anotacao
 from api.model.anotacao_geral import AnotacaoGeral
 from datetime import datetime
+from api.utils.filters import get_filtered_interesses
 
 
 class AnotacaoSerializer(serializers.ModelSerializer):
@@ -293,5 +294,37 @@ class AnotacaoGeralList(generics.ListAPIView):
 
         if ultimos_n:
             queryset = queryset[: int(ultimos_n)]
+
+        return queryset
+
+
+class UltimaAnotacaoSerializer(serializers.Serializer):
+    id_leggo = serializers.CharField()
+    anotacao_data_ultima_modificacao = serializers.DateTimeField(
+        source="data_ultima_modificacao")
+
+
+class UltimaAnotacaoList(generics.ListAPIView):
+    """
+    Retorna a data da última anotação de cada proposição de um interesse/agenda.
+    """
+
+    serializer_class = UltimaAnotacaoSerializer
+
+    def get_queryset(self):
+
+        interesse_arg = self.request.query_params.get("interesse", "leggo")
+
+        interesses = get_filtered_interesses(interesse_arg)
+
+        queryset = (
+            Anotacao.objects.filter(
+                id_leggo__in=interesses.values("id_leggo")
+            )
+            .values("id_leggo", "data_ultima_modificacao")
+            .order_by("id_leggo", "-data_ultima_modificacao")
+            .distinct("id_leggo")
+        )
+        print(queryset.query)
 
         return queryset
