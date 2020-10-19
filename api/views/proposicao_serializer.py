@@ -1,11 +1,13 @@
-from rest_framework import serializers, generics
+from rest_framework import serializers, generics, status
+from rest_framework.views import APIView
+from django.http import JsonResponse
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from api.model.proposicao import Proposicao
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import get_time_filtered_pauta, get_filtered_interesses
-from django.db.models import Prefetch
+from django.db.models import Prefetch, Count
 from api.views.ator_serializer import AtoresProposicoesSerializer
 from api.views.interesse_serializer import InteresseSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
@@ -140,3 +142,32 @@ class ProposicaoDetail(generics.ListAPIView):
             .distinct()
             .prefetch_related(Prefetch("interesse", queryset=interessesFiltered))
         )
+
+
+class ProposicaoCountSerializer(serializers.Serializer):
+    numero_proposicoes = serializers.IntegerField()
+
+
+class ProposicaoCountList(APIView):
+    """
+    Recupera a contagem de proposições monitoradas por interesse e tema
+    """
+
+    serializer_class = ProposicaoCountSerializer
+
+    def get(self, request, format=None):
+
+        interesseArg = self.request.query_params.get("interesse")
+        temaArg = self.request.query_params.get('tema')
+        # Adiciona interesse default
+        if interesseArg is None:
+            interesseArg = "leggo"
+
+        interesses = get_filtered_interesses(interesseArg, temaArg)
+
+        props = (
+            Proposicao.objects.filter(id_leggo__in=interesses.values('id_leggo'))
+            .distinct()
+            .aggregate(numero_proposicoes=Count('id_leggo'))
+        )
+        return JsonResponse(props, status=status.HTTP_200_OK)
