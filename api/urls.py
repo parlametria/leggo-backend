@@ -2,7 +2,11 @@ from django.conf.urls import url  # , include
 
 # from rest_framework.routers import DefaultRouter
 from api.views.info_serializer import Info
-from api.views.proposicao_serializer import ProposicaoDetail, ProposicaoList
+from api.views.proposicao_serializer import (
+    ProposicaoDetail,
+    ProposicaoList,
+    ProposicaoCountList
+)
 from api.views.etapa_serializer import EtapasList
 from api.views.tramitacao_serializer import TramitacaoEventList
 from api.views.progresso_serializer import ProgressoList
@@ -125,6 +129,7 @@ urlpatterns = [
     url(r"^coautorias_edge/(?P<id>[a-z0-9]+)/?$", CoautoriaEdgeList.as_view()),
     url(r"^interesses/(?P<id>[a-z0-9]+)/?$", InteresseList.as_view()),
     url(r"^anotacoes/(?P<id>[a-z0-9]+)/?$", AnotacaoListByProp.as_view()),
+    url(r"^proposicoes/contagem/?$", ProposicaoCountList.as_view()),
     url(r"^proposicoes/(?P<id>[a-z0-9]+)/?$", ProposicaoDetail.as_view()),
     url(r"^interesses/?$", InteresseByNome.as_view()),
 ]
