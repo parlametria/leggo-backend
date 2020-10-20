@@ -40,6 +40,7 @@ from api.views.anotacao_serializer import (
     AnotacaoListByProp,
     AnotacaoList,
     AnotacaoGeralList,
+    UltimaAnotacaoList
 )
 from api.views.temperatura_historico_serializer import (
     TemperaturaMaxPeriodo,
@@ -128,6 +129,7 @@ urlpatterns = [
     url(r"^coautorias_node/(?P<id>[a-z0-9]+)/?$", CoautoriaNodeList.as_view()),
     url(r"^coautorias_edge/(?P<id>[a-z0-9]+)/?$", CoautoriaEdgeList.as_view()),
     url(r"^interesses/(?P<id>[a-z0-9]+)/?$", InteresseList.as_view()),
+    url(r"^anotacoes/ultima/?$", UltimaAnotacaoList.as_view()),
     url(r"^anotacoes/(?P<id>[a-z0-9]+)/?$", AnotacaoListByProp.as_view()),
     url(r"^proposicoes/contagem/?$", ProposicaoCountList.as_view()),
     url(r"^proposicoes/(?P<id>[a-z0-9]+)/?$", ProposicaoDetail.as_view()),
