@@ -21,6 +21,7 @@ from api.model.anotacao import Anotacao
 from api.model.anotacao_geral import AnotacaoGeral
 from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
+from api.model.relatores_proposicao import RelatoresProposicao
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
@@ -660,6 +661,58 @@ def import_autores_proposicoes():
         AutoresProposicao.objects.bulk_create(a)
 
 
+def import_relatores_proposicoes():
+    """Carrega Relatores das proposições"""
+    grouped = pd.read_csv("data/relatores_leggo.csv")
+    grouped = grouped.groupby(["relator_id_parlametria", "id_leggo"])
+
+    for group_index in grouped.groups:
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index[0]}
+
+        id_leggo = {"id_leggo": group_index[1]}
+
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "RelatoresProposicaoEntidade"
+        )
+
+        prop = get_proposicao(id_leggo, "RelatoresroposicaoProp")
+
+        if entidade_relacionada is None:
+            continue
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "id_ext",
+                    "casa",
+                    "relator_id",
+                    "relator_id_parlametria",
+                    "relator_nome",
+                ]
+            ]
+            .assign(entidade=entidade_relacionada)
+            .assign(proposicao=prop)
+        )
+
+        a = []
+        for r in group_df.iterrows():
+            if r[1]["id_ext"] == "NA":
+                r[1]["id_camara"] = None
+
+            r[1]["relator_id"] = check_relator_id(r[1]["relator_id"])
+            r[1]["relator_id_parlametria"] = check_relator_id(
+                r[1]["relator_id_parlametria"]
+            )
+
+            a.append(RelatoresProposicao(**r[1].to_dict()))
+
+        RelatoresProposicao.objects.bulk_create(a)
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -683,6 +736,7 @@ def import_all_data():
     import_coautoria_edge()
     import_autoria()
     import_autores_proposicoes()
+    import_relatores_proposicoes()
     import_anotacoes()
 
 
@@ -704,6 +758,7 @@ def import_all_data_but_insights():
     import_coautoria_edge()
     import_autoria()
     import_autores_proposicoes()
+    import_relatores_proposicoes()
 
 
 def import_insights():
