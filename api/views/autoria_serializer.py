@@ -165,8 +165,10 @@ class AutoriasAgregadasList(generics.ListAPIView):
                 min_quantidade_autorias=Min("quantidade_autorias"))
         print(min_max)
         autorias = autorias.annotate(
-                max_quantidade_autorias=Value(min_max["max_quantidade_autorias"], IntegerField()),
-                min_quantidade_autorias=Value(min_max["min_quantidade_autorias"], IntegerField())
+                max_quantidade_autorias=Value(
+                    min_max["max_quantidade_autorias"], IntegerField()),
+                min_quantidade_autorias=Value(
+                    min_max["min_quantidade_autorias"], IntegerField())
             )
 
         return autorias
@@ -211,8 +213,10 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
                 max_quantidade_autorias=Max("quantidade_autorias"),
                 min_quantidade_autorias=Min("quantidade_autorias"))
         autorias = autorias.filter(id_autor_parlametria=id_autor_parlametria).annotate(
-                max_quantidade_autorias=Value(min_max["max_quantidade_autorias"], IntegerField()),
-                min_quantidade_autorias=Value(min_max["min_quantidade_autorias"], IntegerField())
+                max_quantidade_autorias=Value(
+                    min_max["max_quantidade_autorias"], IntegerField()),
+                min_quantidade_autorias=Value(
+                    min_max["min_quantidade_autorias"], IntegerField())
             )
 
         return autorias
