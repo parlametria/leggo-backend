@@ -10,7 +10,6 @@ from django.db.models import (
     Sum,
     Max,
     Min,
-    FloatField,
     IntegerField)
 from django.db.models.expressions import Window
 from django.db.models.functions import Concat, ExtractYear
