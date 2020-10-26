@@ -10,7 +10,7 @@ from django.db.models import (
     Sum,
     Max,
     Min,
-    FloatField)
+    IntegerField)
 from django.db.models.expressions import Window
 from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
@@ -120,8 +120,8 @@ class AutoriasAgregadasSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField()
     quantidade_autorias = serializers.IntegerField()
     peso_documentos = serializers.FloatField()
-    min_peso_documentos = serializers.FloatField()
-    max_peso_documentos = serializers.FloatField()
+    min_quantidade_autorias = serializers.IntegerField()
+    max_quantidade_autorias = serializers.IntegerField()
 
 
 class AutoriasAgregadasList(generics.ListAPIView):
@@ -147,7 +147,7 @@ class AutoriasAgregadasList(generics.ListAPIView):
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     data__gte='2019-01-31',
-                    tipo_acao__in=['Proposição', 'Recurso'])
+                    tipo_acao__in=['Proposição', 'Recurso'])  # !!!
             .values('id_autor', 'id_autor_parlametria')
             .annotate(quantidade_autorias=Count('id_autor'))
             .prefetch_related(
@@ -160,11 +160,14 @@ class AutoriasAgregadasList(generics.ListAPIView):
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         min_max = autorias.aggregate(
-                max_peso_documentos=Max("peso_documentos"),
-                min_peso_documentos=Min("peso_documentos"))
+                max_quantidade_autorias=Max("quantidade_autorias"),
+                min_quantidade_autorias=Min("quantidade_autorias"))
+        print(min_max)
         autorias = autorias.annotate(
-                max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
-                min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
+                max_quantidade_autorias=Value(
+                    min_max["max_quantidade_autorias"], IntegerField()),
+                min_quantidade_autorias=Value(
+                    min_max["min_quantidade_autorias"], IntegerField())
             )
 
         return autorias
@@ -197,7 +200,7 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
             Autoria.objects.filter(
                 id_leggo__in=interesses.values('id_leggo'),
                 data__gte='2019-01-31',
-                tipo_acao__in=['Proposição', 'Recurso'])
+                tipo_acao__in=['Proposição', 'Recurso'])  # !!!
             .values("id_autor", "id_autor_parlametria")
             .annotate(
                 quantidade_autorias=Count("id_autor"),
@@ -206,11 +209,13 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         )
 
         min_max = autorias.aggregate(
-                max_peso_documentos=Max("peso_documentos"),
-                min_peso_documentos=Min("peso_documentos"))
+                max_quantidade_autorias=Max("quantidade_autorias"),
+                min_quantidade_autorias=Min("quantidade_autorias"))
         autorias = autorias.filter(id_autor_parlametria=id_autor_parlametria).annotate(
-                max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
-                min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
+                max_quantidade_autorias=Value(
+                    min_max["max_quantidade_autorias"], IntegerField()),
+                min_quantidade_autorias=Value(
+                    min_max["min_quantidade_autorias"], IntegerField())
             )
 
         return autorias
@@ -338,7 +343,7 @@ class Acoes(generics.ListAPIView):
             .annotate(ranking_documentos=Window(
                 expression=RowNumber(),
                 partition_by=[F('tipo_acao')],
-                order_by=F('peso_total').desc()))
+                order_by=F('num_documentos').desc()))
             .order_by('ranking_documentos', 'tipo_acao')
         )
 
