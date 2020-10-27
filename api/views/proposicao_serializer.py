@@ -27,7 +27,6 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "interesse",
             "autoresProposicao",
             "etapas",
-            "resumo_progresso",
             "id_leggo",
             "temperatura_historico",
             "temperatura_coeficiente",
@@ -48,7 +47,6 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "id",
             "interesse",
             "etapas",
-            "resumo_progresso",
             "id_leggo",
             "sigla_camara",
             "sigla_senado"
