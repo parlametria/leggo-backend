@@ -9,7 +9,7 @@ from api.views.proposicao_serializer import (
 )
 from api.views.etapa_serializer import EtapasList
 from api.views.tramitacao_serializer import TramitacaoEventList
-from api.views.progresso_serializer import ProgressoList
+from api.views.progresso_serializer import ProgressoByID, ProgressoList
 from api.views.comissao_serializer import ComissaoList
 from api.views.pauta_serializer import PautaList
 from api.views.emenda_serializer import EmendasList
@@ -77,7 +77,8 @@ urlpatterns = [
     ),
     url(r"^eventos_tramitacao/?$", TramitacaoEventList.as_view()),
     url(r"^proposicoes/(?P<id_ext>[0-9]+)/fases/?$", Info.as_view()),
-    url(r"^progresso/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$", ProgressoList.as_view()),
+    url(r"^progresso/(?P<id_leggo>[a-z0-9]+)/?$", ProgressoByID.as_view()),
+    url(r"^progresso/?$", ProgressoList.as_view()),
     url(
         r"^comissao/(?P<casa>[a-z]+)/(?P<sigla>([a-z]+|[A-Z]+)[0-9]*)/?$",
         ComissaoList.as_view(),
