@@ -88,6 +88,7 @@ class TemaList(generics.ListAPIView):
 class InteresseByNomeSerializer(serializers.Serializer):
     interesse = serializers.CharField()
     nome_interesse = serializers.CharField()
+    descricao_interesse = serializers.CharField()
 
 
 class InteresseByNome(generics.ListAPIView):
@@ -105,7 +106,7 @@ class InteresseByNome(generics.ListAPIView):
 
         queryset = (
             Interesse.objects.all().filter(interesse=interesse_arg)
-            .distinct("interesse", "nome_interesse")
+            .distinct("interesse", "nome_interesse", "descricao_interesse")
         )
 
         return queryset
