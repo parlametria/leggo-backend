@@ -100,12 +100,13 @@ class InteresseByNome(generics.ListAPIView):
     def get_queryset(self):
 
         interesse_arg = self.request.query_params.get("interesse")
-        if interesse_arg is None:
-            interesse_arg = "leggo"
 
         queryset = (
-            Interesse.objects.all().filter(interesse=interesse_arg)
+            Interesse.objects.all()
             .distinct("interesse", "nome_interesse")
         )
+
+        if interesse_arg:
+            queryset = queryset.filter(interesse=interesse_arg)
 
         return queryset
