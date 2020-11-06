@@ -41,6 +41,10 @@ class Interesse(models.Model):
         blank=True, null=True, help_text="Nome do Interesse da Proposição"
     )
 
+    descricao_interesse = models.TextField(
+        blank=True, null=True, help_text="Descrição do Interesse da Proposição"
+    )
+
     @property
     def temas(self):
         """
