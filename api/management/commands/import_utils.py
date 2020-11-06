@@ -532,6 +532,7 @@ def import_interesse():
                 "id_leggo",
                 "interesse",
                 "nome_interesse",
+                "descricao_interesse",
                 "apelido",
                 "keywords",
                 "tema",
