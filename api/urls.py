@@ -109,9 +109,9 @@ urlpatterns = [
     url(r"^temas/?$", TemaList.as_view()),
     url(r"^anotacoes/?$", AnotacaoList.as_view()),
     url(r"^anotacoes-gerais/?$", AnotacaoGeralList.as_view()),
-    url(r"^temperatura/(?P<id>[a-z0-9]+)/?$", TemperaturaPeriodoList.as_view()),
     url(r"^temperatura/max/?$", TemperaturaMaxPeriodo.as_view()),
     url(r"^temperatura/ultima/?$", UltimaTemperaturaList.as_view()),
+    url(r"^temperatura/(?P<id>[a-z0-9]+)/?$", TemperaturaPeriodoList.as_view()),
     url(r"^comissao/presidencia/?$", PresidenciaComissaoLista.as_view()),
     url(
         r"^comissao/presidencia/(?P<id>[0-9]+)/?$",
