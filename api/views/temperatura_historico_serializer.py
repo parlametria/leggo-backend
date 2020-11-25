@@ -104,8 +104,8 @@ class UltimaTemperaturaList(generics.ListAPIView):
 
 
 class TemperaturaPeriodoListSerializer(serializers.Serializer):
-    temperatura_recente = serializers.FloatField()
     periodo = serializers.CharField()
+    temperatura_recente = serializers.FloatField()
 
 
 class TemperaturaPeriodoList(generics.ListAPIView):
