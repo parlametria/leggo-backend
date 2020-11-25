@@ -102,6 +102,7 @@ class UltimaTemperaturaList(generics.ListAPIView):
 
         return queryset
 
+
 class TemperaturaPeriodoListSerializer(serializers.Serializer):
     temperatura_recente = serializers.FloatField()
     periodo = serializers.CharField()
@@ -125,7 +126,7 @@ class TemperaturaPeriodoList(generics.ListAPIView):
             ),
         ]
     )
-    
+
     def get_queryset(self):
 
         id_prop = self.kwargs["id"]
