@@ -45,6 +45,7 @@ from api.views.anotacao_serializer import (
 from api.views.temperatura_historico_serializer import (
     TemperaturaMaxPeriodo,
     UltimaTemperaturaList,
+    TemperaturaPeriodoList,
 )
 from api.views.presidencia_comissao_serializer import (
     PresidenciaComissaoLista,
@@ -108,6 +109,7 @@ urlpatterns = [
     url(r"^temas/?$", TemaList.as_view()),
     url(r"^anotacoes/?$", AnotacaoList.as_view()),
     url(r"^anotacoes-gerais/?$", AnotacaoGeralList.as_view()),
+    url(r"^temperatura/(?P<id>[a-z0-9]+)/?$", TemperaturaPeriodoList.as_view()),
     url(r"^temperatura/max/?$", TemperaturaMaxPeriodo.as_view()),
     url(r"^temperatura/ultima/?$", UltimaTemperaturaList.as_view()),
     url(r"^comissao/presidencia/?$", PresidenciaComissaoLista.as_view()),
