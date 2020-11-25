@@ -128,7 +128,6 @@ class TemperaturaPeriodoList(generics.ListAPIView):
     )
 
     def get_queryset(self):
-
         id_prop = self.kwargs["id"]
         interesseArg = self.request.query_params.get("interesse", "leggo")
         data_inicio = self.request.query_params.get("data_inicio", None)
