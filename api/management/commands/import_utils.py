@@ -770,8 +770,7 @@ def import_anotacoes():
 
 def import_all_data():
     """Importa dados dos csv e salva no banco."""
-    import_destaques()
-    """ import_entidades()
+    import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
@@ -788,8 +787,8 @@ def import_all_data():
     import_autoria()
     import_autores_proposicoes()
     import_relatores_proposicoes()
-    import_anotacoes() """
-
+    import_anotacoes()
+    import_destaques()
 
 def import_all_data_but_insights():
     """Importa dados dos csv e salva no banco (menos os insights)."""
