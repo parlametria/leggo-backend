@@ -22,6 +22,7 @@ from api.model.anotacao_geral import AnotacaoGeral
 from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
 from api.model.relatores_proposicao import RelatoresProposicao
+from api.model.destaques import Destaques
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
@@ -714,6 +715,54 @@ def import_relatores_proposicoes():
         RelatoresProposicao.objects.bulk_create(a)
 
 
+def import_destaques():
+    """Carrega proposições em destaques"""
+    destaques_df = pd.read_csv("data/proposicoes_destaques.csv")
+
+    for col in ["data_inicio", "data_fim"]:
+        destaques_df[col] = (
+            destaques_df[col]
+            .astype("str")
+            .apply(
+                lambda x: None
+                if x == "NA"
+                else pd.to_datetime(x.split(" ")[0], format="%Y-%m-%d")
+            )
+        )
+
+    grouped = destaques_df.groupby(["casa", "id_leggo"])
+
+    for group_index in grouped.groups:
+        group_df = (
+                grouped.get_group(group_index)
+                .filter(
+                    [
+                        "id_leggo",
+                        "id_ext",
+                        "casa",
+                        "sigla",
+                        "criterio_aprovada_em_uma_casa",
+                        "fase_global",
+                        "local",
+                        "local_casa",
+                        "data_inicio",
+                        "data_fim",
+                        "criterio_parecer_aprovado_comissao",
+                        "comissoes_aprovadas",
+                        "criterio_pressao_alta",
+                        "maximo_pressao_periodo",
+                        "agendas"
+                    ]
+                )
+                .assign(data_inicio=lambda x: x.data_inicio.astype("object"))
+                .assign(data_fim=lambda x: x.data_fim.astype("object"))
+            )
+        Destaques.objects.bulk_create(
+            Destaques(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -721,7 +770,8 @@ def import_anotacoes():
 
 def import_all_data():
     """Importa dados dos csv e salva no banco."""
-    import_entidades()
+    import_destaques()
+    """ import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
@@ -738,7 +788,7 @@ def import_all_data():
     import_autoria()
     import_autores_proposicoes()
     import_relatores_proposicoes()
-    import_anotacoes()
+    import_anotacoes() """
 
 
 def import_all_data_but_insights():

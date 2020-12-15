@@ -17,6 +17,7 @@ from ...model.tramitacao_event import TramitacaoEvent
 from ...model.entidade import Entidade
 from ...model.autores_proposicao import AutoresProposicao
 from ...model.relatores_proposicao import RelatoresProposicao
+from ...model.destaques import Destaques
 
 
 class Command(BaseCommand):
@@ -41,6 +42,7 @@ class Command(BaseCommand):
             Entidade.objects.all().delete()
             AutoresProposicao.objects.all().delete()
             RelatoresProposicao.objects.all().delete()
+            Destaques.objects.all().delete()
         except Exception as e:
             print("Não foi possível limpar os dados do banco =(")
             print(str(e))
