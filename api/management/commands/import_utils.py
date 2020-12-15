@@ -790,6 +790,7 @@ def import_all_data():
     import_anotacoes()
     import_destaques()
 
+
 def import_all_data_but_insights():
     """Importa dados dos csv e salva no banco (menos os insights)."""
     import_entidades()
