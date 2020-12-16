@@ -1,5 +1,4 @@
 from django.db import models
-from api.model.proposicao import Proposicao
 
 
 class Destaques(models.Model):
