@@ -1,4 +1,5 @@
 from django.db import models
+from api.model.proposicao import Proposicao
 
 
 class Destaques(models.Model):
@@ -55,14 +56,22 @@ class Destaques(models.Model):
         help_text='Data de finalização da proposição.'
     )
 
-    criterio_parecer_aprovado_comissao = models.BooleanField(
-        help_text='Matéria com parecer aprovado em pelo menos uma comissão.'
-    )
-
-    comissoes_aprovadas = models.TextField(
+    criterio_avancou_comissoes = models.BooleanField(
         blank=True,
         null=True,
-        help_text='Comissões em que a matéria foi aprovada.'
+        help_text=''
+    )
+
+    ccj_camara = models.BooleanField(
+        blank=True,
+        null=True,
+        help_text=''
+    )
+
+    parecer_aprovado_comissao = models.BooleanField(
+        blank=True,
+        null=True,
+        help_text='Matéria com parecer aprovado em pelo menos uma comissão.'
     )
 
     criterio_pressao_alta = models.BooleanField(

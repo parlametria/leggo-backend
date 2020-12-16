@@ -747,8 +747,9 @@ def import_destaques():
                         "local_casa",
                         "data_inicio",
                         "data_fim",
-                        "criterio_parecer_aprovado_comissao",
-                        "comissoes_aprovadas",
+                        "criterio_avancou_comissoes",
+                        "ccj_camara",
+                        "parecer_aprovado_comissao",
                         "criterio_pressao_alta",
                         "maximo_pressao_periodo",
                         "agendas"
