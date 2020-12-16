@@ -20,15 +20,6 @@ class DestaquesList(generics.ListAPIView):
 
     serializer_class = DestaquesSerializer
 
-    @swagger_auto_schema(
-        manual_parameters=[
-            openapi.Parameter(
-                'casa', openapi.IN_PATH, 'casa da proposição', type=openapi.TYPE_STRING)
-        ]
-    )
     def get_queryset(self):
 
-        casa_parametro = self.kwargs['casa']
-
-        return Destaques.objects.filter(
-            casa=casa_parametro)
+        return Destaques.objects.all()
