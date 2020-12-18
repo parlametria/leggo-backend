@@ -4,13 +4,15 @@ from django.http import JsonResponse
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from api.model.proposicao import Proposicao
+from api.model.destaques import Destaques
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import get_time_filtered_pauta, get_filtered_interesses
-from django.db.models import Prefetch, Count
+from django.db.models import Prefetch, Count, Q
 from api.views.ator_serializer import AtoresProposicoesSerializer
 from api.views.interesse_serializer import InteresseSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
+from api.views.destaques_serializer import DestaquesDetailsSerializer
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
@@ -19,6 +21,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
     important_atores = AtoresProposicoesSerializer(many=True, read_only=True)
     interesse = InteresseSerializer(many=True, read_only=True)
     autoresProposicao = AutoresSerializer(many=True, read_only=True)
+    destaques = DestaquesDetailsSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -33,13 +36,15 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "important_atores",
             "anotacao_data_ultima_modificacao",
             "sigla_camara",
-            "sigla_senado"
+            "sigla_senado",
+            "destaques"
         )
 
 
 class ProposicaoSerializer(serializers.ModelSerializer):
     etapas = EtapasSerializer(many=True, read_only=True)
     interesse = InteresseSerializer(many=True, read_only=True)
+    destaques = DestaquesDetailsSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -49,7 +54,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "etapas",
             "id_leggo",
             "sigla_camara",
-            "sigla_senado"
+            "sigla_senado",
+            "destaques"
         )
 
 
@@ -78,18 +84,24 @@ class ProposicaoList(generics.ListAPIView):
         if interesseArg is None:
             interesseArg = "leggo"
         interessesFiltered = get_filtered_interesses(interesseArg, tema_arg)
-
+        destaquesFiltered = (Destaques.objects.filter(
+            Q(criterio_aprovada_em_uma_casa=True) |
+            Q(criterio_avancou_comissoes=True))
+        )
         props = (
             Proposicao.objects.filter(interesse__interesse=interesseArg)
             .distinct()
             .prefetch_related(
                 "etapas",
                 "progresso",
+                "destaques",
                 Prefetch("etapas__pauta_historico", queryset=pautaQs),
                 Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
+                Prefetch("destaques", queryset=destaquesFiltered)
             )
         )
+
         return props
 
 

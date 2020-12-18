@@ -11,12 +11,9 @@ class DestaquesDetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Destaques
         fields = (
-            "id_leggo", "id_ext", "casa", "sigla",
-            "criterio_aprovada_em_uma_casa", "fase_global",
-            "local", "local_casa", "data_inicio", "data_fim",
-            "criterio_avancou_comissoes", "ccj_camara",
-            "parecer_aprovado_comissao", "criterio_pressao_alta",
-            "maximo_pressao_periodo", "agendas")
+            "id_leggo", "criterio_aprovada_em_uma_casa", "casa_aprovacao",
+            "data_aprovacao", "criterio_avancou_comissoes", 
+            "comissoes_camara", "comissoes_senado")
 
 
 class DestaquesSerializer(serializers.ModelSerializer):
