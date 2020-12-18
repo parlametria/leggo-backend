@@ -719,35 +719,22 @@ def import_destaques():
     """Carrega proposições em destaques"""
     destaques_df = pd.read_csv("data/proposicoes_destaques.csv")
 
-    for col in ["data_inicio", "data_fim"]:
-        destaques_df[col] = (
-            destaques_df[col]
-            .astype("str")
-            .apply(
-                lambda x: None
-                if x == "NA"
-                else pd.to_datetime(x.split(" ")[0], format="%Y-%m-%d")
-            )
+    destaques_df["data_aprovacao"] = (
+        destaques_df["data_aprovacao"]
+        .astype("str")
+        .apply(
+            lambda x: None
+            if x == "NA"
+            else pd.to_datetime(x)
         )
+    )
 
-    grouped = destaques_df.groupby(["casa", "id_leggo"])
+    grouped = destaques_df.groupby(["id_leggo"])
 
     for group_index in grouped.groups:
         group_df = (
                 grouped.get_group(group_index)
-                .filter(
-                    [
-                        "id_leggo",
-                        "criterio_aprovada_em_uma_casa",
-                        "casa_aprovacao",
-                        "data_aprovacao"
-                        "criterio_avancou_comissoes",
-                        "comissoes_camara",
-                        "comissoes_senado"
-                    ]
-                )
-                .assign(data_inicio=lambda x: x.data_inicio.astype("object"))
-                .assign(data_fim=lambda x: x.data_fim.astype("object"))
+                .assign(data_aprovacao=lambda x: x.data_aprovacao.astype("object"))
             )
         Destaques.objects.bulk_create(
             Destaques(**r[1].to_dict())
@@ -762,7 +749,8 @@ def import_anotacoes():
 
 def import_all_data():
     """Importa dados dos csv e salva no banco."""
-    import_entidades()
+    import_destaques()
+    """ import_entidades()
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
@@ -779,8 +767,7 @@ def import_all_data():
     import_autoria()
     import_autores_proposicoes()
     import_relatores_proposicoes()
-    import_anotacoes()
-    import_destaques()
+    import_anotacoes() """
 
 
 def import_all_data_but_insights():
