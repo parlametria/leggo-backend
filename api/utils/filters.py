@@ -1,6 +1,8 @@
 from datetime import datetime, timedelta
+from django.db.models import Q
 from api.model.pauta_historico import PautaHistorico
 from api.model.interesse import Interesse
+from api.model.destaques import Destaques
 
 
 def get_time_filtered_pauta(request):
@@ -43,6 +45,16 @@ def get_filtered_interesses(interesseArg, temaArg=None):
 
     return Interesse.objects.filter(interesse=interesseArg,
                                     tema_slug__contains=temaArg)
+
+
+def get_filtered_destaques(destaquesArg):
+    '''
+    Retorna ids das proposições em destaque
+    '''
+
+    return (Destaques.objects.filter(Q(criterio_avancou_comissoes=True) |
+                                     Q(criterio_aprovada_em_uma_casa=True))
+            .values('id_leggo'))
 
 
 def get_filtered_autores(request, queryset):

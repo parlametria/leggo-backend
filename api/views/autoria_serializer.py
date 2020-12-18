@@ -16,7 +16,7 @@ from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
-from api.utils.filters import get_filtered_interesses
+from api.utils.filters import get_filtered_interesses, get_filtered_destaques
 
 
 class AutoriaSerializer(serializers.ModelSerializer):
@@ -136,15 +136,27 @@ class AutoriasAgregadasList(generics.ListAPIView):
         Retorna quantidade de autorias por parlamentar.
         Se não for passado um interesse como argumento,
         os dados retornados serão os do interesse default (leggo).
+        Se o query param destaque for igual a true então apenas os projetos
+        com destaque serão considerados
         '''
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
+        autorias = Autoria.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            autorias = (
+                autorias.filter(id_leggo__in=destaques)
+            )
+
         autorias = (
-            Autoria.objects
+            autorias
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     data__gte='2019-01-31',
                     tipo_acao__in=['Proposição'])  # !!!
@@ -162,7 +174,6 @@ class AutoriasAgregadasList(generics.ListAPIView):
         min_max = autorias.aggregate(
                 max_quantidade_autorias=Max("quantidade_autorias"),
                 min_quantidade_autorias=Min("quantidade_autorias"))
-        print(min_max)
         autorias = autorias.annotate(
                 max_quantidade_autorias=Value(
                     min_max["max_quantidade_autorias"], IntegerField()),
