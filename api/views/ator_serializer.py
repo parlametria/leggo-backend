@@ -5,7 +5,11 @@ from django.db.models import Prefetch, Sum, Count, Max, Min, Value, FloatField
 
 from api.model.ator import Atores
 from api.model.etapa_proposicao import EtapaProposicao
-from api.utils.filters import get_filtered_autores, get_filtered_interesses
+from api.utils.filters import (
+    get_filtered_autores,
+    get_filtered_interesses,
+    get_filtered_destaques
+)
 
 
 class AtorSerializer(serializers.Serializer):
@@ -138,12 +142,23 @@ class AtoresAgregadosList(generics.ListAPIView):
         """
         tema_arg = self.request.query_params.get("tema")
         interesse_arg = self.request.query_params.get("interesse")
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = "leggo"
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
+        atores = Atores.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            atores = (
+                atores.filter(id_leggo__in=destaques)
+            )
+
         atores = (
-            Atores.objects.filter(id_leggo__in=interesses.values("id_leggo"))
+            atores
+            .filter(id_leggo__in=interesses.values("id_leggo"))
             .select_related("entidade")
             .values(
                 "id_autor",
@@ -195,11 +210,21 @@ class AtoresRelatoriasDetalhada(generics.ListAPIView):
         leggo_id_autor = self.kwargs["id_autor"]
         interesseArg = self.request.query_params.get("interesse")
         tema_arg = self.request.query_params.get("tema")
+        destaques_arg = self.request.query_params.get('destaque')
+
+        etapas = EtapaProposicao.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            etapas = (
+                etapas.filter(id_leggo__in=destaques)
+            )
+
         if interesseArg is None:
             interesseArg = "leggo"
         interesses = get_filtered_interesses(interesseArg, tema_arg)
 
-        queryset = EtapaProposicao.objects.filter(
+        queryset = etapas.filter(
             id_leggo__in=interesses.values("id_leggo"),
             relator_id_parlametria=leggo_id_autor,
         ).all()
@@ -233,12 +258,22 @@ class AtoresRelatoriasList(generics.ListAPIView):
         """
         interesseArg = self.request.query_params.get("interesse")
         tema_arg = self.request.query_params.get("tema")
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesseArg is None:
             interesseArg = "leggo"
         interesses = get_filtered_interesses(interesseArg, tema_arg)
 
+        etapas = EtapaProposicao.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            etapas = (
+                etapas.filter(id_leggo__in=destaques)
+            )
+
         queryset = (
-            EtapaProposicao.objects.filter(
+            etapas.filter(
                 id_leggo__in=interesses.values("id_leggo"), relator_id__isnull=False
             )
             .values("relator_id", "relator_id_parlametria")
@@ -287,12 +322,22 @@ class AtoresAgregadosByID(generics.ListAPIView):
         leggo_id_autor = self.kwargs["id_autor"]
         tema_arg = self.request.query_params.get("tema")
         interesse_arg = self.request.query_params.get("interesse")
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = "leggo"
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
+        atores = Atores.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            atores = (
+                atores.filter(id_leggo__in=destaques)
+            )
+
         atores = (
-            Atores.objects.filter(id_leggo__in=interesses.values("id_leggo"))
+            atores.filter(id_leggo__in=interesses.values("id_leggo"))
             .filter(tipo_acao__in=['Proposição', 'Recurso'])
             .select_related("entidade")
             .values(
@@ -308,9 +353,9 @@ class AtoresAgregadosByID(generics.ListAPIView):
             max_peso_documentos=Max("peso_documentos"),
             min_peso_documentos=Min("peso_documentos"))
         ator = atores.filter(id_autor_parlametria=leggo_id_autor).annotate(
-                max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
-                min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
-            )
+            max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
+            min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
+        )
 
         return ator
 
@@ -344,12 +389,22 @@ class AtuacaoParlamentarList(generics.ListAPIView):
         """
         tema_arg = self.request.query_params.get("tema")
         interesse_arg = self.request.query_params.get("interesse")
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = "leggo"
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
+        atores = Atores.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            atores = (
+                atores.filter(id_leggo__in=destaques)
+            )
+
         atuacao = (
-            Atores.objects.filter(id_leggo__in=interesses.values("id_leggo"))
+            atores.filter(id_leggo__in=interesses.values("id_leggo"))
             .select_related("entidade")
             .values(
                 "id_autor",

@@ -87,12 +87,23 @@ class AutoriasAutorList(generics.ListAPIView):
         '''
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
         id_autor_arg = self.kwargs['id_autor']
+
+        autorias = Autoria.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            autorias = (
+                autorias.filter(id_leggo__in=destaques)
+            )
+
         autorias = (
-            Autoria.objects
+            autorias
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31')
@@ -109,7 +120,7 @@ class AutoriasAutorList(generics.ListAPIView):
                     'etapa_proposicao__numero', Value('/'),
                     ExtractYear('etapa_proposicao__data_apresentacao'),
                     output_field=CharField())
-                )
+            )
         )
 
         return autorias
@@ -172,14 +183,14 @@ class AutoriasAgregadasList(generics.ListAPIView):
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         min_max = autorias.aggregate(
-                max_quantidade_autorias=Max("quantidade_autorias"),
-                min_quantidade_autorias=Min("quantidade_autorias"))
+            max_quantidade_autorias=Max("quantidade_autorias"),
+            min_quantidade_autorias=Min("quantidade_autorias"))
         autorias = autorias.annotate(
-                max_quantidade_autorias=Value(
-                    min_max["max_quantidade_autorias"], IntegerField()),
-                min_quantidade_autorias=Value(
-                    min_max["min_quantidade_autorias"], IntegerField())
-            )
+            max_quantidade_autorias=Value(
+                min_max["max_quantidade_autorias"], IntegerField()),
+            min_quantidade_autorias=Value(
+                min_max["min_quantidade_autorias"], IntegerField())
+        )
 
         return autorias
 
@@ -201,17 +212,27 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         '''
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
         id_autor_parlametria = self.kwargs["id_autor"]
 
+        autorias = Autoria.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            autorias = (
+                autorias.filter(id_leggo__in=destaques)
+            )
+
         autorias = (
-            Autoria.objects.filter(
-                id_leggo__in=interesses.values('id_leggo'),
-                data__gte='2019-01-31',
-                tipo_acao__in=['Proposição'])  # !!!
+            autorias
+            .filter(id_leggo__in=interesses.values('id_leggo'),
+                    data__gte='2019-01-31',
+                    tipo_acao__in=['Proposição'])  # !!!
             .values("id_autor", "id_autor_parlametria")
             .annotate(
                 quantidade_autorias=Count("id_autor"),
@@ -220,14 +241,14 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         )
 
         min_max = autorias.aggregate(
-                max_quantidade_autorias=Max("quantidade_autorias"),
-                min_quantidade_autorias=Min("quantidade_autorias"))
+            max_quantidade_autorias=Max("quantidade_autorias"),
+            min_quantidade_autorias=Min("quantidade_autorias"))
         autorias = autorias.filter(id_autor_parlametria=id_autor_parlametria).annotate(
-                max_quantidade_autorias=Value(
-                    min_max["max_quantidade_autorias"], IntegerField()),
-                min_quantidade_autorias=Value(
-                    min_max["min_quantidade_autorias"], IntegerField())
-            )
+            max_quantidade_autorias=Value(
+                min_max["max_quantidade_autorias"], IntegerField()),
+            min_quantidade_autorias=Value(
+                min_max["min_quantidade_autorias"], IntegerField())
+        )
 
         return autorias
 
@@ -255,12 +276,22 @@ class AutoriasAgregadasProjetos(generics.ListAPIView):
 
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
+        autorias = Autoria.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            autorias = (
+                autorias.filter(id_leggo__in=destaques)
+            )
+
         autorias = (
-            Autoria.objects
+            autorias
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     data__gte='2019-01-31',
                     tipo_documento="Prop. Original / Apensada",
@@ -294,14 +325,25 @@ class AutoriasAgregadasProjetosById(generics.ListAPIView):
         '''
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
         id_autor_parlametria = self.kwargs["id_autor"]
 
+        autorias = Autoria.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            autorias = (
+                autorias.filter(id_leggo__in=destaques)
+            )
+
         autorias = (
-            Autoria.objects.filter(
+            autorias
+            .filter(
                 id_autor_parlametria=id_autor_parlametria,
                 id_leggo__in=interesses.values('id_leggo'),
                 data__gte='2019-01-31',
@@ -309,7 +351,8 @@ class AutoriasAgregadasProjetosById(generics.ListAPIView):
                 tipo_acao__in=['Proposição', 'Recurso'])
             .values("id_autor", "id_autor_parlametria")
             .annotate(
-                quant_autorias_projetos=Count("id_autor"))
+                quant_autorias_projetos=Count("id_autor"),
+                peso_autorias_projetos=Sum('peso_autor_documento'))
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
 
@@ -338,11 +381,22 @@ class Acoes(generics.ListAPIView):
         '''
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
+
+        autorias = Autoria.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            autorias = (
+                autorias.filter(id_leggo__in=destaques)
+            )
+
         autores = (
-            Autoria.objects
+            autorias
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     data__gte='2019-01-31')
         )
@@ -388,14 +442,24 @@ class AutoriasOriginaisList(generics.ListAPIView):
         '''
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
+        destaques_arg = self.request.query_params.get('destaque')
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
         interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
         id_autor_arg = self.kwargs['id_autor']
 
+        autorias = Autoria.objects
+
+        if destaques_arg == 'true':
+            destaques = get_filtered_destaques(destaques_arg)
+            autorias = (
+                autorias.filter(id_leggo__in=destaques)
+            )
+
         autorias = (
-            Autoria.objects
+            autorias
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31',
