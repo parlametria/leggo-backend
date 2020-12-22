@@ -733,7 +733,7 @@ def import_destaques():
 
     for group_index in grouped.groups:
         id_leggo = {"id_leggo": group_index}
-        print(id_leggo)
+
         prop = get_proposicao(id_leggo, "Destaques")
         group_df = (
                 grouped.get_group(group_index)
