@@ -88,7 +88,7 @@ class ProposicaoList(generics.ListAPIView):
             Q(criterio_aprovada_em_uma_casa=True) |
             Q(criterio_avancou_comissoes=True))
         )
-        print(destaquesFiltered.values())
+
         props = (
             Proposicao.objects.filter(interesse__interesse=interesseArg)
             .distinct()
