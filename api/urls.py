@@ -62,8 +62,6 @@ from api.views.entidade_serializer import (
 )
 from api.views.autores_proposicao_serializer import AutoresList
 from api.views.relator_proposicao_serializer import RelatoresList
-from api.views.destaques_serializer import DestaquesList
-
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
@@ -126,7 +124,6 @@ urlpatterns = [
     url(r"^autores/?$", AutoresList.as_view()),
     url(r"^relatores/?$", RelatoresList.as_view()),
     url(r"^ator/(?P<id_autor>[0-9]+)/originais/?$", AutoriasOriginaisList.as_view()),
-    url(r"^destaques/?$", DestaquesList.as_view()),
     # Estão embaixo para evitar ambiguidade nos endpoints
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
     url(r"^autorias/(?P<id>[a-z0-9]+)/?$", AutoriaList.as_view()),
