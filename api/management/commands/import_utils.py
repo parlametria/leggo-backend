@@ -718,7 +718,8 @@ def import_destaques():
     """Carrega proposições em destaques"""
     destaques_df = pd.read_csv("data/proposicoes_destaques.csv")
 
-    for col in ["data_aprovacao", "data_req_urgencia_apresentado", "data_req_urgencia_aprovado"]:
+    for col in ["data_aprovacao", "data_req_urgencia_apresentado",
+                "data_req_urgencia_aprovado"]:
         destaques_df[col] = (
             destaques_df[col]
             .astype("str")
@@ -738,8 +739,14 @@ def import_destaques():
         group_df = (
             grouped.get_group(group_index)
             .assign(data_aprovacao=lambda x: x.data_aprovacao.astype("object"))
-            .assign(data_req_urgencia_apresentado=lambda x: x.data_req_urgencia_apresentado.astype("object"))
-            .assign(data_req_urgencia_aprovado=lambda x: x.data_req_urgencia_aprovado.astype("object"))
+            .assign(
+                data_req_urgencia_apresentado=(
+                    lambda x: x.data_req_urgencia_apresentado.astype("object"))
+            )
+            .assign(
+                data_req_urgencia_aprovado=(
+                    lambda x: x.data_req_urgencia_aprovado.astype("object"))
+            )
             .assign(proposicao=prop)
         )
         Destaques.objects.bulk_create(
