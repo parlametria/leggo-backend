@@ -22,6 +22,7 @@ from api.model.anotacao_geral import AnotacaoGeral
 from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
 from api.model.relatores_proposicao import RelatoresProposicao
+from api.model.destaques import Destaques
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
@@ -714,6 +715,37 @@ def import_relatores_proposicoes():
         RelatoresProposicao.objects.bulk_create(a)
 
 
+def import_destaques():
+    """Carrega proposições em destaques"""
+    destaques_df = pd.read_csv("data/proposicoes_destaques.csv")
+
+    destaques_df["data_aprovacao"] = (
+        destaques_df["data_aprovacao"]
+        .astype("str")
+        .apply(
+            lambda x: None
+            if x == "NA"
+            else pd.to_datetime(x)
+        )
+    )
+
+    grouped = destaques_df.groupby(["id_leggo"])
+
+    for group_index in grouped.groups:
+        id_leggo = {"id_leggo": group_index}
+
+        prop = get_proposicao(id_leggo, "Destaques")
+        group_df = (
+                grouped.get_group(group_index)
+                .assign(data_aprovacao=lambda x: x.data_aprovacao.astype("object"))
+                .assign(proposicao=prop)
+            )
+        Destaques.objects.bulk_create(
+            Destaques(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -739,6 +771,7 @@ def import_all_data():
     import_autores_proposicoes()
     import_relatores_proposicoes()
     import_anotacoes()
+    import_destaques()
 
 
 def import_all_data_but_insights():
