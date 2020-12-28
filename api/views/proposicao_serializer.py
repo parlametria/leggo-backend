@@ -86,7 +86,9 @@ class ProposicaoList(generics.ListAPIView):
         interessesFiltered = get_filtered_interesses(interesseArg, tema_arg)
         destaquesFiltered = (Destaques.objects.filter(
             Q(criterio_aprovada_em_uma_casa=True) |
-            Q(criterio_avancou_comissoes=True))
+            Q(criterio_avancou_comissoes=True) | 
+            Q(criterio_req_urgencia_apresentado=True) |
+            Q(criterio_req_urgencia_aprovado=True))
         )
 
         props = (
