@@ -1,4 +1,5 @@
 from django.db import models
+from api.model.proposicao import Proposicao
 
 
 class Destaques(models.Model):
@@ -42,4 +43,10 @@ class Destaques(models.Model):
         blank=True,
         null=True,
         help_text=''
+    )
+
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name="destaques",
+        blank=True,
+        null=True
     )
