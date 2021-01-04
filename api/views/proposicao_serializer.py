@@ -33,6 +33,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "id_leggo",
             "temperatura_historico",
             "temperatura_coeficiente",
+            # TODO: Remover linha seguinte quando a migração do frontend estiver completa
             "important_atores",
             "anotacao_data_ultima_modificacao",
             "sigla_camara",
