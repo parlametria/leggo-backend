@@ -62,6 +62,9 @@ class AutoriaList(generics.ListAPIView):
 class AutoriasPorProposicaoSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField()
     casa_autor = serializers.CharField()
+    nome_autor = serializers.CharField(source="entidade__nome")
+    partido = serializers.CharField(source="entidade__partido")
+    uf = serializers.CharField(source="entidade__uf")
     tipo_documento = serializers.CharField()
     peso_documentos = serializers.FloatField()
     total_documentos = serializers.IntegerField()
@@ -90,7 +93,15 @@ class AutoriasPorProposicaoList(generics.ListAPIView):
             .filter(id_leggo=id_leggo_arg,
                     data__gte='2019-01-31',
                     tipo_acao__in=['Proposição'])
-            .values('id_autor_parlametria', 'casa_autor', 'tipo_documento')
+            .select_related("entidade")
+            .values(
+                "id_autor_parlametria",
+                "casa_autor",
+                "entidade__nome",
+                "entidade__uf",
+                "entidade__partido",
+                "tipo_documento"
+            )
             .annotate(total_documentos=Count('tipo_documento'))
             .annotate(peso_documentos=Sum('peso_autor_documento'))
         )
