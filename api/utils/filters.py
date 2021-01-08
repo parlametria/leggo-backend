@@ -52,9 +52,12 @@ def get_filtered_destaques(destaquesArg):
     Retorna ids das proposições em destaque
     '''
 
-    return (Destaques.objects.filter(Q(criterio_avancou_comissoes=True) |
-                                     Q(criterio_aprovada_em_uma_casa=True))
-            .values('id_leggo'))
+    return (Destaques.objects.filter(
+        Q(criterio_aprovada_em_uma_casa=True) |
+        Q(criterio_avancou_comissoes=True) |
+        Q(criterio_req_urgencia_apresentado=True) |
+        Q(criterio_req_urgencia_aprovado=True)
+    ).values('id_leggo'))
 
 
 def get_filtered_autores(request, queryset):
