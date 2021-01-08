@@ -405,7 +405,6 @@ def import_atores():
 
 
 def import_comissoes():
-
     """Carrega Comissoes"""
 
     comissoes_df = pd.read_csv("data/comissoes.csv").groupby(["casa", "sigla"])
@@ -719,23 +718,37 @@ def import_destaques():
     """Carrega proposições em destaques"""
     destaques_df = pd.read_csv("data/proposicoes_destaques.csv")
 
-    destaques_df["data_aprovacao"] = (
-        destaques_df["data_aprovacao"]
-        .astype("str")
-        .apply(
-            lambda x: None
-            if x == "NA"
-            else pd.to_datetime(x)
+    for col in ["data_aprovacao", "data_req_urgencia_apresentado",
+                "data_req_urgencia_aprovado"]:
+        destaques_df[col] = (
+            destaques_df[col]
+            .astype("str")
+            .apply(
+                lambda x: None
+                if x == "NA"
+                else pd.to_datetime(x)
+            )
         )
-    )
 
     grouped = destaques_df.groupby(["id_leggo"])
 
     for group_index in grouped.groups:
+        id_leggo = {"id_leggo": group_index}
+
+        prop = get_proposicao(id_leggo, "Destaques")
         group_df = (
-                grouped.get_group(group_index)
-                .assign(data_aprovacao=lambda x: x.data_aprovacao.astype("object"))
+            grouped.get_group(group_index)
+            .assign(data_aprovacao=lambda x: x.data_aprovacao.astype("object"))
+            .assign(
+                data_req_urgencia_apresentado=(
+                    lambda x: x.data_req_urgencia_apresentado.astype("object"))
             )
+            .assign(
+                data_req_urgencia_aprovado=(
+                    lambda x: x.data_req_urgencia_aprovado.astype("object"))
+            )
+            .assign(proposicao=prop)
+        )
         Destaques.objects.bulk_create(
             Destaques(**r[1].to_dict())
             for r in group_df.where(pd.notnull(group_df), None).iterrows()
@@ -789,6 +802,7 @@ def import_all_data_but_insights():
     import_autoria()
     import_autores_proposicoes()
     import_relatores_proposicoes()
+    import_destaques()
 
 
 def import_insights():
