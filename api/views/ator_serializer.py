@@ -308,9 +308,9 @@ class AtoresAgregadosByID(generics.ListAPIView):
             max_peso_documentos=Max("peso_documentos"),
             min_peso_documentos=Min("peso_documentos"))
         ator = atores.filter(id_autor_parlametria=leggo_id_autor).annotate(
-                max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
-                min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
-            )
+            max_peso_documentos=Value(min_max["max_peso_documentos"], FloatField()),
+            min_peso_documentos=Value(min_max["min_peso_documentos"], FloatField())
+        )
 
         return ator
 
@@ -369,3 +369,32 @@ class AtuacaoParlamentarList(generics.ListAPIView):
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return atuacao
+
+
+class AtoresBancadaSerializer(serializers.Serializer):
+    id_autor_parlametria = serializers.IntegerField()
+    bancada = serializers.CharField()
+
+
+class AtoresBancadaList(generics.ListAPIView):
+    """
+    Informações sobre as bancadas dos atores
+    """
+
+    serializer_class = AtoresBancadaSerializer
+
+    def get_queryset(self):
+        """
+        Retorna a lista de parlamentares e a bancada que cada um pertence
+        """
+
+        ator = (
+            Atores.objects
+            .values(
+                "id_autor_parlametria",
+                "bancada"
+            )
+            .distinct("id_autor_parlametria")
+        )
+
+        return ator

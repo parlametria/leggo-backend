@@ -223,24 +223,34 @@ def import_coautoria_edge():
 
 def import_autoria():
     """Carrega autorias"""
-    grouped = pd.read_csv("data/autorias.csv").groupby(["casa", "id_principal"])
+    grouped = pd.read_csv(
+        "data/autorias.csv").groupby(["casa", "id_principal", "id_autor_parlametria"])
     for group_index in grouped.groups:
         prop_id = {
             "casa": group_index[0],
             "id_ext": group_index[1],
         }
-
         etapa_prop = get_etapa_proposicao(prop_id, "Autorias")
 
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index[2]}
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "AutoriasroposicaoEntidade"
+        )
+
         if etapa_prop is None:
+            continue
+
+        if entidade_relacionada is None:
             continue
 
         group_df = (
             grouped.get_group(group_index)
             # pega apenas a data e não a hora
-            .assign(data=lambda x: x.data.apply(lambda s: s.split("T")[0])).assign(
+            .assign(data=lambda x: x.data.apply(lambda s: s.split("T")[0]))
+            .assign(
                 etapa_proposicao=etapa_prop
             )
+            .assign(entidade=entidade_relacionada)
         )
         Autoria.objects.bulk_create(
             Autoria(**r[1].to_dict()) for r in group_df.iterrows()

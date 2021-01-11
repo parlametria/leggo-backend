@@ -44,7 +44,7 @@ class AutoriaList(generics.ListAPIView):
     @swagger_auto_schema(
         manual_parameters=[
             openapi.Parameter(
-                "id",
+                "id_leggo",
                 openapi.IN_PATH,
                 "id da proposição no sistema do Leg.go",
                 type=openapi.TYPE_INTEGER,
@@ -55,8 +55,58 @@ class AutoriaList(generics.ListAPIView):
         """
         Retorna a autoria
         """
-        id_prop = self.kwargs["id"]
+        id_prop = self.kwargs["id_leggo"]
         return Autoria.objects.filter(id_leggo=id_prop)
+
+
+class AutoriasPorProposicaoSerializer(serializers.Serializer):
+    id_autor_parlametria = serializers.IntegerField()
+    casa_autor = serializers.CharField()
+    nome_autor = serializers.CharField(source="entidade__nome")
+    partido = serializers.CharField(source="entidade__partido")
+    uf = serializers.CharField(source="entidade__uf")
+    tipo_documento = serializers.CharField()
+    peso_documentos = serializers.FloatField()
+    total_documentos = serializers.IntegerField()
+
+
+class AutoriasPorProposicaoList(generics.ListAPIView):
+    """
+    Contagem de documentos em uma proposição por parlamentar
+    e tipo de ação.
+    """
+
+    serializer_class = AutoriasPorProposicaoSerializer
+
+    def get_queryset(self):
+        '''
+        Retorna as autorias em uma proposição.
+        Para cada parlamentar que apresentou documentos
+        relacionados a uma proposição, retorna a quantidade
+        de documentos por tipo de documento.
+        '''
+
+        id_leggo_arg = self.kwargs['id_leggo']
+
+        autorias = (
+            Autoria.objects
+            .filter(id_leggo=id_leggo_arg,
+                    data__gte='2019-01-31',
+                    tipo_acao__in=['Proposição'])
+            .select_related("entidade")
+            .values(
+                "id_autor_parlametria",
+                "casa_autor",
+                "entidade__nome",
+                "entidade__uf",
+                "entidade__partido",
+                "tipo_documento"
+            )
+            .annotate(total_documentos=Count('tipo_documento'))
+            .annotate(peso_documentos=Sum('peso_autor_documento'))
+        )
+
+        return autorias
 
 
 class AutoriaAutorSerializer(serializers.Serializer):
@@ -109,7 +159,7 @@ class AutoriasAutorList(generics.ListAPIView):
                     'etapa_proposicao__numero', Value('/'),
                     ExtractYear('etapa_proposicao__data_apresentacao'),
                     output_field=CharField())
-                )
+            )
         )
 
         return autorias
@@ -160,15 +210,15 @@ class AutoriasAgregadasList(generics.ListAPIView):
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         min_max = autorias.aggregate(
-                max_quantidade_autorias=Max("quantidade_autorias"),
-                min_quantidade_autorias=Min("quantidade_autorias"))
+            max_quantidade_autorias=Max("quantidade_autorias"),
+            min_quantidade_autorias=Min("quantidade_autorias"))
         print(min_max)
         autorias = autorias.annotate(
-                max_quantidade_autorias=Value(
-                    min_max["max_quantidade_autorias"], IntegerField()),
-                min_quantidade_autorias=Value(
-                    min_max["min_quantidade_autorias"], IntegerField())
-            )
+            max_quantidade_autorias=Value(
+                min_max["max_quantidade_autorias"], IntegerField()),
+            min_quantidade_autorias=Value(
+                min_max["min_quantidade_autorias"], IntegerField())
+        )
 
         return autorias
 
@@ -209,14 +259,14 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         )
 
         min_max = autorias.aggregate(
-                max_quantidade_autorias=Max("quantidade_autorias"),
-                min_quantidade_autorias=Min("quantidade_autorias"))
+            max_quantidade_autorias=Max("quantidade_autorias"),
+            min_quantidade_autorias=Min("quantidade_autorias"))
         autorias = autorias.filter(id_autor_parlametria=id_autor_parlametria).annotate(
-                max_quantidade_autorias=Value(
-                    min_max["max_quantidade_autorias"], IntegerField()),
-                min_quantidade_autorias=Value(
-                    min_max["min_quantidade_autorias"], IntegerField())
-            )
+            max_quantidade_autorias=Value(
+                min_max["max_quantidade_autorias"], IntegerField()),
+            min_quantidade_autorias=Value(
+                min_max["min_quantidade_autorias"], IntegerField())
+        )
 
         return autorias
 

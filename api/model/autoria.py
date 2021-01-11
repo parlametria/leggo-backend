@@ -1,5 +1,6 @@
 from django.db import models
 from api.model.etapa_proposicao import EtapaProposicao
+from api.model.entidade import Entidade
 
 
 class Autoria(models.Model):
@@ -60,3 +61,6 @@ class Autoria(models.Model):
 
     etapa_proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='autorias', null=True)
+
+    entidade = models.ForeignKey(
+        Entidade, on_delete=models.CASCADE, related_name='entidadeAutoria', null=True)
