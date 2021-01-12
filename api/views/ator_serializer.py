@@ -424,3 +424,32 @@ class AtuacaoParlamentarList(generics.ListAPIView):
             .prefetch_related(Prefetch("interesse", queryset=interesses))
         )
         return atuacao
+
+
+class AtoresBancadaSerializer(serializers.Serializer):
+    id_autor_parlametria = serializers.IntegerField()
+    bancada = serializers.CharField()
+
+
+class AtoresBancadaList(generics.ListAPIView):
+    """
+    Informações sobre as bancadas dos atores
+    """
+
+    serializer_class = AtoresBancadaSerializer
+
+    def get_queryset(self):
+        """
+        Retorna a lista de parlamentares e a bancada que cada um pertence
+        """
+
+        ator = (
+            Atores.objects
+            .values(
+                "id_autor_parlametria",
+                "bancada"
+            )
+            .distinct("id_autor_parlametria")
+        )
+
+        return ator
