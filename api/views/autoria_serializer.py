@@ -6,13 +6,11 @@ from django.db.models import (
     Count,
     Prefetch,
     Value,
-    CharField,
     Sum,
     Max,
     Min,
     IntegerField)
 from django.db.models.expressions import Window
-from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
