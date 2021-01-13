@@ -13,6 +13,10 @@ class Autoria(models.Model):
     id_documento = models.IntegerField(
         help_text='Id do documento.')
 
+    sigla = models.TextField(
+        null=True,
+        help_text='Sigla do documento.')
+
     descricao_tipo_documento = models.TextField(
         help_text='Tipo do documento.')
 
