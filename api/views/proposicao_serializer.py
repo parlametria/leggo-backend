@@ -7,7 +7,11 @@ from api.model.proposicao import Proposicao
 from api.model.destaques import Destaques
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
-from api.utils.filters import get_time_filtered_pauta, get_filtered_interesses
+from api.utils.filters import (
+    get_time_filtered_pauta,
+    get_filtered_interesses,
+    get_filtered_destaques
+)
 from django.db.models import Prefetch, Count, Q
 from api.views.ator_serializer import AtoresProposicoesSerializer
 from api.views.interesse_serializer import InteresseSerializer
@@ -170,15 +174,24 @@ class ProposicaoCountList(APIView):
 
         interesseArg = self.request.query_params.get("interesse")
         temaArg = self.request.query_params.get('tema')
+        destaqueArg = self.request.query_params.get('destaque')
+
         # Adiciona interesse default
         if interesseArg is None:
             interesseArg = "leggo"
 
         interesses = get_filtered_interesses(interesseArg, temaArg)
 
+        props = Proposicao.objects
+
+        if destaqueArg == 'true':
+            destaques = get_filtered_destaques(destaqueArg)
+            props = props.filter(id_leggo__in=destaques)
+
         props = (
-            Proposicao.objects.filter(id_leggo__in=interesses.values('id_leggo'))
+            props.filter(id_leggo__in=interesses.values('id_leggo'))
             .distinct()
             .aggregate(numero_proposicoes=Count('id_leggo'))
         )
+
         return JsonResponse(props, status=status.HTTP_200_OK)
