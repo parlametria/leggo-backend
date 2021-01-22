@@ -6,13 +6,11 @@ from django.db.models import (
     Count,
     Prefetch,
     Value,
-    CharField,
     Sum,
     Max,
     Min,
     IntegerField)
 from django.db.models.expressions import Window
-from django.db.models.functions import Concat, ExtractYear
 from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
@@ -157,20 +155,10 @@ class AutoriasAutorList(generics.ListAPIView):
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31')
-            .select_related('etapa_proposicao')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
                     'tipo_documento', 'tipo_acao', 'peso_autor_documento',
-                    'etapa_proposicao__sigla_tipo',
-                    'etapa_proposicao__numero',
-                    'etapa_proposicao__data_apresentacao')
-            .annotate(
-                sigla=Concat(
-                    'etapa_proposicao__sigla_tipo', Value(' '),
-                    'etapa_proposicao__numero', Value('/'),
-                    ExtractYear('etapa_proposicao__data_apresentacao'),
-                    output_field=CharField())
-            )
+                    'sigla')
         )
 
         return autorias
@@ -514,20 +502,10 @@ class AutoriasOriginaisList(generics.ListAPIView):
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31',
                     tipo_documento='Prop. Original / Apensada')
-            .select_related('etapa_proposicao')
             .values('id_autor_parlametria', 'id_documento', 'peso_autor_documento',
                     'id_leggo', 'data',
                     'descricao_tipo_documento', 'url_inteiro_teor',
-                    'tipo_documento', 'tipo_acao', 'etapa_proposicao__sigla_tipo',
-                    'etapa_proposicao__numero',
-                    'etapa_proposicao__data_apresentacao')
-            .annotate(
-                sigla=Concat(
-                    'etapa_proposicao__sigla_tipo', Value(' '),
-                    'etapa_proposicao__numero', Value('/'),
-                    ExtractYear('etapa_proposicao__data_apresentacao'),
-                    output_field=CharField())
-            )
+                    'tipo_documento', 'tipo_acao', 'sigla')
         )
 
         return autorias
