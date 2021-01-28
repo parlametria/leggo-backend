@@ -1,5 +1,5 @@
 pandas
-Django >= 3.1
+Django
 gunicorn
 djangorestframework
 drf-yasg
