@@ -57,7 +57,7 @@ class TramitacaoEventList(generics.ListAPIView):
         id_ext = self.kwargs.get('id_ext')
         if id_ext:
             queryset = queryset.filter(etapa_proposicao__id_ext=id_ext)
-        
+
         print('sem procurar por id')
 
         casa = self.kwargs.get('casa')
@@ -112,7 +112,8 @@ class TramitacaoEventList(generics.ListAPIView):
 
 class TramitacaoEventListByID(generics.ListAPIView):
     '''
-    Retorna os eventos de tramitação de uma determinada proposição com base no Id da proposicao e datas de inicio e fim. A lista de eventos apresenta
+    Retorna os eventos de tramitação de uma determinada proposição com base no Id
+    da proposicaoe datas de inicio e fim. A lista de eventos apresenta
     informações como o local e o nível de importância do evento.
     '''
 
