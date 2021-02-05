@@ -1,5 +1,6 @@
 from django.db import models
 from api.model.etapa_proposicao import EtapaProposicao
+from api.model.entidade import Entidade
 
 
 class Autoria(models.Model):
@@ -11,6 +12,10 @@ class Autoria(models.Model):
 
     id_documento = models.IntegerField(
         help_text='Id do documento.')
+
+    sigla = models.TextField(
+        null=True,
+        help_text='Sigla do documento.')
 
     descricao_tipo_documento = models.TextField(
         help_text='Tipo do documento.')
@@ -60,3 +65,6 @@ class Autoria(models.Model):
 
     etapa_proposicao = models.ForeignKey(
         EtapaProposicao, on_delete=models.CASCADE, related_name='autorias', null=True)
+
+    entidade = models.ForeignKey(
+        Entidade, on_delete=models.CASCADE, related_name='entidadeAutoria', null=True)

@@ -20,12 +20,14 @@ from api.views.ator_serializer import (
     AtoresRelatoriasDetalhada,
     AtoresAgregadosByID,
     AtuacaoParlamentarList,
+    AtoresBancadaList
 )
 from api.views.pressao_serializer import PressaoList, UltimaPressaoList
 from api.views.coautoria_node_serializer import CoautoriaNodeList
 from api.views.coautoria_edge_serializer import CoautoriaEdgeList
 from api.views.autoria_serializer import (
     AutoriaList,
+    AutoriasPorProposicaoList,
     AutoriasAgregadasList,
     AutoriasAutorList,
     AutoriasAgregadasByAutor,
@@ -89,6 +91,7 @@ urlpatterns = [
     url(r"^pauta/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$", PautaList.as_view()),
     url(r"^emenda/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$", EmendasList.as_view()),
     url(r"^ator/(?P<id_autor>[0-9]+)/?$", AtorEntidadeInfo.as_view()),
+    url(r"^atores/bancadas/?$", AtoresBancadaList.as_view()),
     url(r"^atores/relatorias/?$", AtoresRelatoriasList.as_view()),
     url(r"^atores/agregados/?$", AtoresAgregadosList.as_view()),
     url(r"^atores/agregados/(?P<id_autor>[0-9]+)/?$", AtoresAgregadosByID.as_view()),
@@ -129,7 +132,9 @@ urlpatterns = [
     url(r"^ator/(?P<id_autor>[0-9]+)/originais/?$", AutoriasOriginaisList.as_view()),
     # Estão embaixo para evitar ambiguidade nos endpoints
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
-    url(r"^autorias/(?P<id>[a-z0-9]+)/?$", AutoriaList.as_view()),
+    url(r"^autorias/(?P<id_leggo>[a-z0-9]+)/parlamentares?$",
+        AutoriasPorProposicaoList.as_view()),
+    url(r"^autorias/(?P<id_leggo>[a-z0-9]+)/?$", AutoriaList.as_view()),
     url(r"^autorias/?$", AutoriasTabelaList.as_view()),
     url(r"^pressao/ultima/?$", UltimaPressaoList.as_view()),
     url(r"^pressao/(?P<id_leggo>[a-z0-9]+)/?$", PressaoList.as_view()),

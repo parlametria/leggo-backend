@@ -29,19 +29,34 @@ class PresidenciaComissaoLista(generics.ListAPIView):
         """
         interesseArg = self.request.query_params.get("interesse")
         tema_arg = self.request.query_params.get('tema')
+        destaque_arg = self.request.query_params.get('destaque')
 
         if interesseArg is None:
             interesseArg = "leggo"
         if tema_arg is None:
             tema_arg = ""
 
-        consultaTramitacao = TramitacaoEvent.objects.raw(
+        q_begin = (
             "SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
             + "LEFT JOIN api_etapaproposicao as etapa ON etapa_proposicao_id = etapa.id "
             + "LEFT JOIN api_proposicao as prop ON proposicao_id = prop.id "
+        )
+
+        '''
+            Se o filtro de destaque estiver ativo,
+            adicione novo join com tabela de destaques
+        '''
+        if destaque_arg == 'true':
+            q_begin = (
+                q_begin
+                + "LEFT JOIN api_destaques as dest ON prop.id_leggo = dest.id_leggo "
+            )
+
+        consultaTramitacao = TramitacaoEvent.objects.raw(
+            q_begin
             + "LEFT JOIN api_interesse as interesse ON prop.id = interesse.id "
             + "WHERE interesse.interesse = %s AND interesse.tema_slug LIKE %s ",
-            [interesseArg, tema_arg.center(len(tema_arg) + 2, '%')],
+            [interesseArg, tema_arg.center(len(tema_arg) + 2, '%')]
         )
 
         listaComissoesPassadas = []
@@ -66,6 +81,7 @@ class PresidenciaComissaoParlamentar(generics.ListAPIView):
         """
         interesseArg = self.request.query_params.get("interesse")
         tema_arg = self.request.query_params.get('tema')
+        destaque_arg = self.request.query_params.get('destaque')
 
         if interesseArg is None:
             interesseArg = "leggo"
@@ -73,14 +89,28 @@ class PresidenciaComissaoParlamentar(generics.ListAPIView):
         if tema_arg is None:
             tema_arg = ""
 
+        q_begin = (
+            "SELECT distinct(sigla_local) as id FROM api_tramitacaoevent " +
+            "LEFT JOIN api_etapaproposicao as etapa ON etapa_proposicao_id = etapa.id " +
+            "LEFT JOIN api_proposicao as prop ON proposicao_id = prop.id "
+        )
+
+        '''
+            Se o filtro de destaque estiver ativo,
+            adicione novo join com tabela de destaques
+        '''
+        if destaque_arg == 'true':
+            q_begin = (
+                q_begin +
+                "LEFT JOIN api_destaques as dest ON prop.id_leggo = dest.id_leggo "
+            )
+
         consultaTramitacao = TramitacaoEvent.objects.raw(
-            "SELECT distinct(sigla_local) as id FROM api_tramitacaoevent "
-            + "LEFT JOIN api_etapaproposicao as etapa ON etapa_proposicao_id = etapa.id "
-            + "LEFT JOIN api_proposicao as prop ON proposicao_id = prop.id "
+            q_begin
             + "LEFT JOIN api_interesse as interesse ON prop.id = interesse.id "
             + "WHERE interesse.interesse = %s AND interesse.tema_slug LIKE %s ",
-            [interesseArg, tema_arg.center(len(tema_arg) + 2, '%')],
-        )
+            [interesseArg, tema_arg.center(len(tema_arg) + 2, '%')]
+            )
 
         listaComissoesPassadas = []
 
