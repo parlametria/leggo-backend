@@ -168,8 +168,8 @@ class TramitacaoEventListByID(generics.ListAPIView):
         if casa:
             queryset = queryset.filter(etapa_proposicao__casa=casa)
 
-        data_inicio = self.request.query_params.get('data_inicio', None)
-        data_fim = self.request.query_params.get('data_fim', None)
+        data_inicio = self.request.query_params.get('data_inicial', None)
+        data_fim = self.request.query_params.get('data_final', None)
         nivel = self.request.query_params.get('nivel', 100)
         ultimos_n = self.request.query_params.get('ultimos_n', 100)
         interesseArg = self.request.query_params.get('interesse', None)
