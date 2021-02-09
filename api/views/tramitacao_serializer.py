@@ -58,8 +58,6 @@ class TramitacaoEventList(generics.ListAPIView):
         if id_ext:
             queryset = queryset.filter(etapa_proposicao__id_ext=id_ext)
 
-        print('sem procurar por id')
-
         casa = self.kwargs.get('casa')
         if casa:
             queryset = queryset.filter(etapa_proposicao__casa=casa)
@@ -152,8 +150,10 @@ class TramitacaoEventListByID(generics.ListAPIView):
         Retorna os últimos n eventos da tramitação de uma proposição, dentro de um período
         delimitado por uma data de início e de fim.
         '''
+        #Trata valores do tipo nan
+        nanFreeObjects = TramitacaoEvent.objects.exclude(titulo_evento__isnull=True).exclude(titulo_evento__exact='nan')
 
-        queryset = TramitacaoEvent.objects.prefetch_related(
+        queryset = nanFreeObjects.prefetch_related(
             'etapa_proposicao', 'etapa_proposicao__proposicao')
 
         id_leggo = self.kwargs["id_leggo"]
