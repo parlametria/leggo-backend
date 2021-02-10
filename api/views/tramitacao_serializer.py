@@ -150,9 +150,7 @@ class TramitacaoEventListByID(generics.ListAPIView):
         Retorna os últimos n eventos da tramitação de uma proposição, dentro de um período
         delimitado por uma data de início e de fim.
         '''
-        #Trata valores do tipo nan
-        nanFreeObjects = TramitacaoEvent.objects.exclude(titulo_evento__isnull=True).exclude(titulo_evento__exact='nan')
-
+        
         queryset = nanFreeObjects.prefetch_related(
             'etapa_proposicao', 'etapa_proposicao__proposicao')
 
