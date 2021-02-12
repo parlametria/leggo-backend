@@ -35,7 +35,7 @@ class Destaques(models.Model):
         help_text=''
     )
 
-    data_aprovacao = models.DateTimeField(
+    data_aprovacao = models.DateField(
         blank=True,
         null=True,
         help_text='Data de finalização da proposição.'
@@ -71,7 +71,7 @@ class Destaques(models.Model):
         help_text=''
     )
 
-    data_req_urgencia_apresentado = models.DateTimeField(
+    data_req_urgencia_apresentado = models.DateField(
         blank=True,
         null=True,
         help_text='Data de de apresentação do requerimento de urgência.'
@@ -89,7 +89,7 @@ class Destaques(models.Model):
         help_text=''
     )
 
-    data_req_urgencia_aprovado = models.DateTimeField(
+    data_req_urgencia_aprovado = models.DateField(
         blank=True,
         null=True,
         help_text='Data de de aprovação do requerimento de urgência'

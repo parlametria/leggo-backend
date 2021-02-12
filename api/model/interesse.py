@@ -50,7 +50,14 @@ class Interesse(models.Model):
         """
         Separa temas
         """
-        return self.tema.split(";")
+        listaTemas = self.tema.split(";")
+
+        try:
+            listaTemas.remove('nan')
+        except ValueError:
+            return listaTemas
+
+        return listaTemas
 
     @property
     def slug_temas(self):
