@@ -156,7 +156,7 @@ class TramitacaoEventListByID(generics.ListAPIView):
 
         id_leggo = self.kwargs["id_leggo"]
         if id_leggo:
-            queryset = queryset.filter(etapa_proposicao__proposicao__id_leggo=id_leggo)
+            queryset = queryset.filter(etapa_proposicao__id_leggo=id_leggo)
 
         id_ext = self.kwargs.get('id_ext')
         if id_ext:
@@ -174,10 +174,6 @@ class TramitacaoEventListByID(generics.ListAPIView):
 
         data_inicio_dt = None
         data_fim_dt = None
-
-        if interesseArg is not None:
-            queryset = queryset.filter(
-                etapa_proposicao__proposicao__interesse__interesse=interesseArg)
 
         try:
             if data_inicio is not None:
@@ -198,6 +194,12 @@ class TramitacaoEventListByID(generics.ListAPIView):
 
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
+
+        """ data_ini_teste = datetime.strptime("2020-12-16", '%Y-%m-%d')
+
+        data_fin_teste = datetime.strptime("2020-11-18", '%Y-%m-%d')
+
+        print(data_ini_teste < data_fin_teste) """
 
         queryset = queryset.filter(data__lte=data_fim_dt)
 
