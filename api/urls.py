@@ -64,6 +64,7 @@ from api.views.entidade_serializer import (
 )
 from api.views.autores_proposicao_serializer import AutoresList
 from api.views.relator_proposicao_serializer import RelatoresList
+from api.views.votacao_serializer import VotacoesByCasaList
 
 
 # router = DefaultRouter()
@@ -144,4 +145,5 @@ urlpatterns = [
     url(r"^proposicoes/contagem/?$", ProposicaoCountList.as_view()),
     url(r"^proposicoes/(?P<id>[a-z0-9]+)/?$", ProposicaoDetail.as_view()),
     url(r"^interesses/?$", InteresseByNome.as_view()),
+    url(r"^votacoes/?$", VotacoesByCasaList.as_view())
 ]
