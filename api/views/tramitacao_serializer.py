@@ -194,12 +194,6 @@ class TramitacaoEventListByID(generics.ListAPIView):
         if data_inicio_dt is not None:
             queryset = queryset.filter(data__gte=data_inicio_dt)
 
-        """ data_ini_teste = datetime.strptime("2020-12-16", '%Y-%m-%d')
-
-        data_fin_teste = datetime.strptime("2020-11-18", '%Y-%m-%d')
-
-        print(data_ini_teste < data_fin_teste) """
-
         queryset = queryset.filter(data__lte=data_fim_dt)
 
         if nivel:
