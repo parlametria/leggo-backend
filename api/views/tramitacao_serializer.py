@@ -170,7 +170,6 @@ class TramitacaoEventListByID(generics.ListAPIView):
         data_fim = self.request.query_params.get('data_final', None)
         nivel = self.request.query_params.get('nivel', 100)
         ultimos_n = self.request.query_params.get('ultimos_n', 100)
-        interesseArg = self.request.query_params.get('interesse', None)
 
         data_inicio_dt = None
         data_fim_dt = None
