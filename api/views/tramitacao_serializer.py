@@ -156,7 +156,7 @@ class TramitacaoEventListByID(generics.ListAPIView):
 
         id_leggo = self.kwargs["id_leggo"]
         if id_leggo:
-            queryset = queryset.filter(etapa_proposicao__proposicao__id_leggo=id_leggo)
+            queryset = queryset.filter(etapa_proposicao__id_leggo=id_leggo)
 
         id_ext = self.kwargs.get('id_ext')
         if id_ext:
@@ -170,14 +170,9 @@ class TramitacaoEventListByID(generics.ListAPIView):
         data_fim = self.request.query_params.get('data_final', None)
         nivel = self.request.query_params.get('nivel', 100)
         ultimos_n = self.request.query_params.get('ultimos_n', 100)
-        interesseArg = self.request.query_params.get('interesse', None)
 
         data_inicio_dt = None
         data_fim_dt = None
-
-        if interesseArg is not None:
-            queryset = queryset.filter(
-                etapa_proposicao__proposicao__interesse__interesse=interesseArg)
 
         try:
             if data_inicio is not None:
