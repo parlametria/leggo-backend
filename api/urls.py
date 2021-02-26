@@ -78,7 +78,7 @@ urlpatterns = [
         r"^eventos_tramitacao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$",
         TramitacaoEventList.as_view(),
     ),
-    url(r"^eventos_tramitacao/(?P<id_leggo>[a-z0-9]+)/?$",
+    url(r"^acoes_legislativas/(?P<id_leggo>[a-z0-9]+)/?$",
         TramitacaoEventListByID.as_view()),
     url(r"^eventos_tramitacao/?$", TramitacaoEventList.as_view()),
     url(r"^proposicoes/(?P<id_ext>[0-9]+)/fases/?$", Info.as_view()),
