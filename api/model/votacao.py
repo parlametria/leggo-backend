@@ -32,6 +32,10 @@ class Votacao(models.Model):
         help_text='Resumo da votação.'
     )
 
+    is_nominal = models.BooleanField(
+        help_text='Flag se a votação é nominal.',
+        null=True)
+
     proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name="votacoes",
         blank=True,
