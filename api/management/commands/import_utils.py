@@ -23,6 +23,7 @@ from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
 from api.model.relatores_proposicao import RelatoresProposicao
 from api.model.destaques import Destaques
+from api.model.governismo import Governismo
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
@@ -843,6 +844,43 @@ def import_destaques():
         )
 
 
+def import_governismo():
+    """Carrega dados de governismo"""
+
+    print_import_info("Governismo")
+
+    governismo_df = pd.read_csv("data/governismo.csv")
+
+    grouped = governismo_df.groupby(["id_parlamentar_parlametria"])
+
+    for group_index in grouped.groups:
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index}
+
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "GovernismoEntidade"
+        )
+
+        if entidade_relacionada is None:
+            continue
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_parlamentar",
+                    "id_parlamentar_parlametria",
+                    "casa",
+                    "governismo"
+                ]
+            ]
+            .assign(entidade=entidade_relacionada)
+        )
+
+        Governismo.objects.bulk_create(
+            Governismo(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -869,6 +907,7 @@ def import_all_data():
     import_relatores_proposicoes()
     import_anotacoes()
     import_destaques()
+    import_governismo()
 
 
 def import_all_data_but_insights():
@@ -891,6 +930,7 @@ def import_all_data_but_insights():
     import_autores_proposicoes()
     import_relatores_proposicoes()
     import_destaques()
+    import_governismo()
 
 
 def import_insights():
