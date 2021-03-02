@@ -8,7 +8,7 @@ from api.views.proposicao_serializer import (
     ProposicaoCountList
 )
 from api.views.etapa_serializer import EtapasList
-from api.views.tramitacao_serializer import TramitacaoEventList
+from api.views.tramitacao_serializer import TramitacaoEventListByID, TramitacaoEventList
 from api.views.progresso_serializer import ProgressoByID, ProgressoList
 from api.views.comissao_serializer import ComissaoList
 from api.views.pauta_serializer import PautaList
@@ -64,7 +64,7 @@ from api.views.entidade_serializer import (
 )
 from api.views.autores_proposicao_serializer import AutoresList
 from api.views.relator_proposicao_serializer import RelatoresList
-
+from api.views.governismo_serializer import GovernismoList, GovernismoParlamentar
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
@@ -78,6 +78,8 @@ urlpatterns = [
         r"^eventos_tramitacao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$",
         TramitacaoEventList.as_view(),
     ),
+    url(r"^acoes_legislativas/(?P<id_leggo>[a-z0-9]+)/?$",
+        TramitacaoEventListByID.as_view()),
     url(r"^eventos_tramitacao/?$", TramitacaoEventList.as_view()),
     url(r"^proposicoes/(?P<id_ext>[0-9]+)/fases/?$", Info.as_view()),
     url(r"^progresso/(?P<id_leggo>[a-z0-9]+)/?$", ProgressoByID.as_view()),
@@ -128,6 +130,8 @@ urlpatterns = [
     url(r"^autores/?$", AutoresList.as_view()),
     url(r"^relatores/?$", RelatoresList.as_view()),
     url(r"^ator/(?P<id_autor>[0-9]+)/originais/?$", AutoriasOriginaisList.as_view()),
+    url(r"^governismo/?$", GovernismoList.as_view()),
+    url(r"^governismo/(?P<id>[a-z0-9]+)/?$", GovernismoParlamentar.as_view()),
     # Estão embaixo para evitar ambiguidade nos endpoints
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
     url(r"^autorias/(?P<id_leggo>[a-z0-9]+)/parlamentares?$",
