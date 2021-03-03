@@ -1002,8 +1002,8 @@ def import_all_data():
     import_relatores_proposicoes()
     import_anotacoes()
     import_destaques()
-    import_votacoes()
-    import_votos()
+    #import_votacoes()
+    #import_votos()
     import_governismo()
 
 
@@ -1027,8 +1027,8 @@ def import_all_data_but_insights():
     import_autores_proposicoes()
     import_relatores_proposicoes()
     import_destaques()
-    import_votacoes()
-    import_votos()
+    #import_votacoes()
+    #import_votos()
     import_governismo()
 
 
