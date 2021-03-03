@@ -23,6 +23,8 @@ from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
 from api.model.relatores_proposicao import RelatoresProposicao
 from api.model.destaques import Destaques
+from api.model.votacao import Votacao
+from api.model.voto import Voto
 from api.model.governismo import Governismo
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
@@ -543,6 +545,9 @@ def get_etapa_proposicao(prop_id, entity_str):
 def get_proposicao(leggo_id, entity_str):
     prop = None
 
+    if pd.isna(leggo_id['id_leggo']):
+        return prop
+
     try:
         prop = Proposicao.objects.get(**leggo_id)
     except Exception as e:
@@ -881,6 +886,96 @@ def import_governismo():
         )
 
 
+def import_votacoes():
+    """Carrega votações"""
+
+    print_import_info("Votações")
+
+    votacoes_df = pd.read_csv("data/votacoes.csv")
+
+    votacoes_df["data"] = (
+        votacoes_df["data"]
+        .astype("str")
+        .apply(
+            lambda x: None
+            if x == "NA"
+            else pd.to_datetime(x)
+        )
+    )
+
+    grouped = votacoes_df.groupby(["id_votacao"])
+
+    for group_index in grouped.groups:
+
+        id_leggo = {"id_leggo": grouped.get_group(group_index)[['id_leggo']].values[0][0]}
+
+        prop = get_proposicao(id_leggo, "Votações")
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "id_votacao",
+                    "data",
+                    "obj_votacao",
+                    "casa",
+                    "resumo",
+                    "is_nominal"
+                ]
+            ]
+            .assign(proposicao=prop)
+        )
+
+        Votacao.objects.bulk_create(
+            Votacao(**r[1].to_dict())
+            for r in group_df.iterrows()
+        )
+
+
+def get_votacao(votacao_obj, entity_str):
+    votacao = None
+
+    try:
+        votacao = (
+            Votacao.objects.filter(**votacao_obj)
+            .first()
+        )
+    except Exception as e:
+        print("Não foi possivel encontrar a votação: {}".format(str(votacao_obj)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
+
+    return votacao
+
+
+def import_votos():
+    """Carrega votos"""
+
+    print_import_info("Votos")
+
+    votos_df = pd.read_csv("data/votos.csv")
+
+    grouped = votos_df.groupby(["id_votacao", "id_parlamentar_parlametria"])
+
+    for group_index in grouped.groups:
+        id_votacao = {"id_votacao": group_index[0]}
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
+
+        vot = get_votacao(id_votacao, "Voto")
+        parlamentar = get_entidade(id_entidade_parlametria, "Voto")
+
+        group_df = (
+            grouped.get_group(group_index)
+            .assign(votacao=vot)
+            .assign(entidade=parlamentar)
+        )
+
+        Voto.objects.bulk_create(
+            Voto(**r[1].to_dict())
+            for r in group_df.iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -907,6 +1002,8 @@ def import_all_data():
     import_relatores_proposicoes()
     import_anotacoes()
     import_destaques()
+    # import_votacoes()
+    # import_votos()
     import_governismo()
 
 
@@ -930,6 +1027,8 @@ def import_all_data_but_insights():
     import_autores_proposicoes()
     import_relatores_proposicoes()
     import_destaques()
+    # import_votacoes()
+    # import_votos()
     import_governismo()
 
 
