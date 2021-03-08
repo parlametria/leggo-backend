@@ -37,7 +37,7 @@ class TramitacaoEvent(models.Model):
     temperatura_local = models.FloatField(
         blank=True, null=True,
         help_text='Temperatura do local do evento.')
-    
+
     temperatura_evento = models.FloatField(
         blank=True, null=True,
         help_text='Temperatura do evento.')
