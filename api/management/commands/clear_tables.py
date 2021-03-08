@@ -18,6 +18,8 @@ from ...model.entidade import Entidade
 from ...model.autores_proposicao import AutoresProposicao
 from ...model.relatores_proposicao import RelatoresProposicao
 from ...model.destaques import Destaques
+from ...model.votacao import Votacao
+from ..model.voto import Voto
 from ...model.governismo import Governismo
 
 
@@ -44,6 +46,8 @@ class Command(BaseCommand):
             AutoresProposicao.objects.all().delete()
             RelatoresProposicao.objects.all().delete()
             Destaques.objects.all().delete()
+            Votacao.objects.all().delete()
+            Voto.objects.all().delete()
             Governismo.objects.all().delete()
         except Exception as e:
             print("Não foi possível limpar os dados do banco =(")
