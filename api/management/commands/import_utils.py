@@ -153,6 +153,8 @@ def import_tramitacoes():
         "sigla_local",
         "local",
         "nivel",
+        "temperatura_local",
+        "temperatura_evento",
         "descricao_situacao",
         "texto_tramitacao",
         "status",
