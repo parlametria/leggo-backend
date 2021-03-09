@@ -19,7 +19,7 @@ from ...model.autores_proposicao import AutoresProposicao
 from ...model.relatores_proposicao import RelatoresProposicao
 from ...model.destaques import Destaques
 from ...model.votacao import Votacao
-from ..model.voto import Voto
+from ...model.voto import Voto
 from ...model.governismo import Governismo
 
 
