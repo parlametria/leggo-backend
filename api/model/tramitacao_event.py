@@ -34,6 +34,14 @@ class TramitacaoEvent(models.Model):
         blank=True, null=True,
         help_text='Nível de importância deste evento para notificações.')
 
+    temperatura_local = models.FloatField(
+        blank=True, null=True,
+        help_text='Temperatura do local do evento.')
+
+    temperatura_evento = models.FloatField(
+        blank=True, null=True,
+        help_text='Temperatura do evento.')
+
     @property
     def casa(self):
         '''Casa onde o evento ocorreu.'''
