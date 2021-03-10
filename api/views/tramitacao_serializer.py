@@ -9,7 +9,8 @@ class TramitacaoEventSerializer(serializers.ModelSerializer):
     class Meta:
         model = TramitacaoEvent
         fields = ('data', 'casa', 'sigla_local', 'evento', 'titulo_evento',
-                  'texto_tramitacao', 'status', 'proposicao_id', 'nivel', 'tema')
+                  'texto_tramitacao', 'status', 'proposicao_id', 'nivel',
+                  'temperatura_local', 'temperatura_evento', 'tema')
 
 
 class TramitacaoEventList(generics.ListAPIView):
