@@ -129,19 +129,16 @@ class ParlamentaresExercicioList(generics.ListAPIView):
 
 
 class RelatorSerializer(serializers.ModelSerializer):
-    id_relator = serializers.IntegerField(source="id_entidade")
     id_relator_parlametria = serializers.IntegerField(source="id_entidade_parlametria")
 
     class Meta:
         model = Entidade
         fields = (
-            "id_relator",
             "id_relator_parlametria",
             "casa",
             "nome",
             "partido",
-            "uf",
-            "em_exercicio",
+            "uf"
         )
 
 
