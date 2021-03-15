@@ -5,7 +5,6 @@ from api.model.etapa_proposicao import EtapaProposicao
 
 
 class EtapasSerializer(serializers.ModelSerializer):
-    # pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
     relatoria = RelatorSerializer(many=False, read_only=True)
 
     class Meta:
