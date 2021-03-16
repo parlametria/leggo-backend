@@ -24,4 +24,4 @@ class Disciplina(models.Model):
         help_text='Valor do disciplina')
 
     entidade = models.ForeignKey(
-        Entidade, on_delete=models.CASCADE, related_name='entidadeGovernismo', null=True)
+        Entidade, on_delete=models.CASCADE, related_name='entidadeDisciplina', null=True)
