@@ -14,7 +14,7 @@ from api.utils.filters import (
 )
 from django.db.models import Prefetch, Count, Q
 from api.views.ator_serializer import AtoresProposicoesSerializer
-from api.views.interesse_serializer import InteresseSerializer
+from api.views.interesse_serializer import InteresseProposicaoSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
 from api.views.destaques_serializer import DestaquesDetailsSerializer
 
@@ -23,7 +23,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
     etapas = EtapasDetailSerializer(many=True, read_only=True)
     temperatura_historico = TemperaturaHistoricoSerializer(many=True, read_only=True)
     important_atores = AtoresProposicoesSerializer(many=True, read_only=True)
-    interesse = InteresseSerializer(many=True, read_only=True)
+    interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     autoresProposicao = AutoresSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
 
@@ -48,13 +48,12 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
 
 class ProposicaoSerializer(serializers.ModelSerializer):
     etapas = EtapasSerializer(many=True, read_only=True)
-    interesse = InteresseSerializer(many=True, read_only=True)
+    interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
         fields = (
-            "id",
             "interesse",
             "etapas",
             "id_leggo",

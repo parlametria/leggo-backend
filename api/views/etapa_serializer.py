@@ -5,27 +5,19 @@ from api.model.etapa_proposicao import EtapaProposicao
 
 
 class EtapasSerializer(serializers.ModelSerializer):
-    pauta_historico = PautaHistoricoSerializer(many=True, read_only=True)
     relatoria = RelatorSerializer(many=False, read_only=True)
 
     class Meta:
         model = EtapaProposicao
         fields = (
-            "id",
-            "id_ext",
             "casa",
             "sigla",
             "data_apresentacao",
-            "ano",
-            "sigla_tipo",
             "regime_tramitacao",
             "forma_apreciacao",
             "ementa",
             "url",
-            "casa_origem",
-            "em_pauta",
             "status",
-            "pauta_historico",
             "relatoria",
         )
 
