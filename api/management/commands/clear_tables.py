@@ -49,6 +49,7 @@ class Command(BaseCommand):
             Votacao.objects.all().delete()
             Voto.objects.all().delete()
             Governismo.objects.all().delete()
+            Disciplina.objects.all().delete()
         except Exception as e:
             print("Não foi possível limpar os dados do banco =(")
             print(str(e))
