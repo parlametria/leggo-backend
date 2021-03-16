@@ -23,6 +23,7 @@ from ...model.voto import Voto
 from ...model.governismo import Governismo
 from ...model.disciplina import Disciplina
 
+
 class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
