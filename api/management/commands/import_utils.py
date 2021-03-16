@@ -26,6 +26,7 @@ from api.model.destaques import Destaques
 from api.model.votacao import Votacao
 from api.model.voto import Voto
 from api.model.governismo import Governismo
+from api.model.disciplina import Disciplina
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
