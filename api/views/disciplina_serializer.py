@@ -11,13 +11,13 @@ class DisciplinaSerializer(serializers.ModelSerializer):
         fields = (
             "id_parlamentar_parlametria",
             "casa",
-            "governismo"
+            "disciplina"
         )
 
 
 class DisciplinaList(generics.ListAPIView):
     """
-    Dados de governismo dos parlamentares. A disciplina é calculada usando a
+    Dados de disciplina dos parlamentares. A disciplina é calculada usando a
     técnica de Ideal points com base nas votações nominais de plenário na
     legislatura
     """
@@ -26,7 +26,7 @@ class DisciplinaList(generics.ListAPIView):
 
     def get_queryset(self):
         """
-        Retorna o governismo
+        Retorna o disciplina
         """
 
         return Disciplina.objects
