@@ -68,6 +68,7 @@ from api.views.votacao_serializer import VotacoesByCasaList
 from api.views.voto_serializer import VotosByParlamentar, VotosByVotacao
 
 from api.views.governismo_serializer import GovernismoList, GovernismoParlamentar
+from api.views.disciplina_serializer import DisciplinaList, DisciplinaParlamentar
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
@@ -135,6 +136,8 @@ urlpatterns = [
     url(r"^ator/(?P<id_autor>[0-9]+)/originais/?$", AutoriasOriginaisList.as_view()),
     url(r"^governismo/?$", GovernismoList.as_view()),
     url(r"^governismo/(?P<id>[a-z0-9]+)/?$", GovernismoParlamentar.as_view()),
+    url(r"^disciplina/?$", DisciplinaList.as_view()),
+    url(r"^disciplina/(?P<id>[a-z0-9]+)/?$", DisciplinaParlamentar.as_view()),
     # Estão embaixo para evitar ambiguidade nos endpoints
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
     url(r"^autorias/(?P<id_leggo>[a-z0-9]+)/parlamentares?$",
