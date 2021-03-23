@@ -10,6 +10,7 @@ class InteresseProposicaoSerializer(serializers.ModelSerializer):
         fields = (
             "interesse",
             "temas",
+            "slug_temas",
             "apelido",
             "advocacy_link",
             "tipo_agenda"
