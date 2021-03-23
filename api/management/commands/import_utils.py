@@ -26,6 +26,7 @@ from api.model.destaques import Destaques
 from api.model.votacao import Votacao
 from api.model.voto import Voto
 from api.model.governismo import Governismo
+from api.model.disciplina import Disciplina
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
@@ -888,6 +889,43 @@ def import_governismo():
         )
 
 
+def import_disciplina():
+    """Carrega dados de disciplina"""
+
+    print_import_info("Dsiciplina")
+
+    disciplina_df = pd.read_csv("data/disciplina.csv")
+
+    grouped = disciplina_df.groupby(["id_parlamentar_parlametria"])
+
+    for group_index in grouped.groups:
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index}
+
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "DisciplinaEntidade"
+        )
+
+        if entidade_relacionada is None:
+            continue
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_parlamentar",
+                    "id_parlamentar_parlametria",
+                    "casa",
+                    "disciplina"
+                ]
+            ]
+            .assign(entidade=entidade_relacionada)
+        )
+
+        Disciplina.objects.bulk_create(
+            Disciplina(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
 def import_votacoes():
     """Carrega votações"""
 
@@ -1007,6 +1045,7 @@ def import_all_data():
     # import_votacoes()
     # import_votos()
     import_governismo()
+    import_disciplina()
 
 
 def import_all_data_but_insights():
@@ -1032,6 +1071,7 @@ def import_all_data_but_insights():
     # import_votacoes()
     # import_votos()
     import_governismo()
+    import_disciplina()
 
 
 def import_insights():
