@@ -16,21 +16,25 @@ class VotacoesSumarizadas(models.Model):
         null=True,
         help_text='Id do parlamentar na plataforma parlametria')
 
-    num_votacoes_totais_governismo = models.IntegerField(
+    casa = models.TextField(
         null=True,
-        help_text='Número de votações totais')
+        help_text='Casa do parlamentar')
 
-    num_votacoes_totais_disciplina = models.IntegerField(
+    num_votacoes_parlamentar_disciplina = models.IntegerField(
         null=True,
-        help_text='Número de votações totais')
+        help_text='Número de votações do parlamentar')
 
     num_votacoes_parlamentar_governismo = models.IntegerField(
         null=True,
         help_text='Número de votações do parlamentar')
 
-    num_votacoes_parlamentar_disciplina = models.IntegerField(
+    num_votacoes_totais_disciplina = models.IntegerField(
         null=True,
-        help_text='Número de votações do parlamentar')
+        help_text='Número de votações totais')
+
+    num_votacoes_totais_governismo = models.IntegerField(
+        null=True,
+        help_text='Número de votações totais')
 
     entidade = models.ForeignKey(
         Entidade, on_delete=models.CASCADE,

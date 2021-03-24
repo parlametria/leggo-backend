@@ -10,10 +10,12 @@ class VotacoesSumarizadasSerializer(serializers.ModelSerializer):
         model = VotacoesSumarizadas
         fields = (
             "id_parlamentar",
-            "num_votacoes_totais_governismo",
-            "num_votacoes_totais_disciplina",
+            "id_parlamentar_parlametria",
+            "casa",
             "num_votacoes_parlamentar_governismo",
-            "num_votacoes_parlamentar_disciplina"
+            "num_votacoes_totais_governismo",
+            "num_votacoes_parlamentar_disciplina",
+            "num_votacoes_totais_disciplina"
         )
 
 

@@ -895,7 +895,7 @@ def import_votacoes_sumarizadas():
 
     print_import_info("Votações Sumarizadas")
 
-    votacoes_sumarizadas_df = pd.read_csv("data/votacoes_sumarizadas.csv")
+    votacoes_sumarizadas_df = pd.read_csv("data/votos_sumarizados.csv")
 
     grouped = votacoes_sumarizadas_df.groupby(["id_parlamentar_parlametria"])
 
@@ -914,10 +914,11 @@ def import_votacoes_sumarizadas():
                 [
                     "id_parlamentar",
                     "id_parlamentar_parlametria",
-                    "num_votacoes_totais_governismo",
-                    "num_votacoes_totais_disciplina",
+                    "casa",
                     "num_votacoes_parlamentar_governismo",
-                    "num_votacoes_parlamentar_disciplina"
+                    "num_votacoes_totais_governismo",
+                    "num_votacoes_parlamentar_disciplina",
+                    "num_votacoes_totais_disciplina"
                 ]
             ]
             .assign(entidade=entidade_relacionada)
@@ -932,7 +933,7 @@ def import_votacoes_sumarizadas():
 def import_disciplina():
     """Carrega dados de disciplina"""
 
-    print_import_info("Dsiciplina")
+    print_import_info("Disciplina")
 
     disciplina_df = pd.read_csv("data/disciplina.csv")
 
@@ -1086,6 +1087,7 @@ def import_all_data():
     # import_votos()
     import_governismo()
     import_disciplina()
+    import_votacoes_sumarizadas()
 
 
 def import_all_data_but_insights():
@@ -1112,6 +1114,7 @@ def import_all_data_but_insights():
     # import_votos()
     import_governismo()
     import_disciplina()
+    import_votacoes_sumarizadas()
 
 
 def import_insights():
