@@ -166,6 +166,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 INTERNAL_IPS = ['127.0.0.1']
 
+CACHE_TTL = 60 * 60  # 1 hour
+
 if DEBUG:
     # tricks to have debug toolbar when developing with docker
     MIDDLEWARE.insert(1, 'debug_toolbar.middleware.DebugToolbarMiddleware')
