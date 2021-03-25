@@ -502,6 +502,7 @@ class AutoriasOriginaisList(generics.ListAPIView):
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31',
                     tipo_documento='Prop. Original / Apensada')
+            .distinct('id_autor_parlametria', 'id_documento')
             .values('id_autor_parlametria', 'id_documento', 'peso_autor_documento',
                     'id_leggo', 'data',
                     'descricao_tipo_documento', 'url_inteiro_teor',
@@ -549,6 +550,7 @@ class AutoriasTabelaList(generics.ListAPIView):
             Autoria.objects
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     data__gt='2019-01-31')
+            .distinct('id_autor, id_documento')
             .select_related('etapa_proposicao')
             .values('id_autor', 'casa_autor', 'id_documento', 'id_leggo',
                     'id_principal', 'casa',
