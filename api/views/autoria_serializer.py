@@ -155,6 +155,7 @@ class AutoriasAutorList(generics.ListAPIView):
             .filter(id_leggo__in=interesses.values('id_leggo'),
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31')
+            .distinct('id_autor_parlametria', 'id_documento')
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
                     'tipo_documento', 'tipo_acao', 'peso_autor_documento',
