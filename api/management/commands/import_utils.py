@@ -895,7 +895,7 @@ def import_votacoes_sumarizadas():
 
     print_import_info("Votações Sumarizadas")
 
-    votacoes_sumarizadas_df = pd.read_csv("data/votos_sumarizados.csv")
+    votacoes_sumarizadas_df = pd.read_csv("data/votacoes_sumarizadas.csv")
 
     grouped = votacoes_sumarizadas_df.groupby(["id_parlamentar_parlametria"])
 
