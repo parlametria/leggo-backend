@@ -4,6 +4,19 @@ from drf_yasg.utils import swagger_auto_schema
 from api.model.interesse import Interesse
 
 
+class InteresseProposicaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Interesse
+        fields = (
+            "interesse",
+            "temas",
+            "slug_temas",
+            "apelido",
+            "advocacy_link",
+            "tipo_agenda"
+        )
+
+
 class InteresseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Interesse

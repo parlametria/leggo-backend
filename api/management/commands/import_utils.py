@@ -23,12 +23,25 @@ from api.model.entidade import Entidade
 from api.model.autores_proposicao import AutoresProposicao
 from api.model.relatores_proposicao import RelatoresProposicao
 from api.model.destaques import Destaques
+from api.model.votacao import Votacao
+from api.model.voto import Voto
+from api.model.governismo import Governismo
+from api.model.disciplina import Disciplina
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
 
+def print_import_info(table):
+    print('\n============================================================')
+    print(f'Importando os dados de {table}')
+    print('==============================================================')
+
+
 def import_etapas_proposicoes():
     """Carrega etapas das proposições"""
+
+    print_import_info("Etapas proposições")
+
     props_df = pd.read_csv("data/proposicoes.csv", decimal=",").assign(
         data_apresentacao=lambda x: x.data_apresentacao.apply(lambda s: s.split("T")[0])
     )
@@ -68,6 +81,9 @@ def import_etapas_proposicoes():
 
 def import_proposicoes():
     """Carrega proposições"""
+
+    print_import_info("Proposições")
+
     props_df = pd.read_csv("data/proposicoes.csv")
 
     for _, etapas_df in props_df.groupby(["id_leggo"]):
@@ -113,23 +129,47 @@ def import_proposicoes():
 
 def import_tramitacoes():
     """Carrega tramitações"""
+
+    print_import_info("Tramitações")
+
     filepath = "data/trams.csv"
-    grouped = pd.read_csv(filepath).groupby(["casa", "id_ext"])
+    col_dtypes = {
+        'data': str,
+        'evento': str,
+        'titulo_evento': str,
+        'sigla_local': str,
+        'local': str,
+        'descricao_situacao': str,
+        'texto_tramitacao': str,
+        'status': str,
+        'tipo_documento': str,
+        'link_inteiro_teor': str
+    }
 
     col_names = [
         "data",
+        "casa",
+        "id_ext",
         "sequencia",
         "evento",
         "titulo_evento",
         "sigla_local",
         "local",
         "nivel",
-        "situacao",
+        "temperatura_local",
+        "temperatura_evento",
+        "descricao_situacao",
         "texto_tramitacao",
         "status",
         "tipo_documento",
-        "link_inteiro_teor",
+        "link_inteiro_teor"
     ]
+
+    grouped = (
+        pd.read_csv(filepath, usecols=col_names, dtype=col_dtypes)
+        .rename(columns={'descricao_situacao': 'situacao'})
+        .groupby(["casa", "id_ext"])
+    )
 
     for group_index in grouped.groups:
         prop_id = {
@@ -144,17 +184,11 @@ def import_tramitacoes():
 
         group_df = (
             grouped.get_group(group_index)
-            # renomeios
-            .assign(descricao=lambda x: x.descricao_situacao).assign(
-                situacao=lambda x: x.descricao_situacao
-            )
+            .drop(['id_ext', 'casa'], axis=1)
             # pega apenas a data e não a hora
             .assign(data=lambda x: x.data.apply(lambda s: s.split("T")[0]))
             # eventos sem nível recebem o maior valor (ou seja, são menos importantes)
             .assign(nivel=lambda x: x.nivel.fillna(x.nivel.max()))
-            # filtra deixando apenas as colunas desejadas
-            .pipe(lambda x: x.loc[:, x.columns.isin(col_names)])
-            # adiciona referência para a correspondente etapa da proposição
             .assign(etapa_proposicao=etapa_prop)
         )
         TramitacaoEvent.objects.bulk_create(
@@ -167,6 +201,9 @@ def import_tramitacoes():
 
 def import_temperaturas():
     """Carrega históricos de temperatura"""
+
+    print_import_info("Histórico de temperatura")
+
     grouped = pd.read_csv("data/hists_temperatura.csv").groupby(["id_leggo"])
     for group_index in grouped.groups:
         id_leggo = {"id_leggo": group_index}
@@ -189,6 +226,9 @@ def import_temperaturas():
 
 def import_coautoria_node():
     """Carrega nós"""
+
+    print_import_info("Nós de coautorias")
+
     grouped = pd.read_csv("data/coautorias_nodes.csv").groupby(["id_leggo"])
     for group_index in grouped.groups:
         id_leggo = {"id_leggo": group_index}
@@ -206,6 +246,9 @@ def import_coautoria_node():
 
 def import_coautoria_edge():
     """Carrega arestas"""
+
+    print_import_info("Arestas de coautorias")
+
     grouped = pd.read_csv("data/coautorias_edges.csv").groupby(["id_leggo"])
     for group_index in grouped.groups:
         id_leggo = {"id_leggo": group_index}
@@ -223,6 +266,9 @@ def import_coautoria_edge():
 
 def import_autoria():
     """Carrega autorias"""
+
+    print_import_info("Autorias")
+
     grouped = pd.read_csv(
         "data/autorias.csv").groupby(["casa", "id_principal", "id_autor_parlametria"])
     for group_index in grouped.groups:
@@ -259,6 +305,9 @@ def import_autoria():
 
 def import_pautas():
     """Carrega históricos de pautas"""
+
+    print_import_info("Histórico de pautas")
+
     grouped = pd.read_csv("data/pautas.csv").groupby(["casa", "id_ext"])
     for group_index in grouped.groups:
         prop_id = {
@@ -283,6 +332,9 @@ def import_pautas():
 
 def import_progresso():
     """Carrega o progresso das proposições"""
+
+    print_import_info("Progressos")
+
     progresso_df = pd.read_csv("data/progressos.csv")
 
     for col in ["data_inicio", "data_fim"]:
@@ -336,6 +388,9 @@ def import_progresso():
 
 def import_emendas():
     """Carrega emendas"""
+
+    print_import_info("Emendas")
+
     emendas_df = pd.read_csv("data/emendas.csv").groupby(["casa", "id_ext"])
     for group_index in emendas_df.groups:
         prop_id = {
@@ -367,6 +422,9 @@ def import_emendas():
 
 def import_atores():
     """Carrega Atores"""
+
+    print_import_info("Atores")
+
     atores_df = pd.read_csv("data/atuacao.csv").groupby(
         ["id_leggo", "id_autor_parlametria"]
     )
@@ -417,6 +475,8 @@ def import_atores():
 def import_comissoes():
     """Carrega Comissoes"""
 
+    print_import_info("Comissões")
+
     comissoes_df = pd.read_csv("data/comissoes.csv").groupby(["casa", "sigla"])
     for group_index in comissoes_df.groups:
         group_df = comissoes_df.get_group(group_index)
@@ -427,6 +487,9 @@ def import_comissoes():
 
 def import_pressao():
     """Carrega pressao das proposicoes"""
+
+    print_import_info("Pressão")
+
     pressao_df = pd.read_csv("data/pressao.csv").groupby(
         ["id_leggo", "id_ext", "casa", "interesse", "date"]
     )
@@ -485,6 +548,9 @@ def get_etapa_proposicao(prop_id, entity_str):
 def get_proposicao(leggo_id, entity_str):
     prop = None
 
+    if pd.isna(leggo_id['id_leggo']):
+        return prop
+
     try:
         prop = Proposicao.objects.get(**leggo_id)
     except Exception as e:
@@ -528,6 +594,9 @@ def get_entidade(entidade_obj, entity_str):
 
 def import_interesse():
     """Carrega Interesses"""
+
+    print_import_info("Interesses")
+
     grouped = pd.read_csv("data/interesses.csv").groupby(["id_leggo"])
     for group_index in grouped.groups:
         id_leggo = {"id_leggo": group_index}
@@ -558,6 +627,9 @@ def import_interesse():
 
 def import_anotacoes_especificas():
     """Carrega anotações das proposições"""
+
+    print_import_info("Anotações específicas")
+
     grouped = pd.read_csv("data/anotacoes_especificas.csv").groupby(["id_leggo"])
 
     for group_index in grouped.groups:
@@ -588,6 +660,9 @@ def import_anotacoes_especificas():
 
 def import_anotacoes_gerais():
     """Carrega anotações dos interesses"""
+
+    print_import_info("Anotações gerais")
+
     anotacoes = pd.read_csv("data/anotacoes_gerais.csv")
 
     AnotacaoGeral.objects.bulk_create(
@@ -596,6 +671,9 @@ def import_anotacoes_gerais():
 
 
 def import_entidades():
+
+    print_import_info("Entidades")
+
     grouped = pd.read_csv("data/entidades.csv")
 
     grouped = grouped.groupby(["legislatura", "id_entidade_parlametria"])
@@ -625,6 +703,9 @@ def import_entidades():
 
 def import_autores_proposicoes():
     """Carrega Autores das proposições"""
+
+    print_import_info("Autores de proposições")
+
     grouped = pd.read_csv("data/autores_leggo.csv")
     grouped = grouped.groupby(["id_autor_parlametria", "id_leggo"])
 
@@ -674,6 +755,9 @@ def import_autores_proposicoes():
 
 def import_relatores_proposicoes():
     """Carrega Relatores das proposições"""
+
+    print_import_info("Relatores")
+
     grouped = pd.read_csv("data/relatores_leggo.csv")
     grouped = grouped.groupby(["relator_id_parlametria", "id_leggo"])
 
@@ -726,6 +810,9 @@ def import_relatores_proposicoes():
 
 def import_destaques():
     """Carrega proposições em destaques"""
+
+    print_import_info("Destaques")
+
     destaques_df = pd.read_csv("data/proposicoes_destaques.csv")
 
     for col in ["data_aprovacao", "data_req_urgencia_apresentado",
@@ -765,6 +852,170 @@ def import_destaques():
         )
 
 
+def import_governismo():
+    """Carrega dados de governismo"""
+
+    print_import_info("Governismo")
+
+    governismo_df = pd.read_csv("data/governismo.csv")
+
+    grouped = governismo_df.groupby(["id_parlamentar_parlametria"])
+
+    for group_index in grouped.groups:
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index}
+
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "GovernismoEntidade"
+        )
+
+        if entidade_relacionada is None:
+            continue
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_parlamentar",
+                    "id_parlamentar_parlametria",
+                    "casa",
+                    "governismo"
+                ]
+            ]
+            .assign(entidade=entidade_relacionada)
+        )
+
+        Governismo.objects.bulk_create(
+            Governismo(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
+def import_disciplina():
+    """Carrega dados de disciplina"""
+
+    print_import_info("Dsiciplina")
+
+    disciplina_df = pd.read_csv("data/disciplina.csv")
+
+    grouped = disciplina_df.groupby(["id_parlamentar_parlametria"])
+
+    for group_index in grouped.groups:
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index}
+
+        entidade_relacionada = get_entidade(
+            id_entidade_parlametria, "DisciplinaEntidade"
+        )
+
+        if entidade_relacionada is None:
+            continue
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_parlamentar",
+                    "id_parlamentar_parlametria",
+                    "casa",
+                    "disciplina"
+                ]
+            ]
+            .assign(entidade=entidade_relacionada)
+        )
+
+        Disciplina.objects.bulk_create(
+            Disciplina(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
+def import_votacoes():
+    """Carrega votações"""
+
+    print_import_info("Votações")
+
+    votacoes_df = pd.read_csv("data/votacoes.csv")
+
+    votacoes_df["data"] = (
+        votacoes_df["data"]
+        .astype("str")
+        .apply(
+            lambda x: None
+            if x == "NA"
+            else pd.to_datetime(x)
+        )
+    )
+
+    grouped = votacoes_df.groupby(["id_votacao"])
+
+    for group_index in grouped.groups:
+
+        id_leggo = {"id_leggo": grouped.get_group(group_index)[['id_leggo']].values[0][0]}
+
+        prop = get_proposicao(id_leggo, "Votações")
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "id_votacao",
+                    "data",
+                    "obj_votacao",
+                    "casa",
+                    "resumo",
+                    "is_nominal"
+                ]
+            ]
+            .assign(proposicao=prop)
+        )
+
+        Votacao.objects.bulk_create(
+            Votacao(**r[1].to_dict())
+            for r in group_df.iterrows()
+        )
+
+
+def get_votacao(votacao_obj, entity_str):
+    votacao = None
+
+    try:
+        votacao = (
+            Votacao.objects.filter(**votacao_obj)
+            .first()
+        )
+    except Exception as e:
+        print("Não foi possivel encontrar a votação: {}".format(str(votacao_obj)))
+        print("\tErro ao inserir: {}".format(str(entity_str)))
+        print("\t{}".format(str(e)))
+
+    return votacao
+
+
+def import_votos():
+    """Carrega votos"""
+
+    print_import_info("Votos")
+
+    votos_df = pd.read_csv("data/votos.csv")
+
+    grouped = votos_df.groupby(["id_votacao", "id_parlamentar_parlametria"])
+
+    for group_index in grouped.groups:
+        id_votacao = {"id_votacao": group_index[0]}
+        id_entidade_parlametria = {"id_entidade_parlametria": group_index[1]}
+
+        vot = get_votacao(id_votacao, "Voto")
+        parlamentar = get_entidade(id_entidade_parlametria, "Voto")
+
+        group_df = (
+            grouped.get_group(group_index)
+            .assign(votacao=vot)
+            .assign(entidade=parlamentar)
+        )
+
+        Voto.objects.bulk_create(
+            Voto(**r[1].to_dict())
+            for r in group_df.iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -791,6 +1042,10 @@ def import_all_data():
     import_relatores_proposicoes()
     import_anotacoes()
     import_destaques()
+    # import_votacoes()
+    # import_votos()
+    import_governismo()
+    import_disciplina()
 
 
 def import_all_data_but_insights():
@@ -813,6 +1068,10 @@ def import_all_data_but_insights():
     import_autores_proposicoes()
     import_relatores_proposicoes()
     import_destaques()
+    # import_votacoes()
+    # import_votos()
+    import_governismo()
+    import_disciplina()
 
 
 def import_insights():
