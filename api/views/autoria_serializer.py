@@ -2,21 +2,12 @@ from rest_framework import serializers, generics
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from django.db.models import (
-    F,
     Count,
-    Prefetch,
-    Value,
-    Sum,
-    Max,
-    Min,
-    IntegerField)
-from django.db.models.expressions import Window
-from django.db.models.functions.window import RowNumber
-
+    Sum)
 from api.model.autoria import Autoria
 from api.utils.filters import get_filtered_interesses, get_filtered_destaques
 from api.utils.queries_autorias_agregadas import (
-    queryAutoriasAgregadas, 
+    queryAutoriasAgregadas,
     queryAutoriasAgregadasByTipoAcao,
     queryAutoriasAgregadasByTipoAcaoEIdAutor)
 
@@ -199,16 +190,17 @@ class AutoriasAgregadasList(generics.ListAPIView):
             interesse_arg = 'leggo'
 
         q = queryAutoriasAgregadasByTipoAcao(
-            '2019-02-01', 
-            interesse_arg, 
-            tema_arg, 
+            '2019-02-01',
+            interesse_arg,
+            tema_arg,
             destaques_arg,
             'Proposição'
         )
-        
+
         autorias = Autoria.objects.raw(q)
 
         return autorias
+
 
 class AutoriasAgregadasByAutorSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
@@ -217,6 +209,7 @@ class AutoriasAgregadasByAutorSerializer(serializers.Serializer):
     peso_documentos = serializers.FloatField()
     max_quantidade_autorias = serializers.IntegerField()
     min_quantidade_autorias = serializers.IntegerField()
+
 
 class AutoriasAgregadasByAutor(generics.ListAPIView):
     """
@@ -241,15 +234,15 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
 
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        
+
         q = queryAutoriasAgregadasByTipoAcaoEIdAutor(
-            '2019-02-01', 
-            interesse_arg, 
-            tema_arg, 
+            '2019-02-01',
+            interesse_arg,
+            tema_arg,
             destaques_arg,
-            id_autor_parlametria, 
+            id_autor_parlametria,
             'Proposição')
-        print(q)
+
         autorias = Autoria.objects.raw(q)
 
         return autorias
@@ -284,14 +277,14 @@ class AutoriasAgregadasProjetos(generics.ListAPIView):
             interesse_arg = 'leggo'
 
         q = queryAutoriasAgregadasByTipoAcao(
-            '2019-02-01', 
-            interesse_arg, 
-            tema_arg, 
+            '2019-02-01',
+            interesse_arg,
+            tema_arg,
             destaques_arg,
             'Proposição',
             'Prop. Original / Apensada'
         )
-        
+
         autorias = Autoria.objects.raw(q)
 
         return autorias
@@ -322,9 +315,9 @@ class AutoriasAgregadasProjetosById(generics.ListAPIView):
             interesse_arg = 'leggo'
 
         q = queryAutoriasAgregadasByTipoAcaoEIdAutor(
-            '2019-02-01', 
-            interesse_arg, 
-            tema_arg, 
+            '2019-02-01',
+            interesse_arg,
+            tema_arg,
             destaques_arg,
             id_autor_parlametria,
             'Proposição',
@@ -361,7 +354,7 @@ class Acoes(generics.ListAPIView):
 
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        
+
         q = queryAutoriasAgregadas('2019-02-01', interesse_arg, tema_arg, destaques_arg)
         result = Autoria.objects.raw(q)
 
