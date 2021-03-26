@@ -15,7 +15,10 @@ from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
 from api.utils.filters import get_filtered_interesses, get_filtered_destaques
-from api.utils.queries_autorias_agregadas import queryAutoriasAgregadas, queryAutoriasAgregadasByTipoAcao
+from api.utils.queries_autorias_agregadas import (
+    queryAutoriasAgregadas, 
+    queryAutoriasAgregadasByTipoAcao,
+    queryAutoriasAgregadasByTipoAcaoEIdAutor)
 
 
 class AutoriaSerializer(serializers.ModelSerializer):
@@ -195,15 +198,24 @@ class AutoriasAgregadasList(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = 'leggo'
 
-        # autorias = Autoria.objects
-
-        q = queryAutoriasAgregadasByTipoAcao('2019-02-01', interesse_arg, tema_arg, destaques_arg)
+        q = queryAutoriasAgregadasByTipoAcao(
+            '2019-02-01', 
+            interesse_arg, 
+            tema_arg, 
+            destaques_arg
+        )
         
-        print(q)
         autorias = Autoria.objects.raw(q)
 
         return autorias
 
+class AutoriasAgregadasByAutorSerializer(serializers.Serializer):
+    id_autor = serializers.IntegerField()
+    id_autor_parlametria = serializers.IntegerField()
+    quantidade_autorias = serializers.IntegerField()
+    peso_documentos = serializers.FloatField()
+    max_quantidade_autorias = serializers.IntegerField()
+    min_quantidade_autorias = serializers.IntegerField()
 
 class AutoriasAgregadasByAutor(generics.ListAPIView):
     """
@@ -211,7 +223,7 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
     para um autor específico passado como parâmetro
     """
 
-    serializer_class = AutoriasAgregadasSerializer
+    serializer_class = AutoriasAgregadasByAutorSerializer
 
     def get_queryset(self):
         '''
@@ -220,45 +232,18 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         Se não for passado um interesse como argumento,
         os dados retornados serão os do interesse default (leggo).
         '''
+        id_autor_parlametria = self.kwargs["id_autor"]
+
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
         destaques_arg = self.request.query_params.get('destaque')
 
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg, tema_arg)
-
-        id_autor_parlametria = self.kwargs["id_autor"]
-
-        autorias = Autoria.objects
-
-        if destaques_arg == 'true':
-            destaques = get_filtered_destaques(destaques_arg)
-            autorias = (
-                autorias.filter(id_leggo__in=destaques)
-            )
-
-        autorias = (
-            autorias
-            .filter(id_leggo__in=interesses.values('id_leggo'),
-                    data__gte='2019-01-31',
-                    tipo_acao__in=['Proposição'])  # !!!
-            .values("id_autor", "id_autor_parlametria")
-            .annotate(
-                quantidade_autorias=Count("id_autor"),
-                peso_documentos=Sum("peso_autor_documento"))
-            .prefetch_related(Prefetch("interesse", queryset=interesses))
-        )
-
-        min_max = autorias.aggregate(
-            max_quantidade_autorias=Max("quantidade_autorias"),
-            min_quantidade_autorias=Min("quantidade_autorias"))
-        autorias = autorias.filter(id_autor_parlametria=id_autor_parlametria).annotate(
-            max_quantidade_autorias=Value(
-                min_max["max_quantidade_autorias"], IntegerField()),
-            min_quantidade_autorias=Value(
-                min_max["min_quantidade_autorias"], IntegerField())
-        )
+        
+        q = queryAutoriasAgregadasByTipoAcaoEIdAutor('2019-02-01', interesse_arg, tema_arg, destaques_arg, id_autor_parlametria)
+        print(q)
+        autorias = Autoria.objects.raw(q)
 
         return autorias
 
@@ -395,32 +380,9 @@ class Acoes(generics.ListAPIView):
 
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg, tema_arg)
-
-        autorias = Autoria.objects
-
-        if destaques_arg == 'true':
-            destaques = get_filtered_destaques(destaques_arg)
-            autorias = (
-                autorias.filter(id_leggo__in=destaques)
-            )
-
-        autores = (
-            autorias
-            .filter(id_leggo__in=interesses.values('id_leggo'),
-                    data__gte='2019-01-31')
-        )
-
-        result = (
-            autores.values('id_autor_parlametria', 'tipo_acao')
-            .annotate(num_documentos=Count('tipo_acao'))
-            .annotate(peso_total=Sum('peso_autor_documento'))
-            .annotate(ranking_documentos=Window(
-                expression=RowNumber(),
-                partition_by=[F('tipo_acao')],
-                order_by=F('num_documentos').desc()))
-            .order_by('ranking_documentos', 'tipo_acao')
-        )
+        
+        q = queryAutoriasAgregadas('2019-02-01', interesse_arg, tema_arg, destaques_arg)
+        result = Autoria.objects.raw(q)
 
         return result
 

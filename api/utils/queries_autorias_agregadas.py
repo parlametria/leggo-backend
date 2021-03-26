@@ -1,8 +1,8 @@
 def get_destaque_query(destaque):
   q_destaque = ""
-  if destaque == "'true'":
+  if destaque == "true":
     q_destaque = (
-      f" AND interesse.id_leggo IN (SELECT DISTINCT(id_leggo) \
+      f" AND id_leggo IN (SELECT DISTINCT(id_leggo) \
         FROM api_destaques \
         WHERE casa_req_urgencia_aprovado = 'true' \
         OR criterio_req_urgencia_apresentado = 'true' \
@@ -88,4 +88,20 @@ def queryAutoriasAgregadasByTipoAcao(data_inicio, interesse, tema, destaque, tip
     GROUP BY id_autor_parlametria, id_autor;" \
   )
 
+  return q
+
+
+def queryAutoriasAgregadasByTipoAcaoEIdAutor(data_inicio, interesse, tema, destaque, id_autor, tipo_acao_filtro = 'Proposição'):
+  core_query = queryAutoriasAgregadasByTipoAcao(data_inicio, interesse, tema, destaque, tipo_acao_filtro)
+
+  q = (
+    f"SELECT \
+      1 as id, \
+       * \
+      FROM (SELECT \
+      autoria_agg.*, \
+      MAX(quantidade_autorias) OVER (ORDER BY quantidade_autorias DESC) AS max_quantidade_autorias, \
+      MIN(quantidade_autorias) OVER (ORDER BY quantidade_autorias ASC) AS min_quantidade_autorias \
+      FROM ({core_query[:-1]}) AS autoria_agg) AS autoria_agregada_autor \
+      WHERE id_autor_parlametria = {id_autor};")
   return q
