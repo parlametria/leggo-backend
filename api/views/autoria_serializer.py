@@ -15,6 +15,7 @@ from django.db.models.functions.window import RowNumber
 
 from api.model.autoria import Autoria
 from api.utils.filters import get_filtered_interesses, get_filtered_destaques
+from api.utils.queries_autorias_agregadas import queryAutoriasAgregadas, queryAutoriasAgregadasByTipoAcao
 
 
 class AutoriaSerializer(serializers.ModelSerializer):
@@ -170,8 +171,6 @@ class AutoriasAgregadasSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField()
     quantidade_autorias = serializers.IntegerField()
     peso_documentos = serializers.FloatField()
-    min_quantidade_autorias = serializers.IntegerField()
-    max_quantidade_autorias = serializers.IntegerField()
 
 
 class AutoriasAgregadasList(generics.ListAPIView):
@@ -195,41 +194,13 @@ class AutoriasAgregadasList(generics.ListAPIView):
 
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
-        autorias = Autoria.objects
+        # autorias = Autoria.objects
 
-        if destaques_arg == 'true':
-            destaques = get_filtered_destaques(destaques_arg)
-            autorias = (
-                autorias.filter(id_leggo__in=destaques)
-            )
-
-        autorias = (
-            autorias
-            .filter(id_leggo__in=interesses.values('id_leggo'),
-                    data__gte='2019-01-31',
-                    tipo_acao__in=['Proposição'])  # !!!
-            .values('id_autor', 'id_autor_parlametria')
-            .annotate(quantidade_autorias=Count('id_autor'))
-            .prefetch_related(
-                Prefetch("interesse", queryset=interesses)
-            )
-            .values("id_autor", "id_autor_parlametria")
-            .annotate(
-                quantidade_autorias=Count("id_autor"),
-                peso_documentos=Sum("peso_autor_documento"))
-            .prefetch_related(Prefetch("interesse", queryset=interesses))
-        )
-        min_max = autorias.aggregate(
-            max_quantidade_autorias=Max("quantidade_autorias"),
-            min_quantidade_autorias=Min("quantidade_autorias"))
-        autorias = autorias.annotate(
-            max_quantidade_autorias=Value(
-                min_max["max_quantidade_autorias"], IntegerField()),
-            min_quantidade_autorias=Value(
-                min_max["min_quantidade_autorias"], IntegerField())
-        )
+        q = queryAutoriasAgregadasByTipoAcao('2019-02-01', interesse_arg, tema_arg, destaques_arg)
+        
+        print(q)
+        autorias = Autoria.objects.raw(q)
 
         return autorias
 
