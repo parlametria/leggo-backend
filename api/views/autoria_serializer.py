@@ -202,7 +202,8 @@ class AutoriasAgregadasList(generics.ListAPIView):
             '2019-02-01', 
             interesse_arg, 
             tema_arg, 
-            destaques_arg
+            destaques_arg,
+            'Proposição'
         )
         
         autorias = Autoria.objects.raw(q)
@@ -241,7 +242,13 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = 'leggo'
         
-        q = queryAutoriasAgregadasByTipoAcaoEIdAutor('2019-02-01', interesse_arg, tema_arg, destaques_arg, id_autor_parlametria)
+        q = queryAutoriasAgregadasByTipoAcaoEIdAutor(
+            '2019-02-01', 
+            interesse_arg, 
+            tema_arg, 
+            destaques_arg,
+            id_autor_parlametria, 
+            'Proposição')
         print(q)
         autorias = Autoria.objects.raw(q)
 
@@ -251,8 +258,8 @@ class AutoriasAgregadasByAutor(generics.ListAPIView):
 class AutoriasAgregadasProjetosSerializer(serializers.Serializer):
     id_autor = serializers.IntegerField()
     id_autor_parlametria = serializers.IntegerField()
-    quant_autorias_projetos = serializers.IntegerField()
-    peso_autorias_projetos = serializers.FloatField()
+    quant_autorias_projetos = serializers.IntegerField(source='quantidade_autorias')
+    peso_autorias_projetos = serializers.FloatField(source='peso_documentos')
 
 
 class AutoriasAgregadasProjetos(generics.ListAPIView):
@@ -275,31 +282,18 @@ class AutoriasAgregadasProjetos(generics.ListAPIView):
 
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
-        autorias = Autoria.objects
-
-        if destaques_arg == 'true':
-            destaques = get_filtered_destaques(destaques_arg)
-            autorias = (
-                autorias.filter(id_leggo__in=destaques)
-            )
-
-        autorias = (
-            autorias
-            .filter(id_leggo__in=interesses.values('id_leggo'),
-                    data__gte='2019-01-31',
-                    tipo_documento="Prop. Original / Apensada",
-                    tipo_acao__in=['Proposição', 'Recurso'])
-            .prefetch_related(
-                Prefetch("interesse", queryset=interesses)
-            )
-            .values("id_autor", "id_autor_parlametria")
-            .annotate(
-                quant_autorias_projetos=Count("id_autor"),
-                peso_autorias_projetos=Sum('peso_autor_documento'))
-            .prefetch_related(Prefetch("interesse", queryset=interesses))
+        q = queryAutoriasAgregadasByTipoAcao(
+            '2019-02-01', 
+            interesse_arg, 
+            tema_arg, 
+            destaques_arg,
+            'Proposição',
+            'Prop. Original / Apensada'
         )
+        
+        autorias = Autoria.objects.raw(q)
+
         return autorias
 
 
@@ -318,38 +312,25 @@ class AutoriasAgregadasProjetosById(generics.ListAPIView):
         Se não for passado um interesse como argumento,
         os dados retornados serão os do interesse default (leggo).
         '''
+        id_autor_parlametria = self.kwargs["id_autor"]
+
         interesse_arg = self.request.query_params.get('interesse')
         tema_arg = self.request.query_params.get('tema')
         destaques_arg = self.request.query_params.get('destaque')
 
         if interesse_arg is None:
             interesse_arg = 'leggo'
-        interesses = get_filtered_interesses(interesse_arg, tema_arg)
 
-        id_autor_parlametria = self.kwargs["id_autor"]
-
-        autorias = Autoria.objects
-
-        if destaques_arg == 'true':
-            destaques = get_filtered_destaques(destaques_arg)
-            autorias = (
-                autorias.filter(id_leggo__in=destaques)
-            )
-
-        autorias = (
-            autorias
-            .filter(
-                id_autor_parlametria=id_autor_parlametria,
-                id_leggo__in=interesses.values('id_leggo'),
-                data__gte='2019-01-31',
-                tipo_documento="Prop. Original / Apensada",
-                tipo_acao__in=['Proposição', 'Recurso'])
-            .values("id_autor", "id_autor_parlametria")
-            .annotate(
-                quant_autorias_projetos=Count("id_autor"),
-                peso_autorias_projetos=Sum('peso_autor_documento'))
-            .prefetch_related(Prefetch("interesse", queryset=interesses))
+        q = queryAutoriasAgregadasByTipoAcaoEIdAutor(
+            '2019-02-01', 
+            interesse_arg, 
+            tema_arg, 
+            destaques_arg,
+            id_autor_parlametria,
+            'Proposição',
+            'Prop. Original / Apensada'
         )
+        autorias = Autoria.objects.raw(q)
 
         return autorias
 

@@ -22,6 +22,17 @@ def get_tema_query(tema):
   return q_tema
 
 
+def get_tipo_documento_query(tipo_documento):
+  q_tipo_documento = ''
+
+  if tipo_documento:
+    documentoArg = tipo_documento.center(len(tipo_documento) + 4, '%') if tipo_documento else '%%'
+    q_tipo_documento = (
+    f" AND tipo_documento LIKE '{documentoArg}'"
+    )
+  return q_tipo_documento
+
+
 def queryAutoriasAgregadas(data_inicio, interesse, tema, destaque):
   q_tema = get_tema_query(tema)
   q_destaque = get_destaque_query(destaque)
@@ -61,9 +72,10 @@ def queryAutoriasAgregadas(data_inicio, interesse, tema, destaque):
 
   return q
 
-def queryAutoriasAgregadasByTipoAcao(data_inicio, interesse, tema, destaque, tipo_acao_filtro = 'Proposição'):
+def queryAutoriasAgregadasByTipoAcao(data_inicio, interesse, tema, destaque, tipo_acao_filtro, tipo_documento=None):
   q_tema = get_tema_query(tema)
   q_destaque = get_destaque_query(destaque)
+  q_tipo_documento = get_tipo_documento_query(tipo_documento)
 
   if tema:
     q_destaque = ''
@@ -77,22 +89,31 @@ def queryAutoriasAgregadasByTipoAcao(data_inicio, interesse, tema, destaque, tip
     id_autor, \
     COUNT(DISTINCT(id_documento)) AS quantidade_autorias, \
     SUM(peso_autor_documento) AS peso_documentos \
-    FROM api_autoria \
-    WHERE data >= '{data_inicio}' AND id_leggo IN ( \
-      SELECT interesse.id_leggo \
-      FROM api_interesse as interesse \
-      WHERE interesse.interesse = '{interesse}' \
-      {q_tema}) \
-    {q_destaque} \
-    AND tipo_acao LIKE '{tipoArg}' \
+    FROM ( \
+      SELECT \
+        DISTINCT(id_documento), \
+        id_autor_parlametria, \
+        id_autor, \
+        peso_autor_documento \
+      FROM api_autoria \
+      WHERE data >= '{data_inicio}' AND id_leggo IN ( \
+        SELECT interesse.id_leggo \
+        FROM api_interesse as interesse \
+        WHERE interesse.interesse = '{interesse}' \
+        {q_tema}) \
+        {q_destaque} \
+        AND tipo_acao LIKE '{tipoArg}' \
+        {q_tipo_documento} \
+      GROUP BY id_autor_parlametria, id_autor, id_documento, peso_autor_documento \
+    ) AS autoria  \
     GROUP BY id_autor_parlametria, id_autor;" \
   )
 
   return q
 
 
-def queryAutoriasAgregadasByTipoAcaoEIdAutor(data_inicio, interesse, tema, destaque, id_autor, tipo_acao_filtro = 'Proposição'):
-  core_query = queryAutoriasAgregadasByTipoAcao(data_inicio, interesse, tema, destaque, tipo_acao_filtro)
+def queryAutoriasAgregadasByTipoAcaoEIdAutor(data_inicio, interesse, tema, destaque, id_autor, tipo_acao_filtro, tipo_documento=None):
+  core_query = queryAutoriasAgregadasByTipoAcao(data_inicio, interesse, tema, destaque, tipo_acao_filtro, tipo_documento)
 
   q = (
     f"SELECT \
