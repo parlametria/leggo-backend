@@ -13,7 +13,7 @@ def get_tema_query(tema):
     q_tema = ""
 
     if tema:
-        temaArg = tema.center(len(tema) + 4, "%") if tema else "%%"
+        temaArg = tema.center(len(tema) + 4, "%")
         q_tema = f" AND interesse.tema_slug LIKE '{temaArg}'"
 
     return q_tema
