@@ -98,6 +98,7 @@ class EntidadeParlamentarSerializer(serializers.Serializer):
     partido = serializers.CharField()
     uf = serializers.CharField()
     governismo = serializers.FloatField()
+    disciplina = serializers.FloatField()
 
 
 class ParlamentaresExercicioList(generics.ListAPIView):
@@ -113,10 +114,12 @@ class ParlamentaresExercicioList(generics.ListAPIView):
 
         query = (
             "SELECT e.id, id_entidade_parlametria, e.casa, nome, "
-            "partido, uf, governismo " +
+            "partido, uf, governismo, disciplina " +
             "FROM api_entidade e " +
-            "LEFT JOIN api_governismo " +
-            "ON id_entidade_parlametria = id_parlamentar_parlametria " +
+            "LEFT JOIN api_governismo g " +
+            "ON e.id_entidade_parlametria = g.id_parlamentar_parlametria " +
+            "LEFT JOIN api_disciplina d " +
+            "ON e.id_entidade_parlametria = d.id_parlamentar_parlametria " +
             "WHERE em_exercicio = 1 AND is_parlamentar = 1 " +
             "AND legislatura = 56")
 
