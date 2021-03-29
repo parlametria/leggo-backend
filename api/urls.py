@@ -1,4 +1,7 @@
 from django.conf.urls import url  # , include
+from django.views.decorators.cache import cache_page
+from django.conf import settings
+from django.core.cache.backends.base import DEFAULT_TIMEOUT
 
 # from rest_framework.routers import DefaultRouter
 from api.views.info_serializer import Info
@@ -69,14 +72,20 @@ from api.views.voto_serializer import VotosByParlamentar, VotosByVotacao
 
 from api.views.governismo_serializer import GovernismoList, GovernismoParlamentar
 from api.views.disciplina_serializer import DisciplinaList, DisciplinaParlamentar
+from api.views.votacao_sumarizada_serializer import (
+    VotacoesSumarizadasList,
+    VotacoesSumarizadasParlamentar,
+)
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
 
+CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
+
 urlpatterns = [
     # url(r'^', include(router.urls)),
     url(r"^info/?$", Info.as_view()),
-    url(r"^proposicoes/?$", ProposicaoList.as_view()),
+    url(r"^proposicoes/?$", cache_page(CACHE_TTL)(ProposicaoList.as_view())),
     url(r"^etapas/?$", EtapasList.as_view()),
     url(
         r"^eventos_tramitacao/(?P<casa>[a-z]+)/(?P<id_ext>[0-9]+)/?$",
@@ -87,7 +96,7 @@ urlpatterns = [
     url(r"^eventos_tramitacao/?$", TramitacaoEventList.as_view()),
     url(r"^proposicoes/(?P<id_ext>[0-9]+)/fases/?$", Info.as_view()),
     url(r"^progresso/(?P<id_leggo>[a-z0-9]+)/?$", ProgressoByID.as_view()),
-    url(r"^progresso/?$", ProgressoList.as_view()),
+    url(r"^progresso/?$", cache_page(CACHE_TTL)(ProgressoList.as_view())),
     url(
         r"^comissao/(?P<casa>[a-z]+)/(?P<sigla>([a-z]+|[A-Z]+)[0-9]*)/?$",
         ComissaoList.as_view(),
@@ -105,7 +114,8 @@ urlpatterns = [
         AtoresRelatoriasDetalhada.as_view(),
     ),
     url(r"^ator/(?P<id_autor>[0-9]+)/autorias/?$", AutoriasAutorList.as_view()),
-    url(r"^autorias/agregadas/?$", AutoriasAgregadasList.as_view()),
+    url(r"^autorias/agregadas/?$",
+        cache_page(CACHE_TTL)(AutoriasAgregadasList.as_view())),
     url(
         r"^autorias/agregadas/(?P<id_autor>[0-9]+)/?$",
         AutoriasAgregadasByAutor.as_view(),
@@ -119,7 +129,8 @@ urlpatterns = [
     url(r"^anotacoes/?$", AnotacaoList.as_view()),
     url(r"^anotacoes-gerais/?$", AnotacaoGeralList.as_view()),
     url(r"^temperatura/max/?$", TemperaturaMaxPeriodo.as_view()),
-    url(r"^temperatura/ultima/?$", UltimaTemperaturaList.as_view()),
+    url(r"^temperatura/ultima/?$",
+        cache_page(CACHE_TTL)(UltimaTemperaturaList.as_view())),
     url(r"^temperatura/(?P<id>[a-z0-9]+)/?$", TemperaturaPeriodoList.as_view()),
     url(r"^comissao/presidencia/?$", PresidenciaComissaoLista.as_view()),
     url(
@@ -137,6 +148,9 @@ urlpatterns = [
     url(r"^governismo/?$", GovernismoList.as_view()),
     url(r"^governismo/(?P<id>[a-z0-9]+)/?$", GovernismoParlamentar.as_view()),
     url(r"^disciplina/?$", DisciplinaList.as_view()),
+    url(r"^votacoes_sumarizadas/?$", VotacoesSumarizadasList.as_view()),
+    url(r"^votacoes_sumarizadas/(?P<id>[a-z0-9]+)/?$",
+        VotacoesSumarizadasParlamentar.as_view()),
     url(r"^disciplina/(?P<id>[a-z0-9]+)/?$", DisciplinaParlamentar.as_view()),
     # Estão embaixo para evitar ambiguidade nos endpoints
     url(r"^atores/(?P<id_leggo>[a-z0-9]+)/?$", AtoresProposicaoList.as_view()),
@@ -144,7 +158,7 @@ urlpatterns = [
         AutoriasPorProposicaoList.as_view()),
     url(r"^autorias/(?P<id_leggo>[a-z0-9]+)/?$", AutoriaList.as_view()),
     url(r"^autorias/?$", AutoriasTabelaList.as_view()),
-    url(r"^pressao/ultima/?$", UltimaPressaoList.as_view()),
+    url(r"^pressao/ultima/?$", cache_page(CACHE_TTL)(UltimaPressaoList.as_view())),
     url(r"^pressao/(?P<id_leggo>[a-z0-9]+)/?$", PressaoList.as_view()),
     url(r"^coautorias_node/(?P<id>[a-z0-9]+)/?$", CoautoriaNodeList.as_view()),
     url(r"^coautorias_edge/(?P<id>[a-z0-9]+)/?$", CoautoriaEdgeList.as_view()),
