@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.gzip.GZipMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
@@ -165,9 +166,11 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 INTERNAL_IPS = ['127.0.0.1']
 
+CACHE_TTL = 60 * 240  # 4 hours
+
 if DEBUG:
     # tricks to have debug toolbar when developing with docker
-    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+    MIDDLEWARE.insert(1, 'debug_toolbar.middleware.DebugToolbarMiddleware')
     INSTALLED_APPS.insert(0, 'debug_toolbar')
     import socket
     ip = socket.gethostbyname(socket.gethostname())

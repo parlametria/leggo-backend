@@ -91,20 +91,14 @@ class EntidadeList(generics.ListAPIView):
         return queryset
 
 
-class EntidadeParlamentarSerializer(serializers.ModelSerializer):
+class EntidadeParlamentarSerializer(serializers.Serializer):
     id_autor_parlametria = serializers.IntegerField(source='id_entidade_parlametria')
     casa_autor = serializers.CharField(source='casa')
     nome_autor = serializers.CharField(source='nome')
-
-    class Meta:
-        model = Entidade
-        fields = (
-            "id_autor_parlametria",
-            "casa_autor",
-            "nome_autor",
-            "partido",
-            "uf"
-        )
+    partido = serializers.CharField()
+    uf = serializers.CharField()
+    governismo = serializers.FloatField()
+    disciplina = serializers.FloatField()
 
 
 class ParlamentaresExercicioList(generics.ListAPIView):
@@ -118,30 +112,40 @@ class ParlamentaresExercicioList(generics.ListAPIView):
 
         casa_arg = self.request.query_params.get("casa")
 
-        queryset = Entidade.objects.filter(legislatura=56,
-                                           is_parlamentar=1,
-                                           em_exercicio=1)
+        query = (
+            "SELECT e.id, id_entidade_parlametria, e.casa, nome, "
+            "partido, uf, governismo, disciplina " +
+            "FROM api_entidade e " +
+            "LEFT JOIN api_governismo g " +
+            "ON e.id_entidade_parlametria = g.id_parlamentar_parlametria " +
+            "LEFT JOIN api_disciplina d " +
+            "ON e.id_entidade_parlametria = d.id_parlamentar_parlametria " +
+            "WHERE em_exercicio = 1 AND is_parlamentar = 1 " +
+            "AND legislatura = 56")
 
-        if casa_arg:
-            queryset = queryset.filter(casa=casa_arg)
+        if casa_arg is not None:
+            query = (
+                query
+                + " AND e.casa = '" + casa_arg + "'"
+            )
+
+        queryset = (Entidade.objects
+                    .raw(query))
 
         return queryset
 
 
 class RelatorSerializer(serializers.ModelSerializer):
-    id_relator = serializers.IntegerField(source="id_entidade")
     id_relator_parlametria = serializers.IntegerField(source="id_entidade_parlametria")
 
     class Meta:
         model = Entidade
         fields = (
-            "id_relator",
             "id_relator_parlametria",
             "casa",
             "nome",
             "partido",
-            "uf",
-            "em_exercicio",
+            "uf"
         )
 
 
