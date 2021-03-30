@@ -20,6 +20,10 @@ class VotacoesSumarizadas(models.Model):
         null=True,
         help_text='Casa do parlamentar')
 
+    ultima_data_votacao = models.TextField(
+        null=True,
+        help_text='Data da última votação')
+
     num_votacoes_parlamentar_disciplina = models.IntegerField(
         null=True,
         help_text='Número de votações do parlamentar')
