@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from rest_framework import serializers, generics, status
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
-from datetime import datetime
+from datetime import datetime, timedelta
 from api.model.pressao import Pressao
 from api.utils.filters import get_filtered_interesses
 
@@ -113,6 +113,8 @@ class UltimaPressaoList(generics.ListAPIView):
 
         interesse_arg = self.request.query_params.get('interesse')
 
+        data_de_interesse = datetime.today() - timedelta(days=20)
+
         if interesse_arg is None:
             interesse_arg = 'leggo'
 
@@ -121,8 +123,8 @@ class UltimaPressaoList(generics.ListAPIView):
             Pressao.objects.filter(
                 proposicao__id_leggo__in=interesses.values('id_leggo'))
             .values('id_leggo', 'trends_max_popularity', 'date')
+            .filter(date__gte=data_de_interesse)
             .order_by('id_leggo', '-date')
-            .distinct('id_leggo')[:3]
         )
 
         return queryset

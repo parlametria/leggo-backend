@@ -4,7 +4,7 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from rest_framework import serializers, generics
 from rest_framework.views import APIView
-from datetime import datetime
+from datetime import datetime, timedelta
 from api.model.temperatura_historico import TemperaturaHistorico
 from rest_framework import status
 from api.utils.filters import get_filtered_interesses
@@ -75,6 +75,7 @@ class TemperaturaMaxPeriodo(APIView):
 class UltimaTemperaturaHistoricoSerializer(serializers.Serializer):
     id_leggo = serializers.CharField(source="proposicao__id_leggo")
     ultima_temperatura = serializers.FloatField(source="temperatura_recente")
+    periodo = serializers.DateField()
 
 
 class UltimaTemperaturaList(generics.ListAPIView):
@@ -88,6 +89,8 @@ class UltimaTemperaturaList(generics.ListAPIView):
 
         interesse_arg = self.request.query_params.get("interesse", "leggo")
 
+        data_de_interesse = datetime.today() - timedelta(days=20)
+
         interesses = get_filtered_interesses(interesse_arg)
 
         queryset = (
@@ -96,8 +99,8 @@ class UltimaTemperaturaList(generics.ListAPIView):
             )
             .select_related("proposicao")
             .values("proposicao__id_leggo", "temperatura_recente", "periodo")
+            .filter(periodo__gte=data_de_interesse)
             .order_by("proposicao__id_leggo", "-periodo")
-            .distinct("proposicao__id_leggo")[:3]
         )
 
         return queryset
