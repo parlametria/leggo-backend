@@ -97,7 +97,7 @@ class UltimaTemperaturaList(generics.ListAPIView):
             .select_related("proposicao")
             .values("proposicao__id_leggo", "temperatura_recente", "periodo")
             .order_by("proposicao__id_leggo", "-periodo")
-            .distinct("proposicao__id_leggo")
+            .distinct("proposicao__id_leggo")[:3]
         )
 
         return queryset

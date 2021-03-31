@@ -122,7 +122,7 @@ class UltimaPressaoList(generics.ListAPIView):
                 proposicao__id_leggo__in=interesses.values('id_leggo'))
             .values('id_leggo', 'trends_max_popularity', 'date')
             .order_by('id_leggo', '-date')
-            .distinct('id_leggo')
+            .distinct('id_leggo')[:3]
         )
 
         return queryset
