@@ -20,7 +20,7 @@ class VotacoesSumarizadas(models.Model):
         null=True,
         help_text='Casa do parlamentar')
 
-    ultima_data_votacao = models.TextField(
+    ultima_data_votacao = models.DateTimeField(
         null=True,
         help_text='Data da última votação')
 
