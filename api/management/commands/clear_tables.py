@@ -23,6 +23,7 @@ from ...model.voto import Voto
 from ...model.governismo import Governismo
 from ...model.disciplina import Disciplina
 from ...model.votacoes_sumarizadas import VotacoesSumarizadas
+from ...model.local_atual_proposicao import LocalAtualProposicao
 
 
 class Command(BaseCommand):
@@ -48,11 +49,12 @@ class Command(BaseCommand):
             AutoresProposicao.objects.all().delete()
             RelatoresProposicao.objects.all().delete()
             Destaques.objects.all().delete()
-            Votacao.objects.all().delete()
-            Voto.objects.all().delete()
+            # Votacao.objects.all().delete()
+            # Voto.objects.all().delete()
             Governismo.objects.all().delete()
             Disciplina.objects.all().delete()
             VotacoesSumarizadas.objects.all().delete()
+            LocalAtualProposicao.objects.all().delete()
         except Exception as e:
             print("Não foi possível limpar os dados do banco =(")
             print(str(e))
