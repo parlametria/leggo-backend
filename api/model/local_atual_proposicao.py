@@ -4,7 +4,7 @@ from api.model.proposicao import Proposicao
 
 class LocalAtualProposicao(models.Model):
     """
-    Corresponde ao model com mapeamento dos locais atuais das 
+    Corresponde ao model com mapeamento dos locais atuais das
     proposições monitoradas pelo Leggo
     """
 

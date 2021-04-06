@@ -18,8 +18,8 @@ from ...model.entidade import Entidade
 from ...model.autores_proposicao import AutoresProposicao
 from ...model.relatores_proposicao import RelatoresProposicao
 from ...model.destaques import Destaques
-from ...model.votacao import Votacao
-from ...model.voto import Voto
+# from ...model.votacao import Votacao
+# from ...model.voto import Voto
 from ...model.governismo import Governismo
 from ...model.disciplina import Disciplina
 from ...model.votacoes_sumarizadas import VotacoesSumarizadas

@@ -17,7 +17,6 @@ from api.views.ator_serializer import AtoresProposicoesSerializer
 from api.views.interesse_serializer import InteresseProposicaoSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
 from api.views.destaques_serializer import DestaquesDetailsSerializer
-from api.model.local_atual_proposicao import LocalAtualProposicao
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
