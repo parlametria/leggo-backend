@@ -17,6 +17,7 @@ from api.views.ator_serializer import AtoresProposicoesSerializer
 from api.views.interesse_serializer import InteresseProposicaoSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
 from api.views.destaques_serializer import DestaquesDetailsSerializer
+from api.views.prop_local_atual_serializer import LocalAtualSerializer
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
@@ -50,6 +51,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
     etapas = EtapasSerializer(many=True, read_only=True)
     interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
+    locaisProposicao = LocalAtualSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -59,7 +61,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "id_leggo",
             "sigla_camara",
             "sigla_senado",
-            "destaques"
+            "destaques",
+            "locaisProposicao"
         )
 
 
@@ -101,6 +104,7 @@ class ProposicaoList(generics.ListAPIView):
             .prefetch_related(
                 "etapas",
                 "progresso",
+                "locaisProposicao",
                 Prefetch("etapas__pauta_historico", queryset=pautaQs),
                 Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
