@@ -956,8 +956,11 @@ def import_disciplina():
                 [
                     "id_parlamentar",
                     "id_parlamentar_parlametria",
+                    "partido_atual",
+                    "partido_disciplina",
                     "casa",
-                    "disciplina"
+                    "disciplina",
+                    "bancada_suficiente"
                 ]
             ]
             .assign(entidade=entidade_relacionada)
