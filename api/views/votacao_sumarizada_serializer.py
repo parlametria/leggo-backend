@@ -12,6 +12,7 @@ class VotacoesSumarizadasSerializer(serializers.ModelSerializer):
             "id_parlamentar",
             "id_parlamentar_parlametria",
             "casa",
+            "ultima_data_votacao",
             "num_votacoes_parlamentar_governismo",
             "num_votacoes_totais_governismo",
             "num_votacoes_parlamentar_disciplina",
