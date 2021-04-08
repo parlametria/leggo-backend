@@ -76,6 +76,7 @@ from api.views.votacao_sumarizada_serializer import (
     VotacoesSumarizadasList,
     VotacoesSumarizadasParlamentar,
 )
+from api.views.prop_local_atual_serializer import LocaisProposicaoList
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
@@ -170,7 +171,7 @@ urlpatterns = [
     url(r"^interesses/?$", InteresseByNome.as_view()),
     url(r"^votacoes/?$", VotacoesByCasaList.as_view()),
     url(r"^votacoes/(?P<id_votacao>[a-z0-9-]+)/votos?$", VotosByVotacao.as_view()),
-    url(r"^votos/(?P<id_parlamentar>[0-9]+)/?$", VotosByParlamentar.as_view())
-
+    url(r"^votos/(?P<id_parlamentar>[0-9]+)/?$", VotosByParlamentar.as_view()),
+    url(r"^locais/?$", LocaisProposicaoList.as_view())
 
 ]
