@@ -28,6 +28,7 @@ from api.model.voto import Voto
 from api.model.governismo import Governismo
 from api.model.disciplina import Disciplina
 from api.model.votacoes_sumarizadas import VotacoesSumarizadas
+from api.model.local_atual_proposicao import LocalAtualProposicao
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
@@ -1061,6 +1062,42 @@ def import_votos():
         )
 
 
+def import_locais_atuais_proposicoes():
+    """Carrega Locais atuais das proposições"""
+
+    print_import_info("Locais atuais das proposições")
+
+    grouped = pd.read_csv("data/props_locais_atuais.csv")
+    grouped = grouped.groupby(["id_leggo"])
+
+    for group_index in grouped.groups:
+        id_leggo = {"id_leggo": group_index}
+
+        prop = get_proposicao(id_leggo, "LocalAtualProposicaoProp")
+
+        if prop is None:
+            continue
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "sigla_ultimo_local",
+                    "casa_ultimo_local",
+                    "nome_ultimo_local",
+                    "data_ultima_situacao",
+                    "tipo_local"
+                ]
+            ]
+            .assign(proposicao=prop)
+        )
+
+        LocalAtualProposicao.objects.bulk_create(
+            LocalAtualProposicao(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -1092,6 +1129,7 @@ def import_all_data():
     import_governismo()
     import_disciplina()
     import_votacoes_sumarizadas()
+    import_locais_atuais_proposicoes()
 
 
 def import_all_data_but_insights():
@@ -1119,6 +1157,7 @@ def import_all_data_but_insights():
     import_governismo()
     import_disciplina()
     import_votacoes_sumarizadas()
+    import_locais_atuais_proposicoes()
 
 
 def import_insights():
