@@ -27,6 +27,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
     interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     autoresProposicao = AutoresSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
+    locaisProposicao = LocalAtualSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -43,7 +44,8 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "anotacao_data_ultima_modificacao",
             "sigla_camara",
             "sigla_senado",
-            "destaques"
+            "destaques",
+            "locaisProposicao"
         )
 
 
@@ -158,7 +160,9 @@ class ProposicaoDetail(generics.ListAPIView):
                 id_leggo=id_prop, interesse__interesse=interesseArg
             )
             .distinct()
-            .prefetch_related(Prefetch("interesse", queryset=interessesFiltered))
+            .prefetch_related(
+                "locaisProposicao",
+                Prefetch("interesse", queryset=interessesFiltered))
         )
 
 
