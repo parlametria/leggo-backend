@@ -10,7 +10,8 @@ from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import (
     get_time_filtered_pauta,
     get_filtered_interesses,
-    get_filtered_destaques
+    get_filtered_destaques,
+    get_ultima_proposicao_local
 )
 from django.db.models import Prefetch, Count, Q
 from api.views.ator_serializer import AtoresProposicoesSerializer
@@ -100,17 +101,19 @@ class ProposicaoList(generics.ListAPIView):
             Q(criterio_req_urgencia_aprovado=True))
         )
 
+        locaisFiltered = get_ultima_proposicao_local()
+
         props = (
             Proposicao.objects.filter(interesse__interesse=interesseArg)
             .distinct()
             .prefetch_related(
                 "etapas",
                 "progresso",
-                "locaisProposicao",
                 Prefetch("etapas__pauta_historico", queryset=pautaQs),
                 Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
-                Prefetch("destaques", queryset=destaquesFiltered)
+                Prefetch("destaques", queryset=destaquesFiltered),
+                Prefetch("locaisProposicao", queryset=locaisFiltered)
             )
         )
 
@@ -154,6 +157,7 @@ class ProposicaoDetail(generics.ListAPIView):
             interesseArg = "leggo"
 
         interessesFiltered = get_filtered_interesses(interesseArg, tema_arg)
+        locaisFiltered = get_ultima_proposicao_local()
 
         return (
             Proposicao.objects.filter(
@@ -161,7 +165,7 @@ class ProposicaoDetail(generics.ListAPIView):
             )
             .distinct()
             .prefetch_related(
-                "locaisProposicao",
+                Prefetch("locaisProposicao", queryset=locaisFiltered),
                 Prefetch("interesse", queryset=interessesFiltered))
         )
 
