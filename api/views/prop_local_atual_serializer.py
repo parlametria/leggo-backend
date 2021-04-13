@@ -49,10 +49,7 @@ class LocaisProposicaoList(generics.ListAPIView):
         query = (
             LocalAtualProposicao.objects.filter(
                 id_leggo__in=interesses.values("id_leggo"),
-                sigla_ultimo_local__in=locaisFiltered.values("sigla_ultimo_local"),
-                casa_ultimo_local__in=locaisFiltered.values("casa_ultimo_local"),
-                nome_ultimo_local__in=locaisFiltered.values("nome_ultimo_local"),
-                tipo_local__in=locaisFiltered.values("tipo_local")
+                sigla_ultimo_local__in=locaisFiltered.values("sigla_ultimo_local")
             )
             .values('sigla_ultimo_local', 'casa_ultimo_local',
                     'nome_ultimo_local', 'tipo_local')
