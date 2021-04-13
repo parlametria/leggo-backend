@@ -2,7 +2,8 @@ from rest_framework import serializers, generics
 
 from api.model.local_atual_proposicao import LocalAtualProposicao
 from api.utils.filters import (
-    get_filtered_interesses
+    get_filtered_interesses,
+    get_ultima_proposicao_local
 )
 
 
@@ -43,9 +44,12 @@ class LocaisProposicaoList(generics.ListAPIView):
         interesseArg = self.request.query_params.get("interesse")
         interesses = get_filtered_interesses(interesseArg)
 
+        locaisFiltered = get_ultima_proposicao_local()
+
         query = (
             LocalAtualProposicao.objects.filter(
-                id_leggo__in=interesses.values("id_leggo")
+                id_leggo__in=interesses.values("id_leggo"),
+                sigla_ultimo_local__in=locaisFiltered.values("sigla_ultimo_local")
             )
             .values('sigla_ultimo_local', 'casa_ultimo_local',
                     'nome_ultimo_local', 'tipo_local')

@@ -10,7 +10,8 @@ from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import (
     get_time_filtered_pauta,
     get_filtered_interesses,
-    get_filtered_destaques
+    get_filtered_destaques,
+    get_ultima_proposicao_local
 )
 from django.db.models import Prefetch, Count, Q
 from api.views.ator_serializer import AtoresProposicoesSerializer
@@ -27,6 +28,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
     interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     autoresProposicao = AutoresSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
+    locaisProposicao = LocalAtualSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -43,7 +45,8 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "anotacao_data_ultima_modificacao",
             "sigla_camara",
             "sigla_senado",
-            "destaques"
+            "destaques",
+            "locaisProposicao"
         )
 
 
@@ -98,17 +101,19 @@ class ProposicaoList(generics.ListAPIView):
             Q(criterio_req_urgencia_aprovado=True))
         )
 
+        locaisFiltered = get_ultima_proposicao_local()
+
         props = (
             Proposicao.objects.filter(interesse__interesse=interesseArg)
             .distinct()
             .prefetch_related(
                 "etapas",
                 "progresso",
-                "locaisProposicao",
                 Prefetch("etapas__pauta_historico", queryset=pautaQs),
                 Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
-                Prefetch("destaques", queryset=destaquesFiltered)
+                Prefetch("destaques", queryset=destaquesFiltered),
+                Prefetch("locaisProposicao", queryset=locaisFiltered)
             )
         )
 
@@ -152,13 +157,16 @@ class ProposicaoDetail(generics.ListAPIView):
             interesseArg = "leggo"
 
         interessesFiltered = get_filtered_interesses(interesseArg, tema_arg)
+        locaisFiltered = get_ultima_proposicao_local()
 
         return (
             Proposicao.objects.filter(
                 id_leggo=id_prop, interesse__interesse=interesseArg
             )
             .distinct()
-            .prefetch_related(Prefetch("interesse", queryset=interessesFiltered))
+            .prefetch_related(
+                Prefetch("locaisProposicao", queryset=locaisFiltered),
+                Prefetch("interesse", queryset=interessesFiltered))
         )
 
 
