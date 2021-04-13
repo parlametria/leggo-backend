@@ -10,13 +10,15 @@ from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import (
     get_time_filtered_pauta,
     get_filtered_interesses,
-    get_filtered_destaques
+    get_filtered_destaques,
+    get_ultima_proposicao_local
 )
 from django.db.models import Prefetch, Count, Q
 from api.views.ator_serializer import AtoresProposicoesSerializer
 from api.views.interesse_serializer import InteresseProposicaoSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
 from api.views.destaques_serializer import DestaquesDetailsSerializer
+from api.views.prop_local_atual_serializer import LocalAtualSerializer
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
@@ -26,6 +28,7 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
     interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     autoresProposicao = AutoresSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
+    locaisProposicao = LocalAtualSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -42,7 +45,8 @@ class ProposicaoDetailSerializer(serializers.ModelSerializer):
             "anotacao_data_ultima_modificacao",
             "sigla_camara",
             "sigla_senado",
-            "destaques"
+            "destaques",
+            "locaisProposicao"
         )
 
 
@@ -50,6 +54,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
     etapas = EtapasSerializer(many=True, read_only=True)
     interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
+    locaisProposicao = LocalAtualSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -59,7 +64,8 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "id_leggo",
             "sigla_camara",
             "sigla_senado",
-            "destaques"
+            "destaques",
+            "locaisProposicao"
         )
 
 
@@ -95,6 +101,8 @@ class ProposicaoList(generics.ListAPIView):
             Q(criterio_req_urgencia_aprovado=True))
         )
 
+        locaisFiltered = get_ultima_proposicao_local()
+
         props = (
             Proposicao.objects.filter(interesse__interesse=interesseArg)
             .distinct()
@@ -104,7 +112,8 @@ class ProposicaoList(generics.ListAPIView):
                 Prefetch("etapas__pauta_historico", queryset=pautaQs),
                 Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
-                Prefetch("destaques", queryset=destaquesFiltered)
+                Prefetch("destaques", queryset=destaquesFiltered),
+                Prefetch("locaisProposicao", queryset=locaisFiltered)
             )
         )
 
@@ -148,13 +157,16 @@ class ProposicaoDetail(generics.ListAPIView):
             interesseArg = "leggo"
 
         interessesFiltered = get_filtered_interesses(interesseArg, tema_arg)
+        locaisFiltered = get_ultima_proposicao_local()
 
         return (
             Proposicao.objects.filter(
                 id_leggo=id_prop, interesse__interesse=interesseArg
             )
             .distinct()
-            .prefetch_related(Prefetch("interesse", queryset=interessesFiltered))
+            .prefetch_related(
+                Prefetch("locaisProposicao", queryset=locaisFiltered),
+                Prefetch("interesse", queryset=interessesFiltered))
         )
 
 
