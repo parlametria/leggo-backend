@@ -3,6 +3,7 @@ from django.db.models import Q
 from api.model.pauta_historico import PautaHistorico
 from api.model.interesse import Interesse
 from api.model.destaques import Destaques
+from api.model.local_atual_proposicao import LocalAtualProposicao
 
 
 def get_time_filtered_pauta(request):
@@ -69,3 +70,10 @@ def get_filtered_autores(request, queryset):
         return queryset.filter()
 
     return queryset.filter(is_important=is_important)
+
+
+def get_ultima_proposicao_local():
+    return (LocalAtualProposicao.objects.order_by(
+        'id_leggo', '-data_ultima_situacao')
+        .distinct('id_leggo')
+        )
