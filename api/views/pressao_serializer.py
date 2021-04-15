@@ -97,7 +97,7 @@ class PressaoList(generics.ListAPIView):
 class UltimaPressaoSerializer(serializers.Serializer):
     id_leggo = serializers.CharField()
     ultima_pressao = serializers.FloatField(source="trends_max_popularity")
-    pressao_quinze_dias = serializers.FloatField()
+    pressao_oito_dias = serializers.FloatField()
 
 
 class UltimaPressaoList(generics.ListAPIView):
@@ -121,6 +121,6 @@ class UltimaPressaoList(generics.ListAPIView):
 
         q = queryPressaoQuinzeDias(interesse_arg)
 
-        pressao_quinze_dias = Pressao.objects.raw(q)
+        pressao_oito_dias = Pressao.objects.raw(q)
 
-        return pressao_quinze_dias
+        return pressao_oito_dias

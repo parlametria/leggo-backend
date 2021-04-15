@@ -4,7 +4,7 @@ def queryPressaoQuinzeDias(interesse):
             1 AS id, \
             aux_top.id_leggo, \
             trends_max_popularity, \
-            pressao_quinze_dias \
+            pressao_oito_dias \
             FROM  api_pressao p \
             INNER JOIN \
             (SELECT DISTINCT(id_leggo) \
@@ -14,13 +14,13 @@ def queryPressaoQuinzeDias(interesse):
             LEFT JOIN \
             (WITH summary AS ( \
                 SELECT p.id_leggo,  \
-                    p.trends_max_popularity AS pressao_quinze_dias,  \
+                    p.trends_max_popularity AS pressao_oito_dias,  \
                     ROW_NUMBER() OVER(PARTITION BY p.id_leggo  \
                                             ORDER BY p.date DESC) AS rk \
                 FROM api_pressao p) \
             SELECT s.* \
             FROM summary s \
-            WHERE s.rk = 3) AS aux_top  ON \
+            WHERE s.rk = 2) AS aux_top  ON \
             aux_top.id_leggo = p.id_leggo \
             ORDER  BY p.id_leggo, p.date DESC;"
 
