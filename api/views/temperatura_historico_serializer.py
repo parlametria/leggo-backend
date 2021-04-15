@@ -81,7 +81,7 @@ class UltimaTemperaturaHistoricoSerializer(serializers.Serializer):
 
 class UltimaTemperaturaList(generics.ListAPIView):
     """
-=   Retorna a última temperatura de cada proposição e a última temperatura em quinze dias.
+    Retorna a última temperatura de cada proposição e a última temperatura em quinze dias.
     """
 
     serializer_class = UltimaTemperaturaHistoricoSerializer
