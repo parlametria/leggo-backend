@@ -5,7 +5,7 @@ from drf_yasg import openapi
 from datetime import datetime
 from api.model.pressao import Pressao
 from api.utils.filters import get_filtered_interesses
-from api.utils.queries_quinze_dias import queryPressaoQuinzeDias
+from api.utils.queries_temp_pressao import queryPressaoOitoDias
 
 
 class PressaoSerializer(serializers.ModelSerializer):
@@ -119,7 +119,7 @@ class UltimaPressaoList(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = 'leggo'
 
-        q = queryPressaoQuinzeDias(interesse_arg)
+        q = queryPressaoOitoDias(interesse_arg)
 
         pressao_oito_dias = Pressao.objects.raw(q)
 
