@@ -6,6 +6,10 @@ class TemperaturaHistorico(models.Model):
     '''
     Histórico de temperatura de uma proposição
     '''
+    id_leggo = models.TextField(
+        null=True,
+        help_text='Id da proposição principal no leggo.')
+
     periodo = models.DateField('periodo')
 
     temperatura_periodo = models.IntegerField(
