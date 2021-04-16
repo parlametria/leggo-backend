@@ -8,7 +8,7 @@ from datetime import datetime
 from api.model.temperatura_historico import TemperaturaHistorico
 from rest_framework import status
 from api.utils.filters import get_filtered_interesses
-from api.utils.queries_quinze_dias import queryTemperaturaQuinzeDias
+from api.utils.queries_temp_pressao import queryTemperaturaQuinzeDias
 
 
 class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
