@@ -1,4 +1,4 @@
-def queryPressaoQuinzeDias(interesse):
+def queryPressaoOitoDias(interesse):
 
     p = f"SELECT DISTINCT ON (p.id_leggo) \
             1 AS id, \
