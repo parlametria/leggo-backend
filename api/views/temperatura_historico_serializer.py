@@ -8,6 +8,7 @@ from datetime import datetime
 from api.model.temperatura_historico import TemperaturaHistorico
 from rest_framework import status
 from api.utils.filters import get_filtered_interesses
+from api.utils.queries_temp_pressao import queryTemperaturaQuinzeDias
 
 
 class TemperaturaHistoricoSerializer(serializers.ModelSerializer):
@@ -73,13 +74,14 @@ class TemperaturaMaxPeriodo(APIView):
 
 
 class UltimaTemperaturaHistoricoSerializer(serializers.Serializer):
-    id_leggo = serializers.CharField(source="proposicao__id_leggo")
+    id_leggo = serializers.CharField()
     ultima_temperatura = serializers.FloatField(source="temperatura_recente")
+    temp_quinze_dias = serializers.FloatField()
 
 
 class UltimaTemperaturaList(generics.ListAPIView):
     """
-    Retorna a última temperatura de cada proposição
+    Retorna a última temperatura de cada proposição e a última temperatura em quinze dias.
     """
 
     serializer_class = UltimaTemperaturaHistoricoSerializer
@@ -88,19 +90,11 @@ class UltimaTemperaturaList(generics.ListAPIView):
 
         interesse_arg = self.request.query_params.get("interesse", "leggo")
 
-        interesses = get_filtered_interesses(interesse_arg)
+        q = queryTemperaturaQuinzeDias(interesse_arg)
 
-        queryset = (
-            TemperaturaHistorico.objects.filter(
-                proposicao__id_leggo__in=interesses.values("id_leggo")
-            )
-            .select_related("proposicao")
-            .values("proposicao__id_leggo", "temperatura_recente", "periodo")
-            .order_by("proposicao__id_leggo", "-periodo")
-            .distinct("proposicao__id_leggo")
-        )
+        temp_quinze_dias = TemperaturaHistorico.objects.raw(q)
 
-        return queryset
+        return temp_quinze_dias
 
 
 class TemperaturaPeriodoListSerializer(serializers.Serializer):
