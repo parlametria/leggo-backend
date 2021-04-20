@@ -5,7 +5,6 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from api.model.proposicao import Proposicao
 from api.model.destaques import Destaques
-from api.model.proposicao_apensada import ProposicaoApensada
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import (
@@ -57,7 +56,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
     interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
     locaisProposicao = LocalAtualSerializer(many=True, read_only=True)
-    principal = ProposicaoApensadaSerializer(many=True, read_only=True)
+    apensadas = ProposicaoApensadaSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -69,7 +68,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "sigla_senado",
             "destaques",
             "locaisProposicao",
-            "principal"
+            "apensadas"
         )
 
 
@@ -107,26 +106,18 @@ class ProposicaoList(generics.ListAPIView):
 
         locaisFiltered = get_ultima_proposicao_local()
 
-        apensadasFiltered = (
-            ProposicaoApensada.objects
-            .filter(
-                interesse=interesseArg,
-                id_leggo_prop_principal__isnull=False
-            )
-        )
-
         props = (
             Proposicao.objects.filter(interesse__interesse=interesseArg)
             .distinct()
             .prefetch_related(
                 "etapas",
                 "progresso",
+                "apensadas",
                 Prefetch("etapas__pauta_historico", queryset=pautaQs),
                 Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
                 Prefetch("destaques", queryset=destaquesFiltered),
-                Prefetch("locaisProposicao", queryset=locaisFiltered),
-                Prefetch("principal", queryset=apensadasFiltered),
+                Prefetch("locaisProposicao", queryset=locaisFiltered)
             )
         )
 

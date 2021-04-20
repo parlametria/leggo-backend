@@ -11,8 +11,10 @@ class ProposicaoApensadaSerializer(serializers.ModelSerializer):
         model = ProposicaoApensada
         fields = (
             "id_leggo",
+            "interesse",
             "id_leggo_prop_principal",
-            "proposicao_principal"
+            "id_ext_prop_principal",
+            "casa_prop_principal"
         )
 
 
