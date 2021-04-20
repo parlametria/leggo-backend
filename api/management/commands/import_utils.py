@@ -29,7 +29,7 @@ from api.model.governismo import Governismo
 from api.model.disciplina import Disciplina
 from api.model.votacoes_sumarizadas import VotacoesSumarizadas
 from api.model.local_atual_proposicao import LocalAtualProposicao
-from api.model.proposicao_apensada import ProposicaApensada
+from api.model.proposicao_apensada import ProposicaoApensada
 from api.utils.relator import check_relator_id
 from api.utils.sigla import cria_sigla
 
@@ -67,6 +67,29 @@ def import_etapas_proposicoes():
 
         group_df = (
             props_df.get_group(group_index)
+            .filter(
+                [
+                    "id_leggo",
+                    "id_ext",
+                    "numero",
+                    "sigla_tipo",
+                    "data_apresentacao",
+                    "casa",
+                    "regime_tramitacao",
+                    "forma_apreciacao",
+                    "ementa",
+                    "justificativa",
+                    "palavras_chave",
+                    "autor_nome",
+                    "autor_uf",
+                    "autor_partido",
+                    "relator_id",
+                    "relator_id_parlametria",
+                    "casa_origem",
+                    "em_pauta",
+                    "status"
+                ]
+            )
             .assign(relatoria=relator)
             .replace(-1, np.nan)
         )
@@ -1101,23 +1124,36 @@ def import_locais_atuais_proposicoes():
 
 def import_proposicoes_apensadas():
     """
-        Carrega mapeamento de proposições apensadas 
+        Carrega mapeamento de proposições apensadas
         e suas proposições originais
     """
     print_import_info("Proposições Apensadas")
 
-    grouped = pd.read_csv("data/props_apensadas.csv")
-    grouped = grouped.groupby(["id_leggo", "id_leggo_prop_principal"])
+    grouped = (
+        pd.read_csv("data/props_apensadas.csv")
+    )
+
+    grouped = grouped.groupby(["id_leggo", "interesse"])
 
     for group_index in grouped.groups:
         id_leggo = {"id_leggo": group_index[0]}
-        id_leggo_prop_original = {"id_leggo": group_index[1]}
+        prop_apensada = get_proposicao(id_leggo, "ProposicaoApensada")
+        prop_original = None
 
-        prop_apensada = get_proposicao(id_leggo, "ProposicaApensada")
+        id_leggo_original_df = grouped.get_group(group_index)[
+            ["id_leggo_prop_principal"]
+        ]
 
-        prop_original = get_proposicao(id_leggo_prop_original, "ProposicaApensada")
+        id_original = (
+            id_leggo_original_df.loc[
+                id_leggo_original_df.index[0], 'id_leggo_prop_principal'
+            ]
+        )
 
-        if not prop_apensada is not prop_original:
+        id_leggo_original = {"id_leggo": id_original}
+        prop_original = get_proposicao(id_leggo_original, "ProposicaoApensada")
+
+        if not prop_apensada:
             continue
 
         group_df = (
@@ -1126,17 +1162,19 @@ def import_proposicoes_apensadas():
                     "id_leggo",
                     "id_leggo_prop_principal",
                     "id_ext_prop_principal",
-                    "casa_prop_principal"
+                    "casa_prop_principal",
+                    "interesse"
                 ]
             ]
-            .assign(proposicao_apensada=prop_apensada)
-            .assign(proposicao_original=prop_original)
+            .assign(proposicao=prop_apensada)
+            .assign(proposicao_principal=prop_original)
         )
 
-        ProposicaApensada.objects.bulk_create(
-            ProposicaApensada(**r[1].to_dict())
+        ProposicaoApensada.objects.bulk_create(
+            ProposicaoApensada(**r[1].to_dict())
             for r in group_df.where(pd.notnull(group_df), None).iterrows()
         )
+
 
 def import_anotacoes():
     import_anotacoes_especificas()
@@ -1149,27 +1187,27 @@ def import_all_data():
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
-    # import_tramitacoes()
-    # import_temperaturas()
-    # import_progresso()
-    # import_pautas()
-    # import_emendas()
-    # import_comissoes()
-    # import_atores()
-    # import_pressao()
-    # import_coautoria_node()
-    # import_coautoria_edge()
-    # import_autoria()
-    # import_autores_proposicoes()
-    # import_relatores_proposicoes()
-    # import_anotacoes()
-    # import_destaques()
-    # # import_votacoes()
-    # # import_votos()
-    # import_governismo()
-    # import_disciplina()
-    # import_votacoes_sumarizadas()
-    # import_locais_atuais_proposicoes()
+    import_tramitacoes()
+    import_temperaturas()
+    import_progresso()
+    import_pautas()
+    import_emendas()
+    import_comissoes()
+    import_atores()
+    import_pressao()
+    import_coautoria_node()
+    import_coautoria_edge()
+    import_autoria()
+    import_autores_proposicoes()
+    import_relatores_proposicoes()
+    import_anotacoes()
+    import_destaques()
+    # import_votacoes()
+    # import_votos()
+    import_governismo()
+    import_disciplina()
+    import_votacoes_sumarizadas()
+    import_locais_atuais_proposicoes()
     import_proposicoes_apensadas()
 
 
@@ -1179,26 +1217,26 @@ def import_all_data_but_insights():
     import_etapas_proposicoes()
     import_proposicoes()
     import_interesse()
-    # import_tramitacoes()
-    # import_temperaturas()
-    # import_progresso()
-    # import_pautas()
-    # import_emendas()
-    # import_comissoes()
-    # import_atores()
-    # import_pressao()
-    # import_coautoria_node()
-    # import_coautoria_edge()
-    # import_autoria()
-    # import_autores_proposicoes()
-    # import_relatores_proposicoes()
-    # import_destaques()
-    # # import_votacoes()
-    # # import_votos()
-    # import_governismo()
-    # import_disciplina()
-    # import_votacoes_sumarizadas()
-    # import_locais_atuais_proposicoes()
+    import_tramitacoes()
+    import_temperaturas()
+    import_progresso()
+    import_pautas()
+    import_emendas()
+    import_comissoes()
+    import_atores()
+    import_pressao()
+    import_coautoria_node()
+    import_coautoria_edge()
+    import_autoria()
+    import_autores_proposicoes()
+    import_relatores_proposicoes()
+    import_destaques()
+    # import_votacoes()
+    # import_votos()
+    import_governismo()
+    import_disciplina()
+    import_votacoes_sumarizadas()
+    import_locais_atuais_proposicoes()
     import_proposicoes_apensadas()
 
 

@@ -1,7 +1,8 @@
 from django.db import models
 from api.model.proposicao import Proposicao
 
-class ProposicaApensada(models.Model):
+
+class ProposicaoApensada(models.Model):
     id_leggo = models.TextField(
         'ID do Leggo',
         help_text='Id interno do leggo.'
@@ -22,14 +23,22 @@ class ProposicaApensada(models.Model):
 
     casa_prop_principal = models.TextField(
        'Casa da proposição original onde houve a apensação',
-        null=True,
-        blank=True
+       null=True,
+       blank=True
     )
 
-    proposicao_apensada = models.ForeignKey(
+    interesse = models.TextField(
+       'Interesse das proposições',
+       null=True,
+       blank=True
+    )
+
+    proposicao = models.ForeignKey(
         Proposicao, on_delete=models.CASCADE, related_name="apensadas"
     )
 
-    proposicao_original = models.ForeignKey(
-        Proposicao, on_delete=models.CASCADE, related_name="originais"
+    proposicao_principal = models.ForeignKey(
+        Proposicao, on_delete=models.CASCADE, related_name="principal",
+        null=True,
+        blank=True
     )

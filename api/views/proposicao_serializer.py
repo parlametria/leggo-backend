@@ -5,7 +5,7 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 from api.model.proposicao import Proposicao
 from api.model.destaques import Destaques
-from api.model.proposicao_apensada import ProposicaApensada
+from api.model.proposicao_apensada import ProposicaoApensada
 from api.views.temperatura_historico_serializer import TemperaturaHistoricoSerializer
 from api.views.etapa_serializer import EtapasSerializer, EtapasDetailSerializer
 from api.utils.filters import (
@@ -20,7 +20,7 @@ from api.views.interesse_serializer import InteresseProposicaoSerializer
 from api.views.autores_proposicao_serializer import AutoresSerializer
 from api.views.destaques_serializer import DestaquesDetailsSerializer
 from api.views.prop_local_atual_serializer import LocalAtualSerializer
-from api.views.proposicao_apensada_serializer import ProposicaApensadaSerializer
+from api.views.proposicao_apensada_serializer import ProposicaoApensadaSerializer
 
 
 class ProposicaoDetailSerializer(serializers.ModelSerializer):
@@ -57,7 +57,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
     interesse = InteresseProposicaoSerializer(many=True, read_only=True)
     destaques = DestaquesDetailsSerializer(many=True, read_only=True)
     locaisProposicao = LocalAtualSerializer(many=True, read_only=True)
-    apensadas = ProposicaApensadaSerializer(many=True, read_only=True)
+    principal = ProposicaoApensadaSerializer(many=True, read_only=True)
 
     class Meta:
         model = Proposicao
@@ -69,7 +69,7 @@ class ProposicaoSerializer(serializers.ModelSerializer):
             "sigla_senado",
             "destaques",
             "locaisProposicao",
-            "apensadas"
+            "principal"
         )
 
 
@@ -108,8 +108,11 @@ class ProposicaoList(generics.ListAPIView):
         locaisFiltered = get_ultima_proposicao_local()
 
         apensadasFiltered = (
-            ProposicaApensada.objects
-            .filter(id_leggo__in=interessesFiltered.values('id_leggo'))
+            ProposicaoApensada.objects
+            .filter(
+                interesse=interesseArg,
+                id_leggo_prop_principal__isnull=False
+            )
         )
 
         props = (
@@ -123,7 +126,7 @@ class ProposicaoList(generics.ListAPIView):
                 Prefetch("interesse", queryset=interessesFiltered),
                 Prefetch("destaques", queryset=destaquesFiltered),
                 Prefetch("locaisProposicao", queryset=locaisFiltered),
-                Prefetch("apensadas", queryset=apensadasFiltered),
+                Prefetch("principal", queryset=apensadasFiltered),
             )
         )
 
