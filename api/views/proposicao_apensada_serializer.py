@@ -4,21 +4,21 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
 from api.model.proposicao_apensada import ProposicaoApensada
+from api.model.proposicao import Proposicao
 
 
-class ProposicaoApensadaSerializer(serializers.ModelSerializer):
+class ProposicaoApensadaSiglaSerializer(serializers.ModelSerializer):
     class Meta:
-        model = ProposicaoApensada
+        model = Proposicao
         fields = (
-            "id_leggo",
-            "interesse",
-            "id_leggo_prop_principal",
-            "id_ext_prop_principal",
-            "casa_prop_principal"
+            "sigla_camara",
+            "sigla_senado"
         )
 
 
-class ProposicaoApensadaDetailSerializer(serializers.Serializer):
+class ProposicaoApensadaSerializer(serializers.ModelSerializer):
+    proposicao_principal = ProposicaoApensadaSiglaSerializer(many=False, read_only=True)
+
     id_leggo_principal = serializers.CharField(
         source='id_leggo_prop_principal')
     interesse_principal = serializers.CharField(
@@ -27,10 +27,16 @@ class ProposicaoApensadaDetailSerializer(serializers.Serializer):
         source='id_ext_prop_principal')
     casa_principal = serializers.CharField(
         source='casa_prop_principal')
-    sigla_camara_principal = serializers.CharField(
-        source='proposicao_principal__sigla_camara')
-    sigla_senado_principal = serializers.CharField(
-        source='proposicao_principal__sigla_senado')
+
+    class Meta:
+        model = ProposicaoApensada
+        fields = (
+            "id_leggo_principal",
+            "interesse_principal",
+            "id_ext_principal",
+            "casa_principal",
+            "proposicao_principal"
+        )
 
 
 class ProposicaoApensadaDetail(generics.ListAPIView):
@@ -38,7 +44,7 @@ class ProposicaoApensadaDetail(generics.ListAPIView):
     Lista de locais capturados para as proposições de um interesse
     """
 
-    serializer_class = ProposicaoApensadaDetailSerializer
+    serializer_class = ProposicaoApensadaSerializer
 
     @swagger_auto_schema(
         manual_parameters=[
@@ -60,11 +66,8 @@ class ProposicaoApensadaDetail(generics.ListAPIView):
                 id_leggo=id_prop,
                 interesse=interesseArg
             )
-            .values(
-                'id_leggo_prop_principal', 'interesse',
-                'id_ext_prop_principal', 'casa_prop_principal',
-                'proposicao_principal__sigla_camara',
-                'proposicao_principal__sigla_senado'
+            .select_related(
+                'proposicao_principal'
             )
         )
 

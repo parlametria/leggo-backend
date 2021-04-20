@@ -117,7 +117,8 @@ class ProposicaoList(generics.ListAPIView):
                 Prefetch("etapas__relatoria"),
                 Prefetch("interesse", queryset=interessesFiltered),
                 Prefetch("destaques", queryset=destaquesFiltered),
-                Prefetch("locaisProposicao", queryset=locaisFiltered)
+                Prefetch("locaisProposicao", queryset=locaisFiltered),
+                Prefetch("apensadas__proposicao_principal")
             )
         )
 
