@@ -242,7 +242,7 @@ def import_temperaturas():
         group_df = (
             grouped.get_group(group_index)
             .assign(periodo=lambda x: x.periodo.apply(lambda s: s.split("T")[0]))
-            .filter(["periodo", "temperatura_periodo", "temperatura_recente"])
+            .filter(["id_leggo", "periodo", "temperatura_periodo", "temperatura_recente"])
             .assign(proposicao=prop)
         )
         TemperaturaHistorico.objects.bulk_create(
