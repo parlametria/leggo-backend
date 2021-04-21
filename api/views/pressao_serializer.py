@@ -5,6 +5,7 @@ from drf_yasg import openapi
 from datetime import datetime
 from api.model.pressao import Pressao
 from api.utils.filters import get_filtered_interesses
+from api.utils.queries_temp_pressao import queryPressaoOitoDias
 
 
 class PressaoSerializer(serializers.ModelSerializer):
@@ -96,12 +97,13 @@ class PressaoList(generics.ListAPIView):
 class UltimaPressaoSerializer(serializers.Serializer):
     id_leggo = serializers.CharField()
     ultima_pressao = serializers.FloatField(source="trends_max_popularity")
-    date = serializers.DateField()
+    pressao_oito_dias = serializers.FloatField()
 
 
 class UltimaPressaoList(generics.ListAPIView):
     '''
-    Retorna a última pressão capturada para as proposições de um interesse
+    Retorna a última pressão capturada para as proposições de um interesse e
+    a última pressão em quinze dias.
     '''
 
     serializer_class = UltimaPressaoSerializer
@@ -109,6 +111,7 @@ class UltimaPressaoList(generics.ListAPIView):
     def get_queryset(self):
         '''
         Retorna a última pressão capturada para as proposições de um interesse
+        e a ultima pressão em quinze dias.
         '''
 
         interesse_arg = self.request.query_params.get('interesse')
@@ -116,13 +119,8 @@ class UltimaPressaoList(generics.ListAPIView):
         if interesse_arg is None:
             interesse_arg = 'leggo'
 
-        interesses = get_filtered_interesses(interesse_arg)
-        queryset = (
-            Pressao.objects.filter(
-                proposicao__id_leggo__in=interesses.values('id_leggo'))
-            .values('id_leggo', 'trends_max_popularity', 'date')
-            .order_by('id_leggo', '-date')
-            .distinct('id_leggo')
-        )
+        q = queryPressaoOitoDias(interesse_arg)
 
-        return queryset
+        pressao_oito_dias = Pressao.objects.raw(q)
+
+        return pressao_oito_dias
