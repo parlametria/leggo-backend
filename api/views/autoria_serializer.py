@@ -3,7 +3,13 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from django.db.models import (
     Count,
-    Sum)
+    Sum,
+    Value,
+    F,
+    CharField)
+from django.db.models.functions import (
+    Concat,
+    ExtractYear)
 from api.model.autoria import Autoria
 from api.utils.filters import get_filtered_interesses, get_filtered_destaques
 from api.utils.queries_autorias_agregadas import (
@@ -112,7 +118,7 @@ class AutoriaAutorSerializer(serializers.Serializer):
     tipo_documento = serializers.CharField()
     tipo_acao = serializers.CharField()
     peso_autor_documento = serializers.FloatField()
-    sigla = serializers.CharField()
+    sigla = serializers.CharField(source='sigla_prop')
 
 
 class AutoriasAutorList(generics.ListAPIView):
@@ -151,10 +157,18 @@ class AutoriasAutorList(generics.ListAPIView):
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31')
             .distinct('id_autor_parlametria', 'id_documento')
+            .annotate(sigla_prop=Concat(
+                'etapa_proposicao__sigla_tipo',
+                Value(' '),
+                F('etapa_proposicao__numero'),
+                Value('/'),
+                ExtractYear('etapa_proposicao__data_apresentacao'),
+                output_field=CharField())
+            )
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
                     'tipo_documento', 'tipo_acao', 'peso_autor_documento',
-                    'sigla')
+                    'sigla_prop')
         )
 
         return autorias
