@@ -3,13 +3,7 @@ from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 from django.db.models import (
     Count,
-    Sum,
-    Value,
-    F,
-    CharField)
-from django.db.models.functions import (
-    Concat,
-    ExtractYear)
+    Sum)
 from api.model.autoria import Autoria
 from api.utils.filters import get_filtered_interesses, get_filtered_destaques
 from api.utils.queries_autorias_agregadas import (
