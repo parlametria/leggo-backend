@@ -118,7 +118,7 @@ class AutoriaAutorSerializer(serializers.Serializer):
     tipo_documento = serializers.CharField()
     tipo_acao = serializers.CharField()
     peso_autor_documento = serializers.FloatField()
-    sigla = serializers.CharField(source='sigla_prop')
+    sigla = serializers.CharField(source='etapa_proposicao__sigla')
 
 
 class AutoriasAutorList(generics.ListAPIView):
@@ -157,18 +157,10 @@ class AutoriasAutorList(generics.ListAPIView):
                     id_autor_parlametria=id_autor_arg,
                     data__gte='2019-01-31')
             .distinct('id_autor_parlametria', 'id_documento')
-            .annotate(sigla_prop=Concat(
-                'etapa_proposicao__sigla_tipo',
-                Value(' '),
-                F('etapa_proposicao__numero'),
-                Value('/'),
-                ExtractYear('etapa_proposicao__data_apresentacao'),
-                output_field=CharField())
-            )
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
                     'tipo_documento', 'tipo_acao', 'peso_autor_documento',
-                    'sigla_prop')
+                    'etapa_proposicao__sigla')
         )
 
         return autorias

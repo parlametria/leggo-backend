@@ -84,16 +84,17 @@ class EtapaProposicao(models.Model):
 
     status = models.TextField(blank=True, null=True)
 
+    sigla = models.TextField(
+        "Sigla da proposição",
+        blank=True, null=True,
+        help_text="Sigla da proposição",
+    )
+
     class Meta:
         indexes = [
             models.Index(fields=["casa", "id_ext"]),
         ]
         ordering = ("data_apresentacao",)
-
-    @property
-    def sigla(self):
-        """Sigla da proposição (ex.: PL 400/2010)"""
-        return f"{self.sigla_tipo} {self.numero}/{self.ano}"
 
     @property
     def ano(self):

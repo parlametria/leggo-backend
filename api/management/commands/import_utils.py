@@ -31,7 +31,6 @@ from api.model.votacoes_sumarizadas import VotacoesSumarizadas
 from api.model.local_atual_proposicao import LocalAtualProposicao
 from api.model.proposicao_apensada import ProposicaoApensada
 from api.utils.relator import check_relator_id
-from api.utils.sigla import cria_sigla
 
 
 def print_import_info(table):
@@ -87,7 +86,8 @@ def import_etapas_proposicoes():
                     "relator_id_parlametria",
                     "casa_origem",
                     "em_pauta",
-                    "status"
+                    "status",
+                    "sigla"
                 ]
             )
             .assign(relatoria=relator)
@@ -126,12 +126,12 @@ def import_proposicoes():
         # formata siglas
         if len(etapas) == 2:
             if etapas[0].casa == 'camara':
-                sigla_camara = cria_sigla(etapas[0])
-                sigla_senado = cria_sigla(etapas[1])
+                sigla_camara = etapas[0].sigla
+                sigla_senado = etapas[1].sigla
 
             elif etapas[0].casa == 'senado':
-                sigla_senado = cria_sigla(etapas[0])
-                sigla_camara = cria_sigla(etapas[1])
+                sigla_senado = etapas[0].sigla
+                sigla_camara = etapas[1].sigla
 
             prop.sigla_camara = sigla_camara
             prop.save()
@@ -140,12 +140,12 @@ def import_proposicoes():
 
         else:
             if etapas[0].casa == 'camara':
-                sigla_camara = cria_sigla(etapas[0])
+                sigla_camara = etapas[0].sigla
                 prop.sigla_camara = sigla_camara
                 prop.save()
 
             elif etapas[0].casa == 'senado':
-                sigla_senado = cria_sigla(etapas[0])
+                sigla_senado = etapas[0].sigla
                 prop.sigla_senado = sigla_senado
                 prop.save()
 
