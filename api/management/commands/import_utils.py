@@ -29,8 +29,8 @@ from api.model.governismo import Governismo
 from api.model.disciplina import Disciplina
 from api.model.votacoes_sumarizadas import VotacoesSumarizadas
 from api.model.local_atual_proposicao import LocalAtualProposicao
+from api.model.proposicao_apensada import ProposicaoApensada
 from api.utils.relator import check_relator_id
-from api.utils.sigla import cria_sigla
 
 
 def print_import_info(table):
@@ -66,6 +66,30 @@ def import_etapas_proposicoes():
 
         group_df = (
             props_df.get_group(group_index)
+            .filter(
+                [
+                    "id_leggo",
+                    "id_ext",
+                    "numero",
+                    "sigla_tipo",
+                    "data_apresentacao",
+                    "casa",
+                    "regime_tramitacao",
+                    "forma_apreciacao",
+                    "ementa",
+                    "justificativa",
+                    "palavras_chave",
+                    "autor_nome",
+                    "autor_uf",
+                    "autor_partido",
+                    "relator_id",
+                    "relator_id_parlametria",
+                    "casa_origem",
+                    "em_pauta",
+                    "status",
+                    "sigla"
+                ]
+            )
             .assign(relatoria=relator)
             .replace(-1, np.nan)
         )
@@ -102,12 +126,12 @@ def import_proposicoes():
         # formata siglas
         if len(etapas) == 2:
             if etapas[0].casa == 'camara':
-                sigla_camara = cria_sigla(etapas[0])
-                sigla_senado = cria_sigla(etapas[1])
+                sigla_camara = etapas[0].sigla
+                sigla_senado = etapas[1].sigla
 
             elif etapas[0].casa == 'senado':
-                sigla_senado = cria_sigla(etapas[0])
-                sigla_camara = cria_sigla(etapas[1])
+                sigla_senado = etapas[0].sigla
+                sigla_camara = etapas[1].sigla
 
             prop.sigla_camara = sigla_camara
             prop.save()
@@ -116,12 +140,12 @@ def import_proposicoes():
 
         else:
             if etapas[0].casa == 'camara':
-                sigla_camara = cria_sigla(etapas[0])
+                sigla_camara = etapas[0].sigla
                 prop.sigla_camara = sigla_camara
                 prop.save()
 
             elif etapas[0].casa == 'senado':
-                sigla_senado = cria_sigla(etapas[0])
+                sigla_senado = etapas[0].sigla
                 prop.sigla_senado = sigla_senado
                 prop.save()
 
@@ -1098,6 +1122,60 @@ def import_locais_atuais_proposicoes():
         )
 
 
+def import_proposicoes_apensadas():
+    """
+        Carrega mapeamento de proposições apensadas
+        e suas proposições originais
+    """
+    print_import_info("Proposições Apensadas")
+
+    grouped = (
+        pd.read_csv("data/props_apensadas.csv")
+    )
+
+    grouped = grouped.groupby(["id_leggo", "interesse"])
+
+    for group_index in grouped.groups:
+        id_leggo = {"id_leggo": group_index[0]}
+        prop_apensada = get_proposicao(id_leggo, "ProposicaoApensada")
+        prop_original = None
+
+        id_leggo_original_df = grouped.get_group(group_index)[
+            ["id_leggo_prop_principal"]
+        ]
+
+        id_original = (
+            id_leggo_original_df.loc[
+                id_leggo_original_df.index[0], 'id_leggo_prop_principal'
+            ]
+        )
+
+        id_leggo_original = {"id_leggo": id_original}
+        prop_original = get_proposicao(id_leggo_original, "ProposicaoApensada")
+
+        if not prop_apensada:
+            continue
+
+        group_df = (
+            grouped.get_group(group_index)[
+                [
+                    "id_leggo",
+                    "id_leggo_prop_principal",
+                    "id_ext_prop_principal",
+                    "casa_prop_principal",
+                    "interesse"
+                ]
+            ]
+            .assign(proposicao=prop_apensada)
+            .assign(proposicao_principal=prop_original)
+        )
+
+        ProposicaoApensada.objects.bulk_create(
+            ProposicaoApensada(**r[1].to_dict())
+            for r in group_df.where(pd.notnull(group_df), None).iterrows()
+        )
+
+
 def import_anotacoes():
     import_anotacoes_especificas()
     import_anotacoes_gerais()
@@ -1130,6 +1208,7 @@ def import_all_data():
     import_disciplina()
     import_votacoes_sumarizadas()
     import_locais_atuais_proposicoes()
+    import_proposicoes_apensadas()
 
 
 def import_all_data_but_insights():
@@ -1158,6 +1237,7 @@ def import_all_data_but_insights():
     import_disciplina()
     import_votacoes_sumarizadas()
     import_locais_atuais_proposicoes()
+    import_proposicoes_apensadas()
 
 
 def import_insights():

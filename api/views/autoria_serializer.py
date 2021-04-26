@@ -112,7 +112,7 @@ class AutoriaAutorSerializer(serializers.Serializer):
     tipo_documento = serializers.CharField()
     tipo_acao = serializers.CharField()
     peso_autor_documento = serializers.FloatField()
-    sigla = serializers.CharField()
+    sigla = serializers.CharField(source='etapa_proposicao__sigla')
 
 
 class AutoriasAutorList(generics.ListAPIView):
@@ -154,7 +154,7 @@ class AutoriasAutorList(generics.ListAPIView):
             .values('id_autor_parlametria', 'id_documento', 'id_leggo',
                     'data', 'descricao_tipo_documento', 'url_inteiro_teor',
                     'tipo_documento', 'tipo_acao', 'peso_autor_documento',
-                    'sigla')
+                    'etapa_proposicao__sigla')
         )
 
         return autorias
