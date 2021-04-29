@@ -23,8 +23,22 @@ services:
       - "8000:8000"
     env_file:
       - ${BACKEND_PATH:-.}/.ENV
+  
+  heroku-cli:
+    build:
+      context: ${BACKEND_PATH:-.}/heroku-cli
+    image: agoradigital/heroku-cli
+    container_name: heroku-cli
+    volumes:
+      - ${BACKEND_PATH:-.}/heroku-cli:/code
+      - backup_data:/code/data
+    env_file:
+        - ${BACKEND_PATH:-.}/heroku-cli/.env
 
 volumes:
   leggo_data:
     external:
       name: leggo_data
+  backup_data:
+    external:
+      name: backup_data

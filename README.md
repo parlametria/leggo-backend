@@ -29,6 +29,7 @@ O make deste repositório ajuda a executar alguns comandos docker comuns durante
 
  Comando | Descrição	
 ------- | -----------
+**make sync-db-with-heroku** | Sincroniza o banco local com o banco remoto do Heroku. Cuidado! Dados locais serão alterados e podem ser perdidos. As migrações locais serão ignoradas e as migrações do banco de dados remoto do heroku serão consideradas. Para mais informações leia atentamente o [README](./heroku-cli/README.md) em ./heroku-cli/README.md.
 **make update** | Realiza as migrações e importa os dados.
 **make update-data-remote** | Atualiza o banco de acordo com os dados do servidor remoto. Muio útil para quando não se quer processar os dados localmente usando os repositórios de tratamento de dados. Os csvs são recuperados já processados e são importados para o banco de dados pelo leggo-backend.
 **make import-csv-remote** | Importa os csvs do servidor remoto para o volume leggo_data.
