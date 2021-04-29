@@ -86,6 +86,9 @@ endif
 	@echo "    "
 	@echo "    test"
 	@echo "        This command will run the tests for the repository"
+	@echo "    "
+	@echo "    update-data [model=model_name]"
+	@echo "        This command will clean an specific table and import its data"
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -149,3 +152,6 @@ endif
  test:
 	docker exec -it agorapi sh -c './manage.py test_all'
 .PHONY: test
+ update-data:
+	docker exec -it agorapi sh -c './manage.py update_data --model $(model)'
+.PHONY: update-data
