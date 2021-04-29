@@ -46,12 +46,20 @@ Após configurar a variável HEROKU_API_KEY não será preciso repetir esse proc
 Certifique-se que as variáveis de ambiente foram configuradas corretamente seguindo as seções anteriores. Para isto execute o comando (na raiz desse repositório):
 
 ```
-make download_remote_db_heroku
+make download-remote-db-heroku
+```
+
+## Importação do dump para o banco de dados local
+
+Com as variáveis de ambiente configuradas corretamente e após a execução do passo anterior de download, é possível realizar a importação do dump baixado para o banco de dados local. Cuidado! Nesta etapa as informações de seu banco local serão sobrescritas e qualquer coisa que não esteja no banco remoto do heroku será perdida. Execute o comando (na raiz desse repositório):
+
+```
+make import-dump-to-db
 ```
 
 ## Sincronizar BD local com base no dump do BD no heroku
 
-Certifique-se que as variáveis de ambiente foram configuradas corretamente seguindo as seções anteriores. Para isto execute o comando (na raiz desse repositório):
+Se preferir, existe um comando que realiza o download e o import de uma única vez. Certifique-se que as variáveis de ambiente foram configuradas corretamente seguindo as seções anteriores. Execute o comando (na raiz desse repositório):
 
 Certifique-se que 
 
