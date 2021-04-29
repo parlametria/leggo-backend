@@ -86,6 +86,18 @@ endif
 	@echo "    "
 	@echo "    test"
 	@echo "        This command will run the tests for the repository"
+	@echo "    "
+	@echo "    get-heroku-api-key"
+	@echo "        This command will run the heroku cli to get API KEY"
+	@echo "    "
+	@echo "    download-remote-db-heroku"
+	@echo "        This command will download the heroku remote Database"  sync-db-with-heroku
+	@echo "    "
+	@echo "    import-dump-to-db"
+	@echo "        This command will restore the dump to the local db"
+	@echo "    "
+	@echo "    sync-db-with-heroku"
+	@echo "        This command will synchronize the local db with the remote db on heroku. Careful! Some of your local data could be lost."
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -149,3 +161,14 @@ endif
  test:
 	docker exec -it agorapi sh -c './manage.py test_all'
 .PHONY: test
+ get-heroku-api-key:
+	docker-compose run --rm heroku-cli sh login_heroku_cli.sh
+.PHONY: get-heroku-api-key
+ download-remote-db-heroku:
+	docker-compose run --rm heroku-cli sh download_remote_db.sh
+.PHONY: download-remote-db-heroku
+ import-dump-to-db:
+	docker exec -it dbapi sh -c 'pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d postgres /backup_data/latest.dump'
+.PHONY: import-dump-to-db
+ sync-db-with-heroku: download-remote-db-heroku import-dump-to-db
+.PHONY: sync-db-with-heroku
