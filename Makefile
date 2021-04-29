@@ -86,6 +86,9 @@ endif
 	@echo "    "
 	@echo "    test"
 	@echo "        This command will run the tests for the repository"
+	@echo "    "
+	@echo "    update-new migrate=true data=remote"
+	@echo "        This command will clean the DB and get the data from the remote server"
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -149,3 +152,10 @@ endif
  test:
 	docker exec -it agorapi sh -c './manage.py test_all'
 .PHONY: test
+update-new:
+	if ["$(migrate)" == "true" ]; then docker exec -it "agorapi" sh -c './manage.py makemigrations'; \
+	else docker exec -it "agorapi" sh -c './manage.py migrate'; fi
+	docker exec -it "agorapi" sh -c './manage.py flush --no-input; \
+	if ["$(data)" == "remote" ]; then docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'; \
+	else docker exec -it "agorapi" sh -c './manage.py import_all_data'; fi
+.PHONY: update-new
