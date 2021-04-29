@@ -153,9 +153,21 @@ endif
 	docker exec -it agorapi sh -c './manage.py test_all'
 .PHONY: test
 update-new:
-	if ["$(migrate)" == "true" ]; then docker exec -it "agorapi" sh -c './manage.py makemigrations'; \
-	else docker exec -it "agorapi" sh -c './manage.py migrate'; fi
-	docker exec -it "agorapi" sh -c './manage.py flush --no-input; \
-	if ["$(data)" == "remote" ]; then docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'; \
-	else docker exec -it "agorapi" sh -c './manage.py import_all_data'; fi
+ifeq ($(migrate), true)
+	docker exec -it "agorapi" sh -c './manage.py makemigrations'
+else
+	docker exec -it "agorapi" sh -c './manage.py migrate'
+endif \
+docker exec -it "agorapi" sh -c './manage.py flush --no-input \ 
+ifeq ($(data), remote)
+	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
+else
+	docker exec -it "agorapi" sh -c './manage.py import_all_data'
+endif
 .PHONY: update-new
+
+# ifeq ($(data), remote)
+# 	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote';
+# else
+# 	docker exec -it "agorapi" sh -c './manage.py import_all_data';
+# endif \ 
