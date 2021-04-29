@@ -102,7 +102,7 @@ def atualiza_temperatura():
 
 
 def atualiza_tramitacoes():
-    TramitacaoEvent.objects().all().delete()
+    TramitacaoEvent.objects.all().delete()
     import_tramitacoes()
 
 
