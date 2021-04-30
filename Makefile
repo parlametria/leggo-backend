@@ -72,12 +72,6 @@ endif
 	@echo "    import"
 	@echo "       Import csv files in data and write on DB"
 	@echo "    "
-	@echo "    update"
-	@echo "        This command will execute update-agorapi and import"
-	@echo "    "
-	@echo "    update-data-remote"
-	@echo "        This command will clean the DB and get the data from the remote server"
-	@echo "    "
 	@echo "    import-csv-remote"
 	@echo "        This command will download all csvs from the remote server"
 	@echo "    "
@@ -87,7 +81,7 @@ endif
 	@echo "    test"
 	@echo "        This command will run the tests for the repository"
 	@echo "    "
-	@echo "    update-new migrate=true data=remote"
+	@echo "    update migrate=true data=remote"
 	@echo "        This command will clean the DB and get the data from the remote server"
 .PHONY: help
  run:
@@ -140,9 +134,6 @@ endif
 .PHONY: update-agorapi
  update: update-agorapi import
 .PHONY: reset
- update-data-remote:
-	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_all_data_from_remote'
-.PHONY: update-data-remote
  import-csv-remote:
 	docker exec -it "agorapi" sh -c './manage.py import_csvs_from_remote'
 .PHONY: import-csv-remote
@@ -152,7 +143,7 @@ endif
  test:
 	docker exec -it agorapi sh -c './manage.py test_all'
 .PHONY: test
-update-new:
+update:
 ifeq ($(migrate), true)
 	docker exec -it "agorapi" sh -c './manage.py makemigrations'
 else
@@ -163,5 +154,5 @@ ifeq ($(data), remote)
 	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
 else
 	docker exec -it "agorapi" sh -c './manage.py import_all_data'
-endif \
-.PHONY: update-new
+endif
+.PHONY: update
