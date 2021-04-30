@@ -158,16 +158,10 @@ ifeq ($(migrate), true)
 else
 	docker exec -it "agorapi" sh -c './manage.py migrate'
 endif \
-docker exec -it "agorapi" sh -c './manage.py flush --no-input \ 
+	docker exec -it "agorapi" sh -c './manage.py flush --no-input' \ 
 ifeq ($(data), remote)
 	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
 else
 	docker exec -it "agorapi" sh -c './manage.py import_all_data'
-endif
+endif \
 .PHONY: update-new
-
-# ifeq ($(data), remote)
-# 	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote';
-# else
-# 	docker exec -it "agorapi" sh -c './manage.py import_all_data';
-# endif \ 
