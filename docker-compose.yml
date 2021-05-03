@@ -9,6 +9,9 @@ services:
     container_name: dbapi
     volumes:
       - postgres_data:/var/lib/postgresql/data/
+      - backup_data:/backup_data/
 
 volumes:
   postgres_data:
+  backup_data:
+    name: backup_data

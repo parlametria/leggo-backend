@@ -61,12 +61,6 @@ class EtapaProposicao(models.Model):
 
     palavras_chave = models.TextField(blank=True)
 
-    autor_nome = models.TextField(blank=True)
-
-    autor_uf = models.TextField(blank=True)
-
-    autor_partido = models.TextField(blank=True)
-
     relator_id = models.IntegerField(blank=True, null=True)
 
     relator_id_parlametria = models.IntegerField(blank=True, null=True)
