@@ -98,6 +98,9 @@ endif
 	@echo "    "
 	@echo "    sync-db-with-heroku"
 	@echo "        This command will synchronize the local db with the remote db on heroku. Careful! Some of your local data could be lost."
+	@echo "    "
+	@echo "    update-data [model=model_name]"
+	@echo "        This command will clean a specific table and import its data"
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -172,3 +175,6 @@ endif
 .PHONY: import-dump-to-db
  sync-db-with-heroku: download-remote-db-heroku import-dump-to-db
 .PHONY: sync-db-with-heroku
+ update-data:
+	docker exec -it agorapi sh -c './manage.py update_data --model $(model)'
+.PHONY: update-data
