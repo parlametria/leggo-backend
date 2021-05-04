@@ -72,6 +72,12 @@ endif
 	@echo "    import"
 	@echo "       Import csv files in data and write on DB"
 	@echo "    "
+	@echo "    update"
+	@echo "        This command will execute update-agorapi and import"
+	@echo "    "
+	@echo "    update-data-remote"
+	@echo "        This command will clean the DB and get the data from the remote server"
+	@echo "    "
 	@echo "    import-csv-remote"
 	@echo "        This command will download all csvs from the remote server"
 	@echo "    "
@@ -81,8 +87,20 @@ endif
 	@echo "    test"
 	@echo "        This command will run the tests for the repository"
 	@echo "    "
+	@echo "    get-heroku-api-key"
+	@echo "        This command will run the heroku cli to get API KEY"
+	@echo "    "
+	@echo "    download-remote-db-heroku"
+	@echo "        This command will download the heroku remote Database"  sync-db-with-heroku
+	@echo "    "
+	@echo "    import-dump-to-db"
+	@echo "        This command will restore the dump to the local db"
+	@echo "    "
+	@echo "    sync-db-with-heroku"
+	@echo "        This command will synchronize the local db with the remote db on heroku. Careful! Some of your local data could be lost."
+	@echo "    "
 	@echo "    update migrate=true data=remote"
-	@echo "        This command will clean the DB and get the data from the remote server"
+	@echo "        This command will clean the DB and get the data from the remote server."
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -131,8 +149,6 @@ endif
 .PHONY: update-agorapi
  import:
 	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_all_data'
-.PHONY: update-agorapi
- update: update-agorapi import
 .PHONY: reset
  import-csv-remote:
 	docker exec -it "agorapi" sh -c './manage.py import_csvs_from_remote'
@@ -143,16 +159,25 @@ endif
  test:
 	docker exec -it agorapi sh -c './manage.py test_all'
 .PHONY: test
-update:
-ifeq ($(migrate), true)
-	docker exec -it "agorapi" sh -c './manage.py makemigrations'
-else
-	docker exec -it "agorapi" sh -c './manage.py migrate'
-endif \
-	docker exec -it "agorapi" sh -c './manage.py flush --no-input' \ 
-ifeq ($(data), remote)
-	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
-else
-	docker exec -it "agorapi" sh -c './manage.py import_all_data'
-endif
-.PHONY: update
+ get-heroku-api-key:
+	docker-compose run --rm heroku-cli sh login_heroku_cli.sh
+.PHONY: get-heroku-api-key
+ download-remote-db-heroku:
+	docker-compose run --rm heroku-cli sh download_remote_db.sh
+.PHONY: download-remote-db-heroku
+ import-dump-to-db:
+	docker exec -it dbapi sh -c 'pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d postgres /backup_data/latest.dump'
+.PHONY: import-dump-to-db
+ sync-db-with-heroku: download-remote-db-heroku import-dump-to-db
+.PHONY: sync-db-with-heroku
+ update:
+	ifeq ($(migrate), true)
+		docker exec -it "agorapi" sh -c './manage.py makemigrations'
+		docker exec -it "agorapi" sh -c './manage.py migrate'
+	endif \
+		docker exec -it "agorapi" sh -c './manage.py flush --no-input' \ 
+	ifeq ($(data), remote)
+		docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
+		docker exec -it "agorapi" sh -c './manage.py import_all_data'
+	endif
+.PHONY: update 
