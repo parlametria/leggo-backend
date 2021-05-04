@@ -66,17 +66,8 @@ endif
 	@echo "    "
 	@echo "    migrate"
 	@echo "    "
-	@echo "    update-agorapi"
-	@echo "        This command will execute 'makemigrations' and 'migrate' commands"
-	@echo "    "
 	@echo "    import"
 	@echo "       Import csv files in data and write on DB"
-	@echo "    "
-	@echo "    update"
-	@echo "        This command will execute update-agorapi and import"
-	@echo "    "
-	@echo "    update-data-remote"
-	@echo "        This command will clean the DB and get the data from the remote server"
 	@echo "    "
 	@echo "    import-csv-remote"
 	@echo "        This command will download all csvs from the remote server"
@@ -101,6 +92,9 @@ endif
 	@echo "    "
 	@echo "    update migrate=true data=remote"
 	@echo "        This command will clean the DB and get the data from the remote server."
+	@echo "    "
+	@echo "    update-data [model=model_name]"
+	@echo "        This command will clean a specific table and import its data"
 .PHONY: help
  run:
 	@$(DOCKER_UP)
@@ -145,8 +139,6 @@ endif
  migrate:
 	docker exec -it "agorapi" sh -c './manage.py migrate'
 .PHONY: migrate
- update-agorapi: makemigrations migrate
-.PHONY: update-agorapi
  import:
 	docker exec -it "agorapi" sh -c './manage.py flush --no-input; ./manage.py import_all_data'
 .PHONY: reset
@@ -171,13 +163,17 @@ endif
  sync-db-with-heroku: download-remote-db-heroku import-dump-to-db
 .PHONY: sync-db-with-heroku
  update:
-	ifeq ($(migrate), true)
-		docker exec -it "agorapi" sh -c './manage.py makemigrations'
-		docker exec -it "agorapi" sh -c './manage.py migrate'
-	endif \
-		docker exec -it "agorapi" sh -c './manage.py flush --no-input' \ 
-	ifeq ($(data), remote)
-		docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
-		docker exec -it "agorapi" sh -c './manage.py import_all_data'
-	endif
-.PHONY: update 
+ifeq ($(migrate), true)
+	docker exec -it "agorapi" sh -c './manage.py makemigrations'
+	docker exec -it "agorapi" sh -c './manage.py migrate'
+endif \
+	docker exec -it "agorapi" sh -c './manage.py flush --no-input' \ 
+ifeq ($(data), remote)
+	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
+else
+	docker exec -it "agorapi" sh -c './manage.py import_all_data'
+endif
+.PHONY: update
+ update-data:
+	docker exec -it agorapi sh -c './manage.py update_data --model $(model)'
+.PHONY: update-data
