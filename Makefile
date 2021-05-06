@@ -166,8 +166,8 @@ endif
 ifeq ($(migrate), true)
 	docker exec -it "agorapi" sh -c './manage.py makemigrations'
 	docker exec -it "agorapi" sh -c './manage.py migrate'
-endif \
-	docker exec -it "agorapi" sh -c './manage.py flush --no-input' \ 
+endif
+	docker exec -it "agorapi" sh -c './manage.py flush --no-input'
 ifeq ($(data), remote)
 	docker exec -it "agorapi" sh -c './manage.py import_all_data_from_remote'
 else
