@@ -73,7 +73,6 @@ def create_proposicao(self):
         forma_apreciacao='Plenário',
         ementa='Dispõe sobre o licenciamento ambiental...',
         justificativa='',
-        autor_nome='Luciano Zica PSOL/CE',
         relator_id=74050,
         relator_id_parlametria=174050,
         em_pauta=False

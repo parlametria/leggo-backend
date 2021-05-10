@@ -24,7 +24,7 @@ class ProposicaoApensadaSerializer(serializers.ModelSerializer):
     interesse_principal = serializers.CharField(
         source='interesse')
     id_ext_principal = serializers.IntegerField(
-        source='id_ext_prop_principal')
+        source='id_ext_prop_principal_raiz')
     casa_principal = serializers.CharField(
         source='casa_prop_principal')
 
