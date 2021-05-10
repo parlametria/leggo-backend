@@ -79,9 +79,6 @@ def import_etapas_proposicoes():
                     "ementa",
                     "justificativa",
                     "palavras_chave",
-                    "autor_nome",
-                    "autor_uf",
-                    "autor_partido",
                     "relator_id",
                     "relator_id_parlametria",
                     "casa_origem",
@@ -1162,6 +1159,7 @@ def import_proposicoes_apensadas():
                     "id_leggo",
                     "id_leggo_prop_principal",
                     "id_ext_prop_principal",
+                    "id_ext_prop_principal_raiz",
                     "casa_prop_principal",
                     "interesse"
                 ]

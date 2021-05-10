@@ -10,19 +10,25 @@ class ProposicaoApensada(models.Model):
 
     id_leggo_prop_principal = models.TextField(
         'ID do Leggo',
-        help_text='Id interno do leggo da proposição original.',
+        help_text='Id interno da proposição principal raiz.',
         null=True,
         blank=True
     )
 
     id_ext_prop_principal = models.IntegerField(
-        'Id externo da proposição original na API da Câmara ou Senado',
+        'Id externo da proposição principal na API da Câmara ou Senado',
+        null=True,
+        blank=True
+    )
+
+    id_ext_prop_principal_raiz = models.IntegerField(
+        'Id externo da proposição principal raiz na API da Câmara ou Senado',
         null=True,
         blank=True
     )
 
     casa_prop_principal = models.TextField(
-       'Casa da proposição original onde houve a apensação',
+       'Casa da proposição principal raiz onde houve a apensação',
        null=True,
        blank=True
     )
