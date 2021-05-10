@@ -1159,6 +1159,7 @@ def import_proposicoes_apensadas():
                     "id_leggo",
                     "id_leggo_prop_principal",
                     "id_ext_prop_principal",
+                    "id_ext_prop_principal_raiz",
                     "casa_prop_principal",
                     "interesse"
                 ]
