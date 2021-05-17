@@ -32,6 +32,12 @@ class Pressao(models.Model):
     trends_max_popularity = models.FloatField(
         'Pressão máxima entre os termos', default=0)
 
+    user_count = models.IntegerField(
+        'Quantidade de usuários tweetando sobre uma proposição', default=0)
+
+    sum_interactions = models.IntegerField(
+        'Soma de interações nos tweets', default=0)
+
     twitter_mean_popularity = models.FloatField(
         'Pressão no twitter', default=0)
 
