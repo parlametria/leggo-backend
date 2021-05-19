@@ -14,6 +14,7 @@ class PressaoSerializer(serializers.ModelSerializer):
         fields = (
             'date', 'trends_max_pressao_principal',
             'trends_max_pressao_rel',	'trends_max_popularity',
+            'user_count', 'sum_interactions',
             'twitter_mean_popularity', 'popularity')
 
 
@@ -96,7 +97,7 @@ class PressaoList(generics.ListAPIView):
 
 class UltimaPressaoSerializer(serializers.Serializer):
     id_leggo = serializers.CharField()
-    ultima_pressao = serializers.FloatField(source="trends_max_popularity")
+    ultima_pressao = serializers.FloatField(source="popularity")
     pressao_oito_dias = serializers.FloatField()
 
 
