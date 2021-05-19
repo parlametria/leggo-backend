@@ -542,6 +542,8 @@ def import_pressao():
                     "trends_max_pressao_principal",
                     "trends_max_pressao_rel",
                     "trends_max_popularity",
+                    "user_count",
+                    "sum_interactions",
                     "twitter_mean_popularity",
                     "popularity",
                 ]
