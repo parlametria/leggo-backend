@@ -4,7 +4,7 @@ def queryPressaoOitoDias(interesse):
             1 AS id, \
             aux_top.id_leggo, \
             popularity, \
-            pressao_oito_dias \
+            aux_top.pressao_oito_dias AS pressao_oito_dias \
             FROM  api_pressao p \
             INNER JOIN \
             (SELECT DISTINCT(id_leggo) \
@@ -17,7 +17,8 @@ def queryPressaoOitoDias(interesse):
                     p.popularity AS pressao_oito_dias,  \
                     ROW_NUMBER() OVER(PARTITION BY p.id_leggo  \
                                             ORDER BY p.date DESC) AS rk \
-                FROM api_pressao p) \
+                FROM api_pressao p \
+                WHERE p.interesse = '{interesse}') \
             SELECT s.* \
             FROM summary s \
             WHERE s.rk = 2) AS aux_top  ON \

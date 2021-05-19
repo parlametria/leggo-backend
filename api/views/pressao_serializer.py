@@ -97,7 +97,7 @@ class PressaoList(generics.ListAPIView):
 
 class UltimaPressaoSerializer(serializers.Serializer):
     id_leggo = serializers.CharField()
-    ultima_pressao = serializers.FloatField(source="trends_max_popularity")
+    ultima_pressao = serializers.FloatField(source="popularity")
     pressao_oito_dias = serializers.FloatField()
 
 
