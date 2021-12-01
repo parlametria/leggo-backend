@@ -1129,7 +1129,7 @@ def import_proposicoes_apensadas():
     print_import_info("Proposições Apensadas")
 
     grouped = (
-        pd.read_csv("data/props_apensadas.csv")
+        pd.read_csv("data/props_apensadas.csv",na_values="NA")
     )
 
     grouped = grouped.groupby(["id_leggo", "interesse"])
