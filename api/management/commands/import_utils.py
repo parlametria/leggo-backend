@@ -1139,6 +1139,9 @@ def import_proposicoes_apensadas():
         prop_apensada = get_proposicao(id_leggo, "ProposicaoApensada")
         prop_original = None
 
+        if type(group_index[1]) != str and np.isnan(group_index[1]):
+            continue
+
         id_leggo_original_df = grouped.get_group(group_index)[
             ["id_leggo_prop_principal"]
         ]
@@ -1152,7 +1155,7 @@ def import_proposicoes_apensadas():
         id_leggo_original = {"id_leggo": id_original}
         prop_original = get_proposicao(id_leggo_original, "ProposicaoApensada")
 
-        if not prop_apensada:
+        if not prop_apensada or not id_original:
             continue
 
         group_df = (
