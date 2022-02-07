@@ -1129,7 +1129,7 @@ def import_proposicoes_apensadas():
     print_import_info("Proposições Apensadas")
 
     grouped = (
-        pd.read_csv("data/props_apensadas.csv")
+        pd.read_csv("data/props_apensadas.csv",na_values="NA")
     )
 
     grouped = grouped.groupby(["id_leggo", "interesse"])
@@ -1138,6 +1138,9 @@ def import_proposicoes_apensadas():
         id_leggo = {"id_leggo": group_index[0]}
         prop_apensada = get_proposicao(id_leggo, "ProposicaoApensada")
         prop_original = None
+
+        if type(group_index[1]) != str and np.isnan(group_index[1]):
+            continue
 
         id_leggo_original_df = grouped.get_group(group_index)[
             ["id_leggo_prop_principal"]
@@ -1152,7 +1155,7 @@ def import_proposicoes_apensadas():
         id_leggo_original = {"id_leggo": id_original}
         prop_original = get_proposicao(id_leggo_original, "ProposicaoApensada")
 
-        if not prop_apensada:
+        if not prop_apensada or not id_original:
             continue
 
         group_df = (
