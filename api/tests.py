@@ -1,17 +1,46 @@
+from click import password_option
 from rest_framework.test import APITestCase
 from api.model.emenda import Emendas
 from api.model.etapa_proposicao import EtapaProposicao
 from api.model.proposicao import Proposicao
 from api.model.temperatura_historico import TemperaturaHistorico
 from api.model.interesse import Interesse
+from django.test import TestCase
+from django.contrib.auth.models import User
+from usuario.models import UsuarioProposicao
 import json
+# from unittest.mock import patch
+# from unittest.mock import MagicMock
+from unittest.mock import patch
+from api import signals
 
+class ProposicaoSignalTests(TestCase):
+    def setUp(self):
+        User.objects.create(username='u1')
+        User.objects.create(username='u2')
+        User.objects.create(username='u3')
+
+    def test_signal(self):
+        pid = 1
+        proposicao = Proposicao(id_leggo=pid)
+
+        self.assertFalse(UsuarioProposicao.objects.filter(proposicao=pid))
+
+        proposicao.save()
+
+        self.assertTrue(UsuarioProposicao.objects.filter(proposicao=pid))
+    
+    @patch('api.signals.update_user')
+    def test_users(self):
+
+        pass
 
 class ProposicaoTests(APITestCase):
 
     def setUp(self):
         create_proposicao(self)
         self.url = '/proposicoes/'
+
 
     def test_list(self):
         '''
