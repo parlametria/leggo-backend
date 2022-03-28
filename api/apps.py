@@ -6,4 +6,4 @@ class ApiConfig(AppConfig):
     default_auto_field = "django.db.models.AutoField"
 
     def ready(self):
-        import api.signals
+        import api.signals  # noqa
