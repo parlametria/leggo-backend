@@ -1,4 +1,3 @@
-from click import password_option
 from rest_framework.test import APITestCase
 from api.model.emenda import Emendas
 from api.model.etapa_proposicao import EtapaProposicao
@@ -9,18 +8,16 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from usuario.models import UsuarioProposicao
 import json
-# from unittest.mock import patch
-# from unittest.mock import MagicMock
-from unittest.mock import patch
 from api import signals
+
 
 class ProposicaoSignalTests(TestCase):
     def setUp(self):
-        User.objects.create(username='u1')
-        User.objects.create(username='u2')
-        User.objects.create(username='u3')
+        User.objects.create(username="u1")
+        User.objects.create(username="u2")
+        User.objects.create(username="u3")
 
-    def test_signal(self):
+    def test_signal_on_create_model(self):
         pid = 1
         proposicao = Proposicao(id_leggo=pid)
 
@@ -29,82 +26,98 @@ class ProposicaoSignalTests(TestCase):
         proposicao.save()
 
         self.assertTrue(UsuarioProposicao.objects.filter(proposicao=pid))
-    
-    @patch('api.signals.update_user')
-    def test_users(self):
 
-        pass
+    def test_signal_function_return(self):
+        pid = 1
+        proposicao = Proposicao()
+        proposicao.id_leggo = pid
+
+        call_create_usuario_proposicao = signals.update_user(  # noqa
+            Proposicao, proposicao
+        )
+        proposicao_usuario = UsuarioProposicao.objects.get(proposicao=pid)
+
+        self.assertTrue(proposicao_usuario)
+
+        proposicao_usuario.usuarios.add(
+            User.objects.all()[0], User.objects.all()[1], User.objects.all()[2]
+        )
+
+        call_list_usuario_proposicao_usuarios = signals.update_user(
+            Proposicao, proposicao
+        )
+
+        self.assertTrue(call_list_usuario_proposicao_usuarios.count() == 3)
+
 
 class ProposicaoTests(APITestCase):
-
     def setUp(self):
         create_proposicao(self)
-        self.url = '/proposicoes/'
-
+        self.url = "/proposicoes/"
 
     def test_list(self):
-        '''
+        """
         Check proposicao list
-        '''
+        """
         response = self.client.get(self.url)
         self.assertGreater(len(response.data), 0)
 
     def test_etapa_proposicao(self):
-        '''
+        """
         Check proposicao detail
-        '''
-        url_detail = (self.url + str(self.proposicao.id_leggo))
+        """
+        url_detail = self.url + str(self.proposicao.id_leggo)
         response = self.client.get(url_detail)
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 1)
 
 
 class EmendasTest(APITestCase):
-
     def setUp(self):
         create_proposicao(self)
         self.emenda = Emendas(
-            data_apresentacao='2004-06-08',
+            data_apresentacao="2004-06-08",
             distancia=2.5,
             codigo_emenda=10,
             inteiro_teor="",
             numero=1,
-            local='CCJ',
+            local="CCJ",
             autor="Joao",
-            proposicao=self.etapa_proposicao
+            proposicao=self.etapa_proposicao,
         )
 
         self.emenda.save()
-        self.url = ('/emenda/' + self.etapa_proposicao.casa + '/' +
-                    self.etapa_proposicao.id_ext)
+        self.url = (
+            "/emenda/" + self.etapa_proposicao.casa + "/" + self.etapa_proposicao.id_ext
+        )
 
     def test_emendas_list(self):
-        '''
+        """
         Check emendas list
-        '''
+        """
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, 200)
         self.assertGreater(len(response.data), 0)
 
 
 def create_proposicao(self):
-    '''
+    """
     Create a proposicao and an etapa_proposicao object and save on test database
-    '''
+    """
     etapa_proposicao = EtapaProposicao(
-        id_leggo='1',
-        id_ext='257161',
-        casa='camara',
-        data_apresentacao='2004-06-08',
-        sigla_tipo='PL',
-        numero='3729',
-        regime_tramitacao='Urgência',
-        forma_apreciacao='Plenário',
-        ementa='Dispõe sobre o licenciamento ambiental...',
-        justificativa='',
+        id_leggo="1",
+        id_ext="257161",
+        casa="camara",
+        data_apresentacao="2004-06-08",
+        sigla_tipo="PL",
+        numero="3729",
+        regime_tramitacao="Urgência",
+        forma_apreciacao="Plenário",
+        ementa="Dispõe sobre o licenciamento ambiental...",
+        justificativa="",
         relator_id=74050,
         relator_id_parlametria=174050,
-        em_pauta=False
+        em_pauta=False,
     )
     etapa_proposicao.save()
 
@@ -114,27 +127,27 @@ def create_proposicao(self):
     proposicao.save()
 
     interesse = Interesse(
-        id_leggo='1',
-        interesse='leggo',
-        apelido='Lei do Licenciamento Ambiental',
-        tema='Meio Ambiente',
-        tema_slug='meio-ambiente',
-        proposicao=proposicao
+        id_leggo="1",
+        interesse="leggo",
+        apelido="Lei do Licenciamento Ambiental",
+        tema="Meio Ambiente",
+        tema_slug="meio-ambiente",
+        proposicao=proposicao,
     )
     interesse.save()
 
     temperatura = TemperaturaHistorico(
         temperatura_periodo=1.25,
         temperatura_recente=1.67,
-        periodo='2018-06-08',
-        proposicao=proposicao
+        periodo="2018-06-08",
+        proposicao=proposicao,
     )
 
     temperatura2 = TemperaturaHistorico(
         temperatura_periodo=0,
         temperatura_recente=1.37,
-        periodo='2018-06-15',
-        proposicao=proposicao
+        periodo="2018-06-15",
+        proposicao=proposicao,
     )
 
     temperatura.save()
@@ -145,14 +158,14 @@ def create_proposicao(self):
 
 
 def create_temperatura(self, proposicao):
-    '''
+    """
     Create a temperatura object and save on test database
-    '''
+    """
     temperatura = TemperaturaHistorico(
         temperatura_periodo=1.25,
         temperatura_recente=1.25,
-        periodo='2018-06-08',
-        proposicao=proposicao
+        periodo="2018-06-08",
+        proposicao=proposicao,
     )
 
     temperatura.save()
@@ -163,41 +176,41 @@ def create_temperatura(self, proposicao):
 class TemperaturaTests(APITestCase):
     def setUp(self):
         create_proposicao(self)
-        self.url = '/temperatura/max/'
+        self.url = "/temperatura/max/"
 
     def test_temperatura_max(self):
-        '''
+        """
         Check maximum temperature value
-        '''
+        """
         response = self.client.get(self.url)
         res = json.loads(response.content)
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(res['max_temperatura_periodo'], 1.67)
+        self.assertEqual(res["max_temperatura_periodo"], 1.67)
 
     def test_invalid_date(self):
-        '''
+        """
         Check invalid date
-        '''
-        response = self.client.get(self.url + '?data_inicio=2020-01-50')
+        """
+        response = self.client.get(self.url + "?data_inicio=2020-01-50")
 
         self.assertEqual(response.status_code, 400)
 
     def test_invalid_final_date(self):
-        '''
+        """
         Check invalid date
-        '''
-        response = self.client.get(self.url + '?data_fim=2020-01-500')
+        """
+        response = self.client.get(self.url + "?data_fim=2020-01-500")
 
         # Usa a data atual como default em caso de erro com a data de parâmetro
         self.assertEqual(response.status_code, 200)
 
     def test_init_date(self):
-        '''
+        """
         Check invalid date
-        '''
-        response = self.client.get(self.url + '?data_inicio=2018-06-08')
+        """
+        response = self.client.get(self.url + "?data_inicio=2018-06-08")
         res = json.loads(response.content)
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(res['max_temperatura_periodo'], 1.67)
+        self.assertEqual(res["max_temperatura_periodo"], 1.67)
