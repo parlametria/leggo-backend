@@ -10,7 +10,7 @@ from api.model.etapa_proposicao import Proposicao
 from api.model.interesse import Interesse
 from datetime import datetime, timedelta
 from django.db.models import Sum
-
+from django.core.exceptions import ObjectDoesNotExist
 from dotenv import dotenv_values
 import tweepy
 
@@ -61,11 +61,7 @@ class Tweet(models.Model):
   def get_paginate(self, req, proposicao):
     counter = 0
     for page in req:
-      print(page)
       for tweet in page.data:
-        print(counter)
-        print(tweet.text)
-        print(tweet.author_id)
         counter = counter + 1
         try:
           new_tweet = Tweet(            
@@ -84,9 +80,10 @@ class Tweet(models.Model):
           if(perfil):
             new_tweet.author = perfil
             new_tweet.save()
-        except Exception as e:
-          print(e)
-          print()
+
+        except Perfil.DoesNotExist:
+          pass
+          
 
   def get_recent(self, search, id_proposicao, end_time, start_time, order='relevancy', n_results=10):
     BEARER_TOKEN = dotenv_values(f"./.ENV").get('BEARER_TOKEN')
@@ -112,24 +109,42 @@ class Pressao(models.Model):
   total_tweets = models.IntegerField(null=False)  
   total_usuarios = models.IntegerField(null=False)  
   total_engajamento = models.IntegerField(null=False)
-  data_consulta = models.DateField(null=False)
-
-    
+  data_consulta = models.DateTimeField(null=False)
       
   def save(self, *args, **kwargs):
     if not self.pk:
-        # This code only happens if the objects is
-        # not in the database yet. Otherwise it would
-        # have pk      
-        data_inicio = datetime.strptime(self.data_consulta, '%Y-%m-%dT%H:%M:%S.%f%z')
-        data_final = data_inicio - timedelta(days=7)
+        data_final = self.data_consulta
+        data_inicio = data_final - timedelta(days=3)
         data_range = [data_inicio, data_final]
 
-        tweets = Tweet.objects.filter(proposicao__id=self.proposicao.id).filter(data_criado__range=data_range)
-
+        tweets = Tweet.objects.filter(proposicao=self.proposicao).filter(data_criado__range=data_range)
+        metrics = tweets.values('likes', 'retweets', 'respostas')
+        
         self.total_tweets = tweets.count()
         self.total_usuarios = tweets.values('id_author').distinct().count()
-        # self.total_engajamento = tweets.values('likes', 'retweets', 'respostas').aggregate(sum=Sum('likes', 'retweets', 'respostas'))['sum']
+        self.total_engajamento = metrics.aggregate(sum=Sum('likes'))['sum'] + metrics.aggregate(sum=Sum('retweets'))['sum'] + metrics.aggregate(sum=Sum('respostas'))['sum']
+
     super(Pressao, self).save(*args, **kwargs)
 
+
+class Engajamento(models.Model):
+  perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+  # interesse = models.ForeignKey(Interesse) 
+  data_consulta = models.DateTimeField(null=False)
+  total_engajamento = models.IntegerField(null=False)
+  intervalo_dias = 3
+
+  def save(self, *args, **kwargs):
+    if not self.pk:
+        data_inicio = self.data_consulta - timedelta(days=self.intervalo_dias)
+        data_range = [data_inicio, self.data_consulta]
+
+        tweets = Tweet.objects.filter(author=self.perfil).filter(data_criado__range=data_range)
+        metricas = tweets.values('likes', 'retweets', 'respostas')
+
+        self.total_engajamento = 0
+        for metrica in ['likes', 'retweets', 'respostas']:
+          self.total_engajamento = self.total_engajamento + metricas.aggregate(sum=Sum(metrica))['sum'] 
+
+    super(Engajamento, self).save(*args, **kwargs)
 
