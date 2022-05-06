@@ -10,7 +10,7 @@ from django.contrib.auth.models import User
 from usuario.models import UsuarioProposicao
 import json
 from api import signals
-from tweets.models import Perfil, Pressao, Proposicao, Tweet
+from tweets.models import Engajamento, Perfil, Pressao, Proposicao, Tweet
 from os import getenv
 from dotenv import dotenv_values
 import tweepy
@@ -38,60 +38,63 @@ class TweetTests(TransactionTestCase):
     id = "45870897" #frexo
     search = "Faça como o Baby Yoda e tire seu título. Que a força do voto esteja com você!"
     tweet = Tweet()
-    n_results=20
+    n_results=10
     start_time = '2022-05-03T15:42:15.000Z'
     end_time = '2022-05-05T15:42:15.000Z'    
     req = tweet.get_recent(search, 1, end_time, start_time, n_results=n_results) 
-    # self.assertTrue(Tweet.objects.get(id_tweet=id))
 
     counter = 0 
     for page in req:
+      print(page)
       counter = counter + page.meta.get('result_count')
       
     
     self.assertEqual(counter, n_results)
 
+
+class PressaoTests(TestCase):
+  def setUp(self):
+    create_perfils()
+    create_proposicao(self)
+    create_tweets()
+  
+  def test_pressao(self):
+    end_time = '2022-05-05T15:42:15.000Z'    
+
     pro = Proposicao.objects.get(id_leggo=1)
+    convert_date = datetime.strptime(end_time, '%Y-%m-%dT%H:%M:%S.%f%z')
 
 
-    convert_date = datetime.strptime(start_time, '%Y-%m-%dT%H:%M:%S.%f%z')
-
-    
     pressao = Pressao()
     pressao.proposicao = pro
-    pressao.data_consulta = datetime(convert_date).strftime('%Y-%m-%d')
-
+    pressao.data_consulta = convert_date
     pressao.save()    
-    
     print(pressao.__dict__)
+    print(pressao)
+
+    self.assertTrue(pressao.total_engajamento == 345) 
+    self.assertTrue(pressao.total_usuarios == 2) 
+    self.assertTrue(pressao.total_tweets == 10) 
+            
+class EngajamentoTests(TestCase):
+  def setUp(self):
+    create_perfils()
+    create_proposicao(self)
+    create_tweets()
   
-  
-  
-  def test_pagination(self):
-    pass
+  def test_pressao(self):
+    end_time = '2022-05-05T15:42:15.000Z'    
+    id_author = 45870897
+    perfil = Perfil.objects.get(twitter_id=id_author) 
+    convert_date = datetime.strptime(end_time, '%Y-%m-%dT%H:%M:%S.%f%z')
+    engajamento = Engajamento()
+    engajamento.perfil = perfil
+    engajamento.data_consulta = convert_date
+    engajamento.save()    
+    self.assertEqual(engajamento.total_engajamento, 120)
+
   
 
-# class Test_rel(TestCase):
-#   def setUp(self) -> None:
-#       create_perfils()
-  
-#   def test_rel(self):
-#     print(Perfil.objects.all())
-#     print(Entidade.objects.all())
-
-#     tweet = Tweet(
-#       id_tweet = 1,
-#       text= 'tweet.text',
-#       data_criado = date.today(),
-#       likes = 10,
-#       retweets = 10, 
-#       respostas = 10
-
-#     )
-#     tweet.save()
-#     perfil = Perfil.objects.get(twitter_id=45870897)
-#     print(perfil.__dict__)
-#     perfil.tweets.add(tweet)
 
 class ProposicaoSignalTests(TestCase):
     def setUp(self):
@@ -219,3 +222,36 @@ def create_proposicao(self):
     self.proposicao = proposicao
     self.etapa_proposicao = etapa_proposicao
 
+def create_tweets():
+  proposicao = Proposicao.objects.get(id_leggo=1)
+  id_author = 45870897
+
+  for i in range(10):
+    if i % 2 == 0:
+      new_tweet = Tweet(            
+        id_tweet = i,
+        id_author = id_author, #freixo
+        text= "Tweet freixo",
+        data_criado = "2022-05-04",
+        likes = i,
+        retweets = 2 * i, 
+        respostas = 3 * i
+      )
+      new_tweet.save()
+      new_tweet.proposicao.add(proposicao)
+      perfil = Perfil.objects.get(twitter_id=id_author);
+      
+      new_tweet.author = perfil
+      new_tweet.save()
+    else:
+      new_tweet = Tweet(            
+        id_tweet = i,
+        id_author = 111111, #freixo
+        text= "Tweet outro",
+        data_criado = "2022-05-04",
+        likes = 2 * i,
+        retweets = 3 * i, 
+        respostas = 4 * i
+      )
+      new_tweet.save()
+      new_tweet.proposicao.add(proposicao)
