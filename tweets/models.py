@@ -106,9 +106,11 @@ class Tweet(models.Model):
 class Pressao(models.Model):
   proposicao = models.ForeignKey(Proposicao, on_delete=models.SET_NULL, null=True)
 
+  total_likes = models.IntegerField(null=False, default=0)
   total_tweets = models.IntegerField(null=False)  
   total_usuarios = models.IntegerField(null=False)  
   total_engajamento = models.IntegerField(null=False)
+
   data_consulta = models.DateTimeField(null=False)
       
   def save(self, *args, **kwargs):
@@ -122,6 +124,7 @@ class Pressao(models.Model):
         
         self.total_tweets = tweets.count()
         self.total_usuarios = tweets.values('id_author').distinct().count()
+        self.total_likes = metrics.aggregate(sum=Sum('likes'))['sum']
         self.total_engajamento = metrics.aggregate(sum=Sum('likes'))['sum'] + metrics.aggregate(sum=Sum('retweets'))['sum'] + metrics.aggregate(sum=Sum('respostas'))['sum']
 
     super(Pressao, self).save(*args, **kwargs)
@@ -129,6 +132,7 @@ class Pressao(models.Model):
 
 class Engajamento(models.Model):
   perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+  proposicao = models.ForeignKey(Proposicao, on_delete=models.CASCADE, default=None)
   # interesse = models.ForeignKey(Interesse) 
   data_consulta = models.DateTimeField(null=False)
   total_engajamento = models.IntegerField(null=False)
@@ -139,7 +143,7 @@ class Engajamento(models.Model):
         data_inicio = self.data_consulta - timedelta(days=self.intervalo_dias)
         data_range = [data_inicio, self.data_consulta]
 
-        tweets = Tweet.objects.filter(author=self.perfil).filter(data_criado__range=data_range)
+        tweets = Tweet.objects.filter(author=self.perfil).filter(proposicao=self.proposicao).filter(data_criado__range=data_range)
         metricas = tweets.values('likes', 'retweets', 'respostas')
 
         self.total_engajamento = 0
