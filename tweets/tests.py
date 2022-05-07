@@ -1,22 +1,15 @@
-from rest_framework.test import APITestCase
-from api.model.emenda import Emendas
 from api.model.entidade import Entidade
 from api.model.etapa_proposicao import EtapaProposicao
 from api.model.proposicao import Proposicao
-from api.model.temperatura_historico import TemperaturaHistorico
 from api.model.interesse import Interesse
 from django.test import TestCase, TransactionTestCase
 from django.contrib.auth.models import User
 from usuario.models import UsuarioProposicao
-import json
 from api import signals
 from tweets.models import Engajamento, Perfil, Pressao, Proposicao, Tweet
-from os import getenv
-from dotenv import dotenv_values
-import tweepy
-from datetime import date, datetime
-from functools import reduce
+from datetime import datetime
 
+iso_data = '%Y-%m-%dT%H:%M:%S.%f%z'
 
 class PerfilTests(TestCase):
   def setUp(self):   
@@ -35,22 +28,22 @@ class TweetTests(TransactionTestCase):
     create_proposicao(self)
 
   def test_get(self):
-    id = "45870897" #frexo
+    id_proposicao = 1 
     search = "Faça como o Baby Yoda e tire seu título. Que a força do voto esteja com você!"
     tweet = Tweet()
     n_results=10
     start_time = '2022-05-03T15:42:15.000Z'
     end_time = '2022-05-05T15:42:15.000Z'    
-    req = tweet.get_recent(search, 1, end_time, start_time, n_results=n_results) 
+    req = tweet.get_recent(search, id_proposicao, end_time, start_time, n_results=n_results) 
 
-    counter = 0 
-    for page in req:
-      print(page)
-      counter = counter + page.meta.get('result_count')
-      
     
-    self.assertEqual(counter, n_results)
-
+    for page in req:
+      for tweet in page.data:
+        self.assertFalse(tweet.created_at > datetime.strptime(end_time, iso_data))
+        self.assertFalse(tweet.created_at < datetime.strptime(start_time, iso_data))    
+    
+    self.assertEqual(Tweet.objects.all().count(), n_results)
+    # Perfil.objects.get().count
 
 class PressaoTests(TestCase):
   def setUp(self):
@@ -69,12 +62,11 @@ class PressaoTests(TestCase):
     pressao.proposicao = pro
     pressao.data_consulta = convert_date
     pressao.save()    
-    print(pressao.__dict__)
-    print(pressao)
 
-    self.assertTrue(pressao.total_engajamento == 345) 
-    self.assertTrue(pressao.total_usuarios == 2) 
-    self.assertTrue(pressao.total_tweets == 10) 
+    self.assertEqual(pressao.total_likes, 70) 
+    self.assertEqual(pressao.total_engajamento, 345) 
+    self.assertEqual(pressao.total_usuarios, 2) 
+    self.assertEqual(pressao.total_tweets, 10) 
             
 class EngajamentoTests(TestCase):
   def setUp(self):
@@ -82,7 +74,7 @@ class EngajamentoTests(TestCase):
     create_proposicao(self)
     create_tweets()
   
-  def test_pressao(self):
+  def test_engajamento(self):
     end_time = '2022-05-05T15:42:15.000Z'    
     id_author = 45870897
     perfil = Perfil.objects.get(twitter_id=id_author) 
@@ -90,6 +82,7 @@ class EngajamentoTests(TestCase):
     engajamento = Engajamento()
     engajamento.perfil = perfil
     engajamento.data_consulta = convert_date
+    engajamento.proposicao = Proposicao.objects.get(id_leggo=1)
     engajamento.save()    
     self.assertEqual(engajamento.total_engajamento, 120)
 
