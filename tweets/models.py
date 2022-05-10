@@ -105,28 +105,27 @@ class Tweet(models.Model):
 
 class Pressao(models.Model):
   proposicao = models.ForeignKey(Proposicao, on_delete=models.SET_NULL, null=True)
-
   total_likes = models.IntegerField(null=False, default=0)
   total_tweets = models.IntegerField(null=False)  
   total_usuarios = models.IntegerField(null=False)  
   total_engajamento = models.IntegerField(null=False)
-
   data_consulta = models.DateTimeField(null=False)
+
+  def get_tweets(self):
+    intervalo_dias = 2 # 
+    data_final = self.data_consulta
+    data_inicio = data_final - timedelta(days=intervalo_dias)
+    data_range = [data_inicio, data_final]
+    return Tweet.objects.filter(proposicao=self.proposicao).filter(data_criado__range=data_range)
       
   def save(self, *args, **kwargs):
     if not self.pk:
-        data_final = self.data_consulta
-        data_inicio = data_final - timedelta(days=3)
-        data_range = [data_inicio, data_final]
-
-        tweets = Tweet.objects.filter(proposicao=self.proposicao).filter(data_criado__range=data_range)
-        metrics = tweets.values('likes', 'retweets', 'respostas')
-        
+        tweets = self.get_tweets()
+        metrics = tweets.values('likes', 'retweets', 'respostas')        
         self.total_tweets = tweets.count()
         self.total_usuarios = tweets.values('id_author').distinct().count()
         self.total_likes = metrics.aggregate(sum=Sum('likes'))['sum']
         self.total_engajamento = metrics.aggregate(sum=Sum('likes'))['sum'] + metrics.aggregate(sum=Sum('retweets'))['sum'] + metrics.aggregate(sum=Sum('respostas'))['sum']
-
     super(Pressao, self).save(*args, **kwargs)
 
 
@@ -136,16 +135,17 @@ class Engajamento(models.Model):
   # interesse = models.ForeignKey(Interesse) 
   data_consulta = models.DateTimeField(null=False)
   total_engajamento = models.IntegerField(null=False)
-  intervalo_dias = 3
+
+  def get_tweets(self):
+    intervalo_dias = 2
+    data_inicio = self.data_consulta - timedelta(days=intervalo_dias)
+    data_range = [data_inicio, self.data_consulta]
+    return Tweet.objects.filter(author=self.perfil).filter(proposicao=self.proposicao).filter(data_criado__range=data_range)
 
   def save(self, *args, **kwargs):
     if not self.pk:
-        data_inicio = self.data_consulta - timedelta(days=self.intervalo_dias)
-        data_range = [data_inicio, self.data_consulta]
-
-        tweets = Tweet.objects.filter(author=self.perfil).filter(proposicao=self.proposicao).filter(data_criado__range=data_range)
+        tweets = self.get_tweets()
         metricas = tweets.values('likes', 'retweets', 'respostas')
-
         self.total_engajamento = 0
         for metrica in ['likes', 'retweets', 'respostas']:
           self.total_engajamento = self.total_engajamento + metricas.aggregate(sum=Sum(metrica))['sum'] 

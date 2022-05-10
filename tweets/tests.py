@@ -7,9 +7,8 @@ from django.contrib.auth.models import User
 from usuario.models import UsuarioProposicao
 from api import signals
 from tweets.models import Engajamento, Perfil, Pressao, Proposicao, Tweet
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
-iso_data = '%Y-%m-%dT%H:%M:%S.%f%z'
 
 class PerfilTests(TestCase):
   def setUp(self):   
@@ -21,29 +20,28 @@ class PerfilTests(TestCase):
     self.assertTrue(Perfil.objects.get(entidade_id=1886))
     self.assertTrue(Perfil.objects.get(entidade_id=4155))
 
-class TweetTests(TransactionTestCase):
+# class TweetTests(TransactionTestCase):
+#   start_time = '2022-05-03T15:42:15.000Z'
+#   end_time = '2022-05-05T15:42:15.000Z'  
+#   def setUp(self):
+#     create_perfils()
+#     create_proposicao(self)
 
-  def setUp(self):
-    create_perfils()
-    create_proposicao(self)
+#   def test_get(self):
+#     id_proposicao = 1 
+#     search = "Faça como o Baby Yoda e tire seu título. Que a força do voto esteja com você!"
+#     tweet = Tweet()
+#     n_results=10
+      
+#     req = tweet.get_recent(search, id_proposicao, self.end_time, self.start_time, n_results=n_results) 
+#     tweets = Tweet.objects.all()    
+#     test_tweets_range(self, self.end_time, self.start_time, tweets)
+#     self.assertEqual(tweets.count(), n_results)
 
-  def test_get(self):
-    id_proposicao = 1 
-    search = "Faça como o Baby Yoda e tire seu título. Que a força do voto esteja com você!"
-    tweet = Tweet()
-    n_results=10
-    start_time = '2022-05-03T15:42:15.000Z'
-    end_time = '2022-05-05T15:42:15.000Z'    
-    req = tweet.get_recent(search, id_proposicao, end_time, start_time, n_results=n_results) 
+#   def test_out_range(self):
+#     tweets = Tweet.objects.all()    
+#     test_tweets_range(self, self.end_time, self.start_time, tweets)
 
-    
-    for page in req:
-      for tweet in page.data:
-        self.assertFalse(tweet.created_at > datetime.strptime(end_time, iso_data))
-        self.assertFalse(tweet.created_at < datetime.strptime(start_time, iso_data))    
-    
-    self.assertEqual(Tweet.objects.all().count(), n_results)
-    # Perfil.objects.get().count
 
 class PressaoTests(TestCase):
   def setUp(self):
@@ -53,11 +51,8 @@ class PressaoTests(TestCase):
   
   def test_pressao(self):
     end_time = '2022-05-05T15:42:15.000Z'    
-
     pro = Proposicao.objects.get(id_leggo=1)
     convert_date = datetime.strptime(end_time, '%Y-%m-%dT%H:%M:%S.%f%z')
-
-
     pressao = Pressao()
     pressao.proposicao = pro
     pressao.data_consulta = convert_date
@@ -66,8 +61,8 @@ class PressaoTests(TestCase):
     self.assertEqual(pressao.total_likes, 70) 
     self.assertEqual(pressao.total_engajamento, 345) 
     self.assertEqual(pressao.total_usuarios, 2) 
-    self.assertEqual(pressao.total_tweets, 10) 
-            
+    self.assertEqual(pressao.total_tweets, 10)           
+    test_tweets_range(self, end_time, '2022-05-03', pressao.get_tweets())
 class EngajamentoTests(TestCase):
   def setUp(self):
     create_perfils()
@@ -85,9 +80,7 @@ class EngajamentoTests(TestCase):
     engajamento.proposicao = Proposicao.objects.get(id_leggo=1)
     engajamento.save()    
     self.assertEqual(engajamento.total_engajamento, 120)
-
-  
-
+    test_tweets_range(self, end_time, '2022-05-03', engajamento.get_tweets())
 
 class ProposicaoSignalTests(TestCase):
     def setUp(self):
@@ -218,33 +211,92 @@ def create_proposicao(self):
 def create_tweets():
   proposicao = Proposicao.objects.get(id_leggo=1)
   id_author = 45870897
+  perfil = Perfil.objects.get(twitter_id=id_author);      
+  
+  date_end = datetime.strptime('2022-05-05', '%Y-%m-%d')
+  date_end_menos1 = datetime.strptime('2022-05-05', '%Y-%m-%d') - timedelta(days=1)
+  date_end_menos2 = datetime.strptime('2022-05-05', '%Y-%m-%d') - timedelta(days=2)
+  
+  date_out_menos1d = date_end_menos2 - timedelta(days=1)
+  date_out_mais1d = date_end + timedelta(days=1) 
+  date_out_maisano = date_end + timedelta(days=365)
+  date_out_menosano = date_end - timedelta(days=365)
+  date_out_maismes = date_end + timedelta(days=30)
+  date_out_menosmes = date_end - timedelta(days=30)
 
+  dates_on_range = [date_end, date_end_menos1, date_end_menos2, date_end_menos2, date_end_menos1, date_end, date_end, date_end_menos1, date_end_menos2, date_end_menos2]
+  dates_out_range = [date_out_menos1d, date_out_menosmes, date_out_menosano, date_out_mais1d, date_out_maisano, date_out_maismes, date_out_menos1d, date_out_menosmes, date_out_menosano, date_out_mais1d]
+  
   for i in range(10):
     if i % 2 == 0:
       new_tweet = Tweet(            
         id_tweet = i,
         id_author = id_author, #freixo
         text= "Tweet freixo",
-        data_criado = "2022-05-04",
+        data_criado = dates_on_range.pop(),
         likes = i,
         retweets = 2 * i, 
         respostas = 3 * i
       )
       new_tweet.save()
       new_tweet.proposicao.add(proposicao)
-      perfil = Perfil.objects.get(twitter_id=id_author);
+      
+      wrong_tweet = Tweet(            
+        id_tweet = i + 1000,
+        id_author = id_author, #freixo
+        text= "Tweet freixo",
+        data_criado = dates_out_range.pop(),
+        likes = i,
+        retweets = 2 * i, 
+        respostas = 3 * i
+      )
+      wrong_tweet.save()
+      wrong_tweet.proposicao.add(proposicao)
+
       
       new_tweet.author = perfil
       new_tweet.save()
+
+      wrong_tweet.author = perfil
+      wrong_tweet.save()
+
     else:
       new_tweet = Tweet(            
-        id_tweet = i,
+        id_tweet = i + 10000,
         id_author = 111111, #freixo
         text= "Tweet outro",
-        data_criado = "2022-05-04",
+        data_criado = dates_on_range.pop(),
         likes = 2 * i,
         retweets = 3 * i, 
         respostas = 4 * i
       )
       new_tweet.save()
       new_tweet.proposicao.add(proposicao)
+
+      wrong_tweet = Tweet(            
+        id_tweet = i + 100,
+        id_author = 111111, #freixo
+        text= "Tweet outro",
+        data_criado = dates_out_range.pop(),
+        likes = 2 * i,
+        retweets = 3 * i, 
+        respostas = 4 * i
+      )
+      wrong_tweet.save()
+      wrong_tweet.proposicao.add(proposicao)
+      
+
+
+def test_tweets_range(self, end, start, tweets):
+  ISO_DATA = '%Y-%m-%dT%H:%M:%S.%f%z'
+  DATA = '%Y-%m-%d'
+  DATE_SIZE = 10
+  c_end = datetime.strptime(end[:DATE_SIZE], DATA) 
+  c_start = datetime.strptime(start[:DATE_SIZE], DATA) 
+  
+  self.assertIsNotNone(tweets)
+
+  for tweet in tweets:
+
+    self.assertFalse(datetime.strptime(str(tweet.data_criado), DATA) > c_end)
+    self.assertFalse(datetime.strptime(str(tweet.data_criado), DATA) < c_start)    
