@@ -48,7 +48,7 @@ class Tweet(models.Model):
     id_author = models.CharField(null=False, max_length=40, default=0)
     id_tweet = models.CharField(null=False, max_length=40, default=0)
 
-    text = models.CharField(max_length=280)
+    text = models.TextField()
 
     data_criado = models.DateField(null=False)
 
@@ -82,8 +82,8 @@ class Tweet(models.Model):
                         new_tweet.author = perfil
                         new_tweet.save()
 
-                except Perfil.DoesNotExist:
-                    pass
+                except Perfil.DoesNotExist as e:
+                    print(e)
 
     def get_recent(self, search, id_proposicao, end_time, start_time, order='relevancy', n_results=10):
         BEARER_TOKEN = dotenv_values(f"./.ENV").get('BEARER_TOKEN')
@@ -92,7 +92,7 @@ class Tweet(models.Model):
         # https://developer.twitter.com/en/docs/twitter-api/data-dictionary/object-model/tweet
         fields = ['created_at', 'public_metrics']
 
-        proposicao = Proposicao.objects.get(id_leggo=id_proposicao)
+        proposicao = Proposicao.objects.get(id=id_proposicao)
 
         req = tweepy.Paginator(client.search_recent_tweets, search, end_time=end_time, start_time=start_time, max_results=n_results, sort_order=order, expansions=expansions,
                                tweet_fields=fields)
@@ -102,6 +102,7 @@ class Tweet(models.Model):
 
 
 class Pressao(models.Model):
+
     proposicao = models.ForeignKey(Proposicao, on_delete=models.SET_NULL, null=True)
     total_likes = models.IntegerField(null=False, default=0)
     total_tweets = models.IntegerField(null=False)
@@ -111,6 +112,8 @@ class Pressao(models.Model):
 
     def get_tweets(self):
         intervalo_dias = 2
+        # data_final = datetime.strftime(
+        #     self.data_consulta, "%Y-%m-%d")
         data_final = self.data_consulta
         data_inicio = data_final - timedelta(days=intervalo_dias)
         data_range = [data_inicio, data_final]
@@ -120,6 +123,9 @@ class Pressao(models.Model):
         if not self.pk:
             tweets = self.get_tweets()
             metrics = tweets.values('likes', 'retweets', 'respostas')
+            tweets.values('likes')
+            tweets.values('retweets')
+            tweets.values('respostas')
             self.total_tweets = tweets.count()
             self.total_usuarios = tweets.values('id_author').distinct().count()
             self.total_likes = metrics.aggregate(sum=Sum('likes'))['sum']
@@ -129,9 +135,11 @@ class Pressao(models.Model):
 
 
 class Engajamento(models.Model):
-    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE)
-    proposicao = models.ForeignKey(Proposicao, on_delete=models.CASCADE, default=None)
     # interesse = models.ForeignKey(Interesse)
+    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE, null=True, blank=True)
+    tid_author = models.CharField(null=False, max_length=40, default=0)
+
+    proposicao = models.ForeignKey(Proposicao, on_delete=models.CASCADE, default=None)
     data_consulta = models.DateTimeField(null=False)
     total_engajamento = models.IntegerField(null=False)
 
