@@ -1,9 +1,13 @@
-from django.conf.urls import url  # , include
+from tweets.views import TweetsViewSet, PressaoViewSet, EngajamentoViewSet
+from django.conf.urls import url, include
+from django.urls import path
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 
 # from rest_framework.routers import DefaultRouter
+from rest_framework import routers
+
 from api.views.info_serializer import Info
 from api.views.proposicao_serializer import (
     ProposicaoDetail,
@@ -79,13 +83,29 @@ from api.views.votacao_sumarizada_serializer import (
 from api.views.prop_local_atual_serializer import LocaisProposicaoList
 from api.views.proposicao_apensada_serializer import ProposicaoApensadaDetail
 
+
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
+
+tweets = routers.DefaultRouter()
+tweets.register('', TweetsViewSet, basename="tweets")
+
+pressao = routers.DefaultRouter()
+pressao.register('', PressaoViewSet, basename="pressao")
+
+engajamento = routers.DefaultRouter()
+engajamento.register('', EngajamentoViewSet, basename="engajamento")
+
+
 urlpatterns = [
     # url(r'^', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^tweets/', include(tweets.urls)),
+    url(r'^pressao/', include(pressao.urls)),
+    url(r'^engajamento/', include(engajamento.urls)),
     url(r"^info/?$", Info.as_view()),
     url(r"^proposicoes/?$", cache_page(CACHE_TTL)(ProposicaoList.as_view())),
     url(r"^etapas/?$", EtapasList.as_view()),
