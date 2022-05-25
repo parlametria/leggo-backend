@@ -1,94 +1,100 @@
-from api.model.entidade import Entidade
-from api.model.etapa_proposicao import EtapaProposicao
-from api.model.proposicao import Proposicao
-from api.model.interesse import Interesse
 from django.test import TestCase
-from django.contrib.auth.models import User
-from usuario.models import UsuarioProposicao
-from api import signals
-from tweets.models import Engajamento, Perfil, Pressao, Proposicao, Tweet
+from tweets.models import Engajamento, Perfil, Pressao, Tweet
 from datetime import datetime, timedelta
 from .setup import Setup
+import json
+from unittest.mock import MagicMock
+from unittest.mock import patch
+from unittest import skip
 
 
 class PerfilTests(TestCase):
     def setUp(self):
-        setup = Setup()
-        setup.create_entidades()
+        Setup().create_entidades()
 
     def test_populate(self):
-        setup = Setup()
         perfil = Perfil()
         perfil.populate_parlamentar()
-        self.assertTrue(Perfil.objects.get(entidade_id=setup.jair.eid))
-        self.assertTrue(Perfil.objects.get(entidade_id=setup.marcelo.eid))
+        self.assertTrue(Perfil.objects.get(entidade_id=Setup().jair.eid))
+        self.assertTrue(Perfil.objects.get(entidade_id=Setup().marcelo.eid))
 
 
-# class TweetsTest(TestCase):
-#     def setUp(self):
-#         setup = Setup(["jairbolsonaro"])
-#         setup.create_entidades()
-#         setup.create_perfils()
-#         setup.create_proposicao()
+class MockPage:
+    def __init__(self, data):
+        self.data = map(self.dict_to_tweet, data)
 
-    # def test_req(self):
-    #     tweet = Tweet()
+    def dict_to_tweet(self, item):
+        return dotdict(item)
 
-    #     data = {
-    #         "search": "Mesmo antes da pandemia, já em 2019 foram batidos mais recordes, desta vez, de abertura de leitos hospitalares:",
-    #         "id_proposicao": Proposicao.objects.all()[0].id,
-    #         "end_time":  datetime.now().strftime('%Y-%m-%dT%H:%M:%S.000Z'),
-    #         "start_time": (datetime.now() - timedelta(days=2)).strftime('%Y-%m-%dT%H:%M:%S.000Z'),
-    #         "n_results": "30"
-    #     }
 
-    #     print(datetime.now().strftime('%Y-%m-%dT%H:%M:%S.000Z'))
-    #     print((datetime.now() - timedelta(days=2)).strftime('%Y-%m-%dT%H:%M:%S.000Z'))
+class dotdict(dict):
+    """dot.notation access to dictionary attributes"""
+    __getattr__ = dict.get
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
 
-    #     search = "Mesmo antes da pandemia, já em 2019 foram batidos mais recordes, desta vez, de abertura de leitos hospitalares"
-    #     tweet.get_recent(search, Proposicao.objects.all()[
-    #                      0].id, datetime.now().strftime('%Y-%m-%dT%H:%M:%S.000Z'),
-    #                      (datetime.now() - timedelta(days=2)
-    #                       ).strftime('%Y-%m-%dT%H:%M:%S.000Z')
-    #                      )
+
+# @skip('')
+class TweetsTest(TestCase):
+    def setUp(self):
+        Setup().create_entidades()
+        Setup().create_perfils()
+        Setup().create_proposicao()
+        json_file = open("./tweets/tests/tweets.json", 'r', encoding='utf-8')
+        self.tweets = json.load(json_file)
+        print('-'*30)
+        print(self.tweets)
+
+    def test_req(self):
+
+        tweet = Tweet()
+
+        mock = MockPage(self.tweets)
+        pages = [
+            mock
+        ]
+
+        tweet.get_recent = MagicMock(return_value=pages)
+        req = tweet.get_recent()
+
+        tweet.get_paginate(req, Setup().get_preposicao())
+        self.assertEqual(Tweet.objects.all().count(), 10)
 
 
 class PressaoTests(TestCase):
     def setUp(self):
-        setup = Setup()
-        setup.create_entidades()
-        setup.create_perfils()
-        setup.create_proposicao()
-        setup.create_tweets()
+        Setup().geral_setup()
 
     def test_pressao(self):
-        setup = Setup()
         pressao = Pressao()
-        pressao.proposicao = setup.get_preposicao()
-        pressao.data_consulta = setup.end_c
+        pressao.proposicao = Setup().get_preposicao()
+        pressao.data_consulta = Setup().end_c
         pressao.save()
 
         self.assertEqual(pressao.total_likes, 70)
         self.assertEqual(pressao.total_engajamento, 345)
         self.assertEqual(pressao.total_usuarios, 2)
         self.assertEqual(pressao.total_tweets, 10)
-        self.assertTrue(setup.test_tweets_range(pressao.get_tweets()))
+        self.assertTrue(Setup().test_tweets_range(pressao.get_tweets()))
 
 
 class EngajamentoTests(TestCase):
     def setUp(self):
-        setup = Setup()
-        setup.create_entidades()
-        setup.create_perfils()
-        setup.create_proposicao()
-        setup.create_tweets()
+        Setup().geral_setup()
 
     def test_engajamento(self):
-        setup = Setup()
+
         engajamento = Engajamento()
-        engajamento.perfil = Perfil.objects.get(twitter_id=setup.marcelo.tid)
-        engajamento.data_consulta = setup.end_c
-        engajamento.proposicao = setup.get_preposicao()
+        engajamento.perfil = Perfil.objects.get(twitter_id=Setup().marcelo.tid)
+        engajamento.data_consulta = Setup().end_c
+        engajamento.proposicao = Setup().get_preposicao()
         engajamento.save()
         self.assertEqual(engajamento.total_engajamento, 120)
-        self.assertTrue(setup.test_tweets_range(engajamento.get_tweets()))
+        self.assertTrue(Setup().test_tweets_range(engajamento.get_tweets()))
+
+    def test_nao_engajamento(self):
+        engajamento = Engajamento()
+        engajamento.perfil = Perfil.objects.get(twitter_id=Setup().jair.tid)
+        engajamento.data_consulta = Setup().end_c
+        engajamento.proposicao = Setup().get_preposicao()
+        self.assertRaises(Exception, engajamento.save)

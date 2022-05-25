@@ -13,6 +13,7 @@ from django.db.models import Sum
 from django.core.exceptions import ObjectDoesNotExist
 from dotenv import dotenv_values
 import tweepy
+import json
 
 
 class Perfil(models.Model):
@@ -59,31 +60,34 @@ class Tweet(models.Model):
     def __str__(self):
         return f'{self.id_tweet}\n{self.text}'
 
+    @classmethod
     def get_paginate(self, req, proposicao):
         counter = 0
+
         for page in req:
             for tweet in page.data:
                 counter = counter + 1
-                try:
-                    new_tweet = Tweet(
-                        id_tweet=tweet.id,
-                        id_author=tweet.author_id,
-                        text=tweet.text,
-                        data_criado=tweet.created_at,
-                        likes=tweet.public_metrics.get('like_count'),
-                        retweets=tweet.public_metrics.get('retweet_count'),
-                        respostas=tweet.public_metrics.get('reply_count')
 
-                    )
-                    new_tweet.save()
-                    new_tweet.proposicao.add(proposicao)
+                new_tweet = Tweet(
+                    id_tweet=tweet.id,
+                    id_author=tweet.author_id,
+                    text=tweet.text,
+                    data_criado=tweet.created_at,
+                    likes=tweet.public_metrics.get('like_count'),
+                    retweets=tweet.public_metrics.get('retweet_count'),
+                    respostas=tweet.public_metrics.get('reply_count')
+
+                )
+                new_tweet.save()
+                new_tweet.proposicao.add(proposicao)
+                try:
                     perfil = Perfil.objects.get(twitter_id=tweet.author_id)
                     if(perfil):
                         new_tweet.author = perfil
                         new_tweet.save()
-
                 except Perfil.DoesNotExist as e:
-                    print(e)
+                    pass
+                    # print(e)
 
     def get_recent(self, search, id_proposicao, end_time, start_time, order='relevancy', n_results=10):
         BEARER_TOKEN = dotenv_values(f"./.ENV").get('BEARER_TOKEN')
@@ -94,7 +98,13 @@ class Tweet(models.Model):
 
         proposicao = Proposicao.objects.get(id=id_proposicao)
 
-        req = tweepy.Paginator(client.search_recent_tweets, search, end_time=end_time, start_time=start_time, max_results=n_results, sort_order=order, expansions=expansions,
+        req = tweepy.Paginator(client.search_recent_tweets,
+                               search,
+                               end_time=end_time,
+                               start_time=start_time,
+                               max_results=n_results,
+                               sort_order=order,
+                               expansions=expansions,
                                tweet_fields=fields)
 
         self.get_paginate(req, proposicao)
@@ -135,7 +145,7 @@ class Pressao(models.Model):
 
 
 class Engajamento(models.Model):
-    # interesse = models.ForeignKey(Interesse)
+    # interesse = models.CharField() string
     perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE, null=True, blank=True)
     tid_author = models.CharField(null=False, max_length=40, default=0)
 
@@ -152,6 +162,8 @@ class Engajamento(models.Model):
     def save(self, *args, **kwargs):
         if not self.pk:
             tweets = self.get_tweets()
+            if(not tweets.count()):
+                raise Exception('Não possui tweets.')
             metricas = tweets.values('likes', 'retweets', 'respostas')
             self.total_engajamento = 0
             for metrica in ['likes', 'retweets', 'respostas']:

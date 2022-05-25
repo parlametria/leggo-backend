@@ -41,18 +41,13 @@ class TestPressao(TestCase):
     ENDPOINT = '/pressao/'
 
     def setUp(self):
-        setup = Setup()
-        setup.create_entidades()
-        setup.create_perfils()
-        setup.create_proposicao()
-        setup.create_tweets()
+        Setup().geral_setup()
 
     def test_pressao_post(self):
-        setup = Setup()
 
         data = {
-            "proposicao": setup.get_preposicao().id,
-            "end_time": setup.end,
+            "proposicao": Setup().get_preposicao().id,
+            "end_time": Setup().end,
         }
 
         client = APIClient()
@@ -65,9 +60,8 @@ class TestPressao(TestCase):
         self.assertEqual(response.status_code, 201)
 
     def test_pressao_get(self):
-        setup = Setup()
-        proposicao = setup.get_preposicao()
-        setup.create_pressao()
+        proposicao = Setup().get_preposicao()
+        Setup().create_pressao()
 
         client = APIClient()
 
@@ -85,20 +79,16 @@ class TestEngajamento(TestCase):
     ENDPOINT = '/engajamento/'
 
     def setUp(self):
-        setup = Setup()
-        setup.create_entidades()
-        setup.create_perfils()
-        setup.create_proposicao()
-        setup.create_tweets()
+        Setup().geral_setup()
 
     def test_engajamento_post(self):
-        setup = Setup()
-        setup.create_pressao()
+
+        Setup().create_pressao()
 
         data = {
-            "proposicao": setup.get_preposicao().id,
-            "end_time": setup.end,
-            "twitter_id": setup.marcelo.tid
+            "proposicao": Setup().get_preposicao().id,
+            "end_time": Setup().end,
+            "twitter_id": Setup().marcelo.tid
         }
 
         client = APIClient()
@@ -109,16 +99,32 @@ class TestEngajamento(TestCase):
         )
         self.assertEqual(response.status_code, 201)
 
+    def test_invalido_post(self):
+
+        data = {
+            "proposicao": Setup().get_preposicao().id,
+            "end_time": Setup().end,
+            "twitter_id": Setup().jair.tid
+        }
+
+        client = APIClient()
+        response = client.post(
+            f"{self.ENDPOINT}",
+            json.dumps(data),
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 400)
+
     def test_engajamento_get(self):
-        setup = Setup()
-        autor = setup.get_perfil()
-        setup.create_pressao()
-        setup.create_engajamento()
+
+        autor = Setup().get_perfil()
+        Setup().create_pressao()
+        Setup().create_engajamento()
 
         client = APIClient()
 
         response = client.get(
-            f"{self.ENDPOINT}?twitter_id={autor.twitter_id}&proposicao={setup.get_preposicao().id}",
+            f"{self.ENDPOINT}?twitter_id={autor.twitter_id}&proposicao={Setup().get_preposicao().id}",
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data.get('total_engajamento'), 120)
