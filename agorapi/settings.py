@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from pathlib import Path
+from datetime import timedelta
 import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -166,13 +167,33 @@ STATIC_ROOT = PROJECT_ROOT / STATIC_URL.strip("/")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
-REST_FRAMEWORK = {"TEST_REQUEST_DEFAULT_FORMAT": "json"}
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 INTERNAL_IPS = ["127.0.0.1"]
 
 CACHE_TTL = 60 * 240  # 4 hours
+
+REST_FRAMEWORK = {
+    "TEST_REQUEST_DEFAULT_FORMAT": "json",
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'api_key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization'
+        }
+    },
+}
 
 if DEBUG:
     # tricks to have debug toolbar when developing with docker
