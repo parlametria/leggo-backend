@@ -1,4 +1,5 @@
-from tweets.models import Engajamento, Perfil, Pressao, Proposicao, Tweet, Entidade
+from tweets.models import Engajamento, Perfil, Pressao, Tweet, Entidade
+from api.model.etapa_proposicao import Proposicao
 from api.model.etapa_proposicao import EtapaProposicao
 from api.model.interesse import Interesse
 from datetime import datetime, timedelta
@@ -13,7 +14,9 @@ class Parlamentar:
         self.eid = entidade_id
 
 
+# python manage.py dumpdata tweets.Tweet - -format json - -indent 2
 class Setup:
+    @classmethod
     def __init__(self):
         self.end = "2022-05-05"
         self.start = "2022-05-03"
@@ -27,18 +30,14 @@ class Setup:
         self.marcelo = Parlamentar('Marcelo Freixo', 45870897, 4155)
         self.proposicao = 1
 
-    # def get_tweets(self):
-    #     BEARER_TOKEN = dotenv_values(f"./.ENV").get('BEARER_TOKEN')
-    #     client = tweepy.Client(BEARER_TOKEN)
-    #     users = client.get_users(usernames=self.parlamentares)
-    #     print(users.data)
-    #     print(users.data[0])
-    #     print(users.data[0].id)
-    #     print('GET USERS')
-    #     for parlamentar in users.data:
-    #         tweets = client.get_users_tweets(parlamentar.id)
-    #         print(tweets)
+    @classmethod
+    def geral_setup(self):
+        self.create_entidades()
+        self.create_perfils()
+        self.create_proposicao()
+        self.create_tweets()
 
+    @classmethod
     def create_entidades(self):
         bolsonaro = Entidade(
             id=self.jair.eid,
@@ -72,6 +71,7 @@ class Setup:
         )
         freixo.save()
 
+    @classmethod
     def create_perfils(self):
 
         bolsonaro = Entidade.objects.get(id=self.jair.eid)
@@ -85,6 +85,7 @@ class Setup:
                             is_personalidade=False, name="Jair M. Bolsonaro")
         pBolsonaro.save()
 
+    @classmethod
     def create_proposicao(self):
         """
         Create a proposicao and an etapa_proposicao object and save on test database
@@ -122,6 +123,7 @@ class Setup:
         interesse.save()
         self.proposicao = proposicao
 
+    @classmethod
     def create_tweets(self):
         proposicao = Proposicao.objects.get(id_leggo=1)
         perfil = Perfil.objects.get(twitter_id=self.marcelo.tid)
@@ -199,12 +201,14 @@ class Setup:
                 wrong_tweet.save()
                 wrong_tweet.proposicao.add(proposicao)
 
+    @classmethod
     def create_pressao(self):
         pressao = Pressao()
         pressao.proposicao = self.get_preposicao()
         pressao.data_consulta = self.end_c
         pressao.save()
 
+    @classmethod
     def create_engajamento(self):
         engajamento = Engajamento()
         engajamento.perfil = Perfil.objects.get(twitter_id=self.marcelo.tid)
@@ -213,6 +217,7 @@ class Setup:
         engajamento.proposicao = self.get_preposicao()
         engajamento.save()
 
+    @classmethod
     def test_tweets_range(self, tweets):
 
         for tweet in tweets:
@@ -224,9 +229,11 @@ class Setup:
 
         return True
 
+    @classmethod
     def get_preposicao(self):
         id_leggo = 1
         return Proposicao.objects.get(id_leggo=self.proposicao)
 
+    @classmethod
     def get_perfil(self):
         return Perfil.objects.get(twitter_id=self.marcelo.tid)

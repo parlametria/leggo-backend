@@ -134,7 +134,6 @@ class EngajamentoViewSet(viewsets.ViewSet):
             proposicao = Proposicao.objects.get(id=data.get('proposicao'))
             convert_date = datetime.strptime(data.get('end_time'),
                                              '%Y-%m-%d')
-
             engajamento = Engajamento()
             engajamento.perfil = get_perfil(data.get('twitter_id'))
             engajamento.tid_author = data.get('twitter_id')
@@ -147,4 +146,9 @@ class EngajamentoViewSet(viewsets.ViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
 
         except Exception as e:
-            return Response({"message": f"{e}"}, status=status.HTTP_400_BAD_REQUEST)
+            # print(traceback.format_exc())
+            message = {"message": f"{e}",
+                       "proposicao:": data.get('proposicao'),
+                       "twitter_id": data.get('twitter_id')}
+
+            return Response(message, status=status.HTTP_400_BAD_REQUEST)
