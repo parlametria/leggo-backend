@@ -3,6 +3,12 @@ from django.views.decorators.cache import cache_page
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+    TokenVerifyView,
+)
+
 # from rest_framework.routers import DefaultRouter
 from api.views.info_serializer import Info
 from api.views.proposicao_serializer import (
@@ -78,6 +84,8 @@ from api.views.votacao_sumarizada_serializer import (
 )
 from api.views.prop_local_atual_serializer import LocaisProposicaoList
 from api.views.proposicao_apensada_serializer import ProposicaoApensadaDetail
+
+from usuario.views import UsuarioList, UsuarioDetail
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
@@ -175,6 +183,10 @@ urlpatterns = [
     url(r"^votacoes/?$", VotacoesByCasaList.as_view()),
     url(r"^votacoes/(?P<id_votacao>[a-z0-9-]+)/votos?$", VotosByVotacao.as_view()),
     url(r"^votos/(?P<id_parlamentar>[0-9]+)/?$", VotosByParlamentar.as_view()),
-    url(r"^locais/?$", LocaisProposicaoList.as_view())
-
+    url(r"^locais/?$", LocaisProposicaoList.as_view()),
+    url(r"^autenticacao/token/?$", TokenObtainPairView.as_view()),
+    url(r"^autenticacao/token/refresh/?$", TokenRefreshView.as_view()),
+    url(r"^autenticacao/token/verify/?$", TokenVerifyView.as_view()),
+    url(r"^usuarios/?$", UsuarioList.as_view()),
+    url(r"^usuarios/(?P<pk>[a-z0-9]+)/?$", UsuarioDetail.as_view()),
 ]
