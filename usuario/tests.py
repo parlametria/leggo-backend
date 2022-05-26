@@ -2,28 +2,28 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from rest_framework.test import APIRequestFactory, force_authenticate
 
-from .models import Profile
+from .models import Perfil
 from .views import UsuarioList, UsuarioDetail
 
 
-class ProfileModelTests(TestCase):
+class PerfilModelTests(TestCase):
     def setUp(self):
         user1 = User.objects.create(
-            username="profileuser1@email.com",
-            email="profileuser1@email.com",
-            first_name="profile",
-            last_name="user",
-            password="profileuser1@email.com",
+            username="perfiluser1@email.com",
+            password="perfiluser1@email.com",
+            email="perfiluser1@email.com",
+            first_name="Perfil",
+            last_name="User",
         )
-        self.profile = Profile.objects.create(usuario=user1, empresa="Testing")
+        self.perfil = Perfil.objects.create(usuario=user1, empresa="Testing")
 
-    def test_profile_is_a_user(self):
-        """Profile is a user, so its id is the user id"""
-        _id = getattr(self.profile, "id", None)
+    def test_Perfil_is_a_user(self):
+        """Perfil is a user, so its id is the user id"""
+        _id = getattr(self.perfil, "id", None)
         self.assertTrue(_id is None)
 
-        _id = self.profile.usuario.id
-        self.assertTrue(Profile.objects.get(pk=_id) is not None)
+        _id = self.perfil.usuario.id
+        self.assertTrue(Perfil.objects.get(pk=_id) is not None)
 
 
 class UsuarioListViewTests(TestCase):
@@ -31,13 +31,13 @@ class UsuarioListViewTests(TestCase):
 
     def setUp(self):
         user1 = User.objects.create(
-            username="profileuser1@email.com",
-            email="profileuser1@email.com",
-            first_name="profile",
+            username="Perfiluser1@email.com",
+            email="Perfiluser1@email.com",
+            first_name="Perfil",
             last_name="user",
-            password="profileuser1@email.com",
+            password="Perfiluser1@email.com",
         )
-        self.profile = Profile.objects.create(usuario=user1, empresa="Testing")
+        self.perfil = Perfil.objects.create(usuario=user1, empresa="Testing")
         self.api = APIRequestFactory()
 
     def test_create_a_new_user(self):
@@ -52,7 +52,7 @@ class UsuarioListViewTests(TestCase):
             },
         }
         old_user_count = User.objects.count()
-        old_profile_count = Profile.objects.count()
+        old_Perfil_count = Perfil.objects.count()
 
         request = self.api.post(self.BASE_URL, data=post_data, format="json")
         view = UsuarioList.as_view()
@@ -61,7 +61,7 @@ class UsuarioListViewTests(TestCase):
         self.assertEqual(response.status_code, 201)
         self.assertDictEqual(response.data, post_data)
         self.assertEqual(User.objects.count(), old_user_count + 1)
-        self.assertEqual(Profile.objects.count(), old_profile_count + 1)
+        self.assertEqual(Perfil.objects.count(), old_Perfil_count + 1)
 
     def test_set_username_as_the_same_value_as_email(self):
         """A user's username must be set as the same value as the email"""
@@ -101,7 +101,7 @@ class UsuarioListViewTests(TestCase):
             },
         }
         old_user_count = User.objects.count()
-        old_profile_count = Profile.objects.count()
+        old_Perfil_count = Perfil.objects.count()
 
         request = self.api.post(self.BASE_URL, data=post_data, format="json")
         view = UsuarioList.as_view()
@@ -112,7 +112,7 @@ class UsuarioListViewTests(TestCase):
         self.assertEqual(errors["first_name"][0], "This field may not be blank.")
         self.assertEqual(errors["last_name"][0], "This field may not be blank.")
         self.assertEqual(User.objects.count(), old_user_count)
-        self.assertEqual(Profile.objects.count(), old_profile_count)
+        self.assertEqual(Perfil.objects.count(), old_Perfil_count)
 
 
 class UsuarioDetailViewTests(TestCase):
@@ -122,14 +122,14 @@ class UsuarioDetailViewTests(TestCase):
         self.api = APIRequestFactory()
         for n in range(3):
             user = User.objects.create(
-                username="profileuser%d@email.com" % n,
-                email="profileuser%d@email.com" % n,
-                first_name="profile %d" % n,
+                username="Perfiluser%d@email.com" % n,
+                email="Perfiluser%d@email.com" % n,
+                first_name="Perfil %d" % n,
                 last_name="user %d" % n,
-                password="profileuser%d@email.com" % n,
+                password="Perfiluser%d@email.com" % n,
                 is_staff=n == 0,
             )
-            Profile.objects.create(usuario=user, empresa="Testing %d" % n)
+            Perfil.objects.create(usuario=user, empresa="Testing %d" % n)
 
     def test_non_authenticated_user_cant_see_users_details(self):
         """A non authenticated user can't see users details"""
@@ -156,7 +156,7 @@ class UsuarioDetailViewTests(TestCase):
         response = view(request, pk=user.id)
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data["empresa"], user.profile.empresa)
+        self.assertEqual(response.data["empresa"], user.perfil.empresa)
         self.assertEqual(response.data["usuario"]["id"], user.id)
         self.assertEqual(response.data["usuario"]["email"], user.username)
         self.assertEqual(response.data["usuario"]["email"], user.email)
@@ -197,7 +197,7 @@ class UsuarioDetailViewTests(TestCase):
         response = view(request, pk=non_staff_user.id)
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data["empresa"], non_staff_user.profile.empresa)
+        self.assertEqual(response.data["empresa"], non_staff_user.perfil.empresa)
         self.assertEqual(response.data["usuario"]["id"], non_staff_user.id)
         self.assertEqual(response.data["usuario"]["email"], non_staff_user.username)
         self.assertEqual(response.data["usuario"]["email"], non_staff_user.email)

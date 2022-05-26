@@ -2,13 +2,13 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Profile(models.Model):
+class Perfil(models.Model):
     empresa = models.CharField(max_length=200, default=None, blank=True, null=True)
 
     usuario = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
-        related_name="profile",
+        related_name="perfil",
         primary_key=True,
     )
 
