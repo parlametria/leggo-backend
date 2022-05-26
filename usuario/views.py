@@ -2,14 +2,14 @@ from rest_framework import serializers, generics, permissions
 from rest_framework.exceptions import ValidationError
 from django.contrib.auth.models import User
 
-from usuario.models import Profile
+from usuario.models import Perfil
 
 
 class IsOwnerOrAdminPermission(permissions.BasePermission):
     def has_permission(self, request, view, **kwargs):
         return request.user and request.user.is_authenticated
 
-    def has_object_permission(self, request, view, obj: Profile):
+    def has_object_permission(self, request, view, obj: Perfil):
         return obj.usuario.id == request.user.id or request.user.is_staff
 
 
@@ -36,11 +36,11 @@ class UsuarioSerializer(serializers.ModelSerializer):
         }
 
 
-class ProfileSerializer(serializers.ModelSerializer):
+class PerfilSerializer(serializers.ModelSerializer):
     usuario = UsuarioSerializer(many=False)
 
     class Meta:
-        model = Profile
+        model = Perfil
         fields = (
             "empresa",
             "usuario",
@@ -48,10 +48,10 @@ class ProfileSerializer(serializers.ModelSerializer):
 
 
 class UsuarioList(generics.CreateAPIView):
-    serializer_class = ProfileSerializer
-    queryset = Profile.objects.all()
+    serializer_class = PerfilSerializer
+    queryset = Perfil.objects.all()
 
-    def perform_create(self, serializer: ProfileSerializer):
+    def perform_create(self, serializer: PerfilSerializer):
         data = serializer.data.copy()
         usuario_data = data["usuario"]
         # password is write_only, so it is not present on serializer.data
@@ -70,13 +70,13 @@ class UsuarioList(generics.CreateAPIView):
         usuario.set_password(usuario_data["password"])
         usuario.save()
 
-        instance = Profile(empresa=data["empresa"], usuario=usuario)
+        instance = Perfil(empresa=data["empresa"], usuario=usuario)
         instance.save()
 
         return instance
 
 
 class UsuarioDetail(generics.RetrieveAPIView):
-    serializer_class = ProfileSerializer
-    queryset = Profile.objects.all()
+    serializer_class = PerfilSerializer
+    queryset = Perfil.objects.all()
     permission_classes = (IsOwnerOrAdminPermission,)
