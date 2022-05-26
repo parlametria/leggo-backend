@@ -9,8 +9,8 @@ class IsOwnerOrAdminPermission(permissions.BasePermission):
     def has_permission(self, request, view, **kwargs):
         return request.user and request.user.is_authenticated
 
-    def has_object_permission(self, request, view, obj):
-        return obj.id == request.user.id or request.user.is_staff
+    def has_object_permission(self, request, view, obj: Profile):
+        return obj.usuario.id == request.user.id or request.user.is_staff
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
@@ -31,6 +31,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
         )
         read_only_fields = ("is_active", "is_staff")
         extra_kwargs = {
+            "id": {"read_only": True},
             "password": {"write_only": True},
         }
 
@@ -46,14 +47,14 @@ class ProfileSerializer(serializers.ModelSerializer):
         )
 
 
-class UsuarioList(generics.CreateAPIView, generics.ListAPIView):
+class UsuarioList(generics.CreateAPIView):
     serializer_class = ProfileSerializer
     queryset = Profile.objects.all()
 
     def perform_create(self, serializer: ProfileSerializer):
         data = serializer.data.copy()
         usuario_data = data["usuario"]
-        # password is write_only so it is not present on data
+        # password is write_only, so it is not present on serializer.data
         usuario_data["password"] = serializer.get_initial()["usuario"]["password"]
 
         found = User.objects.filter(email=usuario_data["email"])
@@ -69,7 +70,7 @@ class UsuarioList(generics.CreateAPIView, generics.ListAPIView):
         usuario.set_password(usuario_data["password"])
         usuario.save()
 
-        instance: Profile = Profile(empresa=data["empresa"], usuario=usuario)
+        instance = Profile(empresa=data["empresa"], usuario=usuario)
         instance.save()
 
         return instance
