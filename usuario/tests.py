@@ -114,6 +114,33 @@ class UsuarioListViewTests(TestCase):
         self.assertEqual(User.objects.count(), old_user_count)
         self.assertEqual(Perfil.objects.count(), old_Perfil_count)
 
+    def test_validate_email(self):
+        """Should validate the email a mew user"""
+        post_data = {
+            "empresa": "",
+            "usuario": {
+                "email": "invalid",
+                "password": "invalid",
+                "first_name": "invalid",
+                "last_name": "invalid",
+            },
+        }
+
+        request = self.api.post(self.BASE_URL, data=post_data, format="json")
+        view = UsuarioList.as_view()
+        response = view(request)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.data["email"], "Valor inválido")
+
+        post_data["usuario"]["email"] = self.perfil.usuario.email
+        request = self.api.post(self.BASE_URL, data=post_data, format="json")
+        view = UsuarioList.as_view()
+        response = view(request)
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.data["email"], "Já está em uso")
+
 
 class UsuarioDetailViewTests(TestCase):
     BASE_URL = "/usuarios"
