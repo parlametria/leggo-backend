@@ -1,6 +1,7 @@
 from rest_framework import serializers, generics, permissions
 from rest_framework.exceptions import ValidationError
 from django.contrib.auth.models import User
+from django.core.validators import validate_email
 
 from usuario.models import Perfil
 
@@ -57,9 +58,7 @@ class UsuarioList(generics.CreateAPIView):
         # password is write_only, so it is not present on serializer.data
         usuario_data["password"] = serializer.get_initial()["usuario"]["password"]
 
-        found = User.objects.filter(email=usuario_data["email"])
-        if len(found) > 0:
-            raise ValidationError(detail={"email": "Já está em uso"})
+        self._verify_email(usuario_data["email"])
 
         usuario = User(
             username=usuario_data["email"],
@@ -74,6 +73,16 @@ class UsuarioList(generics.CreateAPIView):
         instance.save()
 
         return instance
+
+    def _verify_email(self, email: str):
+        try:
+            validate_email(email)
+        except Exception:
+            raise ValidationError(detail={"email": "Valor inválido"})
+
+        found = User.objects.filter(email=email)
+        if len(found) > 0:
+            raise ValidationError(detail={"email": "Já está em uso"})
 
 
 class UsuarioDetail(generics.RetrieveAPIView):
