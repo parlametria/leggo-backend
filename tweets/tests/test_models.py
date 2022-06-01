@@ -1,5 +1,5 @@
 from django.test import TestCase
-from tweets.models import Engajamento, Perfil, Pressao, Tweet
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
 from datetime import datetime, timedelta
 from .setup import Setup
 import json
@@ -13,10 +13,10 @@ class PerfilTests(TestCase):
         Setup().create_entidades()
 
     def test_populate(self):
-        perfil = Perfil()
+        perfil = ParlamentarPerfil()
         perfil.populate_parlamentar()
-        self.assertTrue(Perfil.objects.get(entidade_id=Setup().jair.eid))
-        self.assertTrue(Perfil.objects.get(entidade_id=Setup().marcelo.eid))
+        self.assertTrue(ParlamentarPerfil.objects.get(entidade_id=Setup().jair.eid))
+        self.assertTrue(ParlamentarPerfil.objects.get(entidade_id=Setup().marcelo.eid))
 
 
 class MockPage:
@@ -42,8 +42,6 @@ class TweetsTest(TestCase):
         Setup().create_proposicao()
         json_file = open("./tweets/tests/tweets.json", 'r', encoding='utf-8')
         self.tweets = json.load(json_file)
-        print('-'*30)
-        print(self.tweets)
 
     def test_req(self):
 
@@ -85,7 +83,7 @@ class EngajamentoTests(TestCase):
     def test_engajamento(self):
 
         engajamento = Engajamento()
-        engajamento.perfil = Perfil.objects.get(twitter_id=Setup().marcelo.tid)
+        engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().marcelo.tid)
         engajamento.data_consulta = Setup().end_c
         engajamento.proposicao = Setup().get_preposicao()
         engajamento.save()
@@ -94,7 +92,7 @@ class EngajamentoTests(TestCase):
 
     def test_nao_engajamento(self):
         engajamento = Engajamento()
-        engajamento.perfil = Perfil.objects.get(twitter_id=Setup().jair.tid)
+        engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().jair.tid)
         engajamento.data_consulta = Setup().end_c
         engajamento.proposicao = Setup().get_preposicao()
         self.assertRaises(Exception, engajamento.save)

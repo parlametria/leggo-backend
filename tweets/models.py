@@ -16,12 +16,16 @@ import tweepy
 import json
 
 
-class Perfil(models.Model):
+class ParlamentarPerfil(models.Model):
     """
     O perfil pode ser tanto de um parlamentar, quanto de uma personalidade
     """
     entidade = models.OneToOneField(
-        Entidade, related_name='entidadePerfil', null=True, on_delete=models.SET_NULL)
+        Entidade,
+        related_name='entidadePerfil',
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
     is_personalidade = models.BooleanField()
     # if a person has more than one account?
     twitter_id = models.CharField(max_length=40, default=None, null=True)
@@ -35,7 +39,7 @@ class Perfil(models.Model):
         parlamentares = Entidade.objects.all()
 
         for parlamentar in parlamentares:
-            perfil = Perfil(entidade=parlamentar, is_personalidade=False,)
+            perfil = ParlamentarPerfil(entidade=parlamentar, is_personalidade=False,)
             perfil.save()
 
 
@@ -43,7 +47,7 @@ class Tweet(models.Model):
 
     proposicao = models.ManyToManyField(Proposicao)
     # interesse = models.TextField()
-    author = models.ForeignKey(Perfil, related_name="author",
+    author = models.ForeignKey(ParlamentarPerfil, related_name="author",
                                on_delete=models.SET_NULL, null=True, blank=True)
 
     id_author = models.CharField(null=False, max_length=40, default=0)
@@ -81,11 +85,11 @@ class Tweet(models.Model):
                 new_tweet.save()
                 new_tweet.proposicao.add(proposicao)
                 try:
-                    perfil = Perfil.objects.get(twitter_id=tweet.author_id)
+                    perfil = ParlamentarPerfil.objects.get(twitter_id=tweet.author_id)
                     if(perfil):
                         new_tweet.author = perfil
                         new_tweet.save()
-                except Perfil.DoesNotExist as e:
+                except ParlamentarPerfil.DoesNotExist as e:
                     pass
                     # print(e)
 
@@ -146,7 +150,8 @@ class Pressao(models.Model):
 
 class Engajamento(models.Model):
     # interesse = models.CharField() string
-    perfil = models.ForeignKey(Perfil, on_delete=models.CASCADE, null=True, blank=True)
+    perfil = models.ForeignKey(
+        ParlamentarPerfil, on_delete=models.CASCADE, null=True, blank=True)
     tid_author = models.CharField(null=False, max_length=40, default=0)
 
     proposicao = models.ForeignKey(Proposicao, on_delete=models.CASCADE, default=None)
