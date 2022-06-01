@@ -1,6 +1,7 @@
 from rest_framework.test import APIClient
 from django.test import TestCase
-from tweets.models import Engajamento, Perfil, Pressao, Proposicao, Tweet
+from api.model.entidade import Entidade
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
 from tweets.tests.test_models import Setup
 from datetime import datetime, timedelta
 import json
@@ -35,6 +36,33 @@ import json
 #         self.assertEqual(response.status_code, 201)
 #         self.assertEqual(tweets.count(), n_results)
 #         Setup.test_tweets_range(self, end, start, tweets)
+class TestPerfilParlamentar(TestCase):
+    ENDPOINT = '/parlamentar-perfil/'
+
+    def setUp(self):
+        Setup().geral_setup()
+
+    def test_perfil_retrieve(self):
+        client = APIClient()
+
+        flavio_bolsonaro = "25894"
+        twitter_id = '40053694'
+
+        path = f"{self.ENDPOINT}{flavio_bolsonaro}/"
+
+        response = client.get(path)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.content, b'')
+
+        Setup().create_perfil(flavio_bolsonaro, twitter_id, 'Flavio Bolsonaro')
+
+        response = client.get(path)
+        data = response.data
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEquals(data.get('entidade'), int(flavio_bolsonaro))
+        self.assertIsNotNone(data.get('twitter_id'))
 
 
 class TestPressao(TestCase):

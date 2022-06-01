@@ -1,5 +1,5 @@
-from tweets.models import Engajamento, Perfil, Pressao, Tweet, Entidade
-from api.model.etapa_proposicao import Proposicao
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet, Entidade
+from api.model.proposicao import Proposicao
 from api.model.etapa_proposicao import EtapaProposicao
 from api.model.interesse import Interesse
 from datetime import datetime, timedelta
@@ -77,13 +77,36 @@ class Setup:
         bolsonaro = Entidade.objects.get(id=self.jair.eid)
         freixo = Entidade.objects.get(id=self.marcelo.eid)
 
-        pFreixo = Perfil(entidade=freixo, twitter_id=self.marcelo.tid,
-                         is_personalidade=False, name="Marcelo Freixo")
+        pFreixo = ParlamentarPerfil(entidade=freixo, twitter_id=self.marcelo.tid,
+                                    is_personalidade=False, name="Marcelo Freixo")
         pFreixo.save()
 
-        pBolsonaro = Perfil(entidade=bolsonaro, twitter_id=self.jair.tid,
-                            is_personalidade=False, name="Jair M. Bolsonaro")
+        pBolsonaro = ParlamentarPerfil(entidade=bolsonaro, twitter_id=self.jair.tid,
+                                       is_personalidade=False, name="Jair M. Bolsonaro")
         pBolsonaro.save()
+
+    @classmethod
+    def create_perfil(self, id_entidade_parlametria, twitter_id, name):
+        ent = Entidade(
+            id=id_entidade_parlametria,
+            legislatura=53,
+            id_entidade=74847,
+            id_entidade_parlametria=id_entidade_parlametria,
+            casa='camara',
+            nome=name,
+            sexo='M',
+            partido='PSL',
+            uf='RJ',
+            situacao='Titular',
+            em_exercicio=0,
+            is_parlamentar=1
+        )
+        ent.save()
+
+        # ent = Entidade.objects.get(id_entidade_parlametria=id_entidade_parlametria)
+        pp = ParlamentarPerfil(entidade=ent, twitter_id=twitter_id,
+                               is_personalidade=False, name=name)
+        pp.save()
 
     @classmethod
     def create_proposicao(self):
@@ -126,7 +149,7 @@ class Setup:
     @classmethod
     def create_tweets(self):
         proposicao = Proposicao.objects.get(id_leggo=1)
-        perfil = Perfil.objects.get(twitter_id=self.marcelo.tid)
+        perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
 
         date_end = self.end_c
         date_end_menos1 = date_end - timedelta(days=1)
@@ -211,7 +234,7 @@ class Setup:
     @classmethod
     def create_engajamento(self):
         engajamento = Engajamento()
-        engajamento.perfil = Perfil.objects.get(twitter_id=self.marcelo.tid)
+        engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
         engajamento.tid_author = self.marcelo.tid
         engajamento.data_consulta = self.end_c
         engajamento.proposicao = self.get_preposicao()
@@ -236,4 +259,4 @@ class Setup:
 
     @classmethod
     def get_perfil(self):
-        return Perfil.objects.get(twitter_id=self.marcelo.tid)
+        return ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)

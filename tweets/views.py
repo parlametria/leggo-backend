@@ -3,45 +3,42 @@ from rest_framework import permissions
 from django.http import HttpResponse, JsonResponse
 from rest_framework import viewsets
 from django.contrib.auth.models import User, Group
-from rest_framework import serializers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.decorators import action
-from tweets.models import Engajamento, Perfil, Pressao, Proposicao, Tweet
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
+from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.views import APIView
 from rest_framework import status
 from datetime import datetime, timedelta
 import logging
 import traceback
+import json
+from .serializers import *
 
 
-class TweetSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Tweet
-        fields = ['proposicao', 'author', 'id_author', 'id_tweet',
-                  'text', 'data_criado',  'likes', 'retweets', 'respostas']
+class ParlamentarPefilViewSet(viewsets.ViewSet):
 
+    def retrieve(self, request, pk=None):
+        def get_parlamentar_or_false(pk):
+            try:
+                perfil = ParlamentarPerfil.objects.get(entidade=pk)
+                return perfil
+            except ParlamentarPerfil.DoesNotExist as e:
+                return False
 
-class PressaoSerializer(serializers.HyperlinkedModelSerializer):
+        try:
+            perfil = get_parlamentar_or_false(pk)
+            # Entidade.objects.filter(id_entidade_parlametria="25894")
+            if(perfil):
+                serializer = ParlamentarPerfilSerializer(perfil)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            else:
+                return Response(status=status.HTTP_200_OK)
 
-    class Meta:
-        model = Pressao
-        fields = [
-            'total_likes',
-            'total_tweets',
-            'total_usuarios',
-            'total_engajamento',
-            'data_consulta',
-        ]
-
-
-class EngajamentoSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Engajamento
-        fields = [
-            'data_consulta',
-            'total_engajamento',
-        ]
+        except Exception as e:
+            print(e)
+            return Response({"message": f"{e}", "data": {"pk": pk}}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class TweetsViewSet(viewsets.ViewSet):
@@ -56,18 +53,11 @@ class TweetsViewSet(viewsets.ViewSet):
         data = request.data
 
         try:
-            tweet = Tweet()
-            tweet.get_recent(data.get("search"),
-                             id_proposicao=data.get('id_proposicao'),
-                             start_time=data.get('start_time'),
-                             end_time=data.get('end_time'),
-                             n_results=data.get('n_results'))
-
-            return Response({"message": "OK", "data": ""}, status=status.HTTP_201_CREATED)
+            return Response({"data": json.dumps(request.data)}, status=status.HTTP_201_CREATED)
 
         except Exception as e:
             print(e)
-            return Response({"message": f"Some error:\n {e}", "data": ""}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"erro": f"{e}", "data": json.dumps(request.data)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class PressaoViewSet(viewsets.ViewSet):
@@ -125,8 +115,8 @@ class EngajamentoViewSet(viewsets.ViewSet):
 
         def get_perfil(twitter_id):
             try:
-                return Perfil.objects.get(twitter_id=twitter_id)
-            except Perfil.DoesNotExist as e:
+                return ParlamentarPerfil.objects.get(twitter_id=twitter_id)
+            except ParlamentarPerfil.DoesNotExist as e:
                 return None
 
         try:
