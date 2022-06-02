@@ -6,6 +6,7 @@ from django.contrib.auth.models import User, Group
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from api.model.entidade import Entidade
 from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.views import APIView
@@ -22,7 +23,9 @@ class ParlamentarPefilViewSet(viewsets.ViewSet):
     def retrieve(self, request, pk=None):
         def get_parlamentar_or_false(pk):
             try:
-                perfil = ParlamentarPerfil.objects.get(entidade=pk)
+                entidade = Entidade.objects.get(id_entidade_parlametria=pk)
+                perfil = ParlamentarPerfil.objects.get(entidade=entidade)
+
                 return perfil
             except ParlamentarPerfil.DoesNotExist as e:
                 return False
@@ -34,11 +37,11 @@ class ParlamentarPefilViewSet(viewsets.ViewSet):
                 serializer = ParlamentarPerfilSerializer(perfil)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:
-                return Response(status=status.HTTP_200_OK)
+                return Response({"mensagem": "O perfil do parlamentar não foi encontrado", "pk": pk, "twitter_id": None}, status=status.HTTP_200_OK)
 
         except Exception as e:
             print(e)
-            return Response({"message": f"{e}", "data": {"pk": pk}}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"mensagem": f"{e}", "pk": pk}, status=status.HTTP_400_BAD_REQUEST)
 
 
 class TweetsViewSet(viewsets.ViewSet):
