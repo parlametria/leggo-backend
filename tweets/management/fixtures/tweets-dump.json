@@ -1,0 +1,152 @@
+[
+  {
+    "model": "tweets.tweet",
+    "pk": 177,
+    "fields": {
+      "author": null,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.\n\n📸 @ricardostuckert https://t.co/e7lfOOEyLZ",
+      "data_criado": "2022-05-19",
+      "likes": 1676,
+      "retweets": 96,
+      "respostas": 128,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 178,
+    "fields": {
+      "author": null,
+      "id_author": "1509925543164223491",
+      "id_tweet": "1527438751366008832",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-19",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 179,
+    "fields": {
+      "author": null,
+      "id_author": "516525518",
+      "id_tweet": "1527492774420955154",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-20",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 180,
+    "fields": {
+      "author": null,
+      "id_author": "1488281102380896256",
+      "id_tweet": "1527490891346223106",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-20",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 181,
+    "fields": {
+      "author": null,
+      "id_author": "1518641443203698690",
+      "id_tweet": "1527352927228088337",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-19",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 182,
+    "fields": {
+      "author": null,
+      "id_author": "1394937100416475140",
+      "id_tweet": "1527580512763760640",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-20",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 183,
+    "fields": {
+      "author": null,
+      "id_author": "67860334",
+      "id_tweet": "1527421164431220737",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-19",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 184,
+    "fields": {
+      "author": null,
+      "id_author": "1264653679115800576",
+      "id_tweet": "1527391274935930883",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-19",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 185,
+    "fields": {
+      "author": null,
+      "id_author": "1185156678616080384",
+      "id_tweet": "1527429044115062797",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-19",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 186,
+    "fields": {
+      "author": null,
+      "id_author": "1290443073009459201",
+      "id_tweet": "1527463885560860694",
+      "text": "RT @MarceloFreixo: Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e n…",
+      "data_criado": "2022-05-20",
+      "likes": 0,
+      "retweets": 96,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  }
+]

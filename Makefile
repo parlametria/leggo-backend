@@ -177,3 +177,8 @@ endif
  update-data:
 	docker exec -it agorapi sh -c './manage.py update_data --model $(model)'
 .PHONY: update-data
+ setup-twitter:
+	docker exec -it "agorapi" sh -c './manage.py loaddata tweets/management/fixtures/app.tweets.json'
+ clear-twitter:
+	echo "Clear 1"
+	echo "Clear 2"
