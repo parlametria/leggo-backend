@@ -1,16 +1,38 @@
 from rest_framework.test import APIClient
 from django.test import TestCase
 from api.model.entidade import Entidade
+from api.model.interesse import Interesse
 from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
+from tweets.views import TweetsViewSet
 from tweets.tests.test_models import Setup
 from datetime import datetime, timedelta
 import json
 
 
-# class TestTweets(TestCase):
+class TestTweets(TestCase):
+    fixtures = [
+        "proposicoes.json",
+        "interesses.json"
+    ]
 
-#     def setUp(self):
-#         Setup.create_proposicao(self)
+    def setUp(self):
+        Setup().create_entidades()
+        Setup().create_perfils()
+        Setup().create_proposicao()
+
+    def test_retrieve(self):
+        Setup().create_tweets()
+        tweets = TweetsViewSet()
+
+        request = {
+            'data': {
+                'interesse': 'direitos-humanos'
+            }
+        }
+        pk = Setup().get_perfil().entidade.id_entidade_parlametria
+        tweets.retrieve(request, pk=pk)
+
+        self.assertTrue(False)
 
 #     def test_request(self):
 #         n_results = 20
@@ -36,6 +58,8 @@ import json
 #         self.assertEqual(response.status_code, 201)
 #         self.assertEqual(tweets.count(), n_results)
 #         Setup.test_tweets_range(self, end, start, tweets)
+
+
 class TestPerfilParlamentar(TestCase):
     ENDPOINT = '/parlamentar-perfil/'
 

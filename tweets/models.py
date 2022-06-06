@@ -64,6 +64,9 @@ class Tweet(models.Model):
     def __str__(self):
         return f'{self.id_tweet}\n{self.text}'
 
+    def recupera_mais_novo():
+        Tweet.objects.all()
+
     @classmethod
     def get_paginate(self, req, proposicao):
         counter = 0
