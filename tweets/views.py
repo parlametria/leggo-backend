@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from api.model.entidade import Entidade
 from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
+from api.model.interesse import Interesse
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.views import APIView
 from rest_framework import status
@@ -16,6 +17,7 @@ import logging
 import traceback
 import json
 from .serializers import *
+from django.db.models import Subquery
 
 
 class ParlamentarPefilViewSet(viewsets.ViewSet):
@@ -51,6 +53,30 @@ class TweetsViewSet(viewsets.ViewSet):
 
     def list(self, request):
         return Response('GET')
+
+    def retrieve(self, request, pk=None):
+        data = request.get('data')
+        interesse = data.get('interesse')
+
+        def get_interesses():
+            if(interesse == 'todo'):
+                return Interesse.objects.all().values_list('id')
+            return Interesse.objects.filter(interesse=interesse).values_list('id')
+
+        def get_proposicoes_por_intesses():
+            interesses = get_interesses()
+            propos = Proposicao.objects.filter(id__in=interesses)
+            return propos
+
+        get_proposicoes_por_intesses()
+
+        def get_tweets_por_interesse(twitter_id):
+            Tweet.objects.filter(proposicao__in=Subquery())
+            pass
+
+        pass
+
+        return Response({"pk": pk, "interesse": 'teste'}, status=status.HTTP_201_CREATED)
 
     def create(self, request):
         data = request.data
