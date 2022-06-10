@@ -1,4 +1,4 @@
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from rest_framework import serializers
 
 
@@ -34,6 +34,7 @@ class EngajamentoSerializer(serializers.HyperlinkedModelSerializer):
 class ParlamentarPerfilSerializer(serializers.HyperlinkedModelSerializer):
     # entidade = serializers.RelatedField(read_only=True)
     entidade = serializers.PrimaryKeyRelatedField(read_only=True)
+    # tweets_inf = TrackSerializer(many=True, read_only=True)
 
     class Meta:
         model = ParlamentarPerfil
@@ -42,4 +43,28 @@ class ParlamentarPerfilSerializer(serializers.HyperlinkedModelSerializer):
             'is_personalidade',
             'name',
             'entidade',
+        )
+
+
+class TweetsInfoSerializer(serializers.HyperlinkedModelSerializer):
+
+    tweet_mais_novo = serializers.SlugRelatedField(
+        many=False,
+        read_only=True,
+        slug_field='data_criado'
+    )
+
+    tweet_mais_antigo = serializers.SlugRelatedField(
+        many=False,
+        read_only=True,
+        slug_field='data_criado'
+    )
+
+    class Meta:
+        model = TweetsInfo
+        fields = (
+            'tweet_mais_novo',
+            'tweet_mais_antigo',
+            'numero_total_tweets',
+            'numero_parlamentares_sem_perfil',
         )

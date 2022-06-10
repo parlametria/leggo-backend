@@ -2,8 +2,9 @@ from rest_framework.test import APIClient
 from django.test import TestCase
 from api.model.entidade import Entidade
 from api.model.interesse import Interesse
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
 from tweets.views import TweetsViewSet
+from tweets.signals import procura_parlamentares_sem_perfil
 from tweets.tests.test_models import Setup
 from datetime import datetime, timedelta
 import json
@@ -32,7 +33,7 @@ class TestTweets(TestCase):
         pk = Setup().get_perfil().entidade.id_entidade_parlametria
         tweets.retrieve(request, pk=pk)
 
-        self.assertTrue(False)
+        # self.assertTrue(False)
 
 #     def test_request(self):
 #         n_results = 20
@@ -76,8 +77,17 @@ class TestPerfilParlamentar(TestCase):
 
         response = client.get(path)
 
+        data = response.data
+        tweets = Tweet.objects.all()
+
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.content, b'')
+        self.assertEqual(data["numero_parlamentares_sem_perfil"],
+                         procura_parlamentares_sem_perfil()[0])
+        self.assertEqual(data["tweet_mais_novo"], tweets.reverse().first().data_criado)
+        self.assertEqual(data["tweet_mais_antigo"], tweets.first().data_criado)
+        self.assertEqual(data["numero_total_tweets"], tweets.count())
+
+        perfil = Setup().get_perfil()
 
         Setup().create_perfil(flavio_bolsonaro, twitter_id, 'Flavio Bolsonaro')
 
@@ -165,6 +175,8 @@ class TestEngajamento(TestCase):
             json.dumps(data),
             content_type="application/json",
         )
+
+        # O test vai apresentar Bad request, mas está OK. Queremos que falhe mesmo
         self.assertEqual(response.status_code, 400)
 
     def test_engajamento_get(self):

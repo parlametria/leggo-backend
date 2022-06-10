@@ -1,7 +1,8 @@
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet, Entidade
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
 from api.model.proposicao import Proposicao
 from api.model.etapa_proposicao import EtapaProposicao
 from api.model.interesse import Interesse
+from api.model.entidade import Entidade
 from datetime import datetime, timedelta
 import tweepy
 from dotenv import dotenv_values
@@ -86,10 +87,10 @@ class Setup:
         pBolsonaro.save()
 
     @classmethod
-    def create_perfil(self, id_entidade_parlametria, twitter_id, name):
+    def create_perfil(self, id_entidade_parlametria, twitter_id, name, legislatura=53, **kwargs):
         ent = Entidade(
             id=id_entidade_parlametria,
-            legislatura=53,
+            legislatura=legislatura,
             id_entidade=74847,
             id_entidade_parlametria=id_entidade_parlametria,
             casa='camara',
@@ -99,7 +100,8 @@ class Setup:
             uf='RJ',
             situacao='Titular',
             em_exercicio=0,
-            is_parlamentar=1
+            is_parlamentar=1,
+            **kwargs
         )
         ent.save()
 
@@ -145,6 +147,12 @@ class Setup:
         )
         interesse.save()
         self.proposicao = proposicao
+
+    @classmethod
+    def create_tweet(self, **kwargs):
+        new_tweet = Tweet(**kwargs)
+        new_tweet.save()
+        return new_tweet
 
     @classmethod
     def create_tweets(self):
