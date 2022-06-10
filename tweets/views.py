@@ -7,8 +7,9 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from api.model.entidade import Entidade
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Proposicao, Tweet
+from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
 from api.model.interesse import Interesse
+from api.model.etapa_proposicao import Proposicao
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.views import APIView
 from rest_framework import status
@@ -18,18 +19,22 @@ import traceback
 import json
 from .serializers import *
 from django.db.models import Subquery
+from tweets.signals import recupera_parlmanetares_casa
 
 
 class ParlamentarPefilViewSet(viewsets.ViewSet):
 
     def retrieve(self, request, pk=None):
         def get_parlamentar_or_false(pk):
+
             try:
-                entidade = Entidade.objects.get(id_entidade_parlametria=pk)
+                todas_legislaturas_casas = Entidade.objects.filter(
+                    id_entidade_parlametria=pk)
+                entidade = todas_legislaturas_casas.reverse().first()
                 perfil = ParlamentarPerfil.objects.get(entidade=entidade)
 
                 return perfil
-            except ParlamentarPerfil.DoesNotExist as e:
+            except (ParlamentarPerfil.DoesNotExist, Entidade.DoesNotExist) as e:
                 return False
 
         try:
@@ -39,7 +44,10 @@ class ParlamentarPefilViewSet(viewsets.ViewSet):
                 serializer = ParlamentarPerfilSerializer(perfil)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:
-                return Response({"mensagem": "O perfil do parlamentar não foi encontrado", "pk": pk, "twitter_id": None}, status=status.HTTP_200_OK)
+                tweets_info = TweetsInfo().processa_atual_info()
+                serializer = TweetsInfoSerializer(tweets_info)
+
+                return Response(serializer.data, status=status.HTTP_200_OK)
 
         except Exception as e:
             print(e)

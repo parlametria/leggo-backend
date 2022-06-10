@@ -64,9 +64,6 @@ class Tweet(models.Model):
     def __str__(self):
         return f'{self.id_tweet}\n{self.text}'
 
-    def recupera_mais_novo():
-        Tweet.objects.all()
-
     @classmethod
     def get_paginate(self, req, proposicao):
         counter = 0
@@ -116,6 +113,32 @@ class Tweet(models.Model):
 
         self.get_paginate(req, proposicao)
         return req
+
+
+class TweetsInfo(models.Model):
+    """
+    Criada a tabela com as informações de coletas de tweets
+    Evita que todo request busque em todos os tweets as mesmas informações
+    Processamento via signals
+    """
+    """
+    Cronologicamente o ultimo tweet
+    """
+    tweet_mais_novo = models.ForeignKey(Tweet, related_name="novo",
+                                        on_delete=models.SET_NULL, null=True)
+    """
+    Cronologicamente o primeiro tweet
+    """
+    tweet_mais_antigo = models.ForeignKey(Tweet, related_name="antigo",
+                                          on_delete=models.SET_NULL, null=True)
+    numero_total_tweets = models.IntegerField()
+
+    numero_parlamentares_sem_perfil = models.IntegerField()
+
+    @classmethod
+    def processa_atual_info(self):
+        mais_novo_ou_none = TweetsInfo.objects.all().last()
+        return mais_novo_ou_none
 
 
 class Pressao(models.Model):
