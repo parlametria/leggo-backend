@@ -1,9 +1,20 @@
+from unittest.mock import patch
+
 from django.test import TestCase
 from django.contrib.auth.models import User
 from rest_framework.test import APIRequestFactory, force_authenticate
 
-from .models import Perfil
-from .views import UsuarioList, UsuarioDetail
+from .models import Perfil, VerfificacaoEmail
+from .views import UsuarioList, UsuarioDetail, VerificaEmailDetail
+
+
+class MockEnviarEmailResponse:
+    def __init__(self, status_code=200, json=dict()):
+        self.status_code = status_code
+        self._json = json
+
+    def json(self):
+        return self._json
 
 
 class PerfilModelTests(TestCase):
@@ -40,6 +51,15 @@ class UsuarioListViewTests(TestCase):
         self.perfil = Perfil.objects.create(usuario=user1, empresa="Testing")
         self.api = APIRequestFactory()
 
+    @patch(
+        "usuario.views.enviar_email_verificacao", return_value=MockEnviarEmailResponse()
+    )
+    def _create_user_post(self, post_data: dict, _):
+        request = self.api.post(self.BASE_URL, data=post_data, format="json")
+        view = UsuarioList.as_view()
+        response = view(request)
+        return response
+
     def test_create_a_new_user(self):
         """Should create a mew user"""
         post_data = {
@@ -54,9 +74,7 @@ class UsuarioListViewTests(TestCase):
         old_user_count = User.objects.count()
         old_Perfil_count = Perfil.objects.count()
 
-        request = self.api.post(self.BASE_URL, data=post_data, format="json")
-        view = UsuarioList.as_view()
-        response = view(request)
+        response = self._create_user_post(post_data)
 
         self.assertEqual(response.status_code, 201)
         self.assertDictEqual(response.data, post_data)
@@ -75,9 +93,7 @@ class UsuarioListViewTests(TestCase):
             },
         }
 
-        request = self.api.post(self.BASE_URL, data=post_data, format="json")
-        view = UsuarioList.as_view()
-        response = view(request)
+        response = self._create_user_post(post_data)
 
         self.assertEqual(response.status_code, 201)
         self.assertEqual(
@@ -103,9 +119,7 @@ class UsuarioListViewTests(TestCase):
         old_user_count = User.objects.count()
         old_Perfil_count = Perfil.objects.count()
 
-        request = self.api.post(self.BASE_URL, data=post_data, format="json")
-        view = UsuarioList.as_view()
-        response = view(request)
+        response = self._create_user_post(post_data)
         errors = response.data["usuario"]
 
         self.assertEqual(response.status_code, 400)
@@ -126,17 +140,13 @@ class UsuarioListViewTests(TestCase):
             },
         }
 
-        request = self.api.post(self.BASE_URL, data=post_data, format="json")
-        view = UsuarioList.as_view()
-        response = view(request)
+        response = self._create_user_post(post_data)
 
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.data["email"], "Valor inválido")
 
         post_data["usuario"]["email"] = self.perfil.usuario.email
-        request = self.api.post(self.BASE_URL, data=post_data, format="json")
-        view = UsuarioList.as_view()
-        response = view(request)
+        response = self._create_user_post(post_data)
 
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.data["email"], "Já está em uso")
@@ -228,3 +238,39 @@ class UsuarioDetailViewTests(TestCase):
         self.assertEqual(response.data["usuario"]["id"], non_staff_user.id)
         self.assertEqual(response.data["usuario"]["email"], non_staff_user.username)
         self.assertEqual(response.data["usuario"]["email"], non_staff_user.email)
+
+
+class VerificaEmailDetailViewTests(TestCase):
+    BASE_URL = "/usuarios/verificacao-email"
+
+    def setUp(self):
+        self.api = APIRequestFactory()
+        self.usuario = User.objects.create(
+            username="testemail@email.com",
+            password="testemail@email.com",
+            email="testemail@email.com",
+            first_name="Perfil",
+            last_name="User",
+        )
+
+        Perfil.objects.create(usuario=self.usuario, empresa="Testing")
+        self.verfificacao_email = VerfificacaoEmail.objects.create(usuario=self.usuario)
+
+    def test_validate_email_by_token(self):
+        """Should an user email when toke is given"""
+        verifica_email = VerfificacaoEmail.objects.get(pk=self.usuario.id)
+        self.assertEqual(verifica_email.verificado, False)
+
+        request = self.api.patch(
+            f"{self.BASE_URL}/{verifica_email.token}", data=dict(), format="json"
+        )
+        view = VerificaEmailDetail.as_view()
+        response = view(request, token=verifica_email.token)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.data["usuario"], verifica_email.usuario.id)
+        self.assertEqual(response.data["token"], str(verifica_email.token))
+        self.assertEqual(response.data["verificado"], True)
+
+        verifica_email.refresh_from_db()
+        self.assertEqual(verifica_email.verificado, True)

@@ -85,7 +85,11 @@ from api.views.votacao_sumarizada_serializer import (
 from api.views.prop_local_atual_serializer import LocaisProposicaoList
 from api.views.proposicao_apensada_serializer import ProposicaoApensadaDetail
 
-from usuario.views import UsuarioList, UsuarioDetail
+from usuario.views import (
+    UsuarioList,
+    UsuarioDetail,
+    VerificaEmailDetail,
+)
 
 # router = DefaultRouter()
 # router.register(r'proposicoes', views.ProposicaoViewSet)
@@ -189,4 +193,8 @@ urlpatterns = [
     url(r"^autenticacao/token/verify/?$", TokenVerifyView.as_view()),
     url(r"^usuarios/?$", UsuarioList.as_view()),
     url(r"^usuarios/(?P<pk>[a-z0-9]+)/?$", UsuarioDetail.as_view()),
+    url(
+        r"^usuarios/verificacao-email/(?P<token>[0-9a-f-]+)/?$",
+        VerificaEmailDetail.as_view()
+    ),
 ]

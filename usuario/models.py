@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -23,3 +25,21 @@ class UsuarioProposicao(models.Model):
 
     def __str__(self):
         return self.proposicao
+
+
+class VerfificacaoEmail(models.Model):
+    usuario = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        related_name="verificacao_email",
+        primary_key=True,
+    )
+
+    token = models.UUIDField(default=uuid.uuid4)
+    verificado = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "%s -- verificado=%s" % (
+            self.usuario.email,
+            "SIM" if self.verificado else "NAO",
+        )
