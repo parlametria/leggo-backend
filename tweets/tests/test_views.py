@@ -2,11 +2,13 @@ from rest_framework.test import APIClient
 from django.test import TestCase
 from api.model.entidade import Entidade
 from api.model.interesse import Interesse
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
+from api.model.etapa_proposicao import Proposicao
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet
 from tweets.views import TweetsViewSet
 from tweets.signals import procura_parlamentares_sem_perfil
 from tweets.tests.test_models import Setup
 from datetime import datetime, timedelta
+from unittest import skip
 import json
 
 
@@ -21,17 +23,85 @@ class TestTweets(TestCase):
         Setup().create_perfils()
         Setup().create_proposicao()
 
-    def test_retrieve(self):
+    def test_retrieve_um(self):
+        """
+        Tweets de um interesses de um parlamentar
+        """
+
+        Setup().create_tweets()
+        tweets = TweetsViewSet()
+        interesse = 'outro'
+        request_um = {
+            'data': {
+                'interesse': interesse
+            }
+        }
+
+        pk = Setup().get_perfil().entidade
+
+        novo_interesse = Interesse.objects.first()
+        novo_interesse.interesse = interesse
+        novo_interesse.save()
+
+        tweets_freixo = Tweet.objects.filter(author=Setup().get_perfil())
+        for tweet in tweets_freixo:
+            tweet.proposicao.add(novo_interesse.proposicao)
+            tweet.save()
+
+        tweets.retrieve(request_um, pk=pk)
+
+        self.assertTrue(
+            tweets.proposicoes.filter(id=novo_interesse.proposicao.id).exists()
+        )
+
+        self.assertTrue(
+            tweets.interesses.filter(id=novo_interesse.id).exists()
+        )
+
+        self.assertQuerysetEqual(
+            tweets.tweets_user.order_by('id'),
+            Tweet.objects.filter(author=Setup().get_perfil()).order_by('id')
+        )
+
+    def test_retrieve_tudo(self):
+        """
+        Tweets de todos os interesses de um parlamentar
+        """
+
         Setup().create_tweets()
         tweets = TweetsViewSet()
 
-        request = {
+        request_tudo = {
             'data': {
-                'interesse': 'direitos-humanos'
+                'interesse': 'tudo'
             }
         }
-        pk = Setup().get_perfil().entidade.id_entidade_parlametria
-        tweets.retrieve(request, pk=pk)
+
+        pk = Setup().get_perfil().entidade
+        tweets.retrieve(request_tudo, pk=pk)
+
+        self.assertQuerysetEqual(
+            tweets.interesses.order_by('id'),
+            Interesse.objects.all().order_by('id').values_list('id')
+        )
+
+        self.assertQuerysetEqual(
+            tweets.proposicoes.order_by('id'),
+            Proposicao.objects.all().order_by('id').values_list('id')
+        )
+
+        self.assertQuerysetEqual(
+            tweets.tweets_user.order_by('id'),
+            Tweet.objects.filter(author=Setup().get_perfil()).order_by('id')
+        )
+
+        # print(tweets.tweets_user.count())
+        # print(tweets.tweets_user)
+
+        # for t in Tweet.objects.all()[:4]:
+        #     # print(t.proposicao.id)
+        #     print(t.__dict__)
+        #     print(t.author.name) if t.author else print('Sem perfil')
 
         # self.assertTrue(False)
 
@@ -61,6 +131,32 @@ class TestTweets(TestCase):
 #         Setup.test_tweets_range(self, end, start, tweets)
 
 
+class TestTweetsInfo(TestCase):
+    fixtures = [
+        'proposicoes.json',
+        'entidades.json',
+        'tweets-dump.json'
+    ]
+
+    def setUp(self):
+        pass
+
+    def test_get(self):
+        path = '/tweets/info/'
+        client = APIClient()
+        response = client.get(path)
+
+        data = response.data
+        tweets = Tweet.objects.all()
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data["numero_parlamentares_sem_perfil"],
+                         procura_parlamentares_sem_perfil()[0])
+        self.assertEqual(data["tweet_mais_novo"], tweets.reverse().first().data_criado)
+        self.assertEqual(data["tweet_mais_antigo"], tweets.first().data_criado)
+        self.assertEqual(data["numero_total_tweets"], tweets.count())
+
+
 class TestPerfilParlamentar(TestCase):
     ENDPOINT = '/parlamentar-perfil/'
 
@@ -78,16 +174,7 @@ class TestPerfilParlamentar(TestCase):
         response = client.get(path)
 
         data = response.data
-        tweets = Tweet.objects.all()
-
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(data["numero_parlamentares_sem_perfil"],
-                         procura_parlamentares_sem_perfil()[0])
-        self.assertEqual(data["tweet_mais_novo"], tweets.reverse().first().data_criado)
-        self.assertEqual(data["tweet_mais_antigo"], tweets.first().data_criado)
-        self.assertEqual(data["numero_total_tweets"], tweets.count())
-
-        perfil = Setup().get_perfil()
+        self.assertEqual(None, data)
 
         Setup().create_perfil(flavio_bolsonaro, twitter_id, 'Flavio Bolsonaro')
 

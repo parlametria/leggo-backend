@@ -1,13 +1,14 @@
 from cProfile import Profile
 from rest_framework import permissions
 from django.http import HttpResponse, JsonResponse
+from django.db.models import Q
 from rest_framework import viewsets
 from django.contrib.auth.models import User, Group
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from api.model.entidade import Entidade
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from api.model.interesse import Interesse
 from api.model.etapa_proposicao import Proposicao
 from django.core.exceptions import ObjectDoesNotExist
@@ -47,11 +48,18 @@ class ParlamentarPefilViewSet(viewsets.ViewSet):
                 tweets_info = TweetsInfo().processa_atual_info()
                 serializer = TweetsInfoSerializer(tweets_info)
 
-                return Response(serializer.data, status=status.HTTP_200_OK)
+                return Response(status=status.HTTP_200_OK)
 
         except Exception as e:
             print(e)
             return Response({"mensagem": f"{e}", "pk": pk}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class TweetsInfoViewSet(viewsets.ViewSet):
+    def list(self, request):
+        tweets_info = TweetsInfo().processa_atual_info()
+        serializer = TweetsInfoSerializer(tweets_info)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class TweetsViewSet(viewsets.ViewSet):
@@ -67,22 +75,24 @@ class TweetsViewSet(viewsets.ViewSet):
         interesse = data.get('interesse')
 
         def get_interesses():
-            if(interesse == 'todo'):
+            if(interesse in ['tudo', 'todo', 'todos', 'all']):
                 return Interesse.objects.all().values_list('id')
             return Interesse.objects.filter(interesse=interesse).values_list('id')
 
-        def get_proposicoes_por_intesses():
-            interesses = get_interesses()
-            propos = Proposicao.objects.filter(id__in=interesses)
+        def get_proposicoes_por_intesses(interesses):
+            propos = Proposicao.objects.filter(id__in=interesses).values_list('id')
             return propos
 
-        get_proposicoes_por_intesses()
+        def get_tweets_por_proposicao(proposicoes):
+            author = ParlamentarPerfil.objects.get(entidade=pk)
+            tweets = Tweet.objects.filter(Q(author=author))
+            tweets = Tweet.objects.filter(
+                Q(proposicao__id__in=proposicoes) & Q(author=author))
+            return tweets
 
-        def get_tweets_por_interesse(twitter_id):
-            Tweet.objects.filter(proposicao__in=Subquery())
-            pass
-
-        pass
+        self.interesses = get_interesses()
+        self.proposicoes = get_proposicoes_por_intesses(self.interesses)
+        self.tweets_user = get_tweets_por_proposicao(self.proposicoes)
 
         return Response({"pk": pk, "interesse": 'teste'}, status=status.HTTP_201_CREATED)
 
@@ -135,7 +145,7 @@ class EngajamentoViewSet(viewsets.ViewSet):
         try:
             data = request.query_params
             proposicao = Proposicao.objects.get(id=data.get('proposicao'))
-            queryset = Engajamento.objects.get(
+            queryset = EngajamentoProposicao.objects.get(
                 proposicao=proposicao,
                 tid_author=data.get('twitter_id'))
             serializer = EngajamentoSerializer(queryset)
@@ -161,7 +171,7 @@ class EngajamentoViewSet(viewsets.ViewSet):
             proposicao = Proposicao.objects.get(id=data.get('proposicao'))
             convert_date = datetime.strptime(data.get('end_time'),
                                              '%Y-%m-%d')
-            engajamento = Engajamento()
+            engajamento = EngajamentoProposicao()
             engajamento.perfil = get_perfil(data.get('twitter_id'))
             engajamento.tid_author = data.get('twitter_id')
             engajamento.data_consulta = convert_date

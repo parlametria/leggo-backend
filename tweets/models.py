@@ -54,15 +54,13 @@ class Tweet(models.Model):
     id_tweet = models.CharField(null=False, max_length=40, default=0)
 
     text = models.TextField()
+    text_html = models.TextField()
 
     data_criado = models.DateField(null=False)
 
     likes = models.IntegerField(null=False)
     retweets = models.IntegerField(null=False)
     respostas = models.IntegerField(null=False)
-
-    def __str__(self):
-        return f'{self.id_tweet}\n{self.text}'
 
     @classmethod
     def get_paginate(self, req, proposicao):
@@ -143,7 +141,8 @@ class TweetsInfo(models.Model):
 
 class Pressao(models.Model):
 
-    proposicao = models.ForeignKey(Proposicao, on_delete=models.SET_NULL, null=True)
+    proposicao = models.ForeignKey(
+        Proposicao, on_delete=models.SET_NULL, null=True, related_name='pressao_intervalo')
     total_likes = models.IntegerField(null=False, default=0)
     total_tweets = models.IntegerField(null=False)
     total_usuarios = models.IntegerField(null=False)
@@ -174,7 +173,7 @@ class Pressao(models.Model):
         super(Pressao, self).save(*args, **kwargs)
 
 
-class Engajamento(models.Model):
+class EngajamentoProposicao(models.Model):
     # interesse = models.CharField() string
     perfil = models.ForeignKey(
         ParlamentarPerfil, on_delete=models.CASCADE, null=True, blank=True)
@@ -201,4 +200,4 @@ class Engajamento(models.Model):
                 self.total_engajamento = self.total_engajamento + \
                     metricas.aggregate(sum=Sum(metrica))['sum']
 
-        super(Engajamento, self).save(*args, **kwargs)
+        super(EngajamentoProposicao, self).save(*args, **kwargs)

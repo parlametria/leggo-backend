@@ -1,4 +1,4 @@
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet
 from api.model.proposicao import Proposicao
 from api.model.etapa_proposicao import EtapaProposicao
 from api.model.interesse import Interesse
@@ -188,6 +188,9 @@ class Setup:
                 )
                 new_tweet.save()
                 new_tweet.proposicao.add(proposicao)
+                new_tweet.save()
+                new_tweet.author = perfil
+                new_tweet.save()
 
                 wrong_tweet = Tweet(
                     id_tweet=i + 1000,
@@ -200,10 +203,7 @@ class Setup:
                 )
                 wrong_tweet.save()
                 wrong_tweet.proposicao.add(proposicao)
-
-                new_tweet.author = perfil
-                new_tweet.save()
-
+                wrong_tweet.save()
                 wrong_tweet.author = perfil
                 wrong_tweet.save()
 
@@ -219,6 +219,7 @@ class Setup:
                 )
                 new_tweet.save()
                 new_tweet.proposicao.add(proposicao)
+                new_tweet.save()
 
                 wrong_tweet = Tweet(
                     id_tweet=i + 100,
@@ -231,6 +232,7 @@ class Setup:
                 )
                 wrong_tweet.save()
                 wrong_tweet.proposicao.add(proposicao)
+                wrong_tweet.save()
 
     @classmethod
     def create_pressao(self):
@@ -241,7 +243,7 @@ class Setup:
 
     @classmethod
     def create_engajamento(self):
-        engajamento = Engajamento()
+        engajamento = EngajamentoProposicao()
         engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
         engajamento.tid_author = self.marcelo.tid
         engajamento.data_consulta = self.end_c
