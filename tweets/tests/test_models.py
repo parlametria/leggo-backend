@@ -1,5 +1,5 @@
 from django.test import TestCase
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet
 from datetime import datetime, timedelta
 from .setup import Setup
 import json
@@ -82,7 +82,7 @@ class EngajamentoTests(TestCase):
 
     def test_engajamento(self):
 
-        engajamento = Engajamento()
+        engajamento = EngajamentoProposicao()
         engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().marcelo.tid)
         engajamento.data_consulta = Setup().end_c
         engajamento.proposicao = Setup().get_preposicao()
@@ -91,7 +91,7 @@ class EngajamentoTests(TestCase):
         self.assertTrue(Setup().test_tweets_range(engajamento.get_tweets()))
 
     def test_nao_engajamento(self):
-        engajamento = Engajamento()
+        engajamento = EngajamentoProposicao()
         engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().jair.tid)
         engajamento.data_consulta = Setup().end_c
         engajamento.proposicao = Setup().get_preposicao()

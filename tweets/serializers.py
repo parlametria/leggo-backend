@@ -1,4 +1,4 @@
-from tweets.models import Engajamento, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from rest_framework import serializers
 
 
@@ -24,7 +24,7 @@ class PressaoSerializer(serializers.HyperlinkedModelSerializer):
 
 class EngajamentoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Engajamento
+        model = EngajamentoProposicao
         fields = [
             'data_consulta',
             'total_engajamento',
