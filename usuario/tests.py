@@ -81,6 +81,34 @@ class UsuarioListViewTests(TestCase):
         self.assertEqual(User.objects.count(), old_user_count + 1)
         self.assertEqual(Perfil.objects.count(), old_Perfil_count + 1)
 
+    def test_deletes_user_if_email_cant_be_sent(self):
+        """If verification email cant be sent, deletes the created user"""
+        post_data = {
+            "empresa": "",
+            "usuario": {
+                "email": "newuser@email.com",
+                "password": "newuser@email.com",
+                "first_name": "newuser@email.com",
+                "last_name": "newuser@email.com",
+            },
+        }
+
+        old_user_count = User.objects.count()
+        with patch("usuario.views.enviar_email_verificacao") as enviar_email_mock:
+            enviar_email_mock.side_effect = Exception("failed to send email")
+            request = self.api.post(self.BASE_URL, data=post_data, format="json")
+            view = UsuarioList.as_view()
+            response = view(request)
+
+            new_user_count = User.objects.count()
+
+            self.assertEqual(new_user_count, old_user_count)
+            self.assertEqual(response.status_code, 400)
+            self.assertEqual(
+                response.data["email"],
+                "Não foi possível enviar o email de confirmação.",
+            )
+
     def test_set_username_as_the_same_value_as_email(self):
         """A user's username must be set as the same value as the email"""
         post_data = {

@@ -81,12 +81,10 @@ class UsuarioList(generics.CreateAPIView):
         usuario.set_password(usuario_data["password"])
         usuario.save()
 
-        instance = Perfil(empresa=data["empresa"], usuario=usuario)
-        instance.save()
+        instance = Perfil.objects.create(empresa=data["empresa"], usuario=usuario)
+        verfificacao_email = VerfificacaoEmail.objects.create(usuario=usuario)
 
-        verfificacao_email = VerfificacaoEmail(usuario=usuario)
-        verfificacao_email.save()
-        enviar_email_verificacao(verfificacao_email)
+        self._send_email(verfificacao_email)
 
         return instance
 
@@ -99,6 +97,19 @@ class UsuarioList(generics.CreateAPIView):
         found = User.objects.filter(email=email)
         if len(found) > 0:
             raise ValidationError(detail={"email": "Já está em uso"})
+
+    def _send_email(self, verfificacao_email: VerfificacaoEmail):
+        response = None
+        try:
+            response = enviar_email_verificacao(verfificacao_email)
+        except Exception as e:
+            usuario = verfificacao_email.usuario
+            usuario.delete()
+
+        if not response or response.status_code != 200:
+            raise ValidationError(
+                detail={"email": "Não foi possível enviar o email de confirmação."}
+            )
 
 
 class UsuarioDetail(generics.RetrieveAPIView):
@@ -175,11 +186,4 @@ def enviar_email_verificacao(verfificacao_email: VerfificacaoEmail):
         link_verificacao,
     )
 
-    response = _enviar_email(email, "Verificação de e-mail parlametria", html)
-
-    if response.status_code != 200:
-        raise ValidationError(
-            detail={"email": "Não foi possível enviar o email de confirmação."}
-        )
-
-    return response
+    return _enviar_email(email, "Verificação de e-mail parlametria", html)
