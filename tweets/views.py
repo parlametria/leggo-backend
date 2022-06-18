@@ -68,33 +68,36 @@ class TweetsViewSet(viewsets.ViewSet):
     serializer_class = TweetSerializer
 
     def list(self, request):
-        return Response('GET')
+        try:
+            parlamentar = request.query_params.get('parlamentar')
+            interesse = request.query_params.get('interesse')
 
-    def retrieve(self, request, pk=None):
-        data = request.get('data')
-        interesse = data.get('interesse')
+            def get_interesses():
+                if(interesse in ['tudo', 'todo', 'todos', 'all']):
+                    return Interesse.objects.all().values_list('id')
+                return Interesse.objects.filter(interesse=interesse).values_list('id')
 
-        def get_interesses():
-            if(interesse in ['tudo', 'todo', 'todos', 'all']):
-                return Interesse.objects.all().values_list('id')
-            return Interesse.objects.filter(interesse=interesse).values_list('id')
+            def get_proposicoes_por_intesses(interesses):
+                propos = Proposicao.objects.filter(id__in=interesses).values_list('id')
+                return propos
 
-        def get_proposicoes_por_intesses(interesses):
-            propos = Proposicao.objects.filter(id__in=interesses).values_list('id')
-            return propos
+            def get_tweets_por_proposicao(proposicoes):
+                author = ParlamentarPerfil.objects.get(entidade=parlamentar)
+                tweets = Tweet.objects.filter(
+                    Q(proposicao__id__in=proposicoes) & Q(author=author))
+                return tweets
 
-        def get_tweets_por_proposicao(proposicoes):
-            author = ParlamentarPerfil.objects.get(entidade=pk)
-            tweets = Tweet.objects.filter(Q(author=author))
-            tweets = Tweet.objects.filter(
-                Q(proposicao__id__in=proposicoes) & Q(author=author))
-            return tweets
+            self.interesses = get_interesses()
+            self.proposicoes = get_proposicoes_por_intesses(self.interesses)
+            self.tweets_user = get_tweets_por_proposicao(self.proposicoes)
 
-        self.interesses = get_interesses()
-        self.proposicoes = get_proposicoes_por_intesses(self.interesses)
-        self.tweets_user = get_tweets_por_proposicao(self.proposicoes)
+            serializer = TweetSerializer(
+                self.tweets_user, many=True, context={'request': request})
 
-        return Response({"pk": pk, "interesse": 'teste'}, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except:
+            print(traceback.format_exc())
+            return Response({}, status=status.HTTP_400_BAD_REQUEST)
 
     def create(self, request):
         data = request.data

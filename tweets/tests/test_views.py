@@ -7,6 +7,7 @@ from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Twe
 from tweets.views import TweetsViewSet
 from tweets.signals import procura_parlamentares_sem_perfil
 from tweets.tests.test_models import Setup
+from types import SimpleNamespace
 from datetime import datetime, timedelta
 from unittest import skip
 import json
@@ -28,16 +29,17 @@ class TestTweets(TestCase):
         Tweets de um interesses de um parlamentar
         """
 
-        Setup().create_tweets()
-        tweets = TweetsViewSet()
         interesse = 'outro'
         request_um = {
-            'data': {
-                'interesse': interesse
+            'query_params': {
+                'interesse': interesse,
+                'parlamentar': Setup().get_perfil().entidade.id
+
             }
         }
-
-        pk = Setup().get_perfil().entidade
+        Setup().create_tweets()
+        request = SimpleNamespace(**request_um)
+        tweets = TweetsViewSet()
 
         novo_interesse = Interesse.objects.first()
         novo_interesse.interesse = interesse
@@ -48,7 +50,7 @@ class TestTweets(TestCase):
             tweet.proposicao.add(novo_interesse.proposicao)
             tweet.save()
 
-        tweets.retrieve(request_um, pk=pk)
+        tweets.list(request=request)
 
         self.assertTrue(
             tweets.proposicoes.filter(id=novo_interesse.proposicao.id).exists()
@@ -72,13 +74,13 @@ class TestTweets(TestCase):
         tweets = TweetsViewSet()
 
         request_tudo = {
-            'data': {
-                'interesse': 'tudo'
+            'query_params': {
+                'interesse': 'tudo',
+                'parlamentar':  Setup().get_perfil().entidade.id
             }
         }
-
-        pk = Setup().get_perfil().entidade
-        tweets.retrieve(request_tudo, pk=pk)
+        request = SimpleNamespace(**request_tudo)
+        tweets.list(request)
 
         self.assertQuerysetEqual(
             tweets.interesses.order_by('id'),
@@ -95,40 +97,28 @@ class TestTweets(TestCase):
             Tweet.objects.filter(author=Setup().get_perfil()).order_by('id')
         )
 
-        # print(tweets.tweets_user.count())
-        # print(tweets.tweets_user)
+    def test_req_all(self):
+        Setup().create_tweets()
 
-        # for t in Tweet.objects.all()[:4]:
-        #     # print(t.proposicao.id)
-        #     print(t.__dict__)
-        #     print(t.author.name) if t.author else print('Sem perfil')
+        """
+        Endpoint tweets de todos os interesses de um parlamentar
+        """
 
-        # self.assertTrue(False)
+        Setup().create_tweets()
 
-#     def test_request(self):
-#         n_results = 20
-#         end = "2022-05-12T14:44:52.000Z"
-#         start = "2022-05-10T14:44:52.000Z"
-#         data = {
-#             "search": "Você tem menos de 25 anos? Então nunca viu uma inflação como essa. O aumento foi puxado pela explosão nos preços da comida, do transporte e também pela alta no combustível. Desse jeito a gasolina do Bolsonaro vai chegar a R$10.",
-#             "id_proposicao": f'{Proposicao.objects.all().first().id}',
-#             "end_time":  f"{end}",
-#             "start_time": f"{start}",
-#             "n_results": f"{n_results}"
-#         }
+        request_tudo = {
+            'data': {
+                'interesse': 'tudo'
+            }
+        }
 
-#         client = APIClient()
+        parlamentar = Setup().get_perfil().entidade
 
-#         response = client.post(
-#             "/tweets/",
-#             json.dumps(data),
-#             content_type="application/json",
-#         )
+        path = f'/tweets/?interesse=tudo&parlamentar={parlamentar.id}'
+        client = APIClient()
+        response = client.get(path)
 
-#         tweets = Tweet.objects.all()
-#         self.assertEqual(response.status_code, 201)
-#         self.assertEqual(tweets.count(), n_results)
-#         Setup.test_tweets_range(self, end, start, tweets)
+        self.assertEqual(200, response.status_code)
 
 
 class TestTweetsInfo(TestCase):
@@ -158,7 +148,7 @@ class TestTweetsInfo(TestCase):
 
 
 class TestPerfilParlamentar(TestCase):
-    ENDPOINT = '/parlamentar-perfil/'
+    ENDPOINT = '/parlamentar/'
 
     def setUp(self):
         Setup().geral_setup()

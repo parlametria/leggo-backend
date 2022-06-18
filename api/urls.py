@@ -1,4 +1,11 @@
-from tweets.views import TweetsViewSet, PressaoViewSet, EngajamentoViewSet, ParlamentarPefilViewSet, TweetsInfoViewSet
+from tweets.views import (
+    TweetsViewSet,
+    PressaoViewSet,
+    EngajamentoViewSet,
+    ParlamentarPefilViewSet,
+    TweetsInfoViewSet,
+
+)
 from django.conf.urls import url, include
 from django.urls import path
 from django.views.decorators.cache import cache_page
@@ -106,8 +113,8 @@ pressao.register('', PressaoViewSet, basename="pressao")
 engajamento = routers.DefaultRouter()
 engajamento.register('', EngajamentoViewSet, basename="engajamento")
 
-parlamentar_pefil = routers.DefaultRouter()
-parlamentar_pefil.register('', ParlamentarPefilViewSet, basename="parlamentar-perfil")
+parlamentar = routers.DefaultRouter()
+parlamentar.register('', ParlamentarPefilViewSet, basename="parlamentar")
 
 tweets_info = routers.DefaultRouter()
 tweets_info.register('', TweetsInfoViewSet, basename="info")
@@ -115,10 +122,9 @@ tweets_info.register('', TweetsInfoViewSet, basename="info")
 
 urlpatterns = [
     # path('', include('tweets.urls')),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^tweets/info/', include(tweets_info.urls)),
     url(r'^tweets/', include(tweets.urls)),
-    url(r'^parlamentar-perfil/', include(parlamentar_pefil.urls)),
+    url(r'^parlamentar/', include(parlamentar.urls)),
     url(r'^pressao/', include(pressao.urls)),
     url(r'^engajamento/', include(engajamento.urls)),
     url(r"^info/?$", Info.as_view()),
