@@ -34,6 +34,12 @@ CSVS_SERVER_USER = os.getenv("CSVS_SERVER_USER", "user")
 CSVS_SERVER_PWD = os.getenv("CSVS_SERVER_PWD", "pwd")
 CSVS_STORAGE_DIR = os.getenv("CSVS_STORAGE_DIR", "./data/")
 
+POSTGRES_PORT = os.environ.get("POSTGRES_PORT", 5432)
+POSTGRES_DB = os.environ.get("POSTGRES_DB", "postgres")
+POSTGRES_USER = os.environ.get("POSTGRES_USER", "postgres")
+POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD", "")
+POSTGRES_HOST = os.environ.get("POSTGRES_HOST", "db")
+
 ALLOWED_HOSTS = [
     "web",
     "0.0.0.0",
@@ -105,11 +111,11 @@ WSGI_APPLICATION = "agorapi.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME", "postgres"),
-        "USER": os.getenv("DB_USER", "postgres"),
-        "PASSWORD": os.getenv("DB_PASS", ""),
-        "HOST": os.getenv("DB_HOST", "db"),
-        "PORT": os.getenv("DB_PORT", 5432),
+        "NAME": POSTGRES_DB,
+        "USER": POSTGRES_USER,
+        "PASSWORD": POSTGRES_PASSWORD,
+        "HOST": POSTGRES_HOST,
+        "PORT": POSTGRES_PORT,
     }
 }
 
