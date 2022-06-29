@@ -115,6 +115,8 @@ class Setup:
         """
         Create a proposicao and an etapa_proposicao object and save on test database
         """
+        id_leggo = 1
+
         etapa_proposicao = EtapaProposicao(
             id_leggo="1",
             id_ext="257161",
@@ -140,9 +142,9 @@ class Setup:
         interesse = Interesse(
             id_leggo="1",
             interesse="leggo",
-            apelido="Lei do Licenciamento Ambiental",
             tema="Meio Ambiente",
             tema_slug="meio-ambiente",
+            apelido="Lei do Licenciamento Ambiental",
             proposicao=proposicao,
         )
         interesse.save()
@@ -233,6 +235,60 @@ class Setup:
                 wrong_tweet.save()
                 wrong_tweet.proposicao.add(proposicao)
                 wrong_tweet.save()
+
+    @classmethod
+    def create_tweets_diferente_interesses(self, prop_1, prop_2):
+        pro_a = Proposicao(id_leggo=prop_1)
+        pro_a.save()
+        pro_b = Proposicao(id_leggo=prop_2)
+        pro_b.save()
+        perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
+        date_end = self.end_c
+
+        interesse_a = Interesse(
+            id_leggo=prop_1,
+            interesse="_leggo",
+            tema="Meio Ambiente",
+            tema_slug="meio-ambiente",
+            apelido="Lei do Licenciamento Ambiental",
+            proposicao=pro_a,
+        )
+        interesse_a.save()
+
+        diferente = 'outro'
+        interesse_b = Interesse(
+            id_leggo=prop_2,
+            interesse=f"leggo {diferente}",
+            tema=f"Meio Ambiente {diferente}",
+            tema_slug="meio-ambiente {diferente}",
+            apelido="Lei do Licenciamento Ambiental {diferente}",
+            proposicao=pro_b,
+        )
+        interesse_b.save()
+        print(pro_a)
+        print(pro_b)
+        # print(Proposicao.objects.all())
+
+        for i in range(10):
+            new_tweet = Tweet(
+                id_tweet=i,
+                id_author=self.marcelo.tid,
+                text="Tweet freixo",
+                data_criado=date_end,
+                likes=i,
+                retweets=2 * i,
+                respostas=3 * i
+            )
+            new_tweet.save()
+            # new_tweet.proposicao.add(pro_a if (i % 2) else pro_b)
+            if (i % 2):
+                new_tweet.proposicao.add(pro_a)
+            else:
+                new_tweet.proposicao.add(pro_b)
+            # new_tweet.proposicao.add(pro_a)
+            new_tweet.save()
+            new_tweet.author = perfil
+            new_tweet.save()
 
     @classmethod
     def create_pressao(self):

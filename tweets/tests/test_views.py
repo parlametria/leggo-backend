@@ -5,7 +5,7 @@ from api.model.interesse import Interesse
 from api.model.etapa_proposicao import Proposicao
 from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet
 from tweets.views import TweetsViewSet
-from tweets.signals import procura_parlamentares_sem_perfil
+from tweets.signals.tweets_info import procura_parlamentares_sem_perfil
 from tweets.tests.test_models import Setup
 from types import SimpleNamespace
 from datetime import datetime, timedelta
@@ -24,7 +24,7 @@ class TestTweets(TestCase):
         Setup().create_perfils()
         Setup().create_proposicao()
 
-    def test_retrieve_um(self):
+    def test_list_um_interesse(self):
         """
         Tweets de um interesses de um parlamentar
         """
@@ -38,6 +38,7 @@ class TestTweets(TestCase):
             }
         }
         Setup().create_tweets()
+
         request = SimpleNamespace(**request_um)
         tweets = TweetsViewSet()
 
@@ -65,7 +66,7 @@ class TestTweets(TestCase):
             Tweet.objects.filter(author=Setup().get_perfil()).order_by('id')
         )
 
-    def test_retrieve_tudo(self):
+    def test_list_todos_interesses(self):
         """
         Tweets de todos os interesses de um parlamentar
         """
@@ -97,9 +98,7 @@ class TestTweets(TestCase):
             Tweet.objects.filter(author=Setup().get_perfil()).order_by('id')
         )
 
-    def test_req_all(self):
-        Setup().create_tweets()
-
+    def test_requisicao_list(self):
         """
         Endpoint tweets de todos os interesses de um parlamentar
         """
@@ -115,6 +114,40 @@ class TestTweets(TestCase):
         parlamentar = Setup().get_perfil().entidade
 
         path = f'/tweets/?interesse=tudo&parlamentar={parlamentar.id}'
+        client = APIClient()
+        response = client.get(path)
+
+        self.assertEqual(200, response.status_code)
+
+    def test_retrieve(self):
+        setup = Setup()
+        Interesse.objects.all().delete()
+        prop_1 = '3'
+        prop_2 = '4'
+        setup.create_tweets_diferente_interesses(prop_1, prop_2)
+
+        views = TweetsViewSet()
+        pk = setup.get_perfil().entidade.id
+
+        views.retrieve(None, pk=pk)
+
+        self.assertEqual(
+            views.interesses_distintos[0][0],
+            Interesse.objects.first().interesse)
+
+        self.assertEqual(
+            views.interesses_distintos[1][0],
+            Interesse.objects.last().interesse)
+
+        self.assertQuerysetEqual(
+            views.interesses_tweets[Interesse.objects.first().interesse].order_by('id'),
+            Tweet.objects.filter(proposicao__id_leggo__in=prop_1).order_by('id'))
+
+        self.assertQuerysetEqual(
+            views.interesses_tweets[Interesse.objects.last().interesse].order_by('id'),
+            Tweet.objects.filter(proposicao__id_leggo__in=prop_2).order_by('id'))
+
+        path = f'/tweets/{setup.get_perfil().entidade.id}/'
         client = APIClient()
         response = client.get(path)
 

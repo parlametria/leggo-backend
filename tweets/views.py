@@ -1,26 +1,16 @@
-from cProfile import Profile
-from rest_framework import permissions
-from django.http import HttpResponse, JsonResponse
 from django.db.models import Q
 from rest_framework import viewsets
-from django.contrib.auth.models import User, Group
-from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.decorators import action
+from yaml import serialize
 from api.model.entidade import Entidade
 from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from api.model.interesse import Interesse
 from api.model.etapa_proposicao import Proposicao
-from django.core.exceptions import ObjectDoesNotExist
-from rest_framework.views import APIView
 from rest_framework import status
 from datetime import datetime, timedelta
-import logging
 import traceback
 import json
 from .serializers import *
-from django.db.models import Subquery
-from tweets.signals import recupera_parlmanetares_casa
 
 
 class ParlamentarPefilViewSet(viewsets.ViewSet):
@@ -66,6 +56,50 @@ class TweetsViewSet(viewsets.ViewSet):
 
     queryset = Tweet.objects.all()
     serializer_class = TweetSerializer
+
+    def retrieve(self, request, pk=None):
+        self.interesses_tweets = {}
+        self.ti_lista = []
+
+        class TweetsInteresse(object):
+            def __init__(self, interesse, tweets):
+                self.interesse = interesse
+                self.tweets = tweets
+
+        try:
+            def get_interesses():
+                return Interesse.objects.all().distinct("interesse", "nome_interesse",
+                                                        "descricao_interesse").values_list('interesse', 'proposicao')
+            self.interesses_distintos = get_interesses()
+            author = ParlamentarPerfil.objects.get(entidade=pk)
+
+            """
+            Para cada interesse UNICO, pego os interesses derivados e suas respectivas proposicoes 
+            """
+            for i_distinto in self.interesses_distintos:
+                print(i_distinto[0])
+                interesses = Interesse.objects.filter(
+                    Q(interesse=i_distinto[0]) |
+                    Q(nome_interesse=i_distinto[0]) |
+                    Q(descricao_interesse=i_distinto[0])
+                ).values_list('id', 'proposicao')
+
+                proposicoes = Proposicao.objects.filter(
+                    id__in=interesses[0]).values_list('id')
+
+                self.interesses_tweets[i_distinto[0]] = Tweet.objects.filter(
+                    Q(author=author)
+                    & Q(proposicao__id__in=proposicoes))
+
+                ti = TweetsInteresse(i_distinto[0],
+                                     self.interesses_tweets[i_distinto[0]])
+                self.ti_lista.append(ti)
+
+            serializer = TweetInteressesSerializer(self.ti_lista, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except:
+            print(traceback.format_exc())
+            return Response({}, status=status.HTTP_400_BAD_REQUEST)
 
     def list(self, request):
         try:

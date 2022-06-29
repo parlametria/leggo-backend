@@ -8,7 +8,7 @@ from django.test import TestCase
 from api.signals import get_tweets
 import uuid
 import traceback
-from tweets.signals import recupera_parlmanetares_casa, procura_parlamentares_sem_perfil
+from tweets.signals.tweets_info import recupera_parlmanetares_casa, procura_parlamentares_sem_perfil
 from datetime import datetime
 
 

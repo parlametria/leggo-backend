@@ -1,5 +1,6 @@
 from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from rest_framework import serializers
+from django.db import models
 
 
 class ParlamentarPerfilSerializer(serializers.HyperlinkedModelSerializer):
@@ -17,12 +18,17 @@ class ParlamentarPerfilSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TweetSerializer(serializers.HyperlinkedModelSerializer):
-    author = ParlamentarPerfilSerializer(many=False)
+    # author = ParlamentarPerfilSerializer(many=False)
 
     class Meta:
         model = Tweet
-        fields = ['author', 'id_author', 'id_tweet',
-                  'text', 'data_criado',  'likes', 'retweets', 'respostas']
+        fields = ['id_author', 'id_tweet',
+                  'text_html', 'data_criado',  'likes', 'retweets', 'respostas']
+
+
+class TweetInteressesSerializer(serializers.Serializer):
+    interesse = models.CharField(max_length=30)
+    tweets = TweetSerializer(many=True)
 
 
 class PressaoSerializer(serializers.HyperlinkedModelSerializer):
