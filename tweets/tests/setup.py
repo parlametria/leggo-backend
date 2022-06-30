@@ -243,7 +243,7 @@ class Setup:
         pro_b = Proposicao(id_leggo=prop_2)
         pro_b.save()
         perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
-        date_end = self.end_c
+        date_end = self.end_c - timedelta(days=1)
 
         interesse_a = Interesse(
             id_leggo=prop_1,
@@ -265,9 +265,6 @@ class Setup:
             proposicao=pro_b,
         )
         interesse_b.save()
-        print(pro_a)
-        print(pro_b)
-        # print(Proposicao.objects.all())
 
         for i in range(10):
             new_tweet = Tweet(
@@ -305,6 +302,26 @@ class Setup:
         engajamento.data_consulta = self.end_c
         engajamento.proposicao = self.get_preposicao()
         engajamento.save()
+
+    @classmethod
+    def create_engajamento_diferentes_proposicao(self, pro1, pro2):
+        pro_a = Proposicao.objects.get(id_leggo=pro1)
+
+        pro_b = Proposicao.objects.get(id_leggo=pro2)
+
+        engajamento1 = EngajamentoProposicao()
+        engajamento1.perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
+        engajamento1.tid_author = self.marcelo.tid
+        engajamento1.data_consulta = self.end_c
+        engajamento1.proposicao = pro_a
+        engajamento1.save()
+
+        engajamento2 = EngajamentoProposicao()
+        engajamento2.perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
+        engajamento2.tid_author = self.marcelo.tid
+        engajamento2.data_consulta = self.end_c
+        engajamento2.proposicao = pro_b
+        engajamento2.save()
 
     @classmethod
     def test_tweets_range(self, tweets):

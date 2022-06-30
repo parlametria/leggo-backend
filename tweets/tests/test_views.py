@@ -302,3 +302,23 @@ class TestEngajamento(TestCase):
         )
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.data.get('total_engajamento'), 120)
+
+    def test_engajamento_retrieve(self):
+        setup = Setup()
+        autor = setup.get_perfil()
+        EngajamentoProposicao.objects.all()
+        Tweet.objects.all().delete()
+
+        setup.create_tweets_diferente_interesses(3, 4)
+        setup.create_engajamento_diferentes_proposicao(3, 4)
+
+        client = APIClient()
+
+        response = client.get(
+            f"{self.ENDPOINT}{autor.entidade.id}/",
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.data), 2)
+        self.assertEqual(response.data[0]['total_engajamento'], 150)
+        self.assertEqual(response.data[1]['total_engajamento'], 120)

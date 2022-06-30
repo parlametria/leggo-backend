@@ -81,7 +81,6 @@ class EngajamentoTests(TestCase):
         Setup().geral_setup()
 
     def test_engajamento(self):
-
         engajamento = EngajamentoProposicao()
         engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().marcelo.tid)
         engajamento.data_consulta = Setup().end_c
@@ -96,3 +95,19 @@ class EngajamentoTests(TestCase):
         engajamento.data_consulta = Setup().end_c
         engajamento.proposicao = Setup().get_preposicao()
         self.assertRaises(Exception, engajamento.save)
+
+    def test_tweet_fora_range(self):
+        """
+        Test com tweets fora do intervalo.
+        Testa se o filtro de data esta funcionando.
+        """
+        s = Setup()
+        s.create_tweets_diferente_interesses(3, 4)
+        s.create_engajamento_diferentes_proposicao(3, 4)
+        engajamento = EngajamentoProposicao()
+        engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().marcelo.tid)
+        engajamento.data_consulta = Setup().end_c
+        engajamento.proposicao = Setup().get_preposicao()
+        engajamento.save()
+        self.assertEqual(engajamento.total_engajamento, 120)
+        self.assertTrue(Setup().test_tweets_range(engajamento.get_tweets()))

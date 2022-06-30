@@ -177,6 +177,20 @@ class PressaoViewSet(viewsets.ViewSet):
 
 class EngajamentoViewSet(viewsets.ViewSet):
 
+    def retrieve(self, request, pk=None):
+        try:
+            entidade = Entidade.objects.get(id=pk)
+            parlamentar = ParlamentarPerfil.objects.get(entidade=entidade)
+            queryset = EngajamentoProposicao.objects.filter(
+                perfil=parlamentar)
+
+            serializer = EngajamentoSerializer(queryset, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
+        except:
+            print(traceback.format_exc())
+            return Response({}, status=status.HTTP_400_BAD_REQUEST)
+
     def list(self, request):
 
         try:
