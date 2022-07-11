@@ -12,7 +12,8 @@ class TweetsParlamentares(TestCase):
         setup.create_perfils()
         prop_1 = '3'
         prop_2 = '4'
-        setup.create_tweets_diferente_interesses(prop_1, prop_2)
+
+        setup.create_tweets_diferente_interesses(prop_1, prop_2, setup.datas[0])
 
     def test_command_output(self):
         out = StringIO()

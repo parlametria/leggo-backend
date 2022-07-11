@@ -102,8 +102,8 @@ class EngajamentoTests(TestCase):
         Testa se o filtro de data esta funcionando.
         """
         s = Setup()
-        s.create_tweets_diferente_interesses(3, 4)
-        s.create_engajamento_diferentes_proposicao(3, 4)
+        s.create_tweets_diferente_interesses(3, 4, s.end_c)
+        s.create_engajamento_diferentes_proposicao(3, 4, s.end_c)
         engajamento = EngajamentoProposicao()
         engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().marcelo.tid)
         engajamento.data_consulta = Setup().end_c

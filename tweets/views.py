@@ -1,13 +1,13 @@
-from django.db.models import Q
+from django.db.models import Q, Sum
 from rest_framework import viewsets
 from rest_framework.response import Response
-from yaml import serialize
 from api.model.entidade import Entidade
 from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from api.model.interesse import Interesse
 from api.model.etapa_proposicao import Proposicao
 from rest_framework import status
 from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
 import traceback
 import json
 from .serializers import *
@@ -78,24 +78,27 @@ class TweetsViewSet(viewsets.ViewSet):
             """
             for i_distinto in self.interesses_distintos:
                 print(i_distinto[0])
+                interesse = i_distinto[0]
                 interesses = Interesse.objects.filter(
-                    Q(interesse=i_distinto[0]) |
-                    Q(nome_interesse=i_distinto[0]) |
-                    Q(descricao_interesse=i_distinto[0])
-                ).values_list('id', 'proposicao')
+                    Q(interesse=interesse) |
+                    Q(nome_interesse=interesse) |
+                    Q(descricao_interesse=interesse)
+                ).values_list('proposicao')
 
                 proposicoes = Proposicao.objects.filter(
-                    id__in=interesses[0]).values_list('id')
+                    id__in=interesses).values_list('id')
 
-                self.interesses_tweets[i_distinto[0]] = Tweet.objects.filter(
+                self.interesses_tweets[interesse] = Tweet.objects.filter(
                     Q(author=author)
                     & Q(proposicao__id__in=proposicoes))
 
-                ti = TweetsInteresse(i_distinto[0],
-                                     self.interesses_tweets[i_distinto[0]])
-                self.ti_lista.append(ti)
+                if(self.interesses_tweets[interesse]):
+                    ti = TweetsInteresse(interesse,
+                                         self.interesses_tweets[interesse])
+                    self.ti_lista.append(ti)
 
             serializer = TweetInteressesSerializer(self.ti_lista, many=True)
+
             return Response(serializer.data, status=status.HTTP_200_OK)
         except:
             print(traceback.format_exc())
@@ -104,12 +107,6 @@ class TweetsViewSet(viewsets.ViewSet):
     def list(self, request):
         try:
             parlamentar = request.query_params.get('parlamentar')
-            interesse = request.query_params.get('interesse')
-
-            def get_interesses():
-                if(interesse in ['tudo', 'todo', 'todos', 'all']):
-                    return Interesse.objects.all().values_list('id')
-                return Interesse.objects.filter(interesse=interesse).values_list('id')
 
             def get_proposicoes_por_intesses(interesses):
                 propos = Proposicao.objects.filter(id__in=interesses).values_list('id')
@@ -121,7 +118,7 @@ class TweetsViewSet(viewsets.ViewSet):
                     Q(proposicao__id__in=proposicoes) & Q(author=author))
                 return tweets
 
-            self.interesses = get_interesses()
+            self.interesses = Interesse.objects.all().values_list('id')
             self.proposicoes = get_proposicoes_por_intesses(self.interesses)
             self.tweets_user = get_tweets_por_proposicao(self.proposicoes)
 
@@ -178,13 +175,28 @@ class PressaoViewSet(viewsets.ViewSet):
 class EngajamentoViewSet(viewsets.ViewSet):
 
     def retrieve(self, request, pk=None):
+        class Engajamento(object):
+            def __init__(self, total_engajamento, data_consulta):
+                self.total_engajamento = total_engajamento
+                self.data_consulta = data_consulta
+
         try:
             entidade = Entidade.objects.get(id=pk)
             parlamentar = ParlamentarPerfil.objects.get(entidade=entidade)
             queryset = EngajamentoProposicao.objects.filter(
-                perfil=parlamentar)
+                perfil=parlamentar).order_by('data_consulta')
 
-            serializer = EngajamentoSerializer(queryset, many=True)
+            periodos = queryset.dates('data_consulta', 'month')
+            lista_engajamentos = []
+            for item in periodos:
+                inicial = item
+                final = (item + relativedelta(months=1))-timedelta(days=1)
+                soma = queryset.filter(data_consulta__range=[inicial, final]).aggregate(
+                    Sum('total_engajamento'))
+                model = Engajamento(soma["total_engajamento__sum"], item)
+                lista_engajamentos.append(model)
+
+            serializer = EngajamentoSerializer(lista_engajamentos, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         except:
@@ -225,7 +237,7 @@ class EngajamentoViewSet(viewsets.ViewSet):
             engajamento = EngajamentoProposicao()
             engajamento.perfil = get_perfil(data.get('twitter_id'))
             engajamento.tid_author = data.get('twitter_id')
-            engajamento.data_consulta = convert_date
+            engajamento.data_consulta = convert_date.date()
             engajamento.proposicao = proposicao
             engajamento.save()
 

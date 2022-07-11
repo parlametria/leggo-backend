@@ -147,7 +147,7 @@ class Pressao(models.Model):
     total_tweets = models.IntegerField(null=False)
     total_usuarios = models.IntegerField(null=False)
     total_engajamento = models.IntegerField(null=False)
-    data_consulta = models.DateTimeField(null=False)
+    data_consulta = models.DateField(null=False)
 
     def get_tweets(self):
         intervalo_dias = 2
@@ -180,7 +180,7 @@ class EngajamentoProposicao(models.Model):
     tid_author = models.CharField(null=False, max_length=40, default=0)
 
     proposicao = models.ForeignKey(Proposicao, on_delete=models.CASCADE, default=None)
-    data_consulta = models.DateTimeField(null=False)
+    data_consulta = models.DateField()
     total_engajamento = models.IntegerField(null=False)
 
     def get_tweets(self):

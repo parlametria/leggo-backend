@@ -4,8 +4,7 @@ from api.model.etapa_proposicao import EtapaProposicao
 from api.model.interesse import Interesse
 from api.model.entidade import Entidade
 from datetime import datetime, timedelta
-import tweepy
-from dotenv import dotenv_values
+from dateutil.relativedelta import relativedelta
 
 
 class Parlamentar:
@@ -26,6 +25,9 @@ class Setup:
         self.D_SIZE = 10
         self.end_c = datetime.strptime(self.end, self.D_FORMAT)
         self.start_c = datetime.strptime(self.start, self.D_FORMAT)
+        self.datas = [self.end_c,
+                      self.end_c + timedelta(days=2),
+                      self.end_c + relativedelta(months=2)]
 
         self.jair = Parlamentar('Jair Bolsonaro', 128372940, 1886)
         self.marcelo = Parlamentar('Marcelo Freixo', 45870897, 4155)
@@ -237,13 +239,13 @@ class Setup:
                 wrong_tweet.save()
 
     @classmethod
-    def create_tweets_diferente_interesses(self, prop_1, prop_2):
+    def create_tweets_diferente_interesses(self, prop_1, prop_2, data):
         pro_a = Proposicao(id_leggo=prop_1)
         pro_a.save()
         pro_b = Proposicao(id_leggo=prop_2)
         pro_b.save()
         perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
-        date_end = self.end_c - timedelta(days=1)
+        # date_end = self.end_c - timedelta(days=1)
 
         interesse_a = Interesse(
             id_leggo=prop_1,
@@ -271,18 +273,16 @@ class Setup:
                 id_tweet=i,
                 id_author=self.marcelo.tid,
                 text="Tweet freixo",
-                data_criado=date_end,
+                data_criado=data,
                 likes=i,
                 retweets=2 * i,
                 respostas=3 * i
             )
             new_tweet.save()
-            # new_tweet.proposicao.add(pro_a if (i % 2) else pro_b)
             if (i % 2):
                 new_tweet.proposicao.add(pro_a)
             else:
                 new_tweet.proposicao.add(pro_b)
-            # new_tweet.proposicao.add(pro_a)
             new_tweet.save()
             new_tweet.author = perfil
             new_tweet.save()
@@ -304,22 +304,21 @@ class Setup:
         engajamento.save()
 
     @classmethod
-    def create_engajamento_diferentes_proposicao(self, pro1, pro2):
+    def create_engajamento_diferentes_proposicao(self, pro1, pro2, data):
         pro_a = Proposicao.objects.get(id_leggo=pro1)
-
         pro_b = Proposicao.objects.get(id_leggo=pro2)
 
         engajamento1 = EngajamentoProposicao()
         engajamento1.perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
         engajamento1.tid_author = self.marcelo.tid
-        engajamento1.data_consulta = self.end_c
+        engajamento1.data_consulta = data
         engajamento1.proposicao = pro_a
         engajamento1.save()
 
         engajamento2 = EngajamentoProposicao()
         engajamento2.perfil = ParlamentarPerfil.objects.get(twitter_id=self.marcelo.tid)
         engajamento2.tid_author = self.marcelo.tid
-        engajamento2.data_consulta = self.end_c
+        engajamento2.data_consulta = data
         engajamento2.proposicao = pro_b
         engajamento2.save()
 

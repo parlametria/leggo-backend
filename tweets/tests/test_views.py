@@ -9,6 +9,8 @@ from tweets.signals.tweets_info import procura_parlamentares_sem_perfil
 from tweets.tests.test_models import Setup
 from types import SimpleNamespace
 from datetime import datetime, timedelta
+from dateutil.relativedelta import relativedelta
+
 from unittest import skip
 import json
 
@@ -23,48 +25,6 @@ class TestTweets(TestCase):
         Setup().create_entidades()
         Setup().create_perfils()
         Setup().create_proposicao()
-
-    def test_list_um_interesse(self):
-        """
-        Tweets de um interesses de um parlamentar
-        """
-
-        interesse = 'outro'
-        request_um = {
-            'query_params': {
-                'interesse': interesse,
-                'parlamentar': Setup().get_perfil().entidade.id
-
-            }
-        }
-        Setup().create_tweets()
-
-        request = SimpleNamespace(**request_um)
-        tweets = TweetsViewSet()
-
-        novo_interesse = Interesse.objects.first()
-        novo_interesse.interesse = interesse
-        novo_interesse.save()
-
-        tweets_freixo = Tweet.objects.filter(author=Setup().get_perfil())
-        for tweet in tweets_freixo:
-            tweet.proposicao.add(novo_interesse.proposicao)
-            tweet.save()
-
-        tweets.list(request=request)
-
-        self.assertTrue(
-            tweets.proposicoes.filter(id=novo_interesse.proposicao.id).exists()
-        )
-
-        self.assertTrue(
-            tweets.interesses.filter(id=novo_interesse.id).exists()
-        )
-
-        self.assertQuerysetEqual(
-            tweets.tweets_user.order_by('id'),
-            Tweet.objects.filter(author=Setup().get_perfil()).order_by('id')
-        )
 
     def test_list_todos_interesses(self):
         """
@@ -124,7 +84,7 @@ class TestTweets(TestCase):
         Interesse.objects.all().delete()
         prop_1 = '3'
         prop_2 = '4'
-        setup.create_tweets_diferente_interesses(prop_1, prop_2)
+        setup.create_tweets_diferente_interesses(prop_1, prop_2, setup.datas[0])
 
         views = TweetsViewSet()
         pk = setup.get_perfil().entidade.id
@@ -269,6 +229,7 @@ class TestEngajamento(TestCase):
             json.dumps(data),
             content_type="application/json",
         )
+        print(response.data)
         self.assertEqual(response.status_code, 201)
 
     def test_invalido_post(self):
@@ -309,8 +270,17 @@ class TestEngajamento(TestCase):
         EngajamentoProposicao.objects.all()
         Tweet.objects.all().delete()
 
-        setup.create_tweets_diferente_interesses(3, 4)
-        setup.create_engajamento_diferentes_proposicao(3, 4)
+        datas = [setup.end_c,
+                 setup.end_c + timedelta(days=2),
+                 setup.end_c + relativedelta(months=1)]
+
+        setup.create_tweets_diferente_interesses(3, 4, datas[0])
+        setup.create_tweets_diferente_interesses(5, 6, datas[1])
+        setup.create_tweets_diferente_interesses(7, 8, datas[2])
+
+        setup.create_engajamento_diferentes_proposicao(3, 4, datas[0])
+        setup.create_engajamento_diferentes_proposicao(5, 6, datas[1])
+        setup.create_engajamento_diferentes_proposicao(7, 8, datas[2])
 
         client = APIClient()
 
@@ -320,5 +290,14 @@ class TestEngajamento(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 2)
-        self.assertEqual(response.data[0]['total_engajamento'], 150)
-        self.assertEqual(response.data[1]['total_engajamento'], 120)
+
+        """
+        Verifica se o engajamento mensal vai ser somado dos dias diferentes
+        prop1 = 150, prop2 = 120, dias = 2
+        (prop1+prop2) * 2 = 540
+        """
+        self.assertEqual(response.data[0]['total_engajamento'], 540)
+        """
+        O valor do proximo mês prop1+prop2
+        """
+        self.assertEqual(response.data[1]['total_engajamento'], 270)

@@ -27,7 +27,7 @@ class TweetSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class TweetInteressesSerializer(serializers.Serializer):
-    interesse = models.CharField(max_length=30)
+    interesse = serializers.CharField(max_length=200)
     tweets = TweetSerializer(many=True)
 
 
