@@ -1,87 +1,26 @@
 from rest_framework.test import APIClient
 from django.test import TestCase
-from api.model.entidade import Entidade
 from api.model.interesse import Interesse
 from api.model.etapa_proposicao import Proposicao
-from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet
+from tweets.models import EngajamentoProposicao, Tweet
 from tweets.views import TweetsViewSet
-from tweets.signals.tweets_info import procura_parlamentares_sem_perfil
 from tweets.tests.test_models import Setup
 from types import SimpleNamespace
-from datetime import datetime, timedelta
+from datetime import timedelta
 from dateutil.relativedelta import relativedelta
-
-from unittest import skip
 import json
+from unittest import skip
 
 
 class TestTweets(TestCase):
-    fixtures = [
-        "proposicoes.json",
-        "interesses.json"
-    ]
 
     def setUp(self):
-        Setup().create_entidades()
-        Setup().create_perfils()
-        Setup().create_proposicao()
-
-    def test_list_todos_interesses(self):
-        """
-        Tweets de todos os interesses de um parlamentar
-        """
-
-        Setup().create_tweets()
-        tweets = TweetsViewSet()
-
-        request_tudo = {
-            'query_params': {
-                'interesse': 'tudo',
-                'parlamentar':  Setup().get_perfil().entidade.id
-            }
-        }
-        request = SimpleNamespace(**request_tudo)
-        tweets.list(request)
-
-        self.assertQuerysetEqual(
-            tweets.interesses.order_by('id'),
-            Interesse.objects.all().order_by('id').values_list('id')
-        )
-
-        self.assertQuerysetEqual(
-            tweets.proposicoes.order_by('id'),
-            Proposicao.objects.all().order_by('id').values_list('id')
-        )
-
-        self.assertQuerysetEqual(
-            tweets.tweets_user.order_by('id'),
-            Tweet.objects.filter(author=Setup().get_perfil()).order_by('id')
-        )
-
-    def test_requisicao_list(self):
-        """
-        Endpoint tweets de todos os interesses de um parlamentar
-        """
-
-        Setup().create_tweets()
-
-        request_tudo = {
-            'data': {
-                'interesse': 'tudo'
-            }
-        }
-
-        parlamentar = Setup().get_perfil().entidade
-
-        path = f'/tweets/?interesse=tudo&parlamentar={parlamentar.id}'
-        client = APIClient()
-        response = client.get(path)
-
-        self.assertEqual(200, response.status_code)
+        s = Setup()
+        s.create_entidades()
+        s.create_perfils()
 
     def test_retrieve(self):
         setup = Setup()
-        Interesse.objects.all().delete()
         prop_1 = '3'
         prop_2 = '4'
         setup.create_tweets_diferente_interesses(prop_1, prop_2, setup.datas[0])
@@ -112,32 +51,6 @@ class TestTweets(TestCase):
         response = client.get(path)
 
         self.assertEqual(200, response.status_code)
-
-
-class TestTweetsInfo(TestCase):
-    fixtures = [
-        'proposicoes.json',
-        'entidades.json',
-        'tweets-dump.json'
-    ]
-
-    def setUp(self):
-        pass
-
-    def test_get(self):
-        path = '/tweets/info/'
-        client = APIClient()
-        response = client.get(path)
-
-        data = response.data
-        tweets = Tweet.objects.all()
-
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(data["numero_parlamentares_sem_perfil"],
-                         procura_parlamentares_sem_perfil()[0])
-        self.assertEqual(data["tweet_mais_novo"], tweets.reverse().first().data_criado)
-        self.assertEqual(data["tweet_mais_antigo"], tweets.first().data_criado)
-        self.assertEqual(data["numero_total_tweets"], tweets.count())
 
 
 class TestPerfilParlamentar(TestCase):
@@ -229,7 +142,6 @@ class TestEngajamento(TestCase):
             json.dumps(data),
             content_type="application/json",
         )
-        print(response.data)
         self.assertEqual(response.status_code, 201)
 
     def test_invalido_post(self):
@@ -249,20 +161,6 @@ class TestEngajamento(TestCase):
 
         # O test vai apresentar Bad request, mas está OK. Queremos que falhe mesmo
         self.assertEqual(response.status_code, 400)
-
-    def test_engajamento_get(self):
-
-        autor = Setup().get_perfil()
-        Setup().create_pressao()
-        Setup().create_engajamento()
-
-        client = APIClient()
-
-        response = client.get(
-            f"{self.ENDPOINT}?twitter_id={autor.twitter_id}&proposicao={Setup().get_preposicao().id}",
-        )
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.data.get('total_engajamento'), 120)
 
     def test_engajamento_retrieve(self):
         setup = Setup()

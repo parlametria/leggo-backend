@@ -1,0 +1,717 @@
+[
+  {
+    "model": "tweets.parlamentarperfil",
+    "pk": 4155,
+    "fields": {
+      "is_personalidade": false,
+      "twitter_id": "45870897",
+      "name": "Marcelo Freixo"
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 1,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 0,
+      "retweets": 0,
+      "respostas": 0,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 2,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 1,
+      "retweets": 2,
+      "respostas": 3,
+      "proposicao": [63]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 3,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 2,
+      "retweets": 4,
+      "respostas": 6,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 4,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 3,
+      "retweets": 6,
+      "respostas": 9,
+      "proposicao": [63]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 5,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 4,
+      "retweets": 8,
+      "respostas": 12,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 6,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 5,
+      "retweets": 10,
+      "respostas": 15,
+      "proposicao": [63]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 7,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 6,
+      "retweets": 12,
+      "respostas": 18,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 8,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 7,
+      "retweets": 14,
+      "respostas": 21,
+      "proposicao": [63]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 9,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 8,
+      "retweets": 16,
+      "respostas": 24,
+      "proposicao": [1]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 10,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 9,
+      "retweets": 18,
+      "respostas": 27,
+      "proposicao": [63]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 12,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 1,
+      "retweets": 2,
+      "respostas": 3,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 14,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 3,
+      "retweets": 6,
+      "respostas": 9,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 15,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 4,
+      "retweets": 8,
+      "respostas": 12,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 16,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 5,
+      "retweets": 10,
+      "respostas": 15,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 17,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 6,
+      "retweets": 12,
+      "respostas": 18,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 18,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 7,
+      "retweets": 14,
+      "respostas": 21,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 19,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 8,
+      "retweets": 16,
+      "respostas": 24,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 20,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 9,
+      "retweets": 18,
+      "respostas": 27,
+      "proposicao": [5]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 21,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 0,
+      "retweets": 0,
+      "respostas": 0,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 22,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 1,
+      "retweets": 2,
+      "respostas": 3,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 23,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 2,
+      "retweets": 4,
+      "respostas": 6,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 24,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 3,
+      "retweets": 6,
+      "respostas": 9,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 25,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 4,
+      "retweets": 8,
+      "respostas": 12,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 26,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 5,
+      "retweets": 10,
+      "respostas": 15,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 27,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 6,
+      "retweets": 12,
+      "respostas": 18,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 28,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 7,
+      "retweets": 14,
+      "respostas": 21,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 29,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 8,
+      "retweets": 16,
+      "respostas": 24,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 30,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 2,
+      "retweets": 4,
+      "respostas": 6,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 31,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 9,
+      "retweets": 18,
+      "respostas": 27,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 32,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 0,
+      "retweets": 0,
+      "respostas": 0,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 33,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 1,
+      "retweets": 2,
+      "respostas": 3,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 34,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 3,
+      "retweets": 6,
+      "respostas": 9,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 35,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 4,
+      "retweets": 8,
+      "respostas": 12,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 36,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 5,
+      "retweets": 10,
+      "respostas": 15,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 37,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 6,
+      "retweets": 12,
+      "respostas": 18,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 38,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 7,
+      "retweets": 14,
+      "respostas": 21,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 39,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 8,
+      "retweets": 16,
+      "respostas": 24,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweet",
+    "pk": 40,
+    "fields": {
+      "author": 4155,
+      "id_author": "45870897",
+      "id_tweet": "1527350427984879616",
+      "text": "Tweet freixo",
+      "text_html": "<blockquote class=\"twitter-tweet\" data-cards=\"hidden\"><p lang=\"pt\" dir=\"ltr\">Felicidades a esse casal que com certeza fará o povo brasileiro muito feliz! O Brasil que acredita no amor, na união e na cumplicidade celebra junto com vocês! Viva Lula e Janja! Uma honra compartilhar esse momento especial.<br><br>📸 <a href=\"https:\\/\\/twitter.com\\/ricardostuckert?ref_src=twsrc%5Etfw\">@ricardostuckert<\\/a> <a href=\"https:\\/\\/t.co\\/e7lfOOEyLZ\">pic.twitter.com\\/e7lfOOEyLZ<\\/a><\\/p>&mdash; Marcelo Freixo (@MarceloFreixo) <a href=\"https:\\/\\/twitter.com\\/MarceloFreixo\\/status\\/1527350427984879616?ref_src=twsrc%5Etfw\">May 19, 2022<\\/a><\\/blockquote>\n",
+      "data_criado": "2022-05-05",
+      "likes": 9,
+      "retweets": 18,
+      "respostas": 27,
+      "proposicao": [31]
+    }
+  },
+  {
+    "model": "tweets.tweetsinfo",
+    "pk": 1,
+    "fields": {
+      "tweet_mais_novo": 10,
+      "tweet_mais_antigo": 1,
+      "numero_total_tweets": 10,
+      "numero_parlamentares_sem_perfil": 500
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 1,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "45870897",
+      "proposicao": 63,
+      "data_consulta": "2022-05-05",
+      "total_engajamento": 1500
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 2,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "45870897",
+      "proposicao": 63,
+      "data_consulta": "2022-05-06",
+      "total_engajamento": 150
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 3,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "45870897",
+      "proposicao": 63,
+      "data_consulta": "2022-05-07",
+      "total_engajamento": 150
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 4,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "45870897",
+      "proposicao": 1,
+      "data_consulta": "2022-05-07",
+      "total_engajamento": 120
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 5,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "45870897",
+      "proposicao": 1,
+      "data_consulta": "2022-05-06",
+      "total_engajamento": 120
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 6,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "45870897",
+      "proposicao": 1,
+      "data_consulta": "2021-05-06",
+      "total_engajamento": 200
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 9,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "111111",
+      "proposicao": 1,
+      "data_consulta": "2022-07-07",
+      "total_engajamento": 100
+    }
+  },
+  {
+    "model": "tweets.engajamentoproposicao",
+    "pk": 10,
+    "fields": {
+      "perfil": 4155,
+      "tid_author": "011111111",
+      "proposicao": 1,
+      "data_consulta": "2022-02-16",
+      "total_engajamento": 75
+    }
+  }
+]

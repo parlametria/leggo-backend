@@ -1,22 +1,13 @@
 from django.test import TestCase
 from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet
-from datetime import datetime, timedelta
 from .setup import Setup
 import json
 from unittest.mock import MagicMock
-from unittest.mock import patch
-from unittest import skip
 
 
 class PerfilTests(TestCase):
     def setUp(self):
         Setup().create_entidades()
-
-    def test_populate(self):
-        perfil = ParlamentarPerfil()
-        perfil.populate_parlamentar()
-        self.assertTrue(ParlamentarPerfil.objects.get(entidade_id=Setup().jair.eid))
-        self.assertTrue(ParlamentarPerfil.objects.get(entidade_id=Setup().marcelo.eid))
 
 
 class MockPage:
@@ -40,7 +31,7 @@ class TweetsTest(TestCase):
         Setup().create_entidades()
         Setup().create_perfils()
         Setup().create_proposicao()
-        json_file = open("./tweets/tests/tweets.json", 'r', encoding='utf-8')
+        json_file = open("./tweets/tests/mocked_tweets_req.json", 'r', encoding='utf-8')
         self.tweets = json.load(json_file)
 
     def test_req(self):
@@ -89,7 +80,7 @@ class EngajamentoTests(TestCase):
         self.assertEqual(engajamento.total_engajamento, 120)
         self.assertTrue(Setup().test_tweets_range(engajamento.get_tweets()))
 
-    def test_nao_engajamento(self):
+    def test_engajamento_sem_tweets(self):
         engajamento = EngajamentoProposicao()
         engajamento.perfil = ParlamentarPerfil.objects.get(twitter_id=Setup().jair.tid)
         engajamento.data_consulta = Setup().end_c

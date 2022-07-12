@@ -2,7 +2,6 @@ from django.db.models import Q, Sum
 from rest_framework import viewsets
 from rest_framework.response import Response
 from api.model.entidade import Entidade
-from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from api.model.interesse import Interesse
 from api.model.etapa_proposicao import Proposicao
 from rest_framework import status
@@ -10,7 +9,21 @@ from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import traceback
 import json
-from .serializers import *
+from tweets.models import (
+    EngajamentoProposicao,
+    ParlamentarPerfil,
+    Pressao,
+    Tweet,
+    TweetsInfo
+)
+from .serializers import (
+    ParlamentarPerfilSerializer,
+    TweetInteressesSerializer,
+    TweetsInfoSerializer,
+    TweetSerializer,
+    PressaoSerializer,
+    EngajamentoSerializer
+)
 
 
 class ParlamentarPefilViewSet(viewsets.ViewSet):
@@ -25,7 +38,7 @@ class ParlamentarPefilViewSet(viewsets.ViewSet):
                 perfil = ParlamentarPerfil.objects.get(entidade=entidade)
 
                 return perfil
-            except (ParlamentarPerfil.DoesNotExist, Entidade.DoesNotExist) as e:
+            except (ParlamentarPerfil.DoesNotExist, Entidade.DoesNotExist):
                 return False
 
         try:
@@ -42,7 +55,8 @@ class ParlamentarPefilViewSet(viewsets.ViewSet):
 
         except Exception as e:
             print(e)
-            return Response({"mensagem": f"{e}", "pk": pk}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"mensagem": f"{e}", "pk": pk},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class TweetsInfoViewSet(viewsets.ViewSet):
@@ -68,16 +82,19 @@ class TweetsViewSet(viewsets.ViewSet):
 
         try:
             def get_interesses():
-                return Interesse.objects.all().distinct("interesse", "nome_interesse",
-                                                        "descricao_interesse").values_list('interesse', 'proposicao')
+                interesses = Interesse.objects.all()
+                distinct = interesses.distinct("interesse",
+                                               "nome_interesse",
+                                               "descricao_interesse")
+                return distinct.values_list('interesse', 'proposicao')
             self.interesses_distintos = get_interesses()
             author = ParlamentarPerfil.objects.get(entidade=pk)
 
             """
-            Para cada interesse UNICO, pego os interesses derivados e suas respectivas proposicoes 
+            Para cada interesse UNICO, pego os interesses derivados e 
+            suas respectivas proposicoes 
             """
             for i_distinto in self.interesses_distintos:
-                print(i_distinto[0])
                 interesse = i_distinto[0]
                 interesses = Interesse.objects.filter(
                     Q(interesse=interesse) |
@@ -104,41 +121,17 @@ class TweetsViewSet(viewsets.ViewSet):
             print(traceback.format_exc())
             return Response({}, status=status.HTTP_400_BAD_REQUEST)
 
-    def list(self, request):
-        try:
-            parlamentar = request.query_params.get('parlamentar')
-
-            def get_proposicoes_por_intesses(interesses):
-                propos = Proposicao.objects.filter(id__in=interesses).values_list('id')
-                return propos
-
-            def get_tweets_por_proposicao(proposicoes):
-                author = ParlamentarPerfil.objects.get(entidade=parlamentar)
-                tweets = Tweet.objects.filter(
-                    Q(proposicao__id__in=proposicoes) & Q(author=author))
-                return tweets
-
-            self.interesses = Interesse.objects.all().values_list('id')
-            self.proposicoes = get_proposicoes_por_intesses(self.interesses)
-            self.tweets_user = get_tweets_por_proposicao(self.proposicoes)
-
-            serializer = TweetSerializer(
-                self.tweets_user, many=True, context={'request': request})
-
-            return Response(serializer.data, status=status.HTTP_200_OK)
-        except:
-            print(traceback.format_exc())
-            return Response({}, status=status.HTTP_400_BAD_REQUEST)
-
     def create(self, request):
         data = request.data
 
         try:
-            return Response({"data": json.dumps(request.data)}, status=status.HTTP_201_CREATED)
+            return Response({"data": json.dumps(request.data)},
+                            status=status.HTTP_201_CREATED)
 
         except Exception as e:
             print(e)
-            return Response({"erro": f"{e}", "data": json.dumps(request.data)}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"erro": f"{e}", "data": json.dumps(request.data)},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class PressaoViewSet(viewsets.ViewSet):
@@ -152,7 +145,9 @@ class PressaoViewSet(viewsets.ViewSet):
 
         except Exception as e:
             print(e)
-            return Response({"message": f"{e}", "data": {"pk": pk}}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": f"{e}",
+                             "data": {"pk": pk}},
+                            status=status.HTTP_400_BAD_REQUEST)
 
     def create(self, request):
 
@@ -165,11 +160,13 @@ class PressaoViewSet(viewsets.ViewSet):
             pressao.data_consulta = convert_date
             pressao.save()
 
-            return Response({"message": "OK", "data": ""}, status=status.HTTP_201_CREATED)
+            return Response({"message": "OK", "data": ""},
+                            status=status.HTTP_201_CREATED)
 
         except Exception as e:
             print(e)
-            return Response({"message": f"{e}", "data": ""}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({"message": f"{e}", "data": ""},
+                            status=status.HTTP_400_BAD_REQUEST)
 
 
 class EngajamentoViewSet(viewsets.ViewSet):
@@ -202,24 +199,6 @@ class EngajamentoViewSet(viewsets.ViewSet):
         except:
             print(traceback.format_exc())
             return Response({}, status=status.HTTP_400_BAD_REQUEST)
-
-    def list(self, request):
-
-        try:
-            data = request.query_params
-            proposicao = Proposicao.objects.get(id=data.get('proposicao'))
-            queryset = EngajamentoProposicao.objects.get(
-                proposicao=proposicao,
-                tid_author=data.get('twitter_id'))
-            serializer = EngajamentoSerializer(queryset)
-            return Response(serializer.data, status=status.HTTP_200_OK)
-
-        except Exception as e:
-            print(traceback.format_exc())
-            message = {"message": f"{e}",
-                       "proposicao:": data.get('proposicao'),
-                       "twitter_id": data.get('twitter_id')}
-            return Response(message, status=status.HTTP_400_BAD_REQUEST)
 
     def create(self, request):
 

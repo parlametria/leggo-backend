@@ -35,13 +35,6 @@ class ParlamentarPerfil(models.Model):
     def __str__(self):
         return self.twitter_id
 
-    def populate_parlamentar(self):
-        parlamentares = Entidade.objects.all()
-
-        for parlamentar in parlamentares:
-            perfil = ParlamentarPerfil(entidade=parlamentar, is_personalidade=False,)
-            perfil.save()
-
 
 class Tweet(models.Model):
 
@@ -89,7 +82,6 @@ class Tweet(models.Model):
                         new_tweet.save()
                 except ParlamentarPerfil.DoesNotExist as e:
                     pass
-                    # print(e)
 
     def get_recent(self, search, id_proposicao, end_time, start_time, order='relevancy', n_results=10):
         BEARER_TOKEN = dotenv_values(f"./.ENV").get('BEARER_TOKEN')

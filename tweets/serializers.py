@@ -1,6 +1,5 @@
 from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from rest_framework import serializers
-from django.db import models
 
 
 class ParlamentarPerfilSerializer(serializers.HyperlinkedModelSerializer):
