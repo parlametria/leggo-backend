@@ -122,5 +122,4 @@ class InteresseByNome(generics.ListAPIView):
 
         if interesse_arg:
             queryset = queryset.filter(interesse=interesse_arg)
-        self.interesses = queryset
         return queryset

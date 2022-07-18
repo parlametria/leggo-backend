@@ -1,15 +1,12 @@
 from rest_framework.test import APIClient
 from django.test import TestCase
 from api.model.interesse import Interesse
-from api.model.etapa_proposicao import Proposicao
 from tweets.models import EngajamentoProposicao, Tweet
 from tweets.views import TweetsViewSet
 from tweets.tests.test_models import Setup
-from types import SimpleNamespace
 from datetime import timedelta
 from dateutil.relativedelta import relativedelta
 import json
-from unittest import skip
 
 
 class TestTweets(TestCase):

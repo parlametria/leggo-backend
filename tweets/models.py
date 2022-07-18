@@ -1,19 +1,8 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
-from django.contrib.auth.models import User
-
-
 from api.model.entidade import Entidade
 from api.model.etapa_proposicao import Proposicao
-from api.model.interesse import Interesse
-from datetime import datetime, timedelta
+from datetime import timedelta
 from django.db.models import Sum
-from django.core.exceptions import ObjectDoesNotExist
-from dotenv import dotenv_values
-import tweepy
-import json
 
 
 class ParlamentarPerfil(models.Model):
@@ -54,55 +43,6 @@ class Tweet(models.Model):
     likes = models.IntegerField(null=False)
     retweets = models.IntegerField(null=False)
     respostas = models.IntegerField(null=False)
-
-    @classmethod
-    def get_paginate(self, req, proposicao):
-        counter = 0
-
-        for page in req:
-            for tweet in page.data:
-                counter = counter + 1
-
-                new_tweet = Tweet(
-                    id_tweet=tweet.id,
-                    id_author=tweet.author_id,
-                    text=tweet.text,
-                    data_criado=tweet.created_at,
-                    likes=tweet.public_metrics.get('like_count'),
-                    retweets=tweet.public_metrics.get('retweet_count'),
-                    respostas=tweet.public_metrics.get('reply_count')
-
-                )
-                new_tweet.save()
-                new_tweet.proposicao.add(proposicao)
-                try:
-                    perfil = ParlamentarPerfil.objects.get(twitter_id=tweet.author_id)
-                    if(perfil):
-                        new_tweet.author = perfil
-                        new_tweet.save()
-                except ParlamentarPerfil.DoesNotExist as e:
-                    pass
-
-    def get_recent(self, search, id_proposicao, end_time, start_time, order='relevancy', n_results=10):
-        BEARER_TOKEN = dotenv_values(f"./.ENV").get('BEARER_TOKEN')
-        client = tweepy.Client(BEARER_TOKEN)
-        expansions = ['author_id']
-        # https://developer.twitter.com/en/docs/twitter-api/data-dictionary/object-model/tweet
-        fields = ['created_at', 'public_metrics']
-
-        proposicao = Proposicao.objects.get(id=id_proposicao)
-
-        req = tweepy.Paginator(client.search_recent_tweets,
-                               search,
-                               end_time=end_time,
-                               start_time=start_time,
-                               max_results=n_results,
-                               sort_order=order,
-                               expansions=expansions,
-                               tweet_fields=fields)
-
-        self.get_paginate(req, proposicao)
-        return req
 
 
 class TweetsInfo(models.Model):

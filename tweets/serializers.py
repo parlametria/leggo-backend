@@ -1,5 +1,22 @@
 from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet, TweetsInfo
 from rest_framework import serializers
+from rest_framework.response import Response
+import json
+from rest_framework import status
+
+
+class RequisicaoFalha:
+    def __init__(self, erro, request, pk=None):
+        self.erro = erro
+        self.request = request
+        self.pk = pk
+
+    def response(self):
+        return Response({"erro": f"{self.erro}",
+                         "data": json.dumps(self.request.data),
+                         "pk": self.pk
+                         },
+                        status=status.HTTP_400_BAD_REQUEST)
 
 
 class ParlamentarPerfilSerializer(serializers.HyperlinkedModelSerializer):

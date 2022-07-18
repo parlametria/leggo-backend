@@ -1,53 +1,11 @@
 from django.test import TestCase
-from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao, Tweet
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Pressao
 from .setup import Setup
-import json
-from unittest.mock import MagicMock
 
 
 class PerfilTests(TestCase):
     def setUp(self):
         Setup().create_entidades()
-
-
-class MockPage:
-    def __init__(self, data):
-        self.data = map(self.dict_to_tweet, data)
-
-    def dict_to_tweet(self, item):
-        return dotdict(item)
-
-
-class dotdict(dict):
-    """dot.notation access to dictionary attributes"""
-    __getattr__ = dict.get
-    __setattr__ = dict.__setitem__
-    __delattr__ = dict.__delitem__
-
-
-# @skip('')
-class TweetsTest(TestCase):
-    def setUp(self):
-        Setup().create_entidades()
-        Setup().create_perfils()
-        Setup().create_proposicao()
-        json_file = open("./tweets/tests/mocked_tweets_req.json", 'r', encoding='utf-8')
-        self.tweets = json.load(json_file)
-
-    def test_req(self):
-
-        tweet = Tweet()
-
-        mock = MockPage(self.tweets)
-        pages = [
-            mock
-        ]
-
-        tweet.get_recent = MagicMock(return_value=pages)
-        req = tweet.get_recent()
-
-        tweet.get_paginate(req, Setup().get_preposicao())
-        self.assertEqual(Tweet.objects.all().count(), 10)
 
 
 class PressaoTests(TestCase):

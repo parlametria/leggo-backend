@@ -134,8 +134,6 @@ class ParlamentaresExercicioList(generics.ListAPIView):
         queryset = (Entidade.objects
                     .raw(query))
 
-        self.parlamentares = [x for x in queryset]
-
         return queryset
 
 
