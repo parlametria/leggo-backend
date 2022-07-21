@@ -21,7 +21,8 @@ from .serializers import (
     TweetInteressesSerializer,
     TweetsInfoSerializer,
     PressaoSerializer,
-    EngajamentoSerializer
+    EngajamentoSerializer,
+    TweetSerializer
 )
 
 
@@ -119,7 +120,26 @@ class TweetsViewSet(viewsets.ViewSet):
 
     def create(self, request):
         try:
-            return Response({"data": json.dumps(request.data)},
+            tweets = request.data.get('tweets')
+            id_proposicao = request.data.get('proposicao')
+            proposicao = Proposicao.objects.get(id=id_proposicao)
+            adicionados = []
+            for tweet in tweets:
+                new_tweet = Tweet(
+                    **tweet
+                )
+                new_tweet.save()
+                new_tweet.proposicao.add(proposicao)
+                new_tweet.save()
+                id_autor = tweet['id_author']
+                parla = ParlamentarPerfil.objects.filter(twitter_id=id_autor)
+                if(parla.count() == 1):
+                    new_tweet.author = parla[0]
+                new_tweet.save()
+                adicionados.append(new_tweet)
+
+            serializer = TweetSerializer(adicionados, many=True)
+            return Response(serializer.data,
                             status=status.HTTP_201_CREATED)
 
         except Exception as e:

@@ -1,0 +1,95 @@
+{
+  "tweets": [
+    {
+      "id_tweet": 1549371105630208001,
+      "id_author": 3380511245,
+      "text": "RT @senadorhumberto: VITÓRIA! Conseguimos adiar a votação do PL do Veneno. A pressão funcionou e o Senado vai debater e ouvir o representan…",
+      "data_criado": "2022-07-19",
+      "likes": 0,
+      "retweets": 509,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549732293081702405,
+      "id_author": 39522911,
+      "text": "#AoVivo Maia Sprandel, assessora da liderança do PT no Senado, explica PL do Veneno. \n\n📺 Acompanhe na #tvPT: https://t.co/J7SvkgjlFd https://t.co/W7SBRkZRgp",
+      "data_criado": "2022-07-20",
+      "likes": 45,
+      "retweets": 10,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549191812174254083,
+      "id_author": 79844898,
+      "text": "RT @senadorhumberto: VITÓRIA! Conseguimos adiar a votação do PL do Veneno. A pressão funcionou e o Senado vai debater e ouvir o representan…",
+      "data_criado": "2022-07-19",
+      "likes": 0,
+      "retweets": 509,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549174450448437250,
+      "id_author": 1414975002676502532,
+      "text": "RT @senadorhumberto: VITÓRIA! Conseguimos adiar a votação do PL do Veneno. A pressão funcionou e o Senado vai debater e ouvir o representan…",
+      "data_criado": "2022-07-18",
+      "likes": 0,
+      "retweets": 509,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549179336464424961,
+      "id_author": 1498717226052030476,
+      "text": "RT @senadorhumberto: VITÓRIA! Conseguimos adiar a votação do PL do Veneno. A pressão funcionou e o Senado vai debater e ouvir o representan…",
+      "data_criado": "2022-07-18",
+      "likes": 0,
+      "retweets": 509,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549196233834627073,
+      "id_author": 978030180584316929,
+      "text": "Com adiamento do PL do Veneno, ruralistas pressionam Anvisa contra suspensão do carbendazim | Combate Racismo Ambiental https://t.co/XZa55svp7h",
+      "data_criado": "2022-07-19",
+      "likes": 0,
+      "retweets": 0,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549743746580979712,
+      "id_author": 1361055906256027649,
+      "text": "RT @ptbrasil: #AoVivo Maia Sprandel, assessora da liderança do PT no Senado, explica PL do Veneno. \n\n📺 Acompanhe na #tvPT: https://t.co/J7S…",
+      "data_criado": "2022-07-20",
+      "likes": 0,
+      "retweets": 10,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549734694647959555,
+      "id_author": 2335178436,
+      "text": "RT @ptbrasil: #AoVivo Maia Sprandel, assessora da liderança do PT no Senado, explica PL do Veneno. \n\n📺 Acompanhe na #tvPT: https://t.co/J7S…",
+      "data_criado": "2022-07-20",
+      "likes": 0,
+      "retweets": 10,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549733563620286464,
+      "id_author": 1437068616567033858,
+      "text": "RT @MarinaSilva: Mais veneno do Congresso para a sua mesa! Deputados ruralistas e aliados de Bolsonaro querem aprovar o PL 6299, mesmo sabe…",
+      "data_criado": "2022-07-20",
+      "likes": 0,
+      "retweets": 269,
+      "respostas": 0
+    },
+    {
+      "id_tweet": 1549369932634365953,
+      "id_author": 45870897,
+      "text": "Com adiamento do PL do Veneno, ruralistas pressionam Anvisa contra suspensão do carbendazim | Combate Racismo Ambiental https://t.co/eoy2B2svw9",
+      "data_criado": "2022-07-19",
+      "likes": 0,
+      "retweets": 0,
+      "respostas": 0
+    }
+  ],
+  "proposicao": 63
+}

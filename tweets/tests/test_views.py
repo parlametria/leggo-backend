@@ -1,7 +1,8 @@
 from rest_framework.test import APIClient
 from django.test import TestCase
 from api.model.interesse import Interesse
-from tweets.models import EngajamentoProposicao, Tweet
+from api.model.proposicao import Proposicao
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Tweet
 from tweets.views import TweetsViewSet
 from tweets.tests.test_models import Setup
 from datetime import timedelta
@@ -15,6 +16,27 @@ class TestTweets(TestCase):
         s = Setup()
         s.create_entidades()
         s.create_perfils()
+
+    def test_create(self):
+        s = Setup()
+        s.create_proposicao()
+        proposicao = Proposicao.objects.all().first()
+        ENDPOINT = '/tweets/'
+        file = open('./tweets/tests/mocked_airflow_tweets_req.json',
+                    'r', encoding='utf-8')
+        data = json.load(file)
+        data['proposicao'] = proposicao.id
+        client = APIClient()
+        response = client.post(
+            f"{ENDPOINT}",
+            json.dumps(data),
+            content_type="application/json",
+        )
+
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Tweet.objects.all().count(), 10)
+        self.assertEqual(Tweet.objects.filter(
+            author=ParlamentarPerfil.objects.all().last()).count(), 1)
 
     def test_retrieve(self):
         setup = Setup()
