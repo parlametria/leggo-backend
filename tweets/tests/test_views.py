@@ -2,7 +2,7 @@ from rest_framework.test import APIClient
 from django.test import TestCase
 from api.model.interesse import Interesse
 from api.model.proposicao import Proposicao
-from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Tweet
+from tweets.models import EngajamentoProposicao, ParlamentarPerfil, Tweet, TweetsInfo
 from tweets.views import TweetsViewSet
 from tweets.tests.test_models import Setup
 from datetime import timedelta
@@ -12,31 +12,56 @@ import json
 
 class TestTweets(TestCase):
 
+    def load_data(self):
+        s = Setup()
+        s.create_proposicao()
+        proposicao = Proposicao.objects.all().first()
+        file = open('./tweets/tests/mocked_airflow_tweets_req.json',
+                    'r', encoding='utf-8')
+        data = json.load(file)
+        data['proposicao'] = proposicao.id
+        return data
+
+    def make_tweets_request(self, data):
+        ENDPOINT = '/tweets/'
+        client = APIClient()
+        return client.post(
+            f"{ENDPOINT}",
+            json.dumps(data),
+            content_type="application/json",
+        )
+
     def setUp(self):
         s = Setup()
         s.create_entidades()
         s.create_perfils()
 
     def test_create(self):
-        s = Setup()
-        s.create_proposicao()
-        proposicao = Proposicao.objects.all().first()
-        ENDPOINT = '/tweets/'
-        file = open('./tweets/tests/mocked_airflow_tweets_req.json',
-                    'r', encoding='utf-8')
-        data = json.load(file)
-        data['proposicao'] = proposicao.id
-        client = APIClient()
-        response = client.post(
-            f"{ENDPOINT}",
-            json.dumps(data),
-            content_type="application/json",
-        )
-
+        response = self.make_tweets_request(self.load_data())
         self.assertEqual(response.status_code, 201)
         self.assertEqual(Tweet.objects.all().count(), 10)
         self.assertEqual(Tweet.objects.filter(
             author=ParlamentarPerfil.objects.all().last()).count(), 1)
+
+    def test_create_atualiza_metricas(self):
+        data = self.load_data()
+        self.make_tweets_request(data)
+        item = data['tweets'][0]
+        item['respostas'] = 666
+        data['tweets'][0] = item
+        response = self.make_tweets_request(data)
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Tweet.objects.all().count(), 10)
+        self.assertEqual(Tweet.objects.get(id_tweet=item['id_tweet']).respostas, 666)
+
+    def test_create_atualiza_info(self):
+        response = self.make_tweets_request(self.load_data())
+        tweets = Tweet.objects.all()
+        info = TweetsInfo.processa_atual_info()
+
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(info.tweet_mais_novo, tweets.last())
+        self.assertEqual(info.tweet_mais_antigo, tweets.first())
 
     def test_retrieve(self):
         setup = Setup()

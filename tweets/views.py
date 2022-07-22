@@ -27,6 +27,9 @@ from .serializers import (
 
 
 class ParlamentarPefilViewSet(viewsets.ViewSet):
+    """
+    Retorna o perfil do parlamentar, ou informações de cadastro de parlamentares sem perfil
+    """
 
     def retrieve(self, request, pk=None):
         def get_parlamentar_or_false(pk):
@@ -118,6 +121,14 @@ class TweetsViewSet(viewsets.ViewSet):
             rf = RequisicaoFalha(e, request, pk)
             return rf.response()
 
+    def cria_ou_encontra(self, tweet):
+        tem_cadastrado = Tweet.objects.filter(id_tweet=tweet['id_tweet'])
+        if(tem_cadastrado.count() > 0):
+            tem_cadastrado.first().delete()
+            return Tweet(**tweet)
+        else:
+            return Tweet(**tweet)
+
     def create(self, request):
         try:
             tweets = request.data.get('tweets')
@@ -125,9 +136,7 @@ class TweetsViewSet(viewsets.ViewSet):
             proposicao = Proposicao.objects.get(id=id_proposicao)
             adicionados = []
             for tweet in tweets:
-                new_tweet = Tweet(
-                    **tweet
-                )
+                new_tweet = self.cria_ou_encontra(tweet)
                 new_tweet.save()
                 new_tweet.proposicao.add(proposicao)
                 new_tweet.save()
@@ -137,6 +146,16 @@ class TweetsViewSet(viewsets.ViewSet):
                     new_tweet.author = parla[0]
                 new_tweet.save()
                 adicionados.append(new_tweet)
+
+            info = Tweet.objects.all()
+
+            tweets_info = TweetsInfo.processa_atual_info()
+            TweetsInfo(
+                tweet_mais_novo=info.last(),
+                tweet_mais_antigo=info.first(),
+                numero_total_tweets=info.count(),
+                numero_parlamentares_sem_perfil=tweets_info.numero_parlamentares_sem_perfil if tweets_info else 0,
+            ).save()
 
             serializer = TweetSerializer(adicionados, many=True)
             return Response(serializer.data,

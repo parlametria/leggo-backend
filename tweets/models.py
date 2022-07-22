@@ -49,18 +49,24 @@ class TweetsInfo(models.Model):
     """
     Criada a tabela com as informações de coletas de tweets
     Evita que todo request busque em todos os tweets as mesmas informações
-    Processamento via signals
     """
     """
     Cronologicamente o ultimo tweet
     """
-    tweet_mais_novo = models.ForeignKey(Tweet, related_name="novo",
-                                        on_delete=models.SET_NULL, null=True)
+    tweet_mais_novo = models.OneToOneField(
+        Tweet,
+        related_name='novo',
+        on_delete=models.CASCADE,
+    )
     """
     Cronologicamente o primeiro tweet
     """
-    tweet_mais_antigo = models.ForeignKey(Tweet, related_name="antigo",
-                                          on_delete=models.SET_NULL, null=True)
+    tweet_mais_antigo = models.OneToOneField(
+        Tweet,
+        related_name='antigo',
+        on_delete=models.CASCADE,
+    )
+
     numero_total_tweets = models.IntegerField()
 
     numero_parlamentares_sem_perfil = models.IntegerField()
