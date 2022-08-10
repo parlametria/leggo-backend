@@ -1,6 +1,6 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-
+from unittest import skip
 from api.model.proposicao import Proposicao
 from usuario.models import UsuarioProposicao
 

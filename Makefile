@@ -177,3 +177,4 @@ endif
  update-data:
 	docker exec -it agorapi sh -c './manage.py update_data --model $(model)'
 .PHONY: update-data
+

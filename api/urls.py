@@ -1,4 +1,13 @@
-from django.conf.urls import url  # , include
+from tweets.views import (
+    TweetsViewSet,
+    PressaoViewSet,
+    EngajamentoViewSet,
+    ParlamentarPefilViewSet,
+    TweetsInfoViewSet,
+
+)
+from django.conf.urls import url, include
+from django.urls import path
 from django.views.decorators.cache import cache_page
 from django.conf import settings
 from django.core.cache.backends.base import DEFAULT_TIMEOUT
@@ -10,6 +19,8 @@ from rest_framework_simplejwt.views import (
 )
 
 # from rest_framework.routers import DefaultRouter
+from rest_framework import routers
+
 from api.views.info_serializer import Info
 from api.views.proposicao_serializer import (
     ProposicaoDetail,
@@ -92,8 +103,30 @@ from usuario.views import UsuarioList, UsuarioDetail
 
 CACHE_TTL = getattr(settings, 'CACHE_TTL', DEFAULT_TIMEOUT)
 
+
+tweets = routers.DefaultRouter()
+tweets.register('', TweetsViewSet, basename="tweets")
+
+pressao = routers.DefaultRouter()
+pressao.register('', PressaoViewSet, basename="pressao")
+
+engajamento = routers.DefaultRouter()
+engajamento.register('', EngajamentoViewSet, basename="engajamento")
+
+parlamentar = routers.DefaultRouter()
+parlamentar.register('', ParlamentarPefilViewSet, basename="parlamentar")
+
+tweets_info = routers.DefaultRouter()
+tweets_info.register('', TweetsInfoViewSet, basename="info")
+
+
 urlpatterns = [
-    # url(r'^', include(router.urls)),
+    # path('', include('tweets.urls')),
+    url(r'^tweets/info/', include(tweets_info.urls)),
+    url(r'^tweets/', include(tweets.urls)),
+    url(r'^parlamentar/', include(parlamentar.urls)),
+    url(r'^pressao/', include(pressao.urls)),
+    url(r'^engajamento/', include(engajamento.urls)),
     url(r"^info/?$", Info.as_view()),
     url(r"^proposicoes/?$", cache_page(CACHE_TTL)(ProposicaoList.as_view())),
     url(r"^etapas/?$", EtapasList.as_view()),

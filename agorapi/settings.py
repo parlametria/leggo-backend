@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     "api",
     "usuario",
+    "tweets"
 ]
 
 MIDDLEWARE = [
