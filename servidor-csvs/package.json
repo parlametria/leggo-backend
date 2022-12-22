@@ -17,7 +17,7 @@
     "express": "^4.17.1",
     "express-bouncer": "^0.2.0",
     "helmet": "^3.21.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "morgan": "^1.9.1",
     "serve-index": "^1.9.1"
   },
